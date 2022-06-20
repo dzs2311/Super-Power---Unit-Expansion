@@ -491,7 +491,7 @@
 			<Text>[COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_ORDER_SUPER_055_HELP">
-			<Text>[COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]是秩序意识形态的精英单位，需要完成[ICON_CULTURE][COLOR_MAGENTA]卫国战争政策[ENDCOLOR]、大型驱逐舰建造计划和高超音速反舰弹道导弹研究计划才可以建造。</Text>
+			<Text>[COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]是秩序意识形态的精英单位，需要完成[ICON_CULTURE][COLOR_MAGENTA]卫国战争政策[ENDCOLOR]、一体化桅杆研究计划计划和高超音速反舰弹道导弹研究计划才可以建造。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_ORDER_SUPER_055_TEXT">
 			<Text>055型驱逐舰（英文：Type 055 destroyer，北约代号：Renhai-class ，译文：刃海级）是中国研制的新型舰队防空驱逐舰。</Text>
