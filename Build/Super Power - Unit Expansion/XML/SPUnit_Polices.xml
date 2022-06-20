@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2021/12/9 19:51:48 -->
+<GameData>
+	<Policies>
+		<Row>
+			<Type>POLICY_SPUE_PRAETORIAN</Type>
+			<Description>TXT_KEY_POLICY_SPUE_PRAETORIAN</Description>
+		</Row>
+		<!-- 商业政策树佣兵政策 -->
+		<Row>
+			<!-- 中古佣兵团 -->
+			<Type>POLICY_SPUE_FCOMPANY</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 里尔火炮佣兵 -->
+			<Type>POLICY_SPUE_LIL_BOMBARD</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 南洋海盗船 -->
+			<Type>POLICY_SPUE_SSPRIVATEER</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 热那亚弩手 -->
+			<Type>POLICY_SPUE_GENOAXBOW</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 瑞士卫队 -->
+			<Type>POLICY_SPUE_SWISSGUARD</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 瓦兰吉佣兵 -->
+			<Type>POLICY_SPUE_VARANGIAN</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 瓦兰吉卫队 -->
+			<Type>POLICY_SPUE_VARANGIAN_GUARD</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+	</Policies>
+	<Policy_CapitalYieldChanges>
+		<Row>
+			<PolicyType>POLICY_SPUE_PRAETORIAN</PolicyType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>4</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_SPUE_PRAETORIAN</PolicyType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>4</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_SPUE_PRAETORIAN</PolicyType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>4</Yield>
+		</Row>
+	</Policy_CapitalYieldChanges>
+</GameData>

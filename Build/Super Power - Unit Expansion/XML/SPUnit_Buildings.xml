@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2022/1/29 20:59:10 -->
+<GameData>
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_SPUE_WEIYANG</Type>
+			<DefaultBuilding>BUILDING_SPUE_WEIYANG</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_SPUE_WEIYANG</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_SPUE_WEIYANG</Type>
+			<BuildingClass>BUILDINGCLASS_SPUE_WEIYANG</BuildingClass>
+			<Cost>-1</Cost>
+			<Description>TXT_KEY_BUILDING_SPUE_WEIYANG</Description>
+			<ArtDefineTag>ART_DEF_BUILDING_GARDEN</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<NeverCapture>1</NeverCapture>
+			<NukeImmune>1</NukeImmune>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<IconAtlas>SPUE_UNITS_ATLAS</IconAtlas>
+			<PortraitIndex>19</PortraitIndex>
+			<UnhappinessModifier>-10</UnhappinessModifier>
+		</Row>
+	</Buildings>
+</GameData>

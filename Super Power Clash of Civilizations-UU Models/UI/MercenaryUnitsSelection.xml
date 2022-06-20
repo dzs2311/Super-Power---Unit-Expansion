@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2022/5/1 14:15:49 -->
+<Context>
+	<Box Style="BGBlock_ClearTopBar"/>
+
+	<!-- 界面方框-->
+	<Grid Size="540,400" Anchor="C,C" Style="Grid9DetailFive140" ConsumeMouse="1">
+
+		<!-- 领袖头像按钮-->
+		<Button ID="IconButtonTop" Anchor="C,T" Offset="0,0" Size="256,128" ToolTip="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_LEADER_TOP">
+			<Image Anchor="C,T" AnchorSide="I,O" Offset="0,-91" Size="256,128" Texture="DecTop256x64.dds">
+				<Image Anchor="C,T" Offset="0,-60" Size="128,128" Texture="Assets/UI/Art/Icons/LeaderPortraits1024Frame.dds">
+					<Image ID="MercenaryUnitLeaderPortrait" Anchor="C,C" Offset="0,0" Size="128,128" Texture="Assets/UI/Art/Icons/LeaderPortraits1024.dds"/>
+				</Image>
+			</Image>
+		</Button>
+
+		<!-- 左右侧边装饰 -->
+		<Image Anchor="L,C" AnchorSide="O,I" Offset="-17,0" Size="32,64" Texture="Dec32x64Left.dds" />
+		<Image Anchor="R,C" AnchorSide="O,I" Offset="-17,0" Size="32,64" Texture="Dec32x64Right.dds" />
+
+		<!-- 标题 -->
+		<Label Anchor="C,T" Offset="0,15" Font="TwCenMT24" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" String="TXT_KEY_SPUE_MERCENARY_SELECT_TITLE"/>
+		
+		<!-- 主要界面：从左向右排布 -->
+		<Stack ID="MercenaryUnitsSelectPanel" Anchor="C,T" Offset="0,40" StackGrowth="Right" Padding="10">
+			<!-- 左侧佣兵选择界面 -->
+			<Container ID="MercenaryUnitLeft" Size="256,300" Anchor="C,T">
+				<!-- 从上向下排布 -->
+				<Stack Anchor="C,T" Offset="0, 0" StackGrowth="Bottom" Padding="20">
+					<!-- 左侧单位头像按钮 -->
+					<Button ID="IconButtonLeft" Anchor="C,C" Offset="0,-6" Size="256,256" ToolTip="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_UNIT_LEFT">
+						<Image ID="PortraitFrameLeft" Anchor="C,T" Offset="0,20" Size="256,256" TextureOffset="0,0" Texture="256x256Frame.dds" >
+							<Image ID="PortraitLeft" Anchor="C,C" Offset="0,0" Size="256,256" TextureOffset="0,0" />
+						</Image>
+					</Button>
+					<!-- 左侧单位选择下拉栏 -->
+					<PullDown ID="SelectListLeft" Anchor="C,C" Style="GenericPullDown" ScrollThreshold="170" Size="190,30" SpaceForScroll="1"/>
+				</Stack>
+			</Container>
+
+			<!-- 右侧佣兵选择界面 -->
+			<Container ID="MercenaryUnitRight" Size="256,300" Anchor="C,T">
+				<!-- 从上向下排布 -->
+				<Stack Anchor="C,T" Offset="0, 0" StackGrowth="Bottom" Padding="20">
+					<!-- 右侧单位头像按钮 -->
+					<Button ID="IconButtonRight" Anchor="C,C" Offset="0,-6" Size="256,256" ToolTip="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_UNIT_RIGHT">
+						<Image ID="PortraitFrameRight" Anchor="C,T" Offset="0,20" Size="256,256" TextureOffset="0,0" Texture="256x256Frame.dds" >
+							<Image ID="PortraitRight" Anchor="C,C" Offset="0,0" Size="256,256" TextureOffset="0,0" />
+						</Image>
+					</Button>
+					<!-- 右侧单位选择下拉栏 -->
+					<PullDown ID="SelectListRight" Anchor="C,C" Style="GenericPullDown" ScrollThreshold="170" Size="190,30" SpaceForScroll="1"/>
+				</Stack>
+			</Container>
+		</Stack>
+		<!-- 确认按钮 -->
+		<GridButton ID="OKButton" Anchor="C,B" Offset="0,-30" Size="140,30" Style="BaseButton" ToolTip="TXT_KEY_SPUE_MERCENARY_SELECT_OK_TOOLTIP">
+
+			<!-- 标签 -->
+			<Label Anchor="C,C" Offset="0,-2" String="TXT_KEY_SPUE_MERCENARY_SELECT_OK" Font="TwCenMT20" FontStyle="Shadow" ColorSet="Beige_Black_Alpha"/>
+
+			<!-- 鼠标移至按钮时显示动画 -->
+			<ShowOnMouseOver>
+				<AlphaAnim Anchor="L,C" AnchorSide="O,O" Size="16,32" TextureOffset="0,0" Texture="buttonsidesglow.dds" Cycle="Bounce" Speed="1" AlphaStart=".99" AlphaEnd=".25"/>
+				<Image Anchor="L,C" AnchorSide="O,O" Size="8,16" TextureOffset="0,0" Texture="buttonsides.dds" />
+				
+				<AlphaAnim Anchor="R,C" AnchorSide="O,O" Size="16,32" TextureOffset="16,0" Texture="buttonsidesglow.dds" Cycle="Bounce" Speed="1" AlphaStart=".99" AlphaEnd=".25"/>
+				<Image Anchor="R,C" AnchorSide="O,O" Size="8,16" TextureOffset="8,0" Texture="buttonsides.dds" />
+			</ShowOnMouseOver>
+
+		</GridButton>
+	</Grid>
+</Context>

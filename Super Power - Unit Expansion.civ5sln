@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# ModBuddy Solution File, Format Version 11.00
+Project("{F5FC21B5-7CC2-458A-ABBA-992F515BBA20}") = "Super Power - Unit Expansion", "Super Power Clash of Civilizations-UU Models\Super Power - Unit Expansion.civ5proj", "{ABE157E1-4B9E-4392-8E29-FC6DD7399540}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|x86 = Default|x86
+		Deploy Only|x86 = Deploy Only|x86
+		Package Only|x86 = Package Only|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABE157E1-4B9E-4392-8E29-FC6DD7399540}.Default|x86.ActiveCfg = Default|x86
+		{ABE157E1-4B9E-4392-8E29-FC6DD7399540}.Default|x86.Build.0 = Default|x86
+		{ABE157E1-4B9E-4392-8E29-FC6DD7399540}.Deploy Only|x86.ActiveCfg = Deploy Only|x86
+		{ABE157E1-4B9E-4392-8E29-FC6DD7399540}.Deploy Only|x86.Build.0 = Deploy Only|x86
+		{ABE157E1-4B9E-4392-8E29-FC6DD7399540}.Package Only|x86.ActiveCfg = Package Only|x86
+		{ABE157E1-4B9E-4392-8E29-FC6DD7399540}.Package Only|x86.Build.0 = Package Only|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="49a939dd-13aa-48e3-9738-45d71182f6e8" version="1">
+  <Properties>
+    <Name>Super Power Clash of Civilizations-UU Models</Name>
+    <Stability>Alpha</Stability>
+    <Teaser>还原了船长删除的后期单位模型</Teaser>
+    <Description>还原了船长删除的后期单位模型</Description>
+    <Authors>dzs2311</Authors>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>0</AffectsSavedGames>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>0</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>0</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>0</ReloadUnitSystem>
+  </Properties>
+  <Dependencies>
+    <Mod id="d08be507-23c0-4c15-af11-31b8ee567387" minversion="0" maxversion="999" title="Super Power Clash of Civilizations" />
+  </Dependencies>
+  <References>
+    <Mod id="d08be507-23c0-4c15-af11-31b8ee567387" minversion="0" maxversion="999" title="Super Power Clash of Civilizations" />
+  </References>
+  <Blocks />
+  <Files>
+    <File md5="B1F2F4DACBC9C43098D2613D5FF3C092" import="0">LUA/SPEmbark.lua</File>
+    <File md5="96B779B5ABAC72AA080DA37B16DF3767" import="0">SQL/SPUUModels.sql</File>
+    <File md5="69AC7E6B0663C8FC48BBA53B7F9F6940" import="0">XML/ArtDefines_Units-UU.xml</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>XML/ArtDefines_Units-UU.xml</UpdateDatabase>
+      <UpdateDatabase>SQL/SPUUModels.sql</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="LUA/SPEmbark.lua">
+      <Name>SPEmbark</Name>
+      <Description>SPEmbark</Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>
