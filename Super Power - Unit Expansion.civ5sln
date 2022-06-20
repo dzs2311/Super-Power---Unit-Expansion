@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # ModBuddy Solution File, Format Version 11.00
-Project("{F5FC21B5-7CC2-458A-ABBA-992F515BBA20}") = "Super Power - Unit Expansion", "Super Power Clash of Civilizations-UU Models\Super Power - Unit Expansion.civ5proj", "{ABE157E1-4B9E-4392-8E29-FC6DD7399540}"
+Project("{F5FC21B5-7CC2-458A-ABBA-992F515BBA20}") = "Super Power - Unit Expansion", "Super Power - Unit Expansion\Super Power - Unit Expansion.civ5proj", "{ABE157E1-4B9E-4392-8E29-FC6DD7399540}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
