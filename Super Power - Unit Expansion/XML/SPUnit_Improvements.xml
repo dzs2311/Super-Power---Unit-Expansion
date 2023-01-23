@@ -7,15 +7,15 @@
 			<Type>IMPROVEMENT_FORT_SPUE</Type>
 			<Description>TXT_KEY_IMPROVEMENT_FORT_SPUE</Description>
 			<Help>TXT_KEY_IMPROVEMENT_FORT_SPUE_HELP</Help>
-			<ArtDefineTag>ART_DEF_IMPROVEMENT_FORT</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_SPUE_RECC</ArtDefineTag>
 			<GoldMaintenance>1</GoldMaintenance>
 			<OutsideBorders>1</OutsideBorders>
 			<BuildableOnResources>true</BuildableOnResources>
 			<DestroyedWhenPillaged>true</DestroyedWhenPillaged>
 			<DefenseModifier>100</DefenseModifier>
 			<NoTwoAdjacent>true</NoTwoAdjacent>
-			<PortraitIndex>24</PortraitIndex>
-			<IconAtlas>TERRAIN_ATLAS</IconAtlas>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>SPUE_RECC_ATLAS</IconAtlas>
 		</Row>
 	</Improvements>
 	<Improvement_ValidTerrains>
@@ -53,8 +53,8 @@
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<HotKey>KB_K</HotKey>
 			<OrderPriority>98</OrderPriority>
-			<IconIndex>30</IconIndex>
-			<IconAtlas>UNIT_ACTION_ATLAS</IconAtlas>
+			<IconIndex>1</IconIndex>
+			<IconAtlas>SPUE_RECC_ATLAS</IconAtlas>
 		</Row>
 	</Builds>
 	<Unit_Builds>

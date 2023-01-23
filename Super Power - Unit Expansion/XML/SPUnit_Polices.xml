@@ -6,6 +6,22 @@
 			<Type>POLICY_SPUE_PRAETORIAN</Type>
 			<Description>TXT_KEY_POLICY_SPUE_PRAETORIAN</Description>
 		</Row>
+		<!-- 赞助政策树政策 -->
+		<Row>
+			<!-- 奥古斯都之路 -->
+			<Type>POLICY_SPUE_AUGUSTUS</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_PATRONAGE</Description>
+		</Row>
+		<Row>
+			<!-- 巴西琉斯之道 -->
+			<Type>POLICY_SPUE_BASELIUS</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_PATRONAGE</Description>
+		</Row>
+		<Row>
+			<!-- 神州天子之道 -->
+			<Type>POLICY_SPUE_EMPEROR</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_PATRONAGE</Description>
+		</Row>
 		<!-- 商业政策树佣兵政策 -->
 		<Row>
 			<!-- 中古佣兵团 -->
@@ -41,6 +57,47 @@
 			<!-- 瓦兰吉卫队 -->
 			<Type>POLICY_SPUE_VARANGIAN_GUARD</Type>
 			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 铁人军 -->
+			<Type>POLICY_SPUE_IRON_TROOP</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 火帆船 -->
+			<Type>POLICY_SPUE_FIRESHIP</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 圣殿 -->
+			<Type>POLICY_SPUE_FOOT_KNIGHT_TEMPLAR</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_PIETY</Description>
+		</Row>
+		<Row>
+			<!-- 条顿 -->
+			<Type>POLICY_SPUE_FOOT_KNIGHT_TEUTONIC</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_PIETY</Description>
+		</Row>
+		<Row>
+			<!-- 医院 -->
+			<Type>POLICY_SPUE_FOOT_KNIGHT_HOSPITALLER</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_PIETY</Description>
+		</Row>
+		<!-- 意识形态标识 -->
+		<Row>
+			<!-- 秩序 -->
+			<Type>POLICY_SPUE_ORDER</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_ORDER</Description>
+		</Row>
+		<Row>
+			<!-- 自由 -->
+			<Type>POLICY_SPUE_FREEDOM</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_FREEDOM</Description>
+		</Row>
+		<Row>
+			<!-- 独裁 -->
+			<Type>POLICY_SPUE_AUTOCRACY</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_AUTOCRACY</Description>
 		</Row>
 	</Policies>
 	<Policy_CapitalYieldChanges>

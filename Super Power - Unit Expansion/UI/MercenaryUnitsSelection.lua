@@ -12,12 +12,12 @@ ContextPtr:SetHide(true);
 -- Variables
 --==========================================================================================
 
-local g_MercenaryUnitList	= {GameInfoTypes["UNIT_SPUE_FCOMPANY"], 
-							   GameInfoTypes["UNIT_SPUE_LIL_BOMBARD"],
-							   GameInfoTypes["UNIT_SPUE_SSPRIVATEER"],
+local g_MercenaryUnitList	= {GameInfoTypes["UNIT_SPUE_SSPRIVATEER"],
 							   GameInfoTypes["UNIT_SPUE_GENOAXBOW"],
 							   GameInfoTypes["UNIT_SPUE_SWISSGUARD"],
-							   GameInfoTypes["UNIT_SPUE_VARANGIAN"]}
+							   GameInfoTypes["UNIT_SPUE_VARANGIAN"],
+							   GameInfoTypes["UNIT_SPUE_IRON_TROOP"],
+							   GameInfoTypes["UNIT_SPUE_FIRESHIP"]}
 
 
 local g_MercenaryUnitLeft	= nil
@@ -139,7 +139,7 @@ function UpdateRightUnitList()
 		end
 	end
 
-	Controls.SelectListRight:GetButton():LocalizeAndSetText("TXT_KEY_SPUE_MERCENARY_MENU_UNIT_Right")	
+	Controls.SelectListRight:GetButton():LocalizeAndSetText("TXT_KEY_SPUE_MERCENARY_MENU_UNIT_RIGHT")	
 	Controls.SelectListRight:CalculateInternals()
 	Controls.SelectListRight:RegisterSelectionCallback(OnRightSelected)
 end
@@ -161,7 +161,7 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 	if(GameInfo.PolicyBranchTypes["POLICY_BRANCH_COMMERCE"].ID == policybranchID) then
 		if not player:IsHuman() then
 			-- AI Random Select
-			local iL = random(1, 5)
+			local iL = math.random(1, 5)
 			local iR = iL + 1
 
 			local unitL = GameInfo.Units[g_MercenaryUnitList[iL]]

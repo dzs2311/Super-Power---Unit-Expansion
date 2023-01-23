@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2022/7/16 22:28:10 -->
+<!-- 界面基本定义 -->
+<Context ColorSet="Beige_Black_Alpha" Font="TwCenMT16" FontStyle="Shadow">
+    <!-- Social Policy Screen Size="1024,768" -->
+    <Box Style="BGBlock_ClearTopBar"/> 
+    <Grid Size="800,378" Anchor="C,C" Style="Grid9DetailFive140" ConsumeMouse="1">
+
+    	<!-- 领袖头像按钮-->
+    	<Button ID="IconButtonTop" Anchor="C,T" Offset="0,0" Size="256,128" ToolTip="TXT_KEY_SPUE_PATRONAGE_BUTTON_ICON_LEADER_TOP">
+    	  <Image Anchor="C,T" AnchorSide="I,O" Offset="0,-91" Size="256,128" Texture="DecTop256x64.dds">
+    	    <Image Anchor="C,T" Offset="0,-60" Size="128,128" Texture="Assets/UI/Art/Icons/LeaderPortraits1024Frame.dds">
+    	      <Image ID="PatronageUnitLeaderPortrait" Anchor="C,C" Offset="0,0" Size="128,128" Texture="Assets/UI/Art/Icons/LeaderPortraits1024.dds"/>
+    	    </Image>
+    	  </Image>
+    	</Button>
+  
+      	<!-- 左右侧边装饰 -->
+      	<Image Anchor="L,C" AnchorSide="O,I" Offset="-17,0" Size="32,64" Texture="Dec32x64Left.dds" />
+      	<Image Anchor="R,C" AnchorSide="O,I" Offset="-17,0" Size="32,64" Texture="Dec32x64Right.dds" />
+
+	  	<!-- 标题 -->
+		<Label Anchor="C,T" Offset="0,15" Font="TwCenMT24" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" String="TXT_KEY_SPUE_PATRONAGE_SELECT_TITLE"/>
+		
+		<!-- 主要界面：从左向右排布 -->
+		<Stack Anchor="C,T" Offset="0,45" Padding="0" Size="0,0" StackGrowth="Right">
+			<!-- AUGUSTUS BOX -->
+			<Box Size="250,290 " Anchor="C,T" Color="0,0,0,0">
+				<Image Anchor="C,T" TextureOffset="0,0" Offset="0,0" Size="250,290" Color="255,255,255,255" Texture="UI_AUGUSTUS.dds"/>
+				<!-- AUGUSTUS Image -->
+				<Image Anchor="C,T" Offset="0,0" TextureOffset="0,0" Size="250,290" Texture="UI_AUGUSTUS.dds" ID="CreedBack0" ToolTip="TXT_KEY_PATH_AUGUSTUS_HELP"/>
+				<!-- <Image Anchor="C,T" Offset="0,0" Size="250,290" Texture="Assets/UI/Art/Icons/SocialPoliciesTrim.dds"> -->
+					<!-- Creed Choices ScrollPanel  -->
+					<ScrollPanel Anchor="C,T" Offset="0,86" Size="190,500" Vertical="1" ID="AugustusPanel">
+						<ScrollBar Offset="-4,0" Style="VertSlider" Anchor="R,C" AnchorSide="I,I" Length="460"/>
+						<UpButton Offset="-4,-3" Style="ScrollBarUp" Anchor="R,T" AnchorSide="I,I"/>
+						<DownButton Offset="-4,-3" Style="ScrollBarDown" Anchor="R,B" AnchorSide="I,I"/>
+					</ScrollPanel>
+				<!-- </Image> -->
+				<!-- adopt button -->
+				<GridButton Size="170,36" Anchor="C,T" Offset="0,46" Style="BaseButton" Font="TwCenMT18" Color="255,255,255,200" String="TXT_KEY_POP_ADOPT_BUTTON" FontStyle="Shadow" Color0="Beige.255" Color1="Black.128" ToolTip="TXT_KEY_PATH_AUGUSTUS_HELP" Hidden="0" ID="CreedButton0">
+					<!--Label Anchor="C,C" Offset="0,-2"  String="TXT_KEY_POP_ADOPT_BUTTON" Font="TwCenMT18"  FontStyle="Shadow"  Color0="Beige.255" Color1="Black.128" ID="AdoptLabel" /-->
+					<Image Anchor="R,C" Offset="0,0" Size="48,48" Texture="48Lock.dds" ID="Lock0"/>
+				</GridButton>
+				<!-- Title -->
+				<Label Anchor="C,T" Offset="0,8" String="TXT_KEY_PATH_AUGUSTUS_CAP" Font="TwCenMT20" FontStyle="Shadow" Color0="Beige.255" Color1="Black.255"/>
+				
+				<!-- 从左向右排布 -->
+				<Stack Anchor="C,T" Offset="0, 120" StackGrowth="Right" Padding="6">
+					<!-- 单位头像按钮 -->
+					<Button ID="IconButtonAugustus0" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_VASSAL_LIGHT_CAVALRY_HELP">
+						<Image ID="PortraitFrameAugustus0" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
+							<Image ID="PortraitAugustus0" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
+						</Image>
+					</Button>
+					<Button ID="IconButtonAugustus1" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_VASSAL_BOWMAN_HELP">
+						<Image ID="PortraitFrameAugustus1" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
+							<Image ID="PortraitAugustus1" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
+						</Image>
+					</Button>
+					<Button ID="IconButtonAugustus2" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_VASSAL_MOUNTEDXBOW_HELP">
+						<Image ID="PortraitFrameAugustus2" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
+							<Image ID="PortraitAugustus2" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
+						</Image>
+					</Button>
+				</Stack>
+				
+			</Box>
+			<Image Anchor="R,T" Offset="0,0" Texture="VerticalTrim.dds" Size="5,290"/>
+			<!-- BASELIUS BOX -->
+			<Box Size="250,290 " Anchor="C,T" Color="0,0,0,0">
+				<Image Anchor="C,T" TextureOffset="0,0" Offset="0,0" Size="250,290" Color="255,255,255,255" Texture="UI_BASELIUS.dds"/>
+				<!-- BASELIUS Image -->
+				<Image Anchor="C,T" Offset="0,0" TextureOffset="0,0" Size="250,290" Texture="UI_BASELIUS.dds" ID="CreedBack0" ToolTip="TXT_KEY_PATH_BASELIUS_HELP"/>
+				<!-- <Image Anchor="C,T" Offset="0,0" Size="250,290" Texture="Assets/UI/Art/Icons/SocialPoliciesTrim.dds"> -->
+					<!-- Creed Choices ScrollPanel  -->
+					<ScrollPanel Anchor="C,T" Offset="0,86" Size="190,500" Vertical="1" ID="BaseliusPanel">
+						<ScrollBar Offset="-4,0" Style="VertSlider" Anchor="R,C" AnchorSide="I,I" Length="460"/>
+						<UpButton Offset="-4,-3" Style="ScrollBarUp" Anchor="R,T" AnchorSide="I,I"/>
+						<DownButton Offset="-4,-3" Style="ScrollBarDown" Anchor="R,B" AnchorSide="I,I"/>
+					</ScrollPanel>
+				<!-- </Image> -->
+				<!-- adopt button -->
+				<GridButton Size="170,36" Anchor="C,T" Offset="0,46" Style="BaseButton" Font="TwCenMT18" Color="255,255,255,200" String="TXT_KEY_POP_ADOPT_BUTTON" FontStyle="Shadow" Color0="Beige.255" Color1="Black.128" ToolTip="TXT_KEY_PATH_BASELIUS_HELP" Hidden="0" ID="CreedButton1">
+					<!--Label Anchor="C,C" Offset="0,-2"  String="TXT_KEY_POP_ADOPT_BUTTON" Font="TwCenMT18"  FontStyle="Shadow"  Color0="Beige.255" Color1="Black.128" ID="AdoptLabel" /-->
+					<Image Anchor="R,C" Offset="0,0" Size="48,48" Texture="48Lock.dds" ID="Lock1"/>
+				</GridButton>
+				<!-- Title -->
+				<Label Anchor="C,T" Offset="0,8" String="TXT_KEY_PATH_BASELIUS_CAP" Font="TwCenMT20" FontStyle="Shadow" Color0="Beige.255" Color1="Black.255"/>
+				
+				<!-- 从左向右排布 -->
+				<Stack Anchor="C,T" Offset="0, 120" StackGrowth="Right" Padding="6">
+					<!-- 单位头像按钮 -->
+					<Button ID="IconButtonBaselius0" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_QIANG_SPEARMAN_HELP">
+						<Image ID="PortraitFrameBaselius0" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
+							<Image ID="PortraitBaselius0" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
+						</Image>
+					</Button>
+					<Button ID="IconButtonBaselius1" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_VASSAL_ARMORED_CAVALRY_HELP">
+						<Image ID="PortraitFrameBaselius1" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
+							<Image ID="PortraitBaselius1" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
+						</Image>
+					</Button>
+					<Button ID="IconButtonBaselius2" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_VASSAL_ALAN_CAVALRY_HELP">
+						<Image ID="PortraitFrameBaselius2" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
+							<Image ID="PortraitBaselius2" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
+						</Image>
+					</Button>
+
+				</Stack>
+				
+			</Box>
+			<Image Anchor="R,T" Offset="0,0" Texture="VerticalTrim.dds" Size="5,290"/>
+			<!-- EMPEROR BOX -->
+			<Box Size="250,290 " Anchor="C,T" Color="0,0,0,0">
+				<Image Anchor="C,T" TextureOffset="0,0" Offset="0,0" Size="250,290" Color="255,255,255,255" Texture="UI_EMPEROR.dds"/>
+				<!-- EMPEROR Image -->
+				<Image Anchor="C,T" Offset="0,0" TextureOffset="0,0" Size="250,290" Texture="UI_EMPEROR.dds" ID="CreedBack0" ToolTip="TXT_KEY_PATH_EMPEROR_HELP"/>
+				<!-- <Image Anchor="C,T" Offset="0,0" Size="250,290" Texture="Assets/UI/Art/Icons/SocialPoliciesTrim.dds"> -->
+					<!-- Creed Choices ScrollPanel  -->
+					<ScrollPanel Anchor="C,T" Offset="0,86" Size="190,500" Vertical="1" ID="EmperorPanel">
+						<ScrollBar Offset="-4,0" Style="VertSlider" Anchor="R,C" AnchorSide="I,I" Length="460"/>
+						<UpButton Offset="-4,-3" Style="ScrollBarUp" Anchor="R,T" AnchorSide="I,I"/>
+						<DownButton Offset="-4,-3" Style="ScrollBarDown" Anchor="R,B" AnchorSide="I,I"/>
+					</ScrollPanel>
+				<!-- </Image> -->
+				<!-- adopt button -->
+				<GridButton Size="170,36" Anchor="C,T" Offset="0,46" Style="BaseButton" Font="TwCenMT18" Color="255,255,255,200" String="TXT_KEY_POP_ADOPT_BUTTON" FontStyle="Shadow" Color0="Beige.255" Color1="Black.128" ToolTip="TXT_KEY_PATH_EMPEROR_HELP" Hidden="0" ID="CreedButton2">
+					<!--Label Anchor="C,C" Offset="0,-2"  String="TXT_KEY_POP_ADOPT_BUTTON" Font="TwCenMT18"  FontStyle="Shadow"  Color0="Beige.255" Color1="Black.128" ID="AdoptLabel" /-->
+					<Image Anchor="R,C" Offset="0,0" Size="48,48" Texture="48Lock.dds" ID="Lock2"/>
+				</GridButton>
+				<!-- Title -->
+				<Label Anchor="C,T" Offset="0,8" String="TXT_KEY_PATH_EMPEROR_CAP" Font="TwCenMT20" FontStyle="Shadow" Color0="Beige.255" Color1="Black.255"/>
+				
+				<!-- 从左向右排布 -->
+				<Stack Anchor="C,T" Offset="0, 120" StackGrowth="Right" Padding="6">
+					<!-- 单位头像按钮 -->
+					<Button ID="IconButtonEmperor0" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_TREASURE_FLEET_HELP">
+						<Image ID="PortraitFrameEmperor0" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
+							<Image ID="PortraitEmperor0" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
+						</Image>
+					</Button>
+					<Button ID="IconButtonEmperor1" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_CORVETTE_HELP">
+						<Image ID="PortraitFrameEmperor1" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
+							<Image ID="PortraitEmperor1" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
+						</Image>
+					</Button>
+          <Button ID="IconButtonEmperor2" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_SHENJI_MUSKETEER_HELP">
+						<Image ID="PortraitFrameEmperor2" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
+							<Image ID="PortraitEmperor2" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
+						</Image>
+					</Button>
+
+          
+				</Stack>
+			</Box>
+			<Image Anchor="R,T" Offset="0,0" Texture="VerticalTrim.dds" Size="5,290"/>
+		</Stack>
+  	</Grid>
+</Context>

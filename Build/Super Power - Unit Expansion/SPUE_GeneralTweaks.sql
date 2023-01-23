@@ -23,8 +23,12 @@ VALUES	('SPUE_CITY_WITH_BUILDINGS',									0); -- 殖民地模板等，默认�
 --==========================================================================================================================	
 -- USER SETTINGS - VMC
 --==========================================================================================================================	
-UPDATE CustomModOptions SET Value = 1 Where Name = 'EVENTS_UNIT_UPGRADES';		-- 开启单位升级事件
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_UPGRADES';		-- 开启单位升级事件
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_RANGEATTACK';	-- 开启单位远程攻击事件
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_CREATED';		-- 开启单位产生事件
+
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_1UPT';			-- No More Civilian Traffic Jams
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_RESTRICTIONS';	-- No More Civilian Traffic Jams
 --==========================================================================================================================	
 -- 远程攻击劫掠 - VMC
 --==========================================================================================================================	

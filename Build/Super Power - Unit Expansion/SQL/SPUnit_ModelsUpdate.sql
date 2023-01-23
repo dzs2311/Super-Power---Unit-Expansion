@@ -5,8 +5,11 @@
 UPDATE ArtDefine_UnitMemberInfos SET Model =  'Swordsman_Greece_v2.fxsxml'
 WHERE Type = 'ART_DEF_UNIT_MEMBER_SPARTAN300';
 --LCS--
-UPDATE ArtDefine_UnitMemberInfos SET Model =  'USS Independence (LCS-2).fxsxml', Scale = 0.115, ZOffset = 2
+UPDATE ArtDefine_UnitMemberInfos SET Model =  'Sweden_VisbyCorvettes_VLS_FWD.fxsxml', Scale = 0.12
 WHERE Type = 'ART_DEF_UNIT_MEMBER_FW_NEODESTROYER';
+
+UPDATE ArtDefine_UnitMemberCombats SET HasLeftRightAttack = 0, HasIndependentWeaponFacing = 0
+WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_FW_NEODESTROYER';
 --ArsenalShip--
 UPDATE ArtDefine_UnitMemberInfos SET Model =  'USN_ArsenalShip_VLS_FWD.fxsxml', Scale = 0.17
 WHERE Type = 'ART_DEF_UNIT_MEMBER_ARSENAL_SHIP';
@@ -26,7 +29,7 @@ WHERE Type = 'ART_DEF_UNIT_MEMBER_CONSCRIPTMAN';
 UPDATE ArtDefine_UnitMemberInfos SET Model =  'Enterprise_CV6.fxsxml'
 WHERE Type = 'ART_DEF_UNIT_MEMBER_ENTERPRISE';
 --NUCLEAR CARRIER--
-UPDATE ArtDefine_UnitMemberInfos SET Model =  'Russia_Kuznetsov.fxsxml', Scale = 0.12
+UPDATE ArtDefine_UnitMemberInfos SET Model =  'Russia_Kuznetsov_New.fxsxml', Scale = 0.12
 WHERE Type = 'ART_DEF_UNIT_MEMBER_NUCLEAR_CARRIER';
 --Corvette--
 UPDATE ArtDefine_UnitMemberInfos SET Model =  'ri_flower_corvette.fxsxml', Scale = 0.09
@@ -47,7 +50,10 @@ WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_MISSILECRUISER';
 UPDATE ArtDefine_UnitMemberInfos SET Model =  'F15.fxsxml', Scale = 0.12
 WHERE Type = 'ART_DEF_UNIT_MEMBER_INTERCEPTER';
 --Super Carrier--
-UPDATE ArtDefine_UnitMemberInfos SET Model =  'Gerald Ford.fxsxml', Scale = 0.12
+--UPDATE ArtDefine_UnitMemberInfos SET Model =  'Gerald Ford.fxsxml', Scale = 0.12
+--WHERE Type = 'ART_DEF_UNIT_MEMBER_SUPER_CARRIER';
+
+UPDATE ArtDefine_UnitMemberInfos SET Model =  'Shtorm.fxsxml', Scale = 0.12
 WHERE Type = 'ART_DEF_UNIT_MEMBER_SUPER_CARRIER';
 --ww1 Paratrooper--
 UPDATE ArtDefine_UnitMemberInfos SET Scale = 0.12
@@ -68,7 +74,7 @@ WHERE Type = 'ART_DEF_UNIT_MEMBER_ZHENGHE_FLEET';
 UPDATE ArtDefine_UnitMemberInfos SET Model =  'PZH2000_CSPG.fxsxml'
 WHERE Type = 'ART_DEF_UNIT_MEMBER_CRUSADER_ARTILLERY';
 --弓骑兵--
-UPDATE ArtDefine_UnitMemberInfos SET Model =  'HorseArcher_new.fxsxml', Scale = 0.12
+UPDATE ArtDefine_UnitMemberInfos SET Model =  'HorseArcher_Final.fxsxml', Scale = 0.12
 WHERE Type = 'ART_DEF_UNIT_MEMBER_MEDIEVAL_CHARIOT';
 
 UPDATE ArtDefine_UnitInfoMemberInfos SET NumMembers = 5
@@ -89,19 +95,22 @@ WHERE Type = 'ART_DEF_UNIT_MEMBER_VOLLEY_GUN';
 UPDATE ArtDefine_UnitMemberInfos SET Model =  'u_artillery_napoleon.fxsxml'
 WHERE Type = 'ART_DEF_UNIT_MEMBER_FRANCE_BATTERY';
 --Infantry SAM--
-UPDATE ArtDefine_UnitMemberInfos SET Model =  'KJ-S.fxsxml', Scale = 0.10
-WHERE Type = 'ART_DEF_UNIT_MEMBER_ANTITANK_INFANTRY';
+--UPDATE ArtDefine_UnitMemberInfos SET Model =  'KJ-S.fxsxml', Scale = 0.10
+--WHERE Type = 'ART_DEF_UNIT_MEMBER_ANTITANK_INFANTRY';
 --Mobile Artillery--
 UPDATE ArtDefine_UnitMemberInfos SET Model =  'M109NATO.fxsxml'
 WHERE Type = 'ART_DEF_UNIT_MEMBER_SPARTILLERY';
 --摩托化步兵
 --UPDATE ArtDefine_UnitMemberInfos SET Model =  'GER_SdKfz_251_D_win.fxsxml', Scale = 0.10
 --UPDATE ArtDefine_UnitMemberInfos SET Model =  'GER_SdKfz_251_camo2.fxsxml', Scale = 0.10-UPDATE ArtDefine_UnitMemberInfos SET Model =  'GER_SdKfz_251_camo2.fxsxml', Scale = 0.10
-UPDATE ArtDefine_UnitMemberInfos SET Model =  'BTR82.fxsxml'
+UPDATE ArtDefine_UnitMemberInfos SET Model =  'Unit_Era6_Common_ArmouredPersonnelCarriers.fxsxml'
 WHERE Type = 'ART_DEF_UNIT_MEMBER_MOTORISED_INFANTRY';
 --反坦克导弹
 UPDATE ArtDefine_UnitMemberInfos SET Model =  'Striker4_ATGM.fxsxml', Scale = 0.13
 WHERE Type = 'ART_DEF_UNIT_MEMBER_ATGM_VEHICLE';
+-- 西北风两攻
+UPDATE ArtDefine_UnitMemberInfos SET Model =  'Mistral.fxsxml'
+WHERE Type = 'ART_DEF_UNIT_MEMBER_FRANCE_MISTRAL';
 --==========================================================================================================================
 -- UnitArtInfo Update
 --==========================================================================================================================
@@ -166,8 +175,8 @@ UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_ASSYRIAN_BMP'
 WHERE Type = 'UNIT_ASSYRIAN_BMP';
 
 --OTTOMAN COBRA--
---UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_OTTOMAN_COBRA'
---WHERE Type = 'UNIT_OTTOMAN_COBRA';
+UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_OTTOMAN_COBRA'
+WHERE Type = 'UNIT_OTTOMAN_COBRA';
 
 --Minas Geraes--
 UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_BRAZILIAN_MINAS_GERAES'
@@ -215,6 +224,10 @@ WHERE Type = 'UNIT_PARTICLE_CANNON';
 UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_CHINESE_WEISHI'
 WHERE Type = 'UNIT_CHINESE_WEISHI';
 
+--上帝之杖--
+UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_SPUE_ORBITAL_STRIKE'
+WHERE Type = 'UNIT_ORBITAL_STRIKE';
+
 --超级黑客-
 UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_SPUE_HACKER'
 WHERE Type = 'UNIT_HACKER';
@@ -227,6 +240,10 @@ WHERE Type = 'UNIT_BOMBARD';
 UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_SPUE_FIELDGUN'
 WHERE Type = 'UNIT_CANNON';
 
+--***重骑兵***--
+UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_SPUE_HEAVY_CAVALRY_ANCIENT'
+WHERE Type = 'UNIT_HORSEMAN';
+
 --***具装骑兵***--
 UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_SPUE_HEAVY_CAVALRY'
 WHERE Type = 'UNIT_KNIGHT';
@@ -234,6 +251,22 @@ WHERE Type = 'UNIT_KNIGHT';
 --***火枪手***--
 UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_SPUE_MUSKETMAN'
 WHERE Type = 'UNIT_MUSKETMAN';
+
+--***步兵支援装甲车****--
+UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_MOBILE_SAM'
+WHERE Type = 'UNIT_SAM_INFANTRY';
+
+--奥斯曼私掠舰-
+UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_SPUE_OTTOMAN_CORSAIR'
+WHERE Type = 'UNIT_OTTOMAN_PRIVATEER';
+
+--波斯奇兹尔巴什骑兵-
+UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_SPUE_PERSIA_QIZILBASH'
+WHERE Type = 'UNIT_OTTOMAN_SIPAHI';
+
+--丹麦艾布萨隆支援舰-
+UPDATE Units SET UnitArtInfo =  'ART_DEF_UNIT_SPUE_ABSALON'
+WHERE Type = 'UNIT_DANISH_ABSALON';
 ------------------------------------------------------------------------------------------------------------------------
 --Faster Aircraft Animation
 ------------------------------------------------------------------------------------------------------------------------
@@ -282,10 +315,6 @@ UPDATE ArtDefine_UnitMemberInfos SET Model =  'ArleighBurkeDDG83_VLS_FWD.fxsxml'
 WHERE Type = 'ART_DEF_UNIT_MEMBER_MODERNDESTROYER';
 UPDATE ArtDefine_UnitMemberCombats SET HasLeftRightAttack = 0, HasIndependentWeaponFacing = 0
 WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_MODERNDESTROYER';
--- 防空导弹铠甲
-UPDATE Units 
-SET UnitArtInfo =  'ART_DEF_UNIT_ANTITANK_INFANTRY'
-WHERE Type = 'UNIT_SAM_INFANTRY';
 -- 卫士火箭炮《HumanKind》模型
 UPDATE Units 
 SET UnitArtInfo =  'ART_DEF_UNIT_CHINESE_WEISHI'
@@ -383,11 +412,6 @@ BEGIN
 
 	UPDATE ArtDefine_UnitMemberCombats SET HasLeftRightAttack = 0, HasIndependentWeaponFacing = 0
 	WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_MODERNDESTROYER';
-
-	-- 防空导弹铠甲
-	UPDATE Units 
-	SET UnitArtInfo =  'ART_DEF_UNIT_ANTITANK_INFANTRY'
-	WHERE Type = 'UNIT_SAM_INFANTRY';
 
 	-- 卫士火箭炮《HumanKind》模型
 	UPDATE Units 

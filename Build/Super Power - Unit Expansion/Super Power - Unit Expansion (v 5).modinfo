@@ -1,0 +1,1078 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="988a1168-d581-4150-948f-199021eabdea" version="5">
+  <Properties>
+    <Name>Super Power - Unit Expansion</Name>
+    <Teaser>(4.2.4)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
+    <Description>超级大国单位拓展及大量单位模型替换
+[NEWLINE][NEWLINE]
+[ICON_BULLET]大量单位替换了更加美观和符合史实的模型（如宝船）
+[NEWLINE]
+[ICON_BULLET]扩展了通用兵种树，可以更好的体验各时代的风貌
+[NEWLINE]
+[ICON_BULLET]为不同的政策加入了独有的单位（施工中）</Description>
+    <Authors>dzs2311</Authors>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>1</ReloadAudioSystem>
+    <ReloadLandmarkSystem>1</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>1</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>1</ReloadUnitSystem>
+  </Properties>
+  <Dependencies>
+    <Mod id="f9b9c8aa-b6d1-4188-9239-c1de2207ab7c" minversion="7" maxversion="999" title="Super Power - Remaking of World Order" />
+  </Dependencies>
+  <References>
+    <Mod id="f9b9c8aa-b6d1-4188-9239-c1de2207ab7c" minversion="7" maxversion="999" title="Super Power - Remaking of World Order" />
+    <Dlc id="b5932ae4-0f4f-498f-9333-e2d31b20e095" minversion="0" maxversion="999" />
+  </References>
+  <Blocks>
+    <Mod id="85b64475-5389-4442-8fc9-aac2074fd567" minversion="0" maxversion="999" title="Ethinic Diversity for Super Power" />
+    <Mod id="84cf3041-c51c-4488-accf-77ed71bc4234" minversion="0" maxversion="999" title="Ethinic Diversity Unit Pack for Super Power" />
+    <Mod id="49a939dd-13aa-48e3-9738-45d71182f6e8" minversion="0" maxversion="999" title="Super Power - Remaking of Units Models" />
+  </Blocks>
+  <Files>
+    <File md5="259D8D861C932AE6CF9CC1F294BB8247" import="1">Art/Flags/CorsairFlag_032.dds</File>
+    <File md5="77E397407701FBEAFFE65FE82E3866B2" import="1">Art/Flags/Flag_SPUE_CGN9.dds</File>
+    <File md5="D6F82EC998B83DA16FF41BB18E8E237B" import="1">Art/Flags/Flag_SPUE_Shield.dds</File>
+    <File md5="48D66496C9E3D935C7E16BE9114ACAAF" import="1">Art/Flags/Flag_SPUE_Spitfire.dds</File>
+    <File md5="3313D584739C776A9F2DC7C9515E2224" import="1">Art/Flags/QizilbashFlag_032.dds</File>
+    <File md5="26AD97CF79F137C1787A9A23735AC1E5" import="1">Art/Flags/SPUE_Alan_Flag.dds</File>
+    <File md5="4C9003ED07833542DE0247DD7BF5C082" import="1">Art/Flags/SPUE_Byzantium_General_Flag.dds</File>
+    <File md5="AEBD3AA73ACBF40B148C2F512066B76F" import="1">Art/Flags/SPUE_CarabinierGuard_Flag.dds</File>
+    <File md5="560A7CCE5597061A1EB12E92A9B5F2AD" import="1">Art/Flags/SPUE_Cataphract_Flag.dds</File>
+    <File md5="3C7EB8A70F1A9BB29964D6316D580CAF" import="1">Art/Flags/SPUE_DVC_RibaultUnitFlag_32.dds</File>
+    <File md5="0229788E7AAE281D73DFD50607767E1F" import="1">Art/Flags/SPUE_Flag_JUF.dds</File>
+    <File md5="5335229B87009FFDA77768065A99016A" import="1">Art/Flags/SPUE_Flag_SDKFZ251.dds</File>
+    <File md5="6676C9B201BEFA23E1312B85574E4488" import="1">Art/Flags/SPUE_Galleon_Flag.dds</File>
+    <File md5="61A6F2C54FD9C38D35ECA587014A9132" import="1">Art/Flags/SPUE_GondorGuard_Flag.dds</File>
+    <File md5="E2EB4E8DB558B63F9D3E2E004D859FA1" import="1">Art/Flags/SPUE_HeavyCavalry_flag_32.dds</File>
+    <File md5="8F4A92F6CBFB5AD20DB43D350923C2BF" import="1">Art/Flags/SPUE_IndependenceDragoon_Flag.dds</File>
+    <File md5="475DD7F09DE9497CB2616C29CE3F054F" import="1">Art/Flags/SPUE_iron_troop_flag_032.dds</File>
+    <File md5="B03DEBCEAAC40012B4AB8578E8D47D78" import="1">Art/Flags/SPUE_ITUU_Flag.dds</File>
+    <File md5="B6CD27084E3078F02026C77E2CDC3DFD" import="1">Art/Flags/SPUE_KhitanHunter_Flag.dds</File>
+    <File md5="0C99E22E2A605BB9010D09D8E2400359" import="1">Art/Flags/SPUE_KnightsHospitaller_Flag.dds</File>
+    <File md5="CF2E63476E2685A356EC69E768574EB3" import="1">Art/Flags/SPUE_KnightsTemplar_Flag.dds</File>
+    <File md5="43903707159F0B617D8ADF5E0B10E14A" import="1">Art/Flags/SPUE_KnightsTeutonic_Flag.dds</File>
+    <File md5="D5265B1A24E05688481C6F60863C59A8" import="1">Art/Flags/SPUE_KV2_Flag.dds</File>
+    <File md5="1044182BF7065062257A997C5C3B7FCE" import="1">Art/Flags/SPUE_Musketeer_Flag.dds</File>
+    <File md5="8178AE0D26343BF25D7E04BADA3121EB" import="1">Art/Flags/SPUE_QiangSpearman_Flag.dds</File>
+    <File md5="E9ADA72F07C13FB5078449FE0FFCB038" import="1">Art/Flags/SPUE_ScythianUnitFlag.dds</File>
+    <File md5="425B2B4770FE516D5C7AD7DF25F37FF0" import="1">Art/Flags/SPUE_SMAN_Fireship_Flag_032.dds</File>
+    <File md5="A96B4407765419F03F2D6804371FBEAE" import="1">Art/Flags/SPUE_armoredcarflag.dds</File>
+    <File md5="2A77DD101BBF5EC2484B39B435BEDE54" import="1">Art/Flags/SPUE_Cuirassier_flag.dds</File>
+    <File md5="9D713FE7C5CB78E5D2331C23F8B4B4F7" import="1">Art/Flags/SPUE_culverin_flag.dds</File>
+    <File md5="34B7A6759C494C1E2C9541CD53E45F5B" import="1">Art/Flags/SPUE_DVC_Tank_flag.dds</File>
+    <File md5="3747D08E0B0CC1E5513B6DA788664043" import="1">Art/Flags/SPUE_Falconet_flag.dds</File>
+    <File md5="0583265F49111C4AD4FB1CB80C75D5CB" import="1">Art/Flags/SPUE_GenoaXBow_flag.dds</File>
+    <File md5="530DF0E01155D4EBF8D1737B83E8F24F" import="1">Art/Flags/SPUE_GreatCross_flag.dds</File>
+    <File md5="76FC885EDEBA3B1C028E24C6155F80BD" import="1">Art/Flags/SPUE_Knight_New_flag.dds</File>
+    <File md5="8DF121D1859ABE0924A3F608DD7A0721" import="1">Art/Flags/SPUE_LilBomBard_flag.dds</File>
+    <File md5="ECCE10C14F00F8F67D17E768DABA0441" import="1">Art/Flags/SPUE_mortar_flag.dds</File>
+    <File md5="3FB307CE0882613579AC34C7A027F0AA" import="1">Art/Flags/SPUE_mountedxbow_flag.dds</File>
+    <File md5="2A77DD101BBF5EC2484B39B435BEDE54" import="1">Art/Flags/SPUE_Pistol_flag.dds</File>
+    <File md5="6E06F1E92807B9F62AF5D8547D10D80F" import="1">Art/Flags/SPUE_SouthSeaPrivateer_flag.dds</File>
+    <File md5="972103781B39DEE466CEAFD105AF69AA" import="1">Art/Flags/SPUE_Su47_Flag.dds</File>
+    <File md5="40678EAE10C7B8EE1A4FBF5A2BC74F3C" import="1">Art/Flags/SPUE_SUPER_055_flag.dds</File>
+    <File md5="C1D745CF91073EECDB731752F9F6DD92" import="1">Art/Flags/SPUE_SwissGuard_flag.dds</File>
+    <File md5="653DD70E36FA259EBAFAC72558CE8AF7" import="1">Art/Flags/SPUE_TreasureFleet_Flag.dds</File>
+    <File md5="F43636599BABB9E1637F339F456A89F7" import="1">Art/Flags/SPUE_Uhlan_Flag.dds</File>
+    <File md5="B18EF157B679B64088466B3F175D5873" import="1">Art/Flags/SPUE_UnitFlag2Alpha032.dds</File>
+    <File md5="243FDA97950842CC11F209ABF11EC933" import="1">Art/Flags/SPUE_UnitFlagAlpha032.dds</File>
+    <File md5="F6A6A1A8F83EF5FADFF9337A422D919D" import="1">Art/Flags/SPUE_VarangianGuard_flag.dds</File>
+    <File md5="CBE815678341C2E90C5B5D4521F7FA99" import="1">Art/Flags/SPUE_VarangianMercenary_flag.dds</File>
+    <File md5="963DF67D3416C3BEC6DDA6D7BA05D805" import="1">Art/Flags/SPUE_VP_FIELDGUN_flag.dds</File>
+    <File md5="A97AE8FA41B97EB221EDE4BC35D62A0A" import="1">Art/Flags/SPUE_wwi_infantry_flag.dds</File>
+    <File md5="E6EA74CA3E3772AA0D85B66C5A0F49FE" import="1">Art/Flags/SPUE_YJ21_Flag.dds</File>
+    <File md5="EEC09595E931B94952458B4D28999950" import="1">Art/Flags/SPUE_Yulin_flag.dds</File>
+    <File md5="4F7AF90FC2917DB9560C5B046511E793" import="1">Art/IconAtlas/CorsairPicture_032.dds</File>
+    <File md5="AE7042655A1E123CA53135B6EEB6C638" import="1">Art/IconAtlas/CorsairPicture_045.dds</File>
+    <File md5="C94ED2D262604347A4540CEA77A21DF9" import="1">Art/IconAtlas/CorsairPicture_064.dds</File>
+    <File md5="52C32A8AED42FAEA9D5297ADB6265030" import="1">Art/IconAtlas/CorsairPicture_080.dds</File>
+    <File md5="ADDC0DAC5328D3D376BB3A7967428989" import="1">Art/IconAtlas/CorsairPicture_128.dds</File>
+    <File md5="417908C5C45D6A9D54BD224AE2232030" import="1">Art/IconAtlas/CorsairPicture_256.dds</File>
+    <File md5="EDA584BB13C3BC1CDFE21415695D29B1" import="1">Art/IconAtlas/eaw_PI_016.dds</File>
+    <File md5="924BDF10D789F9A4F9D3A8DF93CDAF7C" import="1">Art/IconAtlas/eaw_PI_032.dds</File>
+    <File md5="142609F6B66B2E6B7ED13140B26B4635" import="1">Art/IconAtlas/eaw_PI_045.dds</File>
+    <File md5="6184C376A1C6DF8F7AB66C5911EE4347" import="1">Art/IconAtlas/eaw_PI_064.dds</File>
+    <File md5="AB4A6E1702AF1B05A969A738760359F7" import="1">Art/IconAtlas/eaw_PI_256.dds</File>
+    <File md5="06A94265F742C5A895D5AEF6C368B084" import="1">Art/IconAtlas/extraPromo_016.dds</File>
+    <File md5="E793D986692A6BF406BCAA66254EDBEC" import="1">Art/IconAtlas/extraPromo_032.dds</File>
+    <File md5="5015C3FA07D87E5FFB57B523251E67F3" import="1">Art/IconAtlas/extraPromo_045.dds</File>
+    <File md5="E2942908DC7A53133F8425FA39D9E5BD" import="1">Art/IconAtlas/extraPromo_064.dds</File>
+    <File md5="6A3C474F4D120BC924CA7EFA5EAE3C04" import="1">Art/IconAtlas/extraPromo_256.dds</File>
+    <File md5="6F71E3036FDFA6107FC83B80F032574A" import="1">Art/IconAtlas/IconAtlas045_GAIA.dds</File>
+    <File md5="5F5D0FF999A2E0F8005F6FA3F32826D2" import="1">Art/IconAtlas/promoVP_00_016.dds</File>
+    <File md5="E296E73ADDC19D937AC181A90D5981FA" import="1">Art/IconAtlas/promoVP_00_032.dds</File>
+    <File md5="0FB9793BE3B9931613E9EAFC190DACB8" import="1">Art/IconAtlas/promoVP_00_045.dds</File>
+    <File md5="E0CF6184351934CF626CC1A329E2EE59" import="1">Art/IconAtlas/promoVP_00_064.dds</File>
+    <File md5="0DC28FB8A0B5B59122B54A9DB93DF399" import="1">Art/IconAtlas/promoVP_00_256.dds</File>
+    <File md5="C1AA4EF48869CB62E35BB1D5597CD4BB" import="1">Art/IconAtlas/promoVP_01_016.dds</File>
+    <File md5="06D53CF1C9CB1978265774DA5C78E16F" import="1">Art/IconAtlas/promoVP_01_032.dds</File>
+    <File md5="A3A2E810AAE5E2587A371FBB096E5799" import="1">Art/IconAtlas/promoVP_01_045.dds</File>
+    <File md5="BAF9D370A0222C41D60E8D15C0EAB5C2" import="1">Art/IconAtlas/promoVP_01_064.dds</File>
+    <File md5="285714B836390EC7D192A98E694686C7" import="1">Art/IconAtlas/promoVP_01_256.dds</File>
+    <File md5="B734755476E8504972371A925C245E4C" import="1">Art/IconAtlas/promoVP_02_016.dds</File>
+    <File md5="1CB648E932884D01D6DF36AA51670DEF" import="1">Art/IconAtlas/promoVP_02_032.dds</File>
+    <File md5="78E9B0FA1F508ABD62A6D1374C366C38" import="1">Art/IconAtlas/promoVP_02_045.dds</File>
+    <File md5="A5DB1407064F62D09A5C8AE9CBAEBA77" import="1">Art/IconAtlas/promoVP_02_064.dds</File>
+    <File md5="6373CF7BD00F5624C3E33326DB5F2C20" import="1">Art/IconAtlas/promoVP_02_256.dds</File>
+    <File md5="BB85639B6AF9095F5E610F30ACBCFF6F" import="1">Art/IconAtlas/promoVP_03_016.dds</File>
+    <File md5="19AB781FC134F00DC7F6CBB431059396" import="1">Art/IconAtlas/promoVP_03_032.dds</File>
+    <File md5="670B8C7DB03CB816118E7598C1F76006" import="1">Art/IconAtlas/promoVP_03_045.dds</File>
+    <File md5="6997C15E5528E73B0394BB329087E7A3" import="1">Art/IconAtlas/promoVP_03_064.dds</File>
+    <File md5="54E8E09259D584861C6E3544B596B714" import="1">Art/IconAtlas/promoVP_03_256.dds</File>
+    <File md5="608AD1AA0BF865F911B3B162E1E33E2A" import="1">Art/IconAtlas/SMAN_Fireship_Promotion_032.dds</File>
+    <File md5="9E33F24D440C2C0A818D2A7437C135C1" import="1">Art/IconAtlas/SMAN_Fireship_Promotion_045.dds</File>
+    <File md5="3DFB92D5B2BCE4184C1FE9D0B176473E" import="1">Art/IconAtlas/SMAN_Fireship_Promotion_064.dds</File>
+    <File md5="083C84FAB4D3406D6D15A05E6FEDC1D2" import="1">Art/IconAtlas/SMAN_Fireship_Promotion_256.dds</File>
+    <File md5="7743825C00DF5B09CDE238A168206A34" import="0">Art/IconAtlas/SPUE_IconAtlas016.dds</File>
+    <File md5="FE12FBA470DC56FB22936918D461EC6E" import="1">Art/IconAtlas/SPUE_IconAtlas032.dds</File>
+    <File md5="A309CB35E51459CB8064F4CBB4F07FC7" import="1">Art/IconAtlas/SPUE_IconAtlas045.dds</File>
+    <File md5="661DC092BDF36BA8AD595914EBE6BBD5" import="1">Art/IconAtlas/SPUE_IconAtlas064.dds</File>
+    <File md5="F9C3614DDFC686779B46EEC4ADBE8548" import="1">Art/IconAtlas/SPUE_IconAtlas080.dds</File>
+    <File md5="D90EAFE31092CB40921C2120C3DF50DE" import="1">Art/IconAtlas/SPUE_IconAtlas128.dds</File>
+    <File md5="E03EF5027A629DC9086FC33992019C9D" import="1">Art/IconAtlas/SPUE_IconAtlas256.dds</File>
+    <File md5="DAB7FE243C9818051B8FCC6DA26776E5" import="1">Art/IconAtlas/SPUE_Ideology_IconAtlas016.dds</File>
+    <File md5="F2B14F93D1569FEE5968B113F0708826" import="1">Art/IconAtlas/SPUE_Ideology_IconAtlas032.dds</File>
+    <File md5="C043EB6366D131001EEB3D31A42F8A2E" import="1">Art/IconAtlas/SPUE_Ideology_IconAtlas045.dds</File>
+    <File md5="7EEE26301EF9BD62CF2BF20EDA8F70CE" import="1">Art/IconAtlas/SPUE_Ideology_IconAtlas064.dds</File>
+    <File md5="609384157E85C2454C928FDF50919EAD" import="1">Art/IconAtlas/SPUE_Ideology_IconAtlas080.dds</File>
+    <File md5="934BBB40D3221E1858DADC0D27852560" import="1">Art/IconAtlas/SPUE_Ideology_IconAtlas128.dds</File>
+    <File md5="C9F575293BF8369103143F40DCECF608" import="1">Art/IconAtlas/SPUE_Ideology_IconAtlas256.dds</File>
+    <File md5="2C5E421E2290EA56130BCD511428E7FD" import="1">Art/IconAtlas/tempVPPI_016.dds</File>
+    <File md5="A768D3BCB010E659E89E2AF4CDBB5101" import="1">Art/IconAtlas/tempVPPI_032.dds</File>
+    <File md5="FA2B7DB502D6B850DFBDA1FDCF81C722" import="1">Art/IconAtlas/tempVPPI_045.dds</File>
+    <File md5="A681273F623033CD8C6D5D338321DCC9" import="1">Art/IconAtlas/tempVPPI_064.dds</File>
+    <File md5="86A7ACDF0DE1BAC1843B2488455D46E6" import="1">Art/IconAtlas/tempVPPI_256.dds</File>
+    <File md5="60BE8A8394A6AB0EED6519D05FAE0CD4" import="1">Art/Improvements/RomanEmpire_CityCenter_Icon/RECC_045.dds</File>
+    <File md5="F65A863CAAB014FD4FAB5C4C07441E29" import="1">Art/Improvements/RomanEmpire_CityCenter_Icon/RECC_064.dds</File>
+    <File md5="62FC5CE814BF4575300902A9505501D0" import="1">Art/Improvements/RomanEmpire_CityCenter_Icon/RECC_256.dds</File>
+    <File md5="831635A64BEF8C15E089DF6A99CED459" import="1">Art/Improvements/RomanEmpire_CityCenter/RomanEmpire_CityCenter.dds</File>
+    <File md5="76D24BB7BC77B8F261D3F998503EB76A" import="1">Art/Improvements/RomanEmpire_CityCenter/RomanEmpire_CityCenter.gr2</File>
+    <File md5="0EF36843360025029B40A8B6D60E0046" import="1">Art/Improvements/RomanEmpire_CityCenter/RomanEmpire_CityCenter_B.fxsxml</File>
+    <File md5="0EF36843360025029B40A8B6D60E0046" import="1">Art/Improvements/RomanEmpire_CityCenter/RomanEmpire_CityCenter_HB.fxsxml</File>
+    <File md5="70332DB850FDA3037D825DD1E380F923" import="1">Art/Improvements/RomanEmpire_CityCenter/RomanEmpire_CityCenter_PL.fxsxml</File>
+    <File md5="DA33D36198B00A312DBD142B09B020B7" import="1">Art/Improvements/RomanEmpire_CityCenter_Icon/SV_RECC.dds</File>
+    <File md5="B0EC70E22ED2CD3E6E449F6DD440D5FA" import="1">Art/SV/CorsairFlag_128.dds</File>
+    <File md5="98B6878564B8C8A7C00EE30ADCA3BA18" import="1">Art/SV/QizilbashFlag_128.dds</File>
+    <File md5="B1E5D20F0E9DB91F59A73014C0A3375B" import="1">Art/SV/SV_SPUE_Alan.dds</File>
+    <File md5="90A57CE254286FB9604D9FE4744C0CED" import="1">Art/SV/SV_SPUE_Cataphract.dds</File>
+    <File md5="971BC908151CB69C6319574098B375D1" import="1">Art/SV/SV_SPUE_Byzantium_General.dds</File>
+    <File md5="B819136D316FC157307FD84A39D50891" import="1">Art/SV/SV_SPUE_CarabinierGuard.dds</File>
+    <File md5="9D545C56CC5CA317E75A3836ECED9511" import="1">Art/SV/SV_SPUE_CGN9.dds</File>
+    <File md5="321FE6BE3AC922A3F4512846AB45711B" import="1">Art/SV/SV_SPUE_Galleon.dds</File>
+    <File md5="028F3E0CF47BC395AEB0EB0CA31C66DD" import="1">Art/SV/SV_SPUE_GondorGuard.dds</File>
+    <File md5="43A23AF8A61C6E84AE34E402E8D188B7" import="1">Art/SV/SV_SPUE_HeavyCavalry.dds</File>
+    <File md5="445E4BFCF4E54B86E18FEA49E1D8CD0E" import="1">Art/SV/SV_SPUE_IndependenceDragoon.dds</File>
+    <File md5="118D7ABC6F35D824B52C3FD758818211" import="1">Art/SV/SV_SPUE_Iron_Troop.dds</File>
+    <File md5="B39304D39C7EC055615287A6C1D530CA" import="1">Art/SV/SV_SPUE_ITUU.dds</File>
+    <File md5="8DCF14C52B4250701DAA025F2B5ED6CA" import="1">Art/SV/SV_SPUE_JUF.dds</File>
+    <File md5="1B9B70F9A2DFACBA97869C0537EA802C" import="1">Art/SV/SV_SPUE_KhitanHunter.dds</File>
+    <File md5="215C78319C1C8FB1306E7692339F5E8F" import="1">Art/SV/SV_SPUE_KnightsHospitaller.dds</File>
+    <File md5="96275847760D8D77A8C5FBF79C90E022" import="1">Art/SV/SV_SPUE_KnightsTemplar.dds</File>
+    <File md5="166392F7410DD95379076530FF0F763B" import="1">Art/SV/SV_SPUE_KnightsTeutonic.dds</File>
+    <File md5="6BC43F9C81274D213E0E9E68FC1ABF19" import="1">Art/SV/SV_SPUE_KV2.dds</File>
+    <File md5="F8CB8AB341203803E214FD3CA4C94031" import="1">Art/SV/SV_SPUE_Musketeer.dds</File>
+    <File md5="19BE72F3860E8BA585AE19E9C3E1338D" import="1">Art/SV/SV_SPUE_QiangSpearman.dds</File>
+    <File md5="A846972D99C5138F5E73E802C9C852A6" import="1">Art/SV/SV_SPUE_DVC_Ribault.dds</File>
+    <File md5="05FC20B41D3E2C62F7348CCE17124B01" import="1">Art/SV/SV_SPUE_Scythian_Saka.dds</File>
+    <File md5="CE89F827F1EFAA7CBA2D3E8E9B4262AB" import="1">Art/SV/SV_SPUE_SDKFZ251.dds</File>
+    <File md5="3A6021096B7E3A4432CD5B782259C926" import="1">Art/SV/SV_SPUE_SHIELD.dds</File>
+    <File md5="233685D8BE6B3EE2DA53B1CF57A22422" import="1">Art/SV/SV_SPUE_Sman_Fireship.dds</File>
+    <File md5="AAA0AF3CE8FD283C536116CA15793088" import="1">Art/SV/SV_SPUE_armoredcar.dds</File>
+    <File md5="9007A13F09837B7BAFDC1E60B05A2E3D" import="1">Art/SV/SV_SPUE_Bombard.dds</File>
+    <File md5="EEE278BADE2C86E460EF13298CADF64E" import="1">Art/SV/SV_SPUE_ChurchTank.dds</File>
+    <File md5="F273B35C0DF6C3DDA0907973F966C4C0" import="1">Art/SV/SV_SPUE_Cuirassier.dds</File>
+    <File md5="021EEBF0713AB98A45723348992500ED" import="1">Art/SV/SV_SPUE_culverin.dds</File>
+    <File md5="BDCFBEA53690FE4BE695B69719594DA0" import="1">Art/SV/SV_SPUE_DVC_Tank.dds</File>
+    <File md5="252ECCB9F245E0F5E598010D9E412844" import="1">Art/SV/SV_SPUE_Falconet.dds</File>
+    <File md5="C509B6310155B4C133A288C453BB2345" import="1">Art/SV/SV_SPUE_FieldGun.dds</File>
+    <File md5="51208B049F80BA68A767259564329C90" import="1">Art/SV/SV_SPUE_FreeCompany.dds</File>
+    <File md5="038A0B824C2A73D0017F66C86915B31B" import="1">Art/SV/SV_SPUE_FuChuan.dds</File>
+    <File md5="E6B1FA59D75F5381E06FF461D4446797" import="1">Art/SV/SV_SPUE_GenoaXBow.dds</File>
+    <File md5="BDEBAF66C4439C20109BA28C568F5C57" import="1">Art/SV/SV_SPUE_GreatCross.dds</File>
+    <File md5="DF313FC1B9553CFE958EC88BA2A7FE4B" import="1">Art/SV/SV_SPUE_HanGuard.dds</File>
+    <File md5="2E6E9099EF4E861A6DB922024EAD3DD9" import="1">Art/SV/SV_SPUE_HotAirBalloon.dds</File>
+    <File md5="18116D6C1422FF2B71A87FC5E3DF8CFF" import="1">Art/SV/SV_SPUE_Knight.dds</File>
+    <File md5="9F33D35C04D70FA7B49639F776B8608D" import="1">Art/SV/SV_SPUE_Knight_New.dds</File>
+    <File md5="9B0015DD45E4BC3449D0CC2D3640FD06" import="1">Art/SV/SV_SPUE_LilBomBard.dds</File>
+    <File md5="9626BDF4DFC2B0A9F97CC55325BA397C" import="1">Art/SV/SV_SPUE_Lineinfantry.dds</File>
+    <File md5="CB9BF3840E69BF5632D2170088782EBD" import="1">Art/SV/SV_SPUE_LouChuan.dds</File>
+    <File md5="1F2FA2FA377623CE141B7E7B00D42D86" import="1">Art/SV/SV_SPUE_MercBlackRider.dds</File>
+    <File md5="39F7B78AF52F8A57899399FC6851C9D2" import="1">Art/SV/SV_SPUE_MissileBoat.dds</File>
+    <File md5="DB4C575B5950BDF055EAA9B66F7D4EBF" import="1">Art/SV/SV_SPUE_Mortar.dds</File>
+    <File md5="ECF0330A1A7E07D92DF38EF02692773B" import="1">Art/SV/SV_SPUE_mountedxbow.dds</File>
+    <File md5="6BA1EE65BACDD5109B90CC6B5BEE6397" import="1">Art/SV/SV_SPUE_Pistol.dds</File>
+    <File md5="4FAEF5DED408588988D0969823745B9B" import="1">Art/SV/SV_SPUE_Praetoriani.dds</File>
+    <File md5="B4BE5C1127146649B3334F3900D735FB" import="1">Art/SV/SV_SPUE_RohanRider.dds</File>
+    <File md5="912FD2F09F70EB698DB3A7B2DB3A0855" import="1">Art/SV/SV_SPUE_ShaoLin.dds</File>
+    <File md5="7C45BB2CA6BF910B30F467C8DEFC714A" import="1">Art/SV/SV_SPUE_SouthSeaPrivateer.dds</File>
+    <File md5="3D8EBFE514FB11F93CB2B350669F948F" import="1">Art/SV/SV_SPUE_Spitfire.dds</File>
+    <File md5="77AE077E1AB1270437FAFEAC8ABC4A7C" import="1">Art/SV/SV_SPUE_SteamFrigate.dds</File>
+    <File md5="9A775733914EFFE6708B274141A1A800" import="1">Art/SV/SV_SPUE_SteamIronClad.dds</File>
+    <File md5="4B41FD0B433789210E1F44F3F05C75E8" import="1">Art/SV/SV_SPUE_Su47.dds</File>
+    <File md5="5632FD033DFBC01D596860C64D09DAA7" import="1">Art/SV/SV_SPUE_Swissguard.dds</File>
+    <File md5="95708C008ED54329711DDCF7CF0D19BD" import="1">Art/SV/SV_SPUE_TorpedoBoat.dds</File>
+    <File md5="1C397D9680671E9E682438928118909C" import="1">Art/SV/SV_SPUE_TreasureFleet.dds</File>
+    <File md5="8805C748FF57C52322FC9E566BAFDE88" import="1">Art/SV/SV_SPUE_Uhlan.dds</File>
+    <File md5="DBD3BE7ADCB9C544DBD36420CA0A6CE3" import="1">Art/SV/SV_SPUE_VarangianGuard.dds</File>
+    <File md5="FC9C3DE4BDE53D53645376722A62CAFB" import="1">Art/SV/SV_SPUE_VarangianMercenary.dds</File>
+    <File md5="98C9B447017762F86C72E05008076679" import="1">Art/SV/SV_SPUE_VP_FIELDGUN.dds</File>
+    <File md5="6F1F2487726220D61E78997BB75C3EDB" import="1">Art/SV/SV_SPUE_wwi_infantry.dds</File>
+    <File md5="F26DF454C62A2503C98E2C635A566E7E" import="1">Art/SV/SV_SPUE_YJ21.dds</File>
+    <File md5="5D277A0E70E6D5E2AA2F2F4C2F4B9EFF" import="1">Art/SV/SV_SPUE_YuLin.dds</File>
+    <File md5="C81FA31C12A4BE50325DC79DCB823A2B" import="1">Art/SV/SV_SPUE_ZhanChe.dds</File>
+    <File md5="E8942CA00609B51B6F6A36B4A3CAB3F2" import="1">Art/SV/SV_SPUE_SUPER_055.dds</File>
+    <File md5="238745BF9023509D2A5BA7BE5506D402" import="1">Art/Units/Elite/2A3/OBJECT261/obj261_body.dds</File>
+    <File md5="A659DC7793E0BDD752298095F5A7E2C8" import="1">Art/Units/Elite/2A3/OBJECT261/obj261_track.dds</File>
+    <File md5="BC9417F1E54A9199338D574C43526554" import="1">Art/Units/Elite/2A3/OBJECT261/wot_obj261.fxsxml</File>
+    <File md5="0A5DA3E44BD5BA4AD84D99ABC8C42524" import="1">Art/Units/Elite/2A3/OBJECT261/wot_obj261.gr2</File>
+    <File md5="C0098126C4586E735C7C641071BFA437" import="1">Art/Units/Elite/CV6EnterPrise/Enterprise_CV6.dds</File>
+    <File md5="F8F2CC00B3C4F4AF726988CE45A67F3C" import="1">Art/Units/Elite/CV6EnterPrise/Enterprise_CV6.fxsxml</File>
+    <File md5="D60A05C75D7D38F5E9A667B49ABA361A" import="1">Art/Units/Elite/CV6EnterPrise/Enterprise_CV6.gr2</File>
+    <File md5="B0860D07091D3596F201B94C084F7EDD" import="1">Art/Units/Elite/CV6EnterPrise/Enterprise_CV6_gloss.dds</File>
+    <File md5="DA4AE81C5DF8599D488F5075F3DAF017" import="1">Art/Units/Elite/EliteRider/0.warhorse_xuanjia.dds</File>
+    <File md5="9B5989E8096A945149CF0A020D17DA05" import="1">Art/Units/Elite/EliteRider/0.warhorse_xuanjia_sref.dds</File>
+    <File md5="F964941C1D3F163F7E51E8432FF4D60C" import="1">Art/Units/Elite/EliteRider/1.charger_xuanjia.dds</File>
+    <File md5="C3E0013AB9833CE853583FFCE82396E1" import="1">Art/Units/Elite/EliteRider/3.others_xuanjia.dds</File>
+    <File md5="8F231240B8EF14B6916DA015190F7DD3" import="1">Art/Units/Elite/EliteRider/3.others_xuanjia_sp.dds</File>
+    <File md5="ACC864F0EC25A33225450851ED9FE464" import="1">Art/Units/Elite/EliteRider/4.sg_swordb.dds</File>
+    <File md5="073FE6AE2F07ECCA19C6BFF47585023D" import="1">Art/Units/Elite/EliteRider/4.sg_swordb_spec.dds</File>
+    <File md5="B2C96AFC81F780E58D6FAFB6C66B6321" import="1">Art/Units/Elite/EliteRider/5.doumou1_xuanjia.dds</File>
+    <File md5="3D4796771EFEC70F66861A2F68B5761B" import="1">Art/Units/Elite/EliteRider/5.doumou1_xuanjia_sp.dds</File>
+    <File md5="686072E72DA0A790CE33584A340AF157" import="1">Art/Units/Elite/EliteRider/6.doumou2_xuanjia.dds</File>
+    <File md5="685CEDC58B2DAE75E1BAB2AB5C99A411" import="1">Art/Units/Elite/EliteRider/6.doumou2_xuanjia_sp.dds</File>
+    <File md5="AAB4EEAF5986937C80823622E66C646E" import="1">Art/Units/Elite/EliteRider/7.doumou3_xuanjia.dds</File>
+    <File md5="CAC7D0F8B894BC9087D267A2664C1895" import="1">Art/Units/Elite/EliteRider/8.body_xuanjia.dds</File>
+    <File md5="2061F061F7D518D64B7B15DF9DB6A31A" import="1">Art/Units/Elite/EliteRider/8.body_xuanjia_sp.dds</File>
+    <File md5="AE93C96470E0993E62EE9B87ADD55ACC" import="1">Art/Units/Elite/EliteRider/Xuanjia_Elite.fxsxml</File>
+    <File md5="FDAE8894D767BEDAC5961ED9DF728DF3" import="1">Art/Units/Elite/EliteRider/Xuanjia_Elite.gr2</File>
+    <File md5="DAD3D54A2436280B56B826C50124D63C" import="1">Art/Units/Elite/pzh2000/gerartil_pzh2000.dds</File>
+    <File md5="DEBBE4C008FC7006C6574A0A84A1AE97" import="1">Art/Units/Elite/pzh2000/gerartil_pzh2000_track.dds</File>
+    <File md5="355DCC177C67C2FBCDE3CEAEFE95239D" import="1">Art/Units/Elite/pzh2000/PZH2000_CSPG.fxsxml</File>
+    <File md5="5B2999AAF1A595327A1A1679A324973A" import="1">Art/Units/Elite/pzh2000/PZH2000_CSPG.gr2</File>
+    <File md5="EA5823FE173D47240F6BA44B363B798A" import="1">Art/Units/Elite/Railgun_xship/fx_triggers_sman_ieup_railgun_cruiser.ftsxml</File>
+    <File md5="55972D2561AC7232C4C94B73DF5CD1EF" import="1">Art/Units/Elite/Railgun_xship/Railgun_xship.fxsxml</File>
+    <File md5="D0E5106427E2CB6961B9A0EBD8DAB68F" import="1">Art/Units/Elite/Railgun_xship/Railgun_xship.gr2</File>
+    <File md5="E2D7E8DDB023A15746FCF1C2AEEE89EA" import="1">Art/Units/Elite/Railgun_xship/XShip.dds</File>
+    <File md5="97BA625C7499E094DCDFFB02E2A0746B" import="1">Art/Units/Elite/Orbital Strike/satellite_diff.dds</File>
+    <File md5="B90D4F7EDDA0B5BB64927AAF56043D14" import="1">Art/Units/Elite/Orbital Strike/satellite_sref.dds</File>
+    <File md5="17F43EA09525948D62899BA151951F9F" import="1">Art/Units/Elite/Orbital Strike/seatline.fxsxml</File>
+    <File md5="97B8810252FB1EB81D3EC60AC6DD69DC" import="1">Art/Units/Elite/Orbital Strike/seatline.gr2</File>
+    <File md5="BBDDB98AF42EFCEFAE5CB5879022CB25" import="1">Art/Units/Elite/Spartan300/Swordsman_Greece_v2.blend</File>
+    <File md5="04BA43318A87574A222CEC1F72A50AA6" import="1">Art/Units/Elite/Spartan300/Swordsman_Greece_v2.dds</File>
+    <File md5="18EDFFBD90DCEBC0F62BA96D4A62AEEC" import="1">Art/Units/Elite/Spartan300/Swordsman_Greece_v2.fxsxml</File>
+    <File md5="363A1856C9E6A7A55951BB64C7D755ED" import="1">Art/Units/Elite/Spartan300/Swordsman_Greece_v2.gr2</File>
+    <File md5="E70B90AA211BFE7ED2CBDB89A8F5FFC4" import="1">Art/Units/Elite/Spartan300/Swordsman_Greece_v2.jpg</File>
+    <File md5="0155EFEFF7B0C7FBE79229757C117900" import="1">Art/Units/Elite/Spartan300/Swordsman_Greece_v2_gloss.dds</File>
+    <File md5="E3F9859C76176272D208846F2231D495" import="1">Art/Units/Elite/WS2D/China_Guardians.fxsxml</File>
+    <File md5="0EFF01B209EDA20DA73229521332B075" import="1">Art/Units/Elite/WS2D/China_Guardians.gr2</File>
+    <File md5="08FC946AF5A12D7A535E5057F749277C" import="1">Art/Units/Elite/WS2D/China_Guardians_diff.dds</File>
+    <File md5="0DB226A6E9ACE05215BD1697D10A486D" import="1">Art/Units/Elite/WS2D/China_Guardians_sref.dds</File>
+    <File md5="C063FBC4AF5121F777A63A54468EE702" import="1">Art/Units/Elite/ZhengHeFleet/ZHENGHE_FLEET_DE.fxsxml</File>
+    <File md5="B6B3B80BB6E13DCC99EBB09AC23DD410" import="1">Art/Units/Elite/ZhengHeFleet/ZHENGHE_FLEET_DE.gr2</File>
+    <File md5="B3FEC25DB3C235EEDF781BA5B8953F28" import="1">Art/Units/Elite/ZhengHeFleet/zhenghe_mata_basecolor.dds</File>
+    <File md5="65E9698ECA09DF905B93E3DE7E69C63E" import="1">Art/Units/Elite/ZhengHeFleet/zhenghe_matb_basecolor.dds</File>
+    <File md5="999581F06053665A4E4872C66CABA479" import="1">Art/Units/Elite/ZhengHeFleet/Zhenghe_MingFlag.dds</File>
+    <File md5="9D47A72ED0EA6258070E926979A74E93" import="1">Art/Units/General/0-Ancient/Chn_Chariot/CHN_Chariot_black.dds</File>
+    <File md5="33F7C555698EABC520C8C6DC940CC555" import="1">Art/Units/General/0-Ancient/Chn_Chariot/CHN_Chariot_black_sref.dds</File>
+    <File md5="E5D4F553815294DAA0D2DE2575A4C377" import="1">Art/Units/General/0-Ancient/Chn_Chariot/CHN_Chariot_body.dds</File>
+    <File md5="44DB3013A8DD0DDF1A9E33C2858B279F" import="1">Art/Units/General/0-Ancient/Chn_Chariot/CHN_Chariot_Driver.dds</File>
+    <File md5="D39FC5CB7B4C945E12742CEEF337A3F9" import="1">Art/Units/General/0-Ancient/Chn_Chariot/CHN_Chariot_Driver_gloss.dds</File>
+    <File md5="BF56600EB86C57AAC8744924B257E58D" import="1">Art/Units/General/0-Ancient/Chn_Chariot/CHN_Chariot_Spearman.dds</File>
+    <File md5="2E39A3BD0B34C62C5DB713C0835F5BFB" import="1">Art/Units/General/0-Ancient/Chn_Chariot/CHN_Chariot_Spearman_gloss.dds</File>
+    <File md5="3EBB0D340100D61530B38DB5F6D69F5C" import="1">Art/Units/General/0-Ancient/Chn_Chariot/chn_war_chariot.fxsxml</File>
+    <File md5="92AD7191221DE698A80AA2EED469408B" import="1">Art/Units/General/0-Ancient/Chn_Chariot/chn_war_chariot.gr2</File>
+    <File md5="BFCAAECBE66FAA463FC51545297837D3" import="1">Art/Units/General/0-Ancient/RSH_Chinese_Large/RSH_Chinese_Large.fxsxml</File>
+    <File md5="2337A5F48EFE86260D89464BF4D50B83" import="1">Art/Units/General/0-Ancient/RSH_Chinese_Large/RSH_Chinese_Large.gr2</File>
+    <File md5="A2AD2FE4F266B97E120E8D69C954456E" import="1">Art/Units/General/0-Ancient/RSH_Chinese_Large/Ship_Chinese_Small1A_diff-resources.assets-1496.dds</File>
+    <File md5="6E79240DD7A9BE6AB018F48ED65456FB" import="1">Art/Units/General/0-Ancient/RSH_Chinese_Large/Ship_Chinese_Small1A_sf-resources.assets-1423.dds</File>
+    <File md5="7315694537B5BF1C5679C6413CFF4F9A" import="1">Art/Units/General/0-Ancient/RSH_Chinese_Small/RSH_Chinese_Small.fxsxml</File>
+    <File md5="CDCA9E171665C0B36B574474A2B783F9" import="1">Art/Units/General/0-Ancient/RSH_Chinese_Small/RSH_Chinese_Small.gr2</File>
+    <File md5="003F7FA6E35069E52376B4B72D3497C3" import="1">Art/Units/General/1-Classical/HeavyCavalry/horseman_v1.fxsxml</File>
+    <File md5="1F4EFF10666D80AD4A0F497D06F1D7BC" import="1">Art/Units/General/1-Classical/HeavyCavalry/horseman_v1.gr2</File>
+    <File md5="A81CFB3403F1EE74E1639C094559A625" import="1">Art/Units/General/1-Classical/HeavyCavalry/horseman_v1_diff.dds</File>
+    <File md5="457B3555857320422E57EFB859A6DB79" import="1">Art/Units/General/1-Classical/HeavyCavalry/horseman_v1_sref.dds</File>
+    <File md5="165F504FAF2E4632A6CABBCA67ECCBC4" import="1">Art/Units/General/1-Classical/HeavyCavalry/horseman_v2.fxsxml</File>
+    <File md5="81281E61C437C24AC1AF4948A215262D" import="1">Art/Units/General/1-Classical/HeavyCavalry/horseman_v2.gr2</File>
+    <File md5="FF8C92633C94B6A68BCDF77D84128A83" import="1">Art/Units/General/1-Classical/HeavyCavalry/horseman_v2_diff.dds</File>
+    <File md5="44860D98E0D522DC9EA013A191D1F725" import="1">Art/Units/General/1-Classical/HeavyCavalry/horseman_v2_sref.dds</File>
+    <File md5="A7A138807B49DE4871591AB636E2856B" import="1">Art/Units/General/1-Classical/HorseArcher/HorseArcherHorse_New.dds</File>
+    <File md5="C4853237B4E2562FC3BC07459373063F" import="1">Art/Units/General/1-Classical/HorseArcher/HorseArcher_Final.fxsxml</File>
+    <File md5="CE0D4047E37ABB0CD60080C462EEC321" import="1">Art/Units/General/1-Classical/HorseArcher/HorseArcher_Final.gr2</File>
+    <File md5="51EEE49E4B2B6C07F63DD8FD0A2A85B8" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/12th-bzttjsqb.dds</File>
+    <File md5="3033C259D12D9F5FA10A4052CCC6046A" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/12th-bzttjsqb_gg.dds</File>
+    <File md5="98F1AD3C081ADC2E91B49E21506C7969" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/12th-bztxuezi3.dds</File>
+    <File md5="3C6A018F64A5A33AE8AC95045000F337" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/byzantinecavalryman_128.dds</File>
+    <File md5="046EF5B95B5053A7EAD8AC28FEADFEDF" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/byzantinecavalryman_128_tc.dds</File>
+    <File md5="3E9C34C5DD23616316EB9C4CA8011614" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/byzantine_heavy_cavalry_c1.fxsxml</File>
+    <File md5="E04C50538C62810961EDE608116F7EDC" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/byzantine_heavy_cavalry_c1.gr2</File>
+    <File md5="CD689DB8B221E777D8D13238E49B3D40" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/byzantine_heavy_cavalry_c2.fxsxml</File>
+    <File md5="DDB0DA01EB0DBD675B3B64E44715D613" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/byzantine_heavy_cavalry_c2.gr2</File>
+    <File md5="42ED7D90E8333DDBE9B96B0BB0BF18DB" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/byzantine_heavy_cavalry_c3.fxsxml</File>
+    <File md5="CD74E04EA7E04AA916B53329E2A21478" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/byzantine_heavy_cavalry_c3.gr2</File>
+    <File md5="E4D76BF71F48EDA51926756AD5B8D59E" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/byzantine_heavy_cavalry_c4.fxsxml</File>
+    <File md5="0DCB4D21749FD9A943A272BD3A322955" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/byzantine_heavy_cavalry_c4.gr2</File>
+    <File md5="09D834FB7EE89B1E805C4DB25BF664DF" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/byzantine_heavy_cavalry_horse_diffuse.dds</File>
+    <File md5="B5C105ACCD1E028AA468DB7A37FE35A2" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/byzantine_heavy_cavalry_horse_specular.dds</File>
+    <File md5="88EC2F1D25C14F2E9ADFFEBE358CE440" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/Knight_Rome.dds</File>
+    <File md5="2CD1284D676A060DE2D4BAAC4233AD48" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/Knight_Rome_gloss.dds</File>
+    <File md5="7A3E8AB45055E68E6A9F2A46FA6E6E55" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/newglossforbyzantinecavalry.dds</File>
+    <File md5="E7AD4C8C43EC2BDB65DFD3EC62DC70D6" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/phoenix_lance_01_diffuse.dds</File>
+    <File md5="3EE81BF19B448C3EC6F0C5919FA3212A" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/phoenix_lance_01_specular.dds</File>
+    <File md5="9D813FE57B56400ACF1A0845E52C4E60" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/phoenix_shield_04_diffuse.dds</File>
+    <File md5="29E1D90A75F377B8A1D1ADF1E928D315" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/xangelo_AsianBYZ_cavalry_01_diffuse.dds</File>
+    <File md5="F849BF5CFB9A6C3446B8DD7E7F9D2E0C" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/xangelo_AsianBYZ_cavalry_01_specular.dds</File>
+    <File md5="144BB1E6656EDFFF15418C8AACFE8284" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/xangelo_BYZ_cavalry_01_diffuse.dds</File>
+    <File md5="22A0F3A2706FA37CE6F0342947175CF3" import="1">Art/Units/General/2-Medieval/Heavy_Cavalry/xangelo_BYZ_cavalry_01_specular.dds</File>
+    <File md5="6996B36F4F306E5E7FF4A00527E92C6B" import="1">Art/Units/General/2-Medieval/Keshik_Mongol/Keshik Mongol.jpg</File>
+    <File md5="624F51DD17F6E7251723A8D1BC53CCB0" import="1">Art/Units/General/2-Medieval/Keshik_Mongol/Keshik_Mongol.blend</File>
+    <File md5="DE57A9D50B4CFBA4685DE8E0267E3D37" import="1">Art/Units/General/2-Medieval/Keshik_Mongol/Keshik_Mongol.dds</File>
+    <File md5="79036F00C1C2DA30B21349340A50B513" import="1">Art/Units/General/2-Medieval/Keshik_Mongol/Keshik_Mongol.fxsxml</File>
+    <File md5="C5CE65B417898B6FB60E1C3EEC8B0E6A" import="1">Art/Units/General/2-Medieval/Keshik_Mongol/Keshik_Mongol.gr2</File>
+    <File md5="18CC1316D35D6964C7974561EB483360" import="1">Art/Units/General/2-Medieval/Keshik_Mongol/Keshik_Mongol_2.dds</File>
+    <File md5="8FD151C2BA3974BAB01090CA57442914" import="1">Art/Units/General/2-Medieval/Keshik_Mongol/Keshik_Mongol_gloss.dds</File>
+    <File md5="83BCE3D5F65D8F4CE6065E9541260AFE" import="1">Art/Units/General/2-Medieval/Keshik_Mongol/Keshik_Mongol_Horse.dds</File>
+    <File md5="895BC286B79489128E42E9C5998E0ED3" import="1">Art/Units/General/2-Medieval/Keshik_Mongol/Keshik_Mongol_Horse_gloss.dds</File>
+    <File md5="1E9D50238AD1136D3F8EDBA8DE26CC2C" import="1">Art/Units/General/2-Medieval/lotsa_longswords/austria/austria_longsw2.dds</File>
+    <File md5="3FABCE13616EE954B4272F12B996A85E" import="1">Art/Units/General/2-Medieval/lotsa_longswords/austria/austria_longsw2.fxsxml</File>
+    <File md5="47DF11EBDFE53CB331B663BA1F4D4D08" import="1">Art/Units/General/2-Medieval/lotsa_longswords/austria/austria_longsw2.gr2</File>
+    <File md5="2A29EB2940CDD4CABC12523DBEE79418" import="1">Art/Units/General/2-Medieval/lotsa_longswords/austria/austria_longsw2_sref.dds</File>
+    <File md5="12DA21BDF05DB1433A7CFCAC1804A3DF" import="1">Art/Units/General/2-Medieval/lotsa_longswords/byzantium/byzantium_longsw1.dds</File>
+    <File md5="25E8460ABF54D4A26DE20601A5E9BD03" import="1">Art/Units/General/2-Medieval/lotsa_longswords/byzantium/byzantium_longsw1.fxsxml</File>
+    <File md5="BB946134CBC624D7A26B327C6B914DAA" import="1">Art/Units/General/2-Medieval/lotsa_longswords/byzantium/byzantium_longsw1.gr2</File>
+    <File md5="6CB1C02FD7D8A166FEF34D4AAFBF7F4E" import="1">Art/Units/General/2-Medieval/lotsa_longswords/byzantium/byzantium_longsw1_sref.dds</File>
+    <File md5="680AFCBEAF4A7DD18D7C4AA950438C0C" import="1">Art/Units/General/2-Medieval/lotsa_longswords/denmark/denmark_longsw3.dds</File>
+    <File md5="AA73A68C6ED07FDB137CA16D5E55592A" import="1">Art/Units/General/2-Medieval/lotsa_longswords/denmark/denmark_longsw3.fxsxml</File>
+    <File md5="18350783AE4A03525CD34091FF7E4DA6" import="1">Art/Units/General/2-Medieval/lotsa_longswords/denmark/denmark_longsw3.gr2</File>
+    <File md5="4902F93DB53DFF108E6DBB5950E45C02" import="1">Art/Units/General/2-Medieval/lotsa_longswords/denmark/denmark_longsw3_sref.dds</File>
+    <File md5="E88BE37FCF927D6424CBF55656B3F79D" import="1">Art/Units/General/2-Medieval/lotsa_longswords/england/england_longsw1.dds</File>
+    <File md5="2C6F964360C52D2A484B7EC1FFBDEA05" import="1">Art/Units/General/2-Medieval/lotsa_longswords/england/england_longsw1.fxsxml</File>
+    <File md5="B61A1F33DAD62C629332E2449F6D7465" import="1">Art/Units/General/2-Medieval/lotsa_longswords/england/england_longsw1.gr2</File>
+    <File md5="6CB1C02FD7D8A166FEF34D4AAFBF7F4E" import="1">Art/Units/General/2-Medieval/lotsa_longswords/england/england_longsw1_sref.dds</File>
+    <File md5="13E746B6BDC38A69DA4C4D4E6D40AD95" import="1">Art/Units/General/2-Medieval/lotsa_longswords/france/france_longsw2.dds</File>
+    <File md5="428F5183C112C4DB8B09755695F14C71" import="1">Art/Units/General/2-Medieval/lotsa_longswords/france/france_longsw2.fxsxml</File>
+    <File md5="CCD17CC12340E9D32FD79BF8C26E1F63" import="1">Art/Units/General/2-Medieval/lotsa_longswords/france/france_longsw2.gr2</File>
+    <File md5="2A29EB2940CDD4CABC12523DBEE79418" import="1">Art/Units/General/2-Medieval/lotsa_longswords/france/france_longsw2_sref.dds</File>
+    <File md5="8A093FE901065E63689E5BCD5003DC24" import="1">Art/Units/General/2-Medieval/lotsa_longswords/holy roman/hre_longsw1.dds</File>
+    <File md5="61DD0D7A1BC6357562B67691C6FFA9DF" import="1">Art/Units/General/2-Medieval/lotsa_longswords/holy roman/hre_longsw1.fxsxml</File>
+    <File md5="E51AB60BE8EF792835491462E3071E95" import="1">Art/Units/General/2-Medieval/lotsa_longswords/holy roman/hre_longsw1.gr2</File>
+    <File md5="6CB1C02FD7D8A166FEF34D4AAFBF7F4E" import="1">Art/Units/General/2-Medieval/lotsa_longswords/holy roman/hre_longsw1_sref.dds</File>
+    <File md5="15EE907B1487C044AC4B0EAFA58C33A4" import="1">Art/Units/General/2-Medieval/lotsa_longswords/poland/poland_longsw1.dds</File>
+    <File md5="AF6ACABAC3F63E967C068E9987045E3E" import="1">Art/Units/General/2-Medieval/lotsa_longswords/poland/poland_longsw1.fxsxml</File>
+    <File md5="9C9EA75F0513022270B54041EB0C4012" import="1">Art/Units/General/2-Medieval/lotsa_longswords/poland/poland_longsw1.gr2</File>
+    <File md5="6CB1C02FD7D8A166FEF34D4AAFBF7F4E" import="1">Art/Units/General/2-Medieval/lotsa_longswords/poland/poland_longsw1_sref.dds</File>
+    <File md5="B191EF77E2AAA6BD3221AAF38BF11691" import="1">Art/Units/General/2-Medieval/lotsa_longswords/spain/spain_longsw2.dds</File>
+    <File md5="983BBFBC448FE87CADFC5A7C5879DC1D" import="1">Art/Units/General/2-Medieval/lotsa_longswords/spain/spain_longsw2.fxsxml</File>
+    <File md5="CCE3DF032BAB0322A857DE590864A4F9" import="1">Art/Units/General/2-Medieval/lotsa_longswords/spain/spain_longsw2.gr2</File>
+    <File md5="2A29EB2940CDD4CABC12523DBEE79418" import="1">Art/Units/General/2-Medieval/lotsa_longswords/spain/spain_longsw2_sref.dds</File>
+    <File md5="20AF8378862C3F39A485AA7398BFCEE8" import="1">Art/Units/General/2-Medieval/Yuan_HaiZhou/Yuan_HaiZhoou.fxsxml</File>
+    <File md5="E2D735538F2197BAC2FF0977F4C6086F" import="1">Art/Units/General/2-Medieval/Yuan_HaiZhou/Yuan_HaiZhoou.gr2</File>
+    <File md5="9C9A7DA38FAC0B6B1C12B43F34E66EBA" import="1">Art/Units/General/2-Medieval/Yuan_HaiZhou/Yuan_HaiZhoou1_diff.dds</File>
+    <File md5="D0E3C31E0C37BB213ADBBD42E5A5F4EC" import="1">Art/Units/General/2-Medieval/Yuan_HaiZhou/Yuan_HaiZhoou2_diff.dds</File>
+    <File md5="69E2EA0D3B4BE5720BB8457D7494D1C6" import="1">Art/Units/General/2-Medieval/Yuan_HaiZhou/Yuan_HaiZhoou2_sref.dds</File>
+    <File md5="1ECFDAC87B512C5C48BE87AFBBBC820E" import="1">Art/Units/General/2-Medieval/Yuan_HaiZhou/Yuan_HaiZhoou3_diff.dds</File>
+    <File md5="7C7D086E3A3B0DE91D9101BAAEAF160B" import="1">Art/Units/General/2-Medieval/Yuan_HaiZhou/Yuan_HaiZhoou3_sref.dds</File>
+    <File md5="E886DBE473F1D708858660ADCD77A241" import="1">Art/Units/General/2-Medieval/Yuan_HaiZhou/Yuan_HaiZhoou4_diff.dds</File>
+    <File md5="A800EC54A10F499BD6F68D84745DC930" import="1">Art/Units/General/3-Renaissance/Black Rider/BlackRider.fxsxml</File>
+    <File md5="6FF99A198ACFDAAE49E3F698FC19A2FD" import="1">Art/Units/General/3-Renaissance/Black Rider/BlackRider.gr2</File>
+    <File md5="0D26193EAE3D81B0A0D56747514E5DBF" import="1">Art/Units/General/3-Renaissance/Black Rider/confederate_cavalry_diff.dds</File>
+    <File md5="5153CC917DEC990CDB4F911F01B34859" import="1">Art/Units/General/3-Renaissance/Black Rider/confederate_cavalry_sref.dds</File>
+    <File md5="A8009FEC37C92FB33C0C6B02503DB576" import="1">Art/Units/General/3-Renaissance/Black Rider/holyromancuirassier_128.dds</File>
+    <File md5="38B3EE337A174D4AB9235BA48DC77927" import="1">Art/Units/General/3-Renaissance/Black Rider/newglossforimperialcuirassier.dds</File>
+    <File md5="58B49C7BAF5E12DFEFFD50FBB454CD16" import="1">Art/Units/General/3-Renaissance/Bombard/Unit_Era4_Bombard.fxsxml</File>
+    <File md5="554AEDCD781965290FB752374BA4BC8E" import="1">Art/Units/General/3-Renaissance/Bombard/Unit_Era4_Bombard.gr2</File>
+    <File md5="1DD37A6273B9407484A6B7FCEACEDA38" import="1">Art/Units/General/3-Renaissance/Bombard/Unit_Era4_Common_Bombard_diff.dds</File>
+    <File md5="0CE87BC2FE11FFD491BB66D9D8543D9F" import="1">Art/Units/General/3-Renaissance/Bombard/Unit_Era4_Common_Bombard_sref.dds</File>
+    <File md5="979D33920412B93A39E10DF7756070FA" import="1">Art/Units/General/3-Renaissance/Culverin/aoe3de_culverin.fxsxml</File>
+    <File md5="4B9E088A6E04E55B5A68DCA54615CCE4" import="1">Art/Units/General/3-Renaissance/Culverin/aoe3de_culverin.gr2</File>
+    <File md5="F775C16E0675DF389CFA82FE8E23863B" import="1">Art/Units/General/3-Renaissance/Culverin/culverin_crew_diff.dds</File>
+    <File md5="06DE8466E20396FFFBDA39FD9CCB0386" import="1">Art/Units/General/3-Renaissance/Culverin/culverin_crew_sref.dds</File>
+    <File md5="94B4B7AF02666A06527652EBE6752C4B" import="1">Art/Units/General/3-Renaissance/Culverin/culverin_mata_basecolor.dds</File>
+    <File md5="662668741BA9CAE7A3A7BE10EB3C166A" import="1">Art/Units/General/3-Renaissance/Culverin/culverin_mata_sref.dds</File>
+    <File md5="DD991C4B8251584B004AF0E9C5828767" import="1">Art/Units/General/3-Renaissance/ENG_MoW/ENG_MoW.fxsxml</File>
+    <File md5="6B615AA88610C5CDD4DED60821DEFEBE" import="1">Art/Units/General/3-Renaissance/ENG_MoW/ENG_MoW.gr2</File>
+    <File md5="9F408E9A16F13CB134CC9B1D569D4D98" import="1">Art/Units/General/3-Renaissance/ENG_MoW/twodecker_threedecker_diffuse.dds</File>
+    <File md5="C013348189D4F8A7A582B4247F75C1C5" import="1">Art/Units/General/3-Renaissance/Falconet/aoe3de_falconet.fxsxml</File>
+    <File md5="D5E2A1AC4DAB38C931BB853BD2251DD7" import="1">Art/Units/General/3-Renaissance/Falconet/aoe3de_falconet.gr2</File>
+    <File md5="D761455798154FF2E60838E08AB87546" import="1">Art/Units/General/3-Renaissance/Falconet/falconet_matb_basecolor.dds</File>
+    <File md5="6DDF3A01FD3731901A177FAF52CF080C" import="1">Art/Units/General/3-Renaissance/Falconet/falconet_matc_basecolor.dds</File>
+    <File md5="675DD054416AD993C57DF0E84B2310AF" import="1">Art/Units/General/3-Renaissance/Falconet/falconet_matc_basecolor_gloss.dds</File>
+    <File md5="16FC6B1FC90A18698189D5E020FC0002" import="1">Art/Units/General/3-Renaissance/muskteer/aoed3mm-tc.fxsxml</File>
+    <File md5="CFE5979DEE6D9A4EB781DC879BAE11D8" import="1">Art/Units/General/3-Renaissance/muskteer/aoed3mm-tc.gr2</File>
+    <File md5="90342B02B93C67B422F07877C879ADE0" import="1">Art/Units/General/3-Renaissance/muskteer/aoed3mm-tc_al.fxsxml</File>
+    <File md5="2147D0954D1BACAD333A922A6469B17C" import="1">Art/Units/General/3-Renaissance/muskteer/aoed3mm-tc_al.gr2</File>
+    <File md5="B221844C961E59BAEF20E23A380ED373" import="1">Art/Units/General/3-Renaissance/muskteer/aoed3mm-tc_v0.fxsxml</File>
+    <File md5="811145008D99EA7E26B679C11DFBE3E6" import="1">Art/Units/General/3-Renaissance/muskteer/aoed3mm-tc_v0.gr2</File>
+    <File md5="EB52B36BB5C86B1DD2F6D29C86290DCE" import="1">Art/Units/General/3-Renaissance/muskteer/musketeer_2age_gun_mata_basecolor.dds</File>
+    <File md5="2C30D3B588D81DC2C22E83F9D099C4C9" import="1">Art/Units/General/3-Renaissance/muskteer/musketeer_2age_hat_mata_basecolor.dds</File>
+    <File md5="C68D3F91834105FCA4A3F20B6D088652" import="1">Art/Units/General/3-Renaissance/muskteer/musketeer_2age_mata_basecolor.dds</File>
+    <File md5="D7231721EC9F08002CF9EEDAFB91604B" import="1">Art/Units/General/3-Renaissance/muskteer/musketeer_3age_hat_mata_basecolor.dds</File>
+    <File md5="2E4AAFA8B36677A3CF4547736CE2AB60" import="1">Art/Units/General/3-Renaissance/muskteer/musketeer_3age_mata_basecolor.dds</File>
+    <File md5="0D26193EAE3D81B0A0D56747514E5DBF" import="1">Art/Units/General/3-Renaissance/pistol_cavalry/confederate_cavalry_diff.dds</File>
+    <File md5="5153CC917DEC990CDB4F911F01B34859" import="1">Art/Units/General/3-Renaissance/pistol_cavalry/confederate_cavalry_sref.dds</File>
+    <File md5="483DB41A1C7549BEB61F4F038A9A8E10" import="1">Art/Units/General/3-Renaissance/pistol_cavalry/ENG_02_diffuse.dds</File>
+    <File md5="FE441587396959CA25676CB0B3B4C10E" import="1">Art/Units/General/3-Renaissance/pistol_cavalry/FRA_02_diffuse.dds</File>
+    <File md5="862AB64F9C9794885F094D36B153CFA9" import="1">Art/Units/General/3-Renaissance/pistol_cavalry/mesh1_cavalry_pistol.fxsxml</File>
+    <File md5="BD5DFF95EE6722D2C518C6AC65F9FD47" import="1">Art/Units/General/3-Renaissance/pistol_cavalry/mesh1_cavalry_pistol.gr2</File>
+    <File md5="13CA732886868841959AFD9C7555DEC0" import="1">Art/Units/General/3-Renaissance/pistol_cavalry/mesh2_cavalry_pistol.fxsxml</File>
+    <File md5="007DA063C8DCF4C5E4B1FA2B60DF4F2D" import="1">Art/Units/General/3-Renaissance/pistol_cavalry/mesh2_cavalry_pistol.gr2</File>
+    <File md5="51D4FAAB21AC4EEC4AAFDCC945A91733" import="1">Art/Units/General/3-Renaissance/pistol_cavalry/u_french_musketeer_diff.dds</File>
+    <File md5="5F75B69AFD02477F0057234F5C649F7B" import="1">Art/Units/General/3-Renaissance/pistol_cavalry/u_french_musketeer_sref.dds</File>
+    <File md5="F2F9FB35212A5944D17EEABCCC997FE2" import="1">Art/Units/General/3-Renaissance/Ship of the Line/shipoftheline.fxsxml</File>
+    <File md5="70CBBFB6EE6A7321C7C1EF75A9404F91" import="1">Art/Units/General/3-Renaissance/Ship of the Line/shipoftheline.gr2</File>
+    <File md5="05DA3D0442248AADAAA2CD3B3DF714A0" import="1">Art/Units/General/3-Renaissance/Ship of the Line/shipoftheline_diff.dds</File>
+    <File md5="C873D61FFC562B40382953E76FD9CE25" import="1">Art/Units/General/3-Renaissance/Ship of the Line/shipoftheline_dmg_diff.dds</File>
+    <File md5="6E79240DD7A9BE6AB018F48ED65456FB" import="1">Art/Units/General/3-Renaissance/Ship of the Line/shipoftheline_sref.dds</File>
+    <File md5="0EA1260E5BF43CCF8CFC661C68F4CD17" import="1">Art/Units/General/4-Industrial/Cannon/aoe3de_cannon.dds</File>
+    <File md5="A2508D774C267F4B6F3FE986844F1A77" import="1">Art/Units/General/4-Industrial/Cannon/aoe3de_cannon.fxsxml</File>
+    <File md5="9079823C65E614C5D083655F365FBCEA" import="1">Art/Units/General/4-Industrial/Cannon/aoe3de_cannon.gr2</File>
+    <File md5="967AEAC71785D7E420842F6FD0C84875" import="1">Art/Units/General/4-Industrial/Cannon/aoe3de_cannon_brush.dds</File>
+    <File md5="C75E07E1313C4282D54DC363820FA50E" import="1">Art/Units/General/4-Industrial/Cannon/aoe3de_cannon_gloss.dds</File>
+    <File md5="179A0A9BB0794C3003C8A568499CC463" import="1">Art/Units/General/4-Industrial/Cannon/cannon_crew.dds</File>
+    <File md5="0A173D01EDF215CA11AB08D671207FF0" import="1">Art/Units/General/4-Industrial/Cannon/napoleon_gunner_hat.dds</File>
+    <File md5="A4F3ABB7389538B445DADC5CB4E9C464" import="1">Art/Units/General/4-Industrial/Cannon/napoleon_gunner_pack.dds</File>
+    <File md5="AB2EC939A309BA7667D82FFB3A0C5824" import="1">Art/Units/General/4-Industrial/Cannon/napoleon_gun_gunner.dds</File>
+    <File md5="A22A1FCD82C426E409B07E4D831AD038" import="1">Art/Units/General/4-Industrial/CuirassierSword/ca_sw1.dds</File>
+    <File md5="F9D52A0ED3BF3783FF591AB2CB71DB61" import="1">Art/Units/General/4-Industrial/CuirassierSword/ca_sw1.fxsxml</File>
+    <File md5="CB2B7A325FA9B12B52B09760E747BCB3" import="1">Art/Units/General/4-Industrial/CuirassierSword/ca_sw1.gr2</File>
+    <File md5="1250685690F5AD9A91EAEEB61B7A289C" import="1">Art/Units/General/4-Industrial/CuirassierSword/ca_sw1.indiedefs</File>
+    <File md5="12D164BAF69306FEE0F2E8255E244FEA" import="1">Art/Units/General/4-Industrial/CuirassierSword/ca_sw1_sref.dds</File>
+    <File md5="2A4F31EAC31CD4097A8C6F950086763A" import="1">Art/Units/General/4-Industrial/CuirassierSword/hakkapeliitta_diff.dds</File>
+    <File md5="9D4E8F8BF0B9992711EC304F2ABDF507" import="1">Art/Units/General/4-Industrial/CuirassierSword/hakkapeliitta_sref.dds</File>
+    <File md5="97FA4E37787448ECFCD7BCA605A6BB64" import="1">Art/Units/General/4-Industrial/Line Infantry/civ5_genmm1.fxsxml</File>
+    <File md5="80A6D50D4E1744365664F2AB5934FFB4" import="1">Art/Units/General/4-Industrial/Line Infantry/civ5_genmm1.gr2</File>
+    <File md5="F4C7D610351C73897BBA1E349ED4736A" import="1">Art/Units/General/4-Industrial/Line Infantry/genmm1.dds</File>
+    <File md5="A14D497A7F4311135C55C3ABAF5C919E" import="1">Art/Units/General/4-Industrial/Line Infantry/genmm1_sref.dds</File>
+    <File md5="2BC55136991DC1E24A96D109AA3CEC8E" import="1">Art/Units/General/4-Industrial/Mortar/ao3de_mortar.dds</File>
+    <File md5="E802014F49E7726A82C68FE3F18AB52F" import="1">Art/Units/General/4-Industrial/Mortar/ao3de_mortar.fxsxml</File>
+    <File md5="4E4F643BB8FA77DEBFC57EA1EEE6B15A" import="1">Art/Units/General/4-Industrial/Mortar/ao3de_mortar.gr2</File>
+    <File md5="8DF373A6D9D7C84FDA67DF1693ED1F60" import="1">Art/Units/General/4-Industrial/Mortar/ao3de_mortarwheel.dds</File>
+    <File md5="3740B55FDA010B6D01B84418598D6EBE" import="1">Art/Units/General/4-Industrial/Mortar/ao3de_mortarwheel_gloss.dds</File>
+    <File md5="B63FD01EC891AF4C876EA6062718435A" import="1">Art/Units/General/4-Industrial/Mortar/ao3de_mortar_gloss.dds</File>
+    <File md5="179A0A9BB0794C3003C8A568499CC463" import="1">Art/Units/General/4-Industrial/Mortar/cannon_crew.dds</File>
+    <File md5="4FAA4D6B4EC5E31176B301ABF763FC90" import="1">Art/Units/General/4-Industrial/Mortar/emp_mortar.fxsxml</File>
+    <File md5="C67776FA4F442315C97CE18F7913701D" import="1">Art/Units/General/4-Industrial/Mortar/emp_mortar.gr2</File>
+    <File md5="8785668160747DCA67955F5BA32AF43F" import="1">Art/Units/General/4-Industrial/Mortar/emp_mortar_diffuse.dds</File>
+    <File md5="52A8FD2FB59915EECB384E63AF3DA231" import="1">Art/Units/General/4-Industrial/Mortar/emp_mortar_specular.dds</File>
+    <File md5="0A173D01EDF215CA11AB08D671207FF0" import="1">Art/Units/General/4-Industrial/Napoleon_Gun/napoleon_gunner_hat.dds</File>
+    <File md5="A4F3ABB7389538B445DADC5CB4E9C464" import="1">Art/Units/General/4-Industrial/Napoleon_Gun/napoleon_gunner_pack.dds</File>
+    <File md5="AB2EC939A309BA7667D82FFB3A0C5824" import="1">Art/Units/General/4-Industrial/Napoleon_Gun/napoleon_gun_gunner.dds</File>
+    <File md5="F6710871DA5829AB25E681869C6F23A8" import="1">Art/Units/General/4-Industrial/Napoleon_Gun/u_artillery_napoleon.fxsxml</File>
+    <File md5="C642478BC541D7BE5D131FFB71493540" import="1">Art/Units/General/4-Industrial/Napoleon_Gun/u_artillery_napoleon.gr2</File>
+    <File md5="2EB925D4FF306AAD28BF4DCE918CD142" import="1">Art/Units/General/4-Industrial/SteamSail/SteamFrigates.fxsxml</File>
+    <File md5="9AD22A4A78F3C7A56B987E493C49D2B7" import="1">Art/Units/General/4-Industrial/SteamSail/SteamFrigates.gr2</File>
+    <File md5="8C7195D519EF3873633555D2C759B701" import="1">Art/Units/General/4-Industrial/SteamSail/SteamFrigates_diff.dds</File>
+    <File md5="BDC6142B52B169AEF74B10FC86E5BEEB" import="1">Art/Units/General/4-Industrial/SteamSail/steam_ironclad.fxsxml</File>
+    <File md5="09FF637C46F27755751261371A7ACCC6" import="1">Art/Units/General/4-Industrial/SteamSail/steam_ironclad.gr2</File>
+    <File md5="15EB97B0B0A843B3D5AA7C88AD6B82DF" import="1">Art/Units/General/4-Industrial/SteamSail/Steam_Ironclad_diff.dds</File>
+    <File md5="9649D1C2B636EFA3FB917503DCB7197D" import="1">Art/Units/General/4-Industrial/SteamSail/Steam_Ironclad_sref.dds</File>
+    <File md5="6E9208B7E360B916820F4E48FE3788A7" import="1">Art/Units/General/4-Industrial/TorpedoBoat/Generic/fx_triggers_torpedoboat.ftsxml</File>
+    <File md5="220BD40EB36DC49AC1D018852E466B93" import="1">Art/Units/General/4-Industrial/TorpedoBoat/Generic/SMSElster.dds</File>
+    <File md5="506D38423A54287C36E0223AF7288C62" import="1">Art/Units/General/4-Industrial/TorpedoBoat/Generic/SMSElster.fxsxml</File>
+    <File md5="682CDF5AAF3EB5B47759BE8407FE05E6" import="1">Art/Units/General/4-Industrial/TorpedoBoat/Generic/SMSElster.gr2</File>
+    <File md5="2F205DA7FB363D0B95DE7644FA34C547" import="1">Art/Units/General/4-Industrial/TorpedoBoat/Generic/SMSElsterSREF.dds</File>
+    <File md5="967C9D2A6A6ECC9E4D0EEC61EE180506" import="1">Art/Units/General/5-Morden/ArmoredCar/FordM1918.dds</File>
+    <File md5="28522A85D07A0B6E6B404AB65DE88AF0" import="1">Art/Units/General/5-Morden/ArmoredCar/FordM1918.fxsxml</File>
+    <File md5="DAADB92335DB6FE0FD9EBC1A9F608A3E" import="1">Art/Units/General/5-Morden/ArmoredCar/FordM1918.gr2</File>
+    <File md5="4B3096C825E4D4A1E152DE39C4BFBE4B" import="1">Art/Units/General/5-Morden/ArmoredCar/FordM1918SREF.dds</File>
+    <File md5="090ADCF0EC5BDF75ECE64E6ACF0B1835" import="1">Art/Units/General/5-Morden/Fiat_3000/Fiat_3000.blend</File>
+    <File md5="55B89AF467DACC1F03E6C46215BF69B3" import="1">Art/Units/General/5-Morden/Fiat_3000/Fiat_3000.dds</File>
+    <File md5="51FCE0AC20950B324F16236A0F94B0D3" import="1">Art/Units/General/5-Morden/Fiat_3000/Fiat_3000.fxsxml</File>
+    <File md5="B34B649FF9A088FC81388DDB51C214AC" import="1">Art/Units/General/5-Morden/Fiat_3000/Fiat_3000.gr2</File>
+    <File md5="AC41C06BA721315512F26433220FEDF7" import="1">Art/Units/General/5-Morden/Fiat_3000/no_gloss.dds</File>
+    <File md5="F493E4880E3A284364F11A8AB22E9383" import="1">Art/Units/General/5-Morden/French75/French75mm.dds</File>
+    <File md5="9988B6BACEBCBAB516232B2920F3979F" import="1">Art/Units/General/5-Morden/French75/French75mm.fxsxml</File>
+    <File md5="FFB13E6755966EBFFF4C030DE6E8AA7B" import="1">Art/Units/General/5-Morden/French75/French75mm11.gr2</File>
+    <File md5="259C248872709D0A1A92707FDD9E478D" import="1">Art/Units/General/5-Morden/French75/French75mmSREF.dds</File>
+    <File md5="174F1EF3FF1296B96FC4F9BAA51429A7" import="1">Art/Units/General/5-Morden/French75/GenericRifleman.dds</File>
+    <File md5="84B4171E35A61D37C2B97267119D958A" import="1">Art/Units/General/5-Morden/Lion_MinasGaraes/MinasGaraes.dds</File>
+    <File md5="0DFFF93D219763B2ED5CCFC752D46CF8" import="1">Art/Units/General/5-Morden/Lion_MinasGaraes/MinasGaraes.fxsxml</File>
+    <File md5="CC1CE0D336A566C0645C1E43DC7E5E02" import="1">Art/Units/General/5-Morden/Lion_MinasGaraes/MinasGaraes.gr2</File>
+    <File md5="9CAC12EDAB57E5FF151D1E2F46A84D38" import="1">Art/Units/General/5-Morden/Lion_MinasGaraes/MinasGaraes_SREF.dds</File>
+    <File md5="FDA18788BB31C5232354BD05D4461277" import="1">Art/Units/General/5-Morden/Mk_A_Whippet/MK_A_Whippet.blend</File>
+    <File md5="61249B11217849C341A7F9CC8C074F05" import="1">Art/Units/General/5-Morden/Mk_A_Whippet/MK_A_Whippet.dds</File>
+    <File md5="C66F94EBDA25F83E17E3D084EE521802" import="1">Art/Units/General/5-Morden/Mk_A_Whippet/MK_A_Whippet.fxsxml</File>
+    <File md5="A8062B235EAA53979B8235262E8CD534" import="1">Art/Units/General/5-Morden/Mk_A_Whippet/MK_A_Whippet.gr2</File>
+    <File md5="AC41C06BA721315512F26433220FEDF7" import="0">Art/Units/General/5-Morden/Mk_A_Whippet/no_gloss.dds</File>
+    <File md5="2EB925D4FF306AAD28BF4DCE918CD142" import="1">Art/Units/General/5-Morden/SteamSail/SteamFrigates.fxsxml</File>
+    <File md5="9AD22A4A78F3C7A56B987E493C49D2B7" import="1">Art/Units/General/5-Morden/SteamSail/SteamFrigates.gr2</File>
+    <File md5="8C7195D519EF3873633555D2C759B701" import="1">Art/Units/General/5-Morden/SteamSail/SteamFrigates_diff.dds</File>
+    <File md5="BDC6142B52B169AEF74B10FC86E5BEEB" import="1">Art/Units/General/5-Morden/SteamSail/steam_ironclad.fxsxml</File>
+    <File md5="09FF637C46F27755751261371A7ACCC6" import="1">Art/Units/General/5-Morden/SteamSail/steam_ironclad.gr2</File>
+    <File md5="15EB97B0B0A843B3D5AA7C88AD6B82DF" import="1">Art/Units/General/5-Morden/SteamSail/Steam_Ironclad_diff.dds</File>
+    <File md5="9649D1C2B636EFA3FB917503DCB7197D" import="1">Art/Units/General/5-Morden/SteamSail/Steam_Ironclad_sref.dds</File>
+    <File md5="0F137A1055169A643E5282EF837D65AD" import="1">Art/Units/General/6-WorldWar/Conscript/ra3_ussr_conscript.dds</File>
+    <File md5="2F0901A30A9F02BE83C1659822E1E73C" import="1">Art/Units/General/6-WorldWar/Conscript/ra3_ussr_conscript.fxsxml</File>
+    <File md5="47B4F2E210B240FE9027FBF3CF0603FB" import="1">Art/Units/General/6-WorldWar/Conscript/ra3_ussr_conscript.gr2</File>
+    <File md5="9A21B2F0D62F1B3C1169DA80D063010C" import="1">Art/Units/General/6-WorldWar/Flower_Corvette/ri_flower_corvette.dds</File>
+    <File md5="BE82A1D29AB235A9F657219FF34275A2" import="1">Art/Units/General/6-WorldWar/Flower_Corvette/ri_flower_corvette.fxsxml</File>
+    <File md5="9C059A9E4038AFB45D59119F0FF583D9" import="1">Art/Units/General/6-WorldWar/Flower_Corvette/ri_flower_corvette.gr2</File>
+    <File md5="E670A7E191B34FAC0DC69F18E7604057" import="1">Art/Units/General/6-WorldWar/Flower_Corvette/ri_flower_corvette_gloss.dds</File>
+    <File md5="FFE3A19A81BC062B15F346F3B9A17C36" import="1">Art/Units/General/6-WorldWar/M4Sherman/M4 US Early.dds</File>
+    <File md5="F39C02451E1D94F08E4DD0DC5A80A5E7" import="1">Art/Units/General/6-WorldWar/M4Sherman/M4 US Early.fxsxml</File>
+    <File md5="839B38C45C9FC4EA01CCBAEE1D940F51" import="1">Art/Units/General/6-WorldWar/M4Sherman/M4 US Early.gr2</File>
+    <File md5="B9AC5D8F07EE7E01FF8210B3FDC6B16D" import="1">Art/Units/General/6-WorldWar/M4Sherman/M4 US Late.dds</File>
+    <File md5="CF833C286FC3C7876178551E240A6F6D" import="1">Art/Units/General/6-WorldWar/M4Sherman/M4 US Late.fxsxml</File>
+    <File md5="041253856F9641B8647A081BC10AFC6E" import="1">Art/Units/General/6-WorldWar/M4Sherman/M4 US Late.gr2</File>
+    <File md5="04FFECED912966EE9F957347D9432E7C" import="1">Art/Units/General/6-WorldWar/M4Sherman/M4 US Tunisia.dds</File>
+    <File md5="8793D0851A936205DBF44686A0FA0017" import="1">Art/Units/General/6-WorldWar/M4Sherman/M4 US Tunisia.fxsxml</File>
+    <File md5="409BF6C9459380F1A5E15BCC191F4D7C" import="1">Art/Units/General/6-WorldWar/M4Sherman/M4 US Tunisia.gr2</File>
+    <File md5="853B90EE243D754D0A3C90D5EE1498FD" import="1">Art/Units/General/6-WorldWar/M4Sherman/M4SREF.dds</File>
+    <File md5="6864279A0BEC52BF13AACE8D7BE9E919" import="1">Art/Units/General/6-WorldWar/M4Sherman/Preview.jpg</File>
+    <File md5="85943CA941177F6A8146296978A7ADBA" import="1">Art/Units/General/6-WorldWar/M4Sherman/Snafusmith.txt</File>
+    <File md5="BD4312BB8313ECB550301219B85981F3" import="1">Art/Units/General/6-WorldWar/SPG/Sdkfz165_Hummel.dds</File>
+    <File md5="899560B79A6A4BBB93F5AC3636C3EA77" import="1">Art/Units/General/6-WorldWar/SPG/Sdkfz165_Hummel.fxsxml</File>
+    <File md5="DF9AD5A91646810E5F87A44AE3078031" import="1">Art/Units/General/6-WorldWar/SPG/Sdkfz165_Hummel.gr2</File>
+    <File md5="EA3B066416912927C63BC0131C794E69" import="1">Art/Units/General/7-PostModern/BMP2GreenTeam/BMP2GreenTeam.dds</File>
+    <File md5="0B0AE2AE9FC06E6540282A521F65BCC3" import="1">Art/Units/General/7-PostModern/BMP2GreenTeam/BMP2GreenTeam.fxsxml</File>
+    <File md5="434A9645127DA3EF30CB1E70F1FEC23D" import="1">Art/Units/General/7-PostModern/BMP2GreenTeam/BMP2GreenTeam.gr2</File>
+    <File md5="6A16D73330412060248E971BB75F4E02" import="1">Art/Units/General/7-PostModern/BMP2GreenTeam/BMP2SREF.dds</File>
+    <File md5="FFBDF70B3E5632CB8856DE382A8B504C" import="1">Art/Units/General/7-PostModern/BMP2GreenTeam/fx_triggers_bmp2.ftsxml</File>
+    <File md5="16366824DFB0009603EB9AD8F9403ED5" import="1">Art/Units/General/7-PostModern/F14/F-14_5.fxsxml</File>
+    <File md5="2FB3D1A322A511EE1B3D999D4F9BB92D" import="1">Art/Units/General/7-PostModern/F14/F-14_5.gr2</File>
+    <File md5="91E312D39E77C9C82FCAF160F2C7156A" import="1">Art/Units/General/7-PostModern/F14/F-14_5_diff.dds</File>
+    <File md5="FFD782D930E84AC23ED07A1943F93AB6" import="1">Art/Units/General/7-PostModern/F14/F-14_sref.dds</File>
+    <File md5="A8FC392DB4D902B5B9381A09BE3A7495" import="1">Art/Units/General/7-PostModern/F15/F15.dds</File>
+    <File md5="609B31C87C6D58DAAD30F94220D12973" import="1">Art/Units/General/7-PostModern/F15/F15.fxsxml</File>
+    <File md5="E65DDC6D767776D3EA937CFAB46B8F34" import="1">Art/Units/General/7-PostModern/F15/F15.gr2</File>
+    <File md5="88A6C7C0A0C9C068366DF5FFC22DBD34" import="1">Art/Units/General/7-PostModern/F15/F15SREF.dds</File>
+    <File md5="FFBDF70B3E5632CB8856DE382A8B504C" import="1">Art/Units/General/7-PostModern/HK_APC/fx_triggers_M3A1HT.ftsxml</File>
+    <File md5="827F7CAFE95900E2471F06F689411A9E" import="1">Art/Units/General/7-PostModern/HK_APC/Unit_Era6_Common_ArmouredPersonnelCarriers.fxsxml</File>
+    <File md5="935C891A6866952E7D00FA9AED983950" import="1">Art/Units/General/7-PostModern/HK_APC/Unit_Era6_Common_ArmouredPersonnelCarriers.gr2</File>
+    <File md5="E782C48C04A3BCD3E261C9EE3E2E87EC" import="1">Art/Units/General/7-PostModern/HK_APC/Unit_Era6_Common_ArmouredPersonnelCarriers_01.dds</File>
+    <File md5="1D6AA6E9183339651D56B70398C275BF" import="1">Art/Units/General/7-PostModern/Kuznetsov/Russia_Kuznetsov.dds</File>
+    <File md5="37424AD9924882BE94AA0E3817DE3812" import="1">Art/Units/General/7-PostModern/Kuznetsov/Russia_Kuznetsov.fxsxml</File>
+    <File md5="6DEA12E054D7D56793A641C7E5C90B5E" import="1">Art/Units/General/7-PostModern/Kuznetsov/Russia_Kuznetsov.gr2</File>
+    <File md5="FB258396DF8F704621675E061E4A0258" import="1">Art/Units/General/7-PostModern/Kuznetsov/Russia_Kuznetsov_New.fxsxml</File>
+    <File md5="6BCBE1373EBE5B43D131FB718842E00E" import="1">Art/Units/General/7-PostModern/Kuznetsov/Russia_Kuznetsov_New.gr2</File>
+    <File md5="B2E5678E9CC1833FF9AAAE148C0B4024" import="1">Art/Units/General/7-PostModern/Kuznetsov/Russia_Kuznetsov_New_Diffuse.dds</File>
+    <File md5="EBCB6CCD812A28FEB5248A100651839F" import="1">Art/Units/General/7-PostModern/Kuznetsov/Russia_Kuznetsov_New_Metallic.dds</File>
+    <File md5="75C7A5D3E34680990F931BE8535416B1" import="1">Art/Units/General/7-PostModern/Nimitz_Generic/SP_CVN_Nimitz_Generic_v1.fxsxml</File>
+    <File md5="6377EAE54DF8366C132A432C12C30E8A" import="1">Art/Units/General/7-PostModern/Nimitz_Generic/SP_CVN_Nimitz_Generic_v1.gr2</File>
+    <File md5="23333CEE0DFDBF192A130D387BAA32C8" import="1">Art/Units/General/7-PostModern/Nimitz_Generic/SP_CVN_Nimitz_Generic_v1_diffuse.dds</File>
+    <File md5="73D01D57CBEDB64D3B2B195941F37E2D" import="1">Art/Units/General/7-PostModern/Nimitz_Generic/SP_CVN_Nimitz_Generic_v1_Metallic.dds</File>
+    <File md5="213B562AA2DA6BA58EF27BFEF77216F6" import="1">Art/Units/General/7-PostModern/T72B3/ru_mg_diff.dds</File>
+    <File md5="41A4E0D3C7D60358DEC5EDE7967C5BCA" import="1">Art/Units/General/7-PostModern/T72B3/ru_mg_spec.dds</File>
+    <File md5="83877137AE9B8EEFECB0D4A8A84D9A0B" import="1">Art/Units/General/7-PostModern/T72B3/T72B3.fxsxml</File>
+    <File md5="2F28E3DD3A035403D5957DEAA4AF52CD" import="1">Art/Units/General/7-PostModern/T72B3/T72B3.gr2</File>
+    <File md5="FB9CA165A75385E43D47D0832D515B19" import="1">Art/Units/General/7-PostModern/T72B3/T72B3_diff2.dds</File>
+    <File md5="970F6890A44875D849DED4D329EA48A9" import="1">Art/Units/General/7-PostModern/T72B3/T72B3_door_diff2.dds</File>
+    <File md5="803F72813B0961DE52A6F2B45522E9B6" import="1">Art/Units/General/7-PostModern/T72B3/T72B3_door_spec.dds</File>
+    <File md5="37DD677F8A4FDED0F034878D70E7422B" import="1">Art/Units/General/7-PostModern/T72B3/T72B3_spec.dds</File>
+    <File md5="6FE07AAA1E679C512A506F884FB3AB8D" import="1">Art/Units/General/7-PostModern/T72B3/T72B3_track_diff.dds</File>
+    <File md5="C48DF4778CC5B9FCE4E12DE407F170ED" import="1">Art/Units/General/7-PostModern/T72B3/T72B3_track_spec.dds</File>
+    <File md5="E274063D7F8852331A8FAF8A8907F50F" import="1">Art/Units/General/8-Information/Gerald Ford/Gerald Ford Diffuse.dds</File>
+    <File md5="521A5DE537CE0FEFCE2EAC766C820871" import="1">Art/Units/General/8-Information/Gerald Ford/Gerald Ford Metallic.dds</File>
+    <File md5="6BBF42C9172A64C64837257200E5045A" import="1">Art/Units/General/8-Information/Gerald Ford/Gerald Ford.fxsxml</File>
+    <File md5="3206F175F91790A44282460EA3DFA05D" import="1">Art/Units/General/8-Information/Gerald Ford/Gerald Ford.gr2</File>
+    <File md5="B00BA38E0B1923683AC371FF3FA4DD63" import="1">Art/Units/General/8-Information/Marine888/infantry_128.dds</File>
+    <File md5="9E8677149B2861E234B8073D3F507E74" import="1">Art/Units/General/8-Information/Marine888/Infantry_American.blend</File>
+    <File md5="0CB6724CE017AE387B4FACCC8D11FB89" import="1">Art/Units/General/8-Information/Marine888/Infantry_American_v3.fxsxml</File>
+    <File md5="61CC83E8B82547DB0A5FBE5EC20F8BD6" import="1">Art/Units/General/8-Information/Marine888/Infantry_American_v3.gr2</File>
+    <File md5="623EFC6A3E32ACA465A69EA85C568D96" import="1">Art/Units/General/8-Information/Marine888/Infantry_American_v3.isxml</File>
+    <File md5="70C91B11F67E29AC1A2443F28902FBE1" import="1">Art/Units/General/8-Information/Mobile Artillery/M109NATO.dds</File>
+    <File md5="345267981E9C0CD1547443B045BDCB42" import="1">Art/Units/General/8-Information/Mobile Artillery/M109NATO.fxsxml</File>
+    <File md5="02A304E798CEB936589B7AD0FFD541F1" import="1">Art/Units/General/8-Information/Mobile Artillery/M109NATO.gr2</File>
+    <File md5="9214B4B2860B69BB89B8E4A2B6E4ABAF" import="1">Art/Units/General/8-Information/Mobile Artillery/M109SREF.dds</File>
+    <File md5="DF590E5C542425A1F4BEA2F43494D32E" import="1">Art/Units/General/8-Information/Ottoman Cobra/Australia_AllTerrainAPCs.dds</File>
+    <File md5="9376C55DE4B7C0CAF9A9B7DE22523C18" import="1">Art/Units/General/8-Information/Ottoman Cobra/Australia_AllTerrainAPCs.fxsxml</File>
+    <File md5="4A20F70C8A446C422BFD079E1E6CE0BC" import="1">Art/Units/General/8-Information/Ottoman Cobra/Australia_AllTerrainAPCs.gr2</File>
+    <File md5="ABD37169CA7F71AD1105EC15A2358209" import="1">Art/Units/General/8-Information/Pack new textures/F-35_diff.dds</File>
+    <File md5="9C11FE1E91DEB390669FFDE34251A404" import="1">Art/Units/General/8-Information/Pack new textures/F-35_sref.dds</File>
+    <File md5="A799481AF2DA136CF70713B3D7E8F47E" import="1">Art/Units/General/8-Information/Pack new textures/Porte-Avions_2.dds</File>
+    <File md5="96FE47B02F23B2F6F6DB159E12DF57BA" import="1">Art/Units/General/8-Information/Pack new textures/Porte-Avions_2_gloss.dds</File>
+    <File md5="353EB1FF68751E6CAAAF052FEA7B87F9" import="1">Art/Units/General/8-Information/Pack new textures/USS_Nimitz_diff.dds</File>
+    <File md5="DF6DA120472B16898D8DFDA5F3281B6B" import="1">Art/Units/General/8-Information/Pack new textures/USS_Nimitz_sref.dds</File>
+    <File md5="A02EAB799652C0CF1EF4A5FF24BBE445" import="1">Art/Units/General/8-Information/Shtorm/Shtorm diffuse.dds</File>
+    <File md5="18D6C6D3913A80C62129EF12188F3FCC" import="1">Art/Units/General/8-Information/Shtorm/Shtorm metal.dds</File>
+    <File md5="39DB355F28292D07D4B1B8A57B2B7C10" import="1">Art/Units/General/8-Information/Shtorm/Shtorm.fxsxml</File>
+    <File md5="938DB3CD1F968BAA09FBC1E52363D3BC" import="1">Art/Units/General/8-Information/Shtorm/Shtorm.gr2</File>
+    <File md5="B7DCACD879500BD4871456660333EC71" import="1">Art/Units/General/8-Information/Shtorm/shtorm.nb2</File>
+    <File md5="5F350AFE9DF9D6963202FE7404E90AFA" import="1">Art/Units/General/8-Information/Striker4_ATGM/Striker4_ATGM.fxsxml</File>
+    <File md5="1A571A45F7F52F028759B6C7661CC23A" import="1">Art/Units/General/8-Information/Striker4_ATGM/Striker4_ATGM.gr2</File>
+    <File md5="931FFDD308B0C0EA913D6632B23D4ACD" import="1">Art/Units/General/8-Information/Striker4_ATGM/Striker4_ATGM_1_diff.dds</File>
+    <File md5="A280742E3FD4CD428A2484F89F7870EC" import="1">Art/Units/General/8-Information/Striker4_ATGM/Striker4_ATGM_1_spec.dds</File>
+    <File md5="DB42D83E9964CDB9ED3991CF8DF5545E" import="1">Art/Units/General/8-Information/Striker4_ATGM/Striker4_ATGM_body_diff.dds</File>
+    <File md5="9496AFC32A4FF08901D74E21916DD142" import="1">Art/Units/General/8-Information/Striker4_ATGM/Striker4_ATGM_body_spec.dds</File>
+    <File md5="DB16F8FF1AC9C165BE989FC42E721B7F" import="1">Art/Units/General/8-Information/Striker4_ATGM/Striker4_ATGM_lun_diff.dds</File>
+    <File md5="847CF7CBED9D244F7D15EB0E63BA111D" import="1">Art/Units/General/8-Information/Striker4_ATGM/Striker4_ATGM_lun_spec.dds</File>
+    <File md5="AAB387F3D97633AB02A72026804D2EA2" import="1">Art/Units/General/8-Information/Striker4_ATGM/Striker4_ATGM_missile_diff.dds</File>
+    <File md5="0C8F225965A4C98F7E715B0D0F2045F2" import="1">Art/Units/General/8-Information/Striker4_ATGM/Striker4_ATGM_missile_spec.dds</File>
+    <File md5="DA3407B780CFE40238802FF8F6D5BC04" import="1">Art/Units/General/8-Information/Striker4_ATGM/Striker4_ATGM_youtong_diff.dds</File>
+    <File md5="8BB4CD5EF57FD8C3073A3E27DC7A86BC" import="1">Art/Units/General/8-Information/Striker4_ATGM/Striker4_ATGM_youtong_spec.dds</File>
+    <File md5="1E139A37AD9BACDA7CC20CE8F271D40F" import="1">Art/Units/General/8-Information/VLS/052d_diff.dds</File>
+    <File md5="C6DCFB9A0E3F2FD17390151F09525662" import="1">Art/Units/General/8-Information/VLS/052d_sref.dds</File>
+    <File md5="6F47EB31A79CDAE0A5EBF0967104EB6B" import="1">Art/Units/General/8-Information/VLS/052D_VLS_FWD.fxsxml</File>
+    <File md5="BE50B2FAF12B2F1CFF1AF0F910A00438" import="1">Art/Units/General/8-Information/VLS/052D_VLS_FWD.gr2</File>
+    <File md5="6184706AE1DF142F90522C6E8E5F33EE" import="1">Art/Units/General/8-Information/VLS/ArleighBurkeDDG83_diff.dds</File>
+    <File md5="71CFE3BE9E7F2AE170902E7264186D8A" import="1">Art/Units/General/8-Information/VLS/ArleighBurkeDDG83_sref.dds</File>
+    <File md5="4023E193BC272F6351BB235A51DDDBC4" import="1">Art/Units/General/8-Information/VLS/ArleighBurkeDDG83_VLS_FWD.fxsxml</File>
+    <File md5="0D80E13D63387B37C741668A988C4335" import="1">Art/Units/General/8-Information/VLS/ArleighBurkeDDG83_VLS_FWD.gr2</File>
+    <File md5="D327CDDC11DEAAA5B332ECFB052162A7" import="1">Art/Units/General/8-Information/VLS/missilecruiser_diff.dds</File>
+    <File md5="0BEDF0EF1DC18D09E35EE388E0663EC1" import="1">Art/Units/General/8-Information/VLS/missilecruiser_sref.dds</File>
+    <File md5="FB424951541E4046905481839901BC62" import="1">Art/Units/General/8-Information/VLS/missilecruiser_VLS_FWD.fxsxml</File>
+    <File md5="40A0900754A3FDB668974734421523D3" import="1">Art/Units/General/8-Information/VLS/missilecruiser_VLS_FWD.gr2</File>
+    <File md5="CFC37EE4EF899A8E23165C46868E75C5" import="1">Art/Units/General/8-Information/VLS/Sweden_VisbyCorvettes_VLS_FWD.dds</File>
+    <File md5="5FA1F1B73D8CA386C999E8E263ABB105" import="1">Art/Units/General/8-Information/VLS/Sweden_VisbyCorvettes_VLS_FWD.fxsxml</File>
+    <File md5="D68AAA6616977F25C1F21B9E66DDD7CA" import="1">Art/Units/General/8-Information/VLS/Sweden_VisbyCorvettes_VLS_FWD.gr2</File>
+    <File md5="E732ACF9C8BA9E6775E7B9D6088CCB72" import="1">Art/Units/General/8-Information/VLS/USSR_Kirov_diff.dds</File>
+    <File md5="5AE8B387477A79DF21D42ED57D10B485" import="1">Art/Units/General/8-Information/VLS/USSR_Kirov_sref.dds</File>
+    <File md5="5A06EB4B6E9C8A04D6F991D4CC0E44B0" import="1">Art/Units/General/8-Information/VLS/USSR_Kirov_VLS_FWD.fxsxml</File>
+    <File md5="77C646168B9DCE030F442A5478A71BF1" import="1">Art/Units/General/8-Information/VLS/USSR_Kirov_VLS_FWD.gr2</File>
+    <File md5="AA23971405BD4EE648DB8E868D6ADF09" import="1">Art/Units/General/9-Future/M977ghost/M997_Diff.dds</File>
+    <File md5="D6057CC46760D94B60EE79BF313BA771" import="1">Art/Units/General/9-Future/M977ghost/m997_glass.dds</File>
+    <File md5="D6C8D1B7B9C3387A31456603D710829F" import="1">Art/Units/General/9-Future/M977ghost/M997_HEMTT.fxsxml</File>
+    <File md5="AC7A29699129A493EBB4EBDB947C2A73" import="1">Art/Units/General/9-Future/M977ghost/M997_HEMTT.gr2</File>
+    <File md5="5171871776336E8BED3731A843905DF7" import="1">Art/Units/General/9-Future/M977ghost/M997_shanlan.dds</File>
+    <File md5="EA5823FE173D47240F6BA44B363B798A" import="1">Art/Units/General/9-Future/SMAN_Railgun_Cruiser/fx_triggers_sman_ieup_railgun_cruiser.ftsxml</File>
+    <File md5="C6BF6E5339B5FE393AB92B320BC7EDA7" import="1">Art/Units/General/9-Future/SMAN_Railgun_Cruiser/SMAN_IEUP_Railgun_Cruiser.fxsxml</File>
+    <File md5="70EDDE900CC5406AC8954BF5390CD598" import="1">Art/Units/General/9-Future/SMAN_Railgun_Cruiser/SMAN_IEUP_Railgun_Cruiser.gr2</File>
+    <File md5="06274CF1ACBF2194166F46747F03971F" import="1">Art/Units/General/9-Future/SMAN_Railgun_Cruiser/SMAN_IEUP_Railgun_Cruiser_diff.dds</File>
+    <File md5="FC0407C09AD55C6821EE9EF6FD80BBA5" import="1">Art/Units/General/9-Future/SMAN_Railgun_Cruiser/SMAN_IEUP_Railgun_Cruiser_gloss.dds</File>
+    <File md5="FC18C3F14D1EE917C03E83DA4229173A" import="1">Art/Units/General/9-Future/VLS/fx_triggers_vls_ieup_arsenalship.ftsxml</File>
+    <File md5="9907E539F3BFD83A130F5A3AF780BD85" import="1">Art/Units/General/9-Future/VLS/PLAN_ArsenalShip_diff.dds</File>
+    <File md5="B85AA5B1DD610E4D1D292477196D5A29" import="1">Art/Units/General/9-Future/VLS/PLAN_ArsenalShip_sref.dds</File>
+    <File md5="996318BBB845CBC6CBB8B444A1D033DB" import="1">Art/Units/General/9-Future/VLS/PLAN_ArsenalShip_VLS_FWD.fxsxml</File>
+    <File md5="F2B859914FE1FE2B6D17E14A8F085457" import="1">Art/Units/General/9-Future/VLS/PLAN_ArsenalShip_VLS_FWD.gr2</File>
+    <File md5="1F76E0237837A3FB850A1407187253AD" import="1">Art/Units/General/9-Future/VLS/USN_ArsenalShip_diff.dds</File>
+    <File md5="F83EE85B11DCCA0A4E1326FDA0C242D7" import="1">Art/Units/General/9-Future/VLS/USN_ArsenalShip_sref.dds</File>
+    <File md5="423B8664EC2AB890DB7213A4B2AF04F8" import="1">Art/Units/General/9-Future/VLS/USN_ArsenalShip_VLS_FWD.fxsxml</File>
+    <File md5="E74989E485BF42F5CD41ED480C13B60D" import="1">Art/Units/General/9-Future/VLS/USN_ArsenalShip_VLS_FWD.gr2</File>
+    <File md5="0ED68E0BB0B6CE744269E061A976BCC3" import="1">Art/Units/General/GuideMissileDelete/guidedmissile.fxsxml</File>
+    <File md5="7472A6937F6FC4DA1492540C99B212B8" import="1">Art/Units/Policy/00-Tradition/Han_WeiShi/2h_glaive_refined_base_colour.dds</File>
+    <File md5="EECB2B814B0492EF7B714B78CCE71000" import="1">Art/Units/Policy/00-Tradition/Han_WeiShi/2h_glaive_refined_material_gloss.dds</File>
+    <File md5="63665BDC6EB25BBE59DF6A54ACE77A04" import="1">Art/Units/Policy/00-Tradition/Han_WeiShi/han_weishi.fxsxml</File>
+    <File md5="878541B203FDD4D37DBA2A88733C06F6" import="1">Art/Units/Policy/00-Tradition/Han_WeiShi/han_weishi.gr2</File>
+    <File md5="CFE6235C5AAD6DB5523CAEDF8076B5B3" import="1">Art/Units/Policy/00-Tradition/Han_WeiShi/ws_hjk.dds</File>
+    <File md5="00E815ED9AD85E4B2952E9B402C496E1" import="1">Art/Units/Policy/00-Tradition/Han_WeiShi/ws_hjk_specular.dds</File>
+    <File md5="E0A7927BB457693556059C605B6D4006" import="1">Art/Units/Policy/00-Tradition/Han_WeiShi/ws_junxie.dds</File>
+    <File md5="085A6939743998AED354F771F4C74291" import="1">Art/Units/Policy/00-Tradition/Han_WeiShi/ws_junxie_specular.dds</File>
+    <File md5="8C91E92A4F4353AAC76098C7F1C8AE5B" import="1">Art/Units/Policy/00-Tradition/Han_WeiShi/ws_tiejia.dds</File>
+    <File md5="14429F753020BE0F60ABEE38482DF7CE" import="1">Art/Units/Policy/00-Tradition/Han_WeiShi/ws_tiejia_specular.dds</File>
+    <File md5="7B16D64DCD384E69B418A9A6335ABFAA" import="1">Art/Units/Policy/00-Tradition/Praetorian_Guard_Rome/hair_blonde.dds</File>
+    <File md5="7FADF4FC308BF09351B9CF4F38BF71E1" import="1">Art/Units/Policy/00-Tradition/Praetorian_Guard_Rome/imperial_armor_color.dds</File>
+    <File md5="6D264BD9BC2D2D69753E93FCF5BD8909" import="1">Art/Units/Policy/00-Tradition/Praetorian_Guard_Rome/imperial_armor_spec.dds</File>
+    <File md5="0AC36FBFB16CC34F0A69F4AA401F352E" import="1">Art/Units/Policy/00-Tradition/Praetorian_Guard_Rome/imperial_helm_color.dds</File>
+    <File md5="D56E61557A45899095D483EEC475BD99" import="1">Art/Units/Policy/00-Tradition/Praetorian_Guard_Rome/imperial_helm_spec.dds</File>
+    <File md5="C7806E54AB9316F93504E25EAA6F01F5" import="1">Art/Units/Policy/00-Tradition/Praetorian_Guard_Rome/Longswordsman_Rome.dds</File>
+    <File md5="74A1C9F84EC6D63E1CEEEF18DA68C0C7" import="1">Art/Units/Policy/00-Tradition/Praetorian_Guard_Rome/Longswordsman_Rome_gloss.dds</File>
+    <File md5="B85E9632B648F3458C73816810DC1E42" import="1">Art/Units/Policy/00-Tradition/Praetorian_Guard_Rome/manface_asian3.dds</File>
+    <File md5="2CB00D5584820A5AA1442EB5DB9D2D50" import="1">Art/Units/Policy/00-Tradition/Praetorian_Guard_Rome/Praetorian_Guard_Rome.fxsxml</File>
+    <File md5="0700373E8B978A73FBF1DE5D854A79BD" import="1">Art/Units/Policy/00-Tradition/Praetorian_Guard_Rome/Praetorian_Guard_Rome.gr2</File>
+    <File md5="56F9335E37E6A86AE04F29E147D1FB4F" import="1">Art/Units/Policy/01-Liberty/Gondor/gondor_spearman.fxsxml</File>
+    <File md5="F76C1E095D2797C120A009CCD897C7DC" import="1">Art/Units/Policy/01-Liberty/Gondor/gondor_spearman.gr2</File>
+    <File md5="6F0D9146DCBB96D2D032A1D288A87AEF" import="1">Art/Units/Policy/01-Liberty/Gondor/gondor_spearman_diff.dds</File>
+    <File md5="6C3138BC59F0113E6F15D3BA8AE7E3E5" import="1">Art/Units/Policy/01-Liberty/Gondor/gondor_spearman_sref.dds</File>
+    <File md5="11F0E1DEDA56230409C9FDAF4DA1B21E" import="1">Art/Units/Policy/01-Liberty/Gondor/gondor_swordsman.fxsxml</File>
+    <File md5="35F23563CD4E944D739DCA57775A7914" import="1">Art/Units/Policy/01-Liberty/Gondor/gondor_swordsman.gr2</File>
+    <File md5="B6D55BA9E26705063F84B394835846D0" import="1">Art/Units/Policy/01-Liberty/Gondor/gondor_swordsman_diff.dds</File>
+    <File md5="B7E9508E1F2EB763587958B372EB9EA1" import="1">Art/Units/Policy/01-Liberty/Gondor/gondor_swordsman_sref.dds</File>
+    <File md5="5D30052A7B7163A37AF21FF4B81295EA" import="1">Art/Units/Policy/01-Liberty/Knight/gothic_knight.fxsxml</File>
+    <File md5="72A6D61D2B3E19C3B4D00263CF9D12E4" import="1">Art/Units/Policy/01-Liberty/Knight/gothic_knight.gr2</File>
+    <File md5="12EC2209F1296C54D6E34F1B873C707A" import="1">Art/Units/Policy/01-Liberty/Knight/knight_mounted_diff.dds</File>
+    <File md5="4F0A356DB9CAB321EB74FE13B37DA1BC" import="1">Art/Units/Policy/01-Liberty/Knight/knight_mounted_sref.dds</File>
+    <File md5="D87B5DE69DD9645B0CCDDB9F2D742ED3" import="1">Art/Units/Policy/01-Liberty/Knight/longswordsman_diff.dds</File>
+    <File md5="B7906C5C3A0F6E03C98B91FA17863A1D" import="1">Art/Units/Policy/01-Liberty/Knight/longswordsman_sref.dds</File>
+    <File md5="CCDCA0CA66714D74F07497F8F43D0C46" import="1">Art/Units/Policy/01-Liberty/Reichritter/Civ5Screen0038.jpg</File>
+    <File md5="4CF44488C7C8C67AABF8EC308A0A703C" import="1">Art/Units/Policy/01-Liberty/Reichritter/Civ5Screen0041.jpg</File>
+    <File md5="A5D5ABB6716546541F809EC8DDAA795A" import="1">Art/Units/Policy/01-Liberty/Reichritter/Civ5Screen0044.jpg</File>
+    <File md5="BFF30AC0E3A496F29FCE0D7BD71FCA52" import="1">Art/Units/Policy/01-Liberty/Reichritter/Civ5Screen0047.jpg</File>
+    <File md5="E70BC3F0CC912A953CA3725E1161B31E" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_Bavaria/Knight_Bavaria.dds</File>
+    <File md5="733418A2D52E88D8CCEBD05F79BE6A7E" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_Bavaria/Knight_Bavaria.fxsxml</File>
+    <File md5="118177F67BFD58CEDCC0C0E60B83C452" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_Bavaria/Knight_Bavaria.gr2</File>
+    <File md5="8F16CD4D1291842D8F76A76BBC423F82" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_Bavaria/Knight_Bavaria_gloss.dds</File>
+    <File md5="15E77D529C6B1C7AB5C40F17EF6A3F50" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_Bavaria/Knight_Bavaria_Horse.dds</File>
+    <File md5="9BF87CE8CCEDDFEA3E3FD2DAC6DE9891" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_Bavaria/Knight_Bavaria_Horse_gloss.dds</File>
+    <File md5="FA042464CB15CB3219FAA11B189ABA4A" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_German/Knight_German.dds</File>
+    <File md5="B0066B782F2BC8D415430826AB2CC935" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_German/Knight_German.fxsxml</File>
+    <File md5="6A92272EA3E4080290F7190BD62B8107" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_German/Knight_German.gr2</File>
+    <File md5="8F16CD4D1291842D8F76A76BBC423F82" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_German/Knight_German_gloss.dds</File>
+    <File md5="D590638691A459E1B8F8B55C0BE36EC4" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_German/Knight_German_Horse.dds</File>
+    <File md5="9BF87CE8CCEDDFEA3E3FD2DAC6DE9891" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_German/Knight_German_Horse_gloss.dds</File>
+    <File md5="857D9D0DD6EAA85B522BBFD75BC83F51" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_Saxony/Knight_Saxony.dds</File>
+    <File md5="E7CC8206A801B61E64D62165E93C3F9C" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_Saxony/Knight_Saxony.fxsxml</File>
+    <File md5="86CFE3BA6640062BD83FE51C57DD8E49" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_Saxony/Knight_Saxony.gr2</File>
+    <File md5="8F16CD4D1291842D8F76A76BBC423F82" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_Saxony/Knight_Saxony_gloss.dds</File>
+    <File md5="7C218D70E2C3268959C908C93C6AF26C" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_Saxony/Knight_Saxony_Horse.dds</File>
+    <File md5="9BF87CE8CCEDDFEA3E3FD2DAC6DE9891" import="1">Art/Units/Policy/01-Liberty/Reichritter/Knight_Saxony/Knight_Saxony_Horse_gloss.dds</File>
+    <File md5="2D064D15D49D1C559C89622A0718478C" import="1">Art/Units/Policy/02-Honor/RohanCavalry/RohanHeavyCavalry.dds</File>
+    <File md5="C4CF33C48A225BA9A4DDB8FA1A3C2B43" import="1">Art/Units/Policy/02-Honor/RohanCavalry/RohanHeavyCavalry.fxsxml</File>
+    <File md5="90E4EF40ADBDC67975D474D36005F8B2" import="1">Art/Units/Policy/02-Honor/RohanCavalry/RohanHeavyCavalry.gr2</File>
+    <File md5="3A6C7F32A7FB8136AD7381A896828F87" import="1">Art/Units/Policy/02-Honor/RohanCavalry/RohanHeavyCavalry_gloss.dds</File>
+    <File md5="6F90157556080A76D24607292E5136E1" import="1">Art/Units/Policy/02-Honor/RohanCavalry/RohanHeavyCavalry_Horse.dds</File>
+    <File md5="39A99F48E3144A6500DD61173535CE22" import="1">Art/Units/Policy/02-Honor/RohanCavalry/RohanHeavyCavalry_Horse_gloss.dds</File>
+    <File md5="539DE99693957F6D9EDF5D23A8F63CF3" import="1">Art/Units/Policy/02-Honor/YuLinQi/1h_spear_quiang_upgraded_base_colour.dds</File>
+    <File md5="845AA8F12720AB3D3EC7B4506393CC66" import="1">Art/Units/Policy/02-Honor/YuLinQi/1h_spear_quiang_upgraded_gloss.dds</File>
+    <File md5="3A1C9D0F057A67ADFFB527805D8CBA4E" import="1">Art/Units/Policy/02-Honor/YuLinQi/ep_horse_armour_02_a_base_colour.dds</File>
+    <File md5="4F56D03004FFAB24C051D0FBE525379B" import="1">Art/Units/Policy/02-Honor/YuLinQi/generic_head_09_beard_01_skin_base_colour.dds</File>
+    <File md5="E342D93D3819BAE8F234F2BDFD4AE3CA" import="1">Art/Units/Policy/02-Honor/YuLinQi/qibingjx.dds</File>
+    <File md5="BFB28283D13EC1CEBDB9C876B02740B1" import="1">Art/Units/Policy/02-Honor/YuLinQi/qibingjx_specular.dds</File>
+    <File md5="ACC864F0EC25A33225450851ED9FE464" import="1">Art/Units/Policy/02-Honor/YuLinQi/sg_swordb.dds</File>
+    <File md5="073FE6AE2F07ECCA19C6BFF47585023D" import="1">Art/Units/Policy/02-Honor/YuLinQi/sg_swordb_spec.dds</File>
+    <File md5="4F93C2E3071A2ABEF6D42D3FAAF81228" import="1">Art/Units/Policy/02-Honor/YuLinQi/tiejiama.dds</File>
+    <File md5="51B1BE3C6344AD5CC1BA925122CFBC61" import="1">Art/Units/Policy/02-Honor/YuLinQi/tiejiama_gloss.dds</File>
+    <File md5="70E484E4CA951FBF3F127E18F955C1C0" import="1">Art/Units/Policy/02-Honor/YuLinQi/yulinqi.fxsxml</File>
+    <File md5="7EE055560F66E1E5F5546DD3410776B7" import="1">Art/Units/Policy/02-Honor/YuLinQi/yulinqi.gr2</File>
+    <File md5="99F516318F1D569177267E0F704DE897" import="1">Art/Units/Policy/02-Honor/YuLinQi/zhajia.dds</File>
+    <File md5="E044E444B4BD751BA53028FB9D96292C" import="1">Art/Units/Policy/02-Honor/YuLinQi/zhajia_specular.dds</File>
+    <File md5="C564578B014CF249AD451F9D85F5E3AE" import="1">Art/Units/Policy/03-Piety/GreatCross/FX_Triggers_GreatCross.ftsxml</File>
+    <File md5="9395F46D1635A84ECB579CAE6A8F36FF" import="1">Art/Units/Policy/03-Piety/GreatCross/GreatCross.fxsxml</File>
+    <File md5="C8327B1A3EBB98C1D4718876C306528B" import="1">Art/Units/Policy/03-Piety/GreatCross/GreatCross.gr2</File>
+    <File md5="0485DC636C8BCE4951471E8C3361BCE6" import="1">Art/Units/Policy/03-Piety/GreatCross/GreatCross.jpg</File>
+    <File md5="FD8FCB4102D708FC1476B56D73997ABC" import="1">Art/Units/Policy/03-Piety/GreatCross/GreatCross_Human.dds</File>
+    <File md5="DE6F00530BA6D05DA6664BF3338489D4" import="1">Art/Units/Policy/03-Piety/GreatCross/GreatCross_Human_gloss.dds</File>
+    <File md5="040179FB44D61B0C5358BDAF6232D960" import="1">Art/Units/Policy/03-Piety/GreatCross/GreatCross_Material.dds</File>
+    <File md5="B5838738301D4D689242922E3666E82C" import="1">Art/Units/Policy/03-Piety/GreatCross/GreatCross_Material_gloss.dds</File>
+    <File md5="0CB1211B39E84039D5B9F75454075295" import="1">Art/Units/Policy/03-Piety/Knights Hospitaller/Knight_Hospitaller.dds</File>
+    <File md5="3B24F9C62EF1EE3F7EE7355769CB5B8E" import="1">Art/Units/Policy/03-Piety/Knights Hospitaller/Knight_Hospitaller.fxsxml</File>
+    <File md5="CBAD296A6320465B3EF1340AB6CF636A" import="1">Art/Units/Policy/03-Piety/Knights Hospitaller/Knight_Hospitaller.gr2</File>
+    <File md5="2CDED0BBBE326BB66EC53EA2EBF5A14F" import="1">Art/Units/Policy/03-Piety/Knights Hospitaller/Knight_Hospitaller_gloss.dds</File>
+    <File md5="2D38C337F4E49FF40831B9FB40AC1C8E" import="1">Art/Units/Policy/03-Piety/Knights Hospitaller/Knight_Hospitaller_Horse.dds</File>
+    <File md5="A901F4A375F9CD322EAD16398BB77CEB" import="1">Art/Units/Policy/03-Piety/Knights Hospitaller/Knight_Hospitaller_Horse_gloss.dds</File>
+    <File md5="B02548029CA8B55B03B720EAF864E65F" import="1">Art/Units/Policy/03-Piety/Knight_Templar/Knight_Templar.dds</File>
+    <File md5="BD440A9146B25B7C3DCA1B3C216789FB" import="1">Art/Units/Policy/03-Piety/Knight_Templar/Knight_Templar.fxsxml</File>
+    <File md5="3BD493DD4DBEB4D11C7DD15FB6048E90" import="1">Art/Units/Policy/03-Piety/Knight_Templar/Knight_Templar.gr2</File>
+    <File md5="805E58C14FA2585ADC80B75CEBA9EEF6" import="1">Art/Units/Policy/03-Piety/Knight_Templar/Knight_Templar_gloss.dds</File>
+    <File md5="B8B93B7178778732C5C13985D0F1DE75" import="1">Art/Units/Policy/03-Piety/Knight_Templar/Knight_Templar_Horse.dds</File>
+    <File md5="52274AA7314382DE5589BC8C95377A67" import="1">Art/Units/Policy/03-Piety/Knight_Teutonic/Knight_Teutonic.dds</File>
+    <File md5="E541460A2AEFE09D8F125853157C0B81" import="1">Art/Units/Policy/03-Piety/Knight_Teutonic/Knight_Teutonic.fxsxml</File>
+    <File md5="4AEB997C6F529841EE415AD37CDA9A07" import="1">Art/Units/Policy/03-Piety/Knight_Teutonic/Knight_Teutonic.gr2</File>
+    <File md5="1E07E94A19807A32D808623E742D2DAD" import="1">Art/Units/Policy/03-Piety/Knight_Teutonic/Knight_Teutonic_gloss.dds</File>
+    <File md5="EDE495F88F7A4E37263D45EE0F7E7A33" import="1">Art/Units/Policy/03-Piety/Knight_Teutonic/Knight_Teutonic_Horse.dds</File>
+    <File md5="673A5CA6445289C2519547B20570F487" import="1">Art/Units/Policy/03-Piety/Knight_Teutonic/Knight_Teutonic_Horse_gloss.dds</File>
+    <File md5="3ACD032C6D30697960B143824C8462AF" import="1">Art/Units/Policy/03-Piety/Longswordsman_Hospitaller/Longswordsman_Hospitaller.dds</File>
+    <File md5="3EC5B0CA7C979443C8086DF987A532A6" import="1">Art/Units/Policy/03-Piety/Longswordsman_Hospitaller/Longswordsman_Hospitaller.fxsxml</File>
+    <File md5="4E118C8295691F62447C38674CADD942" import="1">Art/Units/Policy/03-Piety/Longswordsman_Hospitaller/Longswordsman_Hospitaller.gr2</File>
+    <File md5="13C5F6677341A8D2766692597BC75319" import="1">Art/Units/Policy/03-Piety/Longswordsman_Hospitaller/Longswordsman_Hospitaller.jpg</File>
+    <File md5="6DD90CCA937E6D1D37CD54F49E2422EE" import="1">Art/Units/Policy/03-Piety/Longswordsman_Hospitaller/Longswordsman_Hospitaller_gloss.dds</File>
+    <File md5="B6A571FEB41AA947822A3A31F3B7976E" import="1">Art/Units/Policy/03-Piety/Longswordsman_Templar/Longswordsman_Templar.dds</File>
+    <File md5="E7FB2D3C4A6F9690425B60562FDF9659" import="1">Art/Units/Policy/03-Piety/Longswordsman_Templar/Longswordsman_Templar.fxsxml</File>
+    <File md5="81A553DF70CCFD424D02F551552DF070" import="1">Art/Units/Policy/03-Piety/Longswordsman_Templar/Longswordsman_Templar.gr2</File>
+    <File md5="4FB0693111873209FF0A5E3C171E0397" import="1">Art/Units/Policy/03-Piety/Longswordsman_Templar/Longswordsman_Templar.jpg</File>
+    <File md5="84174E83AFDCD5160527994C05C50EFE" import="1">Art/Units/Policy/03-Piety/Longswordsman_Templar/Longswordsman_Templar_gloss.dds</File>
+    <File md5="441843FC9DA1E7B07841D4F855B9E216" import="1">Art/Units/Policy/03-Piety/Longswordsman_Teutonic/Longswordsman_Teutonic.dds</File>
+    <File md5="53048458E0CCA6AA42304C86B0286B34" import="1">Art/Units/Policy/03-Piety/Longswordsman_Teutonic/Longswordsman_Teutonic.fxsxml</File>
+    <File md5="1D24B3DA4ACACC6FD00B69ACA55B63B5" import="1">Art/Units/Policy/03-Piety/Longswordsman_Teutonic/Longswordsman_Teutonic.gr2</File>
+    <File md5="901AE507CE74808FDC94850DFB3246BB" import="1">Art/Units/Policy/03-Piety/Longswordsman_Teutonic/Longswordsman_Teutonic.jpg</File>
+    <File md5="FFC247EE0A928E774BDE01319331637D" import="1">Art/Units/Policy/03-Piety/Longswordsman_Teutonic/Longswordsman_Teutonic_gloss.dds</File>
+    <File md5="544754F4D0D031DE985E044B6EFA94E6" import="1">Art/Units/Policy/04-Patronage/Bashtnik/Bashtnik.dds</File>
+    <File md5="DB361297D766AD0D33D26F7056A8D19D" import="1">Art/Units/Policy/04-Patronage/Bashtnik/Bashtnik.fxsxml</File>
+    <File md5="A58DEC88022F78D5D3C8D4E632FE86EB" import="1">Art/Units/Policy/04-Patronage/Bashtnik/Bashtnik.gr2</File>
+    <File md5="DA21C4F2C79805DAC17D31376F2C233C" import="1">Art/Units/Policy/04-Patronage/Bashtnik/Bashtnik_gloss.dds</File>
+    <File md5="F9FCD22DBDA04A50B9C1E97FB60326AF" import="1">Art/Units/Policy/04-Patronage/Bashtnik/Bashtnik_helm.dds</File>
+    <File md5="EABCC413C1D530C15135D9B303DD2977" import="1">Art/Units/Policy/04-Patronage/Bashtnik/Bashtnik_helm_gloss.dds</File>
+    <File md5="3EBC6A0521CA5FDBC766DC4174234DDD" import="1">Art/Units/Policy/04-Patronage/Bashtnik/Pikeman_German.dds</File>
+    <File md5="4D87BF531E85B7F4B88C5CA1A511EE69" import="1">Art/Units/Policy/04-Patronage/Bashtnik/Pikeman_German_gloss.dds</File>
+    <File md5="16F7581B9C2EC6A2D88DD290B2D7EF94" import="1">Art/Units/Policy/04-Patronage/Batas Horseman/BatasHorseman.dds</File>
+    <File md5="324E099FA3ADBAA0ECAA902D72404676" import="1">Art/Units/Policy/04-Patronage/Batas Horseman/BatasHorseman.fxsxml</File>
+    <File md5="4C763B26D9995E7D2F002BCB2A0CF672" import="1">Art/Units/Policy/04-Patronage/Batas Horseman/BatasHorseman.gr2</File>
+    <File md5="1250685690F5AD9A91EAEEB61B7A289C" import="1">Art/Units/Policy/04-Patronage/Batas Horseman/BatasHorseman.indiedefs</File>
+    <File md5="B520BF3F53768555638871DC646E4096" import="1">Art/Units/Policy/04-Patronage/Batas Horseman/BatasHorseman_gloss.dds</File>
+    <File md5="651AD041BBB81FA07E533C347AB2382D" import="1">Art/Units/Policy/04-Patronage/Batas Horseman/BatasHorseman_Horse.dds</File>
+    <File md5="01EC5A5E63460D31D8966F586C512E02" import="1">Art/Units/Policy/04-Patronage/Corvette/EU4_WarGalleon.fxsxml</File>
+    <File md5="63D46181B3F6903D09E3927F2FE3EED9" import="1">Art/Units/Policy/04-Patronage/Corvette/EU4_WarGalleon.gr2</File>
+    <File md5="5872C46395884FBB78E07BF66059A764" import="1">Art/Units/Policy/04-Patronage/Corvette/eu4_war_galleon_diffuse.dds</File>
+    <File md5="99F44E9ADBC4A3B50E87A5D4CED705E8" import="1">Art/Units/Policy/04-Patronage/Fleet/civ4ri_treasureship.dds</File>
+    <File md5="F68A6A953507F63348FF1D158A0D94D2" import="1">Art/Units/Policy/04-Patronage/Fleet/civ4ri_treasureship.fxsxml</File>
+    <File md5="DE88D7EB4447B08B48F5A6D7494CB962" import="1">Art/Units/Policy/04-Patronage/Fleet/civ4ri_treasureship.gr2</File>
+    <File md5="43316B5B4D43A296BF29C4DB2DF86107" import="1">Art/Units/Policy/04-Patronage/Horseman_Persia/Horseman_Persia.blend</File>
+    <File md5="26714268E8098A521ADDF329D3CB098D" import="1">Art/Units/Policy/04-Patronage/Horseman_Persia/Horseman_Persia.dds</File>
+    <File md5="660603D3389399B97100AD75272AE5CC" import="1">Art/Units/Policy/04-Patronage/Horseman_Persia/Horseman_Persia.fxsxml</File>
+    <File md5="96F24C9F2D78452991E23CDD72B1588E" import="1">Art/Units/Policy/04-Patronage/Horseman_Persia/Horseman_Persia.gr2</File>
+    <File md5="C9B972264C835AEE8452128D08D66289" import="1">Art/Units/Policy/04-Patronage/Horseman_Persia/Horseman_Persia.jpg</File>
+    <File md5="EB50926F04084A480EE8EB4D00AA07E0" import="1">Art/Units/Policy/04-Patronage/Horseman_Persia/Horseman_Persia_gloss.dds</File>
+    <File md5="9E816B74D9F7F95B750BACA69EAD0289" import="1">Art/Units/Policy/04-Patronage/Horseman_Persia/Horseman_Persia_Horse.dds</File>
+    <File md5="3DEF48656240765A85BD0EB3CD43D6B2" import="1">Art/Units/Policy/04-Patronage/Horseman_Persia/Horseman_Persia_Horse_gloss.dds</File>
+    <File md5="44E6819378047E82C6274977F7081E24" import="1">Art/Units/Policy/04-Patronage/Knight_Russia/Knight_Russia.dds</File>
+    <File md5="CD27DBE749815A0DA73892EB28B8888D" import="1">Art/Units/Policy/04-Patronage/Knight_Russia/Knight_Russia.fxsxml</File>
+    <File md5="C9EAA9426334031DA3D261579322117C" import="1">Art/Units/Policy/04-Patronage/Knight_Russia/Knight_Russia.gr2</File>
+    <File md5="EABCC413C1D530C15135D9B303DD2977" import="1">Art/Units/Policy/04-Patronage/Knight_Russia/Knight_Russia_gloss.dds</File>
+    <File md5="2A0C614E9861F1280D646E75806C220D" import="1">Art/Units/Policy/04-Patronage/Knight_Russia/Knight_Russia_Horse.dds</File>
+    <File md5="2701C8CA79DFFF2390E9AED329E450C4" import="1">Art/Units/Policy/04-Patronage/Knight_Russia/Knight_Russia_Horse_gloss.dds</File>
+    <File md5="F2CF325F36B275F12B4EB953FE832F45" import="1">Art/Units/Policy/04-Patronage/Longbowman_Greece/Longbowman_Greece.blend</File>
+    <File md5="4CF9E06CC8E028FD9FCC0F80C77A7ECC" import="1">Art/Units/Policy/04-Patronage/Longbowman_Greece/Longbowman_Greece.dds</File>
+    <File md5="C66525B892C7DE5BCB7F546ACC4EE96F" import="1">Art/Units/Policy/04-Patronage/Longbowman_Greece/Longbowman_Greece.fxsxml</File>
+    <File md5="B540586C0A5154F9FEE871FF24BE48C7" import="1">Art/Units/Policy/04-Patronage/Longbowman_Greece/Longbowman_Greece.gr2</File>
+    <File md5="9F01FBC67C7A9FA4F0D9F94809EDDB36" import="1">Art/Units/Policy/04-Patronage/Longbowman_Greece/Longbowman_Greece.jpg</File>
+    <File md5="4092D13056E73F1CE04647A9557330FB" import="1">Art/Units/Policy/04-Patronage/Longbowman_Greece/Longbowman_Greece_gloss.dds</File>
+    <File md5="C529DDD2FBA6D393CF9098460830E991" import="1">Art/Units/Policy/04-Patronage/Saka/U_Scythian_Saka.fxsxml</File>
+    <File md5="EBB6D06C7C7942E657E210019EE9504B" import="1">Art/Units/Policy/04-Patronage/Saka/U_Scythian_Saka.gr2</File>
+    <File md5="36EE12733FC3BC5C3D42A461FCDFF789" import="1">Art/Units/Policy/04-Patronage/Saka/U_Scythian_Saka_diff.dds</File>
+    <File md5="2D370630DA8E917EDFD29E6FDC61689A" import="1">Art/Units/Policy/04-Patronage/Saka/U_Scythian_Saka_sref.dds</File>
+    <File md5="9A0B142EF99B4DB351B74C7DCD1B8064" import="1">Art/Units/Policy/04-Patronage/Shenji Musketeer/mandate_weapons_diffuse.dds</File>
+    <File md5="2B16F8F1B832ABD7BC32C15E27193975" import="1">Art/Units/Policy/04-Patronage/Shenji Musketeer/mandate_weapons_specular.dds</File>
+    <File md5="07FD07DAA5C433FD70B079B110633127" import="1">Art/Units/Policy/04-Patronage/Shenji Musketeer/shenji_armor09.fxsxml</File>
+    <File md5="1736538CA68817AAE2AE4045D5BE4A25" import="1">Art/Units/Policy/04-Patronage/Shenji Musketeer/shenji_armor09.gr2</File>
+    <File md5="61E0ACC12250B4A71B0EF06E1B0EB22B" import="1">Art/Units/Policy/04-Patronage/Shenji Musketeer/shenji_armor09_diff.dds</File>
+    <File md5="B7CD9F8A3B8E92FD1975D64BE39CE47D" import="1">Art/Units/Policy/04-Patronage/Shenji Musketeer/shenji_armor09_sref.dds</File>
+    <File md5="543851BC62A36F94457AF865A2771156" import="1">Art/Units/Policy/04-Patronage/Shenji Musketeer/shenji_armor09_v2.fxsxml</File>
+    <File md5="079927E56003CDE94C6135FA967763A1" import="1">Art/Units/Policy/04-Patronage/Shenji Musketeer/shenji_armor09_v2.gr2</File>
+    <File md5="3CF839A0769C712C5F04379660AC8876" import="1">Art/Units/Policy/04-Patronage/Shenji Musketeer/shenji_armor09_v2_diff.dds</File>
+    <File md5="B7CD9F8A3B8E92FD1975D64BE39CE47D" import="1">Art/Units/Policy/04-Patronage/Shenji Musketeer/shenji_armor09_v2_sref.dds</File>
+    <File md5="FD61F5C00BCC5B3869D71424AC98D05A" import="1">Art/Units/Policy/05-Aesthetics/DVC_MachineGun/fx_triggers_u_korean_hwacha.ftsxml</File>
+    <File md5="FE94A97D18DFD992F71BD10C6C3DBAAF" import="1">Art/Units/Policy/05-Aesthetics/DVC_MachineGun/multibarre.dds</File>
+    <File md5="5BFE9324BBC6E7CDC1923C7F682D2AC6" import="1">Art/Units/Policy/05-Aesthetics/DVC_MachineGun/multibarre.fxsxml</File>
+    <File md5="E0633F8D78335540272F62BD30B2E333" import="1">Art/Units/Policy/05-Aesthetics/DVC_MachineGun/multibarre.gr2</File>
+    <File md5="781BD08B557C9863DF8E5D36C03494FF" import="1">Art/Units/Policy/05-Aesthetics/DVC_Tank/dvc_tank.fxsxml</File>
+    <File md5="DC82869D001CF116B5A6AF6CAEB967EC" import="1">Art/Units/Policy/05-Aesthetics/DVC_Tank/dvc_tank.gr2</File>
+    <File md5="42631B81A3F219A0F5DC54AABABDA7B7" import="1">Art/Units/Policy/05-Aesthetics/DVC_Tank/EXO_04_TX_Tank_Metals01_DiffuseMap.DDS</File>
+    <File md5="25E1BAD129D2DA334ECE0E698AC813EC" import="1">Art/Units/Policy/05-Aesthetics/DVC_Tank/EXO_04_TX_Tank_Metals01_SpecularMap.DDS</File>
+    <File md5="95E002C10C2065B410F1A92E7BAA8C91" import="1">Art/Units/Policy/05-Aesthetics/DVC_Tank/EXO_04_TX_Tank_Woods01_DiffuseMap.DDS</File>
+    <File md5="DFD1DDE4EB5D62C595CB9E857078FFF3" import="1">Art/Units/Policy/05-Aesthetics/DVC_Tank/EXO_04_TX_Tank_Woods01_SpecularMap.DDS</File>
+    <File md5="7944C631803278EBA1805C5363D3C511" import="1">Art/Units/Policy/05-Aesthetics/DVC_Tank/EXO_Tank_Metals01Burn_DiffuseMap.DDS</File>
+    <File md5="B9EB57886CD10511935F8098453B358E" import="1">Art/Units/Policy/05-Aesthetics/DVC_Tank/EXO_Tank_Metals01Burn_SpecularMap.DDS</File>
+    <File md5="AF0CF1C0CD3C770DF72ECE4AAA1D6326" import="1">Art/Units/Policy/06-Commerce/fire_ship/aoe3de_fireship.fxsxml</File>
+    <File md5="AF49B5461107148951C807827459D926" import="1">Art/Units/Policy/06-Commerce/fire_ship/aoe3de_fireship.gr2</File>
+    <File md5="BA91A8B5EB4D22F66341A3EA26F67822" import="1">Art/Units/Policy/06-Commerce/fire_ship/fx_triggers_sman_fireship.ftsxml</File>
+    <File md5="D4D676A887D5A6065EC5B613782CA276" import="1">Art/Units/Policy/06-Commerce/fire_ship/war_junk_mata_basecolor.dds</File>
+    <File md5="FBA818791FB1937884E49BD45819B5A9" import="1">Art/Units/Policy/06-Commerce/fire_ship/war_junk_matb_basecolor.dds</File>
+    <File md5="5A1995CF9D2E9265188EAFD3A93AD7E6" import="1">Art/Units/Policy/06-Commerce/GenXBow/SMAN_EU_GenoeseCrossbowman.fxsxml</File>
+    <File md5="DC2C9400314AD0F89130925217A04A2B" import="1">Art/Units/Policy/06-Commerce/GenXBow/SMAN_EU_GenoeseCrossbowman.gr2</File>
+    <File md5="9F23754D93995253E99610BBFA4A2802" import="1">Art/Units/Policy/06-Commerce/GenXBow/SMAN_EU_GenoeseCrossbowman_diff.dds</File>
+    <File md5="A67605ECEB608FA7F06E890B0633CC70" import="1">Art/Units/Policy/06-Commerce/GenXBow/SMAN_EU_GenoeseCrossbowman_gloss.dds</File>
+    <File md5="A0782A1A1BF39E518C5DBEB615BFE6A5" import="1">Art/Units/Policy/06-Commerce/iron_troop/iron_troop.fxsxml</File>
+    <File md5="C0D75893E19660858647FAC9521CDABF" import="1">Art/Units/Policy/06-Commerce/iron_troop/iron_troop.gr2</File>
+    <File md5="9DB670BEA35B99A5362086A56B62B441" import="1">Art/Units/Policy/06-Commerce/iron_troop/iron_troop_mata_basecolor.dds</File>
+    <File md5="0B5FDB0C22764BE695C00C46ECB6E103" import="1">Art/Units/Policy/06-Commerce/iron_troop/iron_troop_mata_gloss.dds</File>
+    <File md5="DD75944F0EB3BE028A4D5CBF90EA6FA3" import="1">Art/Units/Policy/06-Commerce/iron_troop/iron_troop_staff_phong2_basecolor.dds</File>
+    <File md5="CD2CBBC339738302AB7CAEBD55BE25BC" import="1">Art/Units/Policy/06-Commerce/iron_troop/iron_troop_staff_phong2_gloss.dds</File>
+    <File md5="8363CF5B7253CA1E5AA7E37A4C4B86F2" import="1">Art/Units/Policy/06-Commerce/SouthChinaSeaPrivateer/asian_private.dds</File>
+    <File md5="7EC8521EEBF63CD672F2D9FB8DD802CA" import="1">Art/Units/Policy/06-Commerce/SouthChinaSeaPrivateer/asian_private.fxsxml</File>
+    <File md5="B6F4305822B23964DD69606F64668CCF" import="1">Art/Units/Policy/06-Commerce/SouthChinaSeaPrivateer/asian_private.gr2</File>
+    <File md5="1A97771969184D1888D589552F5946D3" import="1">Art/Units/Policy/06-Commerce/LilBomb/SMAN_EU_LilBombard.fxsxml</File>
+    <File md5="C5F71E49F83DAEB5BBCB5CC375C78F03" import="1">Art/Units/Policy/06-Commerce/LilBomb/SMAN_EU_LilBombard.gr2</File>
+    <File md5="4D1718667245885D54B242FA5C3DF112" import="1">Art/Units/Policy/06-Commerce/LilBomb/SMAN_EU_LilBombard_Crew_diff.dds</File>
+    <File md5="3074451F72352ADA68F4B3DEEE65B3A6" import="1">Art/Units/Policy/06-Commerce/LilBomb/SMAN_EU_LilBombard_diff.dds</File>
+    <File md5="B72AF20074CF79CA94D5327FDDC096CC" import="1">Art/Units/Policy/06-Commerce/LilBomb/SMAN_EU_LilBombard_sref.dds</File>
+    <File md5="F7F6A7C7832E8130B2311A6DC641251C" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/DBaro2nClay_gloss.dds</File>
+    <File md5="9A5E69D7340765F000790541CC6755AD" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/DBaronClay.dds</File>
+    <File md5="98A2A197CAA34CB3CE1DF7828773CE1F" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/DBaronClay_2.dds</File>
+    <File md5="EE52203A7035D655CDF5AB2A88C230F0" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/dopp-pik_diff.dds</File>
+    <File md5="11239CBAE23698F6252C1132EA8CBEEF" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/dopp-pik_sref.dds</File>
+    <File md5="3968FCCC56CD25DDDF439A02CD22E7BA" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/dopp_a.fxsxml</File>
+    <File md5="32244ADB02C4753326441E18ECC2656C" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/dopp_a.gr2</File>
+    <File md5="DCFC4E0E078AC21B62D76A75353E139C" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/dopp_b.fxsxml</File>
+    <File md5="31EA84F18D40B761F19B501B4889E812" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/dopp_b.gr2</File>
+    <File md5="D309A6843F533C39C6BD3A747158B95B" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/hat_a_diff.dds</File>
+    <File md5="1DC029A536B20446BC3CDB287B49D729" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/hat_a_sref.dds</File>
+    <File md5="256410A0F9FB03074923A4FEAAB27304" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/hat_b_diff.dds</File>
+    <File md5="2E66FAF173410C9A619E9084ED98A226" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/hat_b_sref.dds</File>
+    <File md5="4A8AAADD77282D96CEA9F855F37FEC7D" import="1">Art/Units/Policy/06-Commerce/Doppelsoldner/sv_Doppelsoldner.dds</File>
+    <File md5="2460FE162A5AF92E06CD03EC4ACF949D" import="1">Art/Units/Policy/06-Commerce/free_company/eng_kn.dds</File>
+    <File md5="D0CF1C8D5F848CE90C6FFAF8C5F4C681" import="1">Art/Units/Policy/06-Commerce/free_company/eng_kn_gloss.dds</File>
+    <File md5="514BE5FD691D97CC7AE26C0B08D777B4" import="1">Art/Units/Policy/06-Commerce/free_company/free_company.dds</File>
+    <File md5="1AB11ABD9512F6E0908A5CBAC94C8F83" import="1">Art/Units/Policy/06-Commerce/free_company/free_company.fxsxml</File>
+    <File md5="142F719DD4157938FD63AC133F72FA43" import="1">Art/Units/Policy/06-Commerce/free_company/free_company.gr2</File>
+    <File md5="FEA2A8567FF8B7954C97E7FA088FB7AB" import="1">Art/Units/Policy/06-Commerce/free_company/free_company_gloss.dds</File>
+    <File md5="0FAD69FDD9C47C4045F43D383D88496A" import="1">Art/Units/Policy/06-Commerce/free_company/free_company_poleaxe.fxsxml</File>
+    <File md5="1287AF3F981B0ED91DD839273D19D1C4" import="1">Art/Units/Policy/06-Commerce/free_company/free_company_poleaxe.gr2</File>
+    <File md5="11FD65A4A87D3F137045A64F94E1F839" import="1">Art/Units/Policy/06-Commerce/Graphics_Maceman_modified/Maceman.fxsxml</File>
+    <File md5="64E6A3145D0F71598C12AF6F4F826A10" import="1">Art/Units/Policy/06-Commerce/Graphics_Maceman_modified/Maceman.gr2</File>
+    <File md5="4FFE8CBCC7E85179A0F50ED6DA4BBE7F" import="1">Art/Units/Policy/06-Commerce/Graphics_Maceman_modified/Maceman_diff512.dds</File>
+    <File md5="491A0DB36FBC568800A113EF78A1F181" import="1">Art/Units/Policy/06-Commerce/Graphics_Maceman_modified/Maceman_sref512.dds</File>
+    <File md5="BE13AAABA6ADF3D6BBD4C0C7E74995B0" import="1">Art/Units/Policy/06-Commerce/Musket_Landsknecht/landsknecht_musket_a.fxsxml</File>
+    <File md5="E35D47160A14C7CB836554C78D7E4C2F" import="1">Art/Units/Policy/06-Commerce/Musket_Landsknecht/landsknecht_musket_a.gr2</File>
+    <File md5="A46ECF0ED5D09BF60FB18C2256970125" import="1">Art/Units/Policy/06-Commerce/Musket_Landsknecht/landsknecht_musket_b.fxsxml</File>
+    <File md5="913B1B54EDD19872B5300CB364174863" import="1">Art/Units/Policy/06-Commerce/Musket_Landsknecht/landsknecht_musket_b.gr2</File>
+    <File md5="131CA692BEE32D4198FAC079C7B569F9" import="1">Art/Units/Policy/06-Commerce/RER_PIKE/pike_helm_diff.dds</File>
+    <File md5="3C1CE99FF2BFE1A47EF3A0A889C0A76F" import="1">Art/Units/Policy/06-Commerce/RER_PIKE/pike_helm_sref.dds</File>
+    <File md5="EBCE0CD7F3071FFEB7EA63B8FF250985" import="1">Art/Units/Policy/06-Commerce/RER_PIKE/RER_PIKE.fxsxml</File>
+    <File md5="7C457B3C1AE50E07BD210087FEF27EBF" import="1">Art/Units/Policy/06-Commerce/RER_PIKE/RER_PIKE.gr2</File>
+    <File md5="B1EF918E9BDE8877909CFBBD03931279" import="1">Art/Units/Policy/06-Commerce/RER_PIKE/RER_PIKE_diff.dds</File>
+    <File md5="D93107382406BC93F69CEACFE6679FBD" import="1">Art/Units/Policy/06-Commerce/RER_PIKE/RER_PIKE_sref.dds</File>
+    <File md5="A6CCDE935AFD654B6803717FFF4773C6" import="1">Art/Units/Policy/06-Commerce/SwissPike/reislaufer.fxsxml</File>
+    <File md5="54466258F5A615864E2F2FC808E6ACF6" import="1">Art/Units/Policy/06-Commerce/SwissPike/reislaufer.gr2</File>
+    <File md5="DD4DBB6FB2E7E11ADBE9B37D53560428" import="1">Art/Units/Policy/06-Commerce/SwissPike/reislaufer_diff.dds</File>
+    <File md5="C17C1A9359A378E1F1FF8A47F4D40308" import="1">Art/Units/Policy/06-Commerce/SwissPike/reislaufer_sref.dds</File>
+    <File md5="FBF50CD0085ED2FBBF6120A08BB7FE5A" import="1">Art/Units/Policy/06-Commerce/Varangian/Mercenry Varangians/sv_MercVarangian.dds</File>
+    <File md5="E61207FDA06A0CB09146D3BBCB41B19D" import="1">Art/Units/Policy/06-Commerce/Varangian/Mercenry Varangians/VarangianGuard.fxsxml</File>
+    <File md5="294A944B2A62D56861DCB40A50C5ED22" import="1">Art/Units/Policy/06-Commerce/Varangian/Mercenry Varangians/VarangianGuard.gr2</File>
+    <File md5="70B372B978E070EBFD258E2792DD3420" import="1">Art/Units/Policy/06-Commerce/Varangian/Mercenry Varangians/VarangianGuard_diff.dds</File>
+    <File md5="A0BC6D3BE35B1E6A1C57D7C747CF20F6" import="1">Art/Units/Policy/06-Commerce/Varangian/Mercenry Varangians/VarangianGuard_sref.dds</File>
+    <File md5="CD3001EDE3558350B35A42230CA9C97D" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/rusnovgorodheavyfootmanlamellargloss_128.dds</File>
+    <File md5="6F57F9831889A50185B32D5A71A6F4A3" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/rusnovgorodheavyfootmanlamellar_128.dds</File>
+    <File md5="C2B2C43F6B86ABA5324246E5328E836E" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/rusnovgorodheavyfootmanlamellar_1281.dds</File>
+    <File md5="6BCE57E5C6C549570F7E69A423E36B41" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/rusnovgorodheavyfootmanlamellar_1282.dds</File>
+    <File md5="2042807EA4069E51960762C6D239EC84" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/slavicrussianshieldroundlarge1.dds</File>
+    <File md5="ED01038ADD25CB7868AA62EB376757B5" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/slavicrussianshieldroundlarge2.dds</File>
+    <File md5="D4177B24F02408EDC6951813E9A53640" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/slavicrussianshieldroundlarge3.dds</File>
+    <File md5="946C49D9B4E64A1F6265E89A7B07E983" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/slavicrussianshieldroundlarge3gloss.dds</File>
+    <File md5="DA3B00720C0E309D750D8A62117969DD" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/varangian_guard1.fxsxml</File>
+    <File md5="7BECD38B12DA68477FFE1FB563A564CF" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/varangian_guard1.gr2</File>
+    <File md5="2385BA01E19A3B924FEABE9FFA57DC76" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/varangian_guard2.fxsxml</File>
+    <File md5="D5907032F0CD5F3AA152A95B3BEAEC45" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/varangian_guard2.gr2</File>
+    <File md5="B068C35AA3ADDC8CD1677E9AF7049DED" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/varangian_guard3.fxsxml</File>
+    <File md5="D8F444DABF3E68D02C252B2D0B3BE68F" import="1">Art/Units/Policy/06-Commerce/Varangian/Varangian Guard/varangian_guard3.gr2</File>
+    <File md5="DD5A7DD332E3A4555611EFE9FEBF9EDD" import="1">Art/Units/Policy/07-Exploration/Fuchuan/AOE3DE_Fuchuan.fxsxml</File>
+    <File md5="EBA13593023B575F4807FA362D2C2D4E" import="1">Art/Units/Policy/07-Exploration/Fuchuan/AOE3DE_Fuchuan.gr2</File>
+    <File md5="284852845AB4043A5D89EBF99899E21A" import="1">Art/Units/Policy/07-Exploration/Fuchuan/fuchuan_matA_BaseColor.dds</File>
+    <File md5="EB2011475E9043FDE1DCC5CDC6F14F14" import="1">Art/Units/Policy/07-Exploration/Fuchuan/fuchuan_matB_BaseColor.dds</File>
+    <File md5="CBCBB0A12EA87F0A6DA86B96769FC37A" import="1">Art/Units/Policy/08-Rationalism/Hot_Air_Ballon/balloon_advanced_mata_basecolor.dds</File>
+    <File md5="C6276EAD0D47E6844BDE85F06AC9FF7B" import="1">Art/Units/Policy/08-Rationalism/Hot_Air_Ballon/hot_air_balloon_advanced.fxsxml</File>
+    <File md5="4D9F403E3ECA2936FBC70F235CFA8726" import="1">Art/Units/Policy/08-Rationalism/Hot_Air_Ballon/hot_air_balloon_advanced.gr2</File>
+    <File md5="DD3E9220A13AA3A23BA80F43ECD8B581" import="1">Art/Units/Policy/09-Freedom/cgn9/cgn9_vls.dds</File>
+    <File md5="FC7A724677992F60B63E1CAD7D8C6295" import="1">Art/Units/Policy/09-Freedom/cgn9/CGN9_VLS_FWD.fxsxml</File>
+    <File md5="EBA03153711E58565947124557FBC160" import="1">Art/Units/Policy/09-Freedom/cgn9/CGN9_VLS_FWD.gr2</File>
+    <File md5="DA1A496D8B7D1C3C321A8A9E8213138F" import="1">Art/Units/Policy/09-Freedom/HeliCarrier/fx_triggers_helicarrier.ftsxml</File>
+    <File md5="FB4CF36B3E183B9A32C21804D6F6FA5D" import="1">Art/Units/Policy/09-Freedom/HeliCarrier/ShieldHelicarrier.fxsxml</File>
+    <File md5="EF4760CDE2647030F3FBB3F07B8931FE" import="1">Art/Units/Policy/09-Freedom/HeliCarrier/ShieldHelicarrier.gr2</File>
+    <File md5="4CA470AD222146ABAC142747B82090AC" import="1">Art/Units/Policy/09-Freedom/HeliCarrier/ShieldHelicarrier_DIFF.dds</File>
+    <File md5="91A10CB24D1B761DB6AF59043BC8222B" import="1">Art/Units/Policy/09-Freedom/HeliCarrier/ShieldHelicarrier_SREF.dds</File>
+    <File md5="ED94CDBD0835335165FACB76563D0FE3" import="1">Art/Units/Policy/09-Freedom/Supermarine_Spitfire_MK_V/Supermarine_Spitfire_MK_V.blend</File>
+    <File md5="42F5896981E4B20634B71EB8C04DFE00" import="1">Art/Units/Policy/09-Freedom/Supermarine_Spitfire_MK_V/Supermarine_Spitfire_MK_V.dds</File>
+    <File md5="653E3EED1D321470668C4F8B5D0A8425" import="1">Art/Units/Policy/09-Freedom/Supermarine_Spitfire_MK_V/Supermarine_Spitfire_MK_V.fxsxml</File>
+    <File md5="7A43ADE764830138646AF15CB3E2F514" import="1">Art/Units/Policy/09-Freedom/Supermarine_Spitfire_MK_V/Supermarine_Spitfire_MK_V.gr2</File>
+    <File md5="592AF36C6A6050D1BD32E936E23B9A9F" import="1">Art/Units/Policy/09-Freedom/Supermarine_Spitfire_MK_V/Supermarine_Spitfire_MK_V.jpg</File>
+    <File md5="9E0DC95B6EFB7CAA644E2F64E37F8A37" import="1">Art/Units/Policy/09-Freedom/Supermarine_Spitfire_MK_V/Supermarine_Spitfire_MK_V_gloss.dds</File>
+    <File md5="C80A6C61C8A4B53216E2A72F15273E82" import="1">Art/Units/Policy/10-Order/055_VLS/055_diff.dds</File>
+    <File md5="3BF0309C44D2616EC519909EB59B46EC" import="1">Art/Units/Policy/10-Order/055_VLS/055_sref.dds</File>
+    <File md5="144E679B5168FF8862B4C36405126AAC" import="1">Art/Units/Policy/10-Order/055_VLS/055_VLS.gr2</File>
+    <File md5="C5F57CEFA9C049E0224C8A2DD844C459" import="1">Art/Units/Policy/10-Order/055_VLS/055_VLS_FWD.fxsxml</File>
+    <File md5="1B15A53745839C4271707356414CD5CA" import="1">Art/Units/Policy/10-Order/055_VLS/fx_triggers_055_VLS_FWD.ftsxml</File>
+    <File md5="0F78C9E633ADBE74E7C59296D2C6C953" import="1">Art/Units/Policy/10-Order/KV-2/KV-2.blend</File>
+    <File md5="3E306E1BE641F80D1381B7A305FC33B7" import="1">Art/Units/Policy/10-Order/KV-2/KV-2.dds</File>
+    <File md5="F952FFBD7C5792E077ECA9CD79C05A63" import="1">Art/Units/Policy/10-Order/KV-2/KV-2.fxsxml</File>
+    <File md5="C76153CDA0B317D14BBC8E5A8A7276C2" import="1">Art/Units/Policy/10-Order/KV-2/KV-2.gr2</File>
+    <File md5="8E7BBD3675CEB77D22AA389B64A73CE0" import="1">Art/Units/Policy/10-Order/KV-2/KV-2.jpg</File>
+    <File md5="AC41C06BA721315512F26433220FEDF7" import="1">Art/Units/Policy/10-Order/KV-2/no_gloss.dds</File>
+    <File md5="4B4006BC809E8E3FB74D0EF03EDFC915" import="1">Art/Units/Policy/10-Order/Su47/su-47_berkut.fxsxml</File>
+    <File md5="0971149F743B2E165BAB60927BEA7B73" import="1">Art/Units/Policy/10-Order/Su47/su-47_berkut.gr2</File>
+    <File md5="7C06E84D672CBC92681A8FFEB392AA2E" import="1">Art/Units/Policy/10-Order/Su47/su-47_berkut_diff.dds</File>
+    <File md5="1A74B2F46C8F7620DE164DA094AFAFCD" import="1">Art/Units/Policy/10-Order/super_055_VLS/fx_triggers_super_055_VLS_FWD.ftsxml</File>
+    <File md5="D24DEF7337388E581C459C202677B3B4" import="1">Art/Units/Policy/10-Order/super_055_VLS/super_055_VLS.fxsxml</File>
+    <File md5="E82A21838944D70A988AB4DE0EFB7C0E" import="1">Art/Units/Policy/10-Order/super_055_VLS/super_055_VLS.gr2</File>
+    <File md5="8026A71A85DE97A9264526C73BAF04EF" import="1">Art/Units/Policy/10-Order/super_055_VLS/warship_055_blinn1SG_AlbedoTransparency.dds</File>
+    <File md5="42CFE5EE32464CBFF2ABCD33E6DC8DFA" import="1">Art/Units/Policy/10-Order/super_055_VLS/warship_055_blinn1SG_MetallicSmoothness.dds</File>
+    <File md5="2EBE4B18CD2B43EB91477ED5C1586861" import="1">Art/Units/Policy/11-Autocracy/GigaFortress/fx_triggers_JUFortressShip_VLS.ftsxml</File>
+    <File md5="6702D1E306E71A3E2E018FC7858C62A0" import="1">Art/Units/Policy/11-Autocracy/GigaFortress/fx_triggers_mech_juf.ftsxml</File>
+    <File md5="3F986C4214CB434E85AE1B9A599A1A8D" import="1">Art/Units/Policy/11-Autocracy/GigaFortress/JUFortressHEAD.fxsxml</File>
+    <File md5="F18AEB8A3CBBC6EDBBAB0F5BE916FE08" import="1">Art/Units/Policy/11-Autocracy/GigaFortress/JUFortressHEAD.gr2</File>
+    <File md5="912881B58F4E2CD091D8EA563C9293EA" import="1">Art/Units/Policy/11-Autocracy/GigaFortress/JUFortressShip.dds</File>
+    <File md5="983F5097F0077C748F2AC6E0797E725E" import="1">Art/Units/Policy/11-Autocracy/GigaFortress/JUFortressShip_VLS.fxsxml</File>
+    <File md5="07FB075100DD8845864348376B519E19" import="1">Art/Units/Policy/11-Autocracy/GigaFortress/JUFortressShip_VLS.gr2</File>
+    <File md5="A0E6D3F2568312EC9575BF5612267B1F" import="1">Art/Units/Policy/11-Autocracy/Sdkfz251/GER_SdKfz_251_camo2.dds</File>
+    <File md5="B69FD13B3FDFB18BCC2D771D981AAD97" import="1">Art/Units/Policy/11-Autocracy/Sdkfz251/GER_SdKfz_251_camo2.fxsxml</File>
+    <File md5="A1392C99DB4CC521C1E4C6C35353A26E" import="1">Art/Units/Policy/11-Autocracy/Sdkfz251/GER_SdKfz_251_camo2.gr2</File>
+    <File md5="214702FA6C88332BA41AFEEAFB0C4E59" import="1">Art/Units/Policy/11-Autocracy/Sdkfz251/GER_SdKfz_251_D_win.dds</File>
+    <File md5="3BE69857819B6B61CA9347004FDE7E5D" import="1">Art/Units/Policy/11-Autocracy/Sdkfz251/GER_SdKfz_251_D_win.fxsxml</File>
+    <File md5="D1F0D3245AA8BBA91291424F8319D8A8" import="1">Art/Units/Policy/11-Autocracy/Sdkfz251/GER_SdKfz_251_D_win.gr2</File>
+    <File md5="99D93D6597BFEE322BC071B33D3DD8FE" import="1">Art/Units/Policy/11-Autocracy/Sdkfz251/GER_SdKfz_251_Track_D.dds</File>
+    <File md5="AA5571D291FDC0594571DEF8CBA5BA4D" import="1">Art/Units/Policy/11-Autocracy/Sdkfz251/GER_SdKfz_251_Track_D_win.dds</File>
+    <File md5="F7333DB35FA7D94E763E17E57AEB8288" import="1">Art/Units/Policy/11-Autocracy/Sdkfz251/Infantry_German_v2.dds</File>
+    <File md5="0A54830D43B790D5D42465E39348D43F" import="1">Art/Units/Policy/11-Autocracy/Sdkfz251/Infantry_German_v2.fxsxml</File>
+    <File md5="3A0500B2BFF28C2396231F0952471ECF" import="1">Art/Units/Policy/11-Autocracy/Sdkfz251/Infantry_German_v2.gr2</File>
+    <File md5="AC41C06BA721315512F26433220FEDF7" import="1">Art/Units/Policy/11-Autocracy/Sdkfz251/no_gloss.dds</File>
+    <File md5="2F573381778508F4957EAB301D023BF9" import="1">Art/Units/Unique/Denmark/Absalon/Absalon_VLS_FWD.dds</File>
+    <File md5="267F4115C4BD17400242E67D87B22FBC" import="1">Art/Units/Unique/Denmark/Absalon/Absalon_VLS_FWD.fxsxml</File>
+    <File md5="4851E193D8ACB8F132B23C6902E71791" import="1">Art/Units/Unique/Denmark/Absalon/Absalon_VLS_FWD.gr2</File>
+    <File md5="125E311429CC5CEEF222DCB511D804C5" import="1">Art/Units/Unique/France/Mistral/Mistral.dds</File>
+    <File md5="EDCF79BC67927AF40B324B2F0D70BF4B" import="1">Art/Units/Unique/France/Mistral/Mistral.fxsxml</File>
+    <File md5="D1A2862376270EF4D933A5D6B33808F6" import="1">Art/Units/Unique/France/Mistral/Mistral.gr2</File>
+    <File md5="D367BBAAE883A091D4B3FC888E692996" import="1">Art/Units/Unique/German/Tiger_diff.dds</File>
+    <File md5="051B72D13D098904B1D54A419EF39584" import="1">Art/Units/Unique/German/tiger_germany.fxsxml</File>
+    <File md5="E6E5C1DDD430182FABEE28C94B5E3723" import="1">Art/Units/Unique/German/Tiger_Germany.gr2</File>
+    <File md5="33881021B7D2B83112222067A095F3EA" import="1">Art/Units/Unique/German/Tiger_sref.dds</File>
+    <File md5="7A19713BEA335B8B36FDA95E239D5EAB" import="1">Art/Units/Unique/Ottomans/tcmAmmiratus.fxsxml</File>
+    <File md5="65C48CDE7F9652CD8BF5F9379045055F" import="1">Art/Units/Unique/Ottomans/tcmAmmiratus.gr2</File>
+    <File md5="F4DF51BF6E612170919B159C174177C4" import="1">Art/Units/Unique/Ottomans/tcmAmmiratusDiff.dds</File>
+    <File md5="564ABE4E77FBAD33E9D508A27B0AE4C2" import="1">Art/Units/Unique/Ottomans/tcmAmmiratusSref.dds</File>
+    <File md5="78A6F2883C4C21D3323A8A81CE9DD530" import="1">Art/Units/Unique/Persia/Qizilbash/Qizilbash.fxsxml</File>
+    <File md5="BF7A0B5266C995DE0186619E36177D6D" import="1">Art/Units/Unique/Persia/Qizilbash/Qizilbash.gr2</File>
+    <File md5="D192F7FD909322517282A0921EC8E266" import="1">Art/Units/Unique/Persia/Qizilbash/Qizilbash_Horse_diff.dds</File>
+    <File md5="E625CA5926A4051425188E4BA8DC293D" import="1">Art/Units/Unique/Persia/Qizilbash/Qizilbash_Horse_sref.dds</File>
+    <File md5="A6006F4D12DA75430F2FFF4D3D413BAC" import="1">Art/Units/Unique/Persia/Qizilbash/Qizilbash_Rider_diff.dds</File>
+    <File md5="74417EFAEF1EF645B98C57E6C69C7DD2" import="1">Art/Units/Unique/Persia/Qizilbash/Qizilbash_Rider_sref.dds</File>
+    <File md5="9D09450033BA6C8FAE1FE2140F8A479E" import="1">CombatPercentBonus/CombatPercent_Misc.lua</File>
+    <File md5="03014940005D9E13F8292B8FBCFBBDCF" import="0">CombatPercentBonus/CombatPercent_Misc.sql</File>
+    <File md5="5F34CCED5439F9634DAED4C814AFB29D" import="1">CombatPercentBonus/FontIcons_CPM.dds</File>
+    <File md5="55FB9A899A5371A1E46FC66047D1B02B" import="1">CombatPercentBonus/FontIcons_CPM.ggxml</File>
+    <File md5="06156C626E80BD2E1962CED2263295AD" import="1">CombatPercentBonus/promo_CPM_016.dds</File>
+    <File md5="42479D6B25A2CF0AC471CD171EAAC4CF" import="1">CombatPercentBonus/promo_CPM_032.dds</File>
+    <File md5="3FFD9344214BD1ED9E99DFFC606BE99C" import="1">CombatPercentBonus/promo_CPM_045.dds</File>
+    <File md5="5620DE5A07F8E10130FC90DDB00E0791" import="1">CombatPercentBonus/promo_CPM_064.dds</File>
+    <File md5="A9E6EA38AB974A7C1C0D34F1AB858985" import="1">CombatPercentBonus/promo_CPM_256.dds</File>
+    <File md5="B2EB55EC71E307848AF62A8AC6578E9C" import="1">LUA/PlotMath.lua</File>
+    <File md5="761DFFE4309CC6660D2264F46B67E733" import="1">LUA/SaveUtils.lua</File>
+    <File md5="30D77807A7DAB5F49C6ADC1514DB22C2" import="1">LUA/SPUnit_Fix.lua</File>
+    <File md5="2F3C500E192FFB3C7A8E4C619E9477FA" import="1">LUA/SPUnit_Improvements.lua</File>
+    <File md5="83AB0898D1AEB48A96E9E3D482F30EC3" import="0">SPUE_GeneralTweaks.sql</File>
+    <File md5="A7583629A28708FC0AA653DECF8E1C0C" import="0">SQL/SPUnit_ArtDefines.sql</File>
+    <File md5="F58A949A0DEC7EAC0DAA764A8174513D" import="0">SQL/SPUnit_IconAtlas.sql</File>
+    <File md5="84C0FB900036BD5B406A2CD28ED7D52F" import="0">SQL/SPUnit_Improvements_ArtDefines.sql</File>
+    <File md5="875F32784CC039E9D7CFA10EF7112D44" import="0">SQL/SPUnit_ModelsUpdate.sql</File>
+    <File md5="EBEE1E0D58B37245DEDE36B213A39B25" import="0">SQL/SPUnit_UnitPromotions_Update.sql</File>
+    <File md5="995FDE0D2F0D43E3EB70B197D68C03A8" import="0">SQL/SPUnit_UnitsUpdate_General.sql</File>
+    <File md5="E8F0A88F42A335264819F339A24E792A" import="0">SQL/SPUnit_UnitsUpdate_Ideology.sql</File>
+    <File md5="CFD570A6D14A9606A64C7A349E8F273D" import="0">SQL/SPUnit_UnitsUpdate_Policy.sql</File>
+    <File md5="60D628C29DF8323615B3ACA4B0012DE1" import="1">UI/Art/UI_AUGUSTUS.dds</File>
+    <File md5="B2DFD0AC7FA562B4228F75951067D696" import="1">UI/Art/UI_BASELIUS.dds</File>
+    <File md5="F7F9D292319F78B43B4974301A3272F9" import="1">UI/Art/UI_EMPEROR.dds</File>
+    <File md5="385840527FE1AE365B0032756C4D5A98" import="1">UI/Art/UI_KnightsHospitaller.dds</File>
+    <File md5="5E2FE418596E0859C4FC39CFA823B8EB" import="1">UI/Art/UI_KnightsTemplar.dds</File>
+    <File md5="0DC9BA163B6AB6FD4B67D7D2C83E8074" import="1">UI/Art/UI_KnightsTeutonic.dds</File>
+    <File md5="16D2CC05B7683A507D3E2AAF25AB3B08" import="1">UI/EmperorPathSelection.lua</File>
+    <File md5="F03A2322700A399A6FA862772CAF1696" import="0">UI/EmperorPathSelection.xml</File>
+    <File md5="ED0918B69BCC44F14F14F0D830CECEE2" import="1">UI/KnightOrdersSelection.lua</File>
+    <File md5="C3B38B2AB13B75C9394EF239F4BCBCAE" import="0">UI/KnightOrdersSelection.xml</File>
+    <File md5="C70486F3B60097B093183081B55032CC" import="1">UI/MercenaryUnitsSelection.lua</File>
+    <File md5="CBF425BBF181D14884946C6A4344E7CB" import="0">UI/MercenaryUnitsSelection.xml</File>
+    <File md5="0E3415F890B87070BD5379366B31CDF3" import="0">XML/SPIdeo_Text_en_US.xml</File>
+    <File md5="C8D595AA8DB4F9A13507823D7E6253D5" import="0">XML/SPUnit_Buildings.xml</File>
+    <File md5="D711D9EEE5815D0CD71718445AA21059" import="0">XML/SPIdeo_Text_zh_CN.xml</File>
+    <File md5="901904F45B59B17C470EB3204B75E8E7" import="0">XML/SPUnit_Improvements.xml</File>
+    <File md5="5CA2EAB3590603B823CFC14C517BC64A" import="0">XML/SPUnit_Polices.xml</File>
+    <File md5="AD5768FD96B789F0E6A35E473C9F9360" import="0">XML/SPUnit_Promotions.xml</File>
+    <File md5="E6E467C0DDA8C9F9F8C79E870C7C70CB" import="0">XML/SPUnit_Text_en_US.xml</File>
+    <File md5="46042D48D9C115C4EB3C0941928EA7F6" import="0">XML/SPUnit_Text_zh_CN.xml</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>SQL/SPUnit_ArtDefines.sql</UpdateDatabase>
+      <UpdateDatabase>SQL/SPUnit_ModelsUpdate.sql</UpdateDatabase>
+      <UpdateDatabase>SQL/SPUnit_IconAtlas.sql</UpdateDatabase>
+      <UpdateDatabase>SQL/SPUnit_UnitsUpdate_General.sql</UpdateDatabase>
+      <UpdateDatabase>SQL/SPUnit_UnitsUpdate_Ideology.sql</UpdateDatabase>
+      <UpdateDatabase>SQL/SPUnit_UnitsUpdate_Policy.sql</UpdateDatabase>
+      <UpdateDatabase>SQL/SPUnit_Improvements_ArtDefines.sql</UpdateDatabase>
+      <UpdateDatabase>XML/SPUnit_Buildings.xml</UpdateDatabase>
+      <UpdateDatabase>XML/SPUnit_Improvements.xml</UpdateDatabase>
+      <UpdateDatabase>XML/SPUnit_Polices.xml</UpdateDatabase>
+      <UpdateDatabase>XML/SPUnit_Promotions.xml</UpdateDatabase>
+      <UpdateDatabase>XML/SPUnit_Text_en_US.xml</UpdateDatabase>
+      <UpdateDatabase>XML/SPUnit_Text_zh_CN.xml</UpdateDatabase>
+      <UpdateDatabase>XML/SPIdeo_Text_en_US.xml</UpdateDatabase>
+      <UpdateDatabase>XML/SPIdeo_Text_zh_CN.xml</UpdateDatabase>
+      <UpdateDatabase>SPUE_GeneralTweaks.sql</UpdateDatabase>
+      <UpdateDatabase>SQL/SPUnit_UnitPromotions_Update.sql</UpdateDatabase>
+      <UpdateDatabase>CombatPercentBonus/CombatPercent_Misc.sql</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="LUA/SPUnit_Fix.lua">
+      <Name>SPUnit_Fix</Name>
+      <Description>SPUnit_Fix</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="UI/MercenaryUnitsSelection.xml">
+      <Name>MercenaryUnitsSelection</Name>
+      <Description>MercenaryUnitsSelection</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="LUA/SPUnit_Improvements.lua">
+      <Name>SP_Improvements</Name>
+      <Description>SP_Improvements</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="UI/KnightOrdersSelection.xml">
+      <Name>KnightOrdersSelection</Name>
+      <Description>KnightOrdersSelection</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="UI/EmperorPathSelection.xml">
+      <Name>EmperorPathSelection</Name>
+      <Description>EmperorPathSelection</Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

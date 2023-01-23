@@ -2,9 +2,13 @@
 <!-- Created by ModBuddy on 2021/10/30 22:00:26 -->
 <GameData>
 	<Language_zh_CN>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_EVASION_III" >
+			<Text>规避能力(100)</Text>
+		</Row>
+
 		<!-- **********************玄甲军*********************** -->
 		<Replace Tag="TXT_KEY_PROMOTION_GAIN_MOVES_AFFER_KILLING_HELP">
-			<Text>每消灭一支敌方部队，为自身恢复25%最大生命并返还1移动力、1攻击次数。</Text>
+			<Text>不被方阵步兵/反装甲单位克制，每对一支敌方部队造成30以上的伤害，则自身恢复25%最大生命并返还1移动力、1攻击次数。</Text>
 		</Replace>
 		<!-- **********************楼船*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_TOWEREDSHIP">
@@ -31,7 +35,7 @@
 			<Text>戎车既驾</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ZHANCHE_HELP">
-			<Text>在[COLOR_POSITIVE_TEXT]平坦地形[ENDCOLOR]作战+50%[ICON_STRENGTH]战斗力,在[COLOR_NEGATIVE_TEXT]复杂地形[ENDCOLOR]作战-25%[ICON_STRENGTH]战斗力，进入复杂地形消耗全部移动力。</Text>
+			<Text>在[COLOR_POSITIVE_TEXT]平坦地形[ENDCOLOR]作战+50%[ICON_STRENGTH]战斗力,在[COLOR_NEGATIVE_TEXT]复杂地形[ENDCOLOR]作战-25%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 		<!-- **********************黑骑士*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_REITER">
@@ -135,7 +139,7 @@
 			<Text>炮兵集群</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ADJACENT_BONUS_HELP">
-			<Text>与己方单位相邻战斗力+25%。</Text>
+			<Text>与己方单位相邻[ICON_STRENGTH]战斗力+25%。</Text>
 		</Row>
 		<!-- **********************线列步兵*********************** -->
 		<Replace Tag="TXT_KEY_UNIT_RIFLEMAN">
@@ -168,7 +172,7 @@
 			<Text>内海巨舰</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_IRONCLAD_HELP">
-			<Text>海滨地块移动力翻倍，+25%战斗力。</Text>
+			<Text>海滨地块移动力翻倍，+25%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 		<!-- **********************明轮护卫舰*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_FRIGATE">
@@ -197,6 +201,13 @@
 				鱼雷艇（Torpedo boat），又称鱼雷快艇，是一种小型战斗舰艇，以鱼雷为主要武器，用于近海作战的小型高速战斗舰艇，主要用于近海作战。除了执行攻击任务以外，也可担负巡逻、警戒、反潜、布雷等其他任务。
 			</Text>
 		</Row>
+		<!-- **********************重骑兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_HEAVY_CAVALRY_ANCIENT">
+			<Text>重骑兵</Text>
+		</Row>
+		<!-- <Row Tag="TXT_KEY_CIV5_SPUE_HEAVY_CAVALRY_ANCIENT_TEXT">
+			<Text>重骑兵一般指冷兵器战争时期的一种重装骑马兵种。该兵种一般人马均装备有防护性能良好的盔甲和盾牌，武器以长矛为主，以强大的冲击力和优秀的防御力而著称。</Text>
+		</Row> -->
 		<!-- **********************具装骑兵*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_HEAVY_CAVALRY">
 			<Text>具装骑兵</Text>
@@ -209,7 +220,7 @@
 			<Text>[COLOR_CYAN]禁卫军[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_PRAETORIAN_HELP">
-			<Text>[COLOR_CYAN]禁卫军[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]的代表性单位，驻守首都时可使得首都+4产能、文化和粮食产出，位于领土外则可以修建能够控制周围1格范围的禁卫军堡垒。</Text>
+			<Text>[COLOR_CYAN]禁卫军[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]的代表性单位，驻守首都可为首都地块供+4产能、文化和粮食产出，同时可在回合结束时提供额外的产能、文化和粮食(随时代增加)并使得自身+2经验，位于领土外则可以修建能够控制周围1格范围的禁卫军堡垒。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_PRAETORIAN_TEXT">
 			<Text>罗马禁卫军（Praetorian Guards），主要指古罗马帝国（前27年—395年）期间罗马皇帝和宫殿的卫队。“禁卫军（Praetorian）”一词来源于拉丁语中的“Praetorium”，意思是罗马将军的营帐。部队由罗马公民中的精英组成，主要为步兵，并伴随一小部分骑兵。罗马禁卫军在公元前27年由罗马帝国开国皇帝屋大维出于政治考虑创建，在公元4世纪初，由于禁卫军失去了本来作用，又愈加难以控制，君士坦丁大帝宣布解散这支部队并彻底拆毁其营地。</Text>
@@ -222,7 +233,7 @@
 			<Text>集权帝国</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_PRAETORIAN_HELP">
-			<Text>近战攻击之前进行一轮远程掷矛攻击，驻守首都时可使得首都+4产能、文化和粮食产出。</Text>
+			<Text>近战攻击之前进行一轮远程掷矛攻击，驻守首都可为首都地块供+4产能、文化和粮食产出，同时可在回合结束时提供额外的产能、文化和粮食(随时代增加)并使得自身+2经验。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_IMPROVEMENT_FORT_SPUE">
@@ -239,7 +250,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BUILD_FORT_SPUE">
-			<Text>建造[LINK=IMPROVEMENT_TUNNEL]禁卫军堡垒[\LINK]</Text>
+			<Text>建造[LINK=IMPROVEMENT_FORT_SPUE]禁卫军堡垒[\LINK]</Text>
 		</Row>
 		<!-- **********************未央宫卫士*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_WEIYANG">
@@ -268,7 +279,7 @@
 			<Text>[COLOR_CYAN]王城骑士[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_NEW_HELP">
-			<Text>[COLOR_CYAN]王城骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]自主政策[ENDCOLOR]的代表性单位，可以召集各个城市的采邑骑士（只能召集一次），且自带军团晋升。</Text>
+			<Text>[COLOR_CYAN]王城骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]自主政策[ENDCOLOR]的代表性单位，可以召集各个城市的采邑骑士（只能召集一次,且总数不超过20），且自带军团晋升。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW">
@@ -296,13 +307,33 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_EXTRA_HELP">
 			<Text>自各城市召集的骑士。</Text>
 		</Row>
+		<!-- **********************刚铎涌泉守卫*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_GONDORGUARD">
+			<Text>[COLOR_CYAN]涌泉守卫[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_GONDORGUARD_HELP">
+			<Text>[COLOR_CYAN]涌泉守卫[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]自主政策[ENDCOLOR]与白城米那斯提力斯的联动单位，视野+2，回合结束时2格范围内每有一个敌方单位则获得10%[ICON_STRENGTH]战斗力加成。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_GONDORGUARD_TEXT">
+			<Text>
+				刚铎可以说是中土世界最强大的人类军事力量，在王城中有着训练有素的身披重甲的步兵战士，他们有手持大盾的剑士和长枪手，弓箭手也是中土数一数二的神射手。		
+				[NEWLINE]在高塔中还驻守着摄政王的禁卫军——身披秘银甲的涌泉守卫和圣白塔剑士，在层层城墙的守卫下，敌人就算插上翅膀也几乎不可能攻陷王城。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GONDORGUARD">
+			<Text>帕兰提尔</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GONDORGUARD_HELP">
+			<Text>视野+2，回合结束时2格范围内每有一个敌方单位获得10%[ICON_STRENGTH]战斗力加成。</Text>
+		</Row>
 		<!-- **********************羽林骑*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_YULIN_CAVALRY">
 			<Text>[COLOR_CYAN]羽林禁军[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_YULIN_CAVALRY_HELP">
 			<Text>
-			[COLOR_CYAN]羽林禁军[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]荣誉政策[ENDCOLOR]的代表性单位，拥有[COLOR_CYAN]绝幕远征[ENDCOLOR]和[COLOR_CYAN]羽林孤儿[ENDCOLOR]能力。
+			[COLOR_CYAN]羽林禁军[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]荣誉政策[ENDCOLOR]的代表性单位，拥有[COLOR_CYAN]绝幕远征[ENDCOLOR]和[COLOR_CYAN]羽林孤儿[ENDCOLOR]能力。[NEWLINE]
 			[ICON_BULLET]绝幕远征：开阔地形[ICON_STRENGTH]战斗力+50%且移动力翻倍，杀敌回复25血量。[NEWLINE]
 			[ICON_BULLET]羽林孤儿：己方陆军单位受到的伤害能够等量补充此单位的生命。
 			</Text>
@@ -377,21 +408,21 @@
 			<Text>重步兵训练</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_FUCHUAN_INFANTRY_BUTTON">
-			<Text>训练一支重装步兵单位，船只本回合失去移动力。</Text>
+			<Text>训练一支重装步兵单位，花费为当前可建造重装步兵单位1/2的价格，船只本回合失去移动力。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_FUCHUAN_GUNPOWDER_BUTTON_SHORT">
 			<Text>火药步兵训练</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_FUCHUAN_GUNPOWDER_BUTTON">
-			<Text>训练一支火药步兵单位，船只本回合失去移动力。</Text>
+			<Text>训练一支火药步兵单位，花费为当前可建造火药步兵单位1/2的价格，船只本回合失去移动力。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_FUCHUAN_CANNON_BUTTON_SHORT">
 			<Text>炮兵训练</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_FUCHUAN_CANNON_BUTTON">
-			<Text>训练一支直射火力炮兵单位，船只本回合失去移动力。</Text>
+			<Text>训练一支直射火力炮兵单位，花费为当前可建造直射火力炮兵单位1/2的价格，船只本回合失去移动力。</Text>
 		</Row>
 		<!-- **********************热气球*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_HOT_AIR_BALLOON">
@@ -400,7 +431,7 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_HOT_AIR_BALLOON_HELP">
 			<Text>
 				[COLOR_CYAN]热气球[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]理性政策[ENDCOLOR]的代表性单位，自带侦查2级，与热气球同格的陆/海单位射程+1。[NEWLINE]
-				探险家单位可生成临时热气球，可持续存在5回合。	
+				探险家单位可生成[COLOR_CYAN]临时热气球[ENDCOLOR]，可持续存在5回合，该单位死亡时不会损失人口。	
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_HOT_AIR_BALLOON_TEXT">
@@ -443,16 +474,16 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_HELP">
 			<Text>射程+1。</Text>
 		</Row>
-		PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT
+
 		<!-- **********************十字战车*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_GREAT_CROSS">
 			<Text>[COLOR_CYAN]十字战车[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_GREAT_CROSS_HELP">
-			<Text>[COLOR_CYAN]十字战车[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]的代表性单位，其周围一格的部队消灭战斗单位时获得相当于其250%战斗力的金币和信仰。</Text>
+			<Text>[COLOR_CYAN]十字战车[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]的代表性单位，其周围2格的部队消灭战斗单位时获得相当于其250%战斗力的金币和信仰。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_GREAT_CROSS_TEXT">
-			<Text>宗教部队，十字战车在战车上安置举行巨型十字架，极大激励军队士气，以示上帝与他们同在。战车由精锐步兵誓死护卫，与战车共存同亡。十字战车只能在十字军部队中招募。</Text>
+			<Text>宗教部队，十字战车在战车上安置举行巨型十字架，极大激励军队士气，以示上帝与他们同在。战车由精锐步兵誓死护卫，与战车共存同亡。</Text>
 		</Row>
 		
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_GREAT_CROSS">
@@ -467,6 +498,162 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_GREAT_CROSS_EFFECT_HELP">
 			<Text>消灭敌方单位时获得相当于其250%战斗力的金币和信仰。</Text>
+		</Row>
+		<!-- **********************圣殿骑士团*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_TEMPLAR">
+			<Text>[COLOR_CYAN]步行圣殿骑士[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_TEMPLAR_HELP">
+			<Text>
+				[COLOR_CYAN]步行圣殿骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]的代表性单位之一。
+				[NEWLINE][ICON_BULLET]攻入城市时能够将该城市的信仰强制转换为所属文明的主流信仰，并能够根据转换的人数获得对应的[ICON_GOLD]金钱、[ICON_PEACE]信仰、[ICON_CULTURE]文化和科研[ICON_RESEARCH]，随时代增加。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_FOOT_KNIGHT_TEMPLAR_TEXT">
+			<Text>
+				圣殿骑士团（法语：Ordre du Temple），又译神庙骑士团，正式全名为“基督和所罗门圣殿的贫苦骑士团”（拉丁语：Pauperes commilitones Christi Templique Solomonici），是中世纪时期天主教军事组织，著名的三大骑士团之一。
+				[NEWLINE]1119年，法国贵族雨果·德·帕英和格弗雷·德·圣欧莫以圣殿山的阿克萨清真寺作为根据地成立一个修士会，以保卫朝圣者的安全，并攻击异教徒。该寺建于昔日所罗门圣殿的废墟之上，修士会因此得名，成员起初九人。
+				[NEWLINE]1129年，圣殿骑士团得到罗马教廷正式支持，拥有诸多特权，遂迅速增长其规模、势力和财富，甚至发展出最早的银行业。
+				[NEWLINE]1307年，其众多成员在法国被捕，残酷审讯后以异端罪名处以火刑。1312年，身处亚维农教廷的教皇克雷芒五世被腓力四世施压，宣布解散圣殿骑士团。
+			</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FOOT_KNIGHT_TEMPLAR">
+			<Text>天主的旨意</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FOOT_KNIGHT_TEMPLAR_HELP">
+			<Text>攻入城市时能够将该城市的信仰强制转换为所属文明的主流信仰，并能够根据转换的人数获得对应的[ICON_GOLD]金钱、[ICON_PEACE]信仰、[ICON_CULTURE]文化和科研[ICON_RESEARCH]，随时代增加。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_TEMPLAR">
+			<Text>[COLOR_CYAN]圣殿骑士[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_TEMPLAR_HELP">
+			<Text>
+				[COLOR_CYAN]圣殿骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]的代表性单位之一。
+				[NEWLINE][ICON_BULLET]攻入城市时能够将该城市的信仰强制转换为所属文明的主流信仰，并能够根据转换的人数获得对应的[ICON_GOLD]金钱、[ICON_PEACE]信仰、[ICON_CULTURE]文化和科研[ICON_RESEARCH]，随时代增加。
+			</Text>
+		</Row>
+		<!-- **********************条顿骑士团*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_TEUTONIC">
+			<Text>[COLOR_CYAN]步行条顿骑士[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_TEUTONIC_HELP">
+			<Text>
+				[COLOR_CYAN]步行条顿骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]的代表性单位之一。
+				[NEWLINE][ICON_BULLET]可以建立城市，临近同类单位则+40%[ICON_STRENGTH]战斗力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_FOOT_KNIGHT_TEUTONIC_TEXT">
+			<Text>
+				条顿骑士团（拉丁语：Ordo Domus Sanctae Mariae Teutonicorum；德语：Deutscher Orden），又译德意志骑士团，正式名称为耶路撒冷的德意志弟兄圣母骑士团（拉丁语：Ordo domus Sanctae Mariae Theutonicorum Ierosolimitanorum；德语：Orden der Brüder vom Deutschen Haus Sankt Mariens in Jerusalem），是神圣罗马帝国中世纪时期天主教军事组织，著名的三大骑士团之一。早期成员均为德意志人，骑士团屈服波兰后被迫接受波兰人。			
+			</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FOOT_KNIGHT_TEUTONIC">
+			<Text>帮助、救治、守卫</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FOOT_KNIGHT_TEUTONIC_HELP">
+			<Text>临近同类单位则+40%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_TEUTONIC">
+			<Text>[COLOR_CYAN]条顿骑士[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_TEUTONIC_HELP">
+			<Text>
+				[COLOR_CYAN]条顿骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]的代表性单位之一。
+				[NEWLINE][ICON_BULLET]可以建立城市，每临近1个同类单位则+40%[ICON_STRENGTH]战斗力。
+			</Text>
+		</Row>
+		<!-- **********************医院骑士团*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_HOSPITALLER">
+			<Text>[COLOR_CYAN]步行医院骑士[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_HOSPITALLER_HELP">
+			<Text>
+				[COLOR_CYAN]步行医院骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]的代表性单位之一。
+				[NEWLINE][ICON_BULLET]同格及2格内的友方单位回合结束时回复20血量，位于海岸单元格时2格内的海军单位+50%[ICON_STRENGTH]战斗力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_FOOT_KNIGHT_HOSPITALLER_TEXT">
+			<Text>
+				耶路撒冷、罗得岛和马耳他圣约翰主权军事医院骑士团，简称马耳他骑士团，是联合国观察员实体，具有“准国家”性质，没有领土，是最为古老的天主教修道骑士会之一，是世界上最著名的微型国家之一。 [2-3]  前身是成立于第一次十字军东征之后的天主教军事组织医院骑士团。著名的三大骑士团之一。
+				[NEWLINE]该国拥有两幢享有治外法权的建筑：罗马孔多迪大街68号，一幢占地1.2万平方米的大厦马耳他宫，以及罗马郊区阿文提诺山上的马耳他部，骑士团居民只有几十人。
+				[NEWLINE]医院骑士团，1099年由Blessed Gerard等人创建，最初的职能是提供医疗以照顾病人或受伤的朝圣者。1120年，开始向朝圣者提供武装护送，不知不觉地发展为军事组织，同时，也始终保持着医疗慈善组织的性质。			
+			</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER">
+			<Text>守卫信仰，援助苦难</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER_HELP">
+			<Text>同格及2格内的友方单位回合结束时回复20血量，2格内的海军单位+50%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER_EFFECT">
+			<Text>马耳他岛的猎鹰土地</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER_EFFECT_HELP">
+			<Text>+50%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+
+
+		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_HOSPITALLER">
+			<Text>[COLOR_CYAN]医院骑士[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_HOSPITALLER_HELP">
+			<Text>
+				[COLOR_CYAN]医院骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]的代表性单位之一。
+				[NEWLINE][ICON_BULLET]2格内的友方单位每回合额外回复30血量，位于海岸单元格时2格内的海军单位+50%[ICON_STRENGTH]战斗力，死亡时不会造成人口损失。
+			</Text>
+		</Row>
+
+		<!-- **********************骑士团信条UI文本*********************** -->
+		<Row Tag="TXT_KEY_SPUE_PIETY_BUTTON_ICON_LEADER_TOP">
+			<Text>
+				选择您希望在本局游戏中使用的[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]骑士团单位，一旦选择不可更改
+				[NEWLINE][NEWLINE]([COLOR_NEGATIVE_TEXT]注意：[ENDCOLOR]需解锁骑士团信条，否则无法退出本界面！)
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPUE_PIETY_SELECT_TITLE">
+			<Text>[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR] - 骑士团信条选择</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CREED_TEMPLAR_CAP">
+			<Text>天主的旨意</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CREED_TEMPLAR_HELP">
+			<Text>
+				选择[COLOR_POSITIVE_TEXT]天主的旨意[ENDCOLOR]信条将使您能够解锁建造[COLOR_POSITIVE_TEXT]圣殿骑士团[ENDCOLOR]单位的能力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CREED_HOSPITALLER_CAP">
+			<Text>守卫信仰，援助苦难</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CREED_HOSPITALLER_HELP">
+			<Text>
+				选择[COLOR_POSITIVE_TEXT]守卫信仰，援助苦难[ENDCOLOR]信条将使您能够解锁建造[COLOR_POSITIVE_TEXT]医院骑士团[ENDCOLOR]单位的能力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CREED_TEUTONIC_CAP">
+			<Text>帮助、救治、守卫</Text>
+		</Row>
+	
+		<Row Tag="TXT_KEY_CREED_TEUTONIC_HELP">
+			<Text>
+				选择[COLOR_POSITIVE_TEXT]帮助、救治、守卫[ENDCOLOR]信条将使您能够解锁建造[COLOR_POSITIVE_TEXT]条顿骑士团[ENDCOLOR]单位的能力。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_PIETY_SELECT_OK">
+			<Text>确定</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPUE_PIETY_SELECT_OK_TOOLTIP">
+			<Text>点击以获得选取[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]骑士团单位的建造能力</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CONFIRM_CREED">
+			<Text>你确定要采用此骑士团信条吗？</Text>
 		</Row>
 		<!-- **********************达芬奇坦克*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_DVC_TANK">
@@ -485,16 +672,24 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_DVC_TANK_HELP">
 			<Text>发动攻击时能够对自身相邻的所有敌方单位造成+100%伤害。</Text>
 		</Row>
-
-		<!-- **********************秩序：S055*********************** -->
-		<Row Tag="TXT_KEY_UNIT_SPUE_ORDER_SUPER_055">
-			<Text>[COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]</Text>
+		<!-- **********************达芬奇飞行器*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_DVC_FIGHTER">
+			<Text>[COLOR_CYAN]达·芬奇飞行器[ENDCOLOR]</Text>
 		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_ORDER_SUPER_055_HELP">
-			<Text>[COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]是秩序意识形态的精英单位，需要完成[ICON_CULTURE][COLOR_MAGENTA]卫国战争政策[ENDCOLOR]、一体化桅杆研究计划计划和高超音速反舰弹道导弹研究计划才可以建造。</Text>
+		<Row Tag="TXT_KEY_UNIT_SPUE_DVC_FIGHTER_HELP">
+			<Text>[COLOR_CYAN]达·芬奇飞行器[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]美学政策[ENDCOLOR]的代表性单位，启蒙时代的飞行单位。</Text>
 		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_ORDER_SUPER_055_TEXT">
-			<Text>055型驱逐舰（英文：Type 055 destroyer，北约代号：Renhai-class ，译文：刃海级）是中国研制的新型舰队防空驱逐舰。</Text>
+		<Row Tag="TXT_KEY_CIV5_SPUE_DVC_FIGHTER_TEXT">
+			<Text>
+				达·芬奇曾任军事工程师，其笔记中也包含了数种军事机械的设计：簧轮枪、三管大炮、人力或以马拉动的武装坦克车、子母弹、军用降落伞、浮动雪鞋、含呼吸软管以猪皮制成的潜水装，甚至还有潜水艇、双层船壳战舰、滑翔机、扑翼飞机和直升机、旋转浮桥等。不过，后来他却认为战争是人类最糟的活动。其他的发明包括了潜水艇、被诠译为第一个机械计算机的齿轮装置，以及被误解为发条车的第一部可程序化行动机器人。此外，达·芬奇在教廷的那些年里，曾计划应用太阳能而使用凹面镜来煮水。			
+			</Text>
+		</Row>
+		<!-- **********************达芬奇机关炮*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_DVC_MACHINEGUN">
+			<Text>[COLOR_CYAN]达·芬奇机关炮[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_DVC_MACHINEGUN_HELP">
+			<Text>[COLOR_CYAN]达·芬奇机关炮[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]美学政策[ENDCOLOR]的代表性单位，启蒙时代的攻城和战略火炮单位。</Text>
 		</Row>
 
 		<!-- **********************中古佣兵团*********************** -->
@@ -529,22 +724,6 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_FCOMPANY_NAME6">
 			<Text>[COLOR_CYAN]加泰罗尼亚佣兵团[ENDCOLOR]</Text>
 		</Row>
-		<!-- **********************里尔火炮佣兵*********************** -->
-		<Row Tag="TXT_KEY_UNIT_SPUE_LIL_BOMBARD">
-			<Text>[COLOR_CYAN]里尔火炮佣兵[ENDCOLOR]</Text>
-		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_LIL_BOMBARD_HELP">
-			<Text>[COLOR_CYAN]里尔火炮佣兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的雇佣兵单位之一，廉价的直射火力攻城单位，购买后可以立即移动，死亡时不会造成人口损失。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_LIL_BOMBARD_TEXT">
-			<Text>
-				火炮在火药发明后就出现了，至今已经有数百年的历史。早期的火炮（例如重型火炮）体
-				积庞大、重量惊人，而且机动性很差，难以在战场上操控。军事专家认为较轻的火炮在战争
-				中会比较有价值，因而在十七世纪中叶发明了第一座迫击炮。军队很快就发现，在某些情
-				况下，用火力换取机动性是非常有用的。直到现在，迫击炮和类似的武器在现代战争中仍
-				占有重要的地位。
-			</Text>
-		</Row>
 		<!-- **********************南洋海盗船*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_SSPRIVATEER">
 			<Text>[COLOR_CYAN]南洋海盗船[ENDCOLOR]</Text>
@@ -576,13 +755,13 @@
 			<Text>[COLOR_CYAN]热那亚弩手[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的雇佣兵单位之一，廉价但实用的弩兵单位，有防御加成和对骑兵战力加成，购买后可以立即移动，死亡时不会造成人口损失。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_GENOAXBOW_TEXT">
-			<Text>热那亚弩手是中世纪著名兵种， 他既被用于保卫热那亚共和国，又被用于与意大利其他城市和欧洲诸国混战的雇佣兵。他装备弩，不但参与陆战也参与海战，海战中著名的有库尔佐拉之战和梅罗利亚战役。弩手们在热那亚训练和被组织所以得名热那亚弩手，但主要成员来自于利古里亚地区，也有来自蒙拉斐特，泼河平原的帕维亚，皮亚琴察，帕尔玛，以至于科西嘉岛，他们团体的指挥官往往是热那亚贵族出身他们的武器装备是一张巴利斯特公司制造的十字弓，一个匕首，一个头盔，一片颈甲，一件锁子甲，一面帕维赛盾{在装填时使用}，通常一个小组包括一个弩手，两名帮助者，一个来支起盾牌，一个张弩。他们在第一次十字军东征时声名鹊起，在耶路撒冷之围时使用了弩手在第三次东征的雅法战役中再次大放异彩。他们的威名一直持续到15世纪黑火药大规模在欧洲流行后。</Text>
+			<Text>热那亚弩手是中世纪著名兵种，他既被用于保卫热那亚共和国，又被用于与意大利其他城市和欧洲诸国混战的雇佣兵。他装备弩，不但参与陆战也参与海战，海战中著名的有库尔佐拉之战和梅罗利亚战役。弩手们在热那亚训练和被组织所以得名热那亚弩手，但主要成员来自于利古里亚地区，也有来自蒙拉斐特，泼河平原的帕维亚，皮亚琴察，帕尔玛，以至于科西嘉岛，他们团体的指挥官往往是热那亚贵族出身他们的武器装备是一张巴利斯特公司制造的十字弓，一个匕首，一个头盔，一片颈甲，一件锁子甲，一面帕维赛盾{在装填时使用}，通常一个小组包括一个弩手，两名帮助者，一个来支起盾牌，一个张弩。他们在第一次十字军东征时声名鹊起，在耶路撒冷之围时使用了弩手在第三次东征的雅法战役中再次大放异彩。他们的威名一直持续到15世纪黑火药大规模在欧洲流行后。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENOAXBOW">
 			<Text>巨盾强弩</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENOAXBOW_HELP">
-			<Text>防御时+30%[ICON_STRENGTH]战斗力，对骑兵+30%[ICON_STRENGTH战斗力。</Text>
+			<Text>防御时+30%[ICON_STRENGTH]战斗力，对骑兵+30%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 		<!-- **********************瑞士雇佣兵*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_SWISSGUARD">
@@ -630,7 +809,7 @@
 			<Text>[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_VARANGIAN_GUARD_HELP">
-			<Text>[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]是[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]作为永备军团后形成的近卫军团，强而有力的重装步兵单位，拥有海滨地块作战加成和海洋地块移动加成，自带冲击一级，进攻可以使敌人退却并造成30%的践踏伤害，每次交战可使得自身6回合内基础战斗力+5（可叠加），回合开始时一格内每有一个己方重骑兵单位则基础战斗力+4。</Text>
+			<Text>[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]是[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]作为永备军团后形成的近卫军团，强而有力的重装步兵单位，拥有海滨地块作战加成和海洋地块移动加成，自带冲击一级，进攻可以使敌人退却并造成30%的践踏伤害，回合开始时4格范围内每有一个己方重骑兵单位则获得20%[ICON_STRENGTH]战斗力加成并+2[ICON_MOVES]移动力。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_VARANGIAN_GUARD_TEXT">
 			<Text>
@@ -643,7 +822,7 @@
 			<Text>保加利亚的屠夫</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_VARANGIAN_GUARD_HELP">
-			<Text>进攻可以使敌人退却并造成30%的践踏伤害，回合开始时一格范围内每有一个己方重骑兵单位则+5[ICON_STRENGTH]战斗力。</Text>
+			<Text>进攻可以使敌人退却并造成30%的践踏伤害，回合开始时一格范围内每有一个己方重骑兵单位则获得20%[ICON_STRENGTH]战斗力加成并+2[ICON_MOVES]移动力。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON_SHORT">
@@ -652,7 +831,47 @@
 		<Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON">
 			<Text>花费1000[ICON_GOLD]金币将瓦兰吉佣兵永备化成为瓦兰吉卫队（只能将一支瓦兰吉佣兵永备化）。</Text>
 		</Row>
+		<!-- **********************铁人军*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_IRON_TROOP">
+			<Text>[COLOR_CYAN]铁人军[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_IRON_TROOP_HELP">
+			<Text>[COLOR_CYAN]铁人军[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的雇佣兵单位之一，自带装甲2级和冲击1级，对重步兵与游猎骑兵有攻击加成，登陆时回复全部移动力，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_IRON_TROOP_TEXT">
+			<Text>
+				铁人是明末国姓爷郑成功创造的兵种，全身覆以鱼鳞一般的重甲，佩盾牌，戴假面，手执长剑以为近战之用，负大弓以为远战之用。
+				[NEWLINE]由于铁甲兵战力强大，很多电子游戏里都有铁甲兵出场，如帝国时代3-亚洲王朝，生化危机等，在这些游戏里，铁甲兵往往拥有强大的防御力和生命力。
+				[NEWLINE]在明末，铁军一直是明朝军队的主力。据荷兰人称，郑成功在对台湾的攻坚战中大量使用这种铁人。清史稿记载，郑成功曾用以铁军为主力的军队一度打下镇江，瓜州等地，几下南京城。闽南地区有俗语“铁人都倒”来比喻某物势不可挡
+			</Text>
+		</Row>
 
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_IRON_TROOP">
+			<Text>左右虎卫</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_IRON_TROOP_HELP">
+			<Text>进攻近战步兵与游猎骑兵时+30%[ICON_STRENGTH]战斗力，登陆时回复全部移动力。</Text>
+		</Row>
+		<!-- **********************纵火帆船*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_FIRESHIP">
+			<Text>[COLOR_CYAN]纵火帆船[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_FIRESHIP_HELP">
+			<Text>[COLOR_CYAN]纵火帆船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的雇佣兵单位之一，对城市和海军部队有战斗加成，战斗结束后阵亡，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_FIRESHIP_TEXT">
+			<Text>
+				大帆船上的所有物品，从木条和接合用的焦油，到充满油污的绳索、帆布和火药，基本上都很容易燃烧，火药更是如此。黑火药船也被称为火战船，水手会将它们点上火然后让它们漂流(或者由极少的水手驾驶，在碰撞前逃跑至敌人的船舰，使敌人的船只着火进而爆炸。有时候，敌人甚至会将火战船驶入港湾，然后将停靠在岸边的船只全部炸毁。
+				[NEWLINE]英国皇家海军曾经使用火战船攻击强大的西班牙无敌舰情况下，将船舰集合成防御弧形。英国人驾驶火战船分散队。西班牙舰队在无法找到适合的港口和较深的下锚点的了西班牙舰队，西班牙舰队也因此陷入混乱。正因如此英国舰队才能在势均力敌的情况下对抗西班牙无敌舰队。			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRESHIP">
+			<Text>火帆船</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRESHIP_HELP">
+			<Text>对海军单位和城市+200%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
 		<!-- **********************雇佣兵选择界面UI文本*********************** -->
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_LEADER_TOP">
 			<Text>
@@ -677,13 +896,316 @@
 			<Text>请选择您的次席佣兵团</Text>
 		</Row>
 		
-		
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_SELECT_OK">
 			<Text>确定</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_SELECT_OK_TOOLTIP">
 			<Text>点击以获得选取的两种[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]雇佣兵单位的建造能力</Text>
 		</Row>
+		<!-- **********************辅助萨尔马提亚枪骑兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_LIGHT_CAVALRY">
+			<Text>∏[COLOR_CYAN]辅助萨尔马提亚枪骑兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_LIGHT_CAVALRY_HELP">
+			<Text>
+				∏[COLOR_CYAN]辅助萨尔马提亚枪骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重骑兵辅助单位，死亡时不会造成人口损失。
+				[NEWLINE][ICON_BULLET]发起近战攻击前先进行一次弓箭扫荡，1格内敌方单位-15%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路才可以招募此单位。
+				[NEWLINE][ICON_BULLET]对于罗马将领而言，悬于长枪上的敌军残体才是好东西。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_VASSAL_LIGHT_CAVALRY_TEXT">
+			<Text>
+				萨尔马提亚人是一支西部的草原民族，据守黑海以北，与达西亚人和日耳曼人毗邻而居。他们随意地游荡于这片区域，骑术闻名天下几无敌手。希腊人畏惧他们，达西亚人则常常雇佣他们，或与之结盟。一直以来，萨尔马提亚人都是骑弓手，但时过境迁，他们开始穿上越来越重的铠甲，最终与东边的铁甲重骑兵别无二致。就连他们的战马也穿上了全套鳞甲。但在他们向重装部队迈进的同时仍未抛弃其可怕的战弓。他们每人一柄双手骑枪，可以将粉碎任何愚蠢的来犯之敌。			
+				[NEWLINE]西徐亚人（或称塞种人）以及萨尔马提亚人的骑乘技巧自祖先处承袭而来，这些草原重装枪骑兵可以与希腊重骑兵抗衡。他们身披鳞甲保护骑手自己和马匹，手持一柄骑枪。这使他们可以用与亚历山大伙伴骑兵相似的方式，施展冲锋击溃敌军。他们所穿的鳞片甲起初用角制成，后来改为金属，这与西方重骑兵相比更具优势，但面对枪阵仍十分脆弱。弓箭的出现使这一问题得到解决：用步兵和弓骑兵发射持续不断的箭雨，削弱敌人，破坏敌人的阵型。公元前53年的卡雷战役中，密集的罗马步兵在帕提亚弓手的压力下被迫分散，于是他们的铁甲重骑兵趁机冲锋，将四倍于他们兵力的、自信满满的罗马军队击溃。
+			</Text>
+		</Row>	
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_LIGHT_CAVALRY">
+			<Text>龙旗麟铠长骑枪</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_LIGHT_CAVALRY_HELP">
+			<Text>发起近战攻击前先进行一次弓箭扫荡，1格内敌方单位-15%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		<!-- **********************辅助克里特弓箭手*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_BOWMAN">
+			<Text>∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_BOWMAN_HELP">
+			<Text>
+				∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军弓箭辅助单位，死亡时不会造成人口损失。
+				[NEWLINE][ICON_BULLET]相比于普通的弓箭手拥有更高的远程和近战战斗力，对陆军单位+50%[ICON_STRENGTH]战斗力，射程+1，每回合攻击次数+1，远程防御攻击时+50%[ICON_STRENGTH]战斗力（持盾）。
+				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路才可以招募此单位。
+				[NEWLINE][ICON_BULLET]给克里特人一张弓，他就会为罗马而战。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_VASSAL_BOWMAN_TEXT">
+			<Text>
+				尽管箭术在希腊军队中并不受到重视，克里特岛仍产出真正出色的弓箭手，他们可以凭借其技艺以极高的价格成为佣兵。克里特弓箭手使用沉重的单体弓发射铜质箭头的弓箭，他们习惯携带盾牌，这意味着有着不错的近战能力，这加大了将领们选择雇佣他们战斗的筹码。当亚历山大大帝招募克里特人直接加入他的部队以支援不可战胜的方阵时，标志着黄金时期的到来。在克利尔库斯的指挥下，500克里特人随同马其顿方阵加入格拉尼库斯河战场，削弱了波斯当时的人数优势并为亚历山大之后取得胜利奠定了基础。罗马人并没有使用弓箭手的传统，当他们征服了希腊后，克里特弓箭手就作为辅助单位出现在他们的阵容之中。值得一提的是，他们参与了恺撒对阵高卢维钦托利的战争，迫使高卢人不得不寻找部落中最好的弓箭手来与他们抗衡。			
+			</Text>
+		</Row>	
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_BOWMAN">
+			<Text>爱琴海战列</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_BOWMAN_HELP">
+			<Text>对陆军单位+50%[ICON_STRENGTH]战斗力，射程+1，每回合攻击次数+1，远程防御攻击时+50%[ICON_STRENGTH]战斗力（持盾）。</Text>
+		</Row>
+		<!-- **********************辅助西徐亚弓骑兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_MOUNTEDXBOW">
+			<Text>∏[COLOR_CYAN]辅助西徐亚弓骑兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_MOUNTEDXBOW_HELP">
+			<Text>
+				∏[COLOR_CYAN]辅助西徐亚弓骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军轻骑兵辅助单位，死亡时不会造成人口损失。
+				[NEWLINE][ICON_BULLET]每回合攻击次数+2，对残血单位+150%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路可以招募此单位。
+				[NEWLINE][ICON_BULLET]引弦为罗马人射倒敌人的西徐亚人才是有价值的战士。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_VASSAL_MOUNTEDXBOW_TEXT">
+			<Text>
+				草原上的许多部落有着丰富的文化，根本不是无知愚昧的野蛮人。他们住在从里海一直到黑海北岸的大片地区；希腊人称他们为“西徐亚人”，波斯人则称其为“塞种人”。其中西边的一群也被叫做萨尔马提亚人。穿着裤子使他们与希腊人认为的野蛮人相距甚远，更不要提他们高高的尖帽了。然而他们全都是出色的骑手，精于使用西徐亚式的复合反曲弓，近战时也颇具威力。他们使用的一种战斧，一面是锋刃一面是镐，可以刺穿大部分铠甲。出土的陪葬品显示，一些部落的女性也同男性一样好战，并有可能亲临战阵。这很可能是希腊神话中亚马逊女战士的起源。			
+			</Text>
+		</Row>	
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_MOUNTEDXBOW">
+			<Text>居鲁士大敌</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_MOUNTEDXBOW_HELP">
+			<Text>每回合攻击次数+2，对残血单位+150%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		<!-- **********************辅助塞尔维亚重步兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_QIANG_SPEARMAN">
+			<Text>∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_QIANG_SPEARMAN_HELP">
+			<Text>
+				∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重步兵辅助单位，死亡时不会造成人口损失。
+				[NEWLINE][ICON_BULLET]防御时+60%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_QIANG_SPEARMAN_TEXT">
+			<Text>
+				在十二世纪上半叶塞尔维亚人曾经提供给帝国300骑兵用于小亚细亚的作战，随着塞尔维亚人1150年败于曼努埃尔一世，这支部队人数增加到亚洲500人，欧洲2000人。其他部队则源于约翰二世12世纪20年代安置在安纳托利亚的塞尔维亚战俘。   甚至在塞尔维亚脱离帝国后，塞尔维亚佣兵或仆从军团依然经常出现， 例如Pelagonia战役中米哈伊尔八世就有600或1000塞尔维亚人。 塞尔维亚提供的同盟仆从军团（尽管实际上不一定都是塞尔维亚人）  在14世纪上半叶，规模和重要性都在不断增加。  例如Stefan Urosh二世1312年借给米哈伊尔九世2000库曼骑兵，而1342—1343年， 约翰六世则得到德国佣兵的支援。塞尔维亚人最后一次在拜占庭人指挥下作战的记录出现于1352年，约翰五世的4000塞尔维亚骑兵。 
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_QIANG_SPEARMAN">
+			<Text>巴尔干之盾</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_QIANG_SPEARMAN_HELP">
+			<Text>防御时+60%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		<!-- **********************辅助亚美尼亚甲骑兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_ARMORED_CAVALRY">
+			<Text>∏[COLOR_CYAN]辅助亚美尼亚甲骑兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_ARMORED_CAVALRY_HELP">
+			<Text>
+				∏[COLOR_CYAN]辅助亚美尼亚甲骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重骑兵辅助单位，死亡时不会造成人口损失。
+				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
+				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_VASSAL_ARMORED_CAVALRY_TEXT">
+			<Text>
+				在12—13世纪，拜占庭帝国从奇里奇亚地区征发的亚美尼亚人仆从军团有时会与拜占庭人在北叙利亚和安纳托利亚共同作战。例如尼西亚的塞奥多一世1214年征发的亚美尼亚部队。12世纪的奇里奇亚军团与拜占庭本土部队几乎难以区分，但在13世纪以后他们的装备日渐受附近的十字军公国影响而西化了。  
+			</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_ARMORED_CAVALRY">
+			<Text>阿扎塔夫雷</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_ARMORED_CAVALRY_HELP">
+			<Text>荒漠地形移动力翻倍，夹击加成+100%。</Text>
+		</Row>
+		<!-- **********************辅助阿兰轻骑兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_ALAN_CAVALRY">
+			<Text>∏[COLOR_CYAN]辅助阿兰轻骑兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_ALAN_CAVALRY_HELP">
+			<Text>
+				∏[COLOR_CYAN]辅助阿兰轻骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军轻骑兵辅助单位，死亡时不会造成人口损失。
+				[NEWLINE][ICON_BULLET]+1攻击次数，每次远程攻击增加1移动力，每次近战攻击回复10血量。
+				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_VASSAL_ALAN_CAVALRY_TEXT">
+			<Text>
+				经常被帝国称为Massagetoi的他们是来自高加索的突厥裔基督徒（名义上的），  在战时提供轻装弓骑兵。 他们的雇佣记录始于11世纪末，直到至少12世纪中期。而在13世纪中期至14世纪初再次被雇佣。当1301年，5000——8000名阿兰人在色雷斯军事定居区定居时，编年史家Muntaner提到他们被认为是“东方最好的骑兵”，能得到本土士兵两倍的薪酬。然而这个军团纪律并不好，也无法与1303-04年与他们编在一队的加泰罗尼亚人相处融洽。双方的摩擦最终导致加泰罗尼亚人在1306年永久性的摧毁了这个军团。 
+			</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_ALAN_CAVALRY">
+			<Text>"东方最好的骑兵"</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_ALAN_CAVALRY_HELP">
+			<Text>+1攻击次数，每次远程攻击增加1移动力，每次近战攻击回复10血量。</Text>
+		</Row>
+
+		<!-- **********************宝船旗舰*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_TREASURE_FLEET">
+			<Text>★[COLOR_CYAN]宝船旗舰[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_TREASURE_FLEET_HELP">
+			<Text>
+				★[COLOR_CYAN]宝船旗舰[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的统帅单位，可以花费一定的[ICON_GOLD]金钱召集∏[COLOR_CYAN]同盟征召护卫舰[ENDCOLOR]和∏[COLOR_CYAN]神机营[ENDCOLOR]助战。
+				[NEWLINE][ICON_BULLET]单位自带军团晋升，且可以攻击后移动。
+				[NEWLINE][ICON_BULLET]只有选择了神州天子之道才可以招募此单位
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_TREASURE_FLEET_TEXT">
+			<Text>
+				宝船是郑和船队中最大的海船，也是郑和船队中的主体，也是郑和率领的海上特混舰队的旗舰，它在郑和船队中的地位相当于现代海军中的旗舰、主力舰。			
+				[NEWLINE]PS:可以当成刘慈欣小说《西洋》世界线的宝船，手动滑稽。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_TREASURE_FLEET">
+			<Text>西洋</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_TREASURE_FLEET_HELP">
+			<Text>可以花费一定的[ICON_GOLD]金钱召集∏[COLOR_CYAN]同盟征召护卫舰[ENDCOLOR]和∏[COLOR_CYAN]神机营[ENDCOLOR]助战，且可以攻击后移动。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_PATRONAGE_SHENJI_MUSKETEER_BUTTON_SHORT">
+			<Text>∏[COLOR_CYAN]神机营[ENDCOLOR]征集</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_PATRONAGE_SHENJI_MUSKETEER_BUTTON">
+			<Text>花费300[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]神机营[ENDCOLOR]单位，花费为当前可建造火药步兵单位1/2的价格，船只本回合失去移动力</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPUE_PATRONAGE_CORVETTE_BUTTON_SHORT">
+			<Text>∏[COLOR_CYAN]征召护卫舰[ENDCOLOR]征集</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_PATRONAGE_CORVETTE_BUTTON">
+			<Text>花费700[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]征召护卫舰[ENDCOLOR]单位，花费为当前可建造海军近战单位1/2的价格，船只本回合失去移动力</Text>
+		</Row>
+		<!-- **********************神机营*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_SHENJI_MUSKETEER">
+			<Text>∏[COLOR_CYAN]神机营[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_SHENJI_MUSKETEER_HELP">
+			<Text>
+				∏[COLOR_CYAN]神机营[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的启蒙陆军火药步兵单位，只能由宝船旗舰招募。
+				[NEWLINE][ICON_BULLET]神机营依据宝船征召时的位置不同可以分为神机京营、九边巡守和宣慰使军。
+				[NEWLINE][ICON_BULLET]神机京营：在己方领土上于首都附近招募，对抗骑兵部队时+25%战斗力，防守时+25%战斗力，拥有隐身能力。
+				[NEWLINE][ICON_BULLET]九边卫士：在己方领土上于非首都的己方城市附近招募，进攻时额外远程打击一次，防守时可反击2格内的敌军远程火力。
+				[NEWLINE][ICON_BULLET]宣慰使军：于非己方领土招募，[ICON_MOVES]移动力+1，面对近战攻击时有30%的概率撤退，回合开始时处于驻扎状态则额外+1[ICON_MOVES]移动力，丛林地块双倍[ICON_MOVES]移动力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_SHENJI_MUSKETEER_TEXT">
+			<Text>
+				军队名。明代京城禁卫军中三大营之一，是明朝军队中专门掌管火器的特殊部队，开启了世界上火器部队的先河。清朝沿用明朝军制，设火器营常守卫于紫禁城及三海，皇帝巡行时亦扈从。			
+			</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SHENJI_MUSKETEER1">
+			<Text>神机京营</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SHENJI_MUSKETEER1_HELP">
+			<Text>对抗骑兵部队时+25%战斗力，防守时+25%战斗力，拥有隐身能力。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SHENJI_MUSKETEER2">
+			<Text>九边卫士</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SHENJI_MUSKETEER2_HELP">
+			<Text>进攻时额外远程打击一次，防守时可反击2格内的敌军远程火力。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SHENJI_MUSKETEER3">
+			<Text>宣慰使军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SHENJI_MUSKETEER3_HELP">
+			<Text>[ICON_MOVES]移动力+1，面对近战攻击时有30%的概率撤退，回合开始时处于驻扎状态则额外+1[ICON_MOVES]移动力，丛林地块双倍[ICON_MOVES]移动力。</Text>
+		</Row>
+		<!-- **********************同盟征召护卫舰*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_CORVETTE">
+			<Text>∏[COLOR_CYAN]同盟征召护卫舰[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_CORVETTE_HELP">
+			<Text>
+				∏[COLOR_CYAN]同盟征召护卫舰[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的启蒙时代海军近战辅助单位，死亡时不会造成人口损失，只能由宝船旗舰征召。
+				[NEWLINE][ICON_BULLET]2格内的敌方军队-15%战斗力，回合结束时位于军港则获得相当于0.05*政策数量*全局商路收入的[ICON_GOLD]金币。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_CORVETTE_TEXT">
+			<Text>
+				西班牙大帆船（Galleon），15世纪至17世纪所用的一种大型三桅帆船，通常有两层或更多的甲板，尤其被西班牙用作商船或战舰。西班牙大帆船最显著的特点是高耸的船首和船尾甲板，战争中当两船并肩卡住时，其优势在于可轻易登上敌船。它吓人的城堡状外形也起到了在心理上威镇敌人的作用，50磅的炮弹射程400米。			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_CORVETTE">
+			<Text>西班牙大帆船</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_CORVETTE_HELP">
+			<Text>2格内的敌方军队-15%战斗力，回合结束时位于军港则获得相当于0.05*政策数量*全局商路收入的[ICON_GOLD]金币。</Text>
+		</Row>
+		<!-- **********************君王之略UI文本*********************** -->
+		<Row Tag="TXT_KEY_SPUE_PATRONAGE_BUTTON_ICON_LEADER_TOP">
+			<Text>
+				选择您希望在本局游戏中使用的[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]辅助单位，一旦选择不可更改
+				[NEWLINE][NEWLINE]([COLOR_NEGATIVE_TEXT]注意：[ENDCOLOR]需解锁君王之略，否则无法退出本界面！)
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPUE_PATRONAGE_SELECT_TITLE">
+			<Text>[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR] - 君王之略选择</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PATH_AUGUSTUS_CAP">
+			<Text>奥古斯都之路</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PATH_AUGUSTUS_HELP">
+			<Text>
+				选择[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]将使您能够建造古典时期的辅助单位。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PATH_BASELIUS_CAP">
+			<Text>巴西琉斯之道</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PATH_BASELIUS_HELP">
+			<Text>
+				选择[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]将使您能够建造中古时期的辅助单位。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PATH_EMPEROR_CAP">
+			<Text>神州天子之权</Text>
+		</Row>
+	
+		<Row Tag="TXT_KEY_PATH_EMPEROR_HELP">
+			<Text>
+				选择[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]将使您能够建造启蒙时期的统帅和辅助单位。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_PATRONAGE_SELECT_OK">
+			<Text>确定</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPUE_PATRONAGE_SELECT_OK_TOOLTIP">
+			<Text>点击以获得选取[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]辅助单位的建造能力</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CONFIRM_PATH">
+			<Text>你确定要采用此项谋略吗？</Text>
+		</Row>
+
+		<!-- **********************乌兰骑兵***********************
+		<Row Tag="TXT_KEY_UNIT_SPUE_UHLAN">
+			<Text>∏[COLOR_CYAN]乌兰骑兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_UHLAN_HELP">
+			<Text>
+				∏[COLOR_CYAN]乌兰骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的启蒙陆军骑兵辅助单位，死亡时不会造成人口损失，可以通过统帅单位征召。
+				[NEWLINE][ICON_BULLET]
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_UHLAN_TEXT">
+			<Text>
+				乌兰骑兵（Uhlan）是指发源自波兰立陶宛，装备骑枪，马刀、手枪的轻骑兵，这些轻骑兵在19世纪早期传统重骑兵衰落后成为欧洲各国常规用途骑兵的样版，后来这个名头用来指代包括法国、俄国，普鲁士、奥地利等国的枪骑兵团。乌兰骑兵通常穿着称为库尔特卡的双襟夹克（kurtka），带有彩色的饰带和肩饰，头戴名叫恰普卡的方顶波兰军帽（czapka），骑枪的枪头之下通常会有一个小燕尾旗。
+				[NEWLINE]在19世纪拿破仑战争开始之后，华沙公国便建立了乌兰骑兵编队，这些波兰枪骑兵在维斯瓦军团（Legion of the Vistula）和帝国卫队第一波兰轻骑兵团中（1st Polish Light Cavalry Regiment of the Imperial Guard）与法国军队并肩作战于西班牙和德国并将这种波兰式的轻骑兵风格散播开来。在索莫谢拉之战（Battle of Somosierra）后，拿破仑说一个波兰骑手比得上十个法国士兵。而法军中其他的中轻骑兵单位则学着乌兰骑兵的样子进行改制。	
+			</Text>
+		</Row> -->
 	</Language_zh_CN>
   
 </GameData>
