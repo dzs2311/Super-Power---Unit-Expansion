@@ -1027,7 +1027,7 @@
     <File md5="B5F09A202E54BDEDC31801059F590E11" import="0">XML/SPIdeo_Text_zh_CN.xml</File>
     <File md5="901904F45B59B17C470EB3204B75E8E7" import="0">XML/SPUnit_Improvements.xml</File>
     <File md5="5CA2EAB3590603B823CFC14C517BC64A" import="0">XML/SPUnit_Polices.xml</File>
-    <File md5="A521307A439FDA0B270D0AE157187DB7" import="0">XML/SPUnit_Promotions.xml</File>
+    <File md5="9A389363256E0676E2A7FC40062CF864" import="0">XML/SPUnit_Promotions.xml</File>
     <File md5="E6E467C0DDA8C9F9F8C79E870C7C70CB" import="0">XML/SPUnit_Text_en_US.xml</File>
     <File md5="46042D48D9C115C4EB3C0941928EA7F6" import="0">XML/SPUnit_Text_zh_CN.xml</File>
   </Files>
