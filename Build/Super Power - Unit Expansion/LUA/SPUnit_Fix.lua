@@ -44,6 +44,10 @@ local unitPromotionHeliFighterID 	= GameInfo.UnitPromotions["PROMOTION_SPUE_FREE
 local unitPromotionPanzerID 		= GameInfo.UnitPromotions["PROMOTION_SPUE_AUTOCRACY_PANZERG"].ID
 local unitPromotionPanzerEffectID 	= GameInfo.UnitPromotions["PROMOTION_SPUE_AUTOCRACY_PANZERG_EFFECT"].ID
 
+-- 坦克
+local TankID 						= GameInfo.UnitPromotions["PROMOTION_TANK_COMBAT"].ID
+
+
 -- 超级要塞
 local unitPromotionGAIAID 			= GameInfo.UnitPromotions["PROMOTION_SPUE_AUTOCRACY_JUFORTRESS"].ID
 local unitPromotionGAIA_ShipID 		= GameInfo.UnitPromotions["PROMOTION_SPUE_AUTOCRACY_JUFORTRESSSHIP"].ID
@@ -925,7 +929,7 @@ function SPUE_Unit_Effect_UnitSetXY(playerID)
 	end
 
 	-- 鹰击055：巡天四面阵
-	if PanzerCheck == 1 then
+	if S055Check == 1 then
 		for pUnit in pPlayer:Units() do
 			local Patronage = 0;
 			if (pUnit:IsHasPromotion( CarrierFighterID  ) or pUnit:IsHasPromotion( IntercepterAircraftUnitID  ))
@@ -957,10 +961,10 @@ function SPUE_Unit_Effect_UnitSetXY(playerID)
 	end
 
 	-- 装甲掷弹兵
-	if S055Check == 1 then
+	if PanzerCheck == 1 then
 		for pUnit in pPlayer:Units() do
 			local Patronage = 0;
-			if (pUnit:IsHasPromotion( CarrierFighterID  ) or pUnit:IsHasPromotion( IntercepterAircraftUnitID  ))
+			if (pUnit:IsHasPromotion( TankID ))
 			then 
 				for sUnit in pPlayer:Units() do
 					if sUnit:IsHasPromotion(unitPromotionPanzerID ) then
@@ -972,17 +976,17 @@ function SPUE_Unit_Effect_UnitSetXY(playerID)
 					end
 				end			
 				if Patronage == 1 then
-					if not pUnit:IsHasPromotion(unitPromotionPanzerID  ) then
-						pUnit:SetHasPromotion(unitPromotionPanzerID  , true)
+					if not pUnit:IsHasPromotion(unitPromotionPanzerEffectID ) then
+						pUnit:SetHasPromotion(unitPromotionPanzerEffectID , true)
 					end
 				else
-					if pUnit:IsHasPromotion(unitPromotionPanzerID  ) and not pUnit:IsHasPromotion(unitPromotionPanzerID ) then
-						pUnit:SetHasPromotion(unitPromotionPanzerID  , false)
+					if pUnit:IsHasPromotion(unitPromotionPanzerEffectID ) and not pUnit:IsHasPromotion(unitPromotion055ID ) then
+						pUnit:SetHasPromotion(unitPromotionPanzerEffectID , false)
 					end
 				end		
 			else
-				if pUnit:IsHasPromotion(unitPromotionPanzerID  ) and not pUnit:IsHasPromotion(unitPromotionPanzerID ) then
-					pUnit:SetHasPromotion(unitPromotionPanzerID  , false)
+				if pUnit:IsHasPromotion(unitPromotionPanzerEffectID ) and not pUnit:IsHasPromotion(unitPromotion055ID ) then
+					pUnit:SetHasPromotion(unitPromotionPanzerEffectID , false)
 				end
 			end
 		end
@@ -1636,7 +1640,7 @@ SPUE_GAIA_Ship2Head_Button = {
 		
 		unit:Kill();
 		local newUnit = nil;
-		newUnit = player:InitUnit(GameInfoTypes.UUNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD, plot:GetX(), plot:GetY());
+		newUnit = player:InitUnit(GameInfoTypes.UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD, plot:GetX(), plot:GetY());
 
 		newUnit:SetMoves(0);
 		newUnit:SetLevel(unitLevel);
@@ -1699,7 +1703,7 @@ SPUE_GAIA_Head2Ship_Button = {
 		
 		unit:Kill();
 		local newUnit = nil;
-		newUnit = player:InitUnit(GameInfoTypes.UUNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP, plot:GetX(), plot:GetY());
+		newUnit = player:InitUnit(GameInfoTypes.UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP, plot:GetX(), plot:GetY());
 
 		newUnit:SetMoves(0);
 		newUnit:SetLevel(unitLevel);
@@ -2237,7 +2241,7 @@ function NewAttackEffect()
 		end
 
 		if not iDireciton then
-			break;
+			return;
 		end
 
 		while GAIARange > 0 do
@@ -2305,8 +2309,6 @@ function NewAttackEffect()
 			GAIARange = GAIARange - 1
 		end
 	end
-
-
 
 end--function END
 GameEvents.BattleFinished.Add(NewAttackEffect)
@@ -2953,16 +2955,19 @@ function SetPolicyUnitsName( iPlayer, iOldUnit,  iNewUnit)
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_VARANGIAN");	-- 商业：瓦兰吉佣兵
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_IRON_TROOP"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_IRON_TROOP");	-- 商业：铁人军
+
+	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ORDER_KV2"].ID) then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_ORDER_KV2");	-- 秩序：KV2
+	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FREEDOM_SPITFIRE"].ID) then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_FREEDOM_SPITFIRE");	-- 自由：喷火
+	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_AUTOCRACY_PANZERG"].ID) then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_AUTOCRACY_PANZERG");	-- 独裁：装甲掷弹兵
 	end
 
 	if pUnit:GetUnitType() == GameInfoTypes.UNIT_SPUE_DVC_FIGHTER then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_DVC_FIGHTER");	-- 美学：达芬奇飞行器
 	elseif pUnit:GetUnitType() == GameInfoTypes.UNIT_SPUE_DVC_MACHINEGUN then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_DVC_MACHINEGUN");	-- 美学：达芬奇机关炮
-	-- elseif pUnit:GetUnitType() == GameInfoTypes.UNIT_SPUE_FOOT_KNIGHT_HOSPITALLER then
-	-- 	pUnit:SetName("TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_HOSPITALLER");	-- 虔信：步行医院骑士
-	-- elseif pUnit:GetUnitType() == GameInfoTypes.UNIT_SPUE_KNIGHT_HOSPITALLER then
-	-- 	pUnit:SetName("TXT_KEY_UNIT_SPUE_KNIGHT_HOSPITALLER");	-- 虔信：医院骑士团征召军士
 	end
 end
 GameEvents.UnitUpgraded.Add(SetPolicyUnitsName);

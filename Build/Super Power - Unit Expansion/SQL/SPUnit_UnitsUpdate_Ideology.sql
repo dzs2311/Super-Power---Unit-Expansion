@@ -4,8 +4,8 @@
 INSERT INTO Projects
 		(Type,						Description,						Help,									Civilopedia,								TechPrereq,					MaxGlobalInstances,	MaxTeamInstances,	Cost,	PortraitIndex,	IconAtlas)
 VALUES	('PROJECT_SPUE_ORDER',		'TXT_KEY_PROJECT_SPUE_ORDER',		'TXT_KEY_PROJECT_SPUE_ORDER_HELP',		'TXT_KEY_PROJECT_SPUE_ORDER_PEDIA',			'TECH_ROBOTICS',			1,					1,					900,	29,				'SPBalance_ATLAS'),
-		('PROJECT_SPUE_FREEDOM',	'TXT_KEY_PROJECT_SPUE_FREEDOM',		'TXT_KEY_PROJECT_SPUE_FREEDOM_HELP',	'TXT_KEY_PROJECT_SPUE_FREEDOM_PEDIA',		'TECH_COMPUTERS',			1,					1,					900,	29,				'SPBalance_ATLAS'),
-		('PROJECT_SPUE_AUTOCRACY',	'TXT_KEY_PROJECT_SPUE_AUTOCRACY',	'TXT_KEY_PROJECT_SPUE_AUTOCRACY_HELP',	'TXT_KEY_PROJECT_SPUE_AUTOCRACY_PEDIA',		'TECH_ADVANCED_BALLISTICS',	1,					1,					900,	29,				'SPBalance_ATLAS');
+		('PROJECT_SPUE_FREEDOM',	'TXT_KEY_PROJECT_SPUE_FREEDOM',		'TXT_KEY_PROJECT_SPUE_FREEDOM_HELP',	'TXT_KEY_PROJECT_SPUE_FREEDOM_PEDIA',		'TECH_SATELLITES',			1,					1,					900,	29,				'SPBalance_ATLAS'),
+		('PROJECT_SPUE_AUTOCRACY',	'TXT_KEY_PROJECT_SPUE_AUTOCRACY',	'TXT_KEY_PROJECT_SPUE_AUTOCRACY_HELP',	'TXT_KEY_PROJECT_SPUE_AUTOCRACY_PEDIA',		'TECH_INTERNET',			1,					1,					900,	29,				'SPBalance_ATLAS');
 
 INSERT INTO Project_Flavors
 		(ProjectType,				FlavorType,				Flavor)
@@ -158,9 +158,9 @@ INSERT INTO UnitClasses
 VALUES	('UNITCLASS_SPUE_FREEDOM_HELICARRIER',		'TXT_KEY_UNIT_SPUE_FREEDOM_HELICARRIER',		'UNIT_SPUE_FREEDOM_HELICARRIER',		3);
  
 INSERT INTO Units 	
-		(Type, 								Class,							  		ProjectPrereq,			PrereqTech, PolicyType,				RangedCombat,	Combat,		Range, 		ExtraMaintenanceCost,	AirInterceptRange,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,									Strategy, Help,											Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,						UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_FREEDOM_HELICARRIER', 	'UNITCLASS_SPUE_FREEDOM_HELICARRIER', 	'PROJECT_SPUE_FREEDOM',	PrereqTech, 'POLICY_SPUE_FREEDOM',	RangedCombat,	500,		Range, 		ExtraMaintenanceCost,	AirInterceptRange,	Special, Cost+Cost, FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_FREEDOM_HELICARRIER',	'TXT_KEY_CIV5_SPUE_FREEDOM_HELICARRIER_TEXT', 	Strategy, 'TXT_KEY_UNIT_SPUE_FREEDOM_HELICARRIER_HELP', Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_HELICARRIER',	0,					'SPUE_HELI_FLAG_ATLAS',	4,				'SPUE_IDEO_ATLAS',	1
-FROM Units WHERE Type = 'UNIT_NUCLEAR_CARRIER';
+		(Type, 								Class,							  		ProjectPrereq,			PrereqTech, 		PolicyType,				RangedCombat,	Combat,		Range, 		ExtraMaintenanceCost,	AirInterceptRange,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,									Strategy, Help,											Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,						UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
+SELECT	'UNIT_SPUE_FREEDOM_HELICARRIER', 	'UNITCLASS_SPUE_FREEDOM_HELICARRIER', 	'PROJECT_SPUE_FREEDOM',	'TECH_SATELLITES', 'POLICY_SPUE_FREEDOM',	RangedCombat,	500,		Range, 		ExtraMaintenanceCost,	AirInterceptRange,	Special, Cost+Cost, FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_FREEDOM_HELICARRIER',	'TXT_KEY_CIV5_SPUE_FREEDOM_HELICARRIER_TEXT', 	Strategy, 'TXT_KEY_UNIT_SPUE_FREEDOM_HELICARRIER_HELP', Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_HELICARRIER',	0,					'SPUE_HELI_FLAG_ATLAS',	4,				'SPUE_IDEO_ATLAS',	1
+FROM Units WHERE Type = 'UNIT_SUPER_CARRIER';
 
 INSERT INTO Unit_FreePromotions	
 		(UnitType, 				 	  		PromotionType)
@@ -299,8 +299,8 @@ VALUES	('UNITCLASS_SPUE_AUTOCRACY_JUFORTRESSSHIP',	'TXT_KEY_UNIT_SPUE_AUTOCRACY_
 
 -- 海上堡垒 
 INSERT INTO Units 	
-		(Type, 									Class,										ProjectPrereq,				PrereqTech, PolicyType,					RangedCombat,	Combat,		Range, 		AirInterceptRange,	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,										Civilopedia,										Strategy, Help,														Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,							UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'UNITCLASS_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'PROJECT_SPUE_AUTOCRACY',	PrereqTech, 'POLICY_SPUE_AUTOCRACY',	1060,			1060,	    6, 			5,					60,						Special, 4500, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, 8,   		CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP',		'TXT_KEY_CIV5_SPUE_AUTOCRACY_JUFORTRESSSHIP_TEXT', 	Strategy, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_JUFORTRESSSHIP',	0,					'SPUE_HEAD_FLAG_ATLAS',	12,				'SPUE_IDEO_ATLAS',	1
+		(Type, 									Class,										ProjectPrereq,				PrereqTech, 		PolicyType,					RangedCombat,	Combat,		Range, 		AirInterceptRange,	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,										Civilopedia,										Strategy, Help,														Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,							UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
+SELECT	'UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'UNITCLASS_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'PROJECT_SPUE_AUTOCRACY',	'TECH_INTERNET', 	'POLICY_SPUE_AUTOCRACY',	1060,			1060,	    6, 			5,					60,						Special, 4500, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, 8,   		CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP',		'TXT_KEY_CIV5_SPUE_AUTOCRACY_JUFORTRESSSHIP_TEXT', 	Strategy, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_JUFORTRESSSHIP',	0,					'SPUE_HEAD_FLAG_ATLAS',	12,				'SPUE_IDEO_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_MISSILE_CRUISER';
 
 INSERT INTO Unit_FreePromotions	
@@ -310,11 +310,12 @@ FROM Unit_FreePromotions WHERE UnitType = 'UNIT_FUTURE_BATTLESHIP';
 
 INSERT INTO Unit_FreePromotions
 		(UnitType, 								PromotionType)
-VALUES	('UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'PROMOTION_SPUE_AUTOCRACY_JUFORTRESS');
-		('UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'PROMOTION_SPUE_AUTOCRACY_JUFORTRESSSHIP');
+VALUES	('UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'PROMOTION_SPUE_AUTOCRACY_JUFORTRESS'),
+		('UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'PROMOTION_SPUE_AUTOCRACY_JUFORTRESSSHIP'),
+		('UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'PROMOTION_ANTI_DEBUFF'),
 		('UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'PROMOTION_CORPS_1'),
 		('UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'PROMOTION_CORPS_2');
-
+		
 INSERT INTO Unit_BuildingClassRequireds 	
 		(UnitType, 				 				BuildingClassType)
 SELECT	'UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP',  	BuildingClassType
@@ -342,8 +343,8 @@ FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_MISSILE_CRUISER';
 
 --空中堡垒 
 INSERT INTO Units 	
-		(Type, 									Class,										ProjectPrereq,				PrereqTech, PolicyType,					RangedCombat,	Combat,		Range, 		AirInterceptRange,	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,										Civilopedia,										Strategy, Help,														Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,							UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD', 	'UNITCLASS_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'PROJECT_SPUE_AUTOCRACY',	PrereqTech, 'POLICY_SPUE_AUTOCRACY',	1060,			1060,	    6, 			AirInterceptRange	60,						Special, -1, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, 8,   		CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD',		'TXT_KEY_CIV5_SPUE_AUTOCRACY_JUFORTRESSSHIP_TEXT', 	Strategy, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_JUFORTRESSHEAD',	0,					'SPUE_HEAD_FLAG_ATLAS', 8,				'SPUE_IDEO_ATLAS',	1
+		(Type, 									Class,										ProjectPrereq,				PrereqTech, 		PolicyType,					RangedCombat,	Combat,		Range, 		AirInterceptRange,	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,										Civilopedia,										Strategy, Help,														Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,							UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
+SELECT	'UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD', 	'UNITCLASS_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'PROJECT_SPUE_AUTOCRACY',	'TECH_INTERNET', 	'POLICY_SPUE_AUTOCRACY',	1060,			1060,	    6, 			AirInterceptRange,	60,						Special, -1, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, 8,   		CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD',		'TXT_KEY_CIV5_SPUE_AUTOCRACY_JUFORTRESSSHIP_TEXT', 	Strategy, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_JUFORTRESSHEAD',	0,					'SPUE_HEAD_FLAG_ATLAS', 8,				'SPUE_IDEO_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_MISSILE_CRUISER';
 
 INSERT INTO Unit_FreePromotions	
@@ -356,6 +357,7 @@ INSERT INTO Unit_FreePromotions
 VALUES	('UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD', 	'PROMOTION_SPUE_AUTOCRACY_JUFORTRESS'),
 		('UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD', 	'PROMOTION_SPUE_AUTOCRACY_JUFORTRESSHEAD'),
 		('UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD', 	'PROMOTION_SPUE_HOVERING'),
+		('UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD', 	'PROMOTION_ANTI_DEBUFF'),
 		('UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD', 	'PROMOTION_CORPS_1'),
 		('UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD', 	'PROMOTION_CORPS_2');
 

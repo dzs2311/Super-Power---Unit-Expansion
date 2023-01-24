@@ -620,6 +620,7 @@
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<NumInterceptionChange>10</NumInterceptionChange>
 			<InterceptionCombatModifier>150</InterceptionCombatModifier>
+			<NukeImmune>true</NukeImmune>
 			<PortraitIndex>36</PortraitIndex>
 			<IconAtlas>promoVP_atlas_03</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -713,9 +714,10 @@
 			<Help>TXT_KEY_PROMOTION_SPUE_FREEDOM_HELICARRIER_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
-			<LostWithUpgrade>false</LostWithUpgrade>
-			<PortraitIndex>19</PortraitIndex>
+			<LostWithUpgrade>false</LostWithUpgrade>			
 			<CargoChange>12</CargoChange>
+			<NukeImmune>true</NukeImmune>
+			<PortraitIndex>19</PortraitIndex>
 			<IconAtlas>promoVP_atlas_01</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_FREEDOM_HELICARRIER</PediaEntry>
@@ -776,6 +778,7 @@
 			<CanMoveAfterAttacking>true</CanMoveAfterAttacking>
 			<IgnoreZOC>true</IgnoreZOC>
 			<MaxHitPointsModifier>300</MaxHitPointsModifier>
+			<NukeImmune>true</NukeImmune>
 			<PortraitIndex>59</PortraitIndex>
 			<IconAtlas>promoVP_atlas_03</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>

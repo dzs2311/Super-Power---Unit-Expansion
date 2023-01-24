@@ -731,14 +731,14 @@
 			<PortraitIndex>19</PortraitIndex>
 			<IconAtlas>promoVP_atlas_01</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_SPUE_FREEDOM_HELICARRIE_FIGHTERR</PediaEntry>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_FREEDOM_HELICARRIER_FIGHTER</PediaEntry>
 		</Row>
 		<!--*********************************自由：喷火战机*********************************-->
 		<Row>
 			<!--喷火战机：皇家空军-->
-			<Type>PROMOTION_SPUE_FREEDOM_SPITFIR</Type>
-			<Description>TXT_KEY_PROMOTION_SPUE_FREEDOM_SPITFIR</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_FREEDOM_SPITFIR_HELP</Help>
+			<Type>PROMOTION_SPUE_FREEDOM_SPITFIRE</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_FREEDOM_SPITFIRE</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_FREEDOM_SPITFIRE_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
@@ -747,7 +747,7 @@
 			<PortraitIndex>7</PortraitIndex>
 			<IconAtlas>extraPromo_Atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_SPUE_FREEDOM_SPITFIR</PediaEntry>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_FREEDOM_SPITFIRE</PediaEntry>
 		</Row>
 		<!--*********************************自由：长滩级巡洋舰*********************************-->
 		<Row>

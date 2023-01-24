@@ -221,10 +221,10 @@
 			</Text>
 		</Row>
 
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_FREEDOM_SPITFIR">
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FREEDOM_SPITFIRE">
 			<Text>皇家空军</Text>
 		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_FREEDOM_SPITFIR_HELP">
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FREEDOM_SPITFIRE_HELP">
 			<Text>
 				本土作战+50%[ICON_STRENGTH]战斗力，且消灭敌方单位后能够回复25%血量。
 			</Text>

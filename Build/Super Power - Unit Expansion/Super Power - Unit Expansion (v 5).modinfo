@@ -999,7 +999,7 @@
     <File md5="A9E6EA38AB974A7C1C0D34F1AB858985" import="1">CombatPercentBonus/promo_CPM_256.dds</File>
     <File md5="B2EB55EC71E307848AF62A8AC6578E9C" import="1">LUA/PlotMath.lua</File>
     <File md5="761DFFE4309CC6660D2264F46B67E733" import="1">LUA/SaveUtils.lua</File>
-    <File md5="30D77807A7DAB5F49C6ADC1514DB22C2" import="1">LUA/SPUnit_Fix.lua</File>
+    <File md5="7A8800A9FCB36B007A3AC2CE5539C4AD" import="1">LUA/SPUnit_Fix.lua</File>
     <File md5="2F3C500E192FFB3C7A8E4C619E9477FA" import="1">LUA/SPUnit_Improvements.lua</File>
     <File md5="83AB0898D1AEB48A96E9E3D482F30EC3" import="0">SPUE_GeneralTweaks.sql</File>
     <File md5="A7583629A28708FC0AA653DECF8E1C0C" import="0">SQL/SPUnit_ArtDefines.sql</File>
@@ -1008,7 +1008,7 @@
     <File md5="875F32784CC039E9D7CFA10EF7112D44" import="0">SQL/SPUnit_ModelsUpdate.sql</File>
     <File md5="EBEE1E0D58B37245DEDE36B213A39B25" import="0">SQL/SPUnit_UnitPromotions_Update.sql</File>
     <File md5="995FDE0D2F0D43E3EB70B197D68C03A8" import="0">SQL/SPUnit_UnitsUpdate_General.sql</File>
-    <File md5="E8F0A88F42A335264819F339A24E792A" import="0">SQL/SPUnit_UnitsUpdate_Ideology.sql</File>
+    <File md5="96EA71A063B200C99D0B89D910F3E1CA" import="0">SQL/SPUnit_UnitsUpdate_Ideology.sql</File>
     <File md5="CFD570A6D14A9606A64C7A349E8F273D" import="0">SQL/SPUnit_UnitsUpdate_Policy.sql</File>
     <File md5="60D628C29DF8323615B3ACA4B0012DE1" import="1">UI/Art/UI_AUGUSTUS.dds</File>
     <File md5="B2DFD0AC7FA562B4228F75951067D696" import="1">UI/Art/UI_BASELIUS.dds</File>
@@ -1022,12 +1022,12 @@
     <File md5="C3B38B2AB13B75C9394EF239F4BCBCAE" import="0">UI/KnightOrdersSelection.xml</File>
     <File md5="C70486F3B60097B093183081B55032CC" import="1">UI/MercenaryUnitsSelection.lua</File>
     <File md5="CBF425BBF181D14884946C6A4344E7CB" import="0">UI/MercenaryUnitsSelection.xml</File>
-    <File md5="0E3415F890B87070BD5379366B31CDF3" import="0">XML/SPIdeo_Text_en_US.xml</File>
+    <File md5="F03B52387F9359AF6774B33869490390" import="0">XML/SPIdeo_Text_en_US.xml</File>
     <File md5="C8D595AA8DB4F9A13507823D7E6253D5" import="0">XML/SPUnit_Buildings.xml</File>
-    <File md5="D711D9EEE5815D0CD71718445AA21059" import="0">XML/SPIdeo_Text_zh_CN.xml</File>
+    <File md5="B5F09A202E54BDEDC31801059F590E11" import="0">XML/SPIdeo_Text_zh_CN.xml</File>
     <File md5="901904F45B59B17C470EB3204B75E8E7" import="0">XML/SPUnit_Improvements.xml</File>
     <File md5="5CA2EAB3590603B823CFC14C517BC64A" import="0">XML/SPUnit_Polices.xml</File>
-    <File md5="AD5768FD96B789F0E6A35E473C9F9360" import="0">XML/SPUnit_Promotions.xml</File>
+    <File md5="A521307A439FDA0B270D0AE157187DB7" import="0">XML/SPUnit_Promotions.xml</File>
     <File md5="E6E467C0DDA8C9F9F8C79E870C7C70CB" import="0">XML/SPUnit_Text_en_US.xml</File>
     <File md5="46042D48D9C115C4EB3C0941928EA7F6" import="0">XML/SPUnit_Text_zh_CN.xml</File>
   </Files>
