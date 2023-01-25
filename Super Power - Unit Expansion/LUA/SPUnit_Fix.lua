@@ -47,7 +47,6 @@ local unitPromotionPanzerEffectID 	= GameInfo.UnitPromotions["PROMOTION_SPUE_AUT
 -- 坦克
 local TankID 						= GameInfo.UnitPromotions["PROMOTION_TANK_COMBAT"].ID
 
-
 -- 超级要塞
 local unitPromotionGAIAID 			= GameInfo.UnitPromotions["PROMOTION_SPUE_AUTOCRACY_JUFORTRESS"].ID
 local unitPromotionGAIA_ShipID 		= GameInfo.UnitPromotions["PROMOTION_SPUE_AUTOCRACY_JUFORTRESSSHIP"].ID
@@ -115,6 +114,9 @@ function EmbarkGraphic(playerID)
 				then	
 					pPlayer:SetEmbarkedGraphicOverride("ART_DEF_UNIT_GALLEON_ASIA")
 				end
+				if GameInfo.Civilizations[activeCivID].Type  == "CIVILIZATION_INDONESIA" then
+					pPlayer:SetEmbarkedGraphicOverride("ART_DEF_UNIT_U_POLYNESIAN_WAR_CANOE")
+				end
 			end
 			if  pEraID <= GameInfo.Eras["ERA_CLASSICAL"].ID  then
 				pPlayer:SetEmbarkedGraphicOverride("ART_DEF_UNIT_GALLEY")
@@ -122,6 +124,9 @@ function EmbarkGraphic(playerID)
 				or activeCivSuffix == '_CHINA'
 				then	
 					pPlayer:SetEmbarkedGraphicOverride("ART_DEF_UNIT_GALLEY_ASIA")
+				end
+				if GameInfo.Civilizations[activeCivID].Type  == "CIVILIZATION_INDONESIA" then
+					pPlayer:SetEmbarkedGraphicOverride("ART_DEF_UNIT_U_POLYNESIAN_WAR_CANOE")
 				end
 			end
 		end
