@@ -78,7 +78,7 @@ function GetCloseCity ( iPlayer, plot )
 	end
 
 	for pCity in pPlayer:Cities() do
-		distanceToCity = Map.PlotDistance(pCity:GetX(), pCity:GetY(), plot:GetX(), plot:GetY());
+		local distanceToCity = Map.PlotDistance(pCity:GetX(), pCity:GetY(), plot:GetX(), plot:GetY());
 		if ( distanceToCity < distance) then
 			distance = distanceToCity;
 			closeCity = pCity;
@@ -420,6 +420,18 @@ function SPUE_OnPlayerDoTurn(playerID)
 		end
 	end
 
+	-- 统计陆海军单位
+	local numLandUnits = 0;
+	local numSeaUnits = 0;
+
+	for unit in player:Units() do
+		if unit:GetDomainType() == DomainTypes.DOMAIN_LAND then
+			numLandUnits = numLandUnits + 1;
+		elseif unit:GetDomainType() == DomainTypes.DOMAIN_SEA then
+			numSeaUnits = numSeaUnits + 1;
+		end
+	end
+
 	for unit in player:Units() do
 		-- 瓦兰吉卫队
 		if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_VARANGIAN_GUARD"]) then
@@ -507,9 +519,368 @@ function SPUE_OnPlayerDoTurn(playerID)
 
 			end
 		end
+
+		-- AI使用技能系列
+		if not player:IsHuman() then
+			local plot = unit:GetPlot()
+			-- 采邑骑士
+			local SPUE_Knight_New_Flag = load( player, "Knight Rally", SPUE_Knight_New_Flag) or 0
+			local knightFlag = 0
+			-- 福船标识
+			local fuchuanFlag = math.random(1, 2)
+			local fuchuanInfantryFlag = 0
+			local fuchuanCannonFlag = 0
+			local fuchuanInfantryCost = -1
+			local fuchuanCannonCost = -1
+			-- 宝船旗舰标识
+			local treasureFleetFlag = math.random(1, 2)
+
+			--*****************************AI召唤采邑骑士*****************************--
+			if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW"].ID) 
+			and SPUE_Knight_New_Flag == 0
+			then
+				if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
+					knightFlag = 1
+				elseif player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) > 0 then
+					-- 兵力足够时按钮才会显示
+					local iTotalTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) 
+					local iUsedTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS_USED"]) 
+					if iTotalTroops - iUsedTroops > math.min(20,  player:GetNumCities() - 1) then
+						knightFlag = 1
+					end
+				end
+
+				if knightFlag == 1 then
+					local plot = unit:GetPlot()
+					local unitX = unit:GetX()
+					local unitY = unit:GetY()
+					local unitAIType = unit:GetUnitAIType()
+					local numKnights = 0
+				
+					for city in player:Cities() do
+						if not city:IsCapital() then
+							-- 从非首都城市召唤采邑骑士
+							local cityname = city:GetName()
+							local NewUnit = player:InitUnit(GameInfoTypes["UNIT_SPUE_KNIGHT_NEW1"], unitX, unitY, unitAIType)
+							NewUnit:SetName("[COLOR_CYAN]"..cityname..Locale.ConvertTextKey("TXT_KEY_UNIT_SPUE_KNIGHT_NEW1_NAME").."[ENDCOLOR]") 
+							numKnights = numKnights + 1;
+							if plot:GetNumUnits() > 2 then
+								NewUnit:JumpToNearestValidPlot()
+							end
+							if numKnights >= math.min(20,  player:GetNumCities() - 1) then
+								break;
+							end
+						end
+					end
+					unit:SetMoves(0)
+					save( player, "Knight Rally", 1)
+					SPUE_Knight_New_Flag = 1
+				end
+			end
+
+			--*****************************AI福船制造单位*****************************--
+			if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FUCHUAN"].ID) 
+			and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
+			then
+				if fuchuanFlag < 2 then
+					-- 重步兵训练
+					local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SWORDSMAN")
+					local sUpgradeUnitType = GetUpgradeUnit(player, sUnitType)
+					
+					while (sUpgradeUnitType ~= nil) do
+					   sUnitType = sUpgradeUnitType
+					   sUpgradeUnitType = GetUpgradeUnit(player, sUnitType)
+					end
+					local iUnit = GameInfoTypes[sUnitType]
+				
+					if iUnit and iUnit ~= -1 then
+						for pCity in player:Cities() do
+						if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
+							fuchuanInfantryCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
+							break;
+						end
+						end
+					end
+				
+					if fuchuanInfantryCost > 0 and player:GetGold() >= fuchuanInfantryCost then
+						-- 玩家有足够金钱
+						if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
+							fuchuanInfantryFlag = 1
+						elseif player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) > 0 then
+							-- 兵力足够时按钮才会显示
+							local iTotalTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) 
+							local iUsedTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS_USED"]) 
+							if iTotalTroops - iUsedTroops >  1 then
+								fuchuanInfantryFlag = 1
+							end
+						end
+					end
+					
+					if fuchuanInfantryFlag == 1 then
+						local NewUnit = player:InitUnit(GameInfoTypes[sUnitType], unit:GetX(), unit:GetY(), UNITAI_DEFENSE)
+						NewUnit:JumpToNearestValidPlot()
+						NewUnit:SetExperience(unit:GetExperience())
+						unit:SetMoves(0)
+						player:ChangeGold(-fuchuanInfantryCost)
+					end
+				else
+					-- 炮兵训练
+					local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_CULVERIN")
+					local sUpgradeUnitType = GetUpgradeUnit(player, sUnitType)
+					
+					while (sUpgradeUnitType ~= nil) do
+					   sUnitType = sUpgradeUnitType
+					   sUpgradeUnitType = GetUpgradeUnit(player, sUnitType)
+					end
+					local iUnit = GameInfoTypes[sUnitType]
+				
+					if iUnit and iUnit ~= -1 then
+						for pCity in player:Cities() do
+						if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
+							fuchuanCannonCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
+							break;
+						end
+						end
+					end
+				
+					if fuchuanCannonCost > 0 and player:GetGold() >= fuchuanCannonCost then
+						-- 玩家有足够金钱
+						if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
+							fuchuanCannonFlag = 1
+						elseif player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) > 0 then
+							-- 兵力足够时按钮才会显示
+							local iTotalTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) 
+							local iUsedTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS_USED"]) 
+							if iTotalTroops - iUsedTroops >  1 then
+								fuchuanCannonFlag = 1
+							end
+						end
+					end
+					
+					if fuchuanCannonFlag == 1 then
+						local NewUnit = player:InitUnit(GameInfoTypes[sUnitType], unit:GetX(), unit:GetY(), UNITAI_DEFENSE)
+						NewUnit:JumpToNearestValidPlot()
+						NewUnit:SetExperience(unit:GetExperience())
+						unit:SetMoves(0)
+						player:ChangeGold(-fuchuanCannonCost)
+					end
+				end
+			end
+			--*****************************AI转化瓦兰吉卫队*****************************--
+			if unit:CanMove() and unit:IsHasPromotion(VARANGIANID) 
+			and unit:GetUnitType() == GameInfoTypes.UNIT_SPUE_VARANGIAN
+			and CountVarangianGuard(unit:GetOwner()) == 0
+			and player:GetGold() > 1000 then
+				local plot 		= unit:GetPlot();
+				local plotX 	= plot:GetX();
+				local plotY 	= plot:GetY();
+		
+				local unitLevel = unit:GetLevel();
+				local unitEXP   = unit:GetExperience();
+		
+				local unitPromotions = {};
+				for row in GameInfo.UnitPromotions() do
+				  if unit:IsHasPromotion(row.ID) and not row.LostWithUpgrade then
+					table.insert(unitPromotions, row.ID);
+				  end
+				end
+		
+				local unitName = nil;
+				if unit:HasName() then
+				  unitName = unit:GetNameNoDesc();
+				end
+				
+				unit:Kill();
+				local newUnit = nil;
+				newUnit = player:InitUnit(GameInfoTypes.UNIT_SPUE_VARANGIAN_GUARD, plot:GetX(), plot:GetY());
+		
+				newUnit:SetLevel(unitLevel);
+				newUnit:SetExperience(unitEXP);
+				if #unitPromotions > 0 then
+				  for _, unitPromotionID in ipairs(unitPromotions) do
+					newUnit:SetHasPromotion(unitPromotionID, true);
+				  end
+				end
+				if unitName then
+				  newUnit:SetName(unitName);
+				end
+		
+				player:ChangeGold(-1000)
+				local hex = ToHexFromGrid(Vector2(plotX, plotY))
+				Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("-1000[ICON_GOLD]"))
+			end			
+			--*****************************AI宝船旗舰*****************************--
+			if Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_SONAR"])
+			and unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TREASURE_FLEET"].ID) 
+			and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
+			then
+				local numInfantry = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_SHENJI_MUSKETEER"]);
+				local numCorvette = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_CORVETTE"]);
+				if numInfantry < GameInfo.UnitClasses["UNITCLASS_SPUE_SHENJI_MUSKETEER"].MaxPlayerInstances
+				and treasureFleetFlag < 2
+				then
+					local flag = 0
+					local iCost = 300
+					if iCost > 0 and player:GetGold() >= iCost then
+						-- 玩家有足够金钱
+						if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
+							flag = 1
+						elseif player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) > 0 then
+							-- 兵力足够时按钮才会显示
+							local iTotalTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) 
+							local iUsedTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS_USED"]) 
+							if iTotalTroops - iUsedTroops >  1 then
+								flag = 1
+							end
+						end
+					end
+
+					if flag == 1 then
+						local plotX = unit:GetX()
+						local plotY = unit:GetY()
+						local unitEXP = unit:GetExperience()
+					
+						local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SHENJI_MUSKETEER");
+						local NewUnit = player:InitUnit(GameInfoTypes[newUnitType], plotX, plotY, UNITAI_DEFENSE);
+						NewUnit:JumpToNearestValidPlot();
+						NewUnit:SetExperience(unitEXP);
+						unit:SetMoves(0);
+					
+						if unit:GetOwner() == unit:GetPlot():GetOwner()
+						then
+							local Ccity = GetCloseCity ( unit:GetOwner() , unit:GetPlot() );
+							if Ccity:IsCapital() or Ccity:IsOriginalMajorCapital() then
+								NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER1"].ID, true);
+							else
+								NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID, true);
+							end
+						else
+							NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER3"].ID, true);
+						end	
+						player:ChangeGold(- iCost);		
+					end
+				elseif numInfantry < GameInfo.UnitClasses["UNITCLASS_SPUE_CORVETTE"].MaxPlayerInstances
+				and treasureFleetFlag > 1
+				then	
+					local flag = 0
+					local iCost = 700
+
+					if iCost > 0 and player:GetGold() >= iCost then
+						-- 玩家有足够金钱
+						if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
+							flag = 1
+						elseif player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) > 0 then
+							-- 兵力足够时按钮才会显示
+							local iTotalTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) 
+							local iUsedTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS_USED"]) 
+							if iTotalTroops - iUsedTroops >  1 then
+								flag = 1
+							end
+						end
+					end
+
+					if flag == 1 then
+						local plot = unit:GetPlot()
+						local plotX = unit:GetX()
+						local plotY = unit:GetY()
+						local unitEXP = unit:GetExperience()
+
+						local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_CORVETTE");
+						local NewUnit = player:InitUnit(GameInfoTypes[newUnitType], plotX, plotY, UNITAI_DEFENSE)
+						if plot:GetNumUnits() > 2 then
+							NewUnit:JumpToNearestValidPlot();
+						end 
+						NewUnit:SetExperience(unitEXP)
+						unit:SetMoves(0)
+						player:ChangeGold(- iCost)
+					end
+				
+				end
+			end
+			--*****************************AI超级要塞转化为大头*****************************--
+			-- 陆军单位过少时变为大头
+			if unit:CanMove() and unit:IsHasPromotion(unitPromotionGAIA_ShipID) 
+			and numLandUnits < numSeaUnits * 2
+			then
+				local plot 		= unit:GetPlot();
+				local plotX 	= plot:GetX();
+				local plotY 	= plot:GetY();
+				
+				local unitLevel = unit:GetLevel();
+				local unitEXP   = unit:GetExperience();
+				
+				local unitPromotions = {};
+				for row in GameInfo.UnitPromotions() do
+				  if unit:IsHasPromotion(row.ID) and not row.LostWithUpgrade then
+					table.insert(unitPromotions, row.ID);
+				  end
+				end
+			
+				local unitName = nil;
+				if unit:HasName() then
+				  unitName = unit:GetNameNoDesc();
+				end
+
+				unit:Kill();
+				local newUnit = nil;
+				newUnit = player:InitUnit(GameInfoTypes.UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD, plot:GetX(), plot:GetY());
+			
+				newUnit:SetMoves(0);
+				newUnit:SetLevel(unitLevel);
+				newUnit:SetExperience(unitEXP);
+				if #unitPromotions > 0 then
+				  for _, unitPromotionID in ipairs(unitPromotions) do
+					newUnit:SetHasPromotion(unitPromotionID, true);
+				  end
+				end
+				if unitName then
+				  newUnit:SetName(unitName);
+				end
+			
+			end
+
+			-- 海军单位过少时变为超级要塞
+			if unit:CanMove() and unit:IsHasPromotion(unitPromotionGAIA_HeadID) and not unit:GetPlot():IsWater() 
+			and numLandUnits >= numSeaUnits * 2
+			then
+				local plot 		= unit:GetPlot();
+				local plotX 	= plot:GetX();
+				local plotY 	= plot:GetY();
+		
+				local unitLevel = unit:GetLevel();
+				local unitEXP   = unit:GetExperience();
+		
+				local unitPromotions = {};
+				for row in GameInfo.UnitPromotions() do
+				  if unit:IsHasPromotion(row.ID) and not row.LostWithUpgrade then
+					table.insert(unitPromotions, row.ID);
+				  end
+				end
+		
+				local unitName = nil;
+				if unit:HasName() then
+				  unitName = unit:GetNameNoDesc();
+				end
+				
+				unit:Kill();
+				local newUnit = nil;
+				newUnit = player:InitUnit(GameInfoTypes.UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP, plot:GetX(), plot:GetY());
+		
+				newUnit:SetMoves(0);
+				newUnit:SetLevel(unitLevel);
+				newUnit:SetExperience(unitEXP);
+				if #unitPromotions > 0 then
+				  for _, unitPromotionID in ipairs(unitPromotions) do
+					newUnit:SetHasPromotion(unitPromotionID, true);
+				  end
+				end
+				if unitName then
+				  newUnit:SetName(unitName);
+				end
+			end
+			
+		end
 	end
-
-
 end--function END
 GameEvents.PlayerDoTurn.Add(SPUE_OnPlayerDoTurn)
 
@@ -1675,7 +2046,7 @@ SPUE_GAIA_Head2Ship_Button = {
 	end, -- or nil or a boolean, default is true
 	
 	Disabled = function(action, unit)   
-		return false;
+		return not unit:GetPlot():IsWater();
 	end, -- or nil or a boolean, default is false
 	
 	Action = function(action, unit, eClick) 
@@ -2532,12 +2903,6 @@ function SPUE_Templar_CityCaptureComplete(oldOwnerID, isCapital, plotX, plotY, n
 end
 GameEvents.CityCaptureComplete.Add(SPUE_Templar_CityCaptureComplete)
 --------------------------------------------------------------
--- 赞助：召集仆从军
---------------------------------------------------------------
--- local g_PatronageGeneralUnitClassList	=   {"UNITCLASS_SPUE_TREASURE_FLEET"};
-
--- local g_PatronageVassalUnitClassList	=   {"UNITCLASS_SPUE_CORVETTE"};
---------------------------------------------------------------
 -- 统计文明的城邦盟友及各城邦盟友的人口数量还有关系
 --------------------------------------------------------------
 function SPUE_MajorFavorite_MinorCivsAndCityPops(playerID)
@@ -2567,34 +2932,7 @@ function SPUE_MajorFavorite_MinorCivsAndCityPops(playerID)
 
 	return g_MinorCivsAndPopWithMajor;
 end
---------------------------------------------------------------
--- 判断是否可征召某类仆从军单位
---------------------------------------------------------------
--- function  PlayerCanTrainVassalUnits(playerID, vassalUnitsTable, index)
--- 	local player = Players[playerID];
--- 	local numUnit = player:GetUnitClassCount(GameInfoTypes[vassalUnitsTable[index]]);
-	
--- 	-- local vUnitType = GetCivSpecificUnit(player, vassalUnitsTable[index]);
--- 	-- local ivUnit = GameInfo.Units[vUnitType];
 
--- 	if SPUE_MajorFavorite_MinorCivsAndCityPops(playerID) then
--- 		local g_MinorCivsAndPopWithMajor = SPUE_MajorFavorite_MinorCivsAndCityPops(playerID);
--- 		local numAllays = #g_MinorCivsAndPopWithMajor;
--- 		for inumAllay = 1, numAllays do
--- 			if g_MinorCivsAndPopWithMajor[inumAllay][2] > 5 then
--- 				-- 有盟友人口则可以建造
--- 				if numUnit < GameInfo.UnitClasses[vassalUnitsTable[index]].MaxPlayerInstances then
--- 					--该类单位小于一定数值
--- 					return true;
--- 				end
--- 				-- return false;
--- 			end
--- 			-- 不存在盟友人口城邦大于5则不可建造
--- 			-- return false;
--- 		end
--- 	end
--- 	return false;
--- end
 -- 神机营征集
 SPUE_TreasureFleet_LandInfantry_Button = {
 	Name = "Patronage Land Infantry",
@@ -2754,24 +3092,6 @@ SPUE_Patronage_Corvette_Button = {
 		and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
 		and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_CORVETTE"].MaxPlayerInstances
 		then
-			-- 单位购买价格
-			-- local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_TRIREME")
-			-- local sUpgradeUnitType = GetUpgradeUnit(player, sUnitType)
-			
-			-- while (sUpgradeUnitType ~= nil) do
-			--    sUnitType = sUpgradeUnitType
-			--    sUpgradeUnitType = GetUpgradeUnit(player, sUnitType)
-			-- end
-			-- local iUnit = GameInfoTypes[sUnitType]
-
-			-- if iUnit and iUnit ~= -1 then
-			-- 	for pCity in player:Cities() do
-			-- 	if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-			-- 		iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-			-- 		break;
-			-- 	end
-			-- 	end
-			-- end
 
 			if iCost > 0 and player:GetGold() >= iCost then
 				-- 玩家有足够金钱
@@ -2803,19 +3123,7 @@ SPUE_Patronage_Corvette_Button = {
 		local plotY = unit:GetY()
 		local player = Players[unit:GetOwner()]
 		local unitEXP = unit:GetExperience()
-		--local iNewUnit = GameInfoTypes.UNIT_EXPLORERX;
-		--local overrideUnit = GameInfo.Civilization_UnitClassOverrides{ UnitClassType = "UNITCLASS_EXPLORERX", CivilizationType = GameInfo.Civilizations[player:GetCivilizationType()].Type }();
-		--if overrideUnit and overrideUnit.UnitType then
-		--	iNewUnit = GameInfoTypes[overrideUnit.UnitType];
-		--end
 		local iCost = 700
-		-- local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_TRIREME")
-    	-- local sUpgradeUnitType = GetUpgradeUnit(player, sUnitType)
-        
-    	-- while (sUpgradeUnitType ~= nil) do
-    	--    sUnitType = sUpgradeUnitType
-    	--    sUpgradeUnitType = GetUpgradeUnit(player, sUnitType)
-    	-- end
 		
 		local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_CORVETTE");
 		local NewUnit = player:InitUnit(GameInfoTypes[newUnitType], plotX, plotY, UNITAI_DEFENSE)
@@ -2825,16 +3133,6 @@ SPUE_Patronage_Corvette_Button = {
 		NewUnit:SetExperience(unitEXP)
 		unit:SetMoves(0)
 
-		local iUnit = GameInfoTypes[sUnitType]
-
-		-- if iUnit and iUnit ~= -1 then
-		-- 	for pCity in player:Cities() do
-		-- 	if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-		-- 		iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-		-- 		break;
-		-- 	end
-		-- 	end
-		-- end
 		if iCost and iCost > 0 then
 			player:ChangeGold(- iCost)
 		end

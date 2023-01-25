@@ -257,7 +257,7 @@
 			<Text>[COLOR_CYAN]未央宫卫士[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_WEIYANG_HELP">
-			<Text>[COLOR_CYAN]未央宫卫士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]与未央宫的联动单位，驻扎在城市中时可-10%全局不满。</Text>
+			<Text>[COLOR_CYAN]未央宫卫士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]与未央宫的联动单位，驻扎在城市中时可-5%全局不满。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_WEIYANG_TEXT">
 			<Text>汉代的南军是西汉初设置在长安城内的禁卫军之一，属卫尉统领。南军分别驻扎在未央、长乐两宫之内的城垣下，负责守卫两宫。未央、长乐两宫位于长安城南部，所以卫尉统率的军队称南军。</Text>
@@ -267,11 +267,11 @@
 			<Text>长乐未央</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_WEIYANG_HELP">
-			<Text>驻扎在城市中时可-10%全局不满。</Text>
+			<Text>驻扎在城市中时可-5%全局不满。</Text>
 		</Row>
 		
 		<Row Tag="TXT_KEY_BUILDING_SPUE_WEIYANG">
-			<Text>未央宫卫士:-10%全局不满。</Text>
+			<Text>未央宫卫士:-5%全局不满。</Text>
 		</Row>
 		
 		<!-- **********************王城骑士*********************** -->
@@ -1189,23 +1189,5 @@
 		<Row Tag="TXT_KEY_CONFIRM_PATH">
 			<Text>你确定要采用此项谋略吗？</Text>
 		</Row>
-
-		<!-- **********************乌兰骑兵***********************
-		<Row Tag="TXT_KEY_UNIT_SPUE_UHLAN">
-			<Text>∏[COLOR_CYAN]乌兰骑兵[ENDCOLOR]</Text>
-		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_UHLAN_HELP">
-			<Text>
-				∏[COLOR_CYAN]乌兰骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的启蒙陆军骑兵辅助单位，死亡时不会造成人口损失，可以通过统帅单位征召。
-				[NEWLINE][ICON_BULLET]
-			</Text>
-		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_UHLAN_TEXT">
-			<Text>
-				乌兰骑兵（Uhlan）是指发源自波兰立陶宛，装备骑枪，马刀、手枪的轻骑兵，这些轻骑兵在19世纪早期传统重骑兵衰落后成为欧洲各国常规用途骑兵的样版，后来这个名头用来指代包括法国、俄国，普鲁士、奥地利等国的枪骑兵团。乌兰骑兵通常穿着称为库尔特卡的双襟夹克（kurtka），带有彩色的饰带和肩饰，头戴名叫恰普卡的方顶波兰军帽（czapka），骑枪的枪头之下通常会有一个小燕尾旗。
-				[NEWLINE]在19世纪拿破仑战争开始之后，华沙公国便建立了乌兰骑兵编队，这些波兰枪骑兵在维斯瓦军团（Legion of the Vistula）和帝国卫队第一波兰轻骑兵团中（1st Polish Light Cavalry Regiment of the Imperial Guard）与法国军队并肩作战于西班牙和德国并将这种波兰式的轻骑兵风格散播开来。在索莫谢拉之战（Battle of Somosierra）后，拿破仑说一个波兰骑手比得上十个法国士兵。而法军中其他的中轻骑兵单位则学着乌兰骑兵的样子进行改制。	
-			</Text>
-		</Row> -->
 	</Language_zh_CN>
-  
 </GameData>

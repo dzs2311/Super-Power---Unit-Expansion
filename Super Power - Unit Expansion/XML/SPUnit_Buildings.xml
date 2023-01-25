@@ -21,7 +21,7 @@
 			<HurryCostModifier>-1</HurryCostModifier>
 			<IconAtlas>SPUE_UNITS_ATLAS</IconAtlas>
 			<PortraitIndex>19</PortraitIndex>
-			<UnhappinessModifier>-10</UnhappinessModifier>
+			<UnhappinessModifier>-5</UnhappinessModifier>
 		</Row>
 	</Buildings>
 </GameData>
