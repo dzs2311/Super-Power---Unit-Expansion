@@ -1,6 +1,0 @@
-This unit was made by snafusmith.
-
-To change the texture to the one you want simply rename it 'M4.dds' and place it in the M4 folder.
-
-ENJOY!
--Smitty
