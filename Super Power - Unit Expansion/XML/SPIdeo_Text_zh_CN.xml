@@ -65,7 +65,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_HELP">
 			<Text>
 				[NEWLINE][ICON_BULLET]巡天四面阵：拦截敌方飞机时+150%[ICON_STRENGTH]战斗力，对敌方空军单位+150%[ICON_STRENGTH]战斗力，每回合+10[COLOR_POSITIVE_TEXT]拦截次数[ENDCOLOR]，2格内的舰载机和陆基空优单位[COLOR_POSITIVE_TEXT]执行空中拦截任务[ENDCOLOR]时[ICON_STRENGTH]战斗力+150%；
-				[NEWLINE][ICON_BULLET]北斗引星舰：解锁新的意识形态政策或单位晋升时装载[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]，装载后视野+20，射程+20，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害，攻击完成后消耗[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]北斗引星舰：解锁新的意识形态政策或单位晋升时装载[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]，装载后视野+20，射程+15，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害，攻击完成后消耗[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]。
 			</Text>
 		</Row>
 
@@ -80,7 +80,7 @@
 			<Text>鹰击-21高超音速导弹</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_MISSILE_HELP">
-			<Text>视野+20，射程+20，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害。</Text>
+			<Text>视野+20，射程+15，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT1S">

@@ -532,13 +532,13 @@ function SPUE_OnPlayerDoTurn(playerID)
 			local SPUE_Knight_New_Flag = load( player, "Knight Rally", SPUE_Knight_New_Flag) or 0
 			local knightFlag = 0
 			-- 福船标识
-			local fuchuanFlag = math.random(1, 2)
+			local fuchuanFlag = Game.Rand(1, 2)
 			local fuchuanInfantryFlag = 0
 			local fuchuanCannonFlag = 0
 			local fuchuanInfantryCost = -1
 			local fuchuanCannonCost = -1
 			-- 宝船旗舰标识
-			local treasureFleetFlag = math.random(1, 2)
+			local treasureFleetFlag = Game.Rand(1, 2)
 
 			--*****************************AI召唤采邑骑士*****************************--
 			if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW"].ID) 
@@ -1017,7 +1017,7 @@ function SPUE_PlayerDoneTurn(playerID)
 				local outgoingRoutes = {};
 				local outgoingRoutes = player:GetTradeRoutes();
 				for i, route in ipairs(outgoingRoutes) do
-					fromGPT = route.FromGPT + fromGPT;
+					fromGPT = route.FromCity;
 				end
 				fromGPT = fromGPT / 100
 				player:ChangeGold(math.ceil(0.05 * fromGPT * numPolices));
@@ -2500,7 +2500,7 @@ function NewAttackEffect()
 	if attUnit and attUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FREEDOM_LONG_BEACH"]) 
 	then
 		local movesLeft = attUnit:MovesLeft();
-		local movesAdd = 60 * math.random(1, 5)
+		local movesAdd = 60 * Game.Rand(1, 5)
 		attUnit:SetMoves(movesLeft + movesAdd);
 		local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
 		Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", movesAdd / 60));

@@ -42,9 +42,9 @@ SELECT	'UNIT_SPUE_ORDER_SUPER_055',  BuildingClassType
 FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_MODERN_DESTROYER';
 
 INSERT INTO UnitGameplay2DScripts 	
-		(UnitType, 				 	  SelectionSound, FirstSelectionSound)
-SELECT	'UNIT_SPUE_ORDER_SUPER_055',  SelectionSound, FirstSelectionSound
-FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_MODERN_DESTROYER';
+		(UnitType, 						SelectionSound, 					FirstSelectionSound)
+VALUES	('UNIT_SPUE_ORDER_SUPER_055',  'AS2D_SELECT_SPUE_ORDER_SUPER_055', 'AS2D_BIRTH_SPUE_ORDER_SUPER_055');
+
 
 INSERT INTO Unit_AITypes 	
 		(UnitType, 				 	  UnitAIType)
@@ -182,9 +182,8 @@ SELECT	'UNIT_SPUE_FREEDOM_HELICARRIER',  	BuildingClassType
 FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_NUCLEAR_CARRIER';
 
 INSERT INTO UnitGameplay2DScripts 	
-		(UnitType, 				 	  		SelectionSound, FirstSelectionSound)
-SELECT	'UNIT_SPUE_FREEDOM_HELICARRIER',  	SelectionSound, FirstSelectionSound
-FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_NUCLEAR_CARRIER';
+		(UnitType, 						 	SelectionSound, 							FirstSelectionSound)
+VALUES	('UNIT_SPUE_FREEDOM_HELICARRIER', 	'AS2D_SELECT_SPUE_FREEDOM_HELICARRIER', 	'AS2D_BIRTH_SPUE_FREEDOM_HELICARRIER');
 
 INSERT INTO Unit_AITypes 	
 		(UnitType, 				 	  		UnitAIType)
@@ -322,9 +321,8 @@ SELECT	'UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP',  	BuildingClassType
 FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_MISSILE_CRUISER';
 
 INSERT INTO UnitGameplay2DScripts 	
-		(UnitType, 						 		SelectionSound, FirstSelectionSound)
-SELECT	'UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP',  	SelectionSound, FirstSelectionSound
-FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_MISSILE_CRUISER';
+		(UnitType, 						 		SelectionSound, 								FirstSelectionSound)
+VALUES	('UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP',  'AS2D_SELECT_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'AS2D_BIRTH_SPUE_AUTOCRACY_JUFORTRESSSHIP');
 
 INSERT INTO Unit_AITypes 	
 		(UnitType, 						 		UnitAIType)
@@ -367,9 +365,8 @@ SELECT	'UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD',  	BuildingClassType
 FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_MISSILE_CRUISER';
 
 INSERT INTO UnitGameplay2DScripts 	
-		(UnitType, 						 		SelectionSound, FirstSelectionSound)
-SELECT	'UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD',  	SelectionSound, FirstSelectionSound
-FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_MISSILE_CRUISER';
+		(UnitType, 						 		SelectionSound, 								FirstSelectionSound)
+VALUES	('UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD',  'AS2D_SELECT_SPUE_AUTOCRACY_JUFORTRESSSHIP', 	'AS2D_BIRTH_SPUE_AUTOCRACY_JUFORTRESSSHIP');
 
 INSERT INTO Unit_AITypes 	
 		(UnitType, 						 		UnitAIType)

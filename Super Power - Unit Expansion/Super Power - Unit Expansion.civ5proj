@@ -7,14 +7,14 @@
     <Guid>988a1168-d581-4150-948f-199021eabdea</Guid>
     <ModVersion>5</ModVersion>
     <Stability>Stable</Stability>
-    <Teaser>(4.2.4)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
-    <Description>超级大国单位拓展及大量单位模型替换
+    <Teaser>(5.1.1)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
+    <Description>(5.1.1)超级大国单位拓展及大量单位模型替换
 [NEWLINE][NEWLINE]
 [ICON_BULLET]大量单位替换了更加美观和符合史实的模型（如宝船）
 [NEWLINE]
 [ICON_BULLET]扩展了通用兵种树，可以更好的体验各时代的风貌
 [NEWLINE]
-[ICON_BULLET]为不同的政策加入了独有的单位（施工中）</Description>
+[ICON_BULLET]为不同的政策加入了独有的单位</Description>
     <Authors>dzs2311</Authors>
     <SpecialThanks>
     </SpecialThanks>
@@ -56,6 +56,11 @@
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
         <FileName>SQL/SPUnit_ArtDefines.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>SQL/SPUnit_Audio_Sounds.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -131,11 +136,6 @@
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
         <FileName>SPUE_GeneralTweaks.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>SQL/SPUnit_UnitPromotions_Update.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -384,6 +384,7 @@
     <Folder Include="LUA" />
     <Folder Include="Art" />
     <Folder Include="CombatPercentBonus" />
+    <Folder Include="Sounds" />
     <Folder Include="UI" />
     <Folder Include="UI\Art" />
     <Folder Include="XML" />
@@ -4250,11 +4251,39 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Sounds\055_FirstSelect.WAV">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Sounds\055_Select.WAV">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Sounds\Giga_FirstSelect.WAV">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Sounds\Giga_Select.WAV">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Sounds\HeliCarrier_FirstSelect.wav">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Sounds\HeliCarrier_Select.wav">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="SPUE_GeneralTweaks.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="SQL\SPUnit_ArtDefines.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="SQL\SPUnit_Audio_Sounds.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
@@ -4267,10 +4296,6 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="SQL\SPUnit_ModelsUpdate.sql">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="SQL\SPUnit_UnitPromotions_Update.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
