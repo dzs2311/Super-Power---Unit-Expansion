@@ -730,6 +730,8 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
+			<NukeImmune>true</NukeImmune>
+			<MaxHitPointsModifier>50</MaxHitPointsModifier>
 			<PortraitIndex>19</PortraitIndex>
 			<IconAtlas>promoVP_atlas_01</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -777,7 +779,7 @@
 			<LostWithUpgrade>true</LostWithUpgrade>
 			<CanMoveAfterAttacking>true</CanMoveAfterAttacking>
 			<IgnoreZOC>true</IgnoreZOC>
-			<MaxHitPointsModifier>300</MaxHitPointsModifier>
+			<MaxHitPointsModifier>400</MaxHitPointsModifier>
 			<NukeImmune>true</NukeImmune>
 			<PortraitIndex>59</PortraitIndex>
 			<IconAtlas>promoVP_atlas_03</IconAtlas>
@@ -1020,65 +1022,6 @@
 		</Row>
 	</UnitPromotions_UnitName>
 	<UnitPromotions_UnitClasses>
-		<!--玄甲军：不被方阵步兵/反装甲单位克制-->
-		<!-- <Row>
-			<PromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</PromotionType>
-			<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
-			<Modifier>200</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</PromotionType>
-			<UnitClassType>UNITCLASS_PIKEMAN</UnitClassType>
-			<Modifier>200</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</PromotionType>
-			<UnitClassType>UNITCLASS_TERCIO</UnitClassType>
-			<Modifier>200</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</PromotionType>
-			<UnitClassType>UNITCLASS_LANDSKNECHT</UnitClassType>
-			<Modifier>200</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</PromotionType>
-			<UnitClassType>UNITCLASS_ANTI_TANK_GUN</UnitClassType>
-			<Modifier>200</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</PromotionType>
-			<UnitClassType>UNITCLASS_TANK_DESTROYER</UnitClassType>
-			<Modifier>200</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</PromotionType>
-			<UnitClassType>UNITCLASS_ATGM_VEHICLE</UnitClassType>
-			<Modifier>200</Modifier>
-		</Row> -->
-		<!--KV2：152神教-->
-		<!-- <Row>
-			<PromotionType>PROMOTION_SPUE_ORDER_KV2</PromotionType>
-			<UnitClassType>UNITCLASS_CITADEL_EARLY</UnitClassType>
-			<Attack>200</Attack>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_SPUE_ORDER_KV2</PromotionType>
-			<UnitClassType>UNITCLASS_CITADEL_MID</UnitClassType>
-			<Attack>200</Attack>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_SPUE_ORDER_KV2</PromotionType>
-			<UnitClassType>UNITCLASS_CITADEL_LATE</UnitClassType>
-			<Attack>200</Attack>
-		</Row> -->
-		<!--空天母舰：洞察者之眼-->
-		<!-- <Row>
-			<PromotionType>PROMOTION_SPUE_FREEDOM_HELICARRIER_FIGHTER</PromotionType>
-			<UnitClassType>UNITCLASS_ATGM_VEHICLE</UnitClassType>
-			<Modifier>200</Modifier>
-		</Row> -->
-		<!--神之鼻息-->
 		<!-- <Row>
 			<PromotionType>PROMOTION_SPUE_FREEDOM_HELICARRIER_FIGHTER</PromotionType>
 			<UnitClassType>UNITCLASS_ATGM_VEHICLE</UnitClassType>
@@ -1093,9 +1036,40 @@
 			<Modifier>-100</Modifier>
 		</Row>
 		<Row>
+			<PromotionType>PROMOTION_FORMATION_1</PromotionType>
+			<OtherPromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</OtherPromotionType>
+			<Modifier>-50</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_FORMATION_2</PromotionType>
+			<OtherPromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</OtherPromotionType>
+			<Modifier>-50</Modifier>
+		</Row>
+		<Row>
 			<PromotionType>PROMOTION_ANTI_TANK</PromotionType>
 			<OtherPromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</OtherPromotionType>
 			<Modifier>-100</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_1</PromotionType>
+			<OtherPromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</OtherPromotionType>
+			<Modifier>-50</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_1</PromotionType>
+			<OtherPromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</OtherPromotionType>
+			<Modifier>-50</Modifier>
+		</Row>
+		<!--055：不被海军游猎单位克制-->
+		<Row>
+			<PromotionType>PROMOTION_NAVAL_HIT_AND_RUN</PromotionType>
+			<OtherPromotionType>PROMOTION_SPUE_ORDER_SUPER_055</OtherPromotionType>
+			<Modifier>-150</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SUBMARINE_COMBAT</PromotionType>
+			<OtherPromotionType>PROMOTION_SPUE_ORDER_SUPER_055</OtherPromotionType>
+			<Modifier>-200</Modifier>
 		</Row>
 		<!--KV2：152神教-->
 		<Row>

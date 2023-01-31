@@ -177,7 +177,7 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_FREEDOM_HELICARRIER_HELP">
 			<Text>
 				[COLOR_YIELD_GOLD]空天母舰[ENDCOLOR]是[ICON_IDEOLOGY_FREEDOM]自由意识形态的精英单位，需要开启[ICON_IDEOLOGY_FREEDOM][ICON_CULTURE][COLOR_MAGENTA]自由意识形态[ENDCOLOR]并完成洞察计划才可以建造；
-				[NEWLINE][ICON_BULLET][COLOR_YIELD_GOLD]空天母舰[ENDCOLOR]自带军团及集团军晋升，且能够搭载18架舰载机，对海军旗舰单位拥有200%的战斗力加成。
+				[NEWLINE][ICON_BULLET][COLOR_YIELD_GOLD]空天母舰[ENDCOLOR]能够搭载18架舰载机，搭载的舰载机单位免疫核弹攻击，对海军旗舰单位拥有200%的战斗力加成且血量+50。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_FREEDOM_HELICARRIER_TEXT">
@@ -192,7 +192,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_FREEDOM_HELICARRIER_HELP">
 			<Text>
-				能够搭载18架舰载机，搭载的飞机对海军旗舰单位拥有200%的战斗力加成。
+				能够搭载18架舰载机，搭载的飞机搭载的舰载机单位免疫核弹攻击、血量+50、对海军旗舰单位拥有200%的战斗力加成。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_FREEDOM_HELICARRIER_FIGHTER">
@@ -200,7 +200,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_FREEDOM_HELICARRIER_FIGHTER_HELP">
 			<Text>
-				对海军旗舰单位拥有200%的战斗力加成。
+				对海军旗舰单位拥有200%的战斗力加成，血量+50,免疫核弹攻击。
 			</Text>
 		</Row>
 		<!-- **********************自由：喷火战斗机*********************** -->
@@ -299,7 +299,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_AUTOCRACY_JUFORTRESS_HELP">
 			<Text>
 				[NEWLINE][ICON_BULLET][COLOR_YIELD_GOLD]GIGA十亿单元自优化核心[ENDCOLOR]：回合结束回复满血量。
-				[NEWLINE][ICON_BULLET][COLOR_YIELD_GOLD]强化型剃刀装甲[ENDCOLOR]：+300血量。
+				[NEWLINE][ICON_BULLET][COLOR_YIELD_GOLD]强化型剃刀装甲[ENDCOLOR]：+400血量。
 			</Text>
 		</Row>
 
@@ -362,7 +362,6 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_AUTOCRACY_PANZERG_EFFECT_HELP">
 			<Text>+50%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
-
  	</Language_zh_CN>
   
 </GameData>
