@@ -98,7 +98,7 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 	if(GameInfo.PolicyBranchTypes["POLICY_BRANCH_PATRONAGE"].ID == policybranchID) then
 		if not player:IsHuman() then
 			-- AI Random Select
-			local iL = Game.Rand(1, 6)
+			local iL = math.random(1, 6)
 
 			local unitL = GameInfo.Units[g_PatronageUnitList[iL]]
 
