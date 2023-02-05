@@ -2269,7 +2269,7 @@ function NewAttackEffect()
 	if not isSPTP and defUnit and attUnit:IsHasPromotion(KillingEffectsID) then
 		print ("DefUnit Damage:"..defFinalUnitDamage);
 		-- if defFinalUnitDamage >= 100 then
-		if defUnitDamage >= 30 then
+		if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMax() or defUnit:IsDead() then
 			local maxattUnitHP = attUnit:GetMaxHitPoints()
 			attUnit:SetMoves(attUnit:MovesLeft()+GameDefines["MOVE_DENOMINATOR"]);
 			attUnit:SetMadeAttack(false);
