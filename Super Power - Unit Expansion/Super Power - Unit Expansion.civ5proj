@@ -410,7 +410,7 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Flags\German\SPUE_Doppelsoldner_UnitFlagAtlas_32.dds">
+    <Content Include="Art\Flags\German\SPUE_Doppelsoldner_32.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
