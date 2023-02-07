@@ -215,12 +215,19 @@
     <DeployMod>true</DeployMod>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="Art\Flags\German" />
+    <Folder Include="Art\Flags\Persia" />
+    <Folder Include="Art\Flags\Ottomans" />
     <Folder Include="Art\IconAtlas" />
     <Folder Include="Art\Flags" />
+    <Folder Include="Art\IconAtlas\Ottomans" />
     <Folder Include="Art\Improvements" />
     <Folder Include="Art\Improvements\RomanEmpire_CityCenter_Icon" />
     <Folder Include="Art\Improvements\RomanEmpire_CityCenter" />
     <Folder Include="Art\SV" />
+    <Folder Include="Art\SV\German" />
+    <Folder Include="Art\SV\Persia" />
+    <Folder Include="Art\SV\Ottomans" />
     <Folder Include="Art\Units" />
     <Folder Include="Art\Units\Elite\2A3\" />
     <Folder Include="Art\Units\Elite\2A3\OBJECT261\" />
@@ -391,10 +398,6 @@
     <Folder Include="SQL" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Art\Flags\CorsairFlag_032.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
     <Content Include="Art\Flags\Flag_SPUE_CGN9.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -407,7 +410,15 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Flags\QizilbashFlag_032.dds">
+    <Content Include="Art\Flags\German\SPUE_Doppelsoldner_UnitFlagAtlas_32.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\Ottomans\flag_barbary_xebec.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\Persia\QizilbashFlag_032.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -603,30 +614,6 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\IconAtlas\CorsairPicture_032.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\IconAtlas\CorsairPicture_045.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\IconAtlas\CorsairPicture_064.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\IconAtlas\CorsairPicture_080.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\IconAtlas\CorsairPicture_128.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\IconAtlas\CorsairPicture_256.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
     <Content Include="Art\IconAtlas\eaw_PI_016.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -668,6 +655,30 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\IconAtlas\IconAtlas045_GAIA.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Ottomans\CorsairPicture_032.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Ottomans\CorsairPicture_045.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Ottomans\CorsairPicture_064.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Ottomans\CorsairPicture_080.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Ottomans\CorsairPicture_128.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Ottomans\CorsairPicture_256.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -767,9 +778,37 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\IconAtlas\SPUE02_IconAtlas016.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\SPUE02_IconAtlas032.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\SPUE02_IconAtlas045.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\SPUE02_IconAtlas064.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\SPUE02_IconAtlas080.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\SPUE02_IconAtlas128.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\SPUE02_IconAtlas256.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\IconAtlas\SPUE_IconAtlas016.dds">
       <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\IconAtlas\SPUE_IconAtlas032.dds">
       <SubType>Lua</SubType>
@@ -879,11 +918,15 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\SV\CorsairFlag_128.dds">
+    <Content Include="Art\SV\German\sv_Doppelsoldner.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\SV\QizilbashFlag_128.dds">
+    <Content Include="Art\SV\Ottomans\sv_barbary_xebec.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\Persia\QizilbashFlag_128.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -4159,19 +4202,19 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Unique\Ottomans\tcmAmmiratus.fxsxml">
+    <Content Include="Art\Units\Unique\Ottomans\no_gloss.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Unique\Ottomans\tcmAmmiratus.gr2">
+    <Content Include="Art\Units\Unique\Ottomans\Xebec_Sabbak.fxsxml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Unique\Ottomans\tcmAmmiratusDiff.dds">
+    <Content Include="Art\Units\Unique\Ottomans\Xebec_Sabbak.gr2">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Unique\Ottomans\tcmAmmiratusSref.dds">
+    <Content Include="Art\Units\Unique\Ottomans\xebec_texture256_sabbak.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>

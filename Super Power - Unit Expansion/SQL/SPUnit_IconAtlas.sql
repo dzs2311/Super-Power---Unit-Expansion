@@ -3,13 +3,19 @@
 --==========================================================================================================================
 INSERT OR REPLACE INTO IconTextureAtlases 
 			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)
-			-- 通用单位与政策单位图标
+			-- 通用单位、政策单位与特殊单位图标
 VALUES		('SPUE_UNITS_ATLAS', 				256, 		'SPUE_IconAtlas256.dds',				8, 				8),
 			('SPUE_UNITS_ATLAS', 				128, 		'SPUE_IconAtlas128.dds',				8, 				8),
 			('SPUE_UNITS_ATLAS', 				080, 		'SPUE_IconAtlas080.dds',				8, 				8),
 			('SPUE_UNITS_ATLAS', 				064, 		'SPUE_IconAtlas064.dds',				8, 				8),
 			('SPUE_UNITS_ATLAS', 				045, 		'SPUE_IconAtlas045.dds',				8, 				8),
 			('SPUE_UNITS_ATLAS', 				032, 		'SPUE_IconAtlas032.dds',				8, 				8),
+			('SPUE02_UNITS_ATLAS', 				256, 		'SPUE02_IconAtlas256.dds',				8, 				8),
+			('SPUE02_UNITS_ATLAS', 				128, 		'SPUE02_IconAtlas128.dds',				8, 				8),
+			('SPUE02_UNITS_ATLAS', 				080, 		'SPUE02_IconAtlas080.dds',				8, 				8),
+			('SPUE02_UNITS_ATLAS', 				064, 		'SPUE02_IconAtlas064.dds',				8, 				8),
+			('SPUE02_UNITS_ATLAS', 				045, 		'SPUE02_IconAtlas045.dds',				8, 				8),
+			('SPUE02_UNITS_ATLAS', 				032, 		'SPUE02_IconAtlas032.dds',				8, 				8),
 			-- 意识形态单位图标
 			('SPUE_IDEO_ATLAS', 				256, 		'SPUE_Ideology_IconAtlas256.dds',		4, 				4),
 			('SPUE_IDEO_ATLAS', 				128, 		'SPUE_Ideology_IconAtlas128.dds',		4, 				4),
@@ -18,6 +24,9 @@ VALUES		('SPUE_UNITS_ATLAS', 				256, 		'SPUE_IconAtlas256.dds',				8, 				8),
 			('SPUE_IDEO_ATLAS', 				045, 		'SPUE_Ideology_IconAtlas045.dds',		4, 				4),
 			('SPUE_IDEO_ATLAS', 				032, 		'SPUE_Ideology_IconAtlas032.dds',		4, 				4),
 			('SPUE_GAIA_ATLAS', 				045, 		'IconAtlas045_GAIA.dds',				2, 				1),
+			-- UU旗帜
+			('SPUE_OTTOMAN_FLAG_ATLAS',			032, 		'flag_barbary_xebec.dds',				1, 				1), -- 奥斯曼私掠舰
+			('SPUE_GERMAN_FLAG_ATLAS',			032, 		'SPUE_Doppelsoldner_32.dds',			1, 				1), -- 双薪剑士
 			-- 单位旗帜
 			('SPUE_UNIT_FLAG_ATLAS',			032,		'SPUE_UnitFlagAlpha032.dds',			4, 				4),
 			('SPUE_UNIT_FLAG2_ATLAS',			032,		'SPUE_UnitFlag2Alpha032.dds',			4, 				4),
@@ -38,15 +47,15 @@ VALUES		('SPUE_UNITS_ATLAS', 				256, 		'SPUE_IconAtlas256.dds',				8, 				8),
 			('SPUE_WWII_FLAG_ATLAS',			032,		'SPUE_wwi_infantry_flag.dds',			1, 				1);	-- 早期现代步兵
 
 -- 奥斯曼私掠舰
-INSERT OR REPLACE INTO IconTextureAtlases
-			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)
-VALUES		('UNIT_SPUE_OTTOMAN_ATLAS', 		256, 		'CorsairPicture_256.dds',				1,				1),
-			('UNIT_SPUE_OTTOMAN_ATLAS', 		128, 		'CorsairPicture_128.dds',				1, 				1),
-			('UNIT_SPUE_OTTOMAN_ATLAS', 		080, 		'CorsairPicture_080.dds',				1, 				1),
-			('UNIT_SPUE_OTTOMAN_ATLAS', 		064, 		'CorsairPicture_064.dds',				1, 				1),
-			('UNIT_SPUE_OTTOMAN_ATLAS', 		045, 		'CorsairPicture_045.dds',				1, 				1),
-			('UNIT_SPUE_OTTOMAN_ATLAS', 		032, 		'CorsairPicture_032.dds',				1, 				1),
-			('UNIT_SPUE_OTTOMAN_FLAG_ATLAS',	032, 		'CorsairFlag_032.dds',					1, 				1);
+-- INSERT OR REPLACE INTO IconTextureAtlases
+-- 			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)
+-- VALUES		('UNIT_SPUE_OTTOMAN_ATLAS', 		256, 		'CorsairPicture_256.dds',				1,				1),
+-- 			('UNIT_SPUE_OTTOMAN_ATLAS', 		128, 		'CorsairPicture_128.dds',				1, 				1),
+-- 			('UNIT_SPUE_OTTOMAN_ATLAS', 		080, 		'CorsairPicture_080.dds',				1, 				1),
+-- 			('UNIT_SPUE_OTTOMAN_ATLAS', 		064, 		'CorsairPicture_064.dds',				1, 				1),
+-- 			('UNIT_SPUE_OTTOMAN_ATLAS', 		045, 		'CorsairPicture_045.dds',				1, 				1),
+-- 			('UNIT_SPUE_OTTOMAN_ATLAS', 		032, 		'CorsairPicture_032.dds',				1, 				1),
+-- 			('UNIT_SPUE_OTTOMAN_FLAG_ATLAS',	032, 		'CorsairFlag_032.dds',					1, 				1);
 
 INSERT OR REPLACE INTO IconTextureAtlases
 			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)

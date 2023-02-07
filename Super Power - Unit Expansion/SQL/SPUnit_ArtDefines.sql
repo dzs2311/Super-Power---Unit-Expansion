@@ -30,13 +30,13 @@ INSERT INTO ArtDefine_UnitMemberCombatWeapons (UnitMemberType, "Index", SubIndex
 -- ArtDefine_UnitMemberInfos
 ------------------------------
 INSERT INTO ArtDefine_UnitMemberInfos (Type, Scale, ZOffset, Domain, Model, MaterialTypeTag, MaterialTypeSoundOverrideTag)
-	SELECT	('ART_DEF_UNIT_MEMBER_SPUE_OTTOMAN_CORSAIR'), Scale, ZOffset, Domain, ('tcmAmmiratus.fxsxml'), MaterialTypeTag, MaterialTypeSoundOverrideTag
+	SELECT	('ART_DEF_UNIT_MEMBER_SPUE_OTTOMAN_CORSAIR'), Scale, ZOffset, Domain, ('Xebec_Sabbak.fxsxml'), MaterialTypeTag, MaterialTypeSoundOverrideTag
 	FROM ArtDefine_UnitMemberInfos WHERE (Type = 'ART_DEF_UNIT_MEMBER_PRIVATEER');
 ------------------------------
 -- ArtDefine_StrategicView
 ------------------------------
 INSERT INTO ArtDefine_StrategicView (StrategicViewType, TileType, Asset )
-	VALUES	('ART_DEF_UNIT_SPUE_OTTOMAN_CORSAIR', 'Unit', 'CorsairFlag_128.dds');
+	VALUES	('ART_DEF_UNIT_SPUE_OTTOMAN_CORSAIR', 'Unit', 'sv_barbary_xebec.dds');
 --==========================================================================================================================
 -- ARTDEFINES:Persia
 --==========================================================================================================================	
