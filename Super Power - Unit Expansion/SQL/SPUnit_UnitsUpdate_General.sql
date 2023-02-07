@@ -25,7 +25,7 @@ UPDATE Units SET UnitFlagAtlas = 'SPUE_HCAV_FLAG_ATLAS', 			UnitFlagIconOffset =
 UPDATE Units SET UnitFlagAtlas = 'SPUE_UNIT_FLAG_ATLAS', 			UnitFlagIconOffset = 5 		WHERE Type = 'UNIT_KNIGHT';					-- 具装骑兵
 UPDATE Units SET UnitFlagAtlas = 'SPUE_WWII_FLAG_ATLAS', 			UnitFlagIconOffset = 0 		WHERE Type = 'UNIT_GREAT_WAR_INFANTRY';		-- 一战步兵
 UPDATE Units SET UnitFlagAtlas = 'UNIT_FLAG_ATLAS', 				UnitFlagIconOffset = 76 	WHERE Type = 'UNIT_SAM_INFANTRY';			-- 步兵支援装甲车
-UPDATE Units SET UnitFlagAtlas = 'UNIT_SPUE_OTTOMAN_FLAG_ATLAS',  	UnitFlagIconOffset = 0 		WHERE Type = 'UNIT_OTTOMAN_PRIVATEER';		-- 奥斯曼私掠舰
+UPDATE Units SET UnitFlagAtlas = 'SPUE_OTTOMAN_FLAG_ATLAS',  		UnitFlagIconOffset = 0 		WHERE Type = 'UNIT_OTTOMAN_PRIVATEER';		-- 奥斯曼私掠舰
 UPDATE Units SET UnitFlagAtlas = 'UNIT_SPUE_PERSIAQ_FLAG_ATLAS', 	UnitFlagIconOffset = 0 		WHERE Type = 'UNIT_OTTOMAN_SIPAHI';			-- 波斯奇兹尔巴什骑兵
 UPDATE Units SET UnitFlagAtlas = 'SPUE_GERMAN_FLAG_ATLAS',  		UnitFlagIconOffset = 0 		WHERE Type = 'UNIT_GERMAN_LONGSWORDSMAN';	-- 双薪剑士
 --==========================================================================================================================
