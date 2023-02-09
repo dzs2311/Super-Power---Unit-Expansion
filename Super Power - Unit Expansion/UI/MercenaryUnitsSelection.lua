@@ -189,7 +189,7 @@ GameEvents.PlayerAdoptPolicyBranch.Add(OnAdoptPolicyBranch)
 function OnAIDoTurn( playerID )
     local player = Players[playerID]	
     if player == nil or player:IsBarbarian() or player:IsHuman() then return end
-	local unitL = GameInfo.Units[g_MercenaryUnitList[0]]
+	local unitL = GameInfo.Units[g_MercenaryUnitList[1]]
 	local policyL = unitL.PolicyType
 
 	if player:HasPolicy(GameInfo.Policies["POLICY_COMMERCE"].ID)
