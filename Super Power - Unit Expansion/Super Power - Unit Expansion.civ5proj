@@ -288,6 +288,7 @@
     <Folder Include="Art\Units\General\6-WorldWar\Conscript\" />
     <Folder Include="Art\Units\General\6-WorldWar\Flower_Corvette\" />
     <Folder Include="Art\Units\General\6-WorldWar\M4Sherman\" />
+    <Folder Include="Art\Units\General\6-WorldWar\Panzer_IV_Ausf_G\" />
     <Folder Include="Art\Units\General\6-WorldWar\SPG\" />
     <Folder Include="Art\Units\General\7-PostModern" />
     <Folder Include="Art\Units\General\7-PostModern\BMP2GreenTeam\" />
@@ -2391,6 +2392,18 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\General\6-WorldWar\M4Sherman\Snafusmith.txt">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\General\6-WorldWar\Panzer_IV_Ausf_G\Panzer_IV_Ausf_G.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\General\6-WorldWar\Panzer_IV_Ausf_G\Panzer_IV_Ausf_G.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\General\6-WorldWar\Panzer_IV_Ausf_G\Panzer_IV_Ausf_G.gr2">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>

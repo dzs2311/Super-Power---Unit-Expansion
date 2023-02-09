@@ -117,12 +117,13 @@ INSERT OR REPLACE INTO ArtDefine_UnitInfos (Type, DamageStates, Formation) VALUE
 ('ART_DEF_UNIT_M4A3', 1, 'Vehicle');
 
 INSERT OR REPLACE INTO ArtDefine_UnitInfoMemberInfos (UnitInfoType, UnitMemberInfoType, NumMembers) VALUES
-('ART_DEF_UNIT_M4A3', 'ART_DEF_UNIT_MEMBER_M4A3a', 1),
-('ART_DEF_UNIT_M4A3', 'ART_DEF_UNIT_MEMBER_M4A3b', 1),
-('ART_DEF_UNIT_M4A3', 'ART_DEF_UNIT_MEMBER_M4A3c', 1);
+('ART_DEF_UNIT_M4A3', 'ART_DEF_UNIT_MEMBER_M4A3a', 3);
+-- ('ART_DEF_UNIT_M4A3', 'ART_DEF_UNIT_MEMBER_M4A3a', 1),
+-- ('ART_DEF_UNIT_M4A3', 'ART_DEF_UNIT_MEMBER_M4A3b', 1),
+-- ('ART_DEF_UNIT_M4A3', 'ART_DEF_UNIT_MEMBER_M4A3c', 1);
 
 INSERT OR REPLACE INTO ArtDefine_UnitMemberInfos (Type, Model, MaterialTypeSoundOverrideTag, MaterialTypeTag, Scale) VALUES
-('ART_DEF_UNIT_MEMBER_M4A3a', 'M4 US Tunisia.fxsxml', 'METALSM', 'METAL', 0.119999997317791);
+('ART_DEF_UNIT_MEMBER_M4A3a', 'Panzer_IV_Ausf_G.fxsxml', 'METALSM', 'METAL', 0.119999997317791);
 
 INSERT OR REPLACE INTO ArtDefine_UnitMemberCombats (EnableActions, HasRefaceAfterCombat, HasShortRangedAttack, UnitMemberType, HasStationaryMelee, ReformBeforeCombat, HasIndependentWeaponFacing) VALUES
 ('Idle Attack RunCharge AttackCity Bombard Death BombardDefend Run Fortify CombatReady', 0, 1, 'ART_DEF_UNIT_MEMBER_M4A3a', 1, 1, 1);
@@ -130,23 +131,23 @@ INSERT OR REPLACE INTO ArtDefine_UnitMemberCombats (EnableActions, HasRefaceAfte
 INSERT OR REPLACE INTO ArtDefine_UnitMemberCombatWeapons (WeaponTypeSoundOverrideTag, WeaponTypeTag, UnitMemberType, "Index", VisKillStrengthMax, VisKillStrengthMin, HitEffect, SubIndex) VALUES
 ('EXPLOSION6POUND', 'EXPLOSIVE', 'ART_DEF_UNIT_MEMBER_M4A3a', 0, 50.0, 25.0, 'ART_DEF_VEFFECT_TANK_IMPACT_$(TERRAIN)', 0);
 
-INSERT OR REPLACE INTO ArtDefine_UnitMemberInfos (Type, Model, MaterialTypeSoundOverrideTag, MaterialTypeTag, Scale) VALUES
-('ART_DEF_UNIT_MEMBER_M4A3b', 'M4 US Early.fxsxml', 'METALSM', 'METAL', 0.119999997317791);
+-- INSERT OR REPLACE INTO ArtDefine_UnitMemberInfos (Type, Model, MaterialTypeSoundOverrideTag, MaterialTypeTag, Scale) VALUES
+-- ('ART_DEF_UNIT_MEMBER_M4A3b', 'M4 US Early.fxsxml', 'METALSM', 'METAL', 0.119999997317791);
 
-INSERT OR REPLACE INTO ArtDefine_UnitMemberCombats (EnableActions, HasRefaceAfterCombat, HasShortRangedAttack, UnitMemberType, HasStationaryMelee, ReformBeforeCombat, HasIndependentWeaponFacing) VALUES
-('Idle Attack RunCharge AttackCity Bombard Death BombardDefend Run Fortify CombatReady', 0, 1, 'ART_DEF_UNIT_MEMBER_M4A3b', 1, 1, 1);
+-- INSERT OR REPLACE INTO ArtDefine_UnitMemberCombats (EnableActions, HasRefaceAfterCombat, HasShortRangedAttack, UnitMemberType, HasStationaryMelee, ReformBeforeCombat, HasIndependentWeaponFacing) VALUES
+-- ('Idle Attack RunCharge AttackCity Bombard Death BombardDefend Run Fortify CombatReady', 0, 1, 'ART_DEF_UNIT_MEMBER_M4A3b', 1, 1, 1);
 
-INSERT OR REPLACE INTO ArtDefine_UnitMemberCombatWeapons (WeaponTypeSoundOverrideTag, WeaponTypeTag, UnitMemberType, "Index", VisKillStrengthMax, VisKillStrengthMin, HitEffect, SubIndex) VALUES
-('EXPLOSION6POUND', 'EXPLOSIVE', 'ART_DEF_UNIT_MEMBER_M4A3b', 0, 50.0, 25.0, 'ART_DEF_VEFFECT_TANK_IMPACT_$(TERRAIN)', 0);
+-- INSERT OR REPLACE INTO ArtDefine_UnitMemberCombatWeapons (WeaponTypeSoundOverrideTag, WeaponTypeTag, UnitMemberType, "Index", VisKillStrengthMax, VisKillStrengthMin, HitEffect, SubIndex) VALUES
+-- ('EXPLOSION6POUND', 'EXPLOSIVE', 'ART_DEF_UNIT_MEMBER_M4A3b', 0, 50.0, 25.0, 'ART_DEF_VEFFECT_TANK_IMPACT_$(TERRAIN)', 0);
 
-INSERT OR REPLACE INTO ArtDefine_UnitMemberInfos (Type, Model, MaterialTypeSoundOverrideTag, MaterialTypeTag, Scale) VALUES
-('ART_DEF_UNIT_MEMBER_M4A3c', 'M4 US Late.fxsxml', 'METALSM', 'METAL', 0.119999997317791);
+-- INSERT OR REPLACE INTO ArtDefine_UnitMemberInfos (Type, Model, MaterialTypeSoundOverrideTag, MaterialTypeTag, Scale) VALUES
+-- ('ART_DEF_UNIT_MEMBER_M4A3c', 'M4 US Late.fxsxml', 'METALSM', 'METAL', 0.119999997317791);
 
-INSERT OR REPLACE INTO ArtDefine_UnitMemberCombats (EnableActions, HasRefaceAfterCombat, HasShortRangedAttack, UnitMemberType, HasStationaryMelee, ReformBeforeCombat, HasIndependentWeaponFacing) VALUES
-('Idle Attack RunCharge AttackCity Bombard Death BombardDefend Run Fortify CombatReady', 0, 1, 'ART_DEF_UNIT_MEMBER_M4A3c', 1, 1, 1);
+-- INSERT OR REPLACE INTO ArtDefine_UnitMemberCombats (EnableActions, HasRefaceAfterCombat, HasShortRangedAttack, UnitMemberType, HasStationaryMelee, ReformBeforeCombat, HasIndependentWeaponFacing) VALUES
+-- ('Idle Attack RunCharge AttackCity Bombard Death BombardDefend Run Fortify CombatReady', 0, 1, 'ART_DEF_UNIT_MEMBER_M4A3c', 1, 1, 1);
 
-INSERT OR REPLACE INTO ArtDefine_UnitMemberCombatWeapons (WeaponTypeSoundOverrideTag, WeaponTypeTag, UnitMemberType, "Index", VisKillStrengthMax, VisKillStrengthMin, HitEffect, SubIndex) VALUES
-('EXPLOSION6POUND', 'EXPLOSIVE', 'ART_DEF_UNIT_MEMBER_M4A3c', 0, 50.0, 25.0, 'ART_DEF_VEFFECT_TANK_IMPACT_$(TERRAIN)', 0);
+-- INSERT OR REPLACE INTO ArtDefine_UnitMemberCombatWeapons (WeaponTypeSoundOverrideTag, WeaponTypeTag, UnitMemberType, "Index", VisKillStrengthMax, VisKillStrengthMin, HitEffect, SubIndex) VALUES
+-- ('EXPLOSION6POUND', 'EXPLOSIVE', 'ART_DEF_UNIT_MEMBER_M4A3c', 0, 50.0, 25.0, 'ART_DEF_VEFFECT_TANK_IMPACT_$(TERRAIN)', 0);
 
 INSERT OR REPLACE INTO ArtDefine_StrategicView (StrategicViewType, Asset, TileType) VALUES
 ('ART_DEF_UNIT_M4A3', 'SV_Sherman.dds', 'Unit');

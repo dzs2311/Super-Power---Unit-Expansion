@@ -49,6 +49,8 @@ UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 3 			WHE
 UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 4 			WHERE Type = 'UNIT_IROQUOIAN_MUSKETEER';		-- 易洛魁火枪手
 UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 5 			WHERE Type = 'UNIT_MILITIA_MODERN';				-- 现代民兵
 UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 6 			WHERE Type = 'UNIT_TANK_DESTROYER';				-- 坦克歼击车
+UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 7 			WHERE Type = 'UNIT_MOTORISED_INFANTRY';			-- 摩托化步兵
+UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 8 			WHERE Type = 'UNIT_TANK';						-- 坦克
 --==========================================================================================================================
 -- Unit_Misc
 --==========================================================================================================================
