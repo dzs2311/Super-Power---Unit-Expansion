@@ -161,22 +161,22 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 	if(GameInfo.PolicyBranchTypes["POLICY_BRANCH_COMMERCE"].ID == policybranchID) then
 		if not player:IsHuman() then
 			-- AI Random Select
-			local iL = math.random(1, 5)
-			local iR = iL + 1
+			-- local iL = math.random(1, 5)
+			-- local iR = iL + 1
 
-			local unitL = GameInfo.Units[g_MercenaryUnitList[iL]]
-			local unitR = GameInfo.Units[g_MercenaryUnitList[iR]]
+			-- local unitL = GameInfo.Units[g_MercenaryUnitList[iL]]
+			-- local unitR = GameInfo.Units[g_MercenaryUnitList[iR]]
 
-			local policyL = unitL.PolicyType
-			local policyR = unitR.PolicyType
+			-- local policyL = unitL.PolicyType
+			-- local policyR = unitR.PolicyType
 
-			player:SetNumFreePolicies(1)
-			player:SetNumFreePolicies(0)
-			player:SetHasPolicy(GameInfo.Policies[policyL].ID, true)
+			-- player:SetNumFreePolicies(1)
+			-- player:SetNumFreePolicies(0)
+			-- player:SetHasPolicy(GameInfo.Policies[policyL].ID, true)
 
-			player:SetNumFreePolicies(1)
-			player:SetNumFreePolicies(0)
-			player:SetHasPolicy(GameInfo.Policies[policyR].ID, true)
+			-- player:SetNumFreePolicies(1)
+			-- player:SetNumFreePolicies(0)
+			-- player:SetHasPolicy(GameInfo.Policies[policyR].ID, true)
 			return
 		else
 			showDialog()
@@ -185,6 +185,29 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 
 end
 GameEvents.PlayerAdoptPolicyBranch.Add(OnAdoptPolicyBranch)
+
+function OnAIDoTurn( playerID )
+    local player = Players[playerID]	
+    if player == nil or player:IsBarbarian() or player:IsHuman() then return end
+	local unitL = GameInfo.Units[g_MercenaryUnitList[0]]
+	local policyL = unitL.PolicyType
+
+	if player:HasPolicy(GameInfo.Policies["POLICY_COMMERCE"].ID)
+	and not player:HasPolicy(GameInfo.Policies[policyL].ID)
+	then
+		for k, v in pairs(g_MercenaryUnitList) do 
+			local unit = GameInfo.Units[v]
+			local policy = unit.PolicyType
+			if not player:HasPolicy(GameInfo.Policies[policy].ID) then
+				player:SetNumFreePolicies(1)
+				player:SetNumFreePolicies(0)
+				player:SetHasPolicy(GameInfo.Policies[policy].ID, true)
+				print("AI Can Train Policy Units - Mercenary!")
+			end
+		end
+	end
+end
+GameEvents.PlayerDoTurn.Add(OnAIDoTurn)
 
 
 -- Handle the Apply Button

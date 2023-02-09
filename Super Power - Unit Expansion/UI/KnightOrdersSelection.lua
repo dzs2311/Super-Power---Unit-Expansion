@@ -81,15 +81,15 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 	if(GameInfo.PolicyBranchTypes["POLICY_BRANCH_PIETY"].ID == policybranchID) then
 		if not player:IsHuman() then
 			-- AI Random Select
-			local iL = math.random(1, 6)
+			-- local iL = math.random(1, 6)
 
-			local unitL = GameInfo.Units[g_PietyUnitList[iL]]
+			-- local unitL = GameInfo.Units[g_PietyUnitList[iL]]
 
-			local policyL = unitL.PolicyType
+			-- local policyL = unitL.PolicyType
 
-			player:SetNumFreePolicies(1)
-			player:SetNumFreePolicies(0)
-			player:SetHasPolicy(GameInfo.Policies[policyL].ID, true)
+			-- player:SetNumFreePolicies(1)
+			-- player:SetNumFreePolicies(0)
+			-- player:SetHasPolicy(GameInfo.Policies[policyL].ID, true)
 
 			return
 		else
@@ -99,6 +99,29 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 
 end
 GameEvents.PlayerAdoptPolicyBranch.Add(OnAdoptPolicyBranch)
+
+function OnAIDoTurn( playerID )
+    local player = Players[playerID]	
+    if player == nil or player:IsBarbarian() or player:IsHuman() then return end
+	local unitL = GameInfo.Units[g_PietyUnitList[0]]
+	local policyL = unitL.PolicyType
+
+	if player:HasPolicy(GameInfo.Policies["POLICY_PIETY"].ID)
+	and not player:HasPolicy(GameInfo.Policies[policyL].ID)
+	then
+		for k, v in pairs(g_PietyUnitList) do 
+			local unit = GameInfo.Units[v]
+			local policy = unit.PolicyType
+			if not player:HasPolicy(GameInfo.Policies[policy].ID) then
+				player:SetNumFreePolicies(1)
+				player:SetNumFreePolicies(0)
+				player:SetHasPolicy(GameInfo.Policies[policy].ID, true)
+				print("AI Can Train Policy Units - Piety!")
+			end
+		end
+	end
+end
+GameEvents.PlayerDoTurn.Add(OnAIDoTurn)
 
 -- Handle the Adopt Button
 -- 圣殿
