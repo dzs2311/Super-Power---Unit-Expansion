@@ -7,8 +7,8 @@
     <Guid>988a1168-d581-4150-948f-199021eabdea</Guid>
     <ModVersion>5</ModVersion>
     <Stability>Stable</Stability>
-    <Teaser>(5.1.9a)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
-    <Description>(5.1.9a)超级大国单位拓展及大量单位模型替换
+    <Teaser>(5.1.9b)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
+    <Description>(5.1.9b)超级大国单位拓展及大量单位模型替换
 [NEWLINE][NEWLINE]
 [ICON_BULLET]大量单位替换了更加美观和符合史实的模型（如宝船）
 [NEWLINE]
@@ -52,6 +52,11 @@
       </Association>
     </ModDependencies>
     <ModActions>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>SPUE_GeneralTweaks.sql</FileName>
+      </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
@@ -131,11 +136,6 @@
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
         <FileName>XML/SPIdeo_Text_zh_CN.xml</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
-        <FileName>SPUE_GeneralTweaks.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -364,12 +364,10 @@
     <Folder Include="Art\Units\Policy\06-Commerce\Varangian" />
     <Folder Include="Art\Units\Policy\06-Commerce\SouthChinaSeaPrivateer" />
     <Folder Include="Art\Units\Policy\06-Commerce\SwissPike" />
-    <Folder Include="Art\Units\Policy\06-Commerce\LilBomb" />
     <Folder Include="Art\Units\Policy\06-Commerce\Doppelsoldner\" />
     <Folder Include="Art\Units\Policy\06-Commerce\free_company\" />
     <Folder Include="Art\Units\Policy\06-Commerce\Graphics_Maceman_modified\" />
     <Folder Include="Art\Units\Policy\06-Commerce\Musket_Landsknecht\" />
-    <Folder Include="Art\Units\Policy\06-Commerce\RER_PIKE\" />
     <Folder Include="Art\Units\Policy\06-Commerce\Varangian\Mercenry Varangians" />
     <Folder Include="Art\Units\Policy\06-Commerce\Varangian\Varangian Guard" />
     <Folder Include="Art\Units\Policy\07-Exploration" />
@@ -3655,6 +3653,14 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\iron_troop\iron_troop_bowman.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\iron_troop\iron_troop_bowman.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Units\Policy\06-Commerce\iron_troop\iron_troop_mata_basecolor.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -3680,26 +3686,6 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\Policy\06-Commerce\SouthChinaSeaPrivateer\asian_private.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\LilBomb\SMAN_EU_LilBombard.fxsxml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\LilBomb\SMAN_EU_LilBombard.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\LilBomb\SMAN_EU_LilBombard_Crew_diff.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\LilBomb\SMAN_EU_LilBombard_diff.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\LilBomb\SMAN_EU_LilBombard_sref.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -3820,30 +3806,6 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\Policy\06-Commerce\Musket_Landsknecht\landsknecht_musket_b.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\RER_PIKE\pike_helm_diff.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\RER_PIKE\pike_helm_sref.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\RER_PIKE\RER_PIKE.fxsxml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\RER_PIKE\RER_PIKE.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\RER_PIKE\RER_PIKE_diff.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\RER_PIKE\RER_PIKE_sref.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>

@@ -2385,12 +2385,13 @@ VALUES	('ART_DEF_UNIT_SPUE_VARANGIAN_GUARD',	'Unit', 	'SV_SPUE_VarangianGuard.dd
 ------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ArtDefine_UnitInfos 
 		(Type, 										DamageStates,	Formation)
-SELECT	'ART_DEF_UNIT_SPUE_IRON_TROOP',				DamageStates, 	Formation
+SELECT	'ART_DEF_UNIT_SPUE_IRON_TROOP',				DamageStates, 	'OffsetPikeman'
 FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_PIKEMAN';
 
 INSERT INTO ArtDefine_UnitInfoMemberInfos 	
-		(UnitInfoType,								UnitMemberInfoType,								 NumMembers)
-VALUES	('ART_DEF_UNIT_SPUE_IRON_TROOP', 			'ART_DEF_UNIT_MEMBER_SPUE_IRON_TROOP',			 12);
+		(UnitInfoType,								UnitMemberInfoType,								 	NumMembers)
+VALUES	('ART_DEF_UNIT_SPUE_IRON_TROOP', 			'ART_DEF_UNIT_MEMBER_SPUE_IRON_TROOP',			 	6),
+		('ART_DEF_UNIT_SPUE_IRON_TROOP', 			'ART_DEF_UNIT_MEMBER_SPUE_IRON_TROOP_BOW',			6);
 
 INSERT INTO ArtDefine_UnitMemberCombats 
 		(UnitMemberType,						EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
@@ -2406,6 +2407,21 @@ INSERT INTO ArtDefine_UnitMemberInfos
 		(Type, 									Scale,	ZOffset, Domain, Model, 					MaterialTypeTag, MaterialTypeSoundOverrideTag)
 SELECT	'ART_DEF_UNIT_MEMBER_SPUE_IRON_TROOP',	Scale,	ZOffset, Domain, 'iron_troop.fxsxml',		MaterialTypeTag, MaterialTypeSoundOverrideTag
 FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_PIKEMAN';
+
+INSERT INTO ArtDefine_UnitMemberCombats 
+		(UnitMemberType,							EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_IRON_TROOP_BOW',	EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation
+FROM ArtDefine_UnitMemberCombats WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_CROSSBOWMAN';
+
+INSERT INTO ArtDefine_UnitMemberCombatWeapons	
+		(UnitMemberType,							"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_IRON_TROOP_BOW',	"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberCombatWeapons WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_CROSSBOWMAN';
+
+INSERT INTO ArtDefine_UnitMemberInfos 	
+		(Type, 										Scale,	ZOffset, Domain, Model, 					 MaterialTypeTag, MaterialTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_IRON_TROOP_BOW',	Scale,	ZOffset, Domain, 'iron_troop_bowman.fxsxml', MaterialTypeTag, MaterialTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_CROSSBOWMAN';
 
 INSERT INTO ArtDefine_StrategicView 
 		(StrategicViewType, 						TileType,	Asset)

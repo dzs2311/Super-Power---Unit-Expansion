@@ -42,7 +42,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>true</LostWithUpgrade>
-			<OnlyDefensive>true</OnlyDefensive>
+			<RangeChange>1</RangeChange>
 			<ExtraAttacks>1</ExtraAttacks>
 			<PortraitIndex>63</PortraitIndex>
 			<IconAtlas>promoVP_atlas_02</IconAtlas>
@@ -1030,7 +1030,7 @@
 	</UnitPromotions_UnitClasses>
 	<UnitPromotions_PromotionModifiers>
 		<!--玄甲军：不被方阵步兵/反装甲单位克制-->
-		<Row>
+		<!-- <Row>
 			<PromotionType>PROMOTION_ANTI_MOUNTED</PromotionType>
 			<OtherPromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</OtherPromotionType>
 			<Modifier>-100</Modifier>
@@ -1059,7 +1059,7 @@
 			<PromotionType>PROMOTION_AMBUSH_1</PromotionType>
 			<OtherPromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</OtherPromotionType>
 			<Modifier>-50</Modifier>
-		</Row>
+		</Row> -->
 		<!--055：不被海军游猎单位克制-->
 		<Row>
 			<PromotionType>PROMOTION_NAVAL_HIT_AND_RUN</PromotionType>

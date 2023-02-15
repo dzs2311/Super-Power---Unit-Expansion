@@ -2274,6 +2274,8 @@ function NewAttackEffect()
 			attUnit:SetMoves(attUnit:MovesLeft()+GameDefines["MOVE_DENOMINATOR"]);
 			attUnit:SetMadeAttack(false);
 			attUnit:ChangeDamage(0 - 0.25 * maxattUnitHP)
+			local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
+			Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("TXT_KEY_PROMOTION_GAIN_MOVES_AFFER_KILLING"));	
 			print ("Ah, fresh meat!");
 		end
  	end
@@ -2294,8 +2296,11 @@ function NewAttackEffect()
 				local pPlayer = Players[pUnit:GetOwner()]
 				
 				if PlayersAtWar(attPlayer, pPlayer) then
-					-- local SplashDamageOri = attUnit:GetRangeCombatDamage(pUnit,nil,false)
-					local SplashDamageOri = defUnitDamage
+					-- local SplashDamageOri = defUnitDamage
+					local attUnitStrength = attUnit:GetMaxAttackStrength(attPlot, defPlot, defUnit);
+					local pFoundUnitStrength = pUnit:GetMaxDefenseStrength(batPlot, attUnit);
+					local SplashDamageOri = attUnit:GetCombatDamage(attUnitStrength, pFoundUnitStrength, attFinalUnitDamage, false, false,
+					false);
 						
 					local AOEmod = 1.0   -- the percent of damage reducing to nearby units
 						

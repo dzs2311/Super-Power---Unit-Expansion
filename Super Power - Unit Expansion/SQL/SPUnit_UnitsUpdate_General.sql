@@ -51,6 +51,9 @@ UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 5 			WHE
 UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 6 			WHERE Type = 'UNIT_TANK_DESTROYER';				-- 坦克歼击车
 UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 7 			WHERE Type = 'UNIT_MOTORISED_INFANTRY';			-- 摩托化步兵
 UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 8 			WHERE Type = 'UNIT_TANK';						-- 坦克
+UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 9 			WHERE Type = 'UNIT_ENGLISH_SHIPOFTHELINE';		-- 主力舰
+UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 10 			WHERE Type = 'UNIT_POLISH_PZL23';				-- PZL23
+
 --==========================================================================================================================
 -- Unit_Misc
 --==========================================================================================================================

@@ -35,3 +35,14 @@ UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_RESTRI
 ALTER TABLE Units ADD RangedPillage INTEGER DEFAULT 0;
 -- 南洋海盗船
 UPDATE Units SET RangedPillage = 1 WHERE Class IN ('UNITCLASS_SPUE_SSPRIVATEER');
+--==========================================================================================================================	
+-- 7.0兼容
+--==========================================================================================================================	
+CREATE TABLE IF NOT EXISTS 
+UnitPromotions_PromotionModifiers (
+    `PromotionType` text not null,
+    `OtherPromotionType` text not null,
+    `Modifier` integer default 0 not null,
+    `Attack` integer default 0 not null,
+    `Defense` integer default 0 not null
+);
