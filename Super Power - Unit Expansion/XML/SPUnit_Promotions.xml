@@ -447,10 +447,10 @@
 		</Row>
 		<!--*********************************赞助：奥古斯都之路*********************************-->
 		<Row>
-			<!--萨尔玛提亚：龙旗麟铠长骑枪-->
-			<Type>PROMOTION_SPUE_VASSAL_LIGHT_CAVALRY</Type>
-			<Description>TXT_KEY_PROMOTION_SPUE_VASSAL_LIGHT_CAVALRY</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_VASSAL_LIGHT_CAVALRY_HELP</Help>
+			<!--将领卫队：龙旗麟铠长骑枪-->
+			<Type>PROMOTION_SPUE_GENERAL_BODYGUARD</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_GENERAL_BODYGUARD</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_GENERAL_BODYGUARD_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
@@ -460,7 +460,7 @@
 			<PortraitIndex>59</PortraitIndex>
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_SPUE_VASSAL_LIGHT_CAVALRY</PediaEntry>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_GENERAL_BODYGUARD</PediaEntry>
 		</Row>
 		<Row>
 			<!--克里特弓箭手：爱琴海战列-->
@@ -479,10 +479,10 @@
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_VASSAL_BOWMAN</PediaEntry>
 		</Row>
 		<Row>
-			<!--西徐亚弓骑兵：居鲁士大敌-->
-			<Type>PROMOTION_SPUE_VASSAL_MOUNTEDXBOW</Type>
-			<Description>TXT_KEY_PROMOTION_SPUE_VASSAL_MOUNTEDXBOW</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_VASSAL_MOUNTEDXBOW_HELP</Help>
+			<!--同盟军团：罗马公民权-->
+			<Type>PROMOTION_SPUE_SOCII_HASTATI</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<ExtraAttacks>2</ExtraAttacks>
@@ -491,7 +491,7 @@
 			<PortraitIndex>59</PortraitIndex>
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_SPUE_VASSAL_MOUNTEDXBOW</PediaEntry>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI</PediaEntry>
 		</Row>
 		<Row>
 			<!--塞尔维亚重步兵：巴尔干之盾-->
@@ -509,9 +509,9 @@
 		</Row>
 		<Row>
 			<!--亚美尼亚甲骑兵：阿扎塔夫雷-->
-			<Type>PROMOTION_SPUE_VASSAL_ARMORED_CAVALRY</Type>
-			<Description>TXT_KEY_PROMOTION_SPUE_VASSAL_ARMORED_CAVALRY</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_VASSAL_ARMORED_CAVALRY_HELP</Help>
+			<Type>PROMOTION_SPUE_BUCELLARII_GUARD</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<FlankAttackModifier>100</FlankAttackModifier>
@@ -519,7 +519,7 @@
 			<PortraitIndex>59</PortraitIndex>
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_SPUE_VASSAL_ARMORED_CAVALRY</PediaEntry>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD</PediaEntry>
 		</Row>
 		
 		<Row>
@@ -542,6 +542,7 @@
 			<Description>TXT_KEY_PROMOTION_SPUE_TREASURE_FLEET</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_TREASURE_FLEET_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
+			<MaxHitPointsModifier>100</MaxHitPointsModifier>
 			<CannotBeChosen>true</CannotBeChosen>
 			<CanMoveAfterAttacking>true</CanMoveAfterAttacking>
 			<LostWithUpgrade>false</LostWithUpgrade>
@@ -895,7 +896,7 @@
 		</Row>
 		<!--亚美尼亚甲骑兵：阿扎塔夫雷-->
 		<Row>
-			<PromotionType>PROMOTION_SPUE_VASSAL_ARMORED_CAVALRY</PromotionType>
+			<PromotionType>PROMOTION_SPUE_BUCELLARII_GUARD</PromotionType>
 			<TerrainType>TERRAIN_DESERT</TerrainType>
 			<DoubleMove>true</DoubleMove>
 		</Row>

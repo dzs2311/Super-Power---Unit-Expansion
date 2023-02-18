@@ -48,7 +48,7 @@
 				<!-- 从左向右排布 -->
 				<Stack Anchor="C,T" Offset="0, 120" StackGrowth="Right" Padding="6">
 					<!-- 单位头像按钮 -->
-					<Button ID="IconButtonAugustus0" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_VASSAL_LIGHT_CAVALRY_HELP">
+					<Button ID="IconButtonAugustus0" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD_HELP">
 						<Image ID="PortraitFrameAugustus0" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
 							<Image ID="PortraitAugustus0" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>
@@ -58,7 +58,7 @@
 							<Image ID="PortraitAugustus1" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>
 					</Button>
-					<Button ID="IconButtonAugustus2" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_VASSAL_MOUNTEDXBOW_HELP">
+					<Button ID="IconButtonAugustus2" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_SOCII_HASTATI_HELP">
 						<Image ID="PortraitFrameAugustus2" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
 							<Image ID="PortraitAugustus2" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>
@@ -96,7 +96,7 @@
 							<Image ID="PortraitBaselius0" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>
 					</Button>
-					<Button ID="IconButtonBaselius1" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_VASSAL_ARMORED_CAVALRY_HELP">
+					<Button ID="IconButtonBaselius1" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP">
 						<Image ID="PortraitFrameBaselius1" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
 							<Image ID="PortraitBaselius1" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>

@@ -12,19 +12,30 @@ ContextPtr:SetHide(true);
 -- Variables
 --==========================================================================================
 
-local g_MercenaryUnitList	= {GameInfoTypes["UNIT_SPUE_SSPRIVATEER"],
-							   GameInfoTypes["UNIT_SPUE_GENOAXBOW"],
-							   GameInfoTypes["UNIT_SPUE_SWISSGUARD"],
-							   GameInfoTypes["UNIT_SPUE_VARANGIAN"],
-							   GameInfoTypes["UNIT_SPUE_IRON_TROOP"],
-							   GameInfoTypes["UNIT_SPUE_FIRESHIP"]}
-
-
+local g_MercenaryUnitList	= {	GameInfoTypes["UNIT_SPUE_VARANGIAN"],
+								GameInfoTypes["UNIT_SPUE_GENOAXBOW"],
+								GameInfoTypes["UNIT_SPUE_SWISSGUARD"],
+								
+							   	GameInfoTypes["UNIT_SPUE_SSPRIVATEER"],
+							   	GameInfoTypes["UNIT_SPUE_IRON_TROOP"],
+							   	GameInfoTypes["UNIT_SPUE_FIRESHIP"]}
+							   
 local g_MercenaryUnitLeft	= nil
 local g_MercenaryUnitRight	= nil
 
 local activePlayerID 		= Game.GetActivePlayer()
 local activePlayer	 		= Players[activePlayerID]
+
+-- 检测强权是否加载
+local isSPEx = false
+local isSPExID = "41450919-c52c-406f-8752-5ea34be32b2d"
+
+for _, mod in pairs(Modding.GetActivatedMods()) do
+	if (mod.ID == isSPExID) then
+		isSPEx = true
+		break
+	end
+end
 --==========================================================================================
 -- Main Functions
 --==========================================================================================
@@ -61,6 +72,10 @@ function initializeDialog()
 		IconHookup(unitR.PortraitIndex, 256, unitR.IconAtlas, Controls.PortraitRight)
 	else
 		print("Unit not found")
+	end
+
+	if isSPEx then
+		Controls.IconButtonLeft:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_LEADER_TOP_WP"))
 	end
 
 	Controls.SelectListLeft:GetButton():LocalizeAndSetText("TXT_KEY_SPUE_MERCENARY_MENU_UNIT_LEFT")
@@ -160,31 +175,53 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 
 	if(GameInfo.PolicyBranchTypes["POLICY_BRANCH_COMMERCE"].ID == policybranchID) then
 		if not player:IsHuman() then
-			-- AI Random Select
-			-- local iL = math.random(1, 5)
-			-- local iR = iL + 1
-
-			-- local unitL = GameInfo.Units[g_MercenaryUnitList[iL]]
-			-- local unitR = GameInfo.Units[g_MercenaryUnitList[iR]]
-
-			-- local policyL = unitL.PolicyType
-			-- local policyR = unitR.PolicyType
-
-			-- player:SetNumFreePolicies(1)
-			-- player:SetNumFreePolicies(0)
-			-- player:SetHasPolicy(GameInfo.Policies[policyL].ID, true)
-
-			-- player:SetNumFreePolicies(1)
-			-- player:SetNumFreePolicies(0)
-			-- player:SetHasPolicy(GameInfo.Policies[policyR].ID, true)
 			return
 		else
 			showDialog()
 		end
 	end
 
+
 end
 GameEvents.PlayerAdoptPolicyBranch.Add(OnAdoptPolicyBranch)
+-- Show the panel when World Power Mod is active.
+if isSPEx then
+	function mercenaryUnitsWorldPowerFix(playerID)
+		-- 加载强权进入中古时启用选择界面
+		local player = Players[playerID]	
+
+    	if player == nil or player:IsBarbarian() then
+    	    return
+    	end
+
+		if not player:IsHuman() then
+			return
+		end
+
+		if player:IsEverAlive() then
+			local pEraType = pPlayer:GetCurrentEra();
+			local pEraID = GameInfo.Eras[pEraType].ID;
+			local flagMercenaryUnit = true
+
+			for k, v in pairs(g_MercenaryUnitList) do 
+				local unit = GameInfo.Units[v];
+				local policy = unit.PolicyType;
+				if player:HasPolicy(GameInfo.Policies[policy].ID) then
+					flagMercenaryUnit = false;
+					break;
+				end
+			end
+
+			if  pEraID >= GameInfo.Eras["ERA_MEDIEVAL"].ID and flagMercenaryUnit then
+				showDialog();
+			end
+		end
+
+
+	end
+	Events.LoadScreenClose.Add(mercenaryUnitsWorldPowerFix)
+	GameEvents.TeamSetEra.Add(mercenaryUnitsWorldPowerFix)
+end
 
 function OnAIDoTurn( playerID )
     local player = Players[playerID]	
@@ -199,9 +236,7 @@ function OnAIDoTurn( playerID )
 			local unit = GameInfo.Units[v]
 			local policy = unit.PolicyType
 			if not player:HasPolicy(GameInfo.Policies[policy].ID) then
-				player:SetNumFreePolicies(1)
-				player:SetNumFreePolicies(0)
-				player:SetHasPolicy(GameInfo.Policies[policy].ID, true)
+				player:SetHasPolicy(GameInfo.Policies[policy].ID, true, true)
 				print("AI Can Train Policy Units - Mercenary!")
 			end
 		end
@@ -223,13 +258,8 @@ function onApplyButton()
 		local policyL = unitL.PolicyType
 		local policyR = unitR.PolicyType
 
-		activePlayer:SetNumFreePolicies(1)
-		activePlayer:SetNumFreePolicies(0)
-		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true)
-
-		activePlayer:SetNumFreePolicies(1)
-		activePlayer:SetNumFreePolicies(0)
-		activePlayer:SetHasPolicy(GameInfo.Policies[policyR].ID, true)
+		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)
+		activePlayer:SetHasPolicy(GameInfo.Policies[policyR].ID, true, true)
 
 		hideDialog()
 	end

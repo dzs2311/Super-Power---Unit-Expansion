@@ -903,10 +903,10 @@
 			<Text>点击以获得选取的两种[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]雇佣兵单位的建造能力</Text>
 		</Row>
 		<!-- **********************辅助萨尔马提亚枪骑兵*********************** -->
-		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_LIGHT_CAVALRY">
+		<Row Tag="TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD">
 			<Text>∏[COLOR_CYAN]辅助萨尔马提亚枪骑兵[ENDCOLOR]</Text>
 		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_LIGHT_CAVALRY_HELP">
+		<Row Tag="TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD_HELP">
 			<Text>
 				∏[COLOR_CYAN]辅助萨尔马提亚枪骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重骑兵辅助单位，死亡时不会造成人口损失。
 				[NEWLINE][ICON_BULLET]发起近战攻击前先进行一次弓箭扫荡，1格内敌方单位-15%[ICON_STRENGTH]战斗力。
@@ -914,17 +914,17 @@
 				[NEWLINE][ICON_BULLET]对于罗马将领而言，悬于长枪上的敌军残体才是好东西。
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_VASSAL_LIGHT_CAVALRY_TEXT">
+		<Row Tag="TXT_KEY_CIV5_SPUE_GENERAL_BODYGUARD_TEXT">
 			<Text>
 				萨尔马提亚人是一支西部的草原民族，据守黑海以北，与达西亚人和日耳曼人毗邻而居。他们随意地游荡于这片区域，骑术闻名天下几无敌手。希腊人畏惧他们，达西亚人则常常雇佣他们，或与之结盟。一直以来，萨尔马提亚人都是骑弓手，但时过境迁，他们开始穿上越来越重的铠甲，最终与东边的铁甲重骑兵别无二致。就连他们的战马也穿上了全套鳞甲。但在他们向重装部队迈进的同时仍未抛弃其可怕的战弓。他们每人一柄双手骑枪，可以将粉碎任何愚蠢的来犯之敌。			
 				[NEWLINE]西徐亚人（或称塞种人）以及萨尔马提亚人的骑乘技巧自祖先处承袭而来，这些草原重装枪骑兵可以与希腊重骑兵抗衡。他们身披鳞甲保护骑手自己和马匹，手持一柄骑枪。这使他们可以用与亚历山大伙伴骑兵相似的方式，施展冲锋击溃敌军。他们所穿的鳞片甲起初用角制成，后来改为金属，这与西方重骑兵相比更具优势，但面对枪阵仍十分脆弱。弓箭的出现使这一问题得到解决：用步兵和弓骑兵发射持续不断的箭雨，削弱敌人，破坏敌人的阵型。公元前53年的卡雷战役中，密集的罗马步兵在帕提亚弓手的压力下被迫分散，于是他们的铁甲重骑兵趁机冲锋，将四倍于他们兵力的、自信满满的罗马军队击溃。
 			</Text>
 		</Row>	
 
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_LIGHT_CAVALRY">
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENERAL_BODYGUARD">
 			<Text>龙旗麟铠长骑枪</Text>
 		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_LIGHT_CAVALRY_HELP">
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENERAL_BODYGUARD_HELP">
 			<Text>发起近战攻击前先进行一次弓箭扫荡，1格内敌方单位-15%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 		<!-- **********************辅助克里特弓箭手*********************** -->
@@ -952,10 +952,10 @@
 			<Text>对陆军单位+50%[ICON_STRENGTH]战斗力，射程+1，每回合攻击次数+1，远程防御攻击时+50%[ICON_STRENGTH]战斗力（持盾）。</Text>
 		</Row>
 		<!-- **********************辅助西徐亚弓骑兵*********************** -->
-		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_MOUNTEDXBOW">
+		<Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI">
 			<Text>∏[COLOR_CYAN]辅助西徐亚弓骑兵[ENDCOLOR]</Text>
 		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_MOUNTEDXBOW_HELP">
+		<Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI_HELP">
 			<Text>
 				∏[COLOR_CYAN]辅助西徐亚弓骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军轻骑兵辅助单位，死亡时不会造成人口损失。
 				[NEWLINE][ICON_BULLET]每回合攻击次数+2，对残血单位+150%[ICON_STRENGTH]战斗力。
@@ -963,16 +963,16 @@
 				[NEWLINE][ICON_BULLET]引弦为罗马人射倒敌人的西徐亚人才是有价值的战士。
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_VASSAL_MOUNTEDXBOW_TEXT">
+		<Row Tag="TXT_KEY_CIV5_SPUE_SOCII_HASTATI_TEXT">
 			<Text>
 				草原上的许多部落有着丰富的文化，根本不是无知愚昧的野蛮人。他们住在从里海一直到黑海北岸的大片地区；希腊人称他们为“西徐亚人”，波斯人则称其为“塞种人”。其中西边的一群也被叫做萨尔马提亚人。穿着裤子使他们与希腊人认为的野蛮人相距甚远，更不要提他们高高的尖帽了。然而他们全都是出色的骑手，精于使用西徐亚式的复合反曲弓，近战时也颇具威力。他们使用的一种战斧，一面是锋刃一面是镐，可以刺穿大部分铠甲。出土的陪葬品显示，一些部落的女性也同男性一样好战，并有可能亲临战阵。这很可能是希腊神话中亚马逊女战士的起源。			
 			</Text>
 		</Row>	
 
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_MOUNTEDXBOW">
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI">
 			<Text>居鲁士大敌</Text>
 		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_MOUNTEDXBOW_HELP">
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI_HELP">
 			<Text>每回合攻击次数+2，对残血单位+150%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 		<!-- **********************辅助塞尔维亚重步兵*********************** -->
@@ -999,26 +999,26 @@
 			<Text>防御时+60%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 		<!-- **********************辅助亚美尼亚甲骑兵*********************** -->
-		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_ARMORED_CAVALRY">
+		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD">
 			<Text>∏[COLOR_CYAN]辅助亚美尼亚甲骑兵[ENDCOLOR]</Text>
 		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_ARMORED_CAVALRY_HELP">
+		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP">
 			<Text>
 				∏[COLOR_CYAN]辅助亚美尼亚甲骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重骑兵辅助单位，死亡时不会造成人口损失。
 				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
 				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_VASSAL_ARMORED_CAVALRY_TEXT">
+		<Row Tag="TXT_KEY_CIV5_SPUE_BUCELLARII_GUARD_TEXT">
 			<Text>
 				在12—13世纪，拜占庭帝国从奇里奇亚地区征发的亚美尼亚人仆从军团有时会与拜占庭人在北叙利亚和安纳托利亚共同作战。例如尼西亚的塞奥多一世1214年征发的亚美尼亚部队。12世纪的奇里奇亚军团与拜占庭本土部队几乎难以区分，但在13世纪以后他们的装备日渐受附近的十字军公国影响而西化了。  
 			</Text>
 		</Row>
 		
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_ARMORED_CAVALRY">
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD">
 			<Text>阿扎塔夫雷</Text>
 		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_ARMORED_CAVALRY_HELP">
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_HELP">
 			<Text>荒漠地形移动力翻倍，夹击加成+100%。</Text>
 		</Row>
 		<!-- **********************辅助阿兰轻骑兵*********************** -->

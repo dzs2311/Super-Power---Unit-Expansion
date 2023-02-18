@@ -15,12 +15,14 @@ ContextPtr:SetHide(true);
 --==========================================================================================
 -- Variables
 --==========================================================================================
-local g_PatronageUnitList	=   {GameInfoTypes["UNIT_SPUE_VASSAL_LIGHT_CAVALRY"], 
+local g_PatronageUnitList	=   {GameInfoTypes["UNIT_SPUE_GENERAL_BODYGUARD"], 
 						     	 GameInfoTypes["UNIT_SPUE_VASSAL_BOWMAN"],
-                             	 GameInfoTypes["UNIT_SPUE_VASSAL_MOUNTEDXBOW"],
+                             	 GameInfoTypes["UNIT_SPUE_SOCII_HASTATI"],
+
+								 GameInfoTypes["UNIT_SPUE_BUCELLARII_GUARD"],
 						     	 GameInfoTypes["UNIT_SPUE_QIANG_SPEARMAN"],
-								 GameInfoTypes["UNIT_SPUE_VASSAL_ARMORED_CAVALRY"],
 						     	 GameInfoTypes["UNIT_SPUE_VASSAL_ALAN_CAVALRY"],
+
 						     	 GameInfoTypes["UNIT_SPUE_TREASURE_FLEET"],
 						     	 GameInfoTypes["UNIT_SPUE_CORVETTE"],
 						     	 GameInfoTypes["UNIT_SPUE_SHENJI_MUSKETEER"]};
@@ -130,9 +132,9 @@ function OnAIDoTurn( playerID )
 			local unit = GameInfo.Units[v]
 			local policy = unit.PolicyType
 			if not player:HasPolicy(GameInfo.Policies[policy].ID) then
-				player:SetNumFreePolicies(1)
-				player:SetNumFreePolicies(0)
-				player:SetHasPolicy(GameInfo.Policies[policy].ID, true)
+				-- player:SetNumFreePolicies(1)
+				-- player:SetNumFreePolicies(0)
+				player:SetHasPolicy(GameInfo.Policies[policy].ID, true, true)
 				print("AI Can Train Policy Units - Patronage!")
 			end
 		end
@@ -162,9 +164,9 @@ function onAdoptButton0()
 
 		local policyL = unitL.PolicyType;
 
-		activePlayer:SetNumFreePolicies(1);
-		activePlayer:SetNumFreePolicies(0);
-		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true);
+		-- activePlayer:SetNumFreePolicies(1);
+		-- activePlayer:SetNumFreePolicies(0);
+		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
 
 		hideDialog();
 	end
@@ -191,9 +193,9 @@ function onAdoptButton1()
 
 		local policyL = unitL.PolicyType;
 
-		activePlayer:SetNumFreePolicies(1);
-		activePlayer:SetNumFreePolicies(0);
-		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true);
+		-- activePlayer:SetNumFreePolicies(1);
+		-- activePlayer:SetNumFreePolicies(0);
+		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
 
 		hideDialog();
 	end
@@ -220,9 +222,9 @@ function onAdoptButton2()
 
 		local policyL = unitL.PolicyType;
 
-		activePlayer:SetNumFreePolicies(1);
-		activePlayer:SetNumFreePolicies(0);
-		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true);
+		-- activePlayer:SetNumFreePolicies(1);
+		-- activePlayer:SetNumFreePolicies(0);
+		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
 
 		hideDialog();
 	end

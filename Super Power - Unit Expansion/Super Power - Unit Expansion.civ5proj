@@ -7,8 +7,8 @@
     <Guid>988a1168-d581-4150-948f-199021eabdea</Guid>
     <ModVersion>5</ModVersion>
     <Stability>Stable</Stability>
-    <Teaser>(5.1.9b)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
-    <Description>(5.1.9b)超级大国单位拓展及大量单位模型替换
+    <Teaser>(5.2.0)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
+    <Description>(5.2.0)超级大国单位拓展及大量单位模型替换
 [NEWLINE][NEWLINE]
 [ICON_BULLET]大量单位替换了更加美观和符合史实的模型（如宝船）
 [NEWLINE]
@@ -315,10 +315,10 @@
     <Folder Include="Art\Units\General\9-Future\SMAN_Railgun_Cruiser\" />
     <Folder Include="Art\Units\General\GuideMissileDelete" />
     <Folder Include="Art\Units\Policy\04-Patronage\Bashtnik\" />
-    <Folder Include="Art\Units\Policy\04-Patronage\Batas Horseman\" />
-    <Folder Include="Art\Units\Policy\04-Patronage\Horseman_Persia\" />
     <Folder Include="Art\Units\Policy\04-Patronage\Longbowman_Greece\" />
-    <Folder Include="Art\Units\Policy\04-Patronage\Saka" />
+    <Folder Include="Art\Units\Policy\04-Patronage\Rome" />
+    <Folder Include="Art\Units\Policy\04-Patronage\Rome\Knight" />
+    <Folder Include="Art\Units\Policy\04-Patronage\Rome\Triarii_Rome\" />
     <Folder Include="Art\Units\Policy\09-Freedom\HeliCarrier" />
     <Folder Include="Art\Units\Policy\09-Freedom\cgn9" />
     <Folder Include="Art\Units\Policy\09-Freedom\Supermarine_Spitfire_MK_V\" />
@@ -332,7 +332,6 @@
     <Folder Include="Art\Units\Policy\03-Piety\Knight_Templar\" />
     <Folder Include="Art\Units\Policy\03-Piety\Knight_Teutonic\" />
     <Folder Include="Art\Units\Policy\04-Patronage\Corvette\" />
-    <Folder Include="Art\Units\Policy\04-Patronage\Knight_Russia\" />
     <Folder Include="Art\Units\Policy\04-Patronage\Fleet" />
     <Folder Include="Art\Units\Policy\04-Patronage\Shenji Musketeer\" />
     <Folder Include="Art\Units\Policy\05-Aesthetics\DVC_MachineGun" />
@@ -365,8 +364,6 @@
     <Folder Include="Art\Units\Policy\06-Commerce\SouthChinaSeaPrivateer" />
     <Folder Include="Art\Units\Policy\06-Commerce\SwissPike" />
     <Folder Include="Art\Units\Policy\06-Commerce\Doppelsoldner\" />
-    <Folder Include="Art\Units\Policy\06-Commerce\free_company\" />
-    <Folder Include="Art\Units\Policy\06-Commerce\Graphics_Maceman_modified\" />
     <Folder Include="Art\Units\Policy\06-Commerce\Musket_Landsknecht\" />
     <Folder Include="Art\Units\Policy\06-Commerce\Varangian\Mercenry Varangians" />
     <Folder Include="Art\Units\Policy\06-Commerce\Varangian\Varangian Guard" />
@@ -425,6 +422,10 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Flags\SPUE_BodyGuard_Flag.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Flags\SPUE_Byzantium_General_Flag.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -473,7 +474,7 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Flags\SPUE_KhitanHunter_Flag.dds">
+    <Content Include="Art\Flags\SPUE_Socii_Flag.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -933,6 +934,10 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\SV\SV_SPUE_BodyGuard.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\SV\SV_SPUE_Cataphract.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -977,7 +982,7 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\SV\SV_SPUE_KhitanHunter.dds">
+    <Content Include="Art\SV\SV_SPUE_SOCII.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -3377,30 +3382,6 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Batas Horseman\BatasHorseman.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Batas Horseman\BatasHorseman.fxsxml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Batas Horseman\BatasHorseman.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Batas Horseman\BatasHorseman.indiedefs">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Batas Horseman\BatasHorseman_gloss.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Batas Horseman\BatasHorseman_Horse.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
     <Content Include="Art\Units\Policy\04-Patronage\Corvette\EU4_WarGalleon.fxsxml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -3422,62 +3403,6 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\Policy\04-Patronage\Fleet\civ4ri_treasureship.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Horseman_Persia\Horseman_Persia.blend">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Horseman_Persia\Horseman_Persia.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Horseman_Persia\Horseman_Persia.fxsxml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Horseman_Persia\Horseman_Persia.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Horseman_Persia\Horseman_Persia.jpg">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Horseman_Persia\Horseman_Persia_gloss.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Horseman_Persia\Horseman_Persia_Horse.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Horseman_Persia\Horseman_Persia_Horse_gloss.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Knight_Russia\Knight_Russia.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Knight_Russia\Knight_Russia.fxsxml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Knight_Russia\Knight_Russia.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Knight_Russia\Knight_Russia_gloss.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Knight_Russia\Knight_Russia_Horse.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Knight_Russia\Knight_Russia_Horse_gloss.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -3505,19 +3430,55 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Saka\U_Scythian_Saka.fxsxml">
+    <Content Include="Art\Units\Policy\04-Patronage\Rome\Knight\Knight_Rome.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Saka\U_Scythian_Saka.gr2">
+    <Content Include="Art\Units\Policy\04-Patronage\Rome\Knight\Knight_Rome.fxsxml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Saka\U_Scythian_Saka_diff.dds">
+    <Content Include="Art\Units\Policy\04-Patronage\Rome\Knight\Knight_Rome.gr2">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Policy\04-Patronage\Saka\U_Scythian_Saka_sref.dds">
+    <Content Include="Art\Units\Policy\04-Patronage\Rome\Knight\Knight_Rome.jpg">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\04-Patronage\Rome\Knight\Knight_Rome_gloss.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\04-Patronage\Rome\Knight\Knight_Rome_Horse.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\04-Patronage\Rome\Knight\Knight_Rome_Horse_gloss.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\04-Patronage\Rome\Triarii_Rome\Pikeman_Rome.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\04-Patronage\Rome\Triarii_Rome\Pikeman_Rome_gloss.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\04-Patronage\Rome\Triarii_Rome\Triarii.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\04-Patronage\Rome\Triarii_Rome\Triarii_Rome.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\04-Patronage\Rome\Triarii_Rome\Triarii_Rome.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\04-Patronage\Rome\Triarii_Rome\Triarii_sref.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -3742,54 +3703,6 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\Policy\06-Commerce\Doppelsoldner\sv_Doppelsoldner.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\free_company\eng_kn.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\free_company\eng_kn_gloss.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\free_company\free_company.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\free_company\free_company.fxsxml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\free_company\free_company.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\free_company\free_company_gloss.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\free_company\free_company_poleaxe.fxsxml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\free_company\free_company_poleaxe.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\Graphics_Maceman_modified\Maceman.fxsxml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\Graphics_Maceman_modified\Maceman.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\Graphics_Maceman_modified\Maceman_diff512.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\Graphics_Maceman_modified\Maceman_sref512.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>

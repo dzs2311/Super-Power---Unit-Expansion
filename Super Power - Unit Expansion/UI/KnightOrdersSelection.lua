@@ -142,9 +142,9 @@ function onAdoptButton0()
 
 		local policyL = unitL.PolicyType;
 
-		activePlayer:SetNumFreePolicies(1);
-		activePlayer:SetNumFreePolicies(0);
-		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true);
+		-- activePlayer:SetNumFreePolicies(1);
+		-- activePlayer:SetNumFreePolicies(0);
+		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
 
 		hideDialog();
 	end
@@ -169,9 +169,9 @@ function onAdoptButton1()
 
 		local policyL = unitL.PolicyType;
 
-		activePlayer:SetNumFreePolicies(1);
-		activePlayer:SetNumFreePolicies(0);
-		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true);
+		-- activePlayer:SetNumFreePolicies(1);
+		-- activePlayer:SetNumFreePolicies(0);
+		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
 
 		hideDialog();
 	end
@@ -196,9 +196,9 @@ function onAdoptButton2()
 
 		local policyL = unitL.PolicyType;
 
-		activePlayer:SetNumFreePolicies(1);
-		activePlayer:SetNumFreePolicies(0);
-		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true);
+		-- activePlayer:SetNumFreePolicies(1);
+		-- activePlayer:SetNumFreePolicies(0);
+		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
 
 		hideDialog();
 	end

@@ -83,9 +83,8 @@ VALUES		('SPUE_TEMP_FLAG_ATLAS',			032,		'SPUE_KnightsTemplar_Flag.dds',			1, 		
 -- 赞助政策树辅助单位	
 INSERT OR REPLACE INTO IconTextureAtlases 	
 			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)
-VALUES		('SPUE_VCAVALRY_FLAG_ATLAS',		032,		'SPUE_KhitanHunter_Flag.dds',			1, 				1),	-- 辅助萨尔马提亚枪骑兵
-			('SPUE_VBOWMAN_FLAG_ATLAS',			032,		'SPUE_ITUU_Flag.dds',					1, 				1), -- 辅助克里特弓箭手
-			('SPUE_VMXB_FLAG_ATLAS',			032,		'SPUE_ScythianUnitFlag.dds',			1, 				1), -- 辅助西徐亚弓骑兵
+VALUES		('SPUE_BODYGUARD_FLAG_ATLAS',		032,		'SPUE_BodyGuard_Flag.dds',				1, 				1),	-- 将领卫队
+			('SPUE_SOCII_FLAG_ATLAS',			032,		'SPUE_Socii_Flag.dds',					1, 				1), -- 同盟军团
 			('SPUE_VSPEAR_FLAG_ATLAS',			032,		'SPUE_QiangSpearman_Flag.dds',			1, 				1),	-- 辅助塞尔维亚重步兵
 			('SPUE_VCATAPHCRAT_FLAG_ATLAS',		032,		'SPUE_Cataphract_Flag.dds',				1, 				1),	-- 辅助亚美尼亚甲骑兵
 			('SPUE_ALAN_FLAG_ATLAS',			032,		'SPUE_Alan_Flag.dds',					1, 				1), -- 辅助阿兰轻骑兵

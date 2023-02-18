@@ -879,6 +879,15 @@
 				[NEWLINE][NEWLINE]([COLOR_NEGATIVE_TEXT]注意：[ENDCOLOR]需选择两个不一样的佣兵团，否则无法退出本界面！)
 			</Text>
 		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_LEADER_TOP_WP">
+			<Text>
+				检测到当前开启了[COLOR_POSITIVE_TEXT]世界强权[ENDCOLOR]模组，鉴于其对于[ICON_CULTURE][COLOR_MAGENTA]商业政策树[ENDCOLOR]的调整情况，雇佣兵单位选择界面在玩家进入中古时代后即开启。
+				[NEWLINE]选择两种您希望在本局游戏中使用的[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]雇佣兵单位，一旦选择不可更改
+				[NEWLINE][NEWLINE]([COLOR_NEGATIVE_TEXT]注意：[ENDCOLOR]需选择两个不一样的佣兵团，否则无法退出本界面！)
+			</Text>
+		</Row>
+
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_SELECT_TITLE">
 			<Text>[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR] - 雇佣兵选择</Text>
 		</Row>
@@ -902,30 +911,57 @@
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_SELECT_OK_TOOLTIP">
 			<Text>点击以获得选取的两种[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]雇佣兵单位的建造能力</Text>
 		</Row>
-		<!-- **********************辅助萨尔马提亚枪骑兵*********************** -->
-		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_LIGHT_CAVALRY">
-			<Text>∏[COLOR_CYAN]辅助萨尔马提亚枪骑兵[ENDCOLOR]</Text>
+		
+
+		<!-- **********************将领卫队*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD">
+			<Text>β[COLOR_CYAN]将领卫队[ENDCOLOR]</Text>
 		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_LIGHT_CAVALRY_HELP">
+		<Row Tag="TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD_HELP">
 			<Text>
-				∏[COLOR_CYAN]辅助萨尔马提亚枪骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重骑兵辅助单位，死亡时不会造成人口损失。
+				β[COLOR_CYAN]将领卫队[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重骑兵统帅单位。
+				[NEWLINE][ICON_BULLET]位于城邦盟友境内时可以花费一定的金钱征召∏[COLOR_CYAN]同盟军团[ENDCOLOR]和∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]可以将附近的一名附近的蛮族单位转化为∏[COLOR_CYAN]辅助西徐亚弓骑兵[ENDCOLOR]（上限2）。
 				[NEWLINE][ICON_BULLET]发起近战攻击前先进行一次弓箭扫荡，1格内敌方单位-15%[ICON_STRENGTH]战斗力。
 				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路才可以招募此单位。
-				[NEWLINE][ICON_BULLET]对于罗马将领而言，悬于长枪上的敌军残体才是好东西。
+				[NEWLINE][ICON_BULLET]身体力行，则上行下效。
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_VASSAL_LIGHT_CAVALRY_TEXT">
+		<Row Tag="TXT_KEY_CIV5_SPUE_GENERAL_BODYGUARD_TEXT">
 			<Text>
-				萨尔马提亚人是一支西部的草原民族，据守黑海以北，与达西亚人和日耳曼人毗邻而居。他们随意地游荡于这片区域，骑术闻名天下几无敌手。希腊人畏惧他们，达西亚人则常常雇佣他们，或与之结盟。一直以来，萨尔马提亚人都是骑弓手，但时过境迁，他们开始穿上越来越重的铠甲，最终与东边的铁甲重骑兵别无二致。就连他们的战马也穿上了全套鳞甲。但在他们向重装部队迈进的同时仍未抛弃其可怕的战弓。他们每人一柄双手骑枪，可以将粉碎任何愚蠢的来犯之敌。			
-				[NEWLINE]西徐亚人（或称塞种人）以及萨尔马提亚人的骑乘技巧自祖先处承袭而来，这些草原重装枪骑兵可以与希腊重骑兵抗衡。他们身披鳞甲保护骑手自己和马匹，手持一柄骑枪。这使他们可以用与亚历山大伙伴骑兵相似的方式，施展冲锋击溃敌军。他们所穿的鳞片甲起初用角制成，后来改为金属，这与西方重骑兵相比更具优势，但面对枪阵仍十分脆弱。弓箭的出现使这一问题得到解决：用步兵和弓骑兵发射持续不断的箭雨，削弱敌人，破坏敌人的阵型。公元前53年的卡雷战役中，密集的罗马步兵在帕提亚弓手的压力下被迫分散，于是他们的铁甲重骑兵趁机冲锋，将四倍于他们兵力的、自信满满的罗马军队击溃。
+				罗马执政官是共和国的政治家，也是一等一的将军。每年由元老院选出两位执政官，他们彼此拥有否决对方的权力，罗马人用这种体系防止独裁和滥用权力。在内政上，执政官领导元老院，两位执政官每月一换。涉及军事时，执政官在罗马城之外对所率的军队有着绝对的权力。当由两位执政官共同领导军队时，如公元前216年坎尼会战中，执政官卢基乌斯·保卢斯与盖乌斯·瓦罗必须轮流掌权对付汉尼拔，这带来了灾难性的后果。因为有绝对的领导权，所以执政官要负担一切责任，战败也就完全是掌权的执政官的过错。惩罚十分严厉。在前154至152年的努曼提亚战争中，盖乌斯·曼基努斯的懦弱使他的军团被俘。尽管当时还是一个掌兵官的提比略·格拉古签订了释放协议，元老院还是拒不接受，并将曼基努斯送还给了敌人！即使事情最后成功，执政官也对他指挥下的行省、同盟、资源负有全部责任。当西庇阿从布匿战争的战场返回时，人民高呼他为大统帅，并予以凯旋式，授予其“非洲征服者”的头衔，但这仍不能使其免于加图力劝之下的元老院控诉其浪费金钱的罪名。			
 			</Text>
 		</Row>	
 
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_LIGHT_CAVALRY">
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENERAL_BODYGUARD">
 			<Text>龙旗麟铠长骑枪</Text>
 		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_LIGHT_CAVALRY_HELP">
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENERAL_BODYGUARD_HELP">
 			<Text>发起近战攻击前先进行一次弓箭扫荡，1格内敌方单位-15%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		<!-- **********************同盟军团*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI">
+			<Text>∏[COLOR_CYAN]同盟军团[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI_HELP">
+			<Text>
+				∏[COLOR_CYAN]同盟军团[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重步兵同盟单位，只能由β[COLOR_CYAN]将领卫队[ENDCOLOR]在盟友城邦境内征召。
+				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路才可以征召此单位。
+				[NEWLINE][ICON_BULLET]若论短兵相接，他们还未逢敌手：也许是有些自夸，但他们确是为荣耀而生。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_SOCII_HASTATI_TEXT">
+			<Text>
+				尽管同盟军部队在装备和风格方面差异极大，但从迦米拉军事改革到波里庇乌斯军事改革这段时间，同盟军还是采用的罗马青年兵式的装备。青年军每人装备一把短剑，两支标枪，而他们盾牌的灵感来自于伊特鲁里亚、萨莫奈及希腊。同盟军来自意大利半岛的部落与城邦，几乎占了罗马军队的一半。在战场上，他们通常被指挥官分成两队，分列军团两翼。在公元前90-88年的同盟战争中，同盟军举兵反抗罗马并非为争取独立，而是要获取罗马公民身份。那些没有参与叛乱的人都获得了公民身份，而在战事结束后，整个意大利半岛的人们都获得了罗马公民身份。
+				[NEWLINE]其中的高级士兵侍从罗马的拉丁或意大利盟国中选拔而出，经常要执行危险或重要的任务。同盟精锐步兵是由盟国军队中最强的五分之一的步兵组成，处在每一列的开头，充当斥候的角色，偶尔也会充当守卫的角色。同盟军队来自意大利半岛的城邦和部落，在战争中，他们的军事贡献未必比罗马少。必须服此兵役的是放弃了在殖民地、罗马的拉丁邻国及伊特鲁里亚、萨莫奈人部落罗马公民身份的罗马人。他们为罗马军队提供了一半的兵力，作为回报，他们不必纳贡，同时可以获得一半的战利品。
+			</Text>
+		</Row>	
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI">
+			<Text>罗马公民权</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI_HELP">
+			<Text></Text>
 		</Row>
 		<!-- **********************辅助克里特弓箭手*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_BOWMAN">
@@ -933,9 +969,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_BOWMAN_HELP">
 			<Text>
-				∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军弓箭辅助单位，死亡时不会造成人口损失。
+				∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军弓箭辅助单位，只能由β[COLOR_CYAN]将领卫队[ENDCOLOR]在盟友城邦境内征召，死亡时不会造成人口损失。
 				[NEWLINE][ICON_BULLET]相比于普通的弓箭手拥有更高的远程和近战战斗力，对陆军单位+50%[ICON_STRENGTH]战斗力，射程+1，每回合攻击次数+1，远程防御攻击时+50%[ICON_STRENGTH]战斗力（持盾）。
-				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路才可以招募此单位。
+				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路才可以征召此单位。
 				[NEWLINE][ICON_BULLET]给克里特人一张弓，他就会为罗马而战。
 			</Text>
 		</Row>
@@ -952,10 +988,10 @@
 			<Text>对陆军单位+50%[ICON_STRENGTH]战斗力，射程+1，每回合攻击次数+1，远程防御攻击时+50%[ICON_STRENGTH]战斗力（持盾）。</Text>
 		</Row>
 		<!-- **********************辅助西徐亚弓骑兵*********************** -->
-		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_MOUNTEDXBOW">
+		<!-- <Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI">
 			<Text>∏[COLOR_CYAN]辅助西徐亚弓骑兵[ENDCOLOR]</Text>
 		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_MOUNTEDXBOW_HELP">
+		<Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI_HELP">
 			<Text>
 				∏[COLOR_CYAN]辅助西徐亚弓骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军轻骑兵辅助单位，死亡时不会造成人口损失。
 				[NEWLINE][ICON_BULLET]每回合攻击次数+2，对残血单位+150%[ICON_STRENGTH]战斗力。
@@ -963,17 +999,65 @@
 				[NEWLINE][ICON_BULLET]引弦为罗马人射倒敌人的西徐亚人才是有价值的战士。
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_VASSAL_MOUNTEDXBOW_TEXT">
+		<Row Tag="TXT_KEY_CIV5_SPUE_SOCII_HASTATI_TEXT">
 			<Text>
 				草原上的许多部落有着丰富的文化，根本不是无知愚昧的野蛮人。他们住在从里海一直到黑海北岸的大片地区；希腊人称他们为“西徐亚人”，波斯人则称其为“塞种人”。其中西边的一群也被叫做萨尔马提亚人。穿着裤子使他们与希腊人认为的野蛮人相距甚远，更不要提他们高高的尖帽了。然而他们全都是出色的骑手，精于使用西徐亚式的复合反曲弓，近战时也颇具威力。他们使用的一种战斧，一面是锋刃一面是镐，可以刺穿大部分铠甲。出土的陪葬品显示，一些部落的女性也同男性一样好战，并有可能亲临战阵。这很可能是希腊神话中亚马逊女战士的起源。			
 			</Text>
 		</Row>	
 
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_MOUNTEDXBOW">
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI">
 			<Text>居鲁士大敌</Text>
 		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_MOUNTEDXBOW_HELP">
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI_HELP">
 			<Text>每回合攻击次数+2，对残血单位+150%[ICON_STRENGTH]战斗力。</Text>
+		</Row> -->
+		<!-- **********************近卫甲骑兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD">
+			<Text>β[COLOR_CYAN]近卫甲骑兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_ELITE">
+			<Text>β[COLOR_CYAN]执政甲骑兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP">
+			<Text>
+				β[COLOR_CYAN]近卫甲骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重骑兵统帅单位，可以远程和近战攻击的双重重骑兵。
+				[NEWLINE][ICON_BULLET]位于城邦境内时可以征召∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]位于岸边时可以建造[COLOR_CYAN]海洋之火[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
+				[NEWLINE][ICON_BULLET]+1攻击次数，每次远程攻击增加2移动力，每次近战攻击回复20血量。
+				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]完成罗马远征军训练计划后可以进行精英化改造：[COLOR_YIELD_GOLD]执政甲骑兵[ENDCOLOR]。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_BUCELLARII_GUARD_TEXT">
+			<Text>
+				“布塞拉里亚”（bucellarii，即私兵、部曲，本意是“吃饼干的人”）的出现是国家无力维系军队的结果，只不过雇佣的蛮盟是国家，而雇佣私兵的则是个人。因为私兵是受雇佣的小规模个人部队，所以他们的装备通常要好很多，训练也很充分，战斗力明显要优于正规军，因此到了四世纪后期和五世纪，雇佣私兵也开始大行其道。
+				[NEWLINE]通常私兵的雇主是将军们、民政高官以及富有的地主，因为薪资高昂，这些部曲的规模都很小，在内战期间私兵最多可以达到数千人的规模。不过随着时间的流逝，装备精良的私兵也逐渐成为了部队的中流砥柱，著名的私兵雇主有西罗马的斯提里科以及东罗马的贝利萨留。贝利萨留部下的私兵数量最多曾达到7000人（哥特战争时期）不过在这个时代，“Bucellarii”这个词也已经开始在广义上意味着装备精良的骑兵了。
+			</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD">
+			<Text>罗马远征军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]位于城邦境内时可以征召∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]位于岸边时可以建造∏[COLOR_CYAN]海洋之火[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
+				[NEWLINE][ICON_BULLET]+1攻击次数，每次远程攻击增加2移动力，每次近战攻击回复15血量。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_ELITE">
+			<Text>最后的罗马人</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_ELITE_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]位于城邦境内时可以征召∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]位于岸边时可以建造∏[COLOR_CYAN]海洋之火[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
+				[NEWLINE][ICON_BULLET]+1攻击次数，每次远程攻击增加2移动力，每次近战攻击回复15血量。
+			</Text>
 		</Row>
 		<!-- **********************辅助塞尔维亚重步兵*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_QIANG_SPEARMAN">
@@ -997,29 +1081,6 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_QIANG_SPEARMAN_HELP">
 			<Text>防御时+60%[ICON_STRENGTH]战斗力。</Text>
-		</Row>
-		<!-- **********************辅助亚美尼亚甲骑兵*********************** -->
-		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_ARMORED_CAVALRY">
-			<Text>∏[COLOR_CYAN]辅助亚美尼亚甲骑兵[ENDCOLOR]</Text>
-		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_ARMORED_CAVALRY_HELP">
-			<Text>
-				∏[COLOR_CYAN]辅助亚美尼亚甲骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重骑兵辅助单位，死亡时不会造成人口损失。
-				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
-				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
-			</Text>
-		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_VASSAL_ARMORED_CAVALRY_TEXT">
-			<Text>
-				在12—13世纪，拜占庭帝国从奇里奇亚地区征发的亚美尼亚人仆从军团有时会与拜占庭人在北叙利亚和安纳托利亚共同作战。例如尼西亚的塞奥多一世1214年征发的亚美尼亚部队。12世纪的奇里奇亚军团与拜占庭本土部队几乎难以区分，但在13世纪以后他们的装备日渐受附近的十字军公国影响而西化了。  
-			</Text>
-		</Row>
-		
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_ARMORED_CAVALRY">
-			<Text>阿扎塔夫雷</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_ARMORED_CAVALRY_HELP">
-			<Text>荒漠地形移动力翻倍，夹击加成+100%。</Text>
 		</Row>
 		<!-- **********************辅助阿兰轻骑兵*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_ALAN_CAVALRY">
@@ -1047,11 +1108,11 @@
 
 		<!-- **********************宝船旗舰*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_TREASURE_FLEET">
-			<Text>★[COLOR_CYAN]宝船旗舰[ENDCOLOR]</Text>
+			<Text>β[COLOR_CYAN]宝船旗舰[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_TREASURE_FLEET_HELP">
 			<Text>
-				★[COLOR_CYAN]宝船旗舰[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的统帅单位，可以花费一定的[ICON_GOLD]金钱召集∏[COLOR_CYAN]同盟征召护卫舰[ENDCOLOR]和∏[COLOR_CYAN]神机营[ENDCOLOR]助战。
+				β[COLOR_CYAN]宝船旗舰[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的统帅单位，可以花费一定的[ICON_GOLD]金钱召集∏[COLOR_CYAN]同盟征召护卫舰[ENDCOLOR]和∏[COLOR_CYAN]神机营[ENDCOLOR]助战。
 				[NEWLINE][ICON_BULLET]单位自带军团晋升，且可以攻击后移动。
 				[NEWLINE][ICON_BULLET]只有选择了神州天子之道才可以招募此单位
 			</Text>
@@ -1158,7 +1219,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_PATH_AUGUSTUS_HELP">
 			<Text>
-				选择[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]将使您能够建造古典时期的辅助单位。
+				选择[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]将使您能够建造古典时期的统帅和辅助单位。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PATH_BASELIUS_CAP">
@@ -1166,7 +1227,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_PATH_BASELIUS_HELP">
 			<Text>
-				选择[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]将使您能够建造中古时期的辅助单位。
+				选择[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]将使您能够建造中古时期的统帅和辅助单位。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PATH_EMPEROR_CAP">

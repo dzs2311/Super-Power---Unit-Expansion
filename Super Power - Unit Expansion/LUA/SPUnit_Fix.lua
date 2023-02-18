@@ -164,18 +164,18 @@ for _, mod in pairs(Modding.GetActivatedMods()) do
 	end
 end
 
-function SPExInfComBat(iPlayerID, iUnitID)
-	if  isSPEx 
-	and Players[ iPlayerID ] and Players[ iPlayerID ]:IsAlive()
-	and Players[iPlayerID ]:GetUnitByID( iUnitID )
-	and not Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDead()
-	and not Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDelayedDeath()
-	and Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_GUNPOWDER_INFANTRY_COMBAT"].ID)
-	then
-		Players[ iPlayerID ]:GetUnitByID( iUnitID ):SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_GUNPOWDER_INFANTRY_COMBAT_APPEND"].ID, true);
-	end
-end
-Events.SerialEventUnitCreated.Add( SPExInfComBat );
+-- function SPExInfComBat(iPlayerID, iUnitID)
+-- 	if  isSPEx 
+-- 	and Players[ iPlayerID ] and Players[ iPlayerID ]:IsAlive()
+-- 	and Players[iPlayerID ]:GetUnitByID( iUnitID )
+-- 	and not Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDead()
+-- 	and not Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDelayedDeath()
+-- 	and Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_GUNPOWDER_INFANTRY_COMBAT"].ID)
+-- 	then
+-- 		Players[ iPlayerID ]:GetUnitByID( iUnitID ):SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_GUNPOWDER_INFANTRY_COMBAT_APPEND"].ID, true);
+-- 	end
+-- end
+-- Events.SerialEventUnitCreated.Add( SPExInfComBat );
 --------------------------------------------------------------
 -- 飞机在境内且不位于城市时可进行升级
 --------------------------------------------------------------
@@ -279,23 +279,23 @@ function SPUE_OnAdoptPolicyBranch( playerID, policyID )
 	and not player:HasPolicy(GameInfo.Policies["POLICY_SPUE_ORDER"].ID)
 	then
 		
-		player:SetNumFreePolicies(1)
-		player:SetNumFreePolicies(0)
-		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_ORDER"].ID, true)	
+		-- player:SetNumFreePolicies(1)
+		-- player:SetNumFreePolicies(0)
+		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_ORDER"].ID, true, true)	
 		return
 	elseif policy.PolicyBranchType == GameInfo.PolicyBranchTypes["POLICY_BRANCH_FREEDOM"].Type 
 	and not player:HasPolicy(GameInfo.Policies["POLICY_SPUE_FREEDOM"].ID)
 	then
-		player:SetNumFreePolicies(1)
-		player:SetNumFreePolicies(0)
-		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_FREEDOM"].ID, true)	
+		-- player:SetNumFreePolicies(1)
+		-- player:SetNumFreePolicies(0)
+		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_FREEDOM"].ID, true, true)	
 		return
 	elseif policy.PolicyBranchType == GameInfo.PolicyBranchTypes["POLICY_BRANCH_AUTOCRACY"].Type 
 	and not player:HasPolicy(GameInfo.Policies["POLICY_SPUE_AUTOCRACY"].ID)
 	then
-		player:SetNumFreePolicies(1)
-		player:SetNumFreePolicies(0)
-		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_AUTOCRACY"].ID, true)	
+		-- player:SetNumFreePolicies(1)
+		-- player:SetNumFreePolicies(0)
+		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_AUTOCRACY"].ID, true, true)	
 		return
 	end
 
@@ -1069,9 +1069,9 @@ function SPUE_UnitSetXY(playerID, unitID)
 			player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_PRAETORIAN"].ID, false)
 			if plot:GetPlotCity() and player:GetCityByID( plot:GetPlotCity() ):IsCapital() then
 				-- 首都
-				player:SetNumFreePolicies(1)
-				player:SetNumFreePolicies(0)
-				player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_PRAETORIAN"].ID, true)
+				-- player:SetNumFreePolicies(1)
+				-- player:SetNumFreePolicies(0)
+				player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_PRAETORIAN"].ID, true, true)
 			elseif 
 			not ( (plot:GetPlotCity()) or ( plot:GetPlotCity() and player:GetCityByID( plot:GetPlotCity() ):IsCapital() ) )
 			and player:HasPolicy(GameInfo.Policies["POLICY_SPUE_PRAETORIAN"].ID) 
@@ -3223,16 +3223,16 @@ function SetPolicyUnitsName( iPlayer, iOldUnit,  iNewUnit)
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_KNIGHT_TEMPLAR");	-- 虔信：医院骑士
 
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VASSAL_LIGHT_CAVALRY"].ID) then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_VASSAL_LIGHT_CAVALRY");	-- 赞助：萨尔玛提亚
+	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_GENERAL_BODYGUARD"].ID) then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD");	-- 赞助：将领卫队
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VASSAL_BOWMAN"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_VASSAL_BOWMAN");	-- 赞助：克里特岛弓箭手
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VASSAL_MOUNTEDXBOW"].ID) then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_VASSAL_MOUNTEDXBOW");	-- 赞助：西徐亚弓骑兵
+	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SOCII_HASTATI"].ID) then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_SOCII_HASTATI");	-- 赞助：同盟军团
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_QIANG_SPEARMAN"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_QIANG_SPEARMAN");	-- 赞助：塞尔维亚重步兵
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VASSAL_ARMORED_CAVALRY"].ID) then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_VASSAL_ARMORED_CAVALRY");	-- 赞助：亚美尼亚甲骑兵
+	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID) then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD");	-- 赞助：亚美尼亚甲骑兵
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VASSAL_ALAN_CAVALRY"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_VASSAL_ALAN_CAVALRY");	-- 赞助：阿兰轻骑兵
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TREASURE_FLEET"].ID) then
