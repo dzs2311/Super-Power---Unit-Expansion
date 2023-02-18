@@ -16,12 +16,12 @@ ContextPtr:SetHide(true);
 -- Variables
 --==========================================================================================
 local g_PatronageUnitList	=   {GameInfoTypes["UNIT_SPUE_GENERAL_BODYGUARD"], 
+								 GameInfoTypes["UNIT_SPUE_SOCII_HASTATI"],
 						     	 GameInfoTypes["UNIT_SPUE_VASSAL_BOWMAN"],
-                             	 GameInfoTypes["UNIT_SPUE_SOCII_HASTATI"],
-
+                             	 
 								 GameInfoTypes["UNIT_SPUE_BUCELLARII_GUARD"],
+								 GameInfoTypes["UNIT_SPUE_OCEAN_FIRE"],
 						     	 GameInfoTypes["UNIT_SPUE_QIANG_SPEARMAN"],
-						     	 GameInfoTypes["UNIT_SPUE_VASSAL_ALAN_CAVALRY"],
 
 						     	 GameInfoTypes["UNIT_SPUE_TREASURE_FLEET"],
 						     	 GameInfoTypes["UNIT_SPUE_CORVETTE"],

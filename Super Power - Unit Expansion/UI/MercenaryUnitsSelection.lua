@@ -174,11 +174,7 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 	end
 
 	if(GameInfo.PolicyBranchTypes["POLICY_BRANCH_COMMERCE"].ID == policybranchID) then
-		if not player:IsHuman() then
-			return
-		else
-			showDialog()
-		end
+		showDialog()
 	end
 
 
@@ -195,11 +191,12 @@ if isSPEx then
     	end
 
 		if not player:IsHuman() then
+			OnAIDoTurn( playerID )
 			return
 		end
 
 		if player:IsEverAlive() then
-			local pEraType = pPlayer:GetCurrentEra();
+			local pEraType = player:GetCurrentEra();
 			local pEraID = GameInfo.Eras[pEraType].ID;
 			local flagMercenaryUnit = true
 

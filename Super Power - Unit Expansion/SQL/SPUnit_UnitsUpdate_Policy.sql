@@ -1512,50 +1512,50 @@ INSERT INTO Unit_ResourceQuantityRequirements
 SELECT	'UNIT_SPUE_BUCELLARII_GUARD',	 ResourceType, Cost
 FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_KNIGHT';
 --==========================================================================================================================	
--- 辅助阿兰轻骑兵 -- 赞助中古辅助单位
+-- 海洋之火 -- 赞助中古辅助单位
 --==========================================================================================================================
 INSERT INTO UnitClasses
-		(Type,										Description,									DefaultUnit,						MaxPlayerInstances)
-VALUES	('UNITCLASS_SPUE_VASSAL_ALAN_CAVALRY',		'TXT_KEY_UNIT_SPUE_VASSAL_ALAN_CAVALRY',		'UNIT_SPUE_VASSAL_ALAN_CAVALRY',	2);
+		(Type,								Description,						DefaultUnit,			MaxPlayerInstances)
+VALUES	('UNITCLASS_SPUE_OCEAN_FIRE',		'TXT_KEY_UNIT_SPUE_OCEAN_FIRE',		'UNIT_SPUE_OCEAN_FIRE',	2);
 
 INSERT INTO Units 	
 		(Type, 								Class, 									PrereqTech, 	PolicyType,				RangedCombat,	Combat,		Range, ExtraMaintenanceCost,						Special, Cost,	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,									Strategy,	Help,											Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 							UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_VASSAL_ALAN_CAVALRY', 	'UNITCLASS_SPUE_VASSAL_ALAN_CAVALRY', 	PrereqTech, 	'POLICY_SPUE_BASELIUS', RangedCombat,	Combat,	 	Range, ExtraMaintenanceCost + ExtraMaintenanceCost,	Special, Cost, 	Cost, 		HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_VASSAL_ALAN_CAVALRY',	'TXT_KEY_CIV5_SPUE_VASSAL_ALAN_CAVALRY_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_VASSAL_ALAN_CAVALRY_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_VASSAL_ALAN_CAVALRY',	0,					'SPUE_ALAN_FLAG_ATLAS',		59,				'SPUE_UNITS_ATLAS',	1
+SELECT	'UNIT_SPUE_OCEAN_FIRE', 	'UNITCLASS_SPUE_OCEAN_FIRE', 	PrereqTech, 	'POLICY_SPUE_BASELIUS', RangedCombat,	Combat,	 	Range, ExtraMaintenanceCost + ExtraMaintenanceCost,	Special, Cost, 	Cost, 		HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_OCEAN_FIRE',	'TXT_KEY_CIV5_SPUE_OCEAN_FIRE_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_OCEAN_FIRE_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_OCEAN_FIRE',	0,					'SPUE_ALAN_FLAG_ATLAS',		59,				'SPUE_UNITS_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_SPUE_MOUNTEDXBOW';
 
 INSERT INTO Unit_ClassUpgrades 	
-		(UnitType, 							UnitClassType)
-VALUES	('UNIT_SPUE_VASSAL_ALAN_CAVALRY',	'UNITCLASS_BOMBARD');
+		(UnitType, 					UnitClassType)
+VALUES	('UNIT_SPUE_OCEAN_FIRE',	'UNITCLASS_BOMBARD');
 		
 INSERT INTO Unit_FreePromotions
-		(UnitType, 							PromotionType)
-VALUES	('UNIT_SPUE_VASSAL_ALAN_CAVALRY', 	'PROMOTION_HITANDRUN'),
-		('UNIT_SPUE_VASSAL_ALAN_CAVALRY', 	'PROMOTION_SPUE_VASSAL_ALAN_CAVALRY'),
-		('UNIT_SPUE_VASSAL_ALAN_CAVALRY', 	'PROMOTION_NO_CASUALTIES');
+		(UnitType, 					PromotionType)
+VALUES	('UNIT_SPUE_OCEAN_FIRE', 	'PROMOTION_HITANDRUN'),
+		('UNIT_SPUE_OCEAN_FIRE', 	'PROMOTION_SPUE_OCEAN_FIRE'),
+		('UNIT_SPUE_OCEAN_FIRE', 	'PROMOTION_NO_CASUALTIES');
 		
 INSERT INTO Unit_BuildingClassRequireds 	
-		(UnitType, 				 	 		BuildingClassType)
-SELECT	'UNIT_SPUE_VASSAL_ALAN_CAVALRY',	BuildingClassType
+		(UnitType, 				BuildingClassType)
+SELECT	'UNIT_SPUE_OCEAN_FIRE',	BuildingClassType
 FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_MOUNTEDXBOW';
 
 INSERT INTO UnitGameplay2DScripts 	
-		(UnitType, 				    	  	SelectionSound, FirstSelectionSound)
-SELECT	'UNIT_SPUE_VASSAL_ALAN_CAVALRY', 	SelectionSound, FirstSelectionSound
+		(UnitType, 				    SelectionSound, FirstSelectionSound)
+SELECT	'UNIT_SPUE_OCEAN_FIRE', 	SelectionSound, FirstSelectionSound
 FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_SPUE_MOUNTEDXBOW';
 
 INSERT INTO Unit_AITypes 	
-		(UnitType, 				 	  		UnitAIType)
-SELECT	'UNIT_SPUE_VASSAL_ALAN_CAVALRY',   	UnitAIType
+		(UnitType, 				 	UnitAIType)
+SELECT	'UNIT_SPUE_OCEAN_FIRE',   	UnitAIType
 FROM Unit_AITypes WHERE UnitType = 'UNIT_SPUE_MOUNTEDXBOW';
 
 INSERT INTO Unit_Flavors 	
-		(UnitType, 						   	FlavorType, Flavor)
-SELECT	'UNIT_SPUE_VASSAL_ALAN_CAVALRY',  	FlavorType, Flavor
+		(UnitType, 					FlavorType, Flavor)
+SELECT	'UNIT_SPUE_OCEAN_FIRE',  	FlavorType, Flavor
 FROM Unit_Flavors WHERE UnitType = 'UNIT_SPUE_MOUNTEDXBOW';	
 
 INSERT INTO Unit_ResourceQuantityRequirements 	
-		(UnitType, 				 	 		 	ResourceType, Cost)
-SELECT	'UNIT_SPUE_VASSAL_ALAN_CAVALRY',	 	ResourceType, Cost
+		(UnitType, 				 	ResourceType, Cost)
+SELECT	'UNIT_SPUE_OCEAN_FIRE',	 	ResourceType, Cost
 FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_MOUNTEDXBOW';
 --==========================================================================================================================	
 -- 神州天子之道

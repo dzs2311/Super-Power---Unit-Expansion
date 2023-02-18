@@ -2833,9 +2833,8 @@ SELECT	'ART_DEF_UNIT_SPUE_SOCII_HASTATI', 	DamageStates, 	Formation
 FROM ArtDefine_UnitInfos WHERE	Type = 'ART_DEF_UNIT_SWORDSMAN';
 
 INSERT INTO ArtDefine_UnitInfoMemberInfos 	
-		(UnitInfoType,						UnitMemberInfoType,							NumMembers)
-SELECT	'ART_DEF_UNIT_SPUE_SOCII_HASTATI', 	'ART_DEF_UNIT_MEMBER_SPUE_SOCII_HASTATI', 	12
-FROM ArtDefine_UnitInfoMemberInfos WHERE UnitInfoType = 'ART_DEF_UNIT_SWORDSMAN';
+		(UnitInfoType,							UnitMemberInfoType,							NumMembers)
+VALUES	('ART_DEF_UNIT_SPUE_SOCII_HASTATI', 	'ART_DEF_UNIT_MEMBER_SPUE_SOCII_HASTATI', 	12);
 
 INSERT INTO ArtDefine_UnitMemberCombats 
 		(UnitMemberType,							EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
@@ -2917,35 +2916,35 @@ INSERT INTO ArtDefine_StrategicView
 		(StrategicViewType, 							TileType,		Asset)
 VALUES	('ART_DEF_UNIT_SPUE_BUCELLARII_GUARD',	'Unit', 		'SV_SPUE_Cataphract.dds');
 ------------------------------------------------------------------------------------------------------------------------
---赞助：辅助阿兰轻骑兵--
+--赞助：海洋之火--
 ------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ArtDefine_UnitInfos 
 		(Type, 										DamageStates,	Formation)
-SELECT	'ART_DEF_UNIT_SPUE_VASSAL_ALAN_CAVALRY',	DamageStates, 	Formation
+SELECT	'ART_DEF_UNIT_SPUE_OCEAN_FIRE',	DamageStates, 	Formation
 FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_KNIGHT';
 
 INSERT INTO ArtDefine_UnitInfoMemberInfos 	
 		(UnitInfoType,									UnitMemberInfoType,									NumMembers)
-VALUES	('ART_DEF_UNIT_SPUE_VASSAL_ALAN_CAVALRY',		'ART_DEF_UNIT_MEMBER_SPUE_VASSAL_ALAN_CAVALRY',	5);
+VALUES	('ART_DEF_UNIT_SPUE_OCEAN_FIRE',		'ART_DEF_UNIT_MEMBER_SPUE_OCEAN_FIRE',	5);
 
 INSERT INTO ArtDefine_UnitMemberCombats 
 		(UnitMemberType,								EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
-SELECT	'ART_DEF_UNIT_MEMBER_SPUE_VASSAL_ALAN_CAVALRY',	EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_OCEAN_FIRE',	EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation
 FROM ArtDefine_UnitMemberCombats WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_KNIGHT';
 
 INSERT INTO ArtDefine_UnitMemberCombatWeapons	
 		(UnitMemberType,								"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag)
-SELECT	'ART_DEF_UNIT_MEMBER_SPUE_VASSAL_ALAN_CAVALRY',	"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_OCEAN_FIRE',	"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag
 FROM ArtDefine_UnitMemberCombatWeapons WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_KNIGHT';
 
 INSERT INTO ArtDefine_UnitMemberInfos 	
 		(Type, 											Scale,	ZOffset, Domain, Model, 					MaterialTypeTag, MaterialTypeSoundOverrideTag)
-SELECT	'ART_DEF_UNIT_MEMBER_SPUE_VASSAL_ALAN_CAVALRY',	Scale,	ZOffset, Domain, 'BatasHorseman.fxsxml',	MaterialTypeTag, MaterialTypeSoundOverrideTag
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_OCEAN_FIRE',	Scale,	ZOffset, Domain, 'BatasHorseman.fxsxml',	MaterialTypeTag, MaterialTypeSoundOverrideTag
 FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_KNIGHT';
 
 INSERT INTO ArtDefine_StrategicView 
 		(StrategicViewType, 							TileType,		Asset)
-VALUES	('ART_DEF_UNIT_SPUE_VASSAL_ALAN_CAVALRY',		'Unit', 		'SV_SPUE_Alan.dds');
+VALUES	('ART_DEF_UNIT_SPUE_OCEAN_FIRE',		'Unit', 		'SV_SPUE_Alan.dds');
 ------------------------------------------------------------------------------------------------------------------------
 --赞助：乌兰骑兵--
 ------------------------------------------------------------------------------------------------------------------------

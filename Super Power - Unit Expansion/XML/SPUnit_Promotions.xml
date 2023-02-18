@@ -508,7 +508,7 @@
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_QIANG_SPEARMAN</PediaEntry>
 		</Row>
 		<Row>
-			<!--亚美尼亚甲骑兵：阿扎塔夫雷-->
+			<!--近卫甲骑兵：阿扎塔夫雷-->
 			<Type>PROMOTION_SPUE_BUCELLARII_GUARD</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_HELP</Help>
@@ -523,10 +523,10 @@
 		</Row>
 		
 		<Row>
-			<!--阿兰轻骑兵："东方最好的骑兵"-->
-			<Type>PROMOTION_SPUE_VASSAL_ALAN_CAVALRY</Type>
-			<Description>TXT_KEY_PROMOTION_SPUE_VASSAL_ALAN_CAVALRY</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_VASSAL_ALAN_CAVALRY_HELP</Help>
+			<!--海洋之火：罗马火-->
+			<Type>PROMOTION_SPUE_OCEAN_FIRE</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<ExtraAttacks>1</ExtraAttacks>
@@ -534,7 +534,7 @@
 			<PortraitIndex>59</PortraitIndex>
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_SPUE_VASSAL_ALAN_CAVALRY</PediaEntry>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE</PediaEntry>
 		</Row>
 		<Row>
 			<!--宝船旗舰：西洋-->
