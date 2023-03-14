@@ -48,8 +48,9 @@
 			<Text>
 				[COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]是[ICON_IDEOLOGY_ORDER]秩序意识形态的精英单位，需要开启[ICON_IDEOLOGY_ORDER][ICON_CULTURE][COLOR_MAGENTA]秩序意识形态[ENDCOLOR]并完成先进战舰及高超声速反舰导弹研究计划才可以建造；
 				[NEWLINE][ICON_BULLET][COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]不受单位克制关系影响，拥有以下能力：
-				[NEWLINE][ICON_BULLET]巡天四面阵：防空范围10，拦截敌方飞机时+150%[ICON_STRENGTH]战斗力，对敌方空军单位+150%[ICON_STRENGTH]战斗力，每回合+10[COLOR_POSITIVE_TEXT]拦截次数[ENDCOLOR]，2格内的舰载机和陆基空优单位[COLOR_POSITIVE_TEXT]执行空中拦截任务[ENDCOLOR]时[ICON_STRENGTH]战斗力+150%；
-				[NEWLINE][ICON_BULLET]北斗引星舰：解锁新的意识形态政策或单位晋升时装载[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]，装载后视野+20，射程+10，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害，攻击完成后消耗[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]巡天四面：防空范围10，拦截敌方飞机时+150%[ICON_STRENGTH]战斗力，对敌方空军单位+150%[ICON_STRENGTH]战斗力，每回合+10[COLOR_POSITIVE_TEXT]拦截次数[ENDCOLOR]，2格内的舰载机和陆基空优单位[COLOR_POSITIVE_TEXT]执行空中拦截任务[ENDCOLOR]时[ICON_STRENGTH]战斗力+150%。
+				[NEWLINE][ICON_BULLET]北斗引星：解锁新的意识形态政策或单位晋升时装载[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]，装载后视野+30，射程+20，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害，攻击完成后消耗[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]天穹之剑：可以建造特殊单位[COLOR_YIELD_GOLD]巡天炮[ENDCOLOR]。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_ORDER_SUPER_055_TEXT">
@@ -65,7 +66,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_HELP">
 			<Text>
 				[NEWLINE][ICON_BULLET]巡天四面阵：拦截敌方飞机时+150%[ICON_STRENGTH]战斗力，对敌方空军单位+150%[ICON_STRENGTH]战斗力，每回合+10[COLOR_POSITIVE_TEXT]拦截次数[ENDCOLOR]，2格内的舰载机和陆基空优单位[COLOR_POSITIVE_TEXT]执行空中拦截任务[ENDCOLOR]时[ICON_STRENGTH]战斗力+150%；
-				[NEWLINE][ICON_BULLET]北斗引星舰：解锁新的意识形态政策或单位晋升时装载[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]，装载后视野+20，射程+15，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害，攻击完成后消耗[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]北斗引星舰：解锁新的意识形态政策或单位晋升时装载[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]，装载后视野+30，射程+20，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害，攻击完成后消耗[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]。
 			</Text>
 		</Row>
 

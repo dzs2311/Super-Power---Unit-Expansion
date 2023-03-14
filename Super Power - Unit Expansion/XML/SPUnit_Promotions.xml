@@ -649,8 +649,8 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
-			<RangeChange>15</RangeChange>
-			<VisibilityChange>20</VisibilityChange>
+			<RangeChange>20</RangeChange>
+			<VisibilityChange>30</VisibilityChange>
 			<PortraitIndex>2</PortraitIndex>
 			<IconAtlas>promoVP_atlas_02</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>

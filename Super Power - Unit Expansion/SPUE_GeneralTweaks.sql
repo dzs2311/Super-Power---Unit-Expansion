@@ -13,8 +13,8 @@ SPUE_GlobalUserSettings (
 -- Modular Features that can be toggled on and off and then back on.
 --------------------------------------------------------------------------
 /*
-  1 = Enabled (Default)
-  0 = Disabled
+	1 = Enabled (Default)
+	0 = Disabled
 */
 --------------------------------------------------------------------------
 INSERT INTO SPUE_GlobalUserSettings
@@ -40,9 +40,9 @@ UPDATE Units SET RangedPillage = 1 WHERE Class IN ('UNITCLASS_SPUE_SSPRIVATEER')
 --==========================================================================================================================	
 CREATE TABLE IF NOT EXISTS 
 UnitPromotions_PromotionModifiers (
-    `PromotionType` text not null,
-    `OtherPromotionType` text not null,
-    `Modifier` integer default 0 not null,
-    `Attack` integer default 0 not null,
-    `Defense` integer default 0 not null
+		`PromotionType` text not null,
+		`OtherPromotionType` text not null,
+		`Modifier` integer default 0 not null,
+		`Attack` integer default 0 not null,
+		`Defense` integer default 0 not null
 );

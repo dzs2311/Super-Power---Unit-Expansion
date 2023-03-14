@@ -233,6 +233,7 @@
     <Folder Include="Art\Units\Elite\2A3\OBJECT261\" />
     <Folder Include="Art\Units\Elite\CV6EnterPrise\" />
     <Folder Include="Art\Units\Elite\EliteRider\" />
+    <Folder Include="Art\Units\Elite\IronPagoda" />
     <Folder Include="Art\Units\Elite\Spartan300" />
     <Folder Include="Art\Units\Elite\pzh2000\" />
     <Folder Include="Art\Units\Elite\Railgun_xship\" />
@@ -316,9 +317,17 @@
     <Folder Include="Art\Units\General\GuideMissileDelete" />
     <Folder Include="Art\Units\Policy\04-Patronage\Bashtnik\" />
     <Folder Include="Art\Units\Policy\04-Patronage\Longbowman_Greece\" />
+    <Folder Include="Art\Units\Policy\04-Patronage\OceanFire" />
     <Folder Include="Art\Units\Policy\04-Patronage\Rome" />
     <Folder Include="Art\Units\Policy\04-Patronage\Rome\Knight" />
     <Folder Include="Art\Units\Policy\04-Patronage\Rome\Triarii_Rome\" />
+    <Folder Include="Art\Units\Policy\06-Commerce\free_company\" />
+    <Folder Include="Art\Units\Policy\06-Commerce\Fune" />
+    <Folder Include="Art\Units\Policy\06-Commerce\Graphics_Maceman_modified\" />
+    <Folder Include="Art\Units\Policy\06-Commerce\ELMETI" />
+    <Folder Include="Art\Units\Policy\06-Commerce\Japan" />
+    <Folder Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\" />
+    <Folder Include="Art\Units\Policy\06-Commerce\RER_PIKE\" />
     <Folder Include="Art\Units\Policy\09-Freedom\HeliCarrier" />
     <Folder Include="Art\Units\Policy\09-Freedom\cgn9" />
     <Folder Include="Art\Units\Policy\09-Freedom\Supermarine_Spitfire_MK_V\" />
@@ -394,6 +403,22 @@
     <Folder Include="SQL" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Art\Flags\Flag_SPUE_Elmeti.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\Flag_SPUE_Fune.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\Flag_SPUE_JianSheng.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\Flag_Iron_Pagoda.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Flags\Flag_SPUE_CGN9.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -471,6 +496,10 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Flags\SPUE_ITUU_Flag.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\SPUE_OceanFire_Flag.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -930,6 +959,22 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\SV\SV_SPUE_Elmeti.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\SV_SPUE_Fune.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\SV_SPUE_JianSheng.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\SV_Iron_Pagoda.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\SV\SV_SPUE_Alan.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -966,6 +1011,10 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\SV\SV_SPUE_HeavyCavalry.dds.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
     <Content Include="Art\SV\SV_SPUE_IndependenceDragoon.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -979,6 +1028,10 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\SV\SV_SPUE_JUF.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\SV_SPUE_OceanFire.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -1299,6 +1352,42 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\Elite\EliteRider\Xuanjia_Elite.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Elite\IronPagoda\ep_horse_armour_02_a_base_colour.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Elite\IronPagoda\Jurchen_IronPagoda_black.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Elite\IronPagoda\Jurchen_IronPagoda_black.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Elite\IronPagoda\Jurchen_IronPagoda_Diff.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Elite\IronPagoda\Jurchen_IronPagoda_Sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Elite\IronPagoda\Knight_China_v2.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Elite\IronPagoda\Knight_China_v2_gloss.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Elite\IronPagoda\tiejiama_black.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Elite\IronPagoda\tiejiama_black_gloss.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -3430,6 +3519,22 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Units\Policy\04-Patronage\OceanFire\dromon_medieval_ship.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\04-Patronage\OceanFire\dromon_medieval_ship.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\04-Patronage\OceanFire\dromon_medieval_ship.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\04-Patronage\OceanFire\fx_triggers_dromon_medieval_ship.ftsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Units\Policy\04-Patronage\Rome\Knight\Knight_Rome.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -3570,6 +3675,30 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\ELMETI\elmeti_horse_diff.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\ELMETI\elmeti_horse_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\ELMETI\elmeti_knight.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\ELMETI\elmeti_knight.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\ELMETI\elmeti_rider_diff.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\ELMETI\elmeti_rider_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Units\Policy\06-Commerce\fire_ship\aoe3de_fireship.fxsxml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -3590,6 +3719,50 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\free_company\eng_kn.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\free_company\eng_kn_gloss.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\free_company\free_company.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\free_company\free_company.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\free_company\free_company.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\free_company\free_company_gloss.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\free_company\free_company_poleaxe.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\free_company\free_company_poleaxe.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\Fune\AOE3_Fune.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\Fune\AOE3_Fune.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\Fune\fune_c.%280,1,8,7%29.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Units\Policy\06-Commerce\GenXBow\SMAN_EU_GenoeseCrossbowman.fxsxml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -3603,6 +3776,22 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\Policy\06-Commerce\GenXBow\SMAN_EU_GenoeseCrossbowman_gloss.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\Graphics_Maceman_modified\Maceman.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\Graphics_Maceman_modified\Maceman.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\Graphics_Maceman_modified\Maceman_diff512.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\Graphics_Maceman_modified\Maceman_sref512.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -3635,6 +3824,54 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\Policy\06-Commerce\iron_troop\iron_troop_staff_phong2_gloss.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\Longswordsman_Japan.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\Longswordsman_Japan.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\Longswordsman_Japan.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\Longswordsman_Japan_gloss.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\Longswordsman_Japan_v2.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\Longswordsman_Japan_v2.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\RER_PIKE\pike_helm_diff.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\RER_PIKE\pike_helm_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\RER_PIKE\RER_PIKE.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\RER_PIKE\RER_PIKE.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\RER_PIKE\RER_PIKE_diff.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\RER_PIKE\RER_PIKE_sref.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>

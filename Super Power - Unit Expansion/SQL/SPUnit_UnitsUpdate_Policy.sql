@@ -115,8 +115,8 @@ INSERT INTO UnitClasses
 VALUES	('UNITCLASS_SPUE_KNIGHT_NEW',		'TXT_KEY_UNIT_SPUE_KNIGHT_NEW',		'UNIT_SPUE_KNIGHT_NEW',		1);
 
 INSERT INTO Units 	
-		(Type, 						Class, 							PrereqTech, PolicyType,			RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, Description,					Civilopedia,										Strategy,	Help,									Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 					UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_KNIGHT_NEW', 	'UNITCLASS_SPUE_KNIGHT_NEW',	PrereqTech, 'POLICY_LIBERTY',	RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_KNIGHT_NEW',	'TXT_KEY_CIVILOPEDIA_UNITS_MEDIEVAL_KNIGHT_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_KNIGHT_NEW_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_KNIGHT_NEW',	0,					'SPUE_KNKN_FLAG_ATLAS',	32,				'SPUE_UNITS_ATLAS',	1
+		(Type, 						Class, 							PrereqTech, 				PolicyType,			RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, Description,					Civilopedia,										Strategy,	Help,									Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 					UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
+SELECT	'UNIT_SPUE_KNIGHT_NEW', 	'UNITCLASS_SPUE_KNIGHT_NEW',	'TECH_HORSEBACK_RIDING', 	'POLICY_LIBERTY',	RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_KNIGHT_NEW',	'TXT_KEY_CIVILOPEDIA_UNITS_MEDIEVAL_KNIGHT_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_KNIGHT_NEW_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_KNIGHT_NEW',	0,					'SPUE_KNKN_FLAG_ATLAS',	32,				'SPUE_UNITS_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_KNIGHT';
 
 INSERT INTO Unit_ClassUpgrades 	
@@ -895,57 +895,57 @@ FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_CULVERIN';
 --==========================================================================================================================	
 -- 中古佣兵团 -- 商业解锁
 --==========================================================================================================================
--- INSERT INTO UnitClasses
--- 		(Type,								Description,						DefaultUnit,				MaxPlayerInstances)
--- VALUES	('UNITCLASS_SPUE_FCOMPANY',			'TXT_KEY_UNIT_SPUE_FCOMPANY',		'UNIT_SPUE_FCOMPANY',		4);
+INSERT INTO UnitClasses
+		(Type,								Description,						DefaultUnit,				MaxPlayerInstances)
+VALUES	('UNITCLASS_SPUE_FCOMPANY',			'TXT_KEY_UNIT_SPUE_FCOMPANY',		'UNIT_SPUE_FCOMPANY',		4);
 
--- INSERT INTO Units 	
--- 		(Type, 					Class, 						PrereqTech, PolicyType,				RangedCombat,	Combat,	  	Range, 	ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,					Civilopedia,						Strategy,	Help,								Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 					UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
--- SELECT	'UNIT_SPUE_FCOMPANY', 	'UNITCLASS_SPUE_FCOMPANY', 	PrereqTech, 'POLICY_SPUE_FCOMPANY',	0,				30,			0, 		ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_FCOMPANY',	'TXT_KEY_CIV5_SPUE_FCOMPANY_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_FCOMPANY_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_FCOMPANY',	13,					'SPUE_UNIT_FLAG_ATLAS',	16,				'SPUE_UNITS_ATLAS',	1
--- FROM Units WHERE Type = 'UNIT_GERMAN_LANDSKNECHT';
+INSERT INTO Units 	
+		(Type, 					Class, 						PrereqTech, PolicyType,				RangedCombat,	Combat,	  	Range, 	ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,					Civilopedia,						Strategy,	Help,								Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 					UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
+SELECT	'UNIT_SPUE_FCOMPANY', 	'UNITCLASS_SPUE_FCOMPANY', 	PrereqTech, 'POLICY_SPUE_FCOMPANY',	0,				30,			0, 		ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_FCOMPANY',	'TXT_KEY_CIV5_SPUE_FCOMPANY_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_FCOMPANY_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_FCOMPANY',	13,					'SPUE_UNIT_FLAG_ATLAS',	16,				'SPUE_UNITS_ATLAS',	1
+FROM Units WHERE Type = 'UNIT_GERMAN_LANDSKNECHT';
 
--- INSERT INTO Unit_ClassUpgrades 	
--- 		(UnitType, 					UnitClassType)
--- VALUES	('UNIT_SPUE_FCOMPANY',		'UNITCLASS_MUSKETMAN');
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 					UnitClassType)
+VALUES	('UNIT_SPUE_FCOMPANY',		'UNITCLASS_MUSKETMAN');
 
--- INSERT INTO Unit_FreePromotions
--- 		(UnitType, 					PromotionType)
--- VALUES	('UNIT_SPUE_FCOMPANY', 		'PROMOTION_INFANTRY_COMBAT'),
--- 		('UNIT_SPUE_FCOMPANY', 		'PROMOTION_NO_CASUALTIES');
+INSERT INTO Unit_FreePromotions
+		(UnitType, 					PromotionType)
+VALUES	('UNIT_SPUE_FCOMPANY', 		'PROMOTION_INFANTRY_COMBAT'),
+		('UNIT_SPUE_FCOMPANY', 		'PROMOTION_NO_CASUALTIES');
 
--- INSERT INTO Unit_BuildingClassRequireds 	
--- 		(UnitType, 					BuildingClassType)
--- SELECT	'UNIT_SPUE_FCOMPANY',		BuildingClassType
--- FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+INSERT INTO Unit_BuildingClassRequireds 	
+		(UnitType, 					BuildingClassType)
+SELECT	'UNIT_SPUE_FCOMPANY',		BuildingClassType
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 
--- INSERT INTO UnitGameplay2DScripts 	
--- 		(UnitType, 					SelectionSound, FirstSelectionSound)
--- SELECT	'UNIT_SPUE_FCOMPANY',		SelectionSound, FirstSelectionSound
--- FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+INSERT INTO UnitGameplay2DScripts 	
+		(UnitType, 					SelectionSound, FirstSelectionSound)
+SELECT	'UNIT_SPUE_FCOMPANY',		SelectionSound, FirstSelectionSound
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 
--- INSERT INTO Unit_AITypes 	
--- 		(UnitType, 					UnitAIType)
--- SELECT	'UNIT_SPUE_FCOMPANY',		UnitAIType
--- FROM Unit_AITypes WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+INSERT INTO Unit_AITypes 	
+		(UnitType, 					UnitAIType)
+SELECT	'UNIT_SPUE_FCOMPANY',		UnitAIType
+FROM Unit_AITypes WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 
--- INSERT INTO Unit_Flavors 	
--- 		(UnitType, 				   FlavorType, Flavor)
--- SELECT	'UNIT_SPUE_FCOMPANY',	   FlavorType, Flavor
--- FROM Unit_Flavors WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';	
+INSERT INTO Unit_Flavors 	
+		(UnitType, 				   FlavorType, Flavor)
+SELECT	'UNIT_SPUE_FCOMPANY',	   FlavorType, Flavor
+FROM Unit_Flavors WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';	
 
--- INSERT INTO Unit_ResourceQuantityRequirements 	
--- 		(UnitType, 				   ResourceType, Cost)
--- SELECT	'UNIT_SPUE_FCOMPANY',	   ResourceType, Cost
--- FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+INSERT INTO Unit_ResourceQuantityRequirements 	
+		(UnitType, 				   ResourceType, Cost)
+SELECT	'UNIT_SPUE_FCOMPANY',	   ResourceType, Cost
+FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
 
--- INSERT INTO Unit_UniqueNames	
--- 		(UnitType, 					UniqueName)
--- VALUES	('UNIT_SPUE_FCOMPANY',		'TXT_KEY_UNIT_SPUE_FCOMPANY_NAME1'),
--- 		('UNIT_SPUE_FCOMPANY',		'TXT_KEY_UNIT_SPUE_FCOMPANY_NAME2'),
--- 		('UNIT_SPUE_FCOMPANY',		'TXT_KEY_UNIT_SPUE_FCOMPANY_NAME3'),
--- 		('UNIT_SPUE_FCOMPANY',		'TXT_KEY_UNIT_SPUE_FCOMPANY_NAME4'),
--- 		('UNIT_SPUE_FCOMPANY',		'TXT_KEY_UNIT_SPUE_FCOMPANY_NAME5'),
--- 		('UNIT_SPUE_FCOMPANY',		'TXT_KEY_UNIT_SPUE_FCOMPANY_NAME6');
+INSERT INTO Unit_UniqueNames	
+		(UnitType, 					UniqueName)
+VALUES	('UNIT_SPUE_FCOMPANY',		'TXT_KEY_UNIT_SPUE_FCOMPANY_NAME1'),
+		('UNIT_SPUE_FCOMPANY',		'TXT_KEY_UNIT_SPUE_FCOMPANY_NAME2'),
+		('UNIT_SPUE_FCOMPANY',		'TXT_KEY_UNIT_SPUE_FCOMPANY_NAME3'),
+		('UNIT_SPUE_FCOMPANY',		'TXT_KEY_UNIT_SPUE_FCOMPANY_NAME4'),
+		('UNIT_SPUE_FCOMPANY',		'TXT_KEY_UNIT_SPUE_FCOMPANY_NAME5'),
+		('UNIT_SPUE_FCOMPANY',		'TXT_KEY_UNIT_SPUE_FCOMPANY_NAME6');
 --==========================================================================================================================	
 -- 南洋海盗船 -- 商业解锁
 --==========================================================================================================================
@@ -1465,51 +1465,50 @@ INSERT INTO Unit_ResourceQuantityRequirements
 SELECT	'UNIT_SPUE_QIANG_SPEARMAN',	 ResourceType, Cost
 FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_LONGSWORDSMAN';
 --==========================================================================================================================	
--- 贝利撒留甲骑兵 -- 赞助中古统帅单位
+-- 近卫甲骑兵 -- 赞助中古统帅单位
 --==========================================================================================================================
 INSERT INTO UnitClasses
-		(Type,											Description,								DefaultUnit,						MaxPlayerInstances)
+		(Type,									Description,							DefaultUnit,						MaxPlayerInstances)
 VALUES	('UNITCLASS_SPUE_BUCELLARII_GUARD',		'TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD',	'UNIT_SPUE_BUCELLARII_GUARD',	2);
 
 INSERT INTO Units 	
-		(Type, 								Class, 										PrereqTech, PolicyType,				RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,										Strategy,	Help,												Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 								UnitFlagIconOffset, UnitFlagAtlas,					PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_BUCELLARII_GUARD', 'UNITCLASS_SPUE_BUCELLARII_GUARD',	PrereqTech, 'POLICY_SPUE_BASELIUS', RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,	0, 			HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   0,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD',	'TXT_KEY_CIV5_SPUE_BUCELLARII_GUARD_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_BUCELLARII_GUARD',	0,					'SPUE_VCATAPHCRAT_FLAG_ATLAS',	57,				'SPUE_UNITS_ATLAS',	1
+		(Type, 							Class, 								PrereqTech, PolicyType,				RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,							Civilopedia,								Strategy,	Help,										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 						UnitFlagIconOffset, UnitFlagAtlas,					PortraitIndex, 	IconAtlas,				NoMinorGifts)
+SELECT	'UNIT_SPUE_BUCELLARII_GUARD', 	'UNITCLASS_SPUE_BUCELLARII_GUARD',	PrereqTech, 'POLICY_SPUE_BASELIUS', RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,	FaithCost, 	HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   0,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD',	'TXT_KEY_CIV5_SPUE_BUCELLARII_GUARD_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_HEAVY_CAVALRY',	0,					'SPUE_VCATAPHCRAT_FLAG_ATLAS',	25,				'SPUE02_UNITS_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_KNIGHT';
 
 INSERT INTO Unit_ClassUpgrades 	
-		(UnitType, 								UnitClassType)
+		(UnitType, 						UnitClassType)
 VALUES	('UNIT_SPUE_BUCELLARII_GUARD',	'UNITCLASS_LANCER');
 		
 
 INSERT INTO Unit_FreePromotions
 		(UnitType, 								PromotionType)
 VALUES	('UNIT_SPUE_BUCELLARII_GUARD', 	'PROMOTION_KNIGHT_COMBAT'),
-		('UNIT_SPUE_BUCELLARII_GUARD', 	'PROMOTION_SPUE_BUCELLARII_GUARD'),
-		('UNIT_SPUE_BUCELLARII_GUARD', 	'PROMOTION_NO_CASUALTIES');
+		('UNIT_SPUE_BUCELLARII_GUARD', 	'PROMOTION_SPUE_BUCELLARII_GUARD');
 		
 INSERT INTO Unit_BuildingClassRequireds 	
-		(UnitType, 				 	 		 BuildingClassType)
+		(UnitType, 				 	 	 BuildingClassType)
 SELECT	'UNIT_SPUE_BUCELLARII_GUARD',	 BuildingClassType
 FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_KNIGHT';
 
 INSERT INTO UnitGameplay2DScripts 	
-		(UnitType, 				    	    SelectionSound, FirstSelectionSound)
-SELECT	'UNIT_SPUE_BUCELLARII_GUARD', SelectionSound, FirstSelectionSound
+		(UnitType, 				    	SelectionSound, FirstSelectionSound)
+SELECT	'UNIT_SPUE_BUCELLARII_GUARD', 	SelectionSound, FirstSelectionSound
 FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_KNIGHT';
 
 INSERT INTO Unit_AITypes 	
-		(UnitType, 				 	  		  UnitAIType)
+		(UnitType, 				 	  	UnitAIType)
 SELECT	'UNIT_SPUE_BUCELLARII_GUARD',   UnitAIType
 FROM Unit_AITypes WHERE UnitType = 'UNIT_KNIGHT';
 
 INSERT INTO Unit_Flavors 	
-		(UnitType, 						     FlavorType, Flavor)
-SELECT	'UNIT_SPUE_BUCELLARII_GUARD',  FlavorType, Flavor
+		(UnitType, 						FlavorType, Flavor)
+SELECT	'UNIT_SPUE_BUCELLARII_GUARD',  	FlavorType, Flavor
 FROM Unit_Flavors WHERE UnitType = 'UNIT_KNIGHT';	
 
 INSERT INTO Unit_ResourceQuantityRequirements 	
-		(UnitType, 				 	 		 ResourceType, Cost)
-SELECT	'UNIT_SPUE_BUCELLARII_GUARD',	 ResourceType, Cost
+		(UnitType, 				 	 		ResourceType, Cost)
+SELECT	'UNIT_SPUE_BUCELLARII_GUARD',	 	ResourceType, Cost
 FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_KNIGHT';
 --==========================================================================================================================	
 -- 海洋之火 -- 赞助中古辅助单位
@@ -1519,44 +1518,43 @@ INSERT INTO UnitClasses
 VALUES	('UNITCLASS_SPUE_OCEAN_FIRE',		'TXT_KEY_UNIT_SPUE_OCEAN_FIRE',		'UNIT_SPUE_OCEAN_FIRE',	2);
 
 INSERT INTO Units 	
-		(Type, 								Class, 									PrereqTech, 	PolicyType,				RangedCombat,	Combat,		Range, ExtraMaintenanceCost,						Special, Cost,	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,									Strategy,	Help,											Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 							UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_OCEAN_FIRE', 	'UNITCLASS_SPUE_OCEAN_FIRE', 	PrereqTech, 	'POLICY_SPUE_BASELIUS', RangedCombat,	Combat,	 	Range, ExtraMaintenanceCost + ExtraMaintenanceCost,	Special, Cost, 	Cost, 		HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_OCEAN_FIRE',	'TXT_KEY_CIV5_SPUE_OCEAN_FIRE_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_OCEAN_FIRE_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_OCEAN_FIRE',	0,					'SPUE_ALAN_FLAG_ATLAS',		59,				'SPUE_UNITS_ATLAS',	1
-FROM Units WHERE Type = 'UNIT_SPUE_MOUNTEDXBOW';
+		(Type, 						Class, 							PrereqTech, 	PolicyType,				RangedCombat,	Combat,		Range, ExtraMaintenanceCost,						Special, Cost,	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,					Civilopedia,							Strategy,	Help,									Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 					UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,				NoMinorGifts)
+SELECT	'UNIT_SPUE_OCEAN_FIRE', 	'UNITCLASS_SPUE_OCEAN_FIRE', 	PrereqTech, 	'POLICY_SPUE_BASELIUS', RangedCombat,	Combat,	 	Range, ExtraMaintenanceCost + ExtraMaintenanceCost,	Special, Cost, 	Cost, 		HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_OCEAN_FIRE',	'TXT_KEY_CIV5_SPUE_OCEAN_FIRE_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_OCEAN_FIRE_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_OCEAN_FIRE',	0,					'SPUE_OCEANF_FLAG_ATLAS',		27,				'SPUE02_UNITS_ATLAS',	1
+FROM Units WHERE Type = 'UNIT_GALLEASS';
 
 INSERT INTO Unit_ClassUpgrades 	
 		(UnitType, 					UnitClassType)
-VALUES	('UNIT_SPUE_OCEAN_FIRE',	'UNITCLASS_BOMBARD');
+VALUES	('UNIT_SPUE_OCEAN_FIRE',	'UNITCLASS_FRIGATE');
 		
 INSERT INTO Unit_FreePromotions
 		(UnitType, 					PromotionType)
 VALUES	('UNIT_SPUE_OCEAN_FIRE', 	'PROMOTION_HITANDRUN'),
-		('UNIT_SPUE_OCEAN_FIRE', 	'PROMOTION_SPUE_OCEAN_FIRE'),
-		('UNIT_SPUE_OCEAN_FIRE', 	'PROMOTION_NO_CASUALTIES');
+		('UNIT_SPUE_OCEAN_FIRE', 	'PROMOTION_SPUE_OCEAN_FIRE');
 		
 INSERT INTO Unit_BuildingClassRequireds 	
 		(UnitType, 				BuildingClassType)
 SELECT	'UNIT_SPUE_OCEAN_FIRE',	BuildingClassType
-FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_MOUNTEDXBOW';
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_GALLEASS';
 
 INSERT INTO UnitGameplay2DScripts 	
 		(UnitType, 				    SelectionSound, FirstSelectionSound)
 SELECT	'UNIT_SPUE_OCEAN_FIRE', 	SelectionSound, FirstSelectionSound
-FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_SPUE_MOUNTEDXBOW';
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_GALLEASS';
 
 INSERT INTO Unit_AITypes 	
 		(UnitType, 				 	UnitAIType)
 SELECT	'UNIT_SPUE_OCEAN_FIRE',   	UnitAIType
-FROM Unit_AITypes WHERE UnitType = 'UNIT_SPUE_MOUNTEDXBOW';
+FROM Unit_AITypes WHERE UnitType = 'UNIT_GALLEASS';
 
 INSERT INTO Unit_Flavors 	
 		(UnitType, 					FlavorType, Flavor)
 SELECT	'UNIT_SPUE_OCEAN_FIRE',  	FlavorType, Flavor
-FROM Unit_Flavors WHERE UnitType = 'UNIT_SPUE_MOUNTEDXBOW';	
+FROM Unit_Flavors WHERE UnitType = 'UNIT_GALLEASS';	
 
 INSERT INTO Unit_ResourceQuantityRequirements 	
 		(UnitType, 				 	ResourceType, Cost)
 SELECT	'UNIT_SPUE_OCEAN_FIRE',	 	ResourceType, Cost
-FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_MOUNTEDXBOW';
+FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_GALLEASS';
 --==========================================================================================================================	
 -- 神州天子之道
 --==========================================================================================================================

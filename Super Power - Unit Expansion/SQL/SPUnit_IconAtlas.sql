@@ -64,12 +64,17 @@ VALUES		('UNIT_SPUE_PERSIAQ_FLAG_ATLAS',	032, 		'QizilbashFlag_032.dds',				1, 	
 -- 商业政策树佣兵单位
 INSERT OR REPLACE INTO IconTextureAtlases 
 			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)
-VALUES		('SPUE_LILBOMB_FLAG_ATLAS',			032,		'SPUE_LilBomBard_flag.dds',				1, 				1),	-- 里尔火炮佣兵
-			('SPUE_SSPRIV_FLAG_ATLAS',			032,		'SPUE_SouthSeaPrivateer_flag.dds',		1, 				1),	-- 南洋海盗船
+VALUES		
 			('SPUE_GENOAX_FLAG_ATLAS',			032,		'SPUE_GenoaXBow_flag.dds',				1, 				1),	-- 热那亚弩手
 			('SPUE_SWISSG_FLAG_ATLAS',			032,		'SPUE_SwissGuard_flag.dds',				1, 				1),	-- 瑞士卫队
 			('SPUE_VARANMER_FLAG_ATLAS',		032,		'SPUE_VarangianMercenary_flag.dds',		1, 				1),	-- 瓦兰吉雇佣兵
 			('SPUE_VARANGUARD_FLAG_ATLAS',		032,		'SPUE_VarangianGuard_flag.dds',			1, 				1),	-- 瓦兰吉卫队
+
+			('SPUE_KENNSEI_FLAG_ATLAS',			032,		'Flag_SPUE_JianSheng.dds',			1, 				1),	-- 战国剑圣
+			('SPUE_ELMETI_FLAG_ATLAS',			032,		'Flag_SPUE_Elmeti.dds',					1, 				1),	-- 装甲骑兵
+			('SPUE_FUNE_FLAG_ATLAS',			032,		'Flag_SPUE_Fune.dds',					1, 				1),	-- 倭寇帆船
+
+			('SPUE_SSPRIV_FLAG_ATLAS',			032,		'SPUE_SouthSeaPrivateer_flag.dds',		1, 				1),	-- 南洋海盗船
 			('SPUE_IRON_TROOP_FLAG_ATLAS',		032,		'SPUE_iron_troop_flag_032.dds',			1, 				1), -- 铁人军
 			('SPUE_FIRE_SHIP_FLAG_ATLAS',		032,		'SPUE_SMAN_Fireship_Flag_032.dds',		1, 				1); -- 火帆船
 
@@ -86,8 +91,8 @@ INSERT OR REPLACE INTO IconTextureAtlases
 VALUES		('SPUE_BODYGUARD_FLAG_ATLAS',		032,		'SPUE_BodyGuard_Flag.dds',				1, 				1),	-- 将领卫队
 			('SPUE_SOCII_FLAG_ATLAS',			032,		'SPUE_Socii_Flag.dds',					1, 				1), -- 同盟军团
 			('SPUE_VSPEAR_FLAG_ATLAS',			032,		'SPUE_QiangSpearman_Flag.dds',			1, 				1),	-- 辅助塞尔维亚重步兵
-			('SPUE_VCATAPHCRAT_FLAG_ATLAS',		032,		'SPUE_Cataphract_Flag.dds',				1, 				1),	-- 辅助亚美尼亚甲骑兵
-			('SPUE_ALAN_FLAG_ATLAS',			032,		'SPUE_Alan_Flag.dds',					1, 				1), -- 辅助阿兰轻骑兵
+			('SPUE_VCATAPHCRAT_FLAG_ATLAS',		032,		'SPUE_Byzantium_General_Flag.dds',		1, 				1),	-- 近卫甲骑兵
+			('SPUE_OCEANF_FLAG_ATLAS',			032,		'SPUE_OceanFire_Flag.dds',				1, 				1), -- 海洋之火
 			('SPUE_VMUSKETMAN_FLAG_ATLAS',		032,		'SPUE_Musketeer_Flag.dds',				1, 				1),	-- 神机营
 			('SPUE_CAPTAIN_FLAG_ATLAS',			032,		'SPUE_TreasureFleet_Flag.dds',			1, 				1), -- 水师旗舰
 			('SPUE_CORVETTE_FLAG_ATLAS',		032,		'SPUE_Galleon_Flag.dds',				1, 				1); -- 同盟征召护卫舰

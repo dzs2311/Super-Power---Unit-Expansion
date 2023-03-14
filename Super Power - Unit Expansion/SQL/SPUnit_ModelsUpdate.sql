@@ -61,9 +61,7 @@ WHERE Type = 'ART_DEF_UNIT_MEMBER_WWI_PARATROOPER';
 --Elite Rider--
 UPDATE ArtDefine_UnitMemberInfos SET Model =  'Xuanjia_Elite.fxsxml'
 WHERE Type = 'ART_DEF_UNIT_MEMBER_ELITE_RIDER';
---PikeMan--
---UPDATE ArtDefine_UnitMemberInfos SET Model = 'RER_PIKE.fxsxml'
---WHERE Type = 'ART_DEF_UNIT_MEMBER_PIKEMAN';
+
 --MusketMan--
 --UPDATE ArtDefine_UnitMemberInfos SET Model = 'aoed3mm-tc.fxsxml'
 --WHERE Type = 'ART_DEF_UNIT_MEMBER_MUSKETMAN';

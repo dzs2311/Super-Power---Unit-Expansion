@@ -378,3 +378,22 @@ GameEvents.PlayerDoTurn.Add(
 		print ("Turn end")
 	end
 )
+-- ######################################################################
+-- 禁卫军堡垒上限
+function BuildAvailableSPUE(iPlayer, iUnit, iX, iY, iBuild)
+	if Players[iPlayer] == nil then return end;
+	if Map.GetPlot(iX, iY) == nil then
+		return;
+	end
+	local pPlayer = Players[iPlayer];
+	local pPlot = Map.GetPlot(iX, iY);
+	
+	if iBuild == GameInfo.Builds["BUILD_FORT_SPUE"].ID 
+	and pPlayer:GetImprovementCount(GameInfoTypes.IMPROVEMENT_FORT_SPUE) >= 4
+	then
+		return false;
+	else
+		return true;
+	end
+end
+GameEvents.PlayerCanBuild.Add(BuildAvailableSPUE)
