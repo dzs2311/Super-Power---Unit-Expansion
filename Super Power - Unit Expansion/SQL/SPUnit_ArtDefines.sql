@@ -2457,7 +2457,7 @@ SELECT	'ART_DEF_UNIT_SPUE_ELMETI',		DamageStates, 	Formation
 FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_KNIGHT';
 
 INSERT INTO ArtDefine_UnitInfoMemberInfos 	
-		(UnitInfoType,						UnitMemberInfoType,								NumMembers)
+		(UnitInfoType,						UnitMemberInfoType,						NumMembers)
 VALUES	('ART_DEF_UNIT_SPUE_ELMETI',		'ART_DEF_UNIT_MEMBER_SPUE_ELMETI',		5);
 
 INSERT INTO ArtDefine_UnitMemberCombats 
@@ -2487,7 +2487,7 @@ SELECT	'ART_DEF_UNIT_SPUE_KENNSEI',	DamageStates, 	Formation
 FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_LONGSWORDSMAN';
 
 INSERT INTO ArtDefine_UnitInfoMemberInfos 	
-		(UnitInfoType,					UnitMemberInfoType,									NumMembers)
+		(UnitInfoType,					UnitMemberInfoType,							NumMembers)
 VALUES	('ART_DEF_UNIT_SPUE_KENNSEI',	'ART_DEF_UNIT_MEMBER_SPUE_KENNSEI',			12);
 
 INSERT INTO ArtDefine_UnitMemberCombats 

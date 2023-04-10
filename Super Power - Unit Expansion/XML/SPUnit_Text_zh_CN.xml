@@ -281,9 +281,10 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_NEW_HELP">
 			<Text>
 				[COLOR_CYAN]王城骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]自主政策[ENDCOLOR]的代表性单位，自带军团晋升，且拥有以下能力。
+				[NEWLINE][ICON_BULLET]完成自主政策树且拥有超过600点经验后可以选择晋升[COLOR_POSITIVE_TEXT]王国冠军[ENDCOLOR]：获得15点减伤，杀敌时为首都提供相当于(基础[ICON_STRENGTH]战斗力*单位等级)的[ICON_GREAT_WRITER]大文学家点数和[ICON_GREAT_SCIENTIST]大科学家点数。
 				[NEWLINE][ICON_BULLET]兵士集结：可以召集各个城市的采邑骑士（只能召集一次,且总数不超过20）。
 				[NEWLINE][ICON_BULLET]移民安置：杀敌时根据敌军战斗力积攒粮食点数，积攒足够点数时获得移民且粮食点数清零，点数要求随时代增长。
-				[NEWLINE][ICON_BULLET]诗歌传唱：1格内己方单位杀敌可根据自身等级获得文化点数，晋升时获得一个大文学家。
+				[NEWLINE][ICON_BULLET]诗歌传唱：杀敌获得150%的文化点数，晋升时获得一个大文学家。
 			</Text>
 		</Row>
 
@@ -294,12 +295,57 @@
 			<Text>可根据非首都直辖城市数量召集采邑骑士。</Text>
 		</Row>
 
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A">
+			<Text>移民安置</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]每击杀一支敌方部队或对一支敌方部队造成30以上的伤害，根据敌军战斗力积攒粮食点数，积攒足够点数时在首都获得移民且粮食点数清零，点数要求随单位战斗力增长；
+				[NEWLINE][ICON_BULLET]受到攻击时自动消耗掠获的20%人口免除80%的伤害。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A000">
+			<Text>[ICON_FOOD][COLOR_YIELD_FOOD]掠获人口(00)[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A020">
+			<Text>[ICON_FOOD][COLOR_YIELD_FOOD]掠获人口(20)[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A040">
+			<Text>[ICON_FOOD][COLOR_YIELD_FOOD]掠获人口(40)[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A060">
+			<Text>[ICON_FOOD][COLOR_YIELD_FOOD]掠获人口(60)[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A080">
+			<Text>[ICON_FOOD][COLOR_YIELD_FOOD]掠获人口(80)[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A100">
+			<Text>[ICON_FOOD][COLOR_YIELD_FOOD]掠获人口(100)[ENDCOLOR]</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_B">
+			<Text>诗歌传唱</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_B_HELP">
+			<Text>杀敌获得150%的文化点数，晋升时获得一个大文学家。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_C">
+			<Text>[COLOR_CYAN]王国冠军[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_C_HELP">
+			<Text>15点减伤，每击杀一支敌方部队或对一支敌方部队造成30以上的伤害，为首都提供相当于(基础[ICON_STRENGTH]战斗力*单位等级)的[ICON_GREAT_WRITER]大文学家点数和[ICON_GREAT_SCIENTIST]大科学家点数。</Text>
+		</Row>
+
 		<!-- **********************采邑骑士*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_NEW1">
 			<Text>[COLOR_CYAN]采邑骑士[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_NEW1_HELP">
-			<Text>[COLOR_CYAN]采邑骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]自主政策[ENDCOLOR]的代表性单位，是由各个城市所召集的骑士。</Text>
+			<Text>
+				[COLOR_CYAN]采邑骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]自主政策[ENDCOLOR]的代表性单位，是由各个城市所召集的骑士。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_NEW1_NAME">
@@ -469,15 +515,27 @@
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_NEW_HELP">
-			<Text>同格的陆/海单位射程+1。</Text>
+			<Text>同格的陆/海单位射程+1（最大不超过3），且杀敌获得相当于其100%战斗力的科研点数。</Text>
 		</Row>
 
 		
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT">
-			<Text>气球上的五星期</Text>
+			<Text>气球上的五星期(1)</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_HELP">
-			<Text>射程+1。</Text>
+			<Text>射程+1，且杀敌获得相当于其100%战斗力的科研点数。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV1">
+			<Text>气球上的五星期(2)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV1_HELP">
+			<Text>射程+2，且杀敌获得相当于其100%战斗力的科研点数。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV2">
+			<Text>气球上的五星期(3)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV2_HELP">
+			<Text>射程+3，且杀敌获得相当于其100%战斗力的科研点数。</Text>
 		</Row>
 
 		<!-- **********************十字战车*********************** -->
@@ -920,14 +978,14 @@
 
 		<!-- **********************将领卫队*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD">
-			<Text>β[COLOR_CYAN]将领卫队[ENDCOLOR]</Text>
+			<Text>★[COLOR_CYAN]将领卫队[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD_HELP">
 			<Text>
-				β[COLOR_CYAN]将领卫队[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重骑兵统帅单位。
-				[NEWLINE][ICON_BULLET]位于城邦盟友境内时可以花费一定的金钱征召∏[COLOR_CYAN]同盟军团[ENDCOLOR]和∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]。
-				[NEWLINE][ICON_BULLET]可以将附近的一名附近的蛮族单位转化为∏[COLOR_CYAN]辅助西徐亚弓骑兵[ENDCOLOR]（上限2）。
-				[NEWLINE][ICON_BULLET]发起近战攻击前先进行一次弓箭扫荡，1格内敌方单位-15%[ICON_STRENGTH]战斗力。
+				★[COLOR_CYAN]将领卫队[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重骑兵统帅单位。
+				[NEWLINE][ICON_BULLET]位于非敌方城邦境内时可以花费一定的金钱征召∏[COLOR_CYAN]同盟军团[ENDCOLOR]和∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]发起近战攻击前先进行一次弓箭扫荡，2格内敌方单位-33%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]每次发动攻击时回复相当于当前生命值的血量，对残血单位+50%[ICON_STRENGTH]战斗力。
 				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路才可以招募此单位。
 				[NEWLINE][ICON_BULLET]身体力行，则上行下效。
 			</Text>
@@ -942,15 +1000,30 @@
 			<Text>龙旗麟铠长骑枪</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENERAL_BODYGUARD_HELP">
-			<Text>发起近战攻击前先进行一次弓箭扫荡，1格内敌方单位-15%[ICON_STRENGTH]战斗力。</Text>
+			<Text>
+				[NEWLINE][ICON_BULLET]位于非敌方城邦境内时可以花费一定的金钱征召∏[COLOR_CYAN]同盟军团[ENDCOLOR]和∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]发起近战攻击前先进行一次弓箭扫荡，2格内敌方单位-33%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]每次发动攻击时回复相当于当前生命值的血量，对残血单位+50%[ICON_STRENGTH]战斗力。
+			</Text>
 		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_PATRONAGE_SOCII_HASTATI_BUTTON_SHORT">
+			<Text>∏[COLOR_CYAN]拉丁同盟军团[ENDCOLOR]征集</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_PATRONAGE_SOCII_HASTATI_BUTTON">
+			<Text>花费[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]拉丁同盟军团[ENDCOLOR]单位，单位本回合失去移动力</Text>
+		</Row>
+
 		<!-- **********************同盟军团*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI">
-			<Text>∏[COLOR_CYAN]同盟军团[ENDCOLOR]</Text>
+			<Text>∏[COLOR_CYAN]拉丁同盟军团[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI_HELP">
 			<Text>
-				∏[COLOR_CYAN]同盟军团[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重步兵同盟单位，只能由β[COLOR_CYAN]将领卫队[ENDCOLOR]在盟友城邦境内征召。
+				∏[COLOR_CYAN]拉丁同盟军团[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重步兵同盟单位，只能由★[COLOR_CYAN]将领卫队[ENDCOLOR]在盟友城邦境内征召，死亡时不会造成人口损失。
+				[NEWLINE][ICON_BULLET]如同罗马军团一样，能够在近战攻击之前发动一次投矛攻势。
+				[NEWLINE][ICON_BULLET]相邻的和同格的所有同领域单位每回合额外恢复30HP，该单位每回合额外恢复30HP。
 				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路才可以征召此单位。
 				[NEWLINE][ICON_BULLET]若论短兵相接，他们还未逢敌手：也许是有些自夸，但他们确是为荣耀而生。
 			</Text>
@@ -963,10 +1036,13 @@
 		</Row>	
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI">
-			<Text>罗马公民权</Text>
+			<Text>拉丁同盟</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI_HELP">
-			<Text></Text>
+			<Text>
+				[NEWLINE][ICON_BULLET]如同罗马军团一样，能够在近战攻击之前发动一次投矛攻势。
+				[NEWLINE][ICON_BULLET]相邻的和同格的所有同领域单位每回合额外恢复30HP，该单位每回合额外恢复30HP。
+			</Text>
 		</Row>
 		<!-- **********************辅助克里特弓箭手*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_BOWMAN">
@@ -974,7 +1050,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_BOWMAN_HELP">
 			<Text>
-				∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军弓箭辅助单位，只能由β[COLOR_CYAN]将领卫队[ENDCOLOR]在盟友城邦境内征召，死亡时不会造成人口损失。
+				∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军弓箭辅助单位，只能由★[COLOR_CYAN]将领卫队[ENDCOLOR]在盟友城邦境内征召，死亡时不会造成人口损失。
 				[NEWLINE][ICON_BULLET]相比于普通的弓箭手拥有更高的远程和近战战斗力，对陆军单位+50%[ICON_STRENGTH]战斗力，射程+1，每回合攻击次数+1，远程防御攻击时+50%[ICON_STRENGTH]战斗力（持盾）。
 				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路才可以征召此单位。
 				[NEWLINE][ICON_BULLET]给克里特人一张弓，他就会为罗马而战。
@@ -1018,21 +1094,21 @@
 		</Row> -->
 		<!-- **********************近卫甲骑兵*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD">
-			<Text>β[COLOR_CYAN]近卫甲骑[ENDCOLOR]</Text>
+			<Text>★[COLOR_CYAN]近卫甲骑[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_ELITE">
-			<Text>β[COLOR_CYAN]执政甲骑[ENDCOLOR]</Text>
+			<Text>★[COLOR_CYAN]执政甲骑[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP">
 			<Text>
-				β[COLOR_CYAN]近卫甲骑[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重骑兵统帅单位，可以远程和近战攻击的双重重骑兵。
+				★[COLOR_CYAN]近卫甲骑[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重骑兵统帅单位，可以远程和近战攻击的双重重骑兵。
 				[NEWLINE][ICON_BULLET]位于城邦境内时可以征召∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]位于岸边时可以建造[COLOR_CYAN]海洋之火[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
 				[NEWLINE][ICON_BULLET]+1攻击次数，每次远程攻击增加2移动力，每次近战攻击回复20血量。
 				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
 				[NEWLINE]
-				[NEWLINE][ICON_BULLET]完成罗马远征军训练计划后可以进行精英化改造：[COLOR_YIELD_GOLD]执政甲骑兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]完成罗马远征军训练计划后可以进行精英化改造：[COLOR_YIELD_GOLD]执政甲骑[ENDCOLOR]。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_BUCELLARII_GUARD_TEXT">
@@ -1047,7 +1123,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_HELP">
 			<Text>
-				[NEWLINE][ICON_BULLET]位于城邦境内时可以征召∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]位于非敌方城邦境内时可以征召∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]位于岸边时可以建造∏[COLOR_CYAN]海洋之火[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
 				[NEWLINE][ICON_BULLET]+1攻击次数，每次远程攻击增加2移动力，每次近战攻击回复15血量。
@@ -1058,10 +1134,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_ELITE_HELP">
 			<Text>
-				[NEWLINE][ICON_BULLET]位于城邦境内时可以征召∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]。
-				[NEWLINE][ICON_BULLET]位于岸边时可以建造∏[COLOR_CYAN]海洋之火[ENDCOLOR]。
-				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
-				[NEWLINE][ICON_BULLET]+1攻击次数，每次远程攻击增加2移动力，每次近战攻击回复15血量。
+				[NEWLINE][ICON_BULLET]每击杀一支敌方部队或对一支敌方部队造成30以上的伤害，则为己方所有城市带来一回合的“我们爱国王日”。
+				[NEWLINE][ICON_BULLET]无视地形移动损耗，回合结束时2格内每个敌方单位提供2移动力。
+				[NEWLINE][ICON_BULLET]每次发动攻击后获得5%的战斗力加成（最高100%），遭受攻击后清零。
 			</Text>
 		</Row>
 		<!-- **********************辅助塞尔维亚重步兵*********************** -->
@@ -1094,7 +1169,7 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_OCEAN_FIRE_HELP">
 			<Text>
 				∏[COLOR_CYAN]海洋之火[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古海军近战辅助单位。
-				[NEWLINE][ICON_BULLET]+1攻击次数，每次远程攻击增加1移动力，每次近战攻击回复10血量。
+				[NEWLINE][ICON_BULLET]能够为攻击单元格2格内的敌方单位带来减益。。
 				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
 			</Text>
 		</Row>
@@ -1108,16 +1183,16 @@
 			<Text>罗马火</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_HELP">
-			<Text></Text>
+			<Text>为攻击单元格2格内的敌方单位带来减益。</Text>
 		</Row>
 
 		<!-- **********************宝船旗舰*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_TREASURE_FLEET">
-			<Text>β[COLOR_CYAN]宝船旗舰[ENDCOLOR]</Text>
+			<Text>★[COLOR_CYAN]宝船旗舰[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_TREASURE_FLEET_HELP">
 			<Text>
-				β[COLOR_CYAN]宝船旗舰[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的统帅单位，可以花费一定的[ICON_GOLD]金钱召集∏[COLOR_CYAN]同盟征召护卫舰[ENDCOLOR]和∏[COLOR_CYAN]神机营[ENDCOLOR]助战。
+				★[COLOR_CYAN]宝船旗舰[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的统帅单位，可以花费一定的[ICON_GOLD]金钱召集∏[COLOR_CYAN]同盟征召护卫舰[ENDCOLOR]和∏[COLOR_CYAN]神机营[ENDCOLOR]助战。
 				[NEWLINE][ICON_BULLET]单位自带军团晋升，且可以攻击后移动。
 				[NEWLINE][ICON_BULLET]只有选择了神州天子之道才可以招募此单位
 			</Text>
@@ -1141,14 +1216,14 @@
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_PATRONAGE_SHENJI_MUSKETEER_BUTTON">
-			<Text>花费300[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]神机营[ENDCOLOR]单位，花费为当前可建造火药步兵单位1/2的价格，船只本回合失去移动力</Text>
+			<Text>花费[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]神机营[ENDCOLOR]单位，船只本回合失去移动力</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_PATRONAGE_CORVETTE_BUTTON_SHORT">
 			<Text>∏[COLOR_CYAN]征召护卫舰[ENDCOLOR]征集</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_PATRONAGE_CORVETTE_BUTTON">
-			<Text>花费700[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]征召护卫舰[ENDCOLOR]单位，花费为当前可建造海军近战单位1/2的价格，船只本回合失去移动力</Text>
+			<Text>花费[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]征召护卫舰[ENDCOLOR]单位，船只本回合失去移动力</Text>
 		</Row>
 		<!-- **********************神机营*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_SHENJI_MUSKETEER">

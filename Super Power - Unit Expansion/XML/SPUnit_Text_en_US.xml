@@ -464,17 +464,28 @@
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_NEW_HELP">
-			<Text>同格的陆/海单位射程+1。</Text>
+			<Text>1格内的陆/海单位射程+1(射程最大+3)，且杀敌获得相当于其100%战斗力的科研点数。</Text>
 		</Row>
 
 		
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT">
-			<Text>气球上的五星期</Text>
+			<Text>气球上的五星期(1)</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_HELP">
-			<Text>射程+1。</Text>
+			<Text>射程+1，且杀敌获得相当于其100%战斗力的科研点数。</Text>
 		</Row>
-
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV1">
+			<Text>气球上的五星期(2)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV1_HELP">
+			<Text>射程+2，且杀敌获得相当于其100%战斗力的科研点数。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV2">
+			<Text>气球上的五星期(3)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV2_HELP">
+			<Text>射程+3，且杀敌获得相当于其100%战斗力的科研点数。</Text>
+		</Row>
 		<!-- **********************十字战车*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_GREAT_CROSS">
 			<Text>[COLOR_CYAN]十字战车[ENDCOLOR]</Text>

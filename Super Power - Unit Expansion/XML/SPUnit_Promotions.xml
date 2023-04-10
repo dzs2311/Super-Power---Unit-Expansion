@@ -130,6 +130,115 @@
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<Row>
+			<!--王城骑士：移民安置-->
+			<Type>PROMOTION_SPUE_KNIGHT_NEW_A</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>18</PortraitIndex>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--王城骑士：掠获人口0-->
+			<Type>PROMOTION_SPUE_KNIGHT_NEW_A000</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A000</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>18</PortraitIndex>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--王城骑士：掠获人口20-->
+			<Type>PROMOTION_SPUE_KNIGHT_NEW_A020</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A020</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>18</PortraitIndex>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--王城骑士：掠获人口40-->
+			<Type>PROMOTION_SPUE_KNIGHT_NEW_A040</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A040</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>18</PortraitIndex>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--王城骑士：掠获人口60-->
+			<Type>PROMOTION_SPUE_KNIGHT_NEW_A060</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A060</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>18</PortraitIndex>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--王城骑士：掠获人口80-->
+			<Type>PROMOTION_SPUE_KNIGHT_NEW_A080</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A080</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>18</PortraitIndex>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--王城骑士：掠获人口100-->
+			<Type>PROMOTION_SPUE_KNIGHT_NEW_A100</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A100</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>18</PortraitIndex>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--王城骑士：诗歌传唱-->
+			<Type>PROMOTION_SPUE_KNIGHT_NEW_B</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_B</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_B_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>35</PortraitIndex>
+			<IconAtlas>extraPromo_Atlas</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_B</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--王城骑士：王国冠军-->
+			<Type>PROMOTION_SPUE_KNIGHT_NEW_C</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_C</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_C_HELP</Help>
+			<PromotionPrereqOr1>PROMOTION_SPUE_KNIGHT_NEW</PromotionPrereqOr1>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>35</PortraitIndex>
+			<IconAtlas>extraPromo_Atlas</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_C</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
 			<!--采邑骑士：骑士敕封-->
 			<Type>PROMOTION_SPUE_KNIGHT_EXTRA</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_EXTRA</Description>
@@ -141,6 +250,7 @@
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_EXTRA</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
+
 		<Row>
 			<!--涌泉守卫：帕兰提尔-->
 			<Type>PROMOTION_SPUE_GONDORGUARD</Type>
@@ -229,6 +339,32 @@
 			<IconAtlas>promoVP_atlas_01</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--热气球：气球上的五星期-->
+			<Type>PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV1</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV1</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV1_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<RangeChange>3</RangeChange>
+			<PortraitIndex>62</PortraitIndex>
+			<IconAtlas>promoVP_atlas_01</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV1</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--热气球：气球上的五星期-->
+			<Type>PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV2</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV2</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV2_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<RangeChange>3</RangeChange>
+			<PortraitIndex>62</PortraitIndex>
+			<IconAtlas>promoVP_atlas_01</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV2</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<!--*********************************虔信*********************************-->
@@ -455,8 +591,9 @@
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<RangedSupportFire>true</RangedSupportFire>
-			<NearbyEnemyCombatMod>-15</NearbyEnemyCombatMod>
-			<NearbyEnemyCombatRange>1</NearbyEnemyCombatRange>
+			<NearbyEnemyCombatMod>-33</NearbyEnemyCombatMod>
+			<NearbyEnemyCombatRange>2</NearbyEnemyCombatRange>
+			<AttackWoundedMod>50</AttackWoundedMod>
 			<PortraitIndex>59</PortraitIndex>
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -479,20 +616,25 @@
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_VASSAL_BOWMAN</PediaEntry>
 		</Row>
 		<Row>
-			<!--同盟军团：罗马公民权-->
+			<!--同盟军团：拉丁同盟-->
 			<Type>PROMOTION_SPUE_SOCII_HASTATI</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
-			<ExtraAttacks>2</ExtraAttacks>
-			<AttackWoundedMod>150</AttackWoundedMod>
 			<LostWithUpgrade>false</LostWithUpgrade>
+			<RangedSupportFire>true</RangedSupportFire>
+			<AdjacentTileHealChange>30</AdjacentTileHealChange>
+			<SameTileHealChange>30</SameTileHealChange>
+			<EnemyHealChange>30</EnemyHealChange>
+			<NeutralHealChange>30</NeutralHealChange>
+			<FriendlyHealChange>30</FriendlyHealChange>
 			<PortraitIndex>59</PortraitIndex>
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI</PediaEntry>
 		</Row>
+		<!--*********************************赞助：巴西琉斯之道*********************************-->
 		<Row>
 			<!--塞尔维亚重步兵：巴尔干之盾-->
 			<Type>PROMOTION_SPUE_QIANG_SPEARMAN</Type>
@@ -536,6 +678,7 @@
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE</PediaEntry>
 		</Row>
+		<!--*********************************赞助：神州天子之权*********************************-->
 		<Row>
 			<!--宝船旗舰：西洋-->
 			<Type>PROMOTION_SPUE_TREASURE_FLEET</Type>
@@ -953,6 +1096,28 @@
 			<PromotionType>PROMOTION_SPUE_GREAT_CROSS_EFFECT</PromotionType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>250</Yield>
+		</Row>
+		<!--王城骑士：诗歌传唱-->
+		<Row>
+			<PromotionType>PROMOTION_SPUE_KNIGHT_NEW_B</PromotionType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>150</Yield>
+		</Row>
+		<!--热气球：气球上的五星期-->
+		<Row>
+			<PromotionType>PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT</PromotionType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>100</Yield>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV1</PromotionType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>100</Yield>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT_LV2</PromotionType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>100</Yield>
 		</Row>
 	</UnitPromotions_YieldFromKills>
 

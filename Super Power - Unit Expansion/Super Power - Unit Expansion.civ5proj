@@ -5,10 +5,10 @@
     <ProjectGuid>{abe157e1-4b9e-4392-8e29-fc6dd7399540}</ProjectGuid>
     <Name>Super Power - Unit Expansion</Name>
     <Guid>988a1168-d581-4150-948f-199021eabdea</Guid>
-    <ModVersion>5</ModVersion>
+    <ModVersion>6</ModVersion>
     <Stability>Stable</Stability>
-    <Teaser>(5.2.0)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
-    <Description>(5.2.0)超级大国单位拓展及大量单位模型替换
+    <Teaser>(6.0.0)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
+    <Description>(6.0.0)超级大国单位拓展及大量单位模型替换
 [NEWLINE][NEWLINE]
 [ICON_BULLET]大量单位替换了更加美观和符合史实的模型（如宝船）
 [NEWLINE]
@@ -396,6 +396,7 @@
     <Folder Include="LUA" />
     <Folder Include="Art" />
     <Folder Include="CombatPercentBonus" />
+    <Folder Include="LUA\Utility" />
     <Folder Include="Sounds" />
     <Folder Include="UI" />
     <Folder Include="UI\Art" />
@@ -3675,14 +3676,6 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\ELMETI\elmeti_horse_diff.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\ELMETI\elmeti_horse_sref.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
     <Content Include="Art\Units\Policy\06-Commerce\ELMETI\elmeti_knight.fxsxml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -3691,11 +3684,11 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\ELMETI\elmeti_rider_diff.dds">
+    <Content Include="Art\Units\Policy\06-Commerce\ELMETI\italian_knight2_mounted_diff.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\ELMETI\elmeti_rider_sref.dds">
+    <Content Include="Art\Units\Policy\06-Commerce\ELMETI\italian_knight2_mounted_sref.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -4403,19 +4396,23 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="LUA\PlotMath.lua">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="LUA\SaveUtils.lua">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
     <Content Include="LUA\SPUnit_Fix.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="LUA\SPUnit_Improvements.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="LUA\Utility\PlotMath.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="LUA\Utility\SaveUtils.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="LUA\Utility\SPUE_UtilityFunctions.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>

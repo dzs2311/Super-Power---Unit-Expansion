@@ -115,7 +115,7 @@ INSERT INTO UnitClasses
 VALUES	('UNITCLASS_SPUE_KNIGHT_NEW',		'TXT_KEY_UNIT_SPUE_KNIGHT_NEW',		'UNIT_SPUE_KNIGHT_NEW',		1);
 
 INSERT INTO Units 	
-		(Type, 						Class, 							PrereqTech, 				PolicyType,			RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, Description,					Civilopedia,										Strategy,	Help,									Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 					UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
+		(Type, 						Class, 							PrereqTech, 				PolicyType,			RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, Description,						Civilopedia,										Strategy,	Help,									Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 					UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
 SELECT	'UNIT_SPUE_KNIGHT_NEW', 	'UNITCLASS_SPUE_KNIGHT_NEW',	'TECH_HORSEBACK_RIDING', 	'POLICY_LIBERTY',	RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_KNIGHT_NEW',	'TXT_KEY_CIVILOPEDIA_UNITS_MEDIEVAL_KNIGHT_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_KNIGHT_NEW_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_KNIGHT_NEW',	0,					'SPUE_KNKN_FLAG_ATLAS',	32,				'SPUE_UNITS_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_KNIGHT';
 
@@ -127,7 +127,10 @@ INSERT INTO Unit_FreePromotions
 		(UnitType, 					PromotionType)
 VALUES	('UNIT_SPUE_KNIGHT_NEW', 	'PROMOTION_KNIGHT_COMBAT'),
 		('UNIT_SPUE_KNIGHT_NEW', 	'PROMOTION_CORPS_1'),
-		('UNIT_SPUE_KNIGHT_NEW', 	'PROMOTION_SPUE_KNIGHT_NEW');
+		('UNIT_SPUE_KNIGHT_NEW', 	'PROMOTION_SPUE_KNIGHT_NEW'),
+		('UNIT_SPUE_KNIGHT_NEW', 	'PROMOTION_SPUE_KNIGHT_NEW_A'),
+		('UNIT_SPUE_KNIGHT_NEW', 	'PROMOTION_SPUE_KNIGHT_NEW_A000'),
+		('UNIT_SPUE_KNIGHT_NEW', 	'PROMOTION_SPUE_KNIGHT_NEW_B');
 
 INSERT INTO Unit_BuildingClassRequireds 	
 		(UnitType, 				 BuildingClassType)
@@ -161,9 +164,9 @@ INSERT INTO UnitClasses
 VALUES	('UNITCLASS_SPUE_KNIGHT_NEW1',		'TXT_KEY_UNIT_SPUE_KNIGHT_NEW1',	'UNIT_SPUE_KNIGHT_NEW1');
 
 INSERT INTO Units 	
-		(Type, 						Class, 							PrereqTech, PolicyType,			RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, 	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, Description,						Civilopedia,										Strategy,	Help,									Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 			UnitFlagIconOffset, UnitFlagAtlas,		PortraitIndex, 	IconAtlas,		NoMinorGifts)
-SELECT	'UNIT_SPUE_KNIGHT_NEW1', 	'UNITCLASS_SPUE_KNIGHT_NEW1', 	PrereqTech, 'POLICY_LIBERTY',	RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, -1, 	0, 			HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_KNIGHT_NEW1',	'TXT_KEY_CIVILOPEDIA_UNITS_MEDIEVAL_KNIGHT_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_KNIGHT_NEW1_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_KNIGHT',	25,					'UNIT_FLAG_ATLAS',	26,				'UNIT_ATLAS_1',	1
-FROM Units WHERE Type = 'UNIT_KNIGHT';
+		(Type, 						Class, 							PrereqTech, PolicyType,			RangedCombat,	Combat,		Range, ExtraMaintenanceCost,	Special, Cost, 	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, Description,						Civilopedia,										Strategy,	Help,									Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 			UnitFlagIconOffset, UnitFlagAtlas,		PortraitIndex, 	IconAtlas,		NoMinorGifts)
+SELECT	'UNIT_SPUE_KNIGHT_NEW1', 	'UNITCLASS_SPUE_KNIGHT_NEW1', 	PrereqTech, 'POLICY_LIBERTY',	RangedCombat,	Combat+4,	Range, ExtraMaintenanceCost,	Special, -1, 	0, 			HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_KNIGHT_NEW1',	'TXT_KEY_CIVILOPEDIA_UNITS_MEDIEVAL_KNIGHT_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_KNIGHT_NEW1_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_KNIGHT',	25,					'UNIT_FLAG_ATLAS',	26,				'UNIT_ATLAS_1',	1
+FROM Units WHERE Type = 'UNIT_HORSEMAN';
 
 INSERT INTO Unit_ClassUpgrades 	
 		(UnitType, 					UnitClassType)
@@ -177,22 +180,22 @@ VALUES	('UNIT_SPUE_KNIGHT_NEW1', 	'PROMOTION_KNIGHT_COMBAT'),
 INSERT INTO Unit_BuildingClassRequireds 	
 		(UnitType, 				  BuildingClassType)
 SELECT	'UNIT_SPUE_KNIGHT_NEW1',  BuildingClassType
-FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_KNIGHT';
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_HORSEMAN';
 
 INSERT INTO UnitGameplay2DScripts 	
 		(UnitType, 				  SelectionSound, FirstSelectionSound)
 SELECT	'UNIT_SPUE_KNIGHT_NEW1',  SelectionSound, FirstSelectionSound
-FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_KNIGHT';
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_HORSEMAN';
 
 INSERT INTO Unit_AITypes 	
 		(UnitType, 				  UnitAIType)
 SELECT	'UNIT_SPUE_KNIGHT_NEW1',  UnitAIType
-FROM Unit_AITypes WHERE UnitType = 'UNIT_KNIGHT';
+FROM Unit_AITypes WHERE UnitType = 'UNIT_HORSEMAN';
 
 INSERT INTO Unit_Flavors 	
 		(UnitType, 				 FlavorType, Flavor)
 SELECT	'UNIT_SPUE_KNIGHT_NEW1', FlavorType, Flavor
-FROM Unit_Flavors WHERE UnitType = 'UNIT_KNIGHT';	
+FROM Unit_Flavors WHERE UnitType = 'UNIT_HORSEMAN';	
 
 INSERT INTO Unit_ResourceQuantityRequirements 	
 		(UnitType, 				 ResourceType, Cost)
