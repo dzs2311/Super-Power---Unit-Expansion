@@ -892,7 +892,7 @@
 			<Text>永备化</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON">
-			<Text>花费1000[ICON_GOLD]金币将瓦兰吉佣兵永备化成为瓦兰吉卫队（只能将一支瓦兰吉佣兵永备化）。</Text>
+			<Text>花费{1_Num}[ICON_GOLD]金币将瓦兰吉佣兵永备化成为瓦兰吉卫队（只能将一支瓦兰吉佣兵永备化）。</Text>
 		</Row>
 		<!-- **********************铁人军*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_IRON_TROOP">
@@ -1012,7 +1012,15 @@
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_PATRONAGE_SOCII_HASTATI_BUTTON">
-			<Text>花费[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]拉丁同盟军团[ENDCOLOR]单位，单位本回合失去移动力</Text>
+			<Text>花费{1_Num}[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]拉丁同盟军团[ENDCOLOR]单位，单位本回合失去移动力</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_VASSAL_BOWMAN_BUTTON_SHORT">
+			<Text>∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]征集</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_VASSAL_BOWMAN_BUTTON">
+			<Text>花费{1_Num}[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]单位，单位本回合失去移动力</Text>
 		</Row>
 
 		<!-- **********************同盟军团*********************** -->
@@ -1021,7 +1029,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI_HELP">
 			<Text>
-				∏[COLOR_CYAN]拉丁同盟军团[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重步兵同盟单位，只能由★[COLOR_CYAN]将领卫队[ENDCOLOR]在盟友城邦境内征召，死亡时不会造成人口损失。
+				∏[COLOR_CYAN]拉丁同盟军团[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重步兵同盟单位，只能由★[COLOR_CYAN]将领卫队[ENDCOLOR]在友好城邦境内征召，死亡时不会造成人口损失。
 				[NEWLINE][ICON_BULLET]如同罗马军团一样，能够在近战攻击之前发动一次投矛攻势。
 				[NEWLINE][ICON_BULLET]相邻的和同格的所有同领域单位每回合额外恢复30HP，该单位每回合额外恢复30HP。
 				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路才可以征召此单位。
@@ -1050,7 +1058,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_VASSAL_BOWMAN_HELP">
 			<Text>
-				∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军弓箭辅助单位，只能由★[COLOR_CYAN]将领卫队[ENDCOLOR]在盟友城邦境内征召，死亡时不会造成人口损失。
+				∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军弓箭辅助单位，只能由★[COLOR_CYAN]将领卫队[ENDCOLOR]在友好城邦境内征召，死亡时不会造成人口损失。
 				[NEWLINE][ICON_BULLET]相比于普通的弓箭手拥有更高的远程和近战战斗力，对陆军单位+50%[ICON_STRENGTH]战斗力，射程+1，每回合攻击次数+1，远程防御攻击时+50%[ICON_STRENGTH]战斗力（持盾）。
 				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路才可以征召此单位。
 				[NEWLINE][ICON_BULLET]给克里特人一张弓，他就会为罗马而战。
@@ -1097,7 +1105,7 @@
 			<Text>★[COLOR_CYAN]近卫甲骑[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_ELITE">
-			<Text>★[COLOR_CYAN]执政甲骑[ENDCOLOR]</Text>
+			<Text>[COLOR_YIELD_GOLD]贝利撒留甲骑兵[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP">
 			<Text>
@@ -1105,10 +1113,13 @@
 				[NEWLINE][ICON_BULLET]位于城邦境内时可以征召∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]位于岸边时可以建造[COLOR_CYAN]海洋之火[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
-				[NEWLINE][ICON_BULLET]+1攻击次数，每次远程攻击增加2移动力，每次近战攻击回复20血量。
 				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
 				[NEWLINE]
-				[NEWLINE][ICON_BULLET]完成罗马远征军训练计划后可以进行精英化改造：[COLOR_YIELD_GOLD]执政甲骑[ENDCOLOR]。
+				[NEWLINE]完成罗马远征军训练计划后可以进行精英化改造：[COLOR_YIELD_GOLD]贝利撒留甲骑兵[ENDCOLOR]。
+				[NEWLINE][COLOR_YIELD_GOLD]执政甲骑[ENDCOLOR]在★[COLOR_CYAN]近卫甲骑[ENDCOLOR]的基础上额外获得以下能力：
+				[NEWLINE][ICON_BULLET]每击杀一支敌方部队或对一支敌方部队造成30以上的伤害，则为己方所有城市带来一回合的“我们爱国王日”。
+				[NEWLINE][ICON_BULLET]无视ZOC，无视地形移动损耗，回合结束时2格内每个敌方单位提供2移动力。
+				[NEWLINE][ICON_BULLET]每次发动攻击后获得5%的战斗力加成（最高100%），遭受攻击后清零。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_BUCELLARII_GUARD_TEXT">
@@ -1126,7 +1137,6 @@
 				[NEWLINE][ICON_BULLET]位于非敌方城邦境内时可以征召∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]位于岸边时可以建造∏[COLOR_CYAN]海洋之火[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
-				[NEWLINE][ICON_BULLET]+1攻击次数，每次远程攻击增加2移动力，每次近战攻击回复15血量。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_ELITE">
@@ -1135,9 +1145,25 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_ELITE_HELP">
 			<Text>
 				[NEWLINE][ICON_BULLET]每击杀一支敌方部队或对一支敌方部队造成30以上的伤害，则为己方所有城市带来一回合的“我们爱国王日”。
-				[NEWLINE][ICON_BULLET]无视地形移动损耗，回合结束时2格内每个敌方单位提供2移动力。
+				[NEWLINE][ICON_BULLET]无视ZOC，无视地形移动损耗，回合结束时2格内每个敌方单位提供2移动力。
 				[NEWLINE][ICON_BULLET]每次发动攻击后获得5%的战斗力加成（最高100%），遭受攻击后清零。
 			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_QIANG_SPEARMAN_BUTTON_SHORT">
+			<Text>∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]征集</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_QIANG_SPEARMAN_BUTTON">
+			<Text>花费{1_Num}[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]单位，单位本回合失去移动力</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_OCEAN_FIRE_BUTTON_SHORT">
+			<Text>∏[COLOR_CYAN]海洋之火[ENDCOLOR]征集</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_OCEAN_FIRE_BUTTON">
+			<Text>花费{1_Num}[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]海洋之火[ENDCOLOR]单位，单位本回合失去移动力</Text>
 		</Row>
 		<!-- **********************辅助塞尔维亚重步兵*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_QIANG_SPEARMAN">
@@ -1169,7 +1195,7 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_OCEAN_FIRE_HELP">
 			<Text>
 				∏[COLOR_CYAN]海洋之火[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古海军近战辅助单位。
-				[NEWLINE][ICON_BULLET]能够为攻击单元格2格内的敌方单位带来减益。。
+				[NEWLINE][ICON_BULLET]+1攻击次数，能够为攻击单元格2格内的敌方单位带来减益。
 				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
 			</Text>
 		</Row>
@@ -1183,7 +1209,7 @@
 			<Text>罗马火</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_HELP">
-			<Text>为攻击单元格2格内的敌方单位带来减益。</Text>
+			<Text>+1攻击次数，为攻击单元格2格内的敌方单位带来减益。</Text>
 		</Row>
 
 		<!-- **********************宝船旗舰*********************** -->

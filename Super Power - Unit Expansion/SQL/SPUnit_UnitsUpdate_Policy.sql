@@ -1471,21 +1471,21 @@ FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_LONGSWORDSMAN';
 -- 近卫甲骑兵 -- 赞助中古统帅单位
 --==========================================================================================================================
 INSERT INTO UnitClasses
-		(Type,									Description,							DefaultUnit,						MaxPlayerInstances)
+		(Type,									Description,							DefaultUnit,					MaxPlayerInstances)
 VALUES	('UNITCLASS_SPUE_BUCELLARII_GUARD',		'TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD',	'UNIT_SPUE_BUCELLARII_GUARD',	2);
 
 INSERT INTO Units 	
-		(Type, 							Class, 								PrereqTech, PolicyType,				RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,							Civilopedia,								Strategy,	Help,										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 						UnitFlagIconOffset, UnitFlagAtlas,					PortraitIndex, 	IconAtlas,				NoMinorGifts)
-SELECT	'UNIT_SPUE_BUCELLARII_GUARD', 	'UNITCLASS_SPUE_BUCELLARII_GUARD',	PrereqTech, 'POLICY_SPUE_BASELIUS', RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,	FaithCost, 	HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   0,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD',	'TXT_KEY_CIV5_SPUE_BUCELLARII_GUARD_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_HEAVY_CAVALRY',	0,					'SPUE_VCATAPHCRAT_FLAG_ATLAS',	25,				'SPUE02_UNITS_ATLAS',	1
+		(Type, 							Class, 								PrereqTech, PolicyType,				RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,							Civilopedia,								Strategy,	Help,										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 	UnitArtInfo, 						UnitFlagIconOffset, UnitFlagAtlas,					PortraitIndex, 	IconAtlas,				NoMinorGifts)
+SELECT	'UNIT_SPUE_BUCELLARII_GUARD', 	'UNITCLASS_SPUE_BUCELLARII_GUARD',	PrereqTech, 'POLICY_SPUE_BASELIUS', Combat,			Combat,	1, 	   ExtraMaintenanceCost,	Special, Cost,	FaithCost, 	HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   0,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD',	'TXT_KEY_CIV5_SPUE_BUCELLARII_GUARD_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, 'UNIT_SPUE_CUIRASSIER', 	'ART_DEF_UNIT_SPUE_HEAVY_CAVALRY',	0,					'SPUE_VCATAPHCRAT_FLAG_ATLAS',	25,				'SPUE02_UNITS_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_KNIGHT';
 
 INSERT INTO Unit_ClassUpgrades 	
 		(UnitType, 						UnitClassType)
-VALUES	('UNIT_SPUE_BUCELLARII_GUARD',	'UNITCLASS_LANCER');
+VALUES	('UNIT_SPUE_BUCELLARII_GUARD',	'UNIT_SPUE_CUIRASSIER');
 		
 
 INSERT INTO Unit_FreePromotions
-		(UnitType, 								PromotionType)
+		(UnitType, 						PromotionType)
 VALUES	('UNIT_SPUE_BUCELLARII_GUARD', 	'PROMOTION_KNIGHT_COMBAT'),
 		('UNIT_SPUE_BUCELLARII_GUARD', 	'PROMOTION_SPUE_BUCELLARII_GUARD');
 		
@@ -1522,7 +1522,7 @@ VALUES	('UNITCLASS_SPUE_OCEAN_FIRE',		'TXT_KEY_UNIT_SPUE_OCEAN_FIRE',		'UNIT_SPU
 
 INSERT INTO Units 	
 		(Type, 						Class, 							PrereqTech, 	PolicyType,				RangedCombat,	Combat,		Range, ExtraMaintenanceCost,						Special, Cost,	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,					Civilopedia,							Strategy,	Help,									Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 					UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,				NoMinorGifts)
-SELECT	'UNIT_SPUE_OCEAN_FIRE', 	'UNITCLASS_SPUE_OCEAN_FIRE', 	PrereqTech, 	'POLICY_SPUE_BASELIUS', RangedCombat,	Combat,	 	Range, ExtraMaintenanceCost + ExtraMaintenanceCost,	Special, Cost, 	Cost, 		HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_OCEAN_FIRE',	'TXT_KEY_CIV5_SPUE_OCEAN_FIRE_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_OCEAN_FIRE_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_OCEAN_FIRE',	0,					'SPUE_OCEANF_FLAG_ATLAS',		27,				'SPUE02_UNITS_ATLAS',	1
+SELECT	'UNIT_SPUE_OCEAN_FIRE', 	'UNITCLASS_SPUE_OCEAN_FIRE', 	PrereqTech, 	'POLICY_SPUE_BASELIUS', Combat,			Combat,	 	2, 	   ExtraMaintenanceCost + ExtraMaintenanceCost,	Special, Cost, 	Cost, 		HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_OCEAN_FIRE',	'TXT_KEY_CIV5_SPUE_OCEAN_FIRE_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_OCEAN_FIRE_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_OCEAN_FIRE',	0,					'SPUE_OCEANF_FLAG_ATLAS',	27,				'SPUE02_UNITS_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_GALLEASS';
 
 INSERT INTO Unit_ClassUpgrades 	

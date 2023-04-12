@@ -246,3 +246,76 @@ function CountUnitsWithUniquePromotions( iPlayerID, unitPromotionID )
 
 	end
 end
+--------------------------------------------------------------
+-- 检查所有单位拥有某特殊晋升
+--------------------------------------------------------------
+function CheckUniquePromotions(pPlayer, unitPromotionID)
+	-- 十字战车检查
+	local GreatCrossCheck = 0;
+	for pUnit in pPlayer:Units() do
+		if pUnit:IsHasPromotion(unitPromotionID) then
+			GreatCrossCheck = 1;
+			break
+		end
+	end
+	return GreatCrossCheck;
+end
+--------------------------------------------------------------
+-- 遍历某单位(pUnit)附近单位，判断其是否拥有晋升A，若有则给与当前单位晋升B，没有则去掉当前单位晋升B
+--------------------------------------------------------------
+function plotDistancePromotion(pPlayer, pUnit, unitPromotionAID, unitPromotionBID, radius, pFlag)
+	local Patronage = 0;
+	if pFlag then 
+		for sUnit in pPlayer:Units() do
+			if sUnit:IsHasPromotion(unitPromotionAID) then
+				if Map.PlotDistance(pUnit:GetX(), pUnit:GetY(), sUnit:GetX(), sUnit:GetY()) < radius + 1 then -- 人类2格
+					Patronage = 1;
+				end
+			end
+		end			
+		if Patronage == 1 then
+			if not pUnit:IsHasPromotion(unitPromotionBID) then
+				pUnit:SetHasPromotion(unitPromotionBID, true)
+			end
+		else
+			if pUnit:IsHasPromotion(unitPromotionBID) and not pUnit:IsHasPromotion(unitPromotionAID) then
+				pUnit:SetHasPromotion(unitPromotionBID, false)
+			end
+		end		
+	else
+		if pUnit:IsHasPromotion(unitPromotionBID) and not pUnit:IsHasPromotion(unitPromotionAID) then
+			pUnit:SetHasPromotion(unitPromotionBID, false)
+		end
+	end
+
+end
+--------------------------------------------------------------
+-- 统计文明的城邦盟友及各城邦盟友的人口数量还有关系
+--------------------------------------------------------------
+function SPUE_MajorFavorite_MinorCivsAndCityPops(playerID)
+	local g_MinorCivsAndPopWithMajor = {};
+
+	local player = Players[playerID];
+
+	if (not player:IsAlive()) then return end;
+
+	local index = 1;
+	if not (player:IsMinorCiv() or player:IsBarbarian()) then
+		for iCS = GameDefines.MAX_MAJOR_CIVS, GameDefines.MAX_PLAYERS-2, 1 do
+			if  Players[iCS]:IsAlive() and Players[iCS]:IsMinorCiv()
+			and Players[iCS]:GetAlly() ~= -1 and Players[Players[iCS]:GetAlly()]:IsAlive()
+			and Players[iCS]:GetAlly() == playerID
+			then
+				local CityPop = Players[iCS]:GetCapitalCity():GetPopulation();
+				local iFriendShip = Players[iCS]:GetMinorCivFriendshipWithMajor(playerID);
+				g_MinorCivsAndPopWithMajor[index] = {iCS, CityPop, iFriendShip};
+				index = index + 1;
+			end
+		end
+		if index == 1 then
+			return false;
+		end
+	end
+
+	return g_MinorCivsAndPopWithMajor;
+end

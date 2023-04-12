@@ -650,18 +650,33 @@
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_QIANG_SPEARMAN</PediaEntry>
 		</Row>
 		<Row>
-			<!--近卫甲骑兵：阿扎塔夫雷-->
+			<!--近卫甲骑兵：罗马远征军-->
 			<Type>PROMOTION_SPUE_BUCELLARII_GUARD</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
-			<FlankAttackModifier>100</FlankAttackModifier>
+			<FlankAttackModifier>1000</FlankAttackModifier>
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<PortraitIndex>59</PortraitIndex>
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD</PediaEntry>
+		</Row>
+		<Row>
+			<!--贝利撒留甲骑兵：最后的罗马人-->
+			<Type>PROMOTION_SPUE_BUCELLARII_GUARD_ELITE</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_ELITE</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_ELITE_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<IgnoreZOC>true</IgnoreZOC>
+			<IgnoreTerrainCost>true</IgnoreTerrainCost>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_ELITE</PediaEntry>
 		</Row>
 		
 		<Row>
@@ -1037,7 +1052,7 @@
 			<TerrainType>TERRAIN_OCEAN</TerrainType>
 			<DoubleMove>true</DoubleMove>
 		</Row>
-		<!--亚美尼亚甲骑兵：阿扎塔夫雷-->
+		<!--亚美尼亚甲骑兵：罗马远征军-->
 		<Row>
 			<PromotionType>PROMOTION_SPUE_BUCELLARII_GUARD</PromotionType>
 			<TerrainType>TERRAIN_DESERT</TerrainType>
@@ -1186,6 +1201,13 @@
 			<UnitType>UNIT_SPUE_SHENJI_MUSKETEER</UnitType>
 			<Name>TXT_KEY_PROMOTION_SPUE_SHENJI_MUSKETEER3</Name>
 		</Row>
+		<!--贝利撒留甲骑兵-->
+		<Row>
+			<PromotionType>PROMOTION_SPUE_BUCELLARII_GUARD_ELITE</PromotionType>
+			<UnitType>UNIT_SPUE_BUCELLARII_GUARD</UnitType>
+			<Name>TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_ELITE</Name>
+		</Row>
+		
 	</UnitPromotions_UnitName>
 	<UnitPromotions_UnitClasses>
 		<!-- <Row>

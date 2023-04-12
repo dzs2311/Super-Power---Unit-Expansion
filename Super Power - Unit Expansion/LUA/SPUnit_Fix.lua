@@ -44,6 +44,9 @@ local HospitallerKnightID 			= GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIG
 local HospitallerEffectID 			= GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER_EFFECT"].ID
 -- 涌泉守卫	
 local unitPromotionGondorID 		= GameInfo.UnitPromotions["PROMOTION_SPUE_GONDORGUARD"].ID
+-- 近卫甲骑
+local unitPromotionBucellariEliteID = GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD_ELITE"].ID
+
 -- 阿兰骑兵	
 -- local unitPromotionAlanID 			= GameInfo.UnitPromotions["PROMOTION_SPUE_VASSAL_ALAN_CAVALRY"].ID
 
@@ -1162,107 +1165,27 @@ GameEvents.UnitPromoted.Add(SPUE_UnitPromoted)
 -- 十字战车：十字架反对弓月&热气球：高级热气球&医院骑士团
 -- 鹰击055：北斗摇光
 --------------------------------------------------------------
-function CheckGreatCross(pPlayer)
-	-- 十字战车检查
-	local GreatCrossCheck = 0;
-	for pUnit in pPlayer:Units() do
-		if pUnit:IsHasPromotion(pGreatCrossID) then
-			GreatCrossCheck = 1;
-			break
-		end
-	end
-	return GreatCrossCheck;
-end
-
-function CheckHotAirBalloon(pPlayer)
-	-- 热气球检查
-	local HotAirBalloonCheck = 0;
-	for pUnit in pPlayer:Units() do
-		if pUnit:IsHasPromotion(pHotAirBalloonID) then
-			HotAirBalloonCheck = 1;
-			break
-		end
-	end
-	return HotAirBalloonCheck;
-end
-
-function CheckHospitallerKnight(pPlayer)
-	-- 医院骑士团检查
-	local HospitallerKnightCheck = 0;
-	for pUnit in pPlayer:Units() do
-		if pUnit:IsHasPromotion(HospitallerKnightID) then
-			HospitallerKnightCheck = 1;
-			break
-		end
-	end
-	return HospitallerKnightCheck;
-end
-
-function CheckS055(pPlayer)
-	-- 鹰击055检查
-	local S055Check = 0;
-	for pUnit in pPlayer:Units() do
-		if pUnit:IsHasPromotion(unitPromotion055ID) then
-			S055Check= 1;
-			break
-		end
-	end
-	return S055Check;
-end
-
-function CheckPanzer(pPlayer)
-	-- 装甲掷弹兵检查
-	local PanzerCheck = 0;
-	for pUnit in pPlayer:Units() do
-		if pUnit:IsHasPromotion(unitPromotionPanzerID) then
-			PanzerCheck= 1;
-			break
-		end
-	end
-	return PanzerCheck;
-end
-
 function SPUE_Unit_Effect_UnitSetXY(playerID)
 	local pPlayer = Players[playerID]
 
-	local GreatCrossCheck = CheckGreatCross(pPlayer);
-	local HotAirBalloonCheck = CheckHotAirBalloon(pPlayer);
-	local HospitallerKnightCheck = CheckHospitallerKnight(pPlayer);
-	local S055Check = CheckS055(pPlayer);
-	local PanzerCheck = CheckPanzer(pPlayer);
+	local GreatCrossCheck			 	= CheckUniquePromotions(pPlayer, pGreatCrossID);
+	local HotAirBalloonCheck 			= CheckUniquePromotions(pPlayer, pHotAirBalloonID);
+	local HospitallerKnightCheck 		= CheckUniquePromotions(pPlayer, HospitallerKnightID);
+	local S055Check 					= CheckUniquePromotions(pPlayer, unitPromotion055ID);
+	local PanzerCheck					= CheckUniquePromotions(pPlayer, unitPromotionPanzerID);
 
 	-- 十字战车：东征十字军
 	if GreatCrossCheck == 1 then
 		for pUnit in pPlayer:Units() do
-			local Patronage = 0;
-			if (pUnit:GetDomainType() == DomainTypes.DOMAIN_LAND) and pUnit:IsCombatUnit() and not pUnit:IsEmbarked() and not pUnit:IsHasPromotion(pGreatCrossID) then 
-				for sUnit in pPlayer:Units() do
-					if sUnit:IsHasPromotion(pGreatCrossID) then
-						if pPlayer:IsHuman() then
-							if Map.PlotDistance(pUnit:GetX(), pUnit:GetY(), sUnit:GetX(), sUnit:GetY()) < 3 then -- 人类2格
-								Patronage = 1;
-							end
-						elseif not pPlayer:IsHuman() then
-							if Map.PlotDistance(pUnit:GetX(), pUnit:GetY(), sUnit:GetX(), sUnit:GetY()) < 4 then -- ai3格
-								Patronage = 1;
-							end
-						end
-					end
-				end			
-				if Patronage == 1 then
-					if not pUnit:IsHasPromotion(pGreatCrossEffectID) then
-						pUnit:SetHasPromotion(pGreatCrossEffectID, true)
-					end
-				else
-					if pUnit:IsHasPromotion(pGreatCrossEffectID) and not pUnit:IsHasPromotion(pGreatCrossID) then
-						pUnit:SetHasPromotion(pGreatCrossEffectID, false)
-					end
-				end		
-			else
-				if pUnit:IsHasPromotion(pGreatCrossEffectID) and not pUnit:IsHasPromotion(pGreatCrossID) then
-					pUnit:SetHasPromotion(pGreatCrossEffectID, false)
-				end
+			-- local Patronage = 0;
+			local pFlag = false;
+			if (pUnit:GetDomainType() == DomainTypes.DOMAIN_LAND) 
+			and pUnit:IsCombatUnit() and not pUnit:IsEmbarked() 
+			and not pUnit:IsHasPromotion(pGreatCrossID) 
+			then  
+				pFlag = true
 			end
+			plotDistancePromotion(pPlayer, pUnit, pGreatCrossID, pGreatCrossEffectID, 2, pFlag)
 		end
 	end
 
@@ -1280,12 +1203,10 @@ function SPUE_Unit_Effect_UnitSetXY(playerID)
 				--print("HotAirBalloonCheck2")
 				for sUnit in pPlayer:Units() do
 					if sUnit:IsHasPromotion(pHotAirBalloonID) then
-						if pPlayer:IsHuman() then
-							if Map.PlotDistance(pUnit:GetX(), pUnit:GetY(), sUnit:GetX(), sUnit:GetY()) < 2 then -- 人类同格
-								--print("HotAirBalloonCheck3")
-								numHotAirBalloon = numHotAirBalloon + 1;
-								Patronage = 1;
-							end
+						if Map.PlotDistance(pUnit:GetX(), pUnit:GetY(), sUnit:GetX(), sUnit:GetY()) < 2 then -- 人类同格
+							--print("HotAirBalloonCheck3")
+							numHotAirBalloon = numHotAirBalloon + 1;
+							Patronage = 1;
 						end
 					end
 				end			
@@ -1328,99 +1249,36 @@ function SPUE_Unit_Effect_UnitSetXY(playerID)
 	-- 医院骑士团
 	if GreatCrossCheck == 1 then
 		for pUnit in pPlayer:Units() do
-			local Patronage = 0;
-			if (pUnit:GetDomainType() == DomainTypes.DOMAIN_SEA) and pUnit:IsCombatUnit() and not pUnit:IsHasPromotion( HospitallerKnightID ) then 
-				for sUnit in pPlayer:Units() do
-					if sUnit:IsHasPromotion(HospitallerKnightID ) then
-						if pPlayer:IsHuman() then
-							if Map.PlotDistance(pUnit:GetX(), pUnit:GetY(), sUnit:GetX(), sUnit:GetY()) < 3 then -- 人类2格
-								Patronage = 1;
-							end
-						elseif not pPlayer:IsHuman() then
-							if Map.PlotDistance(pUnit:GetX(), pUnit:GetY(), sUnit:GetX(), sUnit:GetY()) < 4 then -- ai3格
-								Patronage = 1;
-							end
-						end
-					end
-				end			
-				if Patronage == 1 then
-					if not pUnit:IsHasPromotion(HospitallerEffectID ) then
-						pUnit:SetHasPromotion(HospitallerEffectID , true)
-					end
-				else
-					if pUnit:IsHasPromotion(HospitallerEffectID ) and not pUnit:IsHasPromotion(HospitallerKnightID ) then
-						pUnit:SetHasPromotion(HospitallerEffectID , false)
-					end
-				end		
-			else
-				if pUnit:IsHasPromotion(HospitallerEffectID ) and not pUnit:IsHasPromotion(HospitallerKnightID ) then
-					pUnit:SetHasPromotion(HospitallerEffectID , false)
-				end
+
+			local pFlag = false;
+			if (pUnit:GetDomainType() == DomainTypes.DOMAIN_SEA) and pUnit:IsCombatUnit() and not pUnit:IsHasPromotion( HospitallerKnightID ) then  
+				pFlag = true
 			end
+			plotDistancePromotion(pPlayer, pUnit, HospitallerKnightID, HospitallerEffectID, 2, pFlag)
 		end
 	end
 
 	-- 鹰击055：巡天四面阵
 	if S055Check == 1 then
 		for pUnit in pPlayer:Units() do
-			local Patronage = 0;
+			local pFlag = false;
 			if (pUnit:IsHasPromotion( CarrierFighterID  ) or pUnit:IsHasPromotion( IntercepterAircraftUnitID  ))
 			then 
-				for sUnit in pPlayer:Units() do
-					if sUnit:IsHasPromotion(unitPromotion055ID ) then
-						if pPlayer:IsHuman() then
-							if Map.PlotDistance(pUnit:GetX(), pUnit:GetY(), sUnit:GetX(), sUnit:GetY()) < 3 then -- 人类2格
-								Patronage = 1;
-							end
-						end						
-					end
-				end			
-				if Patronage == 1 then
-					if not pUnit:IsHasPromotion(unitPromotion055EffectID  ) then
-						pUnit:SetHasPromotion(unitPromotion055EffectID  , true)
-					end
-				else
-					if pUnit:IsHasPromotion(unitPromotion055EffectID  ) and not pUnit:IsHasPromotion(unitPromotion055ID ) then
-						pUnit:SetHasPromotion(unitPromotion055EffectID  , false)
-					end
-				end		
-			else
-				if pUnit:IsHasPromotion(unitPromotion055EffectID  ) and not pUnit:IsHasPromotion(unitPromotion055ID ) then
-					pUnit:SetHasPromotion(unitPromotion055EffectID  , false)
-				end
+				pFlag = true
 			end
+			plotDistancePromotion(pPlayer, pUnit, unitPromotion055ID, unitPromotion055EffectID, 2, pFlag)
 		end
 	end
 
 	-- 装甲掷弹兵
 	if PanzerCheck == 1 then
 		for pUnit in pPlayer:Units() do
-			local Patronage = 0;
+			local pFlag = false;
 			if (pUnit:IsHasPromotion( TankID ))
 			then 
-				for sUnit in pPlayer:Units() do
-					if sUnit:IsHasPromotion(unitPromotionPanzerID ) then
-						if pPlayer:IsHuman() then
-							if Map.PlotDistance(pUnit:GetX(), pUnit:GetY(), sUnit:GetX(), sUnit:GetY()) < 3 then -- 人类2格
-								Patronage = 1;
-							end
-						end
-					end
-				end			
-				if Patronage == 1 then
-					if not pUnit:IsHasPromotion(unitPromotionPanzerEffectID ) then
-						pUnit:SetHasPromotion(unitPromotionPanzerEffectID , true)
-					end
-				else
-					if pUnit:IsHasPromotion(unitPromotionPanzerEffectID ) and not pUnit:IsHasPromotion(unitPromotion055ID ) then
-						pUnit:SetHasPromotion(unitPromotionPanzerEffectID , false)
-					end
-				end		
-			else
-				if pUnit:IsHasPromotion(unitPromotionPanzerEffectID ) and not pUnit:IsHasPromotion(unitPromotion055ID ) then
-					pUnit:SetHasPromotion(unitPromotionPanzerEffectID , false)
-				end
+				pFlag = true
 			end
+			plotDistancePromotion(pPlayer, pUnit, unitPromotionPanzerID, unitPromotionPanzerEffectID, 2, pFlag)
 		end
 	end
 
@@ -1431,26 +1289,6 @@ GameEvents.UnitCreated.Add(SPUE_Unit_Effect_UnitSetXY)
 --------------------------------------------------------------
 -- 瓦兰吉佣兵永备化成为瓦兰吉卫队
 --------------------------------------------------------------
-function CountVarangianGuard( iPlayerID )
-	
-	if  Players[ iPlayerID ] and Players[ iPlayerID ]:IsAlive() then
-		local pPlayer = Players[ iPlayerID ]
-		local num = 0
-
-		if (not pPlayer:IsAlive()) then return end
-		if pPlayer:IsBarbarian() then return end
-		
-		for unit in pPlayer:Units() do
-			if unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VARANGIAN_GUARD"].ID) then
-				num = num + 1
-			end
-		end
-
-		return num
-
-	end
-end
-
 SPUE_Varangian_Button = {
 	Name = "Varangian Guard",
 	Title = "TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON_SHORT", -- or a TXT_KEY
@@ -1464,6 +1302,21 @@ SPUE_Varangian_Button = {
 	Condition = function(action, unit)
 
 		local player = Players[unit:GetOwner()]
+
+		-- 单位购买价格
+		local iUnit = GameInfoTypes.UNIT_SPUE_VARANGIAN;
+		local iCost = 1000
+
+		if iUnit and iUnit ~= -1 then
+			for pCity in player:Cities() do
+				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
+					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)*7);
+					break;
+				end
+			end
+		end
+		SPUE_Varangian_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON", iCost);
+						
 		return unit:CanMove() and unit:IsHasPromotion(VARANGIANID) 
 		and unit:GetUnitType() == GameInfoTypes.UNIT_SPUE_VARANGIAN
 		and CountUnitsWithUniquePromotions(unit:GetOwner(), VARANGIANGuardID) == 0
@@ -1514,9 +1367,25 @@ SPUE_Varangian_Button = {
 		  newUnit:SetName(unitName);
 		end
 
-		player:ChangeGold(-1000)
+		-- 单位购买价格
+		local iUnit = GameInfoTypes.UNIT_SPUE_VARANGIAN;
+		local iCost = 1000
+	
+		if iUnit and iUnit ~= -1 then
+			for pCity in player:Cities() do
+				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
+					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)*7);
+					break;
+				end
+			end
+		end
+
+		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
+
+
+		player:ChangeGold(-iCost)
 		local hex = ToHexFromGrid(Vector2(plotX, plotY))
-		Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("-1000[ICON_GOLD]"))
+		Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("-{1_Num}[ICON_GOLD]", iCost))
 		Events.GameplayFX(hex.x, hex.y, -1)
 	end
   };
@@ -1598,26 +1467,6 @@ LuaEvents.UnitPanelActionAddin(SPUE_Knight_New_Button)
 --------------------------------------------------------------
 -- 羽林禁军：羽林孤儿
 --------------------------------------------------------------
-function CountYuLin( iPlayerID )
-	
-	if  Players[ iPlayerID ] and Players[ iPlayerID ]:IsAlive() then
-		local pPlayer = Players[ iPlayerID ]
-		local num = 0
-
-		if (not pPlayer:IsAlive()) then return end
-		if pPlayer:IsBarbarian() then return end
-		
-		for unit in pPlayer:Units() do
-			if unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID) then
-				num = num + 1
-			end
-		end
-
-		return num
-
-	end
-end
-
 function OnSPUESetDamageSP( iPlayerID, iUnitID, iDamage, iPreviousDamage )
 	if Players[ iPlayerID ] == nil or not Players[ iPlayerID ]:IsAlive()
 	or Players[ iPlayerID ]:GetUnitByID( iUnitID ) == nil
@@ -1628,7 +1477,6 @@ function OnSPUESetDamageSP( iPlayerID, iUnitID, iDamage, iPreviousDamage )
 	end
 	local pUnit = Players[ iPlayerID ]:GetUnitByID( iUnitID );
 	local pPlayer = Players[ iPlayerID ]
-	local YuLin_Num = CountYuLin(iPlayerID)
 	local YuLin_Num = CountUnitsWithUniquePromotions(iPlayerID, GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID)
 
 	if YuLin_Num and YuLin_Num > 0 
@@ -1646,27 +1494,6 @@ Events.SerialEventUnitSetDamage.Add( OnSPUESetDamageSP );
 --------------------------------------------------------------
 -- 洛汗骠骑：白城烽火
 --------------------------------------------------------------
-function CountRohanCavalry( iPlayerID )
-	
-	if  Players[ iPlayerID ] and Players[ iPlayerID ]:IsAlive() then
-		local pPlayer = Players[ iPlayerID ]
-		local num = 0
-
-		if (not pPlayer:IsAlive()) then return end
-		if pPlayer:IsBarbarian() then return end
-		
-		for unit in pPlayer:Units() do
-			if unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ROHAN_CAVALRY"].ID) then
-				num = num + 1
-			end
-		end
-
-		return num
-
-	end
-end
-
-
 SPUE_Rohan_Cavalry_Button = {
   Name = "Rohant Cavalry",
   Title = "TXT_KEY_SPUE_ROHAN_CAVALRY_BUTTON_SHORT", -- or a TXT_KEY
@@ -1681,7 +1508,8 @@ SPUE_Rohan_Cavalry_Button = {
 	local player = Players[unit:GetOwner()]
 	local flag = 0
 
-	if unit:CanMove() and CountRohanCavalry(unit:GetOwner()) and CountRohanCavalry(unit:GetOwner()) > 0
+	if unit:CanMove() 
+	and CountUnitsWithUniquePromotions(unit:GetOwner(), GameInfo.UnitPromotions["PROMOTION_SPUE_ROHAN_CAVALRY"].ID) > 0
 	and unit:GetUnitClassType() == GameInfo.UnitClasses.UNITCLASS_GREAT_GENERAL.ID
 	then
 		flag = 1
@@ -1908,6 +1736,8 @@ SPUE_FuChuan_LandInfantry_Button = {
 			end
 			end
 		end
+		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
+
 		if iCost and iCost > 0 then
 			player:ChangeGold(- iCost)
 		end
@@ -2018,6 +1848,8 @@ SPUE_FuChuan_Cannon_Button = {
 			end
 			end
 		end
+		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
+
 		if iCost and iCost > 0 then
 			player:ChangeGold(- iCost)
 		end
@@ -3003,37 +2835,10 @@ function SPUE_Templar_CityCaptureComplete(oldOwnerID, isCapital, plotX, plotY, n
 end
 GameEvents.CityCaptureComplete.Add(SPUE_Templar_CityCaptureComplete)
 --------------------------------------------------------------
--- 统计文明的城邦盟友及各城邦盟友的人口数量还有关系
+-- 赞助单位征集按钮
 --------------------------------------------------------------
-function SPUE_MajorFavorite_MinorCivsAndCityPops(playerID)
-	local g_MinorCivsAndPopWithMajor = {};
-
-	local player = Players[playerID];
-
-	if (not player:IsAlive()) then return end;
-
-	local index = 1;
-	if not (player:IsMinorCiv() or player:IsBarbarian()) then
-		for iCS = GameDefines.MAX_MAJOR_CIVS, GameDefines.MAX_PLAYERS-2, 1 do
-			if  Players[iCS]:IsAlive() and Players[iCS]:IsMinorCiv()
-			and Players[iCS]:GetAlly() ~= -1 and Players[Players[iCS]:GetAlly()]:IsAlive()
-			and Players[iCS]:GetAlly() == playerID
-			then
-				local CityPop = Players[iCS]:GetCapitalCity():GetPopulation();
-				local iFriendShip = Players[iCS]:GetMinorCivFriendshipWithMajor(playerID);
-				g_MinorCivsAndPopWithMajor[index] = {iCS, CityPop, iFriendShip};
-				index = index + 1;
-			end
-		end
-		if index == 1 then
-			return false;
-		end
-	end
-
-	return g_MinorCivsAndPopWithMajor;
-end
 -- 同盟军团征集
-SPUE_Patronage_Socii_Hastati_Button = {
+SPUE_Patronage_Hastati_Button = {
 	Name = "Patronage Hastati",
 	Title = "TXT_KEY_SPUE_PATRONAGE_SOCII_HASTATI_BUTTON_SHORT", -- or a TXT_KEY
 	OrderPriority = 200, -- default is 200
@@ -3054,7 +2859,7 @@ SPUE_Patronage_Socii_Hastati_Button = {
 
 		local flag = 0
 		local csPlotFlag = 0
-		local iCost = 100
+		local iCost = 0
 
 		if plot and plot:IsOwned() then
 			local csPlayer = Players[plot:GetOwner()]
@@ -3084,6 +2889,9 @@ SPUE_Patronage_Socii_Hastati_Button = {
 				end
 			end
 			if iCost > 0 and player:GetGold() >= iCost then
+
+				SPUE_Patronage_Hastati_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_PATRONAGE_SOCII_HASTATI_BUTTON", iCost)
+				
 				-- 玩家有足够金钱
 				if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
 					flag = 1
@@ -3113,7 +2921,7 @@ SPUE_Patronage_Socii_Hastati_Button = {
 		local plotY = unit:GetY()
 		local player = Players[unit:GetOwner()]
 		local unitEXP = unit:GetExperience()
-		local iCost = 700
+		local iCost = 0
 		-- 单位购买价格
 		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SOCII_HASTATI");
 		local iUnit = GameInfoTypes[sUnitType];
@@ -3127,13 +2935,15 @@ SPUE_Patronage_Socii_Hastati_Button = {
 			end
 		end
 		
-		local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SOCII_HASTATI");
-		local NewUnit = player:InitUnit(GameInfoTypes[newUnitType], plotX, plotY, UNITAI_DEFENSE)
+		-- local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SOCII_HASTATI");
+		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
 		if plot:GetNumUnits() > 2 then
 			NewUnit:JumpToNearestValidPlot();
 		end 
 		NewUnit:SetExperience(unitEXP)
 		unit:SetMoves(0)
+
+		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
 
 		if iCost and iCost > 0 then
 			player:ChangeGold(- iCost)
@@ -3141,11 +2951,329 @@ SPUE_Patronage_Socii_Hastati_Button = {
 		
 	end
 }; 
-LuaEvents.UnitPanelActionAddin(SPUE_Patronage_Socii_Hastati_Button)	
+LuaEvents.UnitPanelActionAddin(SPUE_Patronage_Hastati_Button)	
 -- 克里特弓箭手征集
--- 神机营征集
--- 神机营征集
+SPUE_Patronage_vBowman_Button = {
+	Name = "Patronage vBowman",
+	Title = "TXT_KEY_SPUE_VASSAL_BOWMAN_BUTTON_SHORT", -- or a TXT_KEY
+	OrderPriority = 200, -- default is 200
+	IconAtlas = "SPUE_UNITS_ATLAS", -- 45 and 64 variations required
+	PortraitIndex = 55,
+	ToolTip = "TXT_KEY_SPUE_VASSAL_BOWMAN_BUTTON", -- or a TXT_KEY_ or a function
+	
+	Condition = function(action, unit)
 
+		local plot = unit:GetPlot()
+		local player = Players[unit:GetOwner()]
+		local unitX = unit:GetX()
+		local unitY = unit:GetY()
+
+		-- if Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_IRON_WORKING"]) then
+		-- 	return false;
+		-- end
+
+		local flag = 0
+		local csPlotFlag = 0
+		local iCost = 0
+
+		if plot and plot:IsOwned() then
+			local csPlayer = Players[plot:GetOwner()]
+			if csPlayer:IsMinorCiv() then
+				if not PlayersAtWar(player, csPlayer) then
+					csPlotFlag = 1
+				end
+			end
+		end
+
+		local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_VASSAL_BOWMAN"]);
+		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_GENERAL_BODYGUARD"].ID) 
+		and csPlotFlag == 1 
+		and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
+		and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_VASSAL_BOWMAN"].MaxPlayerInstances
+		then
+			-- 单位购买价格
+			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_VASSAL_BOWMAN");
+			local iUnit = GameInfoTypes[sUnitType];
+
+			if iUnit and iUnit ~= -1 then
+				for pCity in player:Cities() do
+					if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
+						iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
+						break;
+					end
+				end
+			end
+			if iCost > 0 and player:GetGold() >= iCost then
+				SPUE_Patronage_vBowman_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_VASSAL_BOWMAN_BUTTON", iCost)
+				-- 玩家有足够金钱
+				if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
+					flag = 1
+				elseif player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) > 0 then
+					-- 兵力足够时按钮才会显示
+					local iTotalTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) 
+					local iUsedTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS_USED"]) 
+					if iTotalTroops - iUsedTroops >  1 then
+						flag = 1
+					end
+				end
+			end
+		end
+  
+		return flag == 1;
+  
+	end, -- or nil or a boolean, default is true
+	
+	Disabled = function(action, unit)   
+		return false;
+	end, -- or nil or a boolean, default is false
+	
+	Action = function(action, unit, eClick) 
+		
+		local plot = unit:GetPlot()
+		local plotX = unit:GetX()
+		local plotY = unit:GetY()
+		local player = Players[unit:GetOwner()]
+		local unitEXP = unit:GetExperience()
+		local iCost = 0
+		-- 单位购买价格
+		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_VASSAL_BOWMAN");
+		local iUnit = GameInfoTypes[sUnitType];
+	
+		if iUnit and iUnit ~= -1 then
+			for pCity in player:Cities() do
+				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
+					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
+					break;
+				end
+			end
+		end
+		
+		-- local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_VASSAL_BOWMAN");
+		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
+		if plot:GetNumUnits() > 2 then
+			NewUnit:JumpToNearestValidPlot();
+		end 
+		NewUnit:SetExperience(unitEXP)
+		unit:SetMoves(0)
+		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
+
+		if iCost and iCost > 0 then
+			player:ChangeGold(- iCost)
+		end
+		
+	end
+}; 
+LuaEvents.UnitPanelActionAddin(SPUE_Patronage_vBowman_Button)	
+-- 辅助塞尔维亚重步兵征集
+SPUE_Patronage_Serbia_Button = {
+	Name = "Patronage Serbia",
+	Title = "TXT_KEY_SPUE_QIANG_SPEARMAN_BUTTON_SHORT", -- or a TXT_KEY
+	OrderPriority = 200, -- default is 200
+	IconAtlas = "SPUE_UNITS_ATLAS", -- 45 and 64 variations required
+	PortraitIndex = 62,
+	ToolTip = "TXT_KEY_SPUE_QIANG_SPEARMAN_BUTTON", -- or a TXT_KEY_ or a function
+	
+	Condition = function(action, unit)
+
+		local plot = unit:GetPlot()
+		local player = Players[unit:GetOwner()]
+		local unitX = unit:GetX()
+		local unitY = unit:GetY()
+
+		if Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_IRON_WORKING"]) then
+			return false;
+		end
+
+		local flag = 0
+		local csPlotFlag = 0
+		local iCost = 0
+
+		if plot and plot:IsOwned() then
+			local csPlayer = Players[plot:GetOwner()]
+			if csPlayer:IsMinorCiv() then
+				if not PlayersAtWar(player, csPlayer) then
+					csPlotFlag = 1
+				end
+			end
+		end
+
+		local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_QIANG_SPEARMAN"]);
+		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID) 
+		and csPlotFlag == 1 
+		and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
+		and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_QIANG_SPEARMAN"].MaxPlayerInstances
+		then
+			-- 单位购买价格
+			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_QIANG_SPEARMAN");
+			local iUnit = GameInfoTypes[sUnitType];
+
+			if iUnit and iUnit ~= -1 then
+				for pCity in player:Cities() do
+					if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
+						iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
+						break;
+					end
+				end
+			end
+			if iCost > 0 and player:GetGold() >= iCost then
+
+				SPUE_Patronage_Serbia_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_QIANG_SPEARMAN_BUTTON", iCost)
+				
+				-- 玩家有足够金钱
+				if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
+					flag = 1
+				elseif player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) > 0 then
+					-- 兵力足够时按钮才会显示
+					local iTotalTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) 
+					local iUsedTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS_USED"]) 
+					if iTotalTroops - iUsedTroops >  1 then
+						flag = 1
+					end
+				end
+			end
+		end
+  
+		return flag == 1;
+  
+	end, -- or nil or a boolean, default is true
+	
+	Disabled = function(action, unit)   
+		return false;
+	end, -- or nil or a boolean, default is false
+	
+	Action = function(action, unit, eClick) 
+		
+		local plot = unit:GetPlot()
+		local plotX = unit:GetX()
+		local plotY = unit:GetY()
+		local player = Players[unit:GetOwner()]
+		local unitEXP = unit:GetExperience()
+		local iCost = 0
+		-- 单位购买价格
+		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_QIANG_SPEARMAN");
+		local iUnit = GameInfoTypes[sUnitType];
+	
+		if iUnit and iUnit ~= -1 then
+			for pCity in player:Cities() do
+				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
+					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
+					break;
+				end
+			end
+		end
+		
+		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
+		if plot:GetNumUnits() > 2 then
+			NewUnit:JumpToNearestValidPlot();
+		end 
+		NewUnit:SetExperience(unitEXP)
+		unit:SetMoves(0)
+		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
+
+		if iCost and iCost > 0 then
+			player:ChangeGold(- iCost)
+		end
+		
+	end
+}; 
+LuaEvents.UnitPanelActionAddin(SPUE_Patronage_Serbia_Button)	
+-- 海洋之火征集
+SPUE_Patronage_OceanFire_Button = {
+	Name = "Patronage Ocean Fire",
+	Title = "TXT_KEY_SPUE_OCEAN_FIRE_BUTTON_SHORT", -- or a TXT_KEY
+	OrderPriority = 200, -- default is 200
+	IconAtlas = "SPUE02_UNITS_ATLAS", -- 45 and 64 variations required
+	PortraitIndex = 27,
+	ToolTip = "TXT_KEY_SPUE_OCEAN_FIRE_BUTTON", -- or a TXT_KEY_ or a function
+	
+	Condition = function(action, unit)
+
+		local plot = unit:GetPlot()
+		local player = Players[unit:GetOwner()]
+		local unitX = unit:GetX()
+		local unitY = unit:GetY()
+
+		local flag = 0
+		local iCost = 0
+
+		local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_OCEAN_FIRE"]);
+		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID) 
+		and plot:IsCoastalLand() 
+		and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
+		and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_OCEAN_FIRE"].MaxPlayerInstances
+		then
+			-- 单位购买价格
+			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_OCEAN_FIRE");
+			local iUnit = GameInfoTypes[sUnitType];
+
+			if iUnit and iUnit ~= -1 then
+				for pCity in player:Cities() do
+					if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
+						iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
+						break;
+					end
+				end
+			end
+			if iCost > 0 and player:GetGold() >= iCost then
+
+				SPUE_Patronage_OceanFire_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_OCEAN_FIRE_BUTTON", iCost)
+				
+				-- 玩家有足够金钱
+				if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
+					flag = 1
+				elseif player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) > 0 then
+					-- 兵力足够时按钮才会显示
+					local iTotalTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) 
+					local iUsedTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS_USED"]) 
+					if iTotalTroops - iUsedTroops >  1 then
+						flag = 1
+					end
+				end
+			end
+		end
+  
+		return flag == 1;
+  
+	end, -- or nil or a boolean, default is true
+	
+	Disabled = function(action, unit)   
+		return false;
+	end, -- or nil or a boolean, default is false
+	
+	Action = function(action, unit, eClick) 
+		
+		local plot = unit:GetPlot()
+		local plotX = unit:GetX()
+		local plotY = unit:GetY()
+		local player = Players[unit:GetOwner()]
+		local unitEXP = unit:GetExperience()
+		local iCost = 0
+		-- 单位购买价格
+		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_OCEAN_FIRE");
+		local iUnit = GameInfoTypes[sUnitType];
+	
+		if iUnit and iUnit ~= -1 then
+			for pCity in player:Cities() do
+				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
+					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
+					break;
+				end
+			end
+		end
+		
+		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
+		NewUnit:JumpToNearestValidPlot();
+		NewUnit:SetExperience(unitEXP)
+		unit:SetMoves(0)
+		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
+
+		if iCost and iCost > 0 then
+			player:ChangeGold(- iCost)
+		end
+		
+	end
+}; 
+LuaEvents.UnitPanelActionAddin(SPUE_Patronage_OceanFire_Button)
 -- 神机营征集
 SPUE_TreasureFleet_LandInfantry_Button = {
 	Name = "Patronage Land Infantry",
@@ -3236,8 +3364,8 @@ SPUE_TreasureFleet_LandInfantry_Button = {
 			end
 		end
 		
-		local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SHENJI_MUSKETEER");
-		local NewUnit = player:InitUnit(GameInfoTypes[newUnitType], plotX, plotY, UNITAI_DEFENSE)
+		-- local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SHENJI_MUSKETEER");
+		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
 		NewUnit:JumpToNearestValidPlot()
 		NewUnit:SetExperience(unitEXP)
 		unit:SetMoves(0)
@@ -3254,7 +3382,7 @@ SPUE_TreasureFleet_LandInfantry_Button = {
 			NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER3"].ID, true);
 		end
 
-	
+		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
 		-- local iUnit = GameInfoTypes[sUnitType]
 
 		-- if iUnit and iUnit ~= -1 then
@@ -3360,13 +3488,15 @@ SPUE_Patronage_Corvette_Button = {
 			end
 		end
 		
-		local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_CORVETTE");
-		local NewUnit = player:InitUnit(GameInfoTypes[newUnitType], plotX, plotY, UNITAI_DEFENSE)
+		-- local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_CORVETTE");
+		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
 		if plot:GetNumUnits() > 2 then
 			NewUnit:JumpToNearestValidPlot();
 		end 
 		NewUnit:SetExperience(unitEXP)
 		unit:SetMoves(0)
+
+		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");
 
 		if iCost and iCost > 0 then
 			player:ChangeGold(- iCost)
@@ -3461,10 +3591,12 @@ function SetPolicyUnitsName( iPlayer, iOldUnit,  iNewUnit)
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_SOCII_HASTATI");	-- 赞助：同盟军团
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_QIANG_SPEARMAN"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_QIANG_SPEARMAN");	-- 赞助：塞尔维亚重步兵
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID) then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD");	-- 赞助：亚美尼亚甲骑兵
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VASSAL_ALAN_CAVALRY"].ID) then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_VASSAL_ALAN_CAVALRY");	-- 赞助：阿兰轻骑兵
+	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID) 
+	and not pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD_ELITE"].ID)
+	then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD");	-- 赞助：近卫甲骑
+	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD_ELITE"].ID) then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_ELITE");	-- 赞助：执政甲骑
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TREASURE_FLEET"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_TREASURE_FLEET");	-- 赞助：宝船
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER1"].ID) then
