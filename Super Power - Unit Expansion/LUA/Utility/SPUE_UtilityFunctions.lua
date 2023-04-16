@@ -2,6 +2,7 @@
 -- Author: dzs2311
 -- DateCreated: 2023/3/15 8:58:34
 --------------------------------------------------------------
+include("UtilityFunctions");
 --=======================================================================================================================
 -- USER SETTING FUNCTIONS
 --=======================================================================================================================
@@ -318,4 +319,149 @@ function SPUE_MajorFavorite_MinorCivsAndCityPops(playerID)
 	end
 
 	return g_MinorCivsAndPopWithMajor;
+end
+--------------------------------------------------------------
+-- 单位购买价钱
+--------------------------------------------------------------
+function SPUE_UnitPurchaseCost(player, iUnit)
+	local goldCost
+	if iUnit and iUnit ~= -1 then
+		local punit = GameInfo.Units[ iUnit ]
+		local productionCost = punit.Cost
+		productionCost = player:GetUnitProductionNeeded( iUnit )
+		for pCity in player:Cities() do
+			if pCity then
+				goldCost = pCity:GetUnitPurchaseCost( iUnit )	
+			elseif (punit.HurryCostModifier or 0) > 0 then
+				goldCost = (productionCost * GameDefines.GOLD_PURCHASE_GOLD_PER_PRODUCTION ) ^ GameDefines.HURRY_GOLD_PRODUCTION_EXPONENT
+				goldCost = (punit.HurryCostModifier + 100) * goldCost / 100
+				goldCost = goldCost - ( goldCost % GameDefines.GOLD_PURCHASE_VISIBLE_DIVISOR )
+			end
+		end
+	end
+
+	return goldCost;
+end
+--------------------------------------------------------------
+-- 单位精英化按钮：显示函数
+--------------------------------------------------------------
+function EliteCondition(unit, unitPromotionID, ounitType, nunitType, unitClassType, projectType, Button)
+	local player = Players[unit:GetOwner()]
+
+	-- 单位购买价格
+	local sUnitType = GetCivSpecificUnit(player, unitClassType)
+	local iUnit = GameInfoTypes[sUnitType];
+	local iCost = 1000;
+	local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+	local dboUnit = GameInfo.Units[ounitType];
+	local dbnUnit = GameInfo.Units[nunitType];
+	local projectFlag = false;
+
+	local dbProject = GameInfo.Projects[projectType];
+	
+	if goldCost then iCost = goldCost * 7 end;
+	Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON", 
+					 iCost, dboUnit.Description, dbnUnit.Description, dboUnit.Description, dbProject.Description);
+		
+	return unit:CanMove() and unit:IsHasPromotion(unitPromotionID) 
+	and unit:GetUnitType() == GameInfoTypes[ounitType];
+end
+
+function EliteConditionAI(unit, unitPromotionID, ounitType, nunitType, unitClassType, projectType)
+	local player = Players[unit:GetOwner()]
+
+	-- 单位购买价格
+	local sUnitType = GetCivSpecificUnit(player, unitClassType)
+	local iUnit = GameInfoTypes[sUnitType];
+	local iCost = 1000;
+	local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+	local dboUnit = GameInfo.Units[ounitType];
+	local dbnUnit = GameInfo.Units[nunitType];
+	local projectFlag = false;
+
+	local dbProject = GameInfo.Projects[projectType];
+	
+	if goldCost then iCost = goldCost * 7 end;
+		
+	return unit:CanMove() and unit:IsHasPromotion(unitPromotionID) 
+	and unit:GetUnitType() == GameInfoTypes[ounitType];
+end
+
+--------------------------------------------------------------
+-- 单位精英化按钮：条件函数
+--------------------------------------------------------------
+function EliteDisable(unit, unitPromotion2ID, unitClassType, projectType)
+	local player = Players[unit:GetOwner()]
+
+	local sUnitType = GetCivSpecificUnit(player, unitClassType)
+	local iUnit = GameInfoTypes[sUnitType];
+	local iCost = 1000;
+	local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+	 
+	local projectFlag = false;
+	if projectType == nil then projectFlag = true else projectFlag = player:HasProject(GameInfo.Projects[projectType].ID) end;
+	-- local dbProject = GameInfo.Projects[projectType];
+
+	if goldCost then iCost = goldCost * 7 end;
+	return CountUnitsWithUniquePromotions(unit:GetOwner(), unitPromotion2ID) > 0 
+	or player:GetGold() < iCost 
+	or not projectFlag;
+
+end
+--------------------------------------------------------------
+-- 单位精英化按钮：动作函数
+-------------------------------------------------------------
+function EliteAction(unit, nunitType, unitClassType)
+	local player 	= Players[unit:GetOwner()];
+
+	local plot 		= unit:GetPlot();
+	local plotX 	= plot:GetX();
+	local plotY 	= plot:GetY();
+
+	local unitLevel = unit:GetLevel();
+	local unitEXP   = unit:GetExperience();
+
+	local unitPromotions = {};
+	for row in GameInfo.UnitPromotions() do
+	  if unit:IsHasPromotion(row.ID) and not row.LostWithUpgrade then
+		table.insert(unitPromotions, row.ID);
+	  end
+	end
+
+	local unitName = nil;
+	if unit:HasName() then
+	  unitName = unit:GetNameNoDesc();
+	end
+
+	unit:Kill();
+	local newUnit = nil;
+	newUnit = player:InitUnit(GameInfoTypes[nunitType], plot:GetX(), plot:GetY());
+
+	newUnit:SetLevel(unitLevel);
+	newUnit:SetExperience(unitEXP);
+	newUnit:SetPromotionReady(true);
+	if #unitPromotions > 0 then
+	  for _, unitPromotionID in ipairs(unitPromotions) do
+		newUnit:SetHasPromotion(unitPromotionID, true);
+	  end
+	end
+	if unitName then
+	  newUnit:SetName(unitName);
+	end
+
+	-- 单位购买价格
+	local sUnitType = GetCivSpecificUnit(player, unitClassType);
+	local iUnit = GameInfoTypes[sUnitType];
+	local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+	local iCost = 1000;
+
+	if goldCost then iCost = goldCost * 7 end;
+
+	Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
+
+	player:ChangeGold(-iCost)
+	local hex = ToHexFromGrid(Vector2(plotX, plotY))
+	Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("-{1_Num}[ICON_GOLD]", iCost))
+	Events.GameplayFX(hex.x, hex.y, -1)
+
 end

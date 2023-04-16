@@ -3,12 +3,17 @@ WARN_NOT_SHARED = false; include( "SaveUtils" ); MY_MOD_NAME = "SPUE";
 -- SPCode
 include("UtilityFunctions")
 include("FLuaVector.lua")
-include("CombatPercent_Misc.lua")
+include("CombatPercent_Misc_SPUE.lua")
 include("SPUE_UtilityFunctions.lua")
 
 
 local KnightID 						= GameInfo.UnitPromotions["PROMOTION_KNIGHT_COMBAT"].ID
 local TankID 						= GameInfo.UnitPromotions["PROMOTION_TANK_COMBAT"].ID
+
+local Charge1ID 					= GameInfo.UnitPromotions["PROMOTION_CHARGE_1"].ID
+local Charge2ID 					= GameInfo.UnitPromotions["PROMOTION_CHARGE_2"].ID
+local Charge3ID 					= GameInfo.UnitPromotions["PROMOTION_CHARGE_3"].ID
+
 
 -- 王城骑士
 local KingsKnightID					= GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW"].ID
@@ -44,9 +49,13 @@ local HospitallerKnightID 			= GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIG
 local HospitallerEffectID 			= GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER_EFFECT"].ID
 -- 涌泉守卫	
 local unitPromotionGondorID 		= GameInfo.UnitPromotions["PROMOTION_SPUE_GONDORGUARD"].ID
--- 近卫甲骑
+-- 靖抚甲骑
+local unitPromotionBucellariID 		= GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID
 local unitPromotionBucellariEliteID = GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD_ELITE"].ID
-
+-- 海洋之火
+local unitPromotionOceanFireID		= GameInfo.UnitPromotions["PROMOTION_SPUE_OCEAN_FIRE"].ID
+local unitPromotionOceanFireE02ID	= GameInfo.UnitPromotions["PROMOTION_SPUE_OCEAN_FIRE_02"].ID
+local unitPromotionOceanFireE01ID	= GameInfo.UnitPromotions["PROMOTION_SPUE_OCEAN_FIRE_01"].ID
 -- 阿兰骑兵	
 -- local unitPromotionAlanID 			= GameInfo.UnitPromotions["PROMOTION_SPUE_VASSAL_ALAN_CAVALRY"].ID
 
@@ -79,6 +88,8 @@ local CarrierFighterID 				= GameInfo.UnitPromotions["PROMOTION_CARRIER_FIGHTER"
 local IntercepterAircraftUnitID 	= GameInfo.UnitPromotions["PROMOTION_ANTI_AIR_II"].ID
 -- 航母	
 local AirCraftCarrierID 			= GameInfo.UnitPromotions["PROMOTION_CARRIER_UNIT"].ID
+
+local AntiDebuffID 					= GameInfo.UnitPromotions["PROMOTION_ANTI_DEBUFF"].ID
 --------------------------------------------------------------
 -- 单位下海模型强制修正
 --------------------------------------------------------------
@@ -310,7 +321,7 @@ function SPUE_OnAdoptPolicyBranch( playerID, policyID )
 end
 GameEvents.PlayerAdoptPolicy.Add(SPUE_OnAdoptPolicyBranch)
 --------------------------------------------------------------
--- 根据意识形态锁定精英计划
+-- 根据意识形态锁定精英计划&根据政策锁定精英计划
 --------------------------------------------------------------
 function SPUE_IdeoProjectOnly(playerID, cityID, projectTypeID)
 	local player = Players[playerID]	
@@ -326,6 +337,10 @@ function SPUE_IdeoProjectOnly(playerID, cityID, projectTypeID)
 	elseif (projectTypeID == GameInfo.Projects["PROJECT_SPUE_AUTOCRACY"].ID) then
 		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_AUTOCRACY"].ID)
 	end	
+	-- 贝利撒留甲骑兵
+	if (projectTypeID == GameInfo.Projects["PROJECT_BUCELLARII_TRAINING"].ID) then
+		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_BASELIUS"].ID)
+	end
 
 	return true
 end
@@ -533,6 +548,61 @@ function SPUE_OnPlayerDoTurn(playerID)
 
 			end
 		end
+
+		-- 贝利撒留甲骑兵：根据两格内敌方单位数量增加移动力
+		if unit:IsHasPromotion( unitPromotionBucellariEliteID ) then
+			local iunit = GameInfo.Units[unit:GetUnitType()] ;
+			local plot = unit:GetPlot();
+			local imove_bonus = 0;
+
+			local unitCount = plot:GetNumUnits();
+			local uniqueRange = 2
+			if unitCount >= 1 then
+				for i = 0, unitCount-1, 1 do
+					local pFoundUnit = plot:GetUnit(i)
+					if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
+						local pPlayer = Players[pFoundUnit:GetOwner()];
+						if PlayersAtWar(player, pPlayer) then
+							imove_bonus = imove_bonus + 1;
+						end
+					end
+				end
+			end
+			for dx = -uniqueRange, uniqueRange, 1 do
+				for dy = -uniqueRange, uniqueRange, 1 do
+					local adjPlot = Map.PlotXYWithRangeCheck(plot:GetX(), plot:GetY(), dx, dy, uniqueRange);
+                    if (adjPlot ~= nil) then
+			    	    unitCount = adjPlot:GetNumUnits();
+			    	    if unitCount >= 1 then
+			    	    	for i = 0, unitCount-1, 1 do
+			    	    		local pFoundUnit = adjPlot:GetUnit(i)
+			    	    		if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
+			    	    			local pPlayer = Players[pFoundUnit:GetOwner()];
+			    	    			if PlayersAtWar(player, pPlayer) then
+                                        imove_bonus = imove_bonus + 1;
+			    	    			end
+			    	    		end
+			    	    	end
+			    	    end
+                    end
+			    end
+            end
+            unit:SetMoves(unit:GetMoves() + imove_bonus * GameDefines["MOVE_DENOMINATOR"]);
+
+            if player:IsHuman() then
+				local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
+				Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", imove_bonus));
+				Events.GameplayFX(hex.x, hex.y, -1);
+			end
+		end
+
+		-- 海洋之火效果
+		if unit:IsHasPromotion(unitPromotionOceanFireE02ID) then
+			unit:SetHasPromotion(unitPromotionOceanFireE02ID, false)
+			unit:SetHasPromotion(unitPromotionOceanFireE01ID, true)
+		elseif unit:IsHasPromotion(unitPromotionOceanFireE01ID) then
+			unit:SetHasPromotion(unitPromotionOceanFireE01ID, false)
+		end
 	end
 
 	-- AI使用技能系列
@@ -722,7 +792,21 @@ function SPUE_OnPlayerDoTurn(playerID)
 				player:ChangeGold(-1000)
 				local hex = ToHexFromGrid(Vector2(plotX, plotY))
 				Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("-1000[ICON_GOLD]"))
-			end			
+			end		
+			-- if EliteConditionAI(unit, VARANGIANID, "UNIT_SPUE_VARANGIAN", "UNIT_SPUE_VARANGIAN_GUARD",
+			-- "UNITCLASS_SPUE_VARANGIAN", "PROJECT_BUCELLARII_TRAINING") 
+			-- and not EliteDisable()
+			-- then
+			-- 	EliteAction()
+			-- end
+			--*****************************AI转化甲骑兵*****************************--
+
+			if EliteConditionAI(unit, unitPromotionBucellariID, "UNIT_SPUE_BUCELLARII_GUARD", "UNIT_SPUE_BUCELLARII_GUARD_ELITE",
+			"UNITCLASS_SPUE_BUCELLARII_GUARD", "PROJECT_BUCELLARII_TRAINING") 
+			and not EliteDisable(unit, unitPromotionBucellariEliteID, "UNITCLASS_SPUE_BUCELLARII_GUARD", "PROJECT_BUCELLARII_TRAINING")
+			then
+				EliteAction(unit, "UNIT_SPUE_BUCELLARII_GUARD_ELITE", "UNITCLASS_SPUE_BUCELLARII_GUARD");
+			end
 			--*****************************AI宝船旗舰*****************************--
 			if Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_SONAR"])
 			and unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TREASURE_FLEET"].ID) 
@@ -1010,6 +1094,43 @@ function SPUE_PlayerDoneTurn(playerID)
 
 			end
 		end
+
+		-- 海洋之火：希腊火灼烧蔓延
+		if (unit:IsHasPromotion(unitPromotionOceanFireID)) then
+
+			local uniqueRange = 1
+			for dx = -uniqueRange, uniqueRange, 1 do
+			for dy = -uniqueRange, uniqueRange, 1 do
+	
+				local adjPlot = Map.PlotXYWithRangeCheck(unit:GetX(), unit:GetY(), dx, dy, uniqueRange);
+				if (adjPlot ~= nil and not adjPlot:IsCity()) then
+					local unitCount = adjPlot:GetNumUnits();
+					if unitCount > 0 then
+					for i = 0, unitCount-1, 1 do
+					local pUnit = adjPlot:GetUnit(i) ------------Find Units affected
+					if pUnit 
+					and pUnit:GetID() ~= unit:GetID()
+					and (pUnit:GetDomainType() == unit:GetDomainType()) 
+					and not pUnit:IsHasPromotion(unitPromotionOceanFireE02ID) 
+					and not pUnit:IsHasPromotion(unitPromotionOceanFireE01ID)
+					and not pUnit:IsHasPromotion(AntiDebuffID)
+					then
+
+						local pPlayer = Players[pUnit:GetOwner()]
+						
+						if pPlayer == player then
+							pUnit:SetHasPromotion(unitPromotionOceanFireE01ID);
+						end
+
+					end
+					end
+					end
+				end
+			end
+			end
+	
+		end
+
 		-- 西班牙大帆船
 		if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_CORVETTE"]) then
 			local plot = unit:GetPlot();
@@ -1132,9 +1253,7 @@ function SPUE_CanHavePromotion(iPlayer, iUnit, iPromotionType)
 	
 	-- 王城骑士：王国冠军
 	if iPromotionType == GameInfoTypes.PROMOTION_SPUE_KNIGHT_NEW_C then
-		if pUnit:GetExperience() < 600
-		or not player:HasPolicy(GameInfo.Policies['POLICY_LIBERTY_FINISHER'].ID)
-		then 
+		if pUnit:GetExperience() < 300 then 
 			return false;
 	   end
 	end
@@ -1154,8 +1273,8 @@ function SPUE_UnitPromoted(playerID, unitID, promotionID)
 
 	--王城骑士晋升时获得大文学家
 	if unit:IsHasPromotion( KingsKnightBID ) then 
-		local sUnitType = GetCivSpecificUnit(attPlayer, "UNITCLASS_WRITER")   	
-		local NewUnit = attPlayer:InitUnit(GameInfoTypes[sUnitType], capital:GetX(), capital:GetY(), UNITAI_WRITER)	
+		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_WRITER")   	
+		local NewUnit = player:InitUnit(GameInfoTypes[sUnitType], capital:GetX(), capital:GetY(), UNITAI_WRITER)	
 	end
 
 end
@@ -1194,7 +1313,7 @@ function SPUE_Unit_Effect_UnitSetXY(playerID)
 		for pUnit in pPlayer:Units() do
 			local Patronage = 0;
 			local numHotAirBalloon = 0;
-			print("HotAirBalloonCheck1.1")
+			-- print("HotAirBalloonCheck1.1")
 			if (pUnit:GetDomainType() == DomainTypes.DOMAIN_LAND or pUnit:GetDomainType() == DomainTypes.DOMAIN_SEA) 
 			and pUnit:IsCombatUnit() 
 			and not pUnit:IsEmbarked() 
@@ -1297,96 +1416,18 @@ SPUE_Varangian_Button = {
 	PortraitIndex = 49,
 	ToolTip = "TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON", -- or a TXT_KEY_ or a function
 	
-  
-	
 	Condition = function(action, unit)
-
-		local player = Players[unit:GetOwner()]
-
-		-- 单位购买价格
-		local iUnit = GameInfoTypes.UNIT_SPUE_VARANGIAN;
-		local iCost = 1000
-
-		if iUnit and iUnit ~= -1 then
-			for pCity in player:Cities() do
-				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)*7);
-					break;
-				end
-			end
-		end
-		SPUE_Varangian_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON", iCost);
-						
-		return unit:CanMove() and unit:IsHasPromotion(VARANGIANID) 
-		and unit:GetUnitType() == GameInfoTypes.UNIT_SPUE_VARANGIAN
-		and CountUnitsWithUniquePromotions(unit:GetOwner(), VARANGIANGuardID) == 0
-		-- and CountVarangianGuard(unit:GetOwner()) == 0
-		and player:GetGold() > 1000;
+		return EliteCondition(unit, VARANGIANID, "UNIT_SPUE_VARANGIAN", "UNIT_SPUE_VARANGIAN_GUARD",
+		 "UNITCLASS_SPUE_VARANGIAN", "PROJECT_BUCELLARII_TRAINING", SPUE_Varangian_Button);
   
 	end, -- or nil or a boolean, default is true
 	
 	Disabled = function(action, unit)   
-		return false;
+		return EliteDisable(unit, VARANGIANGuardID, "UNITCLASS_SPUE_VARANGIAN", nil);
 	end, -- or nil or a boolean, default is false
 	
 	Action = function(action, unit, eClick) 
-	  
-		local player 	= Players[unit:GetOwner()];
-
-		local plot 		= unit:GetPlot();
-	  	local plotX 	= plot:GetX();
-	  	local plotY 	= plot:GetY();
-
-		local unitLevel = unit:GetLevel();
-		local unitEXP   = unit:GetExperience();
-
-		local unitPromotions = {};
-		for row in GameInfo.UnitPromotions() do
-		  if unit:IsHasPromotion(row.ID) and not row.LostWithUpgrade then
-		    table.insert(unitPromotions, row.ID);
-		  end
-		end
-
-		local unitName = nil;
-		if unit:HasName() then
-		  unitName = unit:GetNameNoDesc();
-		end
-		
-		unit:Kill();
-		local newUnit = nil;
-		newUnit = player:InitUnit(GameInfoTypes.UNIT_SPUE_VARANGIAN_GUARD, plot:GetX(), plot:GetY());
-
-		newUnit:SetLevel(unitLevel);
-		newUnit:SetExperience(unitEXP);
-		if #unitPromotions > 0 then
-		  for _, unitPromotionID in ipairs(unitPromotions) do
-		    newUnit:SetHasPromotion(unitPromotionID, true);
-		  end
-		end
-		if unitName then
-		  newUnit:SetName(unitName);
-		end
-
-		-- 单位购买价格
-		local iUnit = GameInfoTypes.UNIT_SPUE_VARANGIAN;
-		local iCost = 1000
-	
-		if iUnit and iUnit ~= -1 then
-			for pCity in player:Cities() do
-				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)*7);
-					break;
-				end
-			end
-		end
-
-		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
-
-
-		player:ChangeGold(-iCost)
-		local hex = ToHexFromGrid(Vector2(plotX, plotY))
-		Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("-{1_Num}[ICON_GOLD]", iCost))
-		Events.GameplayFX(hex.x, hex.y, -1)
+		EliteAction(unit, "UNIT_SPUE_VARANGIAN_GUARD", "UNITCLASS_SPUE_VARANGIAN")
 	end
   };
   
@@ -1607,7 +1648,7 @@ function TempHotAirBalloon(playerID)
 		return
 	end
 
-	local HotAirBallooCheck = CheckHotAirBalloon(player)
+	local HotAirBallooCheck = CheckUniquePromotions(player, pHotAirBalloonID);
 
 	if HotAirBallooCheck == 1 then
 		for unit in player:Units() do
@@ -1655,7 +1696,7 @@ SPUE_FuChuan_LandInfantry_Button = {
 		end
 
 		local flag = 0
-		local iCost = -1
+		-- local iCost = -1
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FUCHUAN"].ID) 
 		and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
 		then
@@ -1668,15 +1709,10 @@ SPUE_FuChuan_LandInfantry_Button = {
 			   sUpgradeUnitType = GetUpgradeUnit(player, sUnitType)
 			end
 			local iUnit = GameInfoTypes[sUnitType]
-
-			if iUnit and iUnit ~= -1 then
-				for pCity in player:Cities() do
-				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-					break;
-				end
-				end
-			end
+			local iCost = -1;
+			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+			
+			if goldCost then iCost = goldCost * 0.33 end;
 
 			if iCost > 0 and player:GetGold() >= iCost then
 				-- 玩家有足够金钱
@@ -1707,12 +1743,7 @@ SPUE_FuChuan_LandInfantry_Button = {
 		local plotY = unit:GetY()
 		local player = Players[unit:GetOwner()]
 		local unitEXP = unit:GetExperience()
-		--local iNewUnit = GameInfoTypes.UNIT_EXPLORERX;
-		--local overrideUnit = GameInfo.Civilization_UnitClassOverrides{ UnitClassType = "UNITCLASS_EXPLORERX", CivilizationType = GameInfo.Civilizations[player:GetCivilizationType()].Type }();
-		--if overrideUnit and overrideUnit.UnitType then
-		--	iNewUnit = GameInfoTypes[overrideUnit.UnitType];
-		--end
-		local iCost = -1
+
 		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SWORDSMAN")
     	local sUpgradeUnitType = GetUpgradeUnit(player, sUnitType)
         
@@ -1728,14 +1759,10 @@ SPUE_FuChuan_LandInfantry_Button = {
 
 		local iUnit = GameInfoTypes[sUnitType]
 
-		if iUnit and iUnit ~= -1 then
-			for pCity in player:Cities() do
-			if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-				iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-				break;
-			end
-			end
-		end
+		local iCost = -1;
+		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+		
+		if goldCost then iCost = goldCost * 0.33 end;
 		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
 
 		if iCost and iCost > 0 then
@@ -1767,7 +1794,7 @@ SPUE_FuChuan_Cannon_Button = {
 		local unitY = unit:GetY()
 
 		local flag = 0
-		local iCost = -1
+
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FUCHUAN"].ID) 
 		and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
 		then
@@ -1781,15 +1808,11 @@ SPUE_FuChuan_Cannon_Button = {
 			end
 			local iUnit = GameInfoTypes[sUnitType]
 		
-			if iUnit and iUnit ~= -1 then
-				for pCity in player:Cities() do
-				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-					break;
-				end
-				end
-			end
-		
+			local iCost = -1;
+			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+			
+			if goldCost then iCost = goldCost * 0.33 end;
+
 			if iCost > 0 and player:GetGold() >= iCost then
 			
 				if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
@@ -1819,12 +1842,7 @@ SPUE_FuChuan_Cannon_Button = {
 		local plotY = unit:GetY()
 		local player = Players[unit:GetOwner()]
 		local unitEXP = unit:GetExperience()
-		--local iNewUnit = GameInfoTypes.UNIT_EXPLORERX;
-		--local overrideUnit = GameInfo.Civilization_UnitClassOverrides{ UnitClassType = "UNITCLASS_EXPLORERX", CivilizationType = GameInfo.Civilizations[player:GetCivilizationType()].Type }();
-		--if overrideUnit and overrideUnit.UnitType then
-		--	iNewUnit = GameInfoTypes[overrideUnit.UnitType];
-		--end
-		local iCost = -1
+
 		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_CULVERIN")
     	local sUpgradeUnitType = GetUpgradeUnit(player, sUnitType)
         
@@ -1840,14 +1858,11 @@ SPUE_FuChuan_Cannon_Button = {
 		unit:SetMoves(0)
 		local iUnit = GameInfoTypes[sUnitType]
 
-		if iUnit and iUnit ~= -1 then
-			for pCity in player:Cities() do
-			if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-				iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-				break;
-			end
-			end
-		end
+		local iCost = -1;
+		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+		
+		if goldCost then iCost = goldCost * 0.33 end;
+
 		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
 
 		if iCost and iCost > 0 then
@@ -2084,611 +2099,747 @@ function NewAttackEffectJoined(iPlayer, iUnitOrCity, iRole, bIsCity)
 end
 GameEvents.BattleJoined.Add(NewAttackEffectJoined);
 function NewAttackEffect()
-	 --Defines and status checks
-	if g_DoNewAttackEffect == nil or Players[ g_DoNewAttackEffect.defPlayerID ] == nil
-	or Players[ g_DoNewAttackEffect.attPlayerID ] == nil or not Players[ g_DoNewAttackEffect.attPlayerID ]:IsAlive()
-	or Players[ g_DoNewAttackEffect.attPlayerID ]:GetUnitByID(g_DoNewAttackEffect.attUnitID) == nil
-	-- or Players[ g_DoNewAttackEffect.attPlayerID ]:GetUnitByID(g_DoNewAttackEffect.attUnitID):IsDead()
-	or Map.GetPlot(g_DoNewAttackEffect.PlotX, g_DoNewAttackEffect.PlotY) == nil
-	then
-		return;
-	end
-	
-	local attPlayerID = g_DoNewAttackEffect.attPlayerID;
-	local attPlayer = Players[ attPlayerID ];
-	local defPlayerID = g_DoNewAttackEffect.defPlayerID;
-	local defPlayer = Players[ defPlayerID ];
-	
-	local attUnit = attPlayer:GetUnitByID(g_DoNewAttackEffect.attUnitID);
-	local attPlot = attUnit:GetPlot();
-	
-	local plotX = g_DoNewAttackEffect.PlotX;
-	local plotY = g_DoNewAttackEffect.PlotY;
-	local batPlot = Map.GetPlot(plotX, plotY);
-	local batType = g_DoNewAttackEffect.battleType;
-	
-	local bIsCity = g_DoNewAttackEffect.bIsCity;
-	local defUnit = nil;
-	local defPlot = nil;
-	local defCity = nil;
-	
-	local attFinalUnitDamage = attUnit:GetDamage();
-	local defFinalUnitDamage = 0;
-	local attUnitDamage = attFinalUnitDamage - g_DoNewAttackEffect.attODamage;
-	local defUnitDamage = 0;
-	
-	if not bIsCity and defPlayer:GetUnitByID(g_DoNewAttackEffect.defUnitID) then
-		defUnit = defPlayer:GetUnitByID(g_DoNewAttackEffect.defUnitID);
-		defPlot = defUnit:GetPlot();
-		defFinalUnitDamage = defUnit:GetDamage();
-		defUnitDamage = defFinalUnitDamage - g_DoNewAttackEffect.defODamage;
-	elseif bIsCity and defPlayer:GetCityByID(g_DoNewAttackEffect.defCityID) then
-		defCity = defPlayer:GetCityByID(g_DoNewAttackEffect.defCityID);
-	end
-	
-	g_DoNewAttackEffect = nil;
-	
-	--Complex Effects Only for Human VS AI(reduce time and enhance stability)
-	if not attPlayer:IsHuman() and not defPlayer:IsHuman() then
-		--[[
-		--Larger AI's Bonus against Smaller AIs - AI is easier to become a Boss! Player will feel excited fighting Boss!
-		--AI will capture another AI's city by ranged attack
-		-- AI boss's City cann't be Captured by AI Ranged Unit!
-		if not AICanBeBoss(defPlayer) and defCity then
-			print ("AI attacking AI's City!")
-			if defCity:GetDamage() >= defCity:GetMaxHitPoints() - 1 then
-				local cityPop = defCity:GetPopulation()
-				if cityPop < 10 or AICanBeBoss(attPlayer) then
-					-- attPlayer:AcquireCity(defCity)
-					print ("AI Ranged Unit Takes another AI's city!")
-				end
-			end
-		end
-		]]
-		return;
-	end
-	-- Not for Barbarins
-	if attPlayer:IsBarbarian() then
-		return;
+	--Defines and status checks
+   if g_DoNewAttackEffect == nil or Players[ g_DoNewAttackEffect.defPlayerID ] == nil
+   or Players[ g_DoNewAttackEffect.attPlayerID ] == nil or not Players[ g_DoNewAttackEffect.attPlayerID ]:IsAlive()
+   or Players[ g_DoNewAttackEffect.attPlayerID ]:GetUnitByID(g_DoNewAttackEffect.attUnitID) == nil
+   -- or Players[ g_DoNewAttackEffect.attPlayerID ]:GetUnitByID(g_DoNewAttackEffect.attUnitID):IsDead()
+   or Map.GetPlot(g_DoNewAttackEffect.PlotX, g_DoNewAttackEffect.PlotY) == nil
+   then
+	   return;
+   end
+   
+   local attPlayerID = g_DoNewAttackEffect.attPlayerID;
+   local attPlayer = Players[ attPlayerID ];
+   local defPlayerID = g_DoNewAttackEffect.defPlayerID;
+   local defPlayer = Players[ defPlayerID ];
+   
+   local attUnit = attPlayer:GetUnitByID(g_DoNewAttackEffect.attUnitID);
+   local attPlot = attUnit:GetPlot();
+   
+   local plotX = g_DoNewAttackEffect.PlotX;
+   local plotY = g_DoNewAttackEffect.PlotY;
+   local batPlot = Map.GetPlot(plotX, plotY);
+   local batType = g_DoNewAttackEffect.battleType;
+   
+   local bIsCity = g_DoNewAttackEffect.bIsCity;
+   local defUnit = nil;
+   local defPlot = nil;
+   local defCity = nil;
+   
+   local attFinalUnitDamage = attUnit:GetDamage();
+   local defFinalUnitDamage = 0;
+   local attUnitDamage = attFinalUnitDamage - g_DoNewAttackEffect.attODamage;
+   local defUnitDamage = 0;
+   
+   if not bIsCity and defPlayer:GetUnitByID(g_DoNewAttackEffect.defUnitID) then
+	   defUnit = defPlayer:GetUnitByID(g_DoNewAttackEffect.defUnitID);
+	   defPlot = defUnit:GetPlot();
+	   defFinalUnitDamage = defUnit:GetDamage();
+	   defUnitDamage = defFinalUnitDamage - g_DoNewAttackEffect.defODamage;
+   elseif bIsCity and defPlayer:GetCityByID(g_DoNewAttackEffect.defCityID) then
+	   defCity = defPlayer:GetCityByID(g_DoNewAttackEffect.defCityID);
+   end
+   
+   g_DoNewAttackEffect = nil;
+   
+   --Complex Effects Only for Human VS AI(reduce time and enhance stability)
+   if not attPlayer:IsHuman() and not defPlayer:IsHuman() then
+	   --[[
+	   --Larger AI's Bonus against Smaller AIs - AI is easier to become a Boss! Player will feel excited fighting Boss!
+	   --AI will capture another AI's city by ranged attack
+	   -- AI boss's City cann't be Captured by AI Ranged Unit!
+	   if not AICanBeBoss(defPlayer) and defCity then
+		   print ("AI attacking AI's City!")
+		   if defCity:GetDamage() >= defCity:GetMaxHitPoints() - 1 then
+			   local cityPop = defCity:GetPopulation()
+			   if cityPop < 10 or AICanBeBoss(attPlayer) then
+				   -- attPlayer:AcquireCity(defCity)
+				   print ("AI Ranged Unit Takes another AI's city!")
+			   end
+		   end
+	   end
+	   ]]
+	   return;
+   end
+   -- Not for Barbarins
+   if attPlayer:IsBarbarian() then
+	   return;
+   end
+
+   local KillingEffectsID = GameInfo.UnitPromotions["PROMOTION_GAIN_MOVES_AFFER_KILLING"].ID
+
+   -- 玄甲军杀敌回血
+   ----------- PROMOTION_GAIN_MOVES_AFFER_KILLING Effects
+   if not isSPTP and defUnit and attUnit:IsHasPromotion(KillingEffectsID) then
+	   print ("DefUnit Damage:"..defFinalUnitDamage);
+	   -- if defFinalUnitDamage >= 100 then
+	   if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
+		   local maxattUnitHP = attUnit:GetMaxHitPoints()
+		   attUnit:SetMoves(attUnit:MovesLeft()+GameDefines["MOVE_DENOMINATOR"]);
+		   attUnit:SetMadeAttack(false);
+		   attUnit:ChangeDamage(0 - 0.25 * maxattUnitHP)
+		   local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
+		   Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("TXT_KEY_PROMOTION_GAIN_MOVES_AFFER_KILLING"));	
+		   print ("Ah, fresh meat!");
+	   end
 	end
 
-	local KillingEffectsID = GameInfo.UnitPromotions["PROMOTION_GAIN_MOVES_AFFER_KILLING"].ID
+   ----------- 达芬奇坦克另类AOE
+   if (attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_DVC_TANK"].ID)) then
+   
+   for i = 0, 5 do
+	   local adjPlot = Map.PlotDirection(attPlot:GetX(), attPlot:GetY(), i)
+	   if (adjPlot ~= nil and not adjPlot:IsCity()) then
+		   print("Available for AOE Damage!")
+		   local unitCount = adjPlot:GetNumUnits();
+		   if unitCount > 0 then
+		   for i = 0, unitCount-1, 1 do
+		   local pUnit = adjPlot:GetUnit(i) ------------Find Units affected
+		   if pUnit and (pUnit:GetDomainType() == DomainTypes.DOMAIN_LAND or pUnit:GetDomainType() == DomainTypes.DOMAIN_SEA) then
+			   local pCombat = pUnit:GetBaseCombatStrength()
+			   local pPlayer = Players[pUnit:GetOwner()]
+			   
+			   if PlayersAtWar(attPlayer, pPlayer) then
+				   -- local SplashDamageOri = defUnitDamage
+				   local attUnitStrength = attUnit:GetMaxAttackStrength(attPlot, defPlot, defUnit);
+				   local pFoundUnitStrength = pUnit:GetMaxDefenseStrength(batPlot, attUnit);
+				   local SplashDamageOri = attUnit:GetCombatDamage(attUnitStrength, pFoundUnitStrength, attFinalUnitDamage, false, false,
+				   false);
+					   
+				   local AOEmod = 1.0   -- the percent of damage reducing to nearby units
+					   
+				   local text = nil;
+				   local attUnitName = attUnit:GetName();
+				   local defUnitName = pUnit:GetName();
+					   
+				   local SplashDamageFinal = math.floor(SplashDamageOri * AOEmod); -- Set the Final Damage
+				   if     SplashDamageFinal >= pUnit:GetCurrHitPoints() then
+					   SplashDamageFinal = pUnit:GetCurrHitPoints();
+					   local eUnitType = pUnit:GetUnitType();
+					   UnitDeathCounter(attPlayerID, pUnit:GetOwner(), eUnitType);
+						   
+					   -- Notification
+					   if     defPlayerID == Game.GetActivePlayer() then
+						   -- local heading = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_UNIT_DESTROYED_SHORT")
+						   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_DEATH", attUnitName, defUnitName);
+						   -- defPlayer:AddNotification(NotificationTypes.NOTIFICATION_GENERIC , text, heading, plotX, plotY)
+					   elseif attPlayerID == Game.GetActivePlayer() then
+						   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_ENEMY_DEATH", attUnitName, defUnitName);
+					   end
+				   elseif SplashDamageFinal > 0 then
+					   -- Notification
+					   if     defPlayerID == Game.GetActivePlayer() then
+						   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE", attUnitName, defUnitName, SplashDamageFinal);
+					   elseif attPlayerID == Game.GetActivePlayer() then
+						   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_ENEMY", attUnitName, defUnitName, SplashDamageFinal);
+					   end
+				   end
+				   if text then
+					   Events.GameplayAlertMessage( text );
+				   end
+				   pUnit:ChangeDamage(SplashDamageFinal, attPlayer)
+				   print("Splash Damage="..SplashDamageFinal)
+			   end
+		   end
+		   end
+		   end
+	   end
+   end
+   end
 
-	-- 玄甲军杀敌回血
-	----------- PROMOTION_GAIN_MOVES_AFFER_KILLING Effects
-	if not isSPTP and defUnit and attUnit:IsHasPromotion(KillingEffectsID) then
-		print ("DefUnit Damage:"..defFinalUnitDamage);
-		-- if defFinalUnitDamage >= 100 then
-		if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
-			local maxattUnitHP = attUnit:GetMaxHitPoints()
-			attUnit:SetMoves(attUnit:MovesLeft()+GameDefines["MOVE_DENOMINATOR"]);
-			attUnit:SetMadeAttack(false);
-			attUnit:ChangeDamage(0 - 0.25 * maxattUnitHP)
-			local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
-			Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("TXT_KEY_PROMOTION_GAIN_MOVES_AFFER_KILLING"));	
-			print ("Ah, fresh meat!");
-		end
- 	end
+   ----- Charge Damage 瑞士佣兵&瓦兰吉卫队冲锋伤害
+   if  not attUnit:IsDead() and (attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SWISSGUARD"].ID) or attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VARANGIAN_GUARD"].ID))
+   and not defUnit:IsDead() and batPlot ~= defPlot and defUnitDamage > 0 and batType == GameInfoTypes["BATTLETYPE_MELEE"]
+   then
+   -- print("Available for Charge Damage!");
+   local defFinalUnitDamageChange = 0;
+   local ChargeMod = 0.3;	-- The percentage of charging damage to the other unit
+   if attUnit:IsHasPromotion(Charge1ID) then
+	   if attUnit:IsHasPromotion(Charge2ID) then
+		   defFinalUnitDamageChange = 10;
+		   ChargeMod = 0.8;
+	   end
+	   if attUnit:IsHasPromotion(Charge3ID) then
+		   defFinalUnitDamageChange = 20;
+		   ChargeMod = 1.3;
+	   end
+   end
+   
+   local unitCount = batPlot:GetNumUnits();
+   if unitCount >= 1 and batPlot ~= attPlot then
+	   print ("Our damage done="..defUnitDamage);
+	   for i = 0, unitCount-1, 1 do
+		   local pFoundUnit = batPlot:GetUnit(i)
+		   if pFoundUnit ~= nil and pFoundUnit:GetID() ~= defUnit:GetID() then
+			   local pPlayer = Players[pFoundUnit:GetOwner()];
+			   if PlayersAtWar(attPlayer,pPlayer) then
+				   local attUnitStrength = attUnit:GetMaxAttackStrength(attPlot, defPlot, defUnit);
+				   print ("attUnitStrength:" .. attUnitStrength);
+				   local pFoundUnitStrength = pFoundUnit:GetMaxDefenseStrength(batPlot, attUnit);
+				   print ("pFoundUnitStrength:" .. pFoundUnitStrength);
+				   local ChargeDamageOri = attUnit:GetCombatDamage(attUnitStrength, pFoundUnitStrength, attFinalUnitDamage, false, false, false);
+				   print ("ChargeDamageOri:" .. ChargeDamageOri);--we now consider the buff and debuff when caculating the charge damage.---by WM
+				   -- local ChargeDamageOri = attUnit:GetCombatDamage(attUnitStrength, pUnitStrength, attUnit:GetDamage(),false,false, false)
+				   
+				   local text = nil;
+				   local attUnitName = attUnit:GetName();
+				   local defUnitName = pFoundUnit:GetName();
+				   
+				   print ("ChargeMod:"..ChargeMod)
+				   local ChargeDamageFinal = math.floor(ChargeDamageOri * ChargeMod);
+				   if     ChargeDamageFinal >= pFoundUnit:GetCurrHitPoints() then
+					   local eUnitType = pFoundUnit:GetUnitType();
+					   UnitDeathCounter(attPlayerID, pFoundUnit:GetOwner(), eUnitType);
+					   
+					   -- Notification
+					   if     defPlayerID == Game.GetActivePlayer() then
+						   -- local heading = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_UNIT_DESTROYED_SHORT")
+						   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_DEATH", attUnitName, defUnitName);
+						   -- defPlayer:AddNotification(NotificationTypes.NOTIFICATION_GENERIC , text, heading, plotX, plotY)
+					   elseif attPlayerID == Game.GetActivePlayer() then
+						   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_ENEMY_DEATH", attUnitName, defUnitName);
+					   end
+					   pFoundUnit:Kill();
+				   elseif ChargeDamageFinal > 0 then
+					   -- Notification
+					   if     defPlayerID == Game.GetActivePlayer() then
+						   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE", attUnitName, defUnitName, ChargeDamageFinal);
+					   elseif attPlayerID == Game.GetActivePlayer() then
+						   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_ENEMY", attUnitName, defUnitName, ChargeDamageFinal);
+					   end
+					   pFoundUnit:ChangeDamage(ChargeDamageFinal,attPlayer)
+					   print("Charge Damage="..ChargeDamageFinal)
+				   end
+				   if text then
+					   Events.GameplayAlertMessage( text );
+				   end
+			   end
+		   end
+	   end
+   else
+	   print ("our unit is in this plot or this plot has no other enemy - don't need to charge!")
+   end
+   local text = nil;
+   local attUnitName = attUnit:GetName();
+   local defUnitName = defUnit:GetName();
+   
+   if     defFinalUnitDamageChange >= defUnit:GetCurrHitPoints() then
+	   defFinalUnitDamageChange = defUnit:GetCurrHitPoints();
+	   local eUnitType = defUnit:GetUnitType();
+	   UnitDeathCounter(attPlayerID, defPlayerID, eUnitType);
+	   
+	   -- Notification
+	   if     defPlayerID == Game.GetActivePlayer() then
+		   -- local heading = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_UNIT_DESTROYED_SHORT")
+		   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_DEATH", attUnitName, defUnitName);
+		   -- defPlayer:AddNotification(NotificationTypes.NOTIFICATION_GENERIC , text, heading, defUnit:GetX(), defUnit:GetY())
+	   elseif attPlayerID == Game.GetActivePlayer() then
+		   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_ENEMY_DEATH", attUnitName, defUnitName);
+	   end
+   elseif defFinalUnitDamageChange > 0 then
+	   -- Notification
+	   if     defPlayerID == Game.GetActivePlayer() then
+		   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE", attUnitName, defUnitName, defFinalUnitDamageChange);
+	   elseif attPlayerID == Game.GetActivePlayer() then
+		   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_ENEMY", attUnitName, defUnitName, defFinalUnitDamageChange);
+	   end
+   end
+   if text then
+	   Events.GameplayAlertMessage( text );
+   end
+   defFinalUnitDamage = defFinalUnitDamage + defFinalUnitDamageChange;
+   defUnit:ChangeDamage(defFinalUnitDamageChange);
+   end
 
-	----------- 达芬奇坦克另类AOE
-	if (attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_DVC_TANK"].ID)) then
-	
-	for i = 0, 5 do
-		local adjPlot = Map.PlotDirection(attPlot:GetX(), attPlot:GetY(), i)
-		if (adjPlot ~= nil and not adjPlot:IsCity()) then
-			print("Available for AOE Damage!")
-			local unitCount = adjPlot:GetNumUnits();
-            if unitCount > 0 then
-            for i = 0, unitCount-1, 1 do
-			local pUnit = adjPlot:GetUnit(i) ------------Find Units affected
-			if pUnit and (pUnit:GetDomainType() == DomainTypes.DOMAIN_LAND or pUnit:GetDomainType() == DomainTypes.DOMAIN_SEA) then
-				local pCombat = pUnit:GetBaseCombatStrength()
-				local pPlayer = Players[pUnit:GetOwner()]
-				
-				if PlayersAtWar(attPlayer, pPlayer) then
-					-- local SplashDamageOri = defUnitDamage
-					local attUnitStrength = attUnit:GetMaxAttackStrength(attPlot, defPlot, defUnit);
-					local pFoundUnitStrength = pUnit:GetMaxDefenseStrength(batPlot, attUnit);
-					local SplashDamageOri = attUnit:GetCombatDamage(attUnitStrength, pFoundUnitStrength, attFinalUnitDamage, false, false,
-					false);
-						
-					local AOEmod = 1.0   -- the percent of damage reducing to nearby units
-						
-					local text = nil;
-					local attUnitName = attUnit:GetName();
-					local defUnitName = pUnit:GetName();
-						
-					local SplashDamageFinal = math.floor(SplashDamageOri * AOEmod); -- Set the Final Damage
-					if     SplashDamageFinal >= pUnit:GetCurrHitPoints() then
-						SplashDamageFinal = pUnit:GetCurrHitPoints();
-						local eUnitType = pUnit:GetUnitType();
-						UnitDeathCounter(attPlayerID, pUnit:GetOwner(), eUnitType);
-							
-						-- Notification
-						if     defPlayerID == Game.GetActivePlayer() then
-							-- local heading = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_UNIT_DESTROYED_SHORT")
-							text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_DEATH", attUnitName, defUnitName);
-							-- defPlayer:AddNotification(NotificationTypes.NOTIFICATION_GENERIC , text, heading, plotX, plotY)
-						elseif attPlayerID == Game.GetActivePlayer() then
-							text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_ENEMY_DEATH", attUnitName, defUnitName);
-						end
-					elseif SplashDamageFinal > 0 then
-						-- Notification
-						if     defPlayerID == Game.GetActivePlayer() then
-							text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE", attUnitName, defUnitName, SplashDamageFinal);
-						elseif attPlayerID == Game.GetActivePlayer() then
-							text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_ENEMY", attUnitName, defUnitName, SplashDamageFinal);
-						end
-					end
-					if text then
-						Events.GameplayAlertMessage( text );
-					end
-					pUnit:ChangeDamage(SplashDamageFinal, attPlayer)
-					print("Splash Damage="..SplashDamageFinal)
-				end
-			end
-			end
-			end
-		end
-	end
-	end
+   -- 火帆船防御时直接死球
+   -- if not attUnit:IsDead() and attUnit:GetUnitType() == GameInfoTypes["UNIT_SPUE_FIRESHIP"]
+   -- then
+   -- 	attUnit:Kill();
+   -- end
 
-	----- Charge Damage 瑞士佣兵&瓦兰吉卫队冲锋伤害
-	if  not attUnit:IsDead() and (attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SWISSGUARD"].ID) or attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VARANGIAN_GUARD"].ID))
-	and not defUnit:IsDead() and batPlot ~= defPlot and defUnitDamage > 0 and batType == GameInfoTypes["BATTLETYPE_MELEE"]
-	then
-	-- print("Available for Charge Damage!");
-	local defFinalUnitDamageChange = 0;
-	local ChargeMod = 0.3;	-- The percentage of charging damage to the other unit
-	if attUnit:IsHasPromotion(Charge1ID) then
-		if attUnit:IsHasPromotion(Charge2ID) then
-			defFinalUnitDamageChange = 10;
-			ChargeMod = 0.8;
-		end
-		if attUnit:IsHasPromotion(Charge3ID) then
-			defFinalUnitDamageChange = 20;
-			ChargeMod = 1.3;
-		end
-	end
-	
-	local unitCount = batPlot:GetNumUnits();
-	if unitCount >= 1 and batPlot ~= attPlot then
-		print ("Our damage done="..defUnitDamage);
-		for i = 0, unitCount-1, 1 do
-			local pFoundUnit = batPlot:GetUnit(i)
-			if pFoundUnit ~= nil and pFoundUnit:GetID() ~= defUnit:GetID() then
-				local pPlayer = Players[pFoundUnit:GetOwner()];
-				if PlayersAtWar(attPlayer,pPlayer) then
-					local attUnitStrength = attUnit:GetMaxAttackStrength(attPlot, defPlot, defUnit);
-					print ("attUnitStrength:" .. attUnitStrength);
-					local pFoundUnitStrength = pFoundUnit:GetMaxDefenseStrength(batPlot, attUnit);
-					print ("pFoundUnitStrength:" .. pFoundUnitStrength);
-					local ChargeDamageOri = attUnit:GetCombatDamage(attUnitStrength, pFoundUnitStrength, attFinalUnitDamage, false, false, false);
-					print ("ChargeDamageOri:" .. ChargeDamageOri);--we now consider the buff and debuff when caculating the charge damage.---by WM
-					-- local ChargeDamageOri = attUnit:GetCombatDamage(attUnitStrength, pUnitStrength, attUnit:GetDamage(),false,false, false)
-					
-					local text = nil;
-					local attUnitName = attUnit:GetName();
-					local defUnitName = pFoundUnit:GetName();
-					
-					print ("ChargeMod:"..ChargeMod)
-					local ChargeDamageFinal = math.floor(ChargeDamageOri * ChargeMod);
-					if     ChargeDamageFinal >= pFoundUnit:GetCurrHitPoints() then
-						local eUnitType = pFoundUnit:GetUnitType();
-						UnitDeathCounter(attPlayerID, pFoundUnit:GetOwner(), eUnitType);
-						
-						-- Notification
-						if     defPlayerID == Game.GetActivePlayer() then
-							-- local heading = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_UNIT_DESTROYED_SHORT")
-							text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_DEATH", attUnitName, defUnitName);
-							-- defPlayer:AddNotification(NotificationTypes.NOTIFICATION_GENERIC , text, heading, plotX, plotY)
-						elseif attPlayerID == Game.GetActivePlayer() then
-							text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_ENEMY_DEATH", attUnitName, defUnitName);
-						end
-						pFoundUnit:Kill();
-					elseif ChargeDamageFinal > 0 then
-						-- Notification
-						if     defPlayerID == Game.GetActivePlayer() then
-							text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE", attUnitName, defUnitName, ChargeDamageFinal);
-						elseif attPlayerID == Game.GetActivePlayer() then
-							text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_ENEMY", attUnitName, defUnitName, ChargeDamageFinal);
-						end
-						pFoundUnit:ChangeDamage(ChargeDamageFinal,attPlayer)
-						print("Charge Damage="..ChargeDamageFinal)
-					end
-					if text then
-						Events.GameplayAlertMessage( text );
-					end
-				end
-			end
-		end
-	else
-		print ("our unit is in this plot or this plot has no other enemy - don't need to charge!")
-	end
-	local text = nil;
-	local attUnitName = attUnit:GetName();
-	local defUnitName = defUnit:GetName();
-	
-	if     defFinalUnitDamageChange >= defUnit:GetCurrHitPoints() then
-		defFinalUnitDamageChange = defUnit:GetCurrHitPoints();
-		local eUnitType = defUnit:GetUnitType();
-		UnitDeathCounter(attPlayerID, defPlayerID, eUnitType);
-		
-		-- Notification
-		if     defPlayerID == Game.GetActivePlayer() then
-			-- local heading = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_UNIT_DESTROYED_SHORT")
-			text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_DEATH", attUnitName, defUnitName);
-			-- defPlayer:AddNotification(NotificationTypes.NOTIFICATION_GENERIC , text, heading, defUnit:GetX(), defUnit:GetY())
-		elseif attPlayerID == Game.GetActivePlayer() then
-			text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_ENEMY_DEATH", attUnitName, defUnitName);
-		end
-	elseif defFinalUnitDamageChange > 0 then
-		-- Notification
-		if     defPlayerID == Game.GetActivePlayer() then
-			text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE", attUnitName, defUnitName, defFinalUnitDamageChange);
-		elseif attPlayerID == Game.GetActivePlayer() then
-			text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_ENEMY", attUnitName, defUnitName, defFinalUnitDamageChange);
-		end
-	end
-	if text then
-		Events.GameplayAlertMessage( text );
-	end
-	defFinalUnitDamage = defFinalUnitDamage + defFinalUnitDamageChange;
-	defUnit:ChangeDamage(defFinalUnitDamageChange);
-	if attUnit:CanMoveThrough(batPlot) and batPlot ~= attPlot then
-		-- if the target plot has no unit,your unit advances into the target plot!
-		attUnit:SetMoves(attUnit:MovesLeft() + GameDefines["MOVE_DENOMINATOR"]);
-		attUnit:PushMission(MissionTypes.MISSION_MOVE_TO, plotX, plotY);
-	end
-	end
+   if not bIsCity then
+	   if not defUnit:IsDead() and defUnit:GetUnitType() == GameInfoTypes["UNIT_SPUE_FIRESHIP"]
+	   then
+		   defUnit:Kill();
+	   end
+   end
 
-	-- 火帆船防御时直接死球
-	-- if not attUnit:IsDead() and attUnit:GetUnitType() == GameInfoTypes["UNIT_SPUE_FIRESHIP"]
-	-- then
-	-- 	attUnit:Kill();
+   -- 阿兰骑兵近战回血远程回移动力
+   -- if attUnit and attUnit:IsHasPromotion(unitPromotionAlanID) then
+   -- 	if batType == GameInfoTypes["BATTLETYPE_MELEE"] then
+   -- 		attUnit:ChangeDamage(-10)
+   -- 	elseif batType == GameInfoTypes["BATTLETYPE_RANGED"] then
+   -- 		attUnit:SetMoves(attUnit:MovesLeft() + GameDefines["MOVE_DENOMINATOR"])
+   -- 		local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
+   --         Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", 1));
+   --         Events.GameplayFX(hex.x, hex.y, -1);
+   -- 	end
 	-- end
 
-	if not bIsCity then
-		if not defUnit:IsDead() and defUnit:GetUnitType() == GameInfoTypes["UNIT_SPUE_FIRESHIP"]
-		then
-			defUnit:Kill();
-		end
+   -- 九边卫士
+   if attUnit and attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID) 
+   and batType == GameInfoTypes["BATTLETYPE_MELEE"]
+   then
+	   local movesLeft = attUnit:MovesLeft();
+	   attUnit:RangeStrike( plotX, plotY );
+	   -- attUnit:SetMadeAttack(false);
+	   attUnit:SetMoves(movesLeft);
+   end
+
+   if not bIsCity then
+	   if not defUnit:IsDead() and defUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID) 
+	   and batType == GameInfoTypes["BATTLETYPE_RANGED"]
+	   and Map.PlotDistance(defUnit:GetX(), defUnit:GetY(), attUnit:GetX(), attUnit:GetY()) <= 2
+	   then
+		   local movesLeft = defUnit:MovesLeft();
+		   defUnit:RangeStrike(attUnit:GetX(), attUnit:GetY())
+		   defUnit:SetMadeAttack (false)
+		   defUnit:SetMoves(movesLeft);
+		   print ("I see you!")
+	   end
+   end
+
+   -- 长滩
+   
+   if attUnit and attUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FREEDOM_LONG_BEACH"]) 
+   then
+	   local movesLeft = attUnit:MovesLeft();
+	   local movesAdd = 60 * JFD_GetRandom(1, 5)
+	   attUnit:SetMoves(movesLeft + movesAdd);
+	   local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
+	   Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", movesAdd / 60));
+
+   end
+
+
+   ------鹰击21
+   if (attUnit:IsHasPromotion(unitPromotion055MissileID)) then
+
+	   -- for i = 0, 5 do
+	   -- 	local adjPlot = Map.PlotDirection(plotX, plotY, i)
+	   local text3n = nil;
+	   local uniqueRange = 3
+	   for dx = -uniqueRange, uniqueRange, 1 do
+	   for dy = -uniqueRange, uniqueRange, 1 do
+
+		   local adjPlot = Map.PlotXYWithRangeCheck(plotX, plotY, dx, dy, uniqueRange);
+		   if (adjPlot ~= nil and not adjPlot:IsCity()) then
+			   print("Available for AOE Damage!")
+			   local unitCount = adjPlot:GetNumUnits();
+			   if unitCount > 0 then
+			   for i = 0, unitCount-1, 1 do
+			   local pUnit = adjPlot:GetUnit(i) ------------Find Units affected
+			   if pUnit and (pUnit:GetDomainType() == DomainTypes.DOMAIN_LAND or pUnit:GetDomainType() == DomainTypes.DOMAIN_SEA) then
+				   local pCombat = pUnit:GetBaseCombatStrength()
+				   local pPlayer = Players[pUnit:GetOwner()]
+				   
+				   if PlayersAtWar(attPlayer, pPlayer) then
+					   local SplashDamageOri = attUnit:GetRangeCombatDamage(pUnit,nil,false)
+						   
+					   local AOEmod = attUnit:GetMoves() / attUnit:MaxMoves()   -- the percent of damage reducing to nearby units
+						   
+					   local text = nil;
+					   
+					   local attUnitName = attUnit:GetName();
+					   local defUnitName = pUnit:GetName();
+						   
+					   local SplashDamageFinal = math.floor(SplashDamageOri * AOEmod); -- Set the Final Damage
+					   if     SplashDamageFinal >= pUnit:GetCurrHitPoints() then
+						   SplashDamageFinal = pUnit:GetCurrHitPoints();
+						   local eUnitType = pUnit:GetUnitType();
+						   UnitDeathCounter(attPlayerID, pUnit:GetOwner(), eUnitType);
+							   
+						   -- Notification
+						   if     defPlayerID == Game.GetActivePlayer() then
+							   -- local heading = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_UNIT_DESTROYED_SHORT")
+							   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_DEATH", attUnitName, defUnitName);
+							   -- defPlayer:AddNotification(NotificationTypes.NOTIFICATION_GENERIC , text, heading, plotX, plotY)
+						   elseif attPlayerID == Game.GetActivePlayer() then
+							   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_ENEMY_DEATH", attUnitName, defUnitName);
+							   if not text3n then
+								   text3n = Locale.ConvertTextKey("TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT3N")
+							   end
+						   end
+					   elseif SplashDamageFinal > 0 then
+						   -- Notification
+						   if     defPlayerID == Game.GetActivePlayer() then
+							   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE", attUnitName, defUnitName, SplashDamageFinal);
+						   elseif attPlayerID == Game.GetActivePlayer() then
+							   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_ENEMY", attUnitName, defUnitName, SplashDamageFinal);
+						   end
+					   end
+					   if text then
+						   Events.GameplayAlertMessage( text );
+					   end
+
+					   
+					   pUnit:ChangeDamage(SplashDamageFinal, attPlayer)
+					   print("Splash Damage="..SplashDamageFinal)
+				   end
+			   end
+			   end
+			   end
+		   end
+	   end
+	   end
+	   if text3n then
+		   Events.GameplayAlertMessage( text3n )
+	   end
+	   -- 攻击结束后失去晋升
+	   attUnit:SetHasPromotion(unitPromotion055MissileID, false)
+	   local text1l = Locale.ConvertTextKey("TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT1L")
+	   Events.GameplayAlertMessage( text1l );
+
+   end
+	   
+   -- 超级要塞：浮岛要塞
+   if attUnit:IsHasPromotion(unitPromotionGAIA_ShipID) and GAIAShipHasAttackedThisTurn == 0 then
+	   local movesLeft = attUnit:MovesLeft();
+	   attUnit:RangeStrike( plotX, plotY );
+	   attUnit:SetMadeAttack(false);
+	   attUnit:SetMoves(movesLeft);
+	   GAIAShipHasAttackedThisTurn = 1;
+   end
+
+   -- 超级要塞：神之鼻息
+   if (attUnit:IsHasPromotion(unitPromotionGAIA_HeadID)) then
+
+	   -- 确定超级要塞与战斗单元的相对方位
+	   local iDireciton = nil; -- 战斗单元相对于超级要塞的方向
+	   local GAIARange = 10;
+	   local oPlotX, oPlotY = plotX, plotY;
+	   
+	   for i = 0, 5 do
+		   local adjPlot = Map.PlotDirection(plotX, plotY, i)
+		   if adjPlot:GetX() ==  attPlot:GetX() and adjPlot:GetY() ==  attPlot:GetY() then
+			   if i >= 3 then
+				   iDireciton = i - 3
+			   else
+				   iDireciton = i + 3
+			   end
+		   end
+	   end
+
+	   if not iDireciton then
+		   return;
+	   end
+
+	   while GAIARange > 0 do
+	   -- for i = 0, 5 do
+		   -- local iPlot = Map.PlotDirection(oPlotX, oPlotY, i)
+		   local adjPlot = Map.PlotDirection(oPlotX, oPlotY, iDireciton)
+		   if (adjPlot ~= nil and not adjPlot:IsCity() and GAIARange > 0) then
+			   print("Available for AOE Damage!")
+			   local unitCount = adjPlot:GetNumUnits();
+			   if unitCount > 0 then
+			   for i = 0, unitCount-1, 1 do
+			   local pUnit = adjPlot:GetUnit(i) ------------Find Units affected
+			   if pUnit and (pUnit:GetDomainType() == DomainTypes.DOMAIN_LAND or pUnit:GetDomainType() == DomainTypes.DOMAIN_SEA) then
+				   local pCombat = pUnit:GetBaseCombatStrength()
+				   local pPlayer = Players[pUnit:GetOwner()]
+				   
+				   if PlayersAtWar(attPlayer, pPlayer) then
+					   local SplashDamageOri = attUnit:GetRangeCombatDamage(pUnit,nil,false)
+						   
+					   local AOEmod = 1.0;   -- the percent of damage reducing to nearby units
+						   
+					   local text = nil;
+					   
+					   local attUnitName = attUnit:GetName();
+					   local defUnitName = pUnit:GetName();
+						   
+					   local SplashDamageFinal = math.floor(SplashDamageOri * AOEmod); -- Set the Final Damage
+					   if     SplashDamageFinal >= pUnit:GetCurrHitPoints() then
+						   SplashDamageFinal = pUnit:GetCurrHitPoints();
+						   local eUnitType = pUnit:GetUnitType();
+						   UnitDeathCounter(attPlayerID, pUnit:GetOwner(), eUnitType);
+							   
+						   -- Notification
+						   if     defPlayerID == Game.GetActivePlayer() then
+							   -- local heading = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_UNIT_DESTROYED_SHORT")
+							   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_DEATH", attUnitName, defUnitName);
+							   -- defPlayer:AddNotification(NotificationTypes.NOTIFICATION_GENERIC , text, heading, plotX, plotY)
+						   elseif attPlayerID == Game.GetActivePlayer() then
+							   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_ENEMY_DEATH", attUnitName, defUnitName);
+							   if not text3n then
+								   text3n = Locale.ConvertTextKey("TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT3N")
+							   end
+						   end
+					   elseif SplashDamageFinal > 0 then
+						   -- Notification
+						   if     defPlayerID == Game.GetActivePlayer() then
+							   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE", attUnitName, defUnitName, SplashDamageFinal);
+						   elseif attPlayerID == Game.GetActivePlayer() then
+							   text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_ENEMY", attUnitName, defUnitName, SplashDamageFinal);
+						   end
+					   end
+					   if text then
+						   Events.GameplayAlertMessage( text );
+					   end
+
+					   
+					   pUnit:ChangeDamage(SplashDamageFinal, attPlayer)
+					   print("Splash Damage="..SplashDamageFinal)
+				   end
+			   end
+			   end
+			   end
+		   end
+		   oPlotX, oPlotY = adjPlot:GetX(), adjPlot:GetY()
+		   GAIARange = GAIARange - 1
+	   end
+   end
+
+
+   
+   if defUnit and attPlayer:GetCapitalCity() then
+	   -- 王城骑士杀敌掠获人口，达到一定程度则可以在首都获得移民
+	   for i = 1, 5 do
+		   if attUnit:IsHasPromotion(g_KingsKnightPops[i]) then
+			   local pEraType = attPlayer:GetCurrentEra();
+			   local pEraID = GameInfo.Eras[pEraType].ID;	
+			   if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
+				   local attCambat = attUnit:GetBaseCombatStrength();
+				   local defCombat = defUnit:GetBaseCombatStrength();
+				   local KingsKnightPopsDelta = (pEraID + 1) * defCombat / attCambat;
+				   local KingsKnightPops = load(attUnit, "KingsKnightPops", KingsKnightPops) or 0;
+				   if KingsKnightPops <= (i - 1) * 20 then KingsKnightPops = (i-1)*20 end;
+				   KingsKnightPops = KingsKnightPops + KingsKnightPopsDelta;
+				   if KingsKnightPops < 100 then
+					   local j = math.ceil(KingsKnightPops / 20);
+					   -- print("g_KingsKnightPops[j], j="..j)
+					   attUnit:SetHasPromotion(g_KingsKnightPops[i], false);
+					   attUnit:SetHasPromotion(g_KingsKnightPops[j], true);
+					   local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
+					   Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("[ICON_FOOD] [COLOR_YIELD_FOOD]{1_Num}[ENDCOLOR] POP", KingsKnightPops));
+
+				   elseif KingsKnightPops >= 100 then
+					   attUnit:SetHasPromotion(g_KingsKnightPops[i], false);
+					   attUnit:SetHasPromotion(g_KingsKnightPops[1], true);
+					   local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
+					   Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("[ICON_FOOD] [COLOR_YIELD_FOOD]{1_Num}[ENDCOLOR] POP", KingsKnightPops));
+					   KingsKnightPops = KingsKnightPops - 100;
+					   local attCapitalCity = attPlayer:GetCapitalCity();
+					   local sUnitType = GetCivSpecificUnit(attPlayer, "UNITCLASS_SETTLER")   	
+					   local NewUnit = attPlayer:InitUnit(GameInfoTypes[sUnitType], attCapitalCity:GetX(), attCapitalCity:GetY(), UNITAI_SETTLE)	
+				   end
+				   save(attUnit, "KingsKnightPops", KingsKnightPops);
+				   break;
+			   end
+		   end
+	   end 
+	   -- 王城骑士杀敌为首都提供伟人点数
+	   if attUnit:IsHasPromotion(KingsKnightCID) then
+		   if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
+			   local unitLevel = attUnit:GetLevel();
+			   local rewardTP = attUnit:GetBaseCombatStrength();
+			   local capital = attPlayer:GetCapitalCity();
+			   local specialistWriterID	= GameInfoTypes["SPECIALIST_WRITER"];
+			   local specialistScientistID	= GameInfoTypes["SPECIALIST_SCIENTIST"];
+			   if capital then
+				   capital:ChangeSpecialistGreatPersonProgressTimes100(specialistWriterID, rewardTP*100);
+				   capital:ChangeSpecialistGreatPersonProgressTimes100(specialistScientistID, rewardTP*100);
+
+				   if attPlayer:IsHuman() then
+					   local plotX = capital:GetX();
+					   local plotY = capital:GetY();
+					   Events.AddPopupTextEvent(HexToWorld(ToHexFromGrid(Vector2(plotX, plotY))), Locale.ConvertTextKey("[COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_GREAT_WRITER][NEWLINE][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_GREAT_SCIENTIST]", rewardTP, rewardTP), true);
+				   end
+			   end
+		   end
+	   end
+   end
+
+
+   -- 贝利撒留甲骑兵
+   if defUnit and attUnit:IsHasPromotion(unitPromotionBucellariEliteID) then
+	   print ("DefUnit Damage:"..defFinalUnitDamage);
+	   -- if defFinalUnitDamage >= 100 then
+	   if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
+		   -- 贝利撒留甲骑兵杀敌带来我们1回合爱国王日
+		   if attPlayer:GetCapitalCity() then
+			   local goldRow = GameInfo.Resources["RESOURCE_GOLD"];
+			   for city in attPlayer:Cities() do
+				   if city:GetWeLoveTheKingDayCounter() == 0 then
+		   
+					   attPlayer:AddNotification(
+					   NotificationTypes.NOTIFICATION_DISCOVERED_LUXURY_RESOURCE, 
+					   Locale.ConvertTextKey("TXT_KEY_NOTIFICATION_CITY_WLTKD", goldRow.Description, city:GetNameKey()),
+					   Locale.ConvertTextKey("TXT_KEY_NOTIFICATION_SUMMARY_CITY_WLTKD", city:GetNameKey()), 
+					   city:GetX(), city:GetY(), 
+					   goldRow.ID);
+					   city:SetWeLoveTheKingDayCounter(city:GetWeLoveTheKingDayCounter() + 1);
+					   city:SetResourceDemanded(-1);
+					   Events.SerialEventCityInfoDirty();
+		   
+					   local cityID = city:GetID();
+					   Events.SpecificCityInfoDirty(attPlayerID, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_BANNER);
+					   Events.SpecificCityInfoDirty(attPlayerID, cityID, CityUpdateTypes.CITY_UPDATE_TYPE_PRODUCTION);
+					   Events.SerialEventGameDataDirty();
+				   elseif city:GetWeLoveTheKingDayCounter() > 0 then
+					   city:SetWeLoveTheKingDayCounter(city:GetWeLoveTheKingDayCounter() + 1);
+				   end			
+			   end
+		   end
+	   end
+
+	   --每次发动攻击带来战斗力加成
+	   local combatBonus = math.min(500, SPUEGetCombatBonus(attUnit) + 20);
+	   if SPUEGetCombatBonus(attUnit) < 500 then 
+		   SPUEAddCombatBonus(attUnit, combatBonus);
+	   end
+
 	end
 
-	-- 阿兰骑兵近战回血远程回移动力
-	-- if attUnit and attUnit:IsHasPromotion(unitPromotionAlanID) then
-	-- 	if batType == GameInfoTypes["BATTLETYPE_MELEE"] then
-	-- 		attUnit:ChangeDamage(-10)
-	-- 	elseif batType == GameInfoTypes["BATTLETYPE_RANGED"] then
-	-- 		attUnit:SetMoves(attUnit:MovesLeft() + GameDefines["MOVE_DENOMINATOR"])
-	-- 		local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
-    --         Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", 1));
-    --         Events.GameplayFX(hex.x, hex.y, -1);
-	-- 	end
- 	-- end
+   -- 贝利撒留甲骑兵受到攻击后效果减半&清零
+   if not bIsCity and defUnit then
+	   if not defUnit:IsDead() and defUnit:IsHasPromotion(unitPromotionBucellariEliteID)
+	   then
+		   local combatBonus = math.max(20, math.ceil(SPUEGetCombatBonus(attUnit) / 2));
+		   if combatBonus >= 20 then
+			   SPUEAddCombatBonus(defUnit, combatBonus);
+		   else
+			   SPUEAddCombatBonus(defUnit, 0);
+		   end
+		   
+	   end
+   end
 
-	-- 九边卫士
-	if attUnit and attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID) 
-	and batType == GameInfoTypes["BATTLETYPE_MELEE"]
-	then
-		local movesLeft = attUnit:MovesLeft();
-		attUnit:RangeStrike( plotX, plotY );
-		-- attUnit:SetMadeAttack(false);
-		attUnit:SetMoves(movesLeft);
-	end
+   -- 海洋之火
+   if (attUnit:IsHasPromotion(unitPromotionOceanFireID)) then
 
-	if not bIsCity then
-		if not defUnit:IsDead() and defUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID) 
-		and batType == GameInfoTypes["BATTLETYPE_RANGED"]
-		and Map.PlotDistance(defUnit:GetX(), defUnit:GetY(), attUnit:GetX(), attUnit:GetY()) <= 2
-		then
-			local movesLeft = defUnit:MovesLeft();
-			defUnit:RangeStrike(attUnit:GetX(), attUnit:GetY())
-			defUnit:SetMadeAttack (false)
-			defUnit:SetMoves(movesLeft);
-			print ("I see you!")
-		end
-	end
+	local uniqueRange = 2
+	for dx = -uniqueRange, uniqueRange, 1 do
+	for dy = -uniqueRange, uniqueRange, 1 do
 
-	-- 长滩
-	
-	if attUnit and attUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FREEDOM_LONG_BEACH"]) 
-	then
-		local movesLeft = attUnit:MovesLeft();
-		local movesAdd = 60 * JFD_GetRandom(1, 5)
-		attUnit:SetMoves(movesLeft + movesAdd);
-		local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
-		Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", movesAdd / 60));
-
-	end
-
-
-	------鹰击21
-	if (attUnit:IsHasPromotion(unitPromotion055MissileID)) then
-
-		-- for i = 0, 5 do
-		-- 	local adjPlot = Map.PlotDirection(plotX, plotY, i)
-		local text3n = nil;
-		local uniqueRange = 3
-		for dx = -uniqueRange, uniqueRange, 1 do
-		for dy = -uniqueRange, uniqueRange, 1 do
-
-            local adjPlot = Map.PlotXYWithRangeCheck(plotX, plotY, dx, dy, uniqueRange);
-			if (adjPlot ~= nil and not adjPlot:IsCity()) then
-				print("Available for AOE Damage!")
-				local unitCount = adjPlot:GetNumUnits();
-				if unitCount > 0 then
-				for i = 0, unitCount-1, 1 do
-				local pUnit = adjPlot:GetUnit(i) ------------Find Units affected
-				if pUnit and (pUnit:GetDomainType() == DomainTypes.DOMAIN_LAND or pUnit:GetDomainType() == DomainTypes.DOMAIN_SEA) then
-					local pCombat = pUnit:GetBaseCombatStrength()
-					local pPlayer = Players[pUnit:GetOwner()]
-					
-					if PlayersAtWar(attPlayer, pPlayer) then
-						local SplashDamageOri = attUnit:GetRangeCombatDamage(pUnit,nil,false)
-							
-						local AOEmod = attUnit:GetMoves() / attUnit:MaxMoves()   -- the percent of damage reducing to nearby units
-							
-						local text = nil;
-						
-						local attUnitName = attUnit:GetName();
-						local defUnitName = pUnit:GetName();
-							
-						local SplashDamageFinal = math.floor(SplashDamageOri * AOEmod); -- Set the Final Damage
-						if     SplashDamageFinal >= pUnit:GetCurrHitPoints() then
-							SplashDamageFinal = pUnit:GetCurrHitPoints();
-							local eUnitType = pUnit:GetUnitType();
-							UnitDeathCounter(attPlayerID, pUnit:GetOwner(), eUnitType);
-								
-							-- Notification
-							if     defPlayerID == Game.GetActivePlayer() then
-								-- local heading = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_UNIT_DESTROYED_SHORT")
-								text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_DEATH", attUnitName, defUnitName);
-								-- defPlayer:AddNotification(NotificationTypes.NOTIFICATION_GENERIC , text, heading, plotX, plotY)
-							elseif attPlayerID == Game.GetActivePlayer() then
-								text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_ENEMY_DEATH", attUnitName, defUnitName);
-								if not text3n then
-									text3n = Locale.ConvertTextKey("TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT3N")
-								end
-							end
-						elseif SplashDamageFinal > 0 then
-							-- Notification
-							if     defPlayerID == Game.GetActivePlayer() then
-								text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE", attUnitName, defUnitName, SplashDamageFinal);
-							elseif attPlayerID == Game.GetActivePlayer() then
-								text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_ENEMY", attUnitName, defUnitName, SplashDamageFinal);
-							end
-						end
-						if text then
-							Events.GameplayAlertMessage( text );
-						end
-
-						
-						pUnit:ChangeDamage(SplashDamageFinal, attPlayer)
-						print("Splash Damage="..SplashDamageFinal)
-					end
-				end
-				end
+		local adjPlot = Map.PlotXYWithRangeCheck(plotX, plotY, dx, dy, uniqueRange);
+		if (adjPlot ~= nil and not adjPlot:IsCity()) then
+			local unitCount = adjPlot:GetNumUnits();
+			if unitCount > 0 then
+			for i = 0, unitCount-1, 1 do
+			local pUnit = adjPlot:GetUnit(i) ------------Find Units affected
+			if pUnit 
+			and (pUnit:GetDomainType() == DomainTypes.DOMAIN_LAND or pUnit:GetDomainType() == DomainTypes.DOMAIN_SEA) 
+			and not pUnit:IsHasPromotion(unitPromotionOceanFireE02ID) 
+			and not pUnit:IsHasPromotion(unitPromotionOceanFireE01ID)
+			and not pUnit:IsHasPromotion(AntiDebuffID)
+			then
+				local pCombat = pUnit:GetBaseCombatStrength()
+				local pPlayer = Players[pUnit:GetOwner()]	
+				if PlayersAtWar(attPlayer, pPlayer) then
+					if Map.PlotDistance(pUnit:GetX(), pUnit:GetY(), attUnit:GetX(), attUnit:GetY()) < 2 then -- 人类2格
+						pUnit:SetHasPromotion(unitPromotionOceanFireE02ID);
+					else
+						pUnit:SetHasPromotion(unitPromotionOceanFireE01ID);
+					end	
 				end
 			end
-		end
-		end
-		if text3n then
-			Events.GameplayAlertMessage( text3n )
-		end
-		-- 攻击结束后失去晋升
-		attUnit:SetHasPromotion(unitPromotion055MissileID, false)
-		local text1l = Locale.ConvertTextKey("TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT1L")
-		Events.GameplayAlertMessage( text1l );
-
-	end
-		
-	-- 超级要塞：浮岛要塞
-	if attUnit:IsHasPromotion(unitPromotionGAIA_ShipID) and GAIAShipHasAttackedThisTurn == 0 then
-		local movesLeft = attUnit:MovesLeft();
-		attUnit:RangeStrike( plotX, plotY );
-		attUnit:SetMadeAttack(false);
-		attUnit:SetMoves(movesLeft);
-		GAIAShipHasAttackedThisTurn = 1;
-	end
-
-	-- 超级要塞：神之鼻息
-	if (attUnit:IsHasPromotion(unitPromotionGAIA_HeadID)) then
-
-		-- 确定超级要塞与战斗单元的相对方位
-		local iDireciton = nil; -- 战斗单元相对于超级要塞的方向
-		local GAIARange = 10;
-		local oPlotX, oPlotY = plotX, plotY;
-		
-		for i = 0, 5 do
-			local adjPlot = Map.PlotDirection(plotX, plotY, i)
-			if adjPlot:GetX() ==  attPlot:GetX() and adjPlot:GetY() ==  attPlot:GetY() then
-				if i >= 3 then
-					iDireciton = i - 3
-				else
-					iDireciton = i + 3
-				end
 			end
-		end
-
-		if not iDireciton then
-			return;
-		end
-
-		while GAIARange > 0 do
-		-- for i = 0, 5 do
-			-- local iPlot = Map.PlotDirection(oPlotX, oPlotY, i)
-			local adjPlot = Map.PlotDirection(oPlotX, oPlotY, iDireciton)
-			if (adjPlot ~= nil and not adjPlot:IsCity() and GAIARange > 0) then
-				print("Available for AOE Damage!")
-				local unitCount = adjPlot:GetNumUnits();
-				if unitCount > 0 then
-				for i = 0, unitCount-1, 1 do
-				local pUnit = adjPlot:GetUnit(i) ------------Find Units affected
-				if pUnit and (pUnit:GetDomainType() == DomainTypes.DOMAIN_LAND or pUnit:GetDomainType() == DomainTypes.DOMAIN_SEA) then
-					local pCombat = pUnit:GetBaseCombatStrength()
-					local pPlayer = Players[pUnit:GetOwner()]
-					
-					if PlayersAtWar(attPlayer, pPlayer) then
-						local SplashDamageOri = attUnit:GetRangeCombatDamage(pUnit,nil,false)
-							
-						local AOEmod = 1.0;   -- the percent of damage reducing to nearby units
-							
-						local text = nil;
-						
-						local attUnitName = attUnit:GetName();
-						local defUnitName = pUnit:GetName();
-							
-						local SplashDamageFinal = math.floor(SplashDamageOri * AOEmod); -- Set the Final Damage
-						if     SplashDamageFinal >= pUnit:GetCurrHitPoints() then
-							SplashDamageFinal = pUnit:GetCurrHitPoints();
-							local eUnitType = pUnit:GetUnitType();
-							UnitDeathCounter(attPlayerID, pUnit:GetOwner(), eUnitType);
-								
-							-- Notification
-							if     defPlayerID == Game.GetActivePlayer() then
-								-- local heading = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_UNIT_DESTROYED_SHORT")
-								text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_DEATH", attUnitName, defUnitName);
-								-- defPlayer:AddNotification(NotificationTypes.NOTIFICATION_GENERIC , text, heading, plotX, plotY)
-							elseif attPlayerID == Game.GetActivePlayer() then
-								text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_ENEMY_DEATH", attUnitName, defUnitName);
-								if not text3n then
-									text3n = Locale.ConvertTextKey("TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT3N")
-								end
-							end
-						elseif SplashDamageFinal > 0 then
-							-- Notification
-							if     defPlayerID == Game.GetActivePlayer() then
-								text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE", attUnitName, defUnitName, SplashDamageFinal);
-							elseif attPlayerID == Game.GetActivePlayer() then
-								text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_ENEMY", attUnitName, defUnitName, SplashDamageFinal);
-							end
-						end
-						if text then
-							Events.GameplayAlertMessage( text );
-						end
-
-						
-						pUnit:ChangeDamage(SplashDamageFinal, attPlayer)
-						print("Splash Damage="..SplashDamageFinal)
-					end
-				end
-				end
-				end
-			end
-			oPlotX, oPlotY = adjPlot:GetX(), adjPlot:GetY()
-			GAIARange = GAIARange - 1
-		end
-	end
-
-
-	
-	if defUnit and attPlayer:GetCapitalCity() then
-		-- 王城骑士杀敌掠获人口，达到一定程度则可以在首都获得移民
-		for i = 1, 5 do
-			if attUnit:IsHasPromotion(g_KingsKnightPops[i]) then
-				if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
-					local attCambat = attUnit:GetBaseCombatStrength();
-					local defCombat = defUnit:GetBaseCombatStrength();
-					local KingsKnightPopsDelta = 10 * defCombat / attCambat;
-					local KingsKnightPops = load(attUnit, "KingsKnightPops", KingsKnightPops) or 0;
-					if KingsKnightPops <= (i - 1) * 20 then KingsKnightPops = (i-1)*20 end;
-					KingsKnightPops = KingsKnightPops + KingsKnightPopsDelta;
-					if KingsKnightPops < 100 then
-						local j = math.floor(KingsKnightPops / 20);
-						attUnit:SetHasPromotion(g_KingsKnightPops[i], false);
-						attUnit:SetHasPromotion(g_KingsKnightPops[j], true);
-						local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
-            			Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("[ICON_FOOD] [COLOR_YIELD_FOOD]{1_Num}[ENDCOLOR] POP", KingsKnightPops));
-
-						-- [ICON_FOOD][COLOR_YIELD_FOOD]掠获人口(00)[ENDCOLOR]
-					elseif KingsKnightPops >= 100 then
-						attUnit:SetHasPromotion(g_KingsKnightPops[i], false);
-						attUnit:SetHasPromotion(g_KingsKnightPops[1], true);
-						local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
-            			Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("[ICON_FOOD] [COLOR_YIELD_FOOD]{1_Num}[ENDCOLOR] POP", KingsKnightPops));
-						KingsKnightPops = KingsKnightPops - 100;
-						local attCapitalCity = attPlayer:GetCapitalCity();
-						local sUnitType = GetCivSpecificUnit(attPlayer, "UNITCLASS_SETTLER")   	
-						local NewUnit = attPlayer:InitUnit(GameInfoTypes[sUnitType], attCapitalCity:GetX(), attCapitalCity:GetY(), UNITAI_SETTLE)	
-					end
-					save(attUnit, "KingsKnightPops", KingsKnightPops);
-					break;
-				end
-			end
-		end 
-		-- 王城骑士杀敌为首都提供伟人点数
-		if attUnit:IsHasPromotion(KingsKnightCID) then
-			if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
-				local unitLevel = attUnit:GetLevel();
-				local rewardTP = attUnit:GetBaseCombatStrength();
-				local capital = attPlayer:GetCapitalCity();
-				local specialistWriterID	= GameInfoTypes["SPECIALIST_WRITER"];
-				local specialistScientistID	= GameInfoTypes["SPECIALIST_SCIENTIST"];
-				if (not capital) then return end;
-
-				capital:ChangeSpecialistGreatPersonProgressTimes100(specialistWriterID, rewardTP*100);
-				capital:ChangeSpecialistGreatPersonProgressTimes100(specialistScientistID, rewardTP*100);
-
-				if attPlayer:IsHuman() then
-					local plotX = attUnit:GetX();
-					local plotY = attUnit:GetY();
-					Events.AddPopupTextEvent(HexToWorld(ToHexFromGrid(Vector2(plotX, plotY))), g_ConvertTextKey("[COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_GREAT_WRITER][NEWLINE][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_GREAT_SCIENTIST]", rewardTP, rewardTP), true);
-				end
 			end
 		end
 	end
+	end
+end
 
 end--function END
 GameEvents.BattleFinished.Add(NewAttackEffect)
 --------------------------------------------------------------
 -- 战斗减伤
 --------------------------------------------------------------
-function SPUEDamageDelta(iThisBattleType, iDamage,
-	iAttackPlayerID, iAttackUnitOrCityID, bAttackIsCity,
-	iDefensePlayerID, iDefenseUnitOrCityID, bDefenseIsCity,
-	iInterceptorPlayerID, iInterceptorUnitOrCityID, bInterceptorIsCity)
-	if iThisBattleType == GameInfoTypes["BATTLEROLE_DEFENDER"] 
-	and not bDefenseIsCity
-	then
-		local player = Players[iDefensePlayerID];
-		if player == nil then
-			return 0;
-		end
+function SPUEDamageDelta(iBattleUnitType, iBattleType,
+	iAttackPlayerID, iAttackUnitOrCityID, bAttackIsCity, iAttackDamage,
+	iDefensePlayerID, iDefenseUnitOrCityID, bDefenseIsCity, iDefenseDamage,
+	iInterceptorPlayerID, iInterceptorUnitOrCityID, bInterceptorIsCity, iInterceptorDamage)
 	
-		-- if bAttackIsCity then
-		-- 	return 50;
-		-- end
+	local reducedDamage = 0;
 
-		local unit = player:GetUnitByID(iDefenseUnitOrCityID);
+	local attPlayer = Players[iAttackPlayerID]
+	local defPlayer = Players[iDefensePlayerID]
+	if attPlayer == nil or defPlayer == nil then
+		return 0
+	end
+
+	-- 王城骑士进攻，防御方造成伤害减少
+	if iBattleUnitType == GameInfoTypes["BATTLEROLE_DEFENDER"] 
+	then
+		local attUnit = attPlayer:GetUnitByID(iAttackUnitOrCityID);
+		local defUnit = defPlayer:GetUnitByID(iDefenseUnitOrCityID);
+		if attUnit == nil then return 0 end;
 
 		-- 王城骑士
-		if unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW_C"].ID) then
-			if iDamage <= 15 then
-				return -iDamage;
+		if attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW_C"].ID)
+		and not (defUnit ~= nil
+		and defUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW_C"].ID) )
+		then 
+			if iDefenseDamage <= 15 then
+				-- return -iDefenseDamage;
+				reducedDamage = iDefenseDamage;
 			else
-				return 15;
+				-- return -15;
+				reducedDamage = 15
 			end
 		end
-		-- 王城骑士：掠获人口
-		for i = 2, 6 do
-			if unit:IsHasPromotion(g_KingsKnightPops[i]) then
-				local KingsKnightPops = load(unit, "KingsKnightPops", KingsKnightPops) or 0;
-				if KingsKnightPops <= (i - 1) * 20 then KingsKnightPops = (i-1)*20 end;
-				KingsKnightPops = KingsKnightPops - 20
-				local j = math.floor(KingsKnightPops / 20);
-				unit:SetHasPromotion(g_KingsKnightPops[i], false);
-				unit:SetHasPromotion(g_KingsKnightPops[i-1], true);
-				save(unit, "KingsKnightPops", KingsKnightPops)
-				return -iDamage * 0.8;
+
+	-- 王城骑士防守，进攻方造成伤害减少
+	elseif iBattleUnitType == GameInfoTypes["BATTLEROLE_ATTACKER"] 
+	then
+
+		local attUnit = attPlayer:GetUnitByID(iAttackUnitOrCityID);
+		local defUnit = defPlayer:GetUnitByID(iDefenseUnitOrCityID);
+		if defUnit == nil then return 0 end;
+		local deltaDamage = 0;
+
+		-- 王城骑士
+		if defUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW_C"].ID)
+		and not (attUnit ~= nil 
+		and attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW_C"].ID) )
+		then 
+			
+			if iAttackDamage <= 15 then
+				reducedDamage = iAttackDamage
+				-- deltaDamage = iAttackDamage;
+				-- return -deltaDamage;
+			else
+				-- deltaDamage = 15;
+				reducedDamage = 15;
+			end
+
+
+		end
+
+		-- 王城骑士：掠获人口减伤
+		if reducedDamage < iAttackDamage then
+			-- 优先考虑王国骑士晋升的减伤
+			for i = 2, 6 do
+				if defUnit:IsHasPromotion(g_KingsKnightPops[i]) then
+					local KingsKnightPops = load(defUnit, "KingsKnightPops", KingsKnightPops) or 0;
+					if KingsKnightPops <= (i - 1) * 20 then KingsKnightPops = (i-1)*20 end;
+					KingsKnightPops = KingsKnightPops - 20;
+					local j = math.ceil(KingsKnightPops / 20);
+					defUnit:SetHasPromotion(g_KingsKnightPops[i], false);
+					defUnit:SetHasPromotion(g_KingsKnightPops[j], true);
+					save(defUnit, "KingsKnightPops", KingsKnightPops);
+
+					if iAttackDamage <= deltaDamage + iAttackDamage * 0.8 then
+						-- 此时deltaDamage==15，15>iAttackDamage*0.2
+						reducedDamage = iAttackDamage;
+						-- return -deltaDamage;
+					else
+						reducedDamage = reducedDamage + iAttackDamage * 0.8;
+						-- return -deltaDamage;
+					end	
+				end
 			end
 		end
+	
+		-- return -deltaDamage;
 
 	end
 
-	return 0;
+	return -reducedDamage;
 end
-GameEvents.BattleDamageDelta.Add(SPUEDamageDelta)
+GameEvents.BattleCustomDamage.Add(SPUEDamageDelta)
 --------------------------------------------------------------
 -- 南洋海盗船远程劫掠
 --------------------------------------------------------------
@@ -2837,6 +2988,34 @@ GameEvents.CityCaptureComplete.Add(SPUE_Templar_CityCaptureComplete)
 --------------------------------------------------------------
 -- 赞助单位征集按钮
 --------------------------------------------------------------
+--------------------------------------------------------------
+-- 靖抚甲骑永备化成为贝利撒留甲骑兵
+--------------------------------------------------------------
+SPUE_BUCELLARII_Button = {
+	Name = "BUCELLARII Guard",
+	Title = "TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON_SHORT", -- or a TXT_KEY
+	OrderPriority = 200, -- default is 200
+	IconAtlas = "promoVP_atlas_00", -- 45 and 64 variations required
+	PortraitIndex = 49,
+	ToolTip = "TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON", -- or a TXT_KEY_ or a function
+	
+	Condition = function(action, unit)
+		return EliteCondition(unit, unitPromotionBucellariID, "UNIT_SPUE_BUCELLARII_GUARD", "UNIT_SPUE_BUCELLARII_GUARD_ELITE",
+		 "UNITCLASS_SPUE_BUCELLARII_GUARD", "PROJECT_BUCELLARII_TRAINING", SPUE_BUCELLARII_Button);
+  
+	end, -- or nil or a boolean, default is true
+	
+	Disabled = function(action, unit)   
+		return EliteDisable(unit, unitPromotionBucellariEliteID, "UNITCLASS_SPUE_BUCELLARII_GUARD", "PROJECT_BUCELLARII_TRAINING");
+	end, -- or nil or a boolean, default is false
+	
+	Action = function(action, unit, eClick) 
+		EliteAction(unit, "UNIT_SPUE_BUCELLARII_GUARD_ELITE", "UNITCLASS_SPUE_BUCELLARII_GUARD")
+	end
+  };
+  
+LuaEvents.UnitPanelActionAddin(SPUE_BUCELLARII_Button)
+
 -- 同盟军团征集
 SPUE_Patronage_Hastati_Button = {
 	Name = "Patronage Hastati",
@@ -2853,13 +3032,12 @@ SPUE_Patronage_Hastati_Button = {
 		local unitX = unit:GetX()
 		local unitY = unit:GetY()
 
-		if Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_IRON_WORKING"]) then
-			return false;
+		if not Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_IRON_WORKING"]) then
+			return;
 		end
 
 		local flag = 0
 		local csPlotFlag = 0
-		local iCost = 0
 
 		if plot and plot:IsOwned() then
 			local csPlayer = Players[plot:GetOwner()]
@@ -2870,7 +3048,8 @@ SPUE_Patronage_Hastati_Button = {
 			end
 		end
 
-		local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_SOCII_HASTATI"]);
+		-- local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_SOCII_HASTATI"]);
+		local numUnit = CountUnitsWithUniquePromotions( unit:GetOwner(), GameInfo.UnitPromotions["PROMOTION_SPUE_SOCII_HASTATI"].ID )
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_GENERAL_BODYGUARD"].ID) 
 		and csPlotFlag == 1 
 		and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
@@ -2880,14 +3059,11 @@ SPUE_Patronage_Hastati_Button = {
 			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SOCII_HASTATI");
 			local iUnit = GameInfoTypes[sUnitType];
 
-			if iUnit and iUnit ~= -1 then
-				for pCity in player:Cities() do
-					if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-						iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-						break;
-					end
-				end
-			end
+			local iCost = -1;
+			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+			
+			if goldCost then iCost = goldCost * 0.5 end;
+
 			if iCost > 0 and player:GetGold() >= iCost then
 
 				SPUE_Patronage_Hastati_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_PATRONAGE_SOCII_HASTATI_BUTTON", iCost)
@@ -2921,26 +3097,21 @@ SPUE_Patronage_Hastati_Button = {
 		local plotY = unit:GetY()
 		local player = Players[unit:GetOwner()]
 		local unitEXP = unit:GetExperience()
-		local iCost = 0
 		-- 单位购买价格
 		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SOCII_HASTATI");
 		local iUnit = GameInfoTypes[sUnitType];
 	
-		if iUnit and iUnit ~= -1 then
-			for pCity in player:Cities() do
-				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-					break;
-				end
-			end
-		end
+		local iCost = -1;
+		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 		
-		-- local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SOCII_HASTATI");
+		if goldCost then iCost = goldCost * 0.5 end;
+
 		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
 		if plot:GetNumUnits() > 2 then
 			NewUnit:JumpToNearestValidPlot();
 		end 
-		NewUnit:SetExperience(unitEXP)
+		NewUnit:SetExperience(unitEXP);
+		NewUnit:SetPromotionReady(true);		
 		unit:SetMoves(0)
 
 		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
@@ -2952,6 +3123,7 @@ SPUE_Patronage_Hastati_Button = {
 	end
 }; 
 LuaEvents.UnitPanelActionAddin(SPUE_Patronage_Hastati_Button)	
+
 -- 克里特弓箭手征集
 SPUE_Patronage_vBowman_Button = {
 	Name = "Patronage vBowman",
@@ -2974,7 +3146,6 @@ SPUE_Patronage_vBowman_Button = {
 
 		local flag = 0
 		local csPlotFlag = 0
-		local iCost = 0
 
 		if plot and plot:IsOwned() then
 			local csPlayer = Players[plot:GetOwner()]
@@ -2995,14 +3166,10 @@ SPUE_Patronage_vBowman_Button = {
 			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_VASSAL_BOWMAN");
 			local iUnit = GameInfoTypes[sUnitType];
 
-			if iUnit and iUnit ~= -1 then
-				for pCity in player:Cities() do
-					if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-						iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-						break;
-					end
-				end
-			end
+			local iCost = -1;
+			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+			if goldCost then iCost = goldCost * 0.5 end;
+
 			if iCost > 0 and player:GetGold() >= iCost then
 				SPUE_Patronage_vBowman_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_VASSAL_BOWMAN_BUTTON", iCost)
 				-- 玩家有足够金钱
@@ -3034,26 +3201,21 @@ SPUE_Patronage_vBowman_Button = {
 		local plotY = unit:GetY()
 		local player = Players[unit:GetOwner()]
 		local unitEXP = unit:GetExperience()
-		local iCost = 0
 		-- 单位购买价格
 		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_VASSAL_BOWMAN");
 		local iUnit = GameInfoTypes[sUnitType];
 	
-		if iUnit and iUnit ~= -1 then
-			for pCity in player:Cities() do
-				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-					break;
-				end
-			end
-		end
-		
+		local iCost = -1;
+		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+		if goldCost then iCost = goldCost * 0.5 end;
+	
 		-- local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_VASSAL_BOWMAN");
 		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
 		if plot:GetNumUnits() > 2 then
 			NewUnit:JumpToNearestValidPlot();
 		end 
 		NewUnit:SetExperience(unitEXP)
+		NewUnit:SetPromotionReady(true)
 		unit:SetMoves(0)
 		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
 
@@ -3064,6 +3226,7 @@ SPUE_Patronage_vBowman_Button = {
 	end
 }; 
 LuaEvents.UnitPanelActionAddin(SPUE_Patronage_vBowman_Button)	
+
 -- 辅助塞尔维亚重步兵征集
 SPUE_Patronage_Serbia_Button = {
 	Name = "Patronage Serbia",
@@ -3080,13 +3243,12 @@ SPUE_Patronage_Serbia_Button = {
 		local unitX = unit:GetX()
 		local unitY = unit:GetY()
 
-		if Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_IRON_WORKING"]) then
-			return false;
+		if not Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_IRON_WORKING"]) then
+			return;
 		end
 
 		local flag = 0
 		local csPlotFlag = 0
-		local iCost = 0
 
 		if plot and plot:IsOwned() then
 			local csPlayer = Players[plot:GetOwner()]
@@ -3107,14 +3269,10 @@ SPUE_Patronage_Serbia_Button = {
 			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_QIANG_SPEARMAN");
 			local iUnit = GameInfoTypes[sUnitType];
 
-			if iUnit and iUnit ~= -1 then
-				for pCity in player:Cities() do
-					if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-						iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-						break;
-					end
-				end
-			end
+			local iCost = -1;
+			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+			if goldCost then iCost = goldCost * 0.5 end;
+
 			if iCost > 0 and player:GetGold() >= iCost then
 
 				SPUE_Patronage_Serbia_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_QIANG_SPEARMAN_BUTTON", iCost)
@@ -3148,25 +3306,21 @@ SPUE_Patronage_Serbia_Button = {
 		local plotY = unit:GetY()
 		local player = Players[unit:GetOwner()]
 		local unitEXP = unit:GetExperience()
-		local iCost = 0
+		
 		-- 单位购买价格
 		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_QIANG_SPEARMAN");
 		local iUnit = GameInfoTypes[sUnitType];
 	
-		if iUnit and iUnit ~= -1 then
-			for pCity in player:Cities() do
-				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-					break;
-				end
-			end
-		end
-		
+		local iCost = -1;
+		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+		if goldCost then iCost = goldCost * 0.5 end;
+	
 		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
 		if plot:GetNumUnits() > 2 then
 			NewUnit:JumpToNearestValidPlot();
 		end 
 		NewUnit:SetExperience(unitEXP)
+		NewUnit:SetPromotionReady(true)
 		unit:SetMoves(0)
 		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
 
@@ -3177,6 +3331,7 @@ SPUE_Patronage_Serbia_Button = {
 	end
 }; 
 LuaEvents.UnitPanelActionAddin(SPUE_Patronage_Serbia_Button)	
+
 -- 海洋之火征集
 SPUE_Patronage_OceanFire_Button = {
 	Name = "Patronage Ocean Fire",
@@ -3194,7 +3349,6 @@ SPUE_Patronage_OceanFire_Button = {
 		local unitY = unit:GetY()
 
 		local flag = 0
-		local iCost = 0
 
 		local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_OCEAN_FIRE"]);
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID) 
@@ -3206,14 +3360,11 @@ SPUE_Patronage_OceanFire_Button = {
 			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_OCEAN_FIRE");
 			local iUnit = GameInfoTypes[sUnitType];
 
-			if iUnit and iUnit ~= -1 then
-				for pCity in player:Cities() do
-					if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-						iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-						break;
-					end
-				end
-			end
+			local iCost = -1;
+			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+			if goldCost then iCost = goldCost * 0.5 end;
+	
+
 			if iCost > 0 and player:GetGold() >= iCost then
 
 				SPUE_Patronage_OceanFire_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_OCEAN_FIRE_BUTTON", iCost)
@@ -3247,23 +3398,19 @@ SPUE_Patronage_OceanFire_Button = {
 		local plotY = unit:GetY()
 		local player = Players[unit:GetOwner()]
 		local unitEXP = unit:GetExperience()
-		local iCost = 0
 		-- 单位购买价格
 		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_OCEAN_FIRE");
 		local iUnit = GameInfoTypes[sUnitType];
 	
-		if iUnit and iUnit ~= -1 then
-			for pCity in player:Cities() do
-				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-					break;
-				end
-			end
-		end
+		local iCost = -1;
+		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+		if goldCost then iCost = goldCost * 0.5 end;
 		
 		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
 		NewUnit:JumpToNearestValidPlot();
 		NewUnit:SetExperience(unitEXP)
+		NewUnit:SetPromotionReady(true)
+
 		unit:SetMoves(0)
 		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
 
@@ -3274,6 +3421,7 @@ SPUE_Patronage_OceanFire_Button = {
 	end
 }; 
 LuaEvents.UnitPanelActionAddin(SPUE_Patronage_OceanFire_Button)
+
 -- 神机营征集
 SPUE_TreasureFleet_LandInfantry_Button = {
 	Name = "Patronage Land Infantry",
@@ -3297,8 +3445,11 @@ SPUE_TreasureFleet_LandInfantry_Button = {
 		end
 
 		local flag = 0
-		local iCost = 300
-		local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_SHENJI_MUSKETEER"]);
+		-- local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_SHENJI_MUSKETEER"]);
+		local numUnit = CountUnitsWithUniquePromotions( unit:GetOwner(), GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER1"].ID )
+					  + CountUnitsWithUniquePromotions( unit:GetOwner(), GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID )
+					  + CountUnitsWithUniquePromotions( unit:GetOwner(), GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER3"].ID )
+
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TREASURE_FLEET"].ID) 
 		and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
 		and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_SHENJI_MUSKETEER"].MaxPlayerInstances
@@ -3307,16 +3458,13 @@ SPUE_TreasureFleet_LandInfantry_Button = {
 			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SHENJI_MUSKETEER");
 			local iUnit = GameInfoTypes[sUnitType];
 
-			if iUnit and iUnit ~= -1 then
-				for pCity in player:Cities() do
-				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-					break;
-				end
-				end
-			end
-
+			local iCost = -1;
+			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+			
+			if goldCost then iCost = goldCost * 0.5 end;
+	
 			if iCost > 0 and player:GetGold() >= iCost then
+				SPUE_TreasureFleet_LandInfantry_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_PATRONAGE_SHENJI_MUSKETEER_BUTTON", iCost)
 				-- 玩家有足够金钱
 				if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
 					flag = 1
@@ -3345,29 +3493,22 @@ SPUE_TreasureFleet_LandInfantry_Button = {
 		local plotY = unit:GetY()
 		local player = Players[unit:GetOwner()]
 		local unitEXP = unit:GetExperience()
-		--local iNewUnit = GameInfoTypes.UNIT_EXPLORERX;
-		--local overrideUnit = GameInfo.Civilization_UnitClassOverrides{ UnitClassType = "UNITCLASS_EXPLORERX", CivilizationType = GameInfo.Civilizations[player:GetCivilizationType()].Type }();
-		--if overrideUnit and overrideUnit.UnitType then
-		--	iNewUnit = GameInfoTypes[overrideUnit.UnitType];
-		--end
-		local iCost = 300
+
 		-- 单位购买价格
 		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SHENJI_MUSKETEER");
 		local iUnit = GameInfoTypes[sUnitType];
 
-		if iUnit and iUnit ~= -1 then
-			for pCity in player:Cities() do
-			if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-				iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-				break;
-			end
-			end
-		end
+		local iCost = -1;
+		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 		
+		if goldCost then iCost = goldCost * 0.5 end;
+				
 		-- local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SHENJI_MUSKETEER");
 		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
 		NewUnit:JumpToNearestValidPlot()
-		NewUnit:SetExperience(unitEXP)
+		NewUnit:SetExperience(unitEXP);
+		NewUnit:SetPromotionReady(true);
+
 		unit:SetMoves(0)
 
 		if unit:GetOwner() == unit:GetPlot():GetOwner()
@@ -3383,16 +3524,7 @@ SPUE_TreasureFleet_LandInfantry_Button = {
 		end
 
 		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
-		-- local iUnit = GameInfoTypes[sUnitType]
 
-		-- if iUnit and iUnit ~= -1 then
-		-- 	for pCity in player:Cities() do
-		-- 	if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-		-- 		iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-		-- 		break;
-		-- 	end
-		-- 	end
-		-- end
 		if iCost and iCost > 0 then
 			player:ChangeGold(- iCost)
 		end
@@ -3402,7 +3534,8 @@ SPUE_TreasureFleet_LandInfantry_Button = {
 	end
   };
   
-LuaEvents.UnitPanelActionAddin(SPUE_TreasureFleet_LandInfantry_Button)										
+LuaEvents.UnitPanelActionAddin(SPUE_TreasureFleet_LandInfantry_Button)	
+
 -- 征召护卫舰召集
 SPUE_Patronage_Corvette_Button = {
 	Name = "Patronage Corvette",
@@ -3426,8 +3559,7 @@ SPUE_Patronage_Corvette_Button = {
 		end
 
 		local flag = 0
-		local iCost = 700
-		local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_CORVETTE"]);
+		local numUnit = CountUnitsWithUniquePromotions( unit:GetOwner(), GameInfo.UnitPromotions["PROMOTION_SPUE_CORVETTE"].ID )
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TREASURE_FLEET"].ID) 
 		and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
 		and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_CORVETTE"].MaxPlayerInstances
@@ -3436,15 +3568,16 @@ SPUE_Patronage_Corvette_Button = {
 			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_CORVETTE");
 			local iUnit = GameInfoTypes[sUnitType];
 
-			if iUnit and iUnit ~= -1 then
-				for pCity in player:Cities() do
-				if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-					iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-					break;
-				end
-				end
-			end
+			local iCost = -1;
+			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
+			
+			print("goldCost="..goldCost)
+
+			if goldCost then iCost = goldCost * 0.5 end;
+				
 			if iCost > 0 and player:GetGold() >= iCost then
+				SPUE_Patronage_Corvette_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_PATRONAGE_CORVETTE_BUTTON", iCost)
+
 				-- 玩家有足够金钱
 				if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
 					flag = 1
@@ -3474,26 +3607,23 @@ SPUE_Patronage_Corvette_Button = {
 		local plotY = unit:GetY()
 		local player = Players[unit:GetOwner()]
 		local unitEXP = unit:GetExperience()
-		local iCost = 700
 		-- 单位购买价格
 		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_CORVETTE");
 		local iUnit = GameInfoTypes[sUnitType];
 	
-		if iUnit and iUnit ~= -1 then
-			for pCity in player:Cities() do
-			if pCity and pCity:IsCanPurchase(false, false, iUnit, -1, -1, YieldTypes.YIELD_GOLD) then
-				iCost = math.floor(pCity:GetUnitPurchaseCost( iUnit)/2);
-				break;
-			end
-			end
-		end
+		local iCost = -1;
+		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 		
-		-- local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_CORVETTE");
+		if goldCost then iCost = goldCost * 0.5 end;
+		
 		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
 		if plot:GetNumUnits() > 2 then
 			NewUnit:JumpToNearestValidPlot();
 		end 
-		NewUnit:SetExperience(unitEXP)
+		NewUnit:SetExperience(unitEXP);
+		NewUnit:SetPromotionReady(true);
+
+		
 		unit:SetMoves(0)
 
 		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");
@@ -3513,8 +3643,10 @@ LuaEvents.UnitPanelActionAddin(SPUE_Patronage_Corvette_Button)
 --------------------------------------------------------------
 local g_PatronageVassalUnitClassList = {"UNITCLASS_SPUE_CORVETTE", 
 										"UNITCLASS_SPUE_SHENJI_MUSKETEER", 
+
 										"UNITCLASS_SPUE_VASSAL_BOWMAN",				
 										"UNITCLASS_SPUE_SOCII_HASTATI", 
+
 										"UNITCLASS_SPUE_QIANG_SPEARMAN", 
 										"UNITCLASS_SPUE_OCEAN_FIRE"}
 function SPUE_Patronage_PlayerCanTrain(playerID, unitID)
@@ -3558,8 +3690,10 @@ function SetPolicyUnitsName( iPlayer, iOldUnit,  iNewUnit)
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_PRAETORIAN");	-- 传统：禁卫军
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_WEIYANG"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_WEIYANG");	-- 传统：未央宫卫士
+
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_KNIGHT_NEW");	-- 自主：王城骑士
+		
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_YULIN_CAVALRY");	-- 荣誉：羽林骑军
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ROHAN_CAVALRY"].ID) then
@@ -3589,14 +3723,18 @@ function SetPolicyUnitsName( iPlayer, iOldUnit,  iNewUnit)
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_VASSAL_BOWMAN");	-- 赞助：克里特岛弓箭手
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SOCII_HASTATI"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_SOCII_HASTATI");	-- 赞助：同盟军团
+
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_QIANG_SPEARMAN"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_QIANG_SPEARMAN");	-- 赞助：塞尔维亚重步兵
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID) 
 	and not pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD_ELITE"].ID)
 	then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD");	-- 赞助：近卫甲骑
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD");	-- 赞助：靖抚甲骑
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD_ELITE"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_ELITE");	-- 赞助：执政甲骑
+	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_OCEAN_FIRE"].ID) then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_OCEAN_FIRE");	-- 赞助：海洋之火
+
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TREASURE_FLEET"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_TREASURE_FLEET");	-- 赞助：宝船
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER1"].ID) then
@@ -3613,6 +3751,7 @@ function SetPolicyUnitsName( iPlayer, iOldUnit,  iNewUnit)
 
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_DVC_TANK"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_DVC_TANK");	-- 美学：达芬奇坦克
+
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SSPRIVATEER"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_SSPRIVATEER");		-- 商业：南洋海盗船
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_GENOAXBOW"].ID) then

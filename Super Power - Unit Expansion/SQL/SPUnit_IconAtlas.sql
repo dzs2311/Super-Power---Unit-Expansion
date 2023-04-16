@@ -90,8 +90,9 @@ INSERT OR REPLACE INTO IconTextureAtlases
 			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)
 VALUES		('SPUE_BODYGUARD_FLAG_ATLAS',		032,		'SPUE_BodyGuard_Flag.dds',				1, 				1),	-- 将领卫队
 			('SPUE_SOCII_FLAG_ATLAS',			032,		'SPUE_Socii_Flag.dds',					1, 				1), -- 同盟军团
+			('SPUE_VBOWMAN_FLAG_ATLAS',			032,		'SPUE_ITUU_Flag.dds',					1, 				1), -- 克里特弓箭手
 			('SPUE_VSPEAR_FLAG_ATLAS',			032,		'SPUE_QiangSpearman_Flag.dds',			1, 				1),	-- 辅助塞尔维亚重步兵
-			('SPUE_VCATAPHCRAT_FLAG_ATLAS',		032,		'SPUE_Byzantium_General_Flag.dds',		1, 				1),	-- 近卫甲骑兵
+			('SPUE_VCATAPHCRAT_FLAG_ATLAS',		032,		'SPUE_Byzantium_General_Flag.dds',		1, 				1),	-- 靖抚甲骑兵
 			('SPUE_OCEANF_FLAG_ATLAS',			032,		'SPUE_OceanFire_Flag.dds',				1, 				1), -- 海洋之火
 			('SPUE_VMUSKETMAN_FLAG_ATLAS',		032,		'SPUE_Musketeer_Flag.dds',				1, 				1),	-- 神机营
 			('SPUE_CAPTAIN_FLAG_ATLAS',			032,		'SPUE_TreasureFleet_Flag.dds',			1, 				1), -- 水师旗舰

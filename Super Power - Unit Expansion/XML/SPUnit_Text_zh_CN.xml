@@ -2,6 +2,18 @@
 <!-- Created by ModBuddy on 2021/10/30 22:00:26 -->
 <GameData>
 	<Language_zh_CN>
+		<!--*******************项目*******************-->
+		<Row Tag="TXT_KEY_PROJECT_BUCELLARII_TRAINING">
+			<Text>查士丁尼西征计划</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_BUCELLARII_TRAINING_HELP">
+			<Text>此项目需要开启赞助政策树并选择“巴西琉斯之道”，只有完成此项目的文明可以将★[COLOR_CYAN]靖抚甲骑[ENDCOLOR]精英化训练成为[COLOR_YIELD_GOLD]贝利撒留甲骑兵[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_BUCELLARII_TRAINING_PEDIA">
+			<Text>[COLOR_YIELD_GOLD]贝利撒留甲骑兵[ENDCOLOR]是“巴西琉斯之道”专属的精英重骑兵单位，拥有强大的突击能力。</Text>
+		</Row>
+
+
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_EVASION_III" >
 			<Text>规避能力(100)</Text>
 		</Row>
@@ -281,9 +293,9 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_NEW_HELP">
 			<Text>
 				[COLOR_CYAN]王城骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]自主政策[ENDCOLOR]的代表性单位，自带军团晋升，且拥有以下能力。
-				[NEWLINE][ICON_BULLET]完成自主政策树且拥有超过600点经验后可以选择晋升[COLOR_POSITIVE_TEXT]王国冠军[ENDCOLOR]：获得15点减伤，杀敌时为首都提供相当于(基础[ICON_STRENGTH]战斗力*单位等级)的[ICON_GREAT_WRITER]大文学家点数和[ICON_GREAT_SCIENTIST]大科学家点数。
+				[NEWLINE][ICON_BULLET]拥有超过300点经验后可选晋升[COLOR_POSITIVE_TEXT]王国冠军[ENDCOLOR]：获得15点减伤，杀敌时为首都提供相当于(基础[ICON_STRENGTH]战斗力*单位等级)的[ICON_GREAT_WRITER]大文学家点数和[ICON_GREAT_SCIENTIST]大科学家点数。
 				[NEWLINE][ICON_BULLET]兵士集结：可以召集各个城市的采邑骑士（只能召集一次,且总数不超过20）。
-				[NEWLINE][ICON_BULLET]移民安置：杀敌时根据敌军战斗力积攒粮食点数，积攒足够点数时获得移民且粮食点数清零，点数要求随时代增长。
+				[NEWLINE][ICON_BULLET]移民安置：杀敌时根据敌军战斗力积攒粮食点数，积攒足够点数时获得移民且粮食点数清零，点数要求随时代和战斗力增长。
 				[NEWLINE][ICON_BULLET]诗歌传唱：杀敌获得150%的文化点数，晋升时获得一个大文学家。
 			</Text>
 		</Row>
@@ -459,21 +471,21 @@
 			<Text>重步兵训练</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_FUCHUAN_INFANTRY_BUTTON">
-			<Text>训练一支重装步兵单位，花费为当前可建造重装步兵单位1/2的价格，船只本回合失去移动力。</Text>
+			<Text>训练一支重装步兵单位，花费为当前可建造重装步兵单位1/3的价格，船只本回合失去移动力。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_FUCHUAN_GUNPOWDER_BUTTON_SHORT">
 			<Text>火药步兵训练</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_FUCHUAN_GUNPOWDER_BUTTON">
-			<Text>训练一支火药步兵单位，花费为当前可建造火药步兵单位1/2的价格，船只本回合失去移动力。</Text>
+			<Text>训练一支火药步兵单位，花费为当前可建造火药步兵单位1/3的价格，船只本回合失去移动力。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_FUCHUAN_CANNON_BUTTON_SHORT">
 			<Text>炮兵训练</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_FUCHUAN_CANNON_BUTTON">
-			<Text>训练一支直射火力炮兵单位，花费为当前可建造直射火力炮兵单位1/2的价格，船只本回合失去移动力。</Text>
+			<Text>训练一支直射火力炮兵单位，花费为当前可建造直射火力炮兵单位1/3的价格，船只本回合失去移动力。</Text>
 		</Row>
 		<!-- **********************热气球*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_HOT_AIR_BALLOON">
@@ -755,6 +767,38 @@
 			<Text>[COLOR_CYAN]达·芬奇机关炮[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]美学政策[ENDCOLOR]的代表性单位，启蒙时代的攻城和战略火炮单位。</Text>
 		</Row>
 
+		<!-- **********************佣兵雇主*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_AMB">
+			<Text>[COLOR_CYAN]佣兵雇主[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_AMB_HELP">
+			<Text>
+				[COLOR_CYAN]佣兵雇主[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的代表单位，拥有以下能力：
+				[NEWLINE][ICON_BULLET]佣兵协议：每个[COLOR_CYAN]佣兵雇主[ENDCOLOR]每10回合（标速下）能够签订一次雇佣兵合同，雇佣2个佣兵单位。
+				[NEWLINE][ICON_BULLET]议价艺术：能够花费一定的[ICON_GOLD]金币回复2格内所有受伤己方单位的血量。
+				[NEWLINE]
+				[NEWLINE]普通的佣兵单位能够维持15回合（标速下）的存在时间。
+				[NEWLINE]中古时代的佣兵单位无法进行升级，但可以通过完成相应的精英计划进行永备化改造。
+				[NEWLINE]启蒙时代的佣兵单位则将目光聚焦在海洋，是您七海争雄的好帮手。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_AMB_TEXT">
+			<Text>
+				雇佣兵（英文：Mercenary）是可用金钱雇佣的军队，中古之文艺复兴时期的佣兵团对欧洲的军制产生了重要的影响。
+				[NEWLINE]雇佣军常按照军团来进行组织，领袖是出色的军人，同时也是要钱的精明的商人。由于雇佣军不问战争的性质和目的，只根据市场原则行事，故而，谁若想取得战争的胜利，就必须要有充足的钱袋。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_AMB">
+			<Text>佣兵君主</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_AMB_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]佣兵合同：每个[COLOR_CYAN]佣兵雇主[ENDCOLOR]每10回合（标速下）能够签订一次雇佣兵合同，雇佣2个佣兵单位。
+				[NEWLINE][ICON_BULLET]议价艺术：能够花费一定的[ICON_GOLD]金币回复2格内所有受伤己方单位的血量。
+			</Text>
+		</Row>
+
 		<!-- **********************中古佣兵团*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_FCOMPANY">
 			<Text>[COLOR_CYAN]中古佣兵团[ENDCOLOR]</Text>
@@ -889,10 +933,13 @@
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON_SHORT">
-			<Text>永备化</Text>
+			<Text>永备化/精英化</Text>
 		</Row>
-		<Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON">
+		<!-- <Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON">
 			<Text>花费{1_Num}[ICON_GOLD]金币将瓦兰吉佣兵永备化成为瓦兰吉卫队（只能将一支瓦兰吉佣兵永备化）。</Text>
+		</Row> -->
+		<Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON">
+			<Text>花费{1_Num}[ICON_GOLD]金币将{2_UnitName}永备化/精英化改造成为{3_UnitName}（只能将一支{4_UnitName}永备化/精英化，且需要完成精英计划：{5_ProjectName}。）。</Text>
 		</Row>
 		<!-- **********************铁人军*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_IRON_TROOP">
@@ -1076,50 +1123,26 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_BOWMAN_HELP">
 			<Text>对陆军单位+50%[ICON_STRENGTH]战斗力，射程+1，每回合攻击次数+1，远程防御攻击时+50%[ICON_STRENGTH]战斗力（持盾）。</Text>
 		</Row>
-		<!-- **********************辅助西徐亚弓骑兵*********************** -->
-		<!-- <Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI">
-			<Text>∏[COLOR_CYAN]辅助西徐亚弓骑兵[ENDCOLOR]</Text>
-		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI_HELP">
-			<Text>
-				∏[COLOR_CYAN]辅助西徐亚弓骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军轻骑兵辅助单位，死亡时不会造成人口损失。
-				[NEWLINE][ICON_BULLET]每回合攻击次数+2，对残血单位+150%[ICON_STRENGTH]战斗力。
-				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路可以招募此单位。
-				[NEWLINE][ICON_BULLET]引弦为罗马人射倒敌人的西徐亚人才是有价值的战士。
-			</Text>
-		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_SOCII_HASTATI_TEXT">
-			<Text>
-				草原上的许多部落有着丰富的文化，根本不是无知愚昧的野蛮人。他们住在从里海一直到黑海北岸的大片地区；希腊人称他们为“西徐亚人”，波斯人则称其为“塞种人”。其中西边的一群也被叫做萨尔马提亚人。穿着裤子使他们与希腊人认为的野蛮人相距甚远，更不要提他们高高的尖帽了。然而他们全都是出色的骑手，精于使用西徐亚式的复合反曲弓，近战时也颇具威力。他们使用的一种战斧，一面是锋刃一面是镐，可以刺穿大部分铠甲。出土的陪葬品显示，一些部落的女性也同男性一样好战，并有可能亲临战阵。这很可能是希腊神话中亚马逊女战士的起源。			
-			</Text>
-		</Row>	
-
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI">
-			<Text>居鲁士大敌</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI_HELP">
-			<Text>每回合攻击次数+2，对残血单位+150%[ICON_STRENGTH]战斗力。</Text>
-		</Row> -->
-		<!-- **********************近卫甲骑兵*********************** -->
+		<!-- **********************靖抚甲骑兵*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD">
-			<Text>★[COLOR_CYAN]近卫甲骑[ENDCOLOR]</Text>
+			<Text>★[COLOR_CYAN]靖抚甲骑[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_ELITE">
 			<Text>[COLOR_YIELD_GOLD]贝利撒留甲骑兵[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP">
 			<Text>
-				★[COLOR_CYAN]近卫甲骑[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重骑兵统帅单位，可以远程和近战攻击的双重重骑兵。
+				★[COLOR_CYAN]靖抚甲骑[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重骑兵统帅单位，可以远程和近战攻击的双重重骑兵。
 				[NEWLINE][ICON_BULLET]位于城邦境内时可以征召∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]位于岸边时可以建造[COLOR_CYAN]海洋之火[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
 				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
 				[NEWLINE]
-				[NEWLINE]完成罗马远征军训练计划后可以进行精英化改造：[COLOR_YIELD_GOLD]贝利撒留甲骑兵[ENDCOLOR]。
-				[NEWLINE][COLOR_YIELD_GOLD]执政甲骑[ENDCOLOR]在★[COLOR_CYAN]近卫甲骑[ENDCOLOR]的基础上额外获得以下能力：
+				[NEWLINE]完成[COLOR_YIELD_GOLD]查士丁尼西征计划[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]贝利撒留甲骑兵[ENDCOLOR]。
+				[NEWLINE][COLOR_YIELD_GOLD]执政甲骑[ENDCOLOR]在★[COLOR_CYAN]靖抚甲骑[ENDCOLOR]的基础上额外获得以下能力：
 				[NEWLINE][ICON_BULLET]每击杀一支敌方部队或对一支敌方部队造成30以上的伤害，则为己方所有城市带来一回合的“我们爱国王日”。
 				[NEWLINE][ICON_BULLET]无视ZOC，无视地形移动损耗，回合结束时2格内每个敌方单位提供2移动力。
-				[NEWLINE][ICON_BULLET]每次发动攻击后获得5%的战斗力加成（最高100%），遭受攻击后清零。
+				[NEWLINE][ICON_BULLET]每次发动攻击后获得20%的战斗力加成（最高500%），遭受攻击后减半（小于20%则直接清零）。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_BUCELLARII_GUARD_TEXT">
@@ -1146,7 +1169,7 @@
 			<Text>
 				[NEWLINE][ICON_BULLET]每击杀一支敌方部队或对一支敌方部队造成30以上的伤害，则为己方所有城市带来一回合的“我们爱国王日”。
 				[NEWLINE][ICON_BULLET]无视ZOC，无视地形移动损耗，回合结束时2格内每个敌方单位提供2移动力。
-				[NEWLINE][ICON_BULLET]每次发动攻击后获得5%的战斗力加成（最高100%），遭受攻击后清零。
+				[NEWLINE][ICON_BULLET]每次发动攻击后获得5%的战斗力加成（最高300%），遭受攻击后清零。
 			</Text>
 		</Row>
 
@@ -1195,7 +1218,9 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_OCEAN_FIRE_HELP">
 			<Text>
 				∏[COLOR_CYAN]海洋之火[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古海军近战辅助单位。
-				[NEWLINE][ICON_BULLET]+1攻击次数，能够为攻击单元格2格内的敌方单位带来减益。
+				[NEWLINE][ICON_BULLET]+1攻击次数，能够为攻击单元格2格内的敌方单位带来[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]状态（对拥有人造意志的单位无效），处于[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]状态的单位每回合减少25血量。
+				[NEWLINE][ICON_BULLET]1格以内的单位将拥有持续2回合的[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]效果，1格以外的单位将拥有持续1回合的[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]效果。
+				[NEWLINE][ICON_BULLET]回合结束时拥有2回合[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]效果的单位会向无[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]状态的同领域己方单位传递1回合的[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]效果。
 				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
 			</Text>
 		</Row>
@@ -1206,10 +1231,29 @@
 		</Row>
 		
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE">
-			<Text>罗马火</Text>
+			<Text>海洋之火</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_HELP">
-			<Text>+1攻击次数，为攻击单元格2格内的敌方单位带来减益。</Text>
+			<Text>+1攻击次数，能够为攻击单元格2格内的敌方单位带来[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]状态（对拥有人造意志的单位无效）。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_02">
+			<Text>[COLOR_NEGATIVE_TEXT]希腊火灼烧（2）[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_02_HELP">
+			<Text>
+				[COLOR_NEGATIVE_TEXT]灼烧状态，剩余2回合。[ENDCOLOR]
+				[NEWLINE]在友方区域外停留会对该单位造成[COLOR_NEGATIVE_TEXT]25点伤害[ENDCOLOR]
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_01">
+			<Text>[COLOR_NEGATIVE_TEXT]希腊火灼烧（1）[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_01_HELP">
+			<Text>
+				[COLOR_NEGATIVE_TEXT]灼烧状态，剩余1回合。[ENDCOLOR]
+				[NEWLINE]在友方区域外停留会对该单位造成[COLOR_NEGATIVE_TEXT]25点伤害[ENDCOLOR]
+			</Text>
 		</Row>
 
 		<!-- **********************宝船旗舰*********************** -->
@@ -1242,14 +1286,14 @@
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_PATRONAGE_SHENJI_MUSKETEER_BUTTON">
-			<Text>花费[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]神机营[ENDCOLOR]单位，船只本回合失去移动力</Text>
+			<Text>花费{1_Num}[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]神机营[ENDCOLOR]单位，船只本回合失去移动力</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_PATRONAGE_CORVETTE_BUTTON_SHORT">
 			<Text>∏[COLOR_CYAN]征召护卫舰[ENDCOLOR]征集</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_PATRONAGE_CORVETTE_BUTTON">
-			<Text>花费[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]征召护卫舰[ENDCOLOR]单位，船只本回合失去移动力</Text>
+			<Text>花费{1_Num}[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]征召护卫舰[ENDCOLOR]单位，船只本回合失去移动力</Text>
 		</Row>
 		<!-- **********************神机营*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_SHENJI_MUSKETEER">
@@ -1333,7 +1377,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_PATH_BASELIUS_HELP">
 			<Text>
-				选择[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]将使您能够建造中古时期的统帅和辅助单位。
+				选择[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]将使您能够建造中古时期的统帅和辅助单位，并解锁特殊项目：查士丁尼西征计划。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PATH_EMPEROR_CAP">

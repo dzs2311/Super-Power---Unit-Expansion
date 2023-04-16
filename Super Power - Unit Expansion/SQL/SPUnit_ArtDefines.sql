@@ -3095,7 +3095,7 @@ INSERT INTO ArtDefine_UnitMemberInfos
 SELECT	'ART_DEF_UNIT_MEMBER_SPUE_QIANG_SPEARMAN',	Scale,	ZOffset, Domain, 'Bashtnik.fxsxml',	MaterialTypeTag, MaterialTypeSoundOverrideTag
 FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_SPEARMAN';
 ------------------------------------------------------------------------------------------------------------------------
---赞助：近卫甲骑兵/执政甲骑兵--
+--赞助：靖抚甲骑兵/执政甲骑兵--
 ------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------
 --赞助：海洋之火--

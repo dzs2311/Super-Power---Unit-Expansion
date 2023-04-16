@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created by ModBuddy on 2023/4/12 8:58:31 -->
 <GameData>
-  <!-- TODO: Insert table creation example here. -->
- 
-  <!-- TODO: Insert table data example here.-->
-  
-  <!-- Enter your Game Data here. -->
-  
+	<Projects>
+		<!-- 查士丁尼西征计划 -->
+	    <Row>
+	    	<Type>PROJECT_BUCELLARII_TRAINING</Type>
+	    	<Description>TXT_KEY_PROJECT_BUCELLARII_TRAINING</Description>
+	    	<Help>TXT_KEY_PROJECT_BUCELLARII_TRAINING_HELP</Help>
+	    	<Civilopedia>TXT_KEY_PROJECT_BUCELLARII_TRAINING_PEDIA</Civilopedia>
+	    	<MaxGlobalInstances>1</MaxGlobalInstances>
+	    	<MaxTeamInstances>1</MaxTeamInstances>
+	    	<Cost>120</Cost>
+	    	<PortraitIndex>29</PortraitIndex>
+	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
+	    </Row>
+	</Projects>
+	<Project_Flavors>
+		<!-- 查士丁尼西征计划 -->
+	    <Row>
+	    	<ProjectType>PROJECT_BUCELLARII_TRAINING</ProjectType>
+	    	<FlavorType>FLAVOR_MOBILE</FlavorType>
+	    	<Flavor>999</Flavor>
+	    </Row>
+	</Project_Flavors>
 </GameData>

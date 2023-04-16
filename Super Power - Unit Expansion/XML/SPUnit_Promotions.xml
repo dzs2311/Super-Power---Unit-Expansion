@@ -230,13 +230,13 @@
 			<Type>PROMOTION_SPUE_KNIGHT_NEW_C</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_C</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_C_HELP</Help>
-			<PromotionPrereqOr1>PROMOTION_SPUE_KNIGHT_NEW</PromotionPrereqOr1>
+			<PromotionPrereq>PROMOTION_SPUE_KNIGHT_NEW</PromotionPrereq>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PortraitIndex>35</PortraitIndex>
 			<IconAtlas>extraPromo_Atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_C</PediaEntry>
-			<CannotBeChosen>true</CannotBeChosen>
+			<!-- <CannotBeChosen>true</CannotBeChosen> -->
 		</Row>
 		<Row>
 			<!--采邑骑士：骑士敕封-->
@@ -650,7 +650,7 @@
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_QIANG_SPEARMAN</PediaEntry>
 		</Row>
 		<Row>
-			<!--近卫甲骑兵：罗马远征军-->
+			<!--靖抚甲骑兵：罗马远征军-->
 			<Type>PROMOTION_SPUE_BUCELLARII_GUARD</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_HELP</Help>
@@ -692,6 +692,42 @@
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE</PediaEntry>
+		</Row>
+
+		<Row>
+			<!--希腊火灼烧2-->
+			<Type>PROMOTION_SPUE_OCEAN_FIRE_02</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_02</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_02_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<EnemyDamageChance>100</EnemyDamageChance>
+			<NeutralDamageChance>100</NeutralDamageChance>
+			<EnemyDamage>25</EnemyDamage>
+			<NeutralDamage>25</NeutralDamage>
+			<PortraitIndex>57</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_02</PediaEntry>
+		</Row>
+
+		<Row>
+			<!--希腊火灼烧1-->
+			<Type>PROMOTION_SPUE_OCEAN_FIRE_01</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_01</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_01_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<EnemyDamageChance>100</EnemyDamageChance>
+			<NeutralDamageChance>100</NeutralDamageChance>
+			<EnemyDamage>25</EnemyDamage>
+			<NeutralDamage>25</NeutralDamage>
+			<PortraitIndex>57</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_01</PediaEntry>
 		</Row>
 		<!--*********************************赞助：神州天子之权*********************************-->
 		<Row>
@@ -1005,6 +1041,18 @@
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_AUTOCRACY_PANZERG_EFFECT</PediaEntry>
 		</Row>
 	</UnitPromotions>
+
+	<UnitPromotions_UnitCombats>
+		<!--王城骑士：王国冠军-->
+		<Row>
+			<PromotionType>PROMOTION_SPUE_KNIGHT_NEW_C</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SPUE_KNIGHT_NEW_C</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
 
 	<UnitPromotions_Terrains>
 		<!--风帆铁甲舰：内海巨舰-->

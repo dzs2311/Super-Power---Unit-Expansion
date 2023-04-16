@@ -28,8 +28,8 @@ UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_RANGEATTACK';			
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_CREATED';				-- 开启单位产生事件
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_BATTLES_CUSTOM_DAMAGE';		-- 开启单位减伤事件
 
-UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_1UPT';			-- No More Civilian Traffic Jams
-UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_RESTRICTIONS';	-- No More Civilian Traffic Jams
+-- UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_1UPT';			-- No More Civilian Traffic Jams
+-- UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_RESTRICTIONS';	-- No More Civilian Traffic Jams
 --==========================================================================================================================	
 -- 远程攻击劫掠 - VMC
 --==========================================================================================================================	
