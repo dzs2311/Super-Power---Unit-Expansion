@@ -29,46 +29,6 @@
 			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
 		</Row>
 		<Row>
-			<!-- 里尔火炮佣兵 -->
-			<Type>POLICY_SPUE_LIL_BOMBARD</Type>
-			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
-		</Row>
-		<Row>
-			<!-- 南洋海盗船 -->
-			<Type>POLICY_SPUE_SSPRIVATEER</Type>
-			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
-		</Row>
-		<Row>
-			<!-- 热那亚弩手 -->
-			<Type>POLICY_SPUE_GENOAXBOW</Type>
-			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
-		</Row>
-		<Row>
-			<!-- 瑞士卫队 -->
-			<Type>POLICY_SPUE_SWISSGUARD</Type>
-			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
-		</Row>
-		<Row>
-			<!-- 瓦兰吉佣兵 -->
-			<Type>POLICY_SPUE_VARANGIAN</Type>
-			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
-		</Row>
-		<Row>
-			<!-- 瓦兰吉卫队 -->
-			<Type>POLICY_SPUE_VARANGIAN_GUARD</Type>
-			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
-		</Row>
-		<Row>
-			<!-- 铁人军 -->
-			<Type>POLICY_SPUE_IRON_TROOP</Type>
-			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
-		</Row>
-		<Row>
-			<!-- 火帆船 -->
-			<Type>POLICY_SPUE_FIRESHIP</Type>
-			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
-		</Row>
-		<Row>
 			<!-- 圣殿 -->
 			<Type>POLICY_SPUE_FOOT_KNIGHT_TEMPLAR</Type>
 			<Description>TXT_KEY_POLICY_BRANCH_PIETY</Description>

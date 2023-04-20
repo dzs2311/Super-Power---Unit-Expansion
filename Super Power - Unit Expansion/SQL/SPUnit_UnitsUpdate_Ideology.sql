@@ -16,6 +16,52 @@ VALUES	('PROJECT_SPUE_ORDER',		'FLAVOR_RANGED',		120),
 		('PROJECT_SPUE_AUTOCRACY',	'FLAVOR_RANGED',		120),
 		('PROJECT_SPUE_AUTOCRACY',	'FLAVOR_NAVAL',			120);
 --==========================================================================================================================	
+-- 炎黄帝王坦克-- 秩序 解锁 
+--==========================================================================================================================
+INSERT INTO UnitClasses
+		(Type,									Description,								DefaultUnit,				MaxPlayerInstances)
+VALUES	('UNITCLASS_SPUE_NVOVRLORD',			'TXT_KEY_UNIT_SPUE_NVOVRLORD',				'UNIT_SPUE_NVOVRLORD',		1);
+ 
+INSERT INTO Units 	
+		(Type, 							Class,						ProjectPrereq,			PrereqTech, PolicyType,				RangedCombat,	Combat,		Range, 	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	   CombatClass, Domain, DefaultUnitAI, Description,							Civilopedia,								Strategy, Help,										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,						UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
+SELECT	'UNIT_SPUE_NVOVRLORD', 			'UNITCLASS_SPUE_NVOVRLORD', 'PROJECT_SPUE_ORDER',	PrereqTech, 'POLICY_SPUE_ORDER',	Combat,			Combat,	    1, 		ExtraMaintenanceCost,	Special, Cost, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves - 2,   CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_NVOVRLORD',		'TXT_KEY_CIV5_SPUE_NVOVRLORD_TEXT', 		Strategy, 'TXT_KEY_UNIT_SPUE_NVOVRLORD_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_NVOVRLORD',	0,					'SPUE_LORD_FLAG_ATLAS',	3,				'SPUE_IDEO_ATLAS',	1
+FROM Units WHERE Type = 'UNIT_TANK';
+
+INSERT INTO Unit_FreePromotions	
+		(UnitType, 				 	PromotionType)
+SELECT	'UNIT_SPUE_NVOVRLORD',  	PromotionType
+FROM Unit_FreePromotions WHERE UnitType = 'UNIT_TANK';
+
+INSERT INTO Unit_FreePromotions
+		(UnitType, 						PromotionType)
+VALUES	('UNIT_SPUE_NVOVRLORD', 		'PROMOTION_SPUE_NVOVRLORD');
+
+INSERT INTO Unit_BuildingClassRequireds 	
+		(UnitType, 				 	BuildingClassType)
+SELECT	'UNIT_SPUE_NVOVRLORD',  	BuildingClassType
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_TANK';
+
+INSERT INTO UnitGameplay2DScripts 	
+		(UnitType, 				SelectionSound, FirstSelectionSound)
+SELECT	'UNIT_SPUE_NVOVRLORD',  SelectionSound, FirstSelectionSound
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_TANK';
+
+INSERT INTO Unit_AITypes 	
+		(UnitType, 				UnitAIType)
+SELECT	'UNIT_SPUE_NVOVRLORD',  UnitAIType
+FROM Unit_AITypes WHERE UnitType = 'UNIT_TANK';
+
+INSERT INTO Unit_Flavors 	
+		(UnitType, 				  FlavorType, Flavor)
+SELECT	'UNIT_SPUE_NVOVRLORD',    FlavorType, Flavor
+FROM Unit_Flavors WHERE UnitType = 'UNIT_TANK';	
+
+INSERT INTO Unit_ResourceQuantityRequirements 	
+		(UnitType, 				  ResourceType, Cost)
+SELECT	'UNIT_SPUE_NVOVRLORD',    ResourceType, Cost
+FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_TANK';
+
+--==========================================================================================================================	
 -- SUPER 055-- 秩序 解锁 
 --==========================================================================================================================
 INSERT INTO UnitClasses
@@ -255,8 +301,8 @@ INSERT INTO UnitClasses
 VALUES	('UNITCLASS_SPUE_FREEDOM_LONG_BEACH',	'TXT_KEY_UNIT_SPUE_FREEDOM_LONG_BEACH',		'UNIT_SPUE_FREEDOM_LONG_BEACH',		1);
  
 INSERT INTO Units 	
-		(Type, 								Class,									PrereqTech, PolicyType,				RangedCombat,	Combat,		Range, 		AirInterceptRange,	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,									Strategy, Help,												Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,						UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_FREEDOM_LONG_BEACH', 	'UNITCLASS_SPUE_FREEDOM_LONG_BEACH', 	PrereqTech, 'POLICY_SPUE_FREEDOM',	RangedCombat,	Combat,	    Range, 		AirInterceptRange,	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_FREEDOM_LONG_BEACH',		'TXT_KEY_CIV5_SPUE_FREEDOM_LONG_BEACH_TEXT', 	Strategy, 'TXT_KEY_UNIT_SPUE_FREEDOM_LONG_BEACH_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_LONG_BEACH',	0,					'SPUE_CGN9_FLAG_ATLAS',	6,				'SPUE_IDEO_ATLAS',	1
+		(Type, 								Class,									PrereqTech, PolicyType,							RangedCombat,	Combat,		Range, 		AirInterceptRange,	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,									Strategy, Help,												Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,						UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
+SELECT	'UNIT_SPUE_FREEDOM_LONG_BEACH', 	'UNITCLASS_SPUE_FREEDOM_LONG_BEACH', 	'TECH_NUCLEAR_FISSION', 'POLICY_SPUE_FREEDOM',	RangedCombat,	Combat,	    Range, 		AirInterceptRange,	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_FREEDOM_LONG_BEACH',		'TXT_KEY_CIV5_SPUE_FREEDOM_LONG_BEACH_TEXT', 	Strategy, 'TXT_KEY_UNIT_SPUE_FREEDOM_LONG_BEACH_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_LONG_BEACH',	0,					'SPUE_CGN9_FLAG_ATLAS',	6,				'SPUE_IDEO_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_MISSILE_CRUISER';
 
 INSERT INTO Unit_FreePromotions	

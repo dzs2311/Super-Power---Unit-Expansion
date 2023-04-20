@@ -91,7 +91,7 @@
 				<!-- 从左向右排布 -->
 				<Stack Anchor="C,T" Offset="0, 120" StackGrowth="Right" Padding="6">
 					<!-- 单位头像按钮 -->
-					<Button ID="IconButtonBaselius0" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_QIANG_SPEARMAN_HELP">
+					<Button ID="IconButtonBaselius0" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_FIRE_THROWER_HELP">
 						<Image ID="PortraitFrameBaselius0" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
 							<Image ID="PortraitBaselius0" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>

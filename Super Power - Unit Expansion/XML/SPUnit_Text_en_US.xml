@@ -1126,7 +1126,7 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP">
 			<Text>
 				★[COLOR_CYAN]靖抚甲骑[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重骑兵统帅单位，可以远程和近战攻击的双重重骑兵。
-				[NEWLINE][ICON_BULLET]位于城邦境内时可以征召∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]位于城邦境内时可以征召∏[COLOR_CYAN]拜占庭喷火兵[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]位于岸边时可以建造[COLOR_CYAN]海洋之火[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
 				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
@@ -1150,7 +1150,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_HELP">
 			<Text>
-				[NEWLINE][ICON_BULLET]位于非敌方城邦境内时可以征召∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]位于非敌方城邦境内时可以征召∏[COLOR_CYAN]拜占庭喷火兵[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]位于岸边时可以建造∏[COLOR_CYAN]海洋之火[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
 			</Text>
@@ -1166,12 +1166,12 @@
 			</Text>
 		</Row>
 
-		<Row Tag="TXT_KEY_SPUE_QIANG_SPEARMAN_BUTTON_SHORT">
-			<Text>∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]征集</Text>
+		<Row Tag="TXT_KEY_SPUE_FIRE_THROWER_BUTTON_SHORT">
+			<Text>∏[COLOR_CYAN]拜占庭喷火兵[ENDCOLOR]征集</Text>
 		</Row>
 
-		<Row Tag="TXT_KEY_SPUE_QIANG_SPEARMAN_BUTTON">
-			<Text>花费{1_Num}[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]单位，单位本回合失去移动力</Text>
+		<Row Tag="TXT_KEY_SPUE_FIRE_THROWER_BUTTON">
+			<Text>花费{1_Num}[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]拜占庭喷火兵[ENDCOLOR]单位，单位本回合失去移动力</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_OCEAN_FIRE_BUTTON_SHORT">
@@ -1181,27 +1181,27 @@
 		<Row Tag="TXT_KEY_SPUE_OCEAN_FIRE_BUTTON">
 			<Text>花费{1_Num}[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]海洋之火[ENDCOLOR]单位，单位本回合失去移动力</Text>
 		</Row>
-		<!-- **********************辅助塞尔维亚重步兵*********************** -->
-		<Row Tag="TXT_KEY_UNIT_SPUE_QIANG_SPEARMAN">
-			<Text>∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]</Text>
+		<!-- **********************拜占庭喷火兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_FIRE_THROWER">
+			<Text>∏[COLOR_CYAN]拜占庭喷火兵[ENDCOLOR]</Text>
 		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_QIANG_SPEARMAN_HELP">
+		<Row Tag="TXT_KEY_UNIT_SPUE_FIRE_THROWER_HELP">
 			<Text>
-				∏[COLOR_CYAN]辅助塞尔维亚重步兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重步兵辅助单位，死亡时不会造成人口损失。
+				∏[COLOR_CYAN]拜占庭喷火兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重步兵辅助单位，死亡时不会造成人口损失。
 				[NEWLINE][ICON_BULLET]防御时+60%[ICON_STRENGTH]战斗力。
 				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_QIANG_SPEARMAN_TEXT">
+		<Row Tag="TXT_KEY_CIV5_SPUE_FIRE_THROWER_TEXT">
 			<Text>
 				在十二世纪上半叶塞尔维亚人曾经提供给帝国300骑兵用于小亚细亚的作战，随着塞尔维亚人1150年败于曼努埃尔一世，这支部队人数增加到亚洲500人，欧洲2000人。其他部队则源于约翰二世12世纪20年代安置在安纳托利亚的塞尔维亚战俘。   甚至在塞尔维亚脱离帝国后，塞尔维亚佣兵或仆从军团依然经常出现， 例如Pelagonia战役中米哈伊尔八世就有600或1000塞尔维亚人。 塞尔维亚提供的同盟仆从军团（尽管实际上不一定都是塞尔维亚人）  在14世纪上半叶，规模和重要性都在不断增加。  例如Stefan Urosh二世1312年借给米哈伊尔九世2000库曼骑兵，而1342—1343年， 约翰六世则得到德国佣兵的支援。塞尔维亚人最后一次在拜占庭人指挥下作战的记录出现于1352年，约翰五世的4000塞尔维亚骑兵。 
 			</Text>
 		</Row>
 
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_QIANG_SPEARMAN">
-			<Text>巴尔干之盾</Text>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRE_THROWER">
+			<Text>高加索之盾</Text>
 		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_QIANG_SPEARMAN_HELP">
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRE_THROWER_HELP">
 			<Text>防御时+60%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 		<!-- **********************海洋之火*********************** -->

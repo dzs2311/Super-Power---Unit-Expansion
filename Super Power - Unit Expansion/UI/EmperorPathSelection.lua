@@ -21,7 +21,7 @@ local g_PatronageUnitList	=   {GameInfoTypes["UNIT_SPUE_GENERAL_BODYGUARD"],
                              	 
 								 GameInfoTypes["UNIT_SPUE_BUCELLARII_GUARD"],
 								 GameInfoTypes["UNIT_SPUE_OCEAN_FIRE"],
-						     	 GameInfoTypes["UNIT_SPUE_QIANG_SPEARMAN"],
+						     	 GameInfoTypes["UNIT_SPUE_FIRE_THROWER"],
 
 						     	 GameInfoTypes["UNIT_SPUE_TREASURE_FLEET"],
 						     	 GameInfoTypes["UNIT_SPUE_CORVETTE"],

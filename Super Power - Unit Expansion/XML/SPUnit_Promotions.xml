@@ -636,10 +636,10 @@
 		</Row>
 		<!--*********************************赞助：巴西琉斯之道*********************************-->
 		<Row>
-			<!--塞尔维亚重步兵：巴尔干之盾-->
-			<Type>PROMOTION_SPUE_QIANG_SPEARMAN</Type>
-			<Description>TXT_KEY_PROMOTION_SPUE_QIANG_SPEARMAN</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_QIANG_SPEARMAN_HELP</Help>
+			<!--亚美尼亚重步兵：高加索之盾-->
+			<Type>PROMOTION_SPUE_FIRE_THROWER</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_FIRE_THROWER</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_FIRE_THROWER_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<DefenseMod>60</DefenseMod>
@@ -647,7 +647,7 @@
 			<PortraitIndex>59</PortraitIndex>
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_SPUE_QIANG_SPEARMAN</PediaEntry>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_FIRE_THROWER</PediaEntry>
 		</Row>
 		<Row>
 			<!--靖抚甲骑兵：罗马远征军-->

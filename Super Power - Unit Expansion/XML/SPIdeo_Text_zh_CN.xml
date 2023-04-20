@@ -13,6 +13,16 @@
 			<Text>[COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]是秩序意识形态的精英单位，拥有强大的区域拒止和防空反舰能力。</Text>
 		</Row>
 
+		<Row Tag="TXT_KEY_PROJECT_SPUE_ORDER_TANK">
+			<Text>先进战舰及高超声速反舰导弹研究计划</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_ORDER_TANK_HELP">
+			<Text>此项目需要秩序意识形态开启，只有完成此项目的文明可以组建秩序意识形态的精英单位：[COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_ORDER_TANK_PEDIA">
+			<Text>[COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]是秩序意识形态的精英单位，拥有强大的区域拒止和防空反舰能力。</Text>
+		</Row>
+
 		<Row Tag="TXT_KEY_PROJECT_SPUE_FREEDOM">
 			<Text>洞察计划</Text>
 		</Row>
@@ -39,6 +49,16 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOVERING_HELP">
 			<Text>动于九天之上。</Text>
+		</Row>
+		<!-- **********************秩序：炎黄帝王坦克*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_NVOVRLORD">
+			<Text>[COLOR_YIELD_GOLD]帝王炎黄坦克[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_NVOVRLORD_HELP">
+			<Text>[COLOR_YIELD_GOLD]炎黄帝王坦克[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_NVOVRLORD_TEXT">
+			<Text>[COLOR_YIELD_GOLD]炎黄帝王坦克[ENDCOLOR]</Text>
 		</Row>
 		<!-- **********************秩序：S055*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_ORDER_SUPER_055">

@@ -46,17 +46,6 @@ VALUES		('SPUE_UNITS_ATLAS', 				256, 		'SPUE_IconAtlas256.dds',				8, 				8),
 			('SPUE_MORTAR_FLAG_ATLAS',			032,		'SPUE_mortar_flag.dds',					1, 				1),	-- 臼炮
 			('SPUE_WWII_FLAG_ATLAS',			032,		'SPUE_wwi_infantry_flag.dds',			1, 				1);	-- 早期现代步兵
 
--- 奥斯曼私掠舰
--- INSERT OR REPLACE INTO IconTextureAtlases
--- 			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)
--- VALUES		('UNIT_SPUE_OTTOMAN_ATLAS', 		256, 		'CorsairPicture_256.dds',				1,				1),
--- 			('UNIT_SPUE_OTTOMAN_ATLAS', 		128, 		'CorsairPicture_128.dds',				1, 				1),
--- 			('UNIT_SPUE_OTTOMAN_ATLAS', 		080, 		'CorsairPicture_080.dds',				1, 				1),
--- 			('UNIT_SPUE_OTTOMAN_ATLAS', 		064, 		'CorsairPicture_064.dds',				1, 				1),
--- 			('UNIT_SPUE_OTTOMAN_ATLAS', 		045, 		'CorsairPicture_045.dds',				1, 				1),
--- 			('UNIT_SPUE_OTTOMAN_ATLAS', 		032, 		'CorsairPicture_032.dds',				1, 				1),
--- 			('UNIT_SPUE_OTTOMAN_FLAG_ATLAS',	032, 		'CorsairFlag_032.dds',					1, 				1);
-
 INSERT OR REPLACE INTO IconTextureAtlases
 			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)
 VALUES		('UNIT_SPUE_PERSIAQ_FLAG_ATLAS',	032, 		'QizilbashFlag_032.dds',				1, 				1);
@@ -64,18 +53,23 @@ VALUES		('UNIT_SPUE_PERSIAQ_FLAG_ATLAS',	032, 		'QizilbashFlag_032.dds',				1, 	
 -- 商业政策树佣兵单位
 INSERT OR REPLACE INTO IconTextureAtlases 
 			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)
-VALUES		
+VALUES		('SPUE_AMB_FLAG_ATLAS',				032,		'SPUE_Flag_Ambassador.dds',				1, 				1),	-- 佣兵雇主
+
 			('SPUE_GENOAX_FLAG_ATLAS',			032,		'SPUE_GenoaXBow_flag.dds',				1, 				1),	-- 热那亚弩手
 			('SPUE_SWISSG_FLAG_ATLAS',			032,		'SPUE_SwissGuard_flag.dds',				1, 				1),	-- 瑞士卫队
 			('SPUE_VARANMER_FLAG_ATLAS',		032,		'SPUE_VarangianMercenary_flag.dds',		1, 				1),	-- 瓦兰吉雇佣兵
 			('SPUE_VARANGUARD_FLAG_ATLAS',		032,		'SPUE_VarangianGuard_flag.dds',			1, 				1),	-- 瓦兰吉卫队
-
-			('SPUE_KENNSEI_FLAG_ATLAS',			032,		'Flag_SPUE_JianSheng.dds',			1, 				1),	-- 战国剑圣
 			('SPUE_ELMETI_FLAG_ATLAS',			032,		'Flag_SPUE_Elmeti.dds',					1, 				1),	-- 装甲骑兵
+			('SPUE_CHAMPION_FLAG_ATLAS',		032,		'SPUE_Champion_FlagAtlas_32.dds',		1, 				1),	-- 装甲骑兵
+
+			('SPUE_HESSIAN_FLAG_ATLAS',			032,		'SPUE_Flag_HessianGren.dds',			1, 				1),	-- 黑森佣兵
+
+			('SPUE_KENNSEI_FLAG_ATLAS',			032,		'Flag_SPUE_JianSheng.dds',				1, 				1),	-- 浪人武士
 			('SPUE_FUNE_FLAG_ATLAS',			032,		'Flag_SPUE_Fune.dds',					1, 				1),	-- 倭寇帆船
 
 			('SPUE_SSPRIV_FLAG_ATLAS',			032,		'SPUE_SouthSeaPrivateer_flag.dds',		1, 				1),	-- 南洋海盗船
 			('SPUE_IRON_TROOP_FLAG_ATLAS',		032,		'SPUE_iron_troop_flag_032.dds',			1, 				1), -- 铁人军
+
 			('SPUE_FIRE_SHIP_FLAG_ATLAS',		032,		'SPUE_SMAN_Fireship_Flag_032.dds',		1, 				1); -- 火帆船
 
 -- 虔信政策树骑士团单位
@@ -91,9 +85,12 @@ INSERT OR REPLACE INTO IconTextureAtlases
 VALUES		('SPUE_BODYGUARD_FLAG_ATLAS',		032,		'SPUE_BodyGuard_Flag.dds',				1, 				1),	-- 将领卫队
 			('SPUE_SOCII_FLAG_ATLAS',			032,		'SPUE_Socii_Flag.dds',					1, 				1), -- 同盟军团
 			('SPUE_VBOWMAN_FLAG_ATLAS',			032,		'SPUE_ITUU_Flag.dds',					1, 				1), -- 克里特弓箭手
-			('SPUE_VSPEAR_FLAG_ATLAS',			032,		'SPUE_QiangSpearman_Flag.dds',			1, 				1),	-- 辅助塞尔维亚重步兵
+
+			('SPUE_VFIRE_FLAG_ATLAS',			032,		'SPUE_GreekFirethrower_Flag.dds',		1, 				1),	-- 拜占庭喷火兵
 			('SPUE_VCATAPHCRAT_FLAG_ATLAS',		032,		'SPUE_Byzantium_General_Flag.dds',		1, 				1),	-- 靖抚甲骑兵
+			('SPUE_BUCELLARI_FLAG_ATLAS',		032,		'SPUE_Bucellari_Flag.dds',				1, 				1),	-- 贝利撒留甲骑兵
 			('SPUE_OCEANF_FLAG_ATLAS',			032,		'SPUE_OceanFire_Flag.dds',				1, 				1), -- 海洋之火
+
 			('SPUE_VMUSKETMAN_FLAG_ATLAS',		032,		'SPUE_Musketeer_Flag.dds',				1, 				1),	-- 神机营
 			('SPUE_CAPTAIN_FLAG_ATLAS',			032,		'SPUE_TreasureFleet_Flag.dds',			1, 				1), -- 水师旗舰
 			('SPUE_CORVETTE_FLAG_ATLAS',		032,		'SPUE_Galleon_Flag.dds',				1, 				1); -- 同盟征召护卫舰
@@ -101,11 +98,12 @@ VALUES		('SPUE_BODYGUARD_FLAG_ATLAS',		032,		'SPUE_BodyGuard_Flag.dds',				1, 		
 -- 意识形态单位旗帜
 INSERT OR REPLACE INTO IconTextureAtlases 
 			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)
-VALUES		('SPUE_S055_FLAG_ATLAS',			032,		'SPUE_YJ21_Flag.dds',					1, 				1),	-- 055
+VALUES		('SPUE_LORD_FLAG_ATLAS',			032,		'SPUE_OVERLORD_Flag.dds',				1, 				1),	-- 炎黄坦克
+			('SPUE_S055_FLAG_ATLAS',			032,		'SPUE_YJ21_Flag.dds',					1, 				1),	-- 055
 			('SPUE_SKV2_FLAG_ATLAS',			032,		'SPUE_KV2_Flag.dds',					1, 				1),	-- KV2
 			('SPUE_SU47_FLAG_ATLAS',			032,		'SPUE_Su47_Flag.dds',					1, 				1),	-- Su47
 			('SPUE_HELI_FLAG_ATLAS',			032,		'Flag_SPUE_Shield.dds',					1, 				1),	-- 空天母舰
-			('SPUE_SPIT_FLAG_ATLAS',			032,		'Flag_SPUE_Spitfire.dds',				1, 				1),	-- 逆火
+			('SPUE_SPIT_FLAG_ATLAS',			032,		'Flag_SPUE_Spitfire.dds',				1, 				1),	-- 喷火
 			('SPUE_CGN9_FLAG_ATLAS',			032,		'Flag_SPUE_CGN9.dds',					1, 				1),	-- 长滩
 			('SPUE_HEAD_FLAG_ATLAS',			032,		'SPUE_Flag_JUF.dds',					1, 				1),	-- 大头
 			('SPUE_PANG_FLAG_ATLAS',			032,		'SPUE_Flag_SDKFZ251.dds',				1, 				1);	-- 装甲掷弹兵

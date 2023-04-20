@@ -2174,7 +2174,7 @@ function NewAttackEffect()
    if not isSPTP and defUnit and attUnit:IsHasPromotion(KillingEffectsID) then
 	   print ("DefUnit Damage:"..defFinalUnitDamage);
 	   -- if defFinalUnitDamage >= 100 then
-	   if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
+	   if defUnitDamage >= 40 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
 		   local maxattUnitHP = attUnit:GetMaxHitPoints()
 		   attUnit:SetMoves(attUnit:MovesLeft()+GameDefines["MOVE_DENOMINATOR"]);
 		   attUnit:SetMadeAttack(false);
@@ -2599,7 +2599,7 @@ function NewAttackEffect()
 		   if attUnit:IsHasPromotion(g_KingsKnightPops[i]) then
 			   local pEraType = attPlayer:GetCurrentEra();
 			   local pEraID = GameInfo.Eras[pEraType].ID;	
-			   if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
+			   if defUnitDamage >= 40 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
 				   local attCambat = attUnit:GetBaseCombatStrength();
 				   local defCombat = defUnit:GetBaseCombatStrength();
 				   local KingsKnightPopsDelta = (pEraID + 1) * defCombat / attCambat;
@@ -2631,7 +2631,7 @@ function NewAttackEffect()
 	   end 
 	   -- 王城骑士杀敌为首都提供伟人点数
 	   if attUnit:IsHasPromotion(KingsKnightCID) then
-		   if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
+		   if defUnitDamage >= 40 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
 			   local unitLevel = attUnit:GetLevel();
 			   local rewardTP = attUnit:GetBaseCombatStrength();
 			   local capital = attPlayer:GetCapitalCity();
@@ -2656,7 +2656,7 @@ function NewAttackEffect()
    if defUnit and attUnit:IsHasPromotion(unitPromotionBucellariEliteID) then
 	   print ("DefUnit Damage:"..defFinalUnitDamage);
 	   -- if defFinalUnitDamage >= 100 then
-	   if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
+	   if defUnitDamage >= 40 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
 		   -- 贝利撒留甲骑兵杀敌带来我们1回合爱国王日
 		   if attPlayer:GetCapitalCity() then
 			   local goldRow = GameInfo.Resources["RESOURCE_GOLD"];
@@ -3227,14 +3227,14 @@ SPUE_Patronage_vBowman_Button = {
 }; 
 LuaEvents.UnitPanelActionAddin(SPUE_Patronage_vBowman_Button)	
 
--- 辅助塞尔维亚重步兵征集
+-- 拜占庭喷火兵征集
 SPUE_Patronage_Serbia_Button = {
 	Name = "Patronage Serbia",
-	Title = "TXT_KEY_SPUE_QIANG_SPEARMAN_BUTTON_SHORT", -- or a TXT_KEY
+	Title = "TXT_KEY_SPUE_FIRE_THROWER_BUTTON_SHORT", -- or a TXT_KEY
 	OrderPriority = 200, -- default is 200
 	IconAtlas = "SPUE_UNITS_ATLAS", -- 45 and 64 variations required
 	PortraitIndex = 62,
-	ToolTip = "TXT_KEY_SPUE_QIANG_SPEARMAN_BUTTON", -- or a TXT_KEY_ or a function
+	ToolTip = "TXT_KEY_SPUE_FIRE_THROWER_BUTTON", -- or a TXT_KEY_ or a function
 	
 	Condition = function(action, unit)
 
@@ -3259,14 +3259,14 @@ SPUE_Patronage_Serbia_Button = {
 			end
 		end
 
-		local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_QIANG_SPEARMAN"]);
+		local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_FIRE_THROWER"]);
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID) 
 		and csPlotFlag == 1 
 		and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
-		and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_QIANG_SPEARMAN"].MaxPlayerInstances
+		and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_FIRE_THROWER"].MaxPlayerInstances
 		then
 			-- 单位购买价格
-			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_QIANG_SPEARMAN");
+			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_FIRE_THROWER");
 			local iUnit = GameInfoTypes[sUnitType];
 
 			local iCost = -1;
@@ -3275,7 +3275,7 @@ SPUE_Patronage_Serbia_Button = {
 
 			if iCost > 0 and player:GetGold() >= iCost then
 
-				SPUE_Patronage_Serbia_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_QIANG_SPEARMAN_BUTTON", iCost)
+				SPUE_Patronage_Serbia_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_FIRE_THROWER_BUTTON", iCost)
 				
 				-- 玩家有足够金钱
 				if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
@@ -3308,7 +3308,7 @@ SPUE_Patronage_Serbia_Button = {
 		local unitEXP = unit:GetExperience()
 		
 		-- 单位购买价格
-		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_QIANG_SPEARMAN");
+		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_FIRE_THROWER");
 		local iUnit = GameInfoTypes[sUnitType];
 	
 		local iCost = -1;
@@ -3647,7 +3647,7 @@ local g_PatronageVassalUnitClassList = {"UNITCLASS_SPUE_CORVETTE",
 										"UNITCLASS_SPUE_VASSAL_BOWMAN",				
 										"UNITCLASS_SPUE_SOCII_HASTATI", 
 
-										"UNITCLASS_SPUE_QIANG_SPEARMAN", 
+										"UNITCLASS_SPUE_FIRE_THROWER", 
 										"UNITCLASS_SPUE_OCEAN_FIRE"}
 function SPUE_Patronage_PlayerCanTrain(playerID, unitID)
 
@@ -3724,8 +3724,8 @@ function SetPolicyUnitsName( iPlayer, iOldUnit,  iNewUnit)
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SOCII_HASTATI"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_SOCII_HASTATI");	-- 赞助：同盟军团
 
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_QIANG_SPEARMAN"].ID) then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_QIANG_SPEARMAN");	-- 赞助：塞尔维亚重步兵
+	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FIRE_THROWER"].ID) then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_FIRE_THROWER");	-- 赞助：亚美尼亚重步兵
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID) 
 	and not pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD_ELITE"].ID)
 	then
