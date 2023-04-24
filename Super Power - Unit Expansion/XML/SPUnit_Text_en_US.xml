@@ -1199,7 +1199,7 @@
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRE_THROWER">
-			<Text>高加索之盾</Text>
+			<Text>希腊火喷射器</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRE_THROWER_HELP">
 			<Text>防御时+60%[ICON_STRENGTH]战斗力。</Text>

@@ -1,3 +1,5 @@
+UPDATE SPTriggerControler SET Enabled = 1 WHERE TriggerType = 'SPNDeleteALLUnitStrategicFlag';
+UPDATE SPNewEffectControler SET Enabled = 1 WHERE Type = 'SP_DELETE_ALL_STRATEGIC_UNIT_FLAG';
 --==========================================================================================================================
 -- USER SETTINGS
 --==========================================================================================================================
@@ -27,6 +29,8 @@ UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_UPGRADES';				--
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_RANGEATTACK';			-- 开启单位远程攻击事件
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_CREATED';				-- 开启单位产生事件
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_BATTLES_CUSTOM_DAMAGE';		-- 开启单位减伤事件
+UPDATE CustomModOptions SET Value = 1 Where Name = 'EVENTS_PLAYER_TURN';				-- 开启玩家结束回合事件
+
 
 -- UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_1UPT';			-- No More Civilian Traffic Jams
 -- UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_RESTRICTIONS';	-- No More Civilian Traffic Jams
@@ -36,14 +40,4 @@ UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_BATTLES_CUSTOM_DAMAGE
 ALTER TABLE Units ADD RangedPillage INTEGER DEFAULT 0;
 -- 南洋海盗船
 UPDATE Units SET RangedPillage = 1 WHERE Class IN ('UNITCLASS_SPUE_SSPRIVATEER');
---==========================================================================================================================	
--- 7.0兼容
---==========================================================================================================================	
-CREATE TABLE IF NOT EXISTS 
-UnitPromotions_PromotionModifiers (
-		`PromotionType` text not null,
-		`OtherPromotionType` text not null,
-		`Modifier` integer default 0 not null,
-		`Attack` integer default 0 not null,
-		`Defense` integer default 0 not null
-);
+

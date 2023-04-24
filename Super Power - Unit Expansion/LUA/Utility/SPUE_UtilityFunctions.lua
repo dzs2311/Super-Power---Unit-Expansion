@@ -81,6 +81,14 @@ function JFD_SendNotification(playerID, notificationType, description, descripti
 	end
 end   
 
+--JFD_IsInCityStateBorders
+function JFD_IsInCityStateBorders(unit)
+	local plot = unit:GetPlot();
+	if plot:GetOwner() > -1 then
+		return Players[plot:GetOwner()]:IsMinorCiv();
+	end
+	return false;
+end
 
 ----Get Closed City
 function GetCloseCity ( iPlayer, plot )      
@@ -148,6 +156,23 @@ function isInArray(t, val)
 		end
 	end
 	return false
+end
+--------------------------------------------------------------
+-- SP精英单位判断
+--------------------------------------------------------------
+function IsNotEliteUnit(pUnit)
+	local unitName = Locale.ConvertTextKey(pUnit:GetNameNoDesc())
+
+	-- 单位不可购买或单位名称中含有字符串"[COLOR_YIELD_GOLD]"
+    if  (GameInfo.Units[pUnit:GetUnitType()].HurryCostModifier == -1 
+	and GameInfo.Units[pUnit:GetUnitType()].ProjectPrereq ~= nil) 
+	or (GameInfo.Units[pUnit:GetUnitType()].HurryCostModifier ~= -1 
+	and string.match(unitName, "[COLOR_YIELD_GOLD]") ~= nil)
+	then
+        return false
+    else
+        return true
+    end
 end
 --------------------------------------------------------------
 -- SP单位伤亡函数
@@ -343,6 +368,10 @@ function SPUE_UnitPurchaseCost(player, iUnit)
 	return goldCost;
 end
 --------------------------------------------------------------
+-- 军团：玩家有足够兵力
+--------------------------------------------------------------
+
+--------------------------------------------------------------
 -- 单位精英化按钮：显示函数
 --------------------------------------------------------------
 function EliteCondition(unit, unitPromotionID, ounitType, nunitType, unitClassType, projectType, Button)
@@ -358,10 +387,19 @@ function EliteCondition(unit, unitPromotionID, ounitType, nunitType, unitClassTy
 	local projectFlag = false;
 
 	local dbProject = GameInfo.Projects[projectType];
+	-- if dbProject == nil then 
+	-- 	return false 
+	-- end;
 	
-	if goldCost then iCost = goldCost * 7 end;
-	Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON", 
-					 iCost, dboUnit.Description, dbnUnit.Description, dboUnit.Description, dbProject.Description);
+	if goldCost then iCost = goldCost * 5 end;
+	if dbProject == nil then
+		Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON_NONE", 
+						 iCost, dboUnit.Description, dbnUnit.Description, dboUnit.Description);
+	else
+		Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON", 
+						 iCost, dboUnit.Description, dbnUnit.Description, dboUnit.Description, dbProject.Description);
+	end
+
 		
 	return unit:CanMove() and unit:IsHasPromotion(unitPromotionID) 
 	and unit:GetUnitType() == GameInfoTypes[ounitType];
@@ -386,7 +424,6 @@ function EliteConditionAI(unit, unitPromotionID, ounitType, nunitType, unitClass
 	return unit:CanMove() and unit:IsHasPromotion(unitPromotionID) 
 	and unit:GetUnitType() == GameInfoTypes[ounitType];
 end
-
 --------------------------------------------------------------
 -- 单位精英化按钮：条件函数
 --------------------------------------------------------------
@@ -401,11 +438,23 @@ function EliteDisable(unit, unitPromotion2ID, unitClassType, projectType)
 	local projectFlag = false;
 	if projectType == nil then projectFlag = true else projectFlag = player:HasProject(GameInfo.Projects[projectType].ID) end;
 	-- local dbProject = GameInfo.Projects[projectType];
+	local corpsFlag = 0;
+	if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
+		corpsFlag = 1
+	elseif player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) > 0 then
+		-- 兵力足够时按钮才会可用
+		local iTotalTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) 
+		local iUsedTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS_USED"]) 
+		if iTotalTroops - iUsedTroops >  1 then
+			corpsFlag = 1
+		end
+	end
 
-	if goldCost then iCost = goldCost * 7 end;
+	if goldCost then iCost = goldCost * 5 end;
 	return CountUnitsWithUniquePromotions(unit:GetOwner(), unitPromotion2ID) > 0 
 	or player:GetGold() < iCost 
-	or not projectFlag;
+	or not projectFlag
+	or corpsFlag == 0;
 
 end
 --------------------------------------------------------------
@@ -455,7 +504,7 @@ function EliteAction(unit, nunitType, unitClassType)
 	local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 	local iCost = 1000;
 
-	if goldCost then iCost = goldCost * 7 end;
+	if goldCost then iCost = goldCost * 5 end;
 
 	Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
 
@@ -464,4 +513,76 @@ function EliteAction(unit, nunitType, unitClassType)
 	Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("-{1_Num}[ICON_GOLD]", iCost))
 	Events.GameplayFX(hex.x, hex.y, -1)
 
+end
+--------------------------------------------------------------
+-- AI进行单位精英化
+-------------------------------------------------------------
+function EliteUnitTransferAI(unit, unitPromotionID, ounitType, nunitType, unitClassType, projectType, unitPromotion2ID)
+	if EliteConditionAI(unit, unitPromotionID, ounitType, nunitType, unitClassType, projectType) 
+	and not EliteDisable(unit, unitPromotion2ID, unitClassType, projectType)
+	then
+		EliteAction(unit, nunitType, unitClassType);
+	end
+end
+--------------------------------------------------------------
+-- 为陆军单位寻找合适的海岸生成地块
+-------------------------------------------------------------
+function FindCoastalPlotForLandUnits(unit) 
+	local player = Players[unit:GetOwner()];
+	local pPlot = nil;
+	local plotFlag = false;
+	for i = 0, 5 do
+		local adjPlot = Map.PlotDirection(unit:GetX(), unit:GetY(), i)
+		if (adjPlot ~= nil) and adjPlot:IsCoastalLand() then
+			local unitCount = adjPlot:GetNumUnits();
+			if unitCount == 0 then
+				pPlot = adjPlot;
+				break;
+			else
+				local pFoundUnit = adjPlot:GetUnit(0);
+				if pFoundUnit ~= nil then
+					local pFlayer = Players[pFoundUnit:GetOwner()];
+					if player == pFlayer then
+						if unitCount < 2 then
+							pPlot = adjPlot;
+							break;
+						end
+					end
+				end
+			end
+		end
+		plotFlag = true;
+	end  		
+	return plotFlag, pPlot;
+end
+--------------------------------------------------------------
+-- 为海军单位寻找合适的临近陆地的海洋生成地块
+-------------------------------------------------------------
+function FindOceanPlotForSeaUnits(unit) 
+	local player = Players[unit:GetOwner()];
+	local pPlot = nil;
+	local plotFlag = false;
+	for i = 0, 5 do
+		local adjPlot = Map.PlotDirection(unit:GetX(), unit:GetY(), i)
+		if (adjPlot ~= nil) and adjPlot:IsWater() and not adjPlot:IsLake()then
+			local unitCount = adjPlot:GetNumUnits();
+			if unitCount == 0 then
+				pPlot = adjPlot;
+				break;
+			else
+				local pFoundUnit = adjPlot:GetUnit(0);
+				if pFoundUnit ~= nil then
+					local pFlayer = Players[pFoundUnit:GetOwner()];
+					if player == pFlayer then
+						if unitCount < 2 then
+							pPlot = adjPlot;
+							break;
+						end
+					end
+				end
+			end
+		end
+		plotFlag = true;
+	end  		
+	return plotFlag, pPlot;
 end

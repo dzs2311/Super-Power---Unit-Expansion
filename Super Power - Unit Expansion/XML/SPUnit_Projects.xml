@@ -10,7 +10,68 @@
 	    	<Civilopedia>TXT_KEY_PROJECT_BUCELLARII_TRAINING_PEDIA</Civilopedia>
 	    	<MaxGlobalInstances>1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
+			<TechPrereq>TECH_CHIVALRY</TechPrereq>
 	    	<Cost>120</Cost>
+	    	<PortraitIndex>29</PortraitIndex>
+	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
+	    </Row>
+		<!-- 安纳托利亚再征服计划 -->
+	    <Row>
+	    	<Type>PROJECT_SPUE_VARANGIAN_TRAINING</Type>
+	    	<Description>TXT_KEY_PROJECT_SPUE_VARANGIAN_TRAINING</Description>
+	    	<Help>TXT_KEY_PROJECT_SPUE_VARANGIAN_TRAINING_HELP</Help>
+	    	<Civilopedia>TXT_KEY_PROJECT_SPUE_VARANGIAN_TRAINING_PEDIA</Civilopedia>
+	    	<MaxGlobalInstances>1</MaxGlobalInstances>
+	    	<MaxTeamInstances>1</MaxTeamInstances>
+	    	<Cost>120</Cost>
+	    	<PortraitIndex>29</PortraitIndex>
+	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
+	    </Row>
+		<!-- 君士坦丁城墙守备计划 -->
+	    <Row>
+	    	<Type>PROJECT_SPUE_GENOAXBOW_TRAINING</Type>
+	    	<Description>TXT_KEY_PROJECT_SPUE_GENOAXBOW_TRAINING</Description>
+	    	<Help>TXT_KEY_PROJECT_SPUE_GENOAXBOW_TRAINING_HELP</Help>
+	    	<Civilopedia>TXT_KEY_PROJECT_SPUE_GENOAXBOW_TRAINING_PEDIA</Civilopedia>
+	    	<MaxGlobalInstances>1</MaxGlobalInstances>
+	    	<MaxTeamInstances>1</MaxTeamInstances>
+	    	<Cost>120</Cost>
+	    	<PortraitIndex>29</PortraitIndex>
+	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
+	    </Row>
+		<!-- 圣彼得大教堂之劫 -->
+	    <Row>
+	    	<Type>PROJECT_SPUE_SWISSGUARD_TRAINING</Type>
+	    	<Description>TXT_KEY_PROJECT_SPUE_SWISSGUARD_TRAINING</Description>
+	    	<Help>TXT_KEY_PROJECT_SPUE_SWISSGUARD_TRAINING_HELP</Help>
+	    	<Civilopedia>TXT_KEY_PROJECT_SPUE_SWISSGUARD_TRAINING_PEDIA</Civilopedia>
+	    	<MaxGlobalInstances>1</MaxGlobalInstances>
+	    	<MaxTeamInstances>1</MaxTeamInstances>
+	    	<Cost>120</Cost>
+	    	<PortraitIndex>29</PortraitIndex>
+	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
+	    </Row>
+		<!-- 组建敕令骑士连 -->
+	    <Row>
+	    	<Type>PROJECT_SPUE_ELMETI_TRAINING</Type>
+	    	<Description>TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING</Description>
+	    	<Help>TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING_HELP</Help>
+	    	<Civilopedia>TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING_PEDIA</Civilopedia>
+	    	<MaxGlobalInstances>1</MaxGlobalInstances>
+	    	<MaxTeamInstances>1</MaxTeamInstances>
+	    	<Cost>120</Cost>
+	    	<PortraitIndex>29</PortraitIndex>
+	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
+	    </Row>
+		<!-- 巨人掷弹兵训练计划 -->
+	    <Row>
+	    	<Type>PROJECT_SPUE_HESSIAN_TRAINING</Type>
+	    	<Description>TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING</Description>
+	    	<Help>TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING_HELP</Help>
+	    	<Civilopedia>TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING_PEDIA</Civilopedia>
+	    	<MaxGlobalInstances>1</MaxGlobalInstances>
+	    	<MaxTeamInstances>1</MaxTeamInstances>
+	    	<Cost>150</Cost>
 	    	<PortraitIndex>29</PortraitIndex>
 	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
 	    </Row>
@@ -20,7 +81,42 @@
 	    <Row>
 	    	<ProjectType>PROJECT_BUCELLARII_TRAINING</ProjectType>
 	    	<FlavorType>FLAVOR_MOBILE</FlavorType>
-	    	<Flavor>999</Flavor>
+	    	<Flavor>120</Flavor>
+	    </Row>
+		<!-- 安纳托利亚再征服计划 -->
+	    <Row>
+	    	<ProjectType>PROJECT_SPUE_VARANGIAN_TRAINING</ProjectType>
+	    	<FlavorType>FLAVOR_DEFENSE</FlavorType>
+	    	<Flavor>60</Flavor>
+	    </Row>
+		<!-- 君士坦丁城墙守备计划 -->
+	    <Row>
+	    	<ProjectType>PROJECT_SPUE_GENOAXBOW_TRAINING</ProjectType>
+	    	<FlavorType>FLAVOR_DEFENSE</FlavorType>
+	    	<Flavor>60</Flavor>
+	    </Row>
+	    <Row>
+	    	<ProjectType>PROJECT_SPUE_GENOAXBOW_TRAINING</ProjectType>
+	    	<FlavorType>FLAVOR_RANGED</FlavorType>
+	    	<Flavor>60</Flavor>
+	    </Row>
+		<!-- 圣彼得大教堂之劫 -->
+	    <Row>
+	    	<ProjectType>PROJECT_SPUE_SWISSGUARD_TRAINING</ProjectType>
+	    	<FlavorType>FLAVOR_DEFENSE</FlavorType>
+	    	<Flavor>60</Flavor>
+	    </Row>
+		<!-- 组建敕令骑士连 -->
+	    <Row>
+	    	<ProjectType>PROJECT_SPUE_ELMETI_TRAINING</ProjectType>
+	    	<FlavorType>FLAVOR_MOBILE</FlavorType>
+	    	<Flavor>60</Flavor>
+	    </Row>
+		<!-- 巨人掷弹兵训练计划 -->
+	    <Row>
+	    	<ProjectType>PROJECT_SPUE_HESSIAN_TRAINING</ProjectType>
+	    	<FlavorType>FLAVOR_DEFENSE</FlavorType>
+	    	<Flavor>60</Flavor>
 	    </Row>
 	</Project_Flavors>
 </GameData>

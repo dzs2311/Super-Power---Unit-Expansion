@@ -4,12 +4,14 @@
 INSERT INTO Projects
 		(Type,						Description,						Help,									Civilopedia,								TechPrereq,					MaxGlobalInstances,	MaxTeamInstances,	Cost,	PortraitIndex,	IconAtlas)
 VALUES	('PROJECT_SPUE_ORDER',		'TXT_KEY_PROJECT_SPUE_ORDER',		'TXT_KEY_PROJECT_SPUE_ORDER_HELP',		'TXT_KEY_PROJECT_SPUE_ORDER_PEDIA',			'TECH_ROBOTICS',			1,					1,					900,	29,				'SPBalance_ATLAS'),
+		('PROJECT_SPUE_ORDER_TANK',	'TXT_KEY_PROJECT_SPUE_ORDER_TANK',	'TXT_KEY_PROJECT_SPUE_ORDER_TANK_HELP',	'TXT_KEY_PROJECT_SPUE_ORDER_TANK_PEDIA',	'TECH_COMPOSITE',			1,					1,					600,	29,				'SPBalance_ATLAS'),
 		('PROJECT_SPUE_FREEDOM',	'TXT_KEY_PROJECT_SPUE_FREEDOM',		'TXT_KEY_PROJECT_SPUE_FREEDOM_HELP',	'TXT_KEY_PROJECT_SPUE_FREEDOM_PEDIA',		'TECH_SATELLITES',			1,					1,					900,	29,				'SPBalance_ATLAS'),
 		('PROJECT_SPUE_AUTOCRACY',	'TXT_KEY_PROJECT_SPUE_AUTOCRACY',	'TXT_KEY_PROJECT_SPUE_AUTOCRACY_HELP',	'TXT_KEY_PROJECT_SPUE_AUTOCRACY_PEDIA',		'TECH_INTERNET',			1,					1,					900,	29,				'SPBalance_ATLAS');
 
 INSERT INTO Project_Flavors
 		(ProjectType,				FlavorType,				Flavor)
-VALUES	('PROJECT_SPUE_ORDER',		'FLAVOR_RANGED',		120),
+VALUES	('PROJECT_SPUE_ORDER_TANK',	'FLAVOR_MOBILE',		120),
+		('PROJECT_SPUE_ORDER',		'FLAVOR_RANGED',		120),
 		('PROJECT_SPUE_ORDER',		'FLAVOR_NAVAL',			120),
 		('PROJECT_SPUE_FREEDOM',	'FLAVOR_AIR_CARRIER',	120),
 		('PROJECT_SPUE_FREEDOM',	'FLAVOR_RANGED',		120),
@@ -23,44 +25,51 @@ INSERT INTO UnitClasses
 VALUES	('UNITCLASS_SPUE_NVOVRLORD',			'TXT_KEY_UNIT_SPUE_NVOVRLORD',				'UNIT_SPUE_NVOVRLORD',		1);
  
 INSERT INTO Units 	
-		(Type, 							Class,						ProjectPrereq,			PrereqTech, PolicyType,				RangedCombat,	Combat,		Range, 	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	   CombatClass, Domain, DefaultUnitAI, Description,							Civilopedia,								Strategy, Help,										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,						UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_NVOVRLORD', 			'UNITCLASS_SPUE_NVOVRLORD', 'PROJECT_SPUE_ORDER',	PrereqTech, 'POLICY_SPUE_ORDER',	Combat,			Combat,	    1, 		ExtraMaintenanceCost,	Special, Cost, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves - 2,   CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_NVOVRLORD',		'TXT_KEY_CIV5_SPUE_NVOVRLORD_TEXT', 		Strategy, 'TXT_KEY_UNIT_SPUE_NVOVRLORD_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_NVOVRLORD',	0,					'SPUE_LORD_FLAG_ATLAS',	3,				'SPUE_IDEO_ATLAS',	1
-FROM Units WHERE Type = 'UNIT_TANK';
+		(Type, 							Class,						ProjectPrereq,				PrereqTech, PolicyType,				RangedCombat,	Combat,		Range, 	ExtraMaintenanceCost,	Special, Cost, 				FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	   CombatClass, Domain, DefaultUnitAI, 		Description,						Civilopedia,								Strategy, Help,										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,	XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 	UnitArtInfo,					UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
+SELECT	'UNIT_SPUE_NVOVRLORD', 			'UNITCLASS_SPUE_NVOVRLORD', 'PROJECT_SPUE_ORDER_TANK',	PrereqTech, 'POLICY_SPUE_ORDER',	400,			400,	    1, 		ExtraMaintenanceCost,	Special, Cost+Cost, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves - 2,   CombatClass, Domain, 'UNITAI_PARADROP', 	'TXT_KEY_UNIT_SPUE_NVOVRLORD',		'TXT_KEY_CIV5_SPUE_NVOVRLORD_TEXT', 		Strategy, 'TXT_KEY_UNIT_SPUE_NVOVRLORD_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, null, 			XPValueAttack, XPValueDefense, null, 						'ART_DEF_UNIT_SPUE_NVOVRLORD',	0,					'SPUE_LORD_FLAG_ATLAS',	3,				'SPUE_IDEO_ATLAS',	1
+FROM Units WHERE Type = 'UNIT_MAIN_BATTLE_TANK';
+
+UPDATE Units SET SpecialCargo = 'SPECIALUNIT_NUKE', DomainCargo = 'DOMAIN_AIR'
+WHERE Type = 'UNIT_SPUE_NVOVRLORD';
 
 INSERT INTO Unit_FreePromotions	
 		(UnitType, 				 	PromotionType)
 SELECT	'UNIT_SPUE_NVOVRLORD',  	PromotionType
-FROM Unit_FreePromotions WHERE UnitType = 'UNIT_TANK';
+FROM Unit_FreePromotions WHERE UnitType = 'UNIT_MAIN_BATTLE_TANK';
 
 INSERT INTO Unit_FreePromotions
-		(UnitType, 						PromotionType)
-VALUES	('UNIT_SPUE_NVOVRLORD', 		'PROMOTION_SPUE_NVOVRLORD');
+		(UnitType, 					PromotionType)
+VALUES	('UNIT_SPUE_NVOVRLORD', 	'PROMOTION_SPUE_NVOVRLORD'),
+		('UNIT_SPUE_NVOVRLORD', 	'PROMOTION_CAN_FULL_FIRE'),
+		('UNIT_SPUE_NVOVRLORD', 	'PROMOTION_CORPS_1'),
+		('UNIT_SPUE_NVOVRLORD', 	'PROMOTION_CORPS_2'),
+		('UNIT_SPUE_NVOVRLORD', 	'PROMOTION_NUKE_IMMUNE'),
+		('UNIT_SPUE_NVOVRLORD', 	'PROMOTION_ANTI_DEBUFF');
 
 INSERT INTO Unit_BuildingClassRequireds 	
 		(UnitType, 				 	BuildingClassType)
 SELECT	'UNIT_SPUE_NVOVRLORD',  	BuildingClassType
-FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_TANK';
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_MAIN_BATTLE_TANK';
 
 INSERT INTO UnitGameplay2DScripts 	
 		(UnitType, 				SelectionSound, FirstSelectionSound)
 SELECT	'UNIT_SPUE_NVOVRLORD',  SelectionSound, FirstSelectionSound
-FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_TANK';
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_MAIN_BATTLE_TANK';
 
 INSERT INTO Unit_AITypes 	
 		(UnitType, 				UnitAIType)
 SELECT	'UNIT_SPUE_NVOVRLORD',  UnitAIType
-FROM Unit_AITypes WHERE UnitType = 'UNIT_TANK';
+FROM Unit_AITypes WHERE UnitType = 'UNIT_MAIN_BATTLE_TANK';
 
 INSERT INTO Unit_Flavors 	
 		(UnitType, 				  FlavorType, Flavor)
 SELECT	'UNIT_SPUE_NVOVRLORD',    FlavorType, Flavor
-FROM Unit_Flavors WHERE UnitType = 'UNIT_TANK';	
+FROM Unit_Flavors WHERE UnitType = 'UNIT_MAIN_BATTLE_TANK';	
 
 INSERT INTO Unit_ResourceQuantityRequirements 	
 		(UnitType, 				  ResourceType, Cost)
-SELECT	'UNIT_SPUE_NVOVRLORD',    ResourceType, Cost
-FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_TANK';
-
+SELECT	'UNIT_SPUE_NVOVRLORD',    ResourceType, Cost + Cost
+FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_MAIN_BATTLE_TANK';
 --==========================================================================================================================	
 -- SUPER 055-- 秩序 解锁 
 --==========================================================================================================================
@@ -207,8 +216,8 @@ INSERT INTO UnitClasses
 VALUES	('UNITCLASS_SPUE_FREEDOM_HELICARRIER',		'TXT_KEY_UNIT_SPUE_FREEDOM_HELICARRIER',		'UNIT_SPUE_FREEDOM_HELICARRIER',		3);
  
 INSERT INTO Units 	
-		(Type, 								Class,							  		ProjectPrereq,			PrereqTech, 		PolicyType,				RangedCombat,	Combat,		Range, 		ExtraMaintenanceCost,	AirInterceptRange,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,									Strategy, Help,											Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,						UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_FREEDOM_HELICARRIER', 	'UNITCLASS_SPUE_FREEDOM_HELICARRIER', 	'PROJECT_SPUE_FREEDOM',	'TECH_SATELLITES', 'POLICY_SPUE_FREEDOM',	RangedCombat,	500,		Range, 		ExtraMaintenanceCost,	AirInterceptRange,	Special, Cost+Cost, FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_FREEDOM_HELICARRIER',	'TXT_KEY_CIV5_SPUE_FREEDOM_HELICARRIER_TEXT', 	Strategy, 'TXT_KEY_UNIT_SPUE_FREEDOM_HELICARRIER_HELP', Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_HELICARRIER',	0,					'SPUE_HELI_FLAG_ATLAS',	4,				'SPUE_IDEO_ATLAS',	1
+		(Type, 								Class,							  		ProjectPrereq,			PrereqTech, 		PolicyType,				RangedCombat,	Combat,		Range, 	SpecialCargo,	DomainCargo, ExtraMaintenanceCost,	AirInterceptRange,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,									Strategy, Help,											Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,						UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
+SELECT	'UNIT_SPUE_FREEDOM_HELICARRIER', 	'UNITCLASS_SPUE_FREEDOM_HELICARRIER', 	'PROJECT_SPUE_FREEDOM',	'TECH_SATELLITES', 'POLICY_SPUE_FREEDOM',	RangedCombat,	500,		Range, 	SpecialCargo,	DomainCargo, ExtraMaintenanceCost,	AirInterceptRange,	Special, Cost+Cost, FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_FREEDOM_HELICARRIER',	'TXT_KEY_CIV5_SPUE_FREEDOM_HELICARRIER_TEXT', 	Strategy, 'TXT_KEY_UNIT_SPUE_FREEDOM_HELICARRIER_HELP', Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_HELICARRIER',	0,					'SPUE_HELI_FLAG_ATLAS',	4,				'SPUE_IDEO_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_SUPER_CARRIER';
 
 INSERT INTO Unit_FreePromotions	

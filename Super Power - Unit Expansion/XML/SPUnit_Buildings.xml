@@ -7,6 +7,11 @@
 			<DefaultBuilding>BUILDING_SPUE_WEIYANG</DefaultBuilding>
 			<Description>TXT_KEY_BUILDING_SPUE_WEIYANG</Description>
 		</Row>
+		<Row>
+			<Type>BUILDINGCLASS_SPUE_GENOAXBOW</Type>
+			<DefaultBuilding>BUILDING_SPUE_GENOAXBOW</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_SPUE_GENOAXBOW</Description>
+		</Row>
 	</BuildingClasses>
 	<Buildings>
 		<Row>
@@ -22,6 +27,20 @@
 			<IconAtlas>SPUE_UNITS_ATLAS</IconAtlas>
 			<PortraitIndex>19</PortraitIndex>
 			<UnhappinessModifier>-5</UnhappinessModifier>
+		</Row>
+		<Row>
+			<Type>BUILDING_SPUE_GENOAXBOW</Type>
+			<BuildingClass>BUILDINGCLASS_SPUE_GENOAXBOW</BuildingClass>
+			<Cost>-1</Cost>
+			<Description>TXT_KEY_BUILDING_SPUE_GENOAXBOW</Description>
+			<ArtDefineTag>ART_DEF_BUILDING_GARDEN</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<NeverCapture>1</NeverCapture>
+			<NukeImmune>1</NukeImmune>
+			<Defense>7500</Defense>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
+			<PortraitIndex>21</PortraitIndex>
 		</Row>
 	</Buildings>
 </GameData>

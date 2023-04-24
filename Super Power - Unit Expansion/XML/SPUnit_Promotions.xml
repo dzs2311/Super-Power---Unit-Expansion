@@ -161,6 +161,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PortraitIndex>18</PortraitIndex>
 			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<ChangeDamageValue>-15</ChangeDamageValue>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -173,6 +174,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PortraitIndex>18</PortraitIndex>
 			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<ChangeDamageValue>-15</ChangeDamageValue>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -185,6 +187,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PortraitIndex>18</PortraitIndex>
 			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<ChangeDamageValue>-15</ChangeDamageValue>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -197,6 +200,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PortraitIndex>18</PortraitIndex>
 			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<ChangeDamageValue>-15</ChangeDamageValue>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -209,6 +213,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PortraitIndex>18</PortraitIndex>
 			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<ChangeDamageValue>-15</ChangeDamageValue>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -233,6 +238,7 @@
 			<PromotionPrereq>PROMOTION_SPUE_KNIGHT_NEW</PromotionPrereq>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PortraitIndex>35</PortraitIndex>
+			<ChangeDamageValue>-15</ChangeDamageValue>
 			<IconAtlas>extraPromo_Atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_C</PediaEntry>
@@ -441,6 +447,36 @@
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_GENOAXBOW</PediaEntry>
 		</Row>
 		<Row>
+			<!--朱斯蒂尼亚尼弩手：君堡义勇军-->
+			<Type>PROMOTION_SPUE_GENOAXBOW_ELITE</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_GENOAXBOW_ELITE</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_GENOAXBOW_ELITE_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<NearbyUnitClassBonus>33</NearbyUnitClassBonus>
+			<NearbyUnitClassBonusRange>1</NearbyUnitClassBonusRange>
+			<CombatBonusFromNearbyUnitClass>UNITCLASS_SPUE_FOOT_KNIGHT_HOSPITALLER</CombatBonusFromNearbyUnitClass>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_GENOAXBOW_ELITE</PediaEntry>
+		</Row>
+		<Row>
+			<!--朱斯蒂尼亚尼弩手：君堡守备军-->
+			<Type>PROMOTION_SPUE_GENOAXBOW_ELITE_EFFECT</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_GENOAXBOW_ELITE_EFFECT</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_GENOAXBOW_ELITE_EFFECT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<CombatPercent>100</CombatPercent>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_GENOAXBOW_ELITE_EFFECT</PediaEntry>
+		</Row>
+		<Row>
 			<!--瑞士卫队：猪突肉搏-->
 			<Type>PROMOTION_SPUE_SWISSGUARD</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_SWISSGUARD</Description>
@@ -583,6 +619,33 @@
 		</Row>
 		<!--*********************************赞助：奥古斯都之路*********************************-->
 		<Row>
+			<!--奥古斯都之路-->
+			<Type>PROMOTION_SPUE_AUGUSTUS</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_AUGUSTUS</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_AUGUSTUS_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_AUGUSTUS</PediaEntry>
+		</Row>
+		<Row>
+			<!--奥古斯都之剑-->
+			<Type>PROMOTION_SPUE_AUGUSTUS_COMBAT</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_AUGUSTUS_COMBAT</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_AUGUSTUS_COMBAT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<CombatPercent>50</CombatPercent>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_AUGUSTUS_COMBAT</PediaEntry>
+		</Row>
+		<Row>
 			<!--将领卫队：龙旗麟铠长骑枪-->
 			<Type>PROMOTION_SPUE_GENERAL_BODYGUARD</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_GENERAL_BODYGUARD</Description>
@@ -636,7 +699,76 @@
 		</Row>
 		<!--*********************************赞助：巴西琉斯之道*********************************-->
 		<Row>
-			<!--亚美尼亚重步兵：高加索之盾-->
+			<!--巴西琉斯之道-->
+			<Type>PROMOTION_SPUE_BASELIUS</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_BASELIUS</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BASELIUS</PediaEntry>
+		</Row>
+		<Row>
+			<!--巴西琉斯之盾1-->
+			<Type>PROMOTION_SPUE_BASELIUS_DEFENSE1</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<DefenseMod>15</DefenseMod>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1</PediaEntry>
+		</Row>
+		<Row>
+			<!--巴西琉斯之盾2-->
+			<Type>PROMOTION_SPUE_BASELIUS_DEFENSE2</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE2</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<DefenseMod>15</DefenseMod>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE2</PediaEntry>
+		</Row>
+		<Row>
+			<!--巴西琉斯之盾3-->
+			<Type>PROMOTION_SPUE_BASELIUS_DEFENSE3</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE3</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<PortraitIndex>59</PortraitIndex>
+			<DefenseMod>15</DefenseMod>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE3</PediaEntry>
+		</Row>
+		<Row>
+			<!--巴西琉斯之盾4-->
+			<Type>PROMOTION_SPUE_BASELIUS_DEFENSE4</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE4</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<PortraitIndex>59</PortraitIndex>
+			<DefenseMod>15</DefenseMod>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE4</PediaEntry>
+		</Row>
+		<Row>
+			<!--拜占庭喷火兵：希腊火喷射器-->
 			<Type>PROMOTION_SPUE_FIRE_THROWER</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_FIRE_THROWER</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_FIRE_THROWER_HELP</Help>
@@ -644,8 +776,8 @@
 			<CannotBeChosen>true</CannotBeChosen>
 			<DefenseMod>60</DefenseMod>
 			<LostWithUpgrade>false</LostWithUpgrade>
-			<PortraitIndex>59</PortraitIndex>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PortraitIndex>30</PortraitIndex>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_FIRE_THROWER</PediaEntry>
 		</Row>
@@ -688,8 +820,8 @@
 			<CannotBeChosen>true</CannotBeChosen>
 			<ExtraAttacks>1</ExtraAttacks>
 			<LostWithUpgrade>false</LostWithUpgrade>
-			<PortraitIndex>59</PortraitIndex>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PortraitIndex>30</PortraitIndex>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE</PediaEntry>
 		</Row>
@@ -704,8 +836,8 @@
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<EnemyDamageChance>100</EnemyDamageChance>
 			<NeutralDamageChance>100</NeutralDamageChance>
-			<EnemyDamage>25</EnemyDamage>
-			<NeutralDamage>25</NeutralDamage>
+			<EnemyDamage>35</EnemyDamage>
+			<NeutralDamage>35</NeutralDamage>
 			<PortraitIndex>57</PortraitIndex>
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -730,6 +862,19 @@
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_01</PediaEntry>
 		</Row>
 		<!--*********************************赞助：神州天子之权*********************************-->
+		<Row>
+			<!--神州天子之权-->
+			<Type>PROMOTION_SPUE_EMPEROR</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_EMPEROR</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_EMPEROR_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_EMPEROR</PediaEntry>
+		</Row>
 		<Row>
 			<!--宝船旗舰：西洋-->
 			<Type>PROMOTION_SPUE_TREASURE_FLEET</Type>
@@ -822,7 +967,7 @@
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055</PediaEntry>
 		</Row>
 		<Row>
-			<!--超级055：北斗摇光-->
+			<!--超级055：巡天之剑-->
 			<Type>PROMOTION_SPUE_ORDER_SUPER_055_EFFECT</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_EFFECT</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_EFFECT_HELP</Help>
@@ -845,10 +990,86 @@
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<RangeChange>20</RangeChange>
 			<VisibilityChange>30</VisibilityChange>
-			<PortraitIndex>2</PortraitIndex>
+			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>promoVP_atlas_02</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_MISSILE</PediaEntry>
+		</Row>
+		<Row>
+			<!--超级055：鹰击-21高超音速导弹-->
+			<Type>PROMOTION_SPUE_ORDER_SUPER_055_MISSILE2</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_MISSILE2</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_MISSILE_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<RangeChange>20</RangeChange>
+			<VisibilityChange>30</VisibilityChange>
+			<PortraitIndex>1</PortraitIndex>
+			<IconAtlas>promoVP_atlas_02</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_MISSILE2</PediaEntry>
+		</Row>
+		<Row>
+			<!--超级055：鹰击-21高超音速导弹-->
+			<Type>PROMOTION_SPUE_ORDER_SUPER_055_MISSILE3</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_MISSILE3</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_MISSILE_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<RangeChange>20</RangeChange>
+			<VisibilityChange>30</VisibilityChange>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>promoVP_atlas_02</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_MISSILE3</PediaEntry>
+		</Row>
+
+		<Row>
+			<!--炎黄坦克：炎黄帝君-->
+			<Type>PROMOTION_SPUE_NVOVRLORD</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_NVOVRLORD</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_NVOVRLORD_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<PortraitIndex>5</PortraitIndex>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<CityAttack>300</CityAttack>
+			<DropRange>30</DropRange>
+			<AttackFullyHealedMod>100</AttackFullyHealedMod>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_NVOVRLORD</PediaEntry>
+		</Row>
+
+		<Row>
+			<!--炎黄坦克：冲锋号角-->
+			<Type>PROMOTION_SPUE_NVOVRLORD_EFFECT</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_NVOVRLORD_EFFECT</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_NVOVRLORD_EFFECT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<CombatPercent>50</CombatPercent>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>promoVP_atlas_02</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_NVOVRLORD_EFFECT</PediaEntry>
+		</Row>
+		<Row>
+			<!--炎黄坦克：炽阳璀璨-->
+			<Type>PROMOTION_SPUE_NVOVRLORD_NUCLEAR</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_NVOVRLORD_NUCLEAR</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_NVOVRLORD_NUCLEAR_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<CargoChange>2</CargoChange>
+			<PortraitIndex>3</PortraitIndex>
+			<IconAtlas>promoVP_atlas_01</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_NVOVRLORD_NUCLEAR</PediaEntry>
 		</Row>
 		<!--*********************************秩序：KV2*********************************-->
 		<Row>
@@ -1186,11 +1407,11 @@
 
 	<UnitPromotions_Domains>
 		<!--达·芬奇坦克：战争机器-->
-		<!--<Row>
+		<!-- <Row>
 			<PromotionType>PROMOTION_SPUE_DVC_TANK</PromotionType>
 			<DomainType>DOMAIN_LAND</DomainType>
 			<Modifier>100</Modifier>
-		</Row>-->
+		</Row> -->
 		<!--克里特弓箭手：爱琴海战列-->
 		<Row>
 			<PromotionType>PROMOTION_SPUE_VASSAL_BOWMAN</PromotionType>
@@ -1209,24 +1430,25 @@
 			<DomainType>DOMAIN_AIR</DomainType>
 			<Modifier>150</Modifier>
 		</Row>	
+		<!--鹰击055：鹰击-21高超音速导弹-->
+		<Row>
+			<PromotionType>PROMOTION_SPUE_ORDER_SUPER_055_MISSILE</PromotionType>
+			<DomainType>DOMAIN_SEA</DomainType>
+			<Modifier>300</Modifier>
+		</Row>	
+		<Row>
+			<PromotionType>PROMOTION_SPUE_ORDER_SUPER_055_MISSILE2</PromotionType>
+			<DomainType>DOMAIN_SEA</DomainType>
+			<Modifier>300</Modifier>
+		</Row>	
+		<Row>
+			<PromotionType>PROMOTION_SPUE_ORDER_SUPER_055_MISSILE3</PromotionType>
+			<DomainType>DOMAIN_SEA</DomainType>
+			<Modifier>300</Modifier>
+		</Row>	
 	</UnitPromotions_Domains>
 
 	<UnitPromotions_UnitName>
-		<!--罗马禁卫军：集权帝国-->
-		<!--<Row>
-			<PromotionType>PROMOTION_SPUE_PRAETORIAN</PromotionType>
-			<Name>TXT_KEY_UNIT_SPUE_PRAETORIAN</Name>
-		</Row>-->
-		<!--未央宫卫士：长乐未央-->
-		<!--<Row>
-			<PromotionType>PROMOTION_SPUE_WEIYANG</PromotionType>
-			<Name>TXT_KEY_UNIT_SPUE_WEIYANG</Name>
-		</Row>-->
-		<!--王城骑士：兵士集结-->
-		<!--<Row>
-			<PromotionType>PROMOTION_SPUE_KNIGHT_NEW</PromotionType>
-			<Name>TXT_KEY_UNIT_SPUE_WEIYANG</Name>
-		</Row>-->
 		<!--热气球：临时热气球-->
 		<Row>
 			<PromotionType>PROMOTION_SPUE_HOT_AIR_BALLOON</PromotionType>
@@ -1257,13 +1479,6 @@
 		</Row>
 		
 	</UnitPromotions_UnitName>
-	<UnitPromotions_UnitClasses>
-		<!-- <Row>
-			<PromotionType>PROMOTION_SPUE_FREEDOM_HELICARRIER_FIGHTER</PromotionType>
-			<UnitClassType>UNITCLASS_ATGM_VEHICLE</UnitClassType>
-			<Modifier>400</Modifier>
-		</Row> -->
-	</UnitPromotions_UnitClasses>
 	<UnitPromotions_PromotionModifiers>
 		<!--玄甲军：不被方阵步兵/反装甲单位克制-->
 		<!-- <Row>
@@ -1306,6 +1521,13 @@
 			<PromotionType>PROMOTION_SUBMARINE_COMBAT</PromotionType>
 			<OtherPromotionType>PROMOTION_SPUE_ORDER_SUPER_055</OtherPromotionType>
 			<Modifier>-200</Modifier>
+		</Row>
+		PROMOTION_SPUE_NVOVRLORD
+		<!--炎黄：炎黄帝君-->
+		<Row>
+			<PromotionType>PROMOTION_SPUE_NVOVRLORD</PromotionType>
+			<OtherPromotionType>PROMOTION_CITADEL_DEFENSE</OtherPromotionType>
+			<Attack>300</Attack>
 		</Row>
 		<!--KV2：152神教-->
 		<Row>
