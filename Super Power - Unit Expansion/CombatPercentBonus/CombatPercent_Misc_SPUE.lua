@@ -74,9 +74,9 @@ function SPUEGetCombatBonus(pUnit)
     -- iNum 为单位战斗力的百分比加成
     local iNum = 0
     local t = {}
-    for k, v in pairs(g_numCPM) do
+    for k, v in pairs(g_promotionCPM) do
         if pUnit:IsHasPromotion(v.ID) then
-            iNum = iNum + v
+            iNum = iNum + g_numCPM[k]
         end
         
     end

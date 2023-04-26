@@ -24,10 +24,46 @@
 		</Row>
 		<!-- 商业政策树佣兵政策 -->
 		<Row>
-			<!-- 中古佣兵团 -->
-			<Type>POLICY_SPUE_FCOMPANY</Type>
+			<!-- 瓦兰吉佣兵 -->
+			<Type>POLICY_SPUE_VARANGIAN</Type>
 			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
 		</Row>
+		<Row>
+			<!-- 热那亚弩手 -->
+			<Type>POLICY_SPUE_GENOAXBOW</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 瑞士卫队 -->
+			<Type>POLICY_SPUE_SWISSGUARD</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 意大利装甲骑兵 -->
+			<Type>POLICY_SPUE_ELMETI</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 黑森佣兵 -->
+			<Type>POLICY_SPUE_HESSIAN</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 南洋海盗船 -->
+			<Type>POLICY_SPUE_SSPRIVATEER</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 私掠舰 -->
+			<Type>POLICY_SPUE_PRIVATEER</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 倭寇帆船 -->
+			<Type>POLICY_SPUE_FUNE</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<!-- 虔信政策树骑士团政策 -->
 		<Row>
 			<!-- 圣殿 -->
 			<Type>POLICY_SPUE_FOOT_KNIGHT_TEMPLAR</Type>

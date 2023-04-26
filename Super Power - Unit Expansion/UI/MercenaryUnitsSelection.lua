@@ -12,13 +12,15 @@ ContextPtr:SetHide(true);
 -- Variables
 --==========================================================================================
 
-local g_MercenaryUnitList	= {	GameInfoTypes["UNIT_SPUE_VARANGIAN"],
+local g_MercenaryUnitListL	= {	GameInfoTypes["UNIT_SPUE_VARANGIAN"],
 								GameInfoTypes["UNIT_SPUE_GENOAXBOW"],
 								GameInfoTypes["UNIT_SPUE_SWISSGUARD"],
-								
-							   	GameInfoTypes["UNIT_SPUE_SSPRIVATEER"],
-							   	GameInfoTypes["UNIT_SPUE_IRON_TROOP"],
-							   	GameInfoTypes["UNIT_SPUE_FIRESHIP"]}
+								GameInfoTypes["UNIT_SPUE_ELMETI"]}
+
+local g_MercenaryUnitListR	= {	GameInfoTypes["UNIT_SPUE_HESSIAN_ELITE"],
+								GameInfoTypes["UNIT_SPUE_SSPRIVATEER"],
+								GameInfoTypes["UNIT_SPUE_PRIVATEER"],
+								GameInfoTypes["UNIT_SPUE_FUNE"]}
 							   
 local g_MercenaryUnitLeft	= nil
 local g_MercenaryUnitRight	= nil
@@ -44,8 +46,8 @@ function initializeDialog()
 
 	local pPlayer = activePlayer;	
 	local leader = GameInfo.Leaders[pPlayer:GetLeaderType()];
-	local unitL = GameInfo.Units[g_MercenaryUnitList[1]]
-	local unitR = GameInfo.Units[g_MercenaryUnitList[2]]
+	local unitL = GameInfo.Units[g_MercenaryUnitListL[1]]
+	local unitR = GameInfo.Units[g_MercenaryUnitListR[1]]
 
 	if leader then
 		print("initializeDialog: Leader Found: " .. Locale.ConvertTextKey(leader.Description))
@@ -109,7 +111,7 @@ function UpdateLeftUnitList()
   	local iTeam = Game.GetActiveTeam()
 
   	Controls.SelectListLeft:ClearEntries()
-	for k, v in pairs(g_MercenaryUnitList) do
+	for k, v in pairs(g_MercenaryUnitListL) do
 		if g_MercenaryUnitRight ~= v then
 			local unit = GameInfo.Units[v]
 			local entry = {}
@@ -143,7 +145,7 @@ function UpdateRightUnitList()
   	local iTeam = Game.GetActiveTeam()
 
   	Controls.SelectListRight:ClearEntries()
-	for k, v in pairs(g_MercenaryUnitList) do
+	for k, v in pairs(g_MercenaryUnitListR) do
 		if g_MercenaryUnitRight ~= v then
 			local unit = GameInfo.Units[v]
 			local entry = {}
@@ -200,7 +202,16 @@ if isSPEx then
 			local pEraID = GameInfo.Eras[pEraType].ID;
 			local flagMercenaryUnit = true
 
-			for k, v in pairs(g_MercenaryUnitList) do 
+			for k, v in pairs(g_MercenaryUnitListL) do 
+				local unit = GameInfo.Units[v];
+				local policy = unit.PolicyType;
+				if player:HasPolicy(GameInfo.Policies[policy].ID) then
+					flagMercenaryUnit = false;
+					break;
+				end
+			end
+
+			for k, v in pairs(g_MercenaryUnitListR) do 
 				local unit = GameInfo.Units[v];
 				local policy = unit.PolicyType;
 				if player:HasPolicy(GameInfo.Policies[policy].ID) then
@@ -223,13 +234,21 @@ end
 function OnAIDoTurn( playerID )
     local player = Players[playerID]	
     if player == nil or player:IsBarbarian() or player:IsHuman() then return end
-	local unitL = GameInfo.Units[g_MercenaryUnitList[1]]
+	local unitL = GameInfo.Units[g_MercenaryUnitListL[1]]
 	local policyL = unitL.PolicyType
 
 	if player:HasPolicy(GameInfo.Policies["POLICY_COMMERCE"].ID)
 	and not player:HasPolicy(GameInfo.Policies[policyL].ID)
 	then
-		for k, v in pairs(g_MercenaryUnitList) do 
+		for k, v in pairs(g_MercenaryUnitListL) do 
+			local unit = GameInfo.Units[v]
+			local policy = unit.PolicyType
+			if not player:HasPolicy(GameInfo.Policies[policy].ID) then
+				player:SetHasPolicy(GameInfo.Policies[policy].ID, true, true)
+				print("AI Can Train Policy Units - Mercenary!")
+			end
+		end
+		for k, v in pairs(g_MercenaryUnitListR) do 
 			local unit = GameInfo.Units[v]
 			local policy = unit.PolicyType
 			if not player:HasPolicy(GameInfo.Policies[policy].ID) then

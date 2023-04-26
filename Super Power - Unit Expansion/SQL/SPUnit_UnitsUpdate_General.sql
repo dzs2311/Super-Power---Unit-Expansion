@@ -7,10 +7,10 @@ INSERT OR REPLACE INTO Unit_FreePromotions
 VALUES		('UNIT_ELITE_RIDER',			'PROMOTION_ARMOR_PLATING_I'),
 			('UNIT_ELITE_RIDER',			'PROMOTION_ARMOR_PLATING_II');
 
--- 普通导弹及飞毛腿导弹不可被拦截
+--普通导弹及飞毛腿导弹不可被拦截
 -- INSERT OR REPLACE INTO Unit_FreePromotions
 -- 			(UnitType ,						PromotionType)
--- VALUES		('UNIT_GUIDED_MISSILE',			'PROMOTION_SPUE_EVASION_III'),
+-- VALUES		('UNIT_GUIDED_MISSILE',			'PROMOTION_SPUE_EVASION_III');
 -- 			('UNIT_ASSYRIAN_SCUD_MISSILE',	'PROMOTION_SPUE_EVASION_III');
 --==========================================================================================================================
 -- Unit_Flags

@@ -32,7 +32,7 @@
 			<Type>BUILDING_SPUE_GENOAXBOW</Type>
 			<BuildingClass>BUILDINGCLASS_SPUE_GENOAXBOW</BuildingClass>
 			<Cost>-1</Cost>
-			<Description>TXT_KEY_BUILDING_SPUE_GENOAXBOW</Description>
+			<Description>TXT_KEY_UNIT_SPUE_GENOAXBOW_ELITE</Description>
 			<ArtDefineTag>ART_DEF_BUILDING_GARDEN</ArtDefineTag>
 			<MinAreaSize>-1</MinAreaSize>
 			<NeverCapture>1</NeverCapture>

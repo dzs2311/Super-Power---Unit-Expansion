@@ -175,6 +175,24 @@ function IsNotEliteUnit(pUnit)
     end
 end
 --------------------------------------------------------------
+-- 军团：玩家有足够兵力
+-- 当未启用军团模式或兵力剩余足够(大于numTroopsLeft)时返回1
+-------------------------------------------------------------
+function TroopsLeftFlag(player, numTroopsLeft)
+	local flag = 0;
+	if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
+		flag = 1;
+	elseif player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) > 0 then
+		-- 兵力足够时按钮才会显示
+		local iTotalTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) 
+		local iUsedTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS_USED"]) 
+		if iTotalTroops - iUsedTroops > numTroopsLeft then
+			flag = 1;
+		end
+	end
+	return flag;
+end
+--------------------------------------------------------------
 -- SP单位伤亡函数
 --------------------------------------------------------------
 -- Unit death cause population loss -- MOD by CaptainCWB
@@ -296,6 +314,7 @@ function plotDistancePromotion(pPlayer, pUnit, unitPromotionAID, unitPromotionBI
 			if sUnit:IsHasPromotion(unitPromotionAID) then
 				if Map.PlotDistance(pUnit:GetX(), pUnit:GetY(), sUnit:GetX(), sUnit:GetY()) < radius + 1 then -- 人类2格
 					Patronage = 1;
+					break;
 				end
 			end
 		end			
@@ -368,10 +387,6 @@ function SPUE_UnitPurchaseCost(player, iUnit)
 	return goldCost;
 end
 --------------------------------------------------------------
--- 军团：玩家有足够兵力
---------------------------------------------------------------
-
---------------------------------------------------------------
 -- 单位精英化按钮：显示函数
 --------------------------------------------------------------
 function EliteCondition(unit, unitPromotionID, ounitType, nunitType, unitClassType, projectType, Button)
@@ -438,17 +453,7 @@ function EliteDisable(unit, unitPromotion2ID, unitClassType, projectType)
 	local projectFlag = false;
 	if projectType == nil then projectFlag = true else projectFlag = player:HasProject(GameInfo.Projects[projectType].ID) end;
 	-- local dbProject = GameInfo.Projects[projectType];
-	local corpsFlag = 0;
-	if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 then
-		corpsFlag = 1
-	elseif player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) > 0 then
-		-- 兵力足够时按钮才会可用
-		local iTotalTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) 
-		local iUsedTroops = player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS_USED"]) 
-		if iTotalTroops - iUsedTroops >  1 then
-			corpsFlag = 1
-		end
-	end
+	local corpsFlag = TroopsLeftFlag(player, 1);
 
 	if goldCost then iCost = goldCost * 5 end;
 	return CountUnitsWithUniquePromotions(unit:GetOwner(), unitPromotion2ID) > 0 
@@ -550,8 +555,9 @@ function FindCoastalPlotForLandUnits(unit)
 					end
 				end
 			end
+			plotFlag = true;
 		end
-		plotFlag = true;
+		
 	end  		
 	return plotFlag, pPlot;
 end
@@ -581,8 +587,65 @@ function FindOceanPlotForSeaUnits(unit)
 					end
 				end
 			end
+			plotFlag = true;
 		end
-		plotFlag = true;
 	end  		
 	return plotFlag, pPlot;
 end
+--------------------------------------------------------------
+-- 遍历周围拥有某晋升的单位的最大加成战斗力
+--------------------------------------------------------------
+function plotDistanceGetMaxCombatStrength(unit, unitPromotionID, radius)
+	local attMaxCombatStrength = 0;
+	local defMaxCombatStrength = 0;
+	local plot = unit:GetPlot();
+
+	if plot ~= nil then
+		local uniqueRange = radius;
+		local unitCount = 0;
+		
+		unitCount = plot:GetNumUnits();
+		if unitCount > 0 then
+			for i = 0, unitCount-1, 1 do
+				local pFoundUnit = plot:GetUnit(i);
+				if pFoundUnit ~= nil 
+				and pFoundUnit:GetID() ~= unit:GetID() 
+				and pFoundUnit:IsHasPromotion(unitPromotionID)
+				and pFoundUnit:GetBaseCombatStrength() > 0 then
+					-- 对本单位发起进攻时的最大战力
+					attMaxCombatStrength = math.max(attMaxCombatStrength, pFoundUnit:GetMaxAttackStrength(plot, plot, unit) / 100);
+					-- 对本单位发起防御时的最大战力
+					defMaxCombatStrength = math.max(defMaxCombatStrength, pFoundUnit:GetMaxDefenseStrength(plot, unit) / 100);
+				end
+			end
+			unitCount = 0;
+		end
+
+		for dx = -uniqueRange, uniqueRange, 1 do
+			for dy = -uniqueRange, uniqueRange, 1 do
+				local adjPlot = Map.PlotXYWithRangeCheck(plot:GetX(), plot:GetY(), dx, dy, uniqueRange);
+				if (adjPlot ~= nil) and adjPlot ~= plot then
+					unitCount = adjPlot:GetNumUnits();
+					if unitCount > 0 then
+						for i = 0, unitCount-1, 1 do
+							local pFoundUnit = adjPlot:GetUnit(i);
+							if pFoundUnit ~= nil 
+							and pFoundUnit:GetID() ~= unit:GetID() 
+							and pFoundUnit:IsHasPromotion(unitPromotionID)
+							and pFoundUnit:GetBaseCombatStrength() > 0 then
+								-- 对本单位发起进攻时的最大战力
+								attMaxCombatStrength = math.max(attMaxCombatStrength, pFoundUnit:GetMaxAttackStrength(adjPlot, plot, unit) / 100);
+								-- 对本单位发起防御时的最大战力
+								defMaxCombatStrength = math.max(defMaxCombatStrength, pFoundUnit:GetMaxDefenseStrength(plot, unit) / 100);			
+							end
+						end
+					end
+				end
+			end
+		end
+	
+	end
+	return math.max(attMaxCombatStrength, defMaxCombatStrength);
+
+end
+
