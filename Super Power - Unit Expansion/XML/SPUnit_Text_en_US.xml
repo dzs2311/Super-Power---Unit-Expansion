@@ -13,6 +13,55 @@
 			<Text>[COLOR_YIELD_GOLD]贝利撒留甲骑兵[ENDCOLOR]是“巴西琉斯之道”专属的精英重骑兵单位，拥有强大的突击能力。</Text>
 		</Row>
 
+		<Row Tag="TXT_KEY_PROJECT_SPUE_VARANGIAN_TRAINING">
+			<Text>安纳托利亚再征服计划</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_VARANGIAN_TRAINING_HELP">
+			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_VARANGIAN_TRAINING_PEDIA">
+			<Text>[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]是精英重步兵单位，拥有强大的突击能力。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROJECT_SPUE_GENOAXBOW_TRAINING">
+			<Text>君士坦丁堡城墙守备计划</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_GENOAXBOW_TRAINING_HELP">
+			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]热那亚弩手[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_GENOAXBOW_TRAINING_PEDIA">
+			<Text>[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]是精英陆军投射单位，拥有强大的城市防御能力。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROJECT_SPUE_SWISSGUARD_TRAINING">
+			<Text>圣彼得大教堂之劫</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_SWISSGUARD_TRAINING_HELP">
+			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]瑞士佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]教皇近卫军[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_SWISSGUARD_TRAINING_PEDIA">
+			<Text>[COLOR_YIELD_GOLD]教皇近卫军[ENDCOLOR]是精英陆军方阵单位，拥有强大的复杂地形作战和移动能力。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING">
+			<Text>组建敕令骑士连</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING_HELP">
+			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]意大利装甲骑士[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING_PEDIA">
+			<Text>[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]是精英重骑兵单位，拥有强大的正面作战能力。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING">
+			<Text>巨人掷弹兵训练计划</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING_HELP">
+			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]黑森佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING_PEDIA">
+			<Text>[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]是精英火药步兵单位，拥有较强的的肉搏和恐吓敌军的能力。</Text>
+		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_EVASION_III" >
 			<Text>规避能力(100)</Text>
@@ -151,7 +200,7 @@
 			<Text>炮兵集群</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ADJACENT_BONUS_HELP">
-			<Text>与己方单位相邻[ICON_STRENGTH]战斗力+25%。</Text>
+			<Text>与己方同类单位相邻[ICON_STRENGTH]战斗力+25%。</Text>
 		</Row>
 		<!-- **********************线列步兵*********************** -->
 		<Replace Tag="TXT_KEY_UNIT_RIFLEMAN">
@@ -269,7 +318,7 @@
 			<Text>[COLOR_CYAN]未央宫卫士[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_WEIYANG_HELP">
-			<Text>[COLOR_CYAN]未央宫卫士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]与未央宫的联动单位，驻扎在城市中时可-5%全局不满。</Text>
+			<Text>[COLOR_CYAN]未央宫卫士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]与未央宫的联动单位，驻扎在首都城市中时可-5%全局不满。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_WEIYANG_TEXT">
 			<Text>汉代的南军是西汉初设置在长安城内的禁卫军之一，属卫尉统领。南军分别驻扎在未央、长乐两宫之内的城垣下，负责守卫两宫。未央、长乐两宫位于长安城南部，所以卫尉统率的军队称南军。</Text>
@@ -279,7 +328,7 @@
 			<Text>长乐未央</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_WEIYANG_HELP">
-			<Text>驻扎在城市中时可-5%全局不满。</Text>
+			<Text>驻扎在首都中时可-5%全局不满。</Text>
 		</Row>
 		
 		<Row Tag="TXT_KEY_BUILDING_SPUE_WEIYANG">
@@ -295,9 +344,8 @@
 				[COLOR_CYAN]王城骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]自主政策[ENDCOLOR]的代表性单位，自带军团晋升，且拥有以下能力。
 				[NEWLINE][ICON_BULLET]拥有超过300点经验后可选晋升[COLOR_POSITIVE_TEXT]王国冠军[ENDCOLOR]：获得15点减伤，杀敌时为首都提供相当于(基础[ICON_STRENGTH]战斗力*单位等级)的[ICON_GREAT_WRITER]大文学家点数和[ICON_GREAT_SCIENTIST]大科学家点数。
 				[NEWLINE][ICON_BULLET]兵士集结：可以召集各个城市的采邑骑士（只能召集一次,且总数不超过20）。
-				[NEWLINE][ICON_BULLET]移民安置：杀敌时根据敌军战斗力积攒粮食点数，积攒足够点数时获得移民且粮食点数清零，点数要求随时代增长。
+				[NEWLINE][ICON_BULLET]移民安置：杀敌时根据敌军战斗力积攒粮食点数，积攒足够点数时获得移民且粮食点数清零，点数要求随时代和战斗力增长。
 				[NEWLINE][ICON_BULLET]诗歌传唱：杀敌获得150%的文化点数，晋升时获得一个大文学家。
-				[NEWLINE][ICON_BULLET][COLOR_CYAN]王国冠军[ENDCOLOR]互相攻击时没有任何减伤效果。
 			</Text>
 		</Row>
 
@@ -313,8 +361,8 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP">
 			<Text>
-				[NEWLINE][ICON_BULLET]每击杀一支敌方部队或对一支敌方部队造成30以上的伤害，根据敌军战斗力积攒粮食点数，积攒足够点数时在首都获得移民且粮食点数清零，点数要求随单位战斗力增长；
-				[NEWLINE][ICON_BULLET]受到攻击时自动消耗掠获的20%人口免除80%的伤害。
+				[NEWLINE][ICON_BULLET]每击杀一支敌方部队或对一支敌方部队造成40以上的伤害，根据敌军战斗力积攒粮食点数，积攒足够点数时在首都获得移民且粮食点数清零，点数要求随单位战斗力增长；
+				[NEWLINE][ICON_BULLET]受到攻击时自动消耗掠获的20%人口免除15点的伤害。
 			</Text>
 		</Row>
 
@@ -348,9 +396,8 @@
 			<Text>[COLOR_CYAN]王国冠军[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_C_HELP">
-			<Text>15点减伤，每击杀一支敌方部队或对一支敌方部队造成30以上的伤害，为首都提供相当于(基础[ICON_STRENGTH]战斗力*单位等级)的[ICON_GREAT_WRITER]大文学家点数和[ICON_GREAT_SCIENTIST]大科学家点数。</Text>
+			<Text>15点减伤，每击杀一支敌方部队或对一支敌方部队造成40以上的伤害，为首都提供相当于(基础[ICON_STRENGTH]战斗力*单位等级)的[ICON_GREAT_WRITER]大文学家点数和[ICON_GREAT_SCIENTIST]大科学家点数。</Text>
 		</Row>
-
 		<!-- **********************采邑骑士*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_NEW1">
 			<Text>[COLOR_CYAN]采邑骑士[ENDCOLOR]</Text>
@@ -487,6 +534,27 @@
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_FUCHUAN_CANNON_BUTTON">
 			<Text>训练一支直射火力炮兵单位，花费为当前可建造直射火力炮兵单位1/3的价格，船只本回合失去移动力。</Text>
+		</Row>
+		<!-- **********************纵火帆船*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_FIRESHIP">
+			<Text>[COLOR_CYAN]纵火帆船[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_FIRESHIP_HELP">
+			<Text>[COLOR_CYAN]纵火帆船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]海事政策[ENDCOLOR]的雇佣兵单位，对城市和海军部队有战斗加成，战斗结束后阵亡，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_FIRESHIP_TEXT">
+			<Text>
+				大帆船上的所有物品，从木条和接合用的焦油，到充满油污的绳索、帆布和火药，基本上都很容易燃烧，火药更是如此。黑火药船也被称为火战船，水手会将它们点上火然后让它们漂流(或者由极少的水手驾驶，在碰撞前逃跑至敌人的船舰，使敌人的船只着火进而爆炸。有时候，敌人甚至会将火战船驶入港湾，然后将停靠在岸边的船只全部炸毁。
+				[NEWLINE]英国皇家海军曾经使用火战船攻击强大的西班牙无敌舰情况下，将船舰集合成防御弧形。英国人驾驶火战船分散队。西班牙舰队在无法找到适合的港口和较深的下锚点的了西班牙舰队，西班牙舰队也因此陷入混乱。正因如此英国舰队才能在势均力敌的情况下对抗西班牙无敌舰队。			
+			</Text>
+		</Row>
+
+		
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRESHIP">
+			<Text>火帆船</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRESHIP_HELP">
+			<Text>对海军单位和城市+200%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 		<!-- **********************热气球*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_HOT_AIR_BALLOON">
@@ -768,6 +836,51 @@
 			<Text>[COLOR_CYAN]达·芬奇机关炮[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]美学政策[ENDCOLOR]的代表性单位，启蒙时代的攻城和战略火炮单位。</Text>
 		</Row>
 
+		<!-- **********************佣兵雇主*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_AMB">
+			<Text>[COLOR_CYAN]佣兵雇主[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_AMB_HELP">
+			<Text>
+				[COLOR_CYAN]佣兵雇主[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的代表单位，拥有以下能力：
+				[NEWLINE][ICON_BULLET]佣兵协议：每个[COLOR_CYAN]佣兵雇主[ENDCOLOR]每5回合（标速下）能够签订一次雇佣兵合同，雇佣2个佣兵单位。
+				[NEWLINE][ICON_BULLET]议价艺术：1格范围内的单位杀敌或造成大于40伤害时首都可以获得2商品。
+				[NEWLINE]
+				[NEWLINE]普通的佣兵单位能够维持15回合（标速下）的存在时间，但每回合会减少0.1战斗力。
+				[NEWLINE]中古时代的佣兵单位无法进行升级，但可以通过完成相应的精英计划进行永备化改造。
+				[NEWLINE]启蒙时代的佣兵单位则将目光聚焦在海洋，是您七海争雄的好帮手。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_AMB_TEXT">
+			<Text>
+				雇佣兵（英文：Mercenary）是可用金钱雇佣的军队，中古之文艺复兴时期的佣兵团对欧洲的军制产生了重要的影响。
+				[NEWLINE]雇佣军常按照军团来进行组织，领袖是出色的军人，同时也是要钱的精明的商人。由于雇佣军不问战争的性质和目的，只根据市场原则行事，故而，谁若想取得战争的胜利，就必须要有充足的钱袋。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_AMB">
+			<Text>佣兵君主</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_AMB_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]佣兵合同：每个[COLOR_CYAN]佣兵雇主[ENDCOLOR]每10回合（标速下）能够签订一次雇佣兵合同，雇佣2个佣兵单位。
+				[NEWLINE][ICON_BULLET]议价艺术：能够花费一定的[ICON_GOLD]金币回复2格内所有受伤己方单位的血量。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON_SHORT">
+			<Text>永备化/精英化</Text>
+		</Row>
+		<!-- <Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON">
+			<Text>花费{1_Num}[ICON_GOLD]金币将瓦兰吉佣兵永备化成为瓦兰吉卫队（只能将一支瓦兰吉佣兵永备化）。</Text>
+		</Row> -->
+		<Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON">
+			<Text>花费{1_Num}[ICON_GOLD]金币将{2_UnitName}永备化/精英化改造成为{3_UnitName}（只能将一支{4_UnitName}永备化/精英化，且需要完成精英计划：{5_ProjectName}）。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON_NONE">
+			<Text>花费{1_Num}[ICON_GOLD]金币将{2_UnitName}永备化/精英化改造成为{3_UnitName}（只能将一支{4_UnitName}永备化/精英化）。</Text>
+		</Row>
 		<!-- **********************中古佣兵团*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_FCOMPANY">
 			<Text>[COLOR_CYAN]中古佣兵团[ENDCOLOR]</Text>
@@ -800,67 +913,17 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_FCOMPANY_NAME6">
 			<Text>[COLOR_CYAN]加泰罗尼亚佣兵团[ENDCOLOR]</Text>
 		</Row>
-		<!-- **********************南洋海盗船*********************** -->
-		<Row Tag="TXT_KEY_UNIT_SPUE_SSPRIVATEER">
-			<Text>[COLOR_CYAN]南洋海盗船[ENDCOLOR]</Text>
-		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_SSPRIVATEER_HELP">
-			<Text>[COLOR_CYAN]南洋海盗船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的雇佣兵单位之一，优秀的海军近战单位，拥有两格射程，发生近战时有50%的几率撤退，赢得战斗时有概率俘获敌军，可以远程攻击敌方地块并为自己回复25血量，购买后可以立即移动，死亡时不会造成人口损失。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_SSPRIVATEER_TEXT">
-			<Text>
-				16-17世纪明朝中叶时期，中国东南沿海就是一个海盗的世界。
-				这里有中国海盗、日本海盗、葡萄牙海盗、西班牙海盗、荷兰海盗等等。
-				那时商、盗没有明确的划分，有生意做的时候就是商（走私），没生意做的时候就是盗。
-				他们有时候互相抢，有时候就上岸抢。当海禁宽时，海盗就变成海商；当海禁严时，海商就变成海盗。
-				因为明朝的海禁很严，中国海上商业资本没有出路，所以就只能去做海盗，因此，这些海盗也可以称为“海商集团”。
-				这些海盗（商）集团的势力很大，甚至可以左右明朝政治、军事局势。
-			</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_SSPRIVATEER">
-			<Text>碧海黑帆</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_SSPRIVATEER_HELP">
-			<Text>劫掠不消耗移动力，发生近战时有50%的几率撤退，赢得战斗时有概率俘获敌军。</Text>
-		</Row>
-		<!-- **********************热那亚弩手*********************** -->
-		<Row Tag="TXT_KEY_UNIT_SPUE_GENOAXBOW">
-			<Text>[COLOR_CYAN]热那亚弩手[ENDCOLOR]</Text>
-		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_GENOAXBOW_HELP">
-			<Text>[COLOR_CYAN]热那亚弩手[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的雇佣兵单位之一，廉价但实用的弩兵单位，有防御加成和对骑兵战力加成，购买后可以立即移动，死亡时不会造成人口损失。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_GENOAXBOW_TEXT">
-			<Text>热那亚弩手是中世纪著名兵种，他既被用于保卫热那亚共和国，又被用于与意大利其他城市和欧洲诸国混战的雇佣兵。他装备弩，不但参与陆战也参与海战，海战中著名的有库尔佐拉之战和梅罗利亚战役。弩手们在热那亚训练和被组织所以得名热那亚弩手，但主要成员来自于利古里亚地区，也有来自蒙拉斐特，泼河平原的帕维亚，皮亚琴察，帕尔玛，以至于科西嘉岛，他们团体的指挥官往往是热那亚贵族出身他们的武器装备是一张巴利斯特公司制造的十字弓，一个匕首，一个头盔，一片颈甲，一件锁子甲，一面帕维赛盾{在装填时使用}，通常一个小组包括一个弩手，两名帮助者，一个来支起盾牌，一个张弩。他们在第一次十字军东征时声名鹊起，在耶路撒冷之围时使用了弩手在第三次东征的雅法战役中再次大放异彩。他们的威名一直持续到15世纪黑火药大规模在欧洲流行后。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENOAXBOW">
-			<Text>巨盾强弩</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENOAXBOW_HELP">
-			<Text>防御时+30%[ICON_STRENGTH]战斗力，对骑兵+30%[ICON_STRENGTH]战斗力。</Text>
-		</Row>
-		<!-- **********************瑞士雇佣兵*********************** -->
-		<Row Tag="TXT_KEY_UNIT_SPUE_SWISSGUARD">
-			<Text>[COLOR_CYAN]瑞士卫队[ENDCOLOR]</Text>
-		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_SWISSGUARD_HELP">
-			<Text>[COLOR_CYAN]瑞士卫队[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的雇佣兵单位之一，长于突进的方阵步兵，能够冲锋击退敌方单位，并对其同格单位造成30%的[COLOR_POSITIVE_TEXT]践踏[ENDCOLOR]伤害, 自带冲锋1级，购买后可以立即移动，死亡时不会造成人口损失。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_SWISSGUARD_TEXT">
-			<Text>中世纪的瑞士雇佣兵（Reislufer），是西欧最重要的步兵部队之一，他们因其在外国军队中的服务而闻名。他们成功地捍卫了自己的自由，反对奥地利哈布斯堡的君主，在莫尔加滕和劳彭对重装骑士取得了显著胜利。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_SWISSGUARD">
-			<Text>猪突肉搏</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_SWISSGUARD_HELP">
-			<Text>能够冲锋击退敌方单位，并对其同格单位造成30%的[COLOR_POSITIVE_TEXT]践踏[ENDCOLOR]伤害。</Text>
-		</Row>
 		<!-- **********************瓦兰吉佣兵*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_VARANGIAN">
 			<Text>[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_VARANGIAN_HELP">
-			<Text>[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的雇佣兵单位之一，强而有力的重装步兵单位，拥有海滨地块作战加成和海洋地块移动加成，自带冲击一级，可以拔擢为[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+			<Text>
+				[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古雇佣兵单位之一，只能通过[ICON_GOLD]金币购买，强而有力的重装步兵单位，拥有海滨地块作战加成和海洋地块移动加成，自带冲击一级，可以拔擢为[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]，购买后可以立即移动，死亡时不会造成人口损失，单位无法升级。
+				[NEWLINE]
+				[NEWLINE]完成[COLOR_YIELD_GOLD]安纳托利亚再征服计划[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]。
+
+			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_VARANGIAN_TEXT">
 			<Text>
@@ -885,7 +948,14 @@
 			<Text>[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_VARANGIAN_GUARD_HELP">
-			<Text>[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]是[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]作为永备军团后形成的近卫军团，强而有力的重装步兵单位，拥有海滨地块作战加成和海洋地块移动加成，自带冲击一级，进攻可以使敌人退却并造成30%的践踏伤害，回合开始时4格范围内每有一个己方重骑兵单位则获得20%[ICON_STRENGTH]战斗力加成并+2[ICON_MOVES]移动力。</Text>
+			<Text>
+				[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]是[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]作为永备军团后形成的近卫军团，强而有力的重装步兵单位，需要完成[COLOR_YIELD_GOLD]安纳托利亚再征服计划[ENDCOLOR]，拥有以下能力：
+				[NEWLINE][ICON_BULLET]海滨地块作战加成;
+				[NEWLINE][ICON_BULLET]海洋地块移动加成;
+				[NEWLINE][ICON_BULLET]冲击一级;
+				[NEWLINE][ICON_BULLET]进攻可以使敌人退却并造成30%的践踏伤害;
+				[NEWLINE][ICON_BULLET]回合开始时4格范围内每有一个己方重骑兵单位则获得20%[ICON_STRENGTH]战斗力加成并+2[ICON_MOVES]移动力。
+			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_VARANGIAN_GUARD_TEXT">
 			<Text>
@@ -900,22 +970,295 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_VARANGIAN_GUARD_HELP">
 			<Text>进攻可以使敌人退却并造成30%的践踏伤害，回合开始时一格范围内每有一个己方重骑兵单位则获得20%[ICON_STRENGTH]战斗力加成并+2[ICON_MOVES]移动力。</Text>
 		</Row>
+		<!-- **********************热那亚弩手*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_GENOAXBOW">
+			<Text>[COLOR_CYAN]热那亚弩手[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_GENOAXBOW_HELP">
+			<Text>
+				[COLOR_CYAN]热那亚弩手[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古佣兵单位之一，只能通过[ICON_GOLD]金币购买，廉价但实用的弩兵单位，有防御加成和对骑兵战力加成，可以拔擢为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]，购买后可以立即移动，死亡时不会造成人口损失，单位无法升级。
+				[NEWLINE]
+				[NEWLINE]完成[COLOR_YIELD_GOLD]君士坦丁堡城墙守备计划[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_GENOAXBOW_TEXT">
+			<Text>热那亚弩手是中世纪著名兵种，他既被用于保卫热那亚共和国，又被用于与意大利其他城市和欧洲诸国混战的雇佣兵。他装备弩，不但参与陆战也参与海战，海战中著名的有库尔佐拉之战和梅罗利亚战役。弩手们在热那亚训练和被组织所以得名热那亚弩手，但主要成员来自于利古里亚地区，也有来自蒙拉斐特，泼河平原的帕维亚，皮亚琴察，帕尔玛，以至于科西嘉岛，他们团体的指挥官往往是热那亚贵族出身他们的武器装备是一张巴利斯特公司制造的十字弓，一个匕首，一个头盔，一片颈甲，一件锁子甲，一面帕维赛盾{在装填时使用}，通常一个小组包括一个弩手，两名帮助者，一个来支起盾牌，一个张弩。他们在第一次十字军东征时声名鹊起，在耶路撒冷之围时使用了弩手在第三次东征的雅法战役中再次大放异彩。他们的威名一直持续到15世纪黑火药大规模在欧洲流行后。</Text>
+		</Row>
 
-		<Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON_SHORT">
-			<Text>永备化</Text>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENOAXBOW">
+			<Text>巨盾强弩</Text>
 		</Row>
-		<!-- <Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON">
-			<Text>花费{1_Num}[ICON_GOLD]金币将瓦兰吉佣兵永备化成为瓦兰吉卫队（只能将一支瓦兰吉佣兵永备化）。</Text>
-		</Row> -->
-		<Row Tag="TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON">
-			<Text>花费{1_Num}[ICON_GOLD]金币将{2_UnitName}永备化成为{3_UnitName}（只能将一支{4_UnitName}永备化，且需要完成精英计划：{5_ProjectName}。）。</Text>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENOAXBOW_HELP">
+			<Text>防御时+30%[ICON_STRENGTH]战斗力，对骑兵+30%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
+		<!-- **********************朱斯蒂尼亚尼弩手*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_GENOAXBOW_ELITE">
+			<Text>[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_GENOAXBOW_ELITE_HELP">
+			<Text>
+				[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]是[COLOR_CYAN]热那亚弩手[ENDCOLOR]作为常备军后形成的近卫军团，拥有强大的防守能力，需要完成[COLOR_YIELD_GOLD]君士坦丁堡城墙守备计划[ENDCOLOR]：
+				[NEWLINE][ICON_BULLET]防御时+30%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]对骑兵+30%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]1格内每个[COLOR_CYAN]步行医院骑士[ENDCOLOR]为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]+20%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]位于友方城市3格内时+100%[ICON_STRENGTH]战斗力，所驻守的城市城防增加75（随时代增加）；
+				[NEWLINE][ICON_BULLET]任意靠岸的海军单位均可以将[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]召唤至身边。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_GENOAXBOW_ELITE_TEXT">
+			<Text>
+				乔瓦尼.朱斯蒂尼亚尼，于此安息。
+				[NEWLINE]他是一位伟人，热那亚的贵族、希俄斯岛的领主;
+				[NEWLINE]君士坦丁堡城破，末代皇帝和东方基督徒的勇敢领袖——最尊贵的君士坦丁不幸阵亡，于此时，朱斯蒂尼亚尼被土耳其君主穆罕默德重伤，逝于一四五三年六月八日。
+				[NEWLINE][NEWLINE]
+				[NEWLINE]“在下完全自愿发起这次远征，一切费用由在下承担;
+				[NEWLINE]“此次远征不会有增援，不会有后续补给，必将十死无生。
+				[NEWLINE]“各位响应号召前来，实属不易，如担忧日后无人继承家业，可领军饷回乡。”
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENOAXBOW_ELITE">
+			<Text>君士坦丁堡义勇军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENOAXBOW_ELITE_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]1格内每个[COLOR_CYAN]步行医院骑士[ENDCOLOR]为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]+33%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]位于友方城市3格内时+100%[ICON_STRENGTH]战斗力，所驻守的城市的城防增加75（随时代增加）；
+				[NEWLINE][ICON_BULLET]任意靠岸的海军单位均可以将[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]召唤至身边。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENOAXBOW_ELITE_EFFECT">
+			<Text>君士坦丁堡守备军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENOAXBOW_ELITE_EFFECT_HELP">
+			<Text>+100%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_GENOAXBOW_BUTTON_SHORT">
+			<Text>千里驰援</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPUE_GENOAXBOW_BUTTON">
+			<Text>船只靠岸时，能够将己方所有的[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]召集到最近的海岸单元格,被召集的[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]额外+1移动力，并回复10点生命值。</Text>
+		</Row>
+
+		<!-- **********************瑞士雇佣兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_SWISSGUARD">
+			<Text>[COLOR_CYAN]瑞士佣兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_SWISSGUARD_HELP">
+			<Text>
+				[COLOR_CYAN]瑞士佣兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古佣兵单位之一，只能通过[ICON_GOLD]金币购买，长于突进的方阵步兵，能够冲锋击退敌方单位，并对其同格单位造成30%的[COLOR_POSITIVE_TEXT]践踏[ENDCOLOR]伤害, 自带冲锋1级，购买后可以立即移动，死亡时不会造成人口损失，单位无法升级。
+				[NEWLINE]
+				[NEWLINE]完成[COLOR_YIELD_GOLD]圣彼得大教堂之劫[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]教皇近卫军[ENDCOLOR]。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_SWISSGUARD_TEXT">
+			<Text>中世纪的瑞士雇佣兵（Reislufer），是西欧最重要的步兵部队之一，他们因其在外国军队中的服务而闻名。他们成功地捍卫了自己的自由，反对奥地利哈布斯堡的君主，在莫尔加滕和劳彭对重装骑士取得了显著胜利。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SWISSGUARD">
+			<Text>猪突肉搏</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SWISSGUARD_HELP">
+			<Text>能够冲锋击退敌方单位，并对其同格单位造成30%的[COLOR_POSITIVE_TEXT]践踏[ENDCOLOR]伤害。</Text>
+		</Row>
+		<!-- **********************教皇近卫军*********************** -->
+
+		<Row Tag="TXT_KEY_UNIT_SPUE_SWISSGUARD_ELITE">
+			<Text>[COLOR_YIELD_GOLD]教皇近卫军[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_SWISSGUARD_ELITE_HELP">
+			<Text>
+				[COLOR_YIELD_GOLD]教皇近卫军[ENDCOLOR]是[COLOR_CYAN]瑞士佣兵[ENDCOLOR]作为常备军后形成的近卫军团，拥有强大的复杂地形作战能力，需要完成[COLOR_YIELD_GOLD]圣彼得大教堂之劫[ENDCOLOR]：
+				[NEWLINE][ICON_BULLET]能够冲锋击退敌方单位，并对其同格单位造成30%的[COLOR_POSITIVE_TEXT]践踏[ENDCOLOR]伤害, 自带冲锋1级；
+				[NEWLINE][ICON_BULLET]可以翻越山脉，无地形移动惩罚，无地形移动损耗；
+				[NEWLINE][ICON_BULLET]复杂地形+50%[ICON_STRENGTH]战斗力，丘陵和山脉的移动力消耗减半；
+				[NEWLINE][ICON_BULLET]移动力+1，单位已消耗的每点移动力+15%[ICON_STRENGTH]攻击力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_SWISSGUARD_ELITE_TEXT">
+			<Text>教皇的瑞士近卫队（德语：Päpstliche Schweizergarde；拉丁语：Pontificia Cohors Helvetica；意大利语：Guardia Svizzera Pontificia；英语：Pontifical Swiss Guard），于1506年由教皇儒略二世建立，为保护天主教会圣座罗马教廷和教皇本人的雇佣兵组织，队员原本为受雇于保护君主的佣兵，而渐渐转变为专属于梵蒂冈城国的近卫队性质的雇佣兵组织，服务年限差不多介于2年和25年之间。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SWISSGUARD_ELITE">
+			<Text>瑞士山民</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SWISSGUARD_ELITE_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]可以翻越山脉，无地形移动惩罚，无地形损耗；
+				[NEWLINE][ICON_BULLET]复杂地形+50%[ICON_STRENGTH]战斗力，丘陵和山脉的移动力消耗减半；
+				[NEWLINE][ICON_BULLET]移动力+1，单位已消耗的每点移动力+15%[ICON_STRENGTH]攻击力。
+			</Text>
+		</Row>
+		<!-- **********************意大利装甲骑兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_ELMETI">
+			<Text>[COLOR_CYAN]意大利装甲骑兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_ELMETI_HELP">
+			<Text>
+				[COLOR_CYAN]意大利装甲骑兵[ENDCOLOR]
+				[COLOR_CYAN]意大利装甲骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古佣兵单位之一，只能通过[ICON_GOLD]金币购买，单位剩余的每点移动力+5%[ICON_STRENGTH]攻击力，攻击城市时对城市额外造成相当于15%城市最大生命值的伤害，购买后可以立即移动，死亡时不会造成人口损失，单位无法升级。
+				[NEWLINE]
+				[NEWLINE]完成[COLOR_YIELD_GOLD]组建敕令骑士连[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_ELMETI_TEXT">
+			<Text>装甲骑兵是意大利的非贵族骑士，他们的名称Elmeti从意大利语的“头盔"衍生而来，用来形容他们搭配精美铠甲的头盔。十五世纪后半，装甲骑兵曾连续参与意大利和其他欧洲国家之间的小规模战斗。其中一场重要的战役发生在1487年的蓬泰迪克雷沃拉(Ponte di Crevola),当时由特里武尔齐奥(Trivulzio) 率领的米兰军队大败瑞士军队，而这场战役也成为欧洲人对意大利长达半世纪侵略的前兆，那段时期被称为“意大利战争”。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_ELMETI">
+			<Text>封建佣军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_ELMETI_HELP">
+			<Text>单位剩余的每点移动力+5%[ICON_STRENGTH]攻击力，攻击城市时对城市额外造成相当于15%城市最大生命值的伤害。</Text>
+		</Row>
+		<!-- **********************王家敕令骑士*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_ELMETI_ELITE">
+			<Text>[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_ELMETI_ELITE_HELP">
+			<Text>
+				[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]是[COLOR_CYAN]意大利装甲骑兵[ENDCOLOR]作为常备军后形成的近卫军团，需要完成[COLOR_YIELD_GOLD]组建敕令骑士连[ENDCOLOR]：
+				[NEWLINE][ICON_BULLET]单位剩余的每点移动力+5%[ICON_STRENGTH]攻击力，攻击城市时对城市额外造成相当于15%城市最大生命值的伤害；
+				[NEWLINE][ICON_BULLET]防御时+150%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]单位移动时/回合结束时根据2格内的重骑兵单位/装甲的最大加成后的战力获得战斗力加成。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_ELMETI_ELITE_TEXT">
+			<Text>
+				敕令骑士指的是从中世纪晚期到近代早期，效力于法国军队的常备重骑兵部队，人员由贵族组成，作为封建兵役骑士的继承者与之互为补充，敕令骑士在这段时间的战场中获得了极高的评价，被认为是欧陆最强的重骑兵部队，直到传统重骑兵在火器和步兵长兵器的打击下逐渐衰落。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_ELMETI_ELITE">
+			<Text>王家敕令</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_ELMETI_ELITE_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]防御时+150%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]单位移动/回合开始时根据2格内的重骑兵单位或装甲的最大加成后的战力获得战斗力加成。
+			</Text>
+		</Row>
+		<!-- **********************黑森佣兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_HESSIAN">
+			<Text>[COLOR_CYAN]黑森佣兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_HESSIAN_HELP">
+			<Text>
+				[COLOR_CYAN]黑森佣兵[ENDCOLOR]
+				[COLOR_CYAN]黑森佣兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，可以消耗自身完全镇压一座城市的抵抗，亦可以在首都城市中执行移民安置，购买后可以立即移动，死亡时不会造成人口损失，单位无法升级。
+				[NEWLINE]
+				[NEWLINE]完成[COLOR_YIELD_GOLD]巨人掷弹兵训练计划[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_HESSIAN_TEXT">
+			<Text>西方近代历史上享有盛誉的黑森(Hessen)雇佣军主要由莱茵地区尤其是黑森—卡塞尔地区的日耳曼族士兵组成。黑森—卡塞尔是一个德意志小邦国，位于今天德国队黑森州，历来有雇佣军传统，雇佣军的佣金曾经超过了一半的国家收入。对于黑森—卡塞尔地方政权来说，雇佣军的培养、训练和抚恤等已经成为了一项重要的产业，正如统治黑森地区的伯爵威廉八世所说：“失去了雇佣军，我们将失去所有的资源。”法国大革命爆发后，1801年，黑森—卡塞尔被并入莱茵联邦，这个辉煌的雇佣军国家，从此走下神坛，黑森雇佣军最终消失在历史的长河中。			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HESSIAN">
+			<Text>黑森-卡塞尔</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HESSIAN_HELP">
+			<Text>可以消耗自身完全镇压一座城市的抵抗，亦可以在首都城市中执行移民安置。</Text>
+		</Row>
+		<!-- **********************巨人掷弹兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_HESSIAN_ELITE">
+			<Text>[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_HESSIAN_ELITE_HELP">
+			<Text>
+				[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]
+				[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]是[COLOR_CYAN]黑森佣兵[ENDCOLOR]作为常备军后形成的近卫军团，需要完成[COLOR_YIELD_GOLD]巨人掷弹兵训练计划[ENDCOLOR]：
+				[NEWLINE][ICON_BULLET]血量+50；
+				[NEWLINE][ICON_BULLET]先手远程打击火力的伤害比例提升；
+				[NEWLINE][ICON_BULLET]可以消耗全部移动力完全镇压一座城市的抵抗；
+				[NEWLINE][ICON_BULLET]3格内的敌方单位-55%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]防御重骑兵时[ICON_STRENGTH]战斗力+150%，进攻城市和要塞时[ICON_STRENGTH]战斗力+150%。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_HESSIAN_ELITE_TEXT">
+			<Text>巨人掷弹兵团（英语：Potsdam Genediers）又译波茨坦掷弹兵团，是普鲁士国王腓特烈·威廉一世设立，在当时的观念里，长的越高的男性就会被认定是越强悍的士兵，身高172厘米的男性一定会被征召入伍，即使有心智障碍也没有关系，但是太年轻或面容太丑就无法加入。在这支兵团里还有一位挪威人约瑟夫·爱力克森，其身高甚至达268厘米。普鲁士巨人掷弹兵团虽然在阅兵典礼时非常醒目，但光是要制作这批人的军服、装备以及薪水，就需要花费其他同规模部队4倍以上的预算，所以当腓特烈二世继位后，就将这支部队予以解散，只保留一个大队。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HESSIAN_ELITE">
+			<Text>波茨坦巨人</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HESSIAN_ELITE_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]血量+50；
+				[NEWLINE][ICON_BULLET]先手远程打击火力的伤害比例提升；
+				[NEWLINE][ICON_BULLET]可以消耗全部移动力完全镇压一座城市的抵抗；
+				[NEWLINE][ICON_BULLET]3格内的敌方单位-55%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]防御重骑兵时[ICON_STRENGTH]战斗力+150%，进攻城市和要塞时[ICON_STRENGTH]战斗力+150%。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_RIOT_CONTROL_HESSIAN">
+			<Text>如所在城市抵抗时间大于3回合，可使用此能力，清除所有抵抗时间。[NEWLINE][NEWLINE]该命令会消耗本单位。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_RIOT_CONTROL_HESSIAN_ELITE">
+			<Text>如所在城市抵抗时间大于3回合，可使用此能力，清除所有抵抗时间。[NEWLINE][NEWLINE]该命令会消耗所有剩馀[ICON_MOVES]移动力。</Text>
+		</Row>
+
+		<!-- **********************私掠舰*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_PRIVATEER">
+			<Text>[COLOR_CYAN]私掠舰[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_PRIVATEER_HELP">
+			<Text>[COLOR_CYAN]私掠舰[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，对城市+50%[ICON_STRENGTH]战斗力，获取相当于100%对城市损害的[ICON_GOLD]金币，能够在未开战的情况下远程攻击敌方单位并获得相当于造成伤害的[ICON_GOLD]金币(无法击杀)，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_PRIVATEER_TEXT">
+			<Text>私掠舰的船长们通常都获得了私掠许可证，因此他们可以在海上自由航行，抢夺敌国的贸易船只。出现于16-19世纪之间，私掠舰几乎为当时所有的霸权国家采用，尤其是英国和西班牙。私掠舰的船长和船员通常不会得到政府发给的薪水，他们的唯一金钱来源是抢劫后的分赃，所以“合法”的私掠舰和非法的那些海盗之间的界限其实是很模糊的。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_PRIVATEER">
+			<Text>海掠五洋</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_PRIVATEER_HELP">
+			<Text>对城市+50%[ICON_STRENGTH]战斗力，获取相当于100%对城市损害的[ICON_GOLD]金币，能够在未开战的情况下远程攻击敌方单位并获得相当于造成伤害的[ICON_GOLD]金币(无法击杀)。</Text>
+		</Row>
+		<!-- **********************倭寇帆船*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_FUNE">
+			<Text>[COLOR_CYAN]倭寇帆船[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_FUNE_HELP">
+			<Text>[COLOR_CYAN]倭寇帆船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，可以建造渔场，精悍而快速的袭掠者，掠夺地块不消耗移动力，且为自己和1格内的己方单位回复3移动力，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_FUNE_TEXT">
+			<Text>倭寇（わこう），是指13世纪到16世纪左右侵略朝鲜、中国沿海各地和南洋的日本海盗集团的泛称，除沿海劫掠以外主要从事中日走私贸易，因中国古籍称日本为倭国，故称倭寇。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FUNE">
+			<Text>浪人</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FUNE_HELP">
+			<Text>掠夺地块不消耗移动力，且为自己和1格内的己方单位回复3移动力。</Text>
+		</Row>
+		<!-- **********************南洋海盗船*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_SSPRIVATEER">
+			<Text>[COLOR_CYAN]南洋海盗船[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_SSPRIVATEER_HELP">
+			<Text>[COLOR_CYAN]南洋海盗船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，诞生时附赠一支[COLOR_CYAN]铁人军[ENDCOLOR]（不能超过其上限数量：4），优秀的海军近战单位，拥有两格射程，发生近战时有50%的几率撤退，赢得战斗时有概率俘获敌军，可以远程攻击敌方地块并为自己回复25血量，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_SSPRIVATEER_TEXT">
+			<Text>
+				16-17世纪明朝中叶时期，中国东南沿海就是一个海盗的世界。
+				[NEWLINE]这里有中国海盗、日本海盗、葡萄牙海盗、西班牙海盗、荷兰海盗等等。
+				[NEWLINE]那时商、盗没有明确的划分，有生意做的时候就是商（走私），没生意做的时候就是盗。
+				[NEWLINE]他们有时候互相抢，有时候就上岸抢。当海禁宽时，海盗就变成海商；当海禁严时，海商就变成海盗。
+				[NEWLINE]因为明朝的海禁很严，中国海上商业资本没有出路，所以就只能去做海盗，因此，这些海盗也可以称为“海商集团”。
+				[NEWLINE]这些海盗（商）集团的势力很大，甚至可以左右明朝政治、军事局势。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SSPRIVATEER">
+			<Text>碧海黑帆</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SSPRIVATEER_HELP">
+			<Text>劫掠不消耗移动力，发生近战时有50%的几率撤退，赢得战斗时有概率俘获敌军。</Text>
+		</Row>
+
 		<!-- **********************铁人军*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_IRON_TROOP">
 			<Text>[COLOR_CYAN]铁人军[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_IRON_TROOP_HELP">
-			<Text>[COLOR_CYAN]铁人军[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的雇佣兵单位之一，自带装甲2级和冲击1级，对重步兵与游猎骑兵有攻击加成，登陆时回复全部移动力，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+			<Text>[COLOR_CYAN]铁人军[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的佣兵单位之一，自带装甲2级和冲击1级，对重步兵与游猎骑兵有攻击加成，登陆时回复全部移动力，购买后可以立即移动，死亡时不会造成人口损失。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_IRON_TROOP_TEXT">
 			<Text>
@@ -931,39 +1274,19 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_IRON_TROOP_HELP">
 			<Text>进攻近战步兵与游猎骑兵时+30%[ICON_STRENGTH]战斗力，登陆时回复全部移动力。</Text>
 		</Row>
-		<!-- **********************纵火帆船*********************** -->
-		<Row Tag="TXT_KEY_UNIT_SPUE_FIRESHIP">
-			<Text>[COLOR_CYAN]纵火帆船[ENDCOLOR]</Text>
-		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_FIRESHIP_HELP">
-			<Text>[COLOR_CYAN]纵火帆船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的雇佣兵单位之一，对城市和海军部队有战斗加成，战斗结束后阵亡，购买后可以立即移动，死亡时不会造成人口损失。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_FIRESHIP_TEXT">
-			<Text>
-				大帆船上的所有物品，从木条和接合用的焦油，到充满油污的绳索、帆布和火药，基本上都很容易燃烧，火药更是如此。黑火药船也被称为火战船，水手会将它们点上火然后让它们漂流(或者由极少的水手驾驶，在碰撞前逃跑至敌人的船舰，使敌人的船只着火进而爆炸。有时候，敌人甚至会将火战船驶入港湾，然后将停靠在岸边的船只全部炸毁。
-				[NEWLINE]英国皇家海军曾经使用火战船攻击强大的西班牙无敌舰情况下，将船舰集合成防御弧形。英国人驾驶火战船分散队。西班牙舰队在无法找到适合的港口和较深的下锚点的了西班牙舰队，西班牙舰队也因此陷入混乱。正因如此英国舰队才能在势均力敌的情况下对抗西班牙无敌舰队。			
-			</Text>
-		</Row>
-
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRESHIP">
-			<Text>火帆船</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRESHIP_HELP">
-			<Text>对海军单位和城市+200%[ICON_STRENGTH]战斗力。</Text>
-		</Row>
 		<!-- **********************雇佣兵选择界面UI文本*********************** -->
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_LEADER_TOP">
 			<Text>
 				选择两种您希望在本局游戏中使用的[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]雇佣兵单位，一旦选择不可更改
-				[NEWLINE][NEWLINE]([COLOR_NEGATIVE_TEXT]注意：[ENDCOLOR]需选择两个不一样的佣兵团，否则无法退出本界面！)
+				<!-- [NEWLINE][NEWLINE]([COLOR_NEGATIVE_TEXT]注意：[ENDCOLOR]需选择两个不一样的佣兵团，否则无法退出本界面！) -->
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_LEADER_TOP_WP">
 			<Text>
-				检测到当前开启了[COLOR_POSITIVE_TEXT]世界强权[ENDCOLOR]模组，鉴于其对于[ICON_CULTURE][COLOR_MAGENTA]商业政策树[ENDCOLOR]的调整情况，雇佣兵单位选择界面在玩家进入中古时代后即开启。
+				检测到当前开启了[COLOR_POSITIVE_TEXT]世界强权[ENDCOLOR]模组，考虑到强权对于[ICON_CULTURE][COLOR_MAGENTA]商业政策树[ENDCOLOR]的调整情况，雇佣兵单位选择界面在玩家进入中古时代后即开启。
 				[NEWLINE]选择两种您希望在本局游戏中使用的[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]雇佣兵单位，一旦选择不可更改
-				[NEWLINE][NEWLINE]([COLOR_NEGATIVE_TEXT]注意：[ENDCOLOR]需选择两个不一样的佣兵团，否则无法退出本界面！)
+				<!-- [NEWLINE][NEWLINE]([COLOR_NEGATIVE_TEXT]注意：[ENDCOLOR]需选择两个不一样的佣兵团，否则无法退出本界面！) -->
 			</Text>
 		</Row>
 
@@ -972,16 +1295,16 @@
 		</Row>
 		
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_UNIT_LEFT">
-			<Text>首席佣兵团单位信息</Text>
+			<Text>中古佣兵团单位信息</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_MENU_UNIT_LEFT">
-			<Text>请选择您的首席佣兵团</Text>
+			<Text>请选择您的中古佣兵团</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_UNIT_RIGHT">
-			<Text>次席佣兵团单位信息</Text>
+			<Text>启蒙佣兵团单位信息</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_MENU_UNIT_RIGHT">
-			<Text>请选择您的次席佣兵团</Text>
+			<Text>请选择您的启蒙佣兵团</Text>
 		</Row>
 		
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_SELECT_OK">
@@ -1038,7 +1361,6 @@
 		<Row Tag="TXT_KEY_SPUE_VASSAL_BOWMAN_BUTTON">
 			<Text>花费{1_Num}[ICON_GOLD]金币征召一队与当前单位拥有相同经验值的∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]单位，单位本回合失去移动力</Text>
 		</Row>
-
 		<!-- **********************同盟军团*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI">
 			<Text>∏[COLOR_CYAN]拉丁同盟军团[ENDCOLOR]</Text>
@@ -1092,30 +1414,6 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_VASSAL_BOWMAN_HELP">
 			<Text>对陆军单位+50%[ICON_STRENGTH]战斗力，射程+1，每回合攻击次数+1，远程防御攻击时+50%[ICON_STRENGTH]战斗力（持盾）。</Text>
 		</Row>
-		<!-- **********************辅助西徐亚弓骑兵*********************** -->
-		<!-- <Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI">
-			<Text>∏[COLOR_CYAN]辅助西徐亚弓骑兵[ENDCOLOR]</Text>
-		</Row>
-		<Row Tag="TXT_KEY_UNIT_SPUE_SOCII_HASTATI_HELP">
-			<Text>
-				∏[COLOR_CYAN]辅助西徐亚弓骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军轻骑兵辅助单位，死亡时不会造成人口损失。
-				[NEWLINE][ICON_BULLET]每回合攻击次数+2，对残血单位+150%[ICON_STRENGTH]战斗力。
-				[NEWLINE][ICON_BULLET]只有选择了奥古斯都之路可以招募此单位。
-				[NEWLINE][ICON_BULLET]引弦为罗马人射倒敌人的西徐亚人才是有价值的战士。
-			</Text>
-		</Row>
-		<Row Tag="TXT_KEY_CIV5_SPUE_SOCII_HASTATI_TEXT">
-			<Text>
-				草原上的许多部落有着丰富的文化，根本不是无知愚昧的野蛮人。他们住在从里海一直到黑海北岸的大片地区；希腊人称他们为“西徐亚人”，波斯人则称其为“塞种人”。其中西边的一群也被叫做萨尔马提亚人。穿着裤子使他们与希腊人认为的野蛮人相距甚远，更不要提他们高高的尖帽了。然而他们全都是出色的骑手，精于使用西徐亚式的复合反曲弓，近战时也颇具威力。他们使用的一种战斧，一面是锋刃一面是镐，可以刺穿大部分铠甲。出土的陪葬品显示，一些部落的女性也同男性一样好战，并有可能亲临战阵。这很可能是希腊神话中亚马逊女战士的起源。			
-			</Text>
-		</Row>	
-
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI">
-			<Text>居鲁士大敌</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_SOCII_HASTATI_HELP">
-			<Text>每回合攻击次数+2，对残血单位+150%[ICON_STRENGTH]战斗力。</Text>
-		</Row> -->
 		<!-- **********************靖抚甲骑兵*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD">
 			<Text>★[COLOR_CYAN]靖抚甲骑[ENDCOLOR]</Text>
@@ -1132,10 +1430,15 @@
 				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
 				[NEWLINE]
 				[NEWLINE]完成[COLOR_YIELD_GOLD]查士丁尼西征计划[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]贝利撒留甲骑兵[ENDCOLOR]。
-				[NEWLINE][COLOR_YIELD_GOLD]执政甲骑[ENDCOLOR]在★[COLOR_CYAN]靖抚甲骑[ENDCOLOR]的基础上额外获得以下能力：
-				[NEWLINE][ICON_BULLET]每击杀一支敌方部队或对一支敌方部队造成30以上的伤害，则为己方所有城市带来一回合的“我们爱国王日”。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_ELITE_HELP">
+			<Text>
+				[COLOR_YIELD_GOLD]贝利撒留甲骑兵[ENDCOLOR]是★[COLOR_CYAN]靖抚甲骑[ENDCOLOR]精英化改造后形成的近卫军团，需要完成[COLOR_YIELD_GOLD]查士丁尼西征计划[ENDCOLOR]。
+				[NEWLINE][COLOR_YIELD_GOLD]贝利撒留甲骑兵[ENDCOLOR]在★[COLOR_CYAN]靖抚甲骑[ENDCOLOR]的基础上额外获得以下能力：
+				[NEWLINE][ICON_BULLET]每击杀一支敌方部队或对一支敌方部队造成40以上的伤害，则为己方所有城市带来一回合的“我们爱国王日”。
 				[NEWLINE][ICON_BULLET]无视ZOC，无视地形移动损耗，回合结束时2格内每个敌方单位提供2移动力。
-				[NEWLINE][ICON_BULLET]每次发动攻击后获得5%的战斗力加成（最高100%），遭受攻击后清零。
+				[NEWLINE][ICON_BULLET]每次发动攻击后获得20%的战斗力加成（最高500%），遭受攻击后减半（小于20%则直接清零）。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_BUCELLARII_GUARD_TEXT">
@@ -1152,7 +1455,7 @@
 			<Text>
 				[NEWLINE][ICON_BULLET]位于非敌方城邦境内时可以征召∏[COLOR_CYAN]拜占庭喷火兵[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]位于岸边时可以建造∏[COLOR_CYAN]海洋之火[ENDCOLOR]。
-				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
+				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+50%。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_ELITE">
@@ -1160,9 +1463,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_ELITE_HELP">
 			<Text>
-				[NEWLINE][ICON_BULLET]每击杀一支敌方部队或对一支敌方部队造成30以上的伤害，则为己方所有城市带来一回合的“我们爱国王日”。
+				[NEWLINE][ICON_BULLET]每击杀一支敌方部队或对一支敌方部队造成40以上的伤害，则为己方所有城市带来2回合的“我们爱国王日”。
 				[NEWLINE][ICON_BULLET]无视ZOC，无视地形移动损耗，回合结束时2格内每个敌方单位提供2移动力。
-				[NEWLINE][ICON_BULLET]每次发动攻击后获得5%的战斗力加成（最高100%），遭受攻击后清零。
+				[NEWLINE][ICON_BULLET]每次发动攻击后获得5%的战斗力加成（最高300%），遭受攻击后清零。
 			</Text>
 		</Row>
 
@@ -1188,13 +1491,16 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_FIRE_THROWER_HELP">
 			<Text>
 				∏[COLOR_CYAN]拜占庭喷火兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重步兵辅助单位，死亡时不会造成人口损失。
-				[NEWLINE][ICON_BULLET]防御时+60%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]能够为攻击单元格2格内的敌方单位带来[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]状态（对拥有人造意志的单位无效），处于[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]状态的单位每回合减少25血量。
+				[NEWLINE][ICON_BULLET]防御时+60%[ICON_STRENGTH]战斗力，发起进攻时对重步兵和重骑兵+40%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]1格以内的单位将拥有持续2回合的[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]效果，1格以外的单位将拥有持续1回合的[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]效果。
+				[NEWLINE][ICON_BULLET]回合结束时拥有2回合[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]效果的单位会向无[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]状态的同领域己方单位传递1回合的[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]效果。
 				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_FIRE_THROWER_TEXT">
 			<Text>
-				在十二世纪上半叶塞尔维亚人曾经提供给帝国300骑兵用于小亚细亚的作战，随着塞尔维亚人1150年败于曼努埃尔一世，这支部队人数增加到亚洲500人，欧洲2000人。其他部队则源于约翰二世12世纪20年代安置在安纳托利亚的塞尔维亚战俘。   甚至在塞尔维亚脱离帝国后，塞尔维亚佣兵或仆从军团依然经常出现， 例如Pelagonia战役中米哈伊尔八世就有600或1000塞尔维亚人。 塞尔维亚提供的同盟仆从军团（尽管实际上不一定都是塞尔维亚人）  在14世纪上半叶，规模和重要性都在不断增加。  例如Stefan Urosh二世1312年借给米哈伊尔九世2000库曼骑兵，而1342—1343年， 约翰六世则得到德国佣兵的支援。塞尔维亚人最后一次在拜占庭人指挥下作战的记录出现于1352年，约翰五世的4000塞尔维亚骑兵。 
+				希腊火（希腊语：Υγρό Πυρ）是东罗马帝国所发明的一种可以在水上或水里燃烧的液态燃烧剂，主要应用于海战中，“希腊火”、“希腊火药”或“罗马火”只是阿拉伯人对这种恐怖武器的称呼，拜占庭人自己则称之为“海洋之火”、“流动之火”、“液体火焰”、“人造之火”和“防备之火”等等。根据文献记载，希腊火多次为东罗马帝国的军事胜利作出颇大的贡献，一些学者和历史学家认为它是东罗马帝国能持续千年之久的原因之一，希腊火的配方现已失传，成份仍是一个谜团，而据当时受希腊火所伤的十字军所记述：“每当敌人用希腊火攻击我们，所做的事只有屈膝下跪，祈求上天的拯救。”那段引文足以说明希腊火的威力。
 			</Text>
 		</Row>
 
@@ -1202,7 +1508,7 @@
 			<Text>希腊火喷射器</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRE_THROWER_HELP">
-			<Text>防御时+60%[ICON_STRENGTH]战斗力。</Text>
+			<Text>防御时+60%[ICON_STRENGTH]战斗力，发起进攻时对重步兵和重骑兵+40%[ICON_STRENGTH]战斗力，能够为攻击单元格2格内的敌方单位带来[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]状态（对拥有人造意志的单位无效）。</Text>
 		</Row>
 		<!-- **********************海洋之火*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_OCEAN_FIRE">
@@ -1211,7 +1517,9 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_OCEAN_FIRE_HELP">
 			<Text>
 				∏[COLOR_CYAN]海洋之火[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古海军近战辅助单位。
-				[NEWLINE][ICON_BULLET]+1攻击次数，能够为攻击单元格2格内的敌方单位带来减益。
+				[NEWLINE][ICON_BULLET]+1攻击次数，能够为攻击单元格2格内的敌方单位带来[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]状态（对拥有人造意志的单位无效），处于[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]状态的单位每回合减少25血量。
+				[NEWLINE][ICON_BULLET]1格以内的单位将拥有持续2回合的[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]效果，1格以外的单位将拥有持续1回合的[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]效果。
+				[NEWLINE][ICON_BULLET]回合结束时拥有2回合[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]效果的单位会向无[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]状态的同领域己方单位传递1回合的[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]效果。
 				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
 			</Text>
 		</Row>
@@ -1222,10 +1530,29 @@
 		</Row>
 		
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE">
-			<Text>罗马火</Text>
+			<Text>守备之火</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_HELP">
-			<Text>+1攻击次数，为攻击单元格2格内的敌方单位带来减益。</Text>
+			<Text>+1攻击次数，能够为攻击单元格2格内的敌方单位带来[COLOR_NEGATIVE_TEXT]希腊火灼烧[ENDCOLOR]状态（对拥有人造意志的单位无效）。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_02">
+			<Text>[COLOR_NEGATIVE_TEXT]希腊火灼烧(2)[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_02_HELP">
+			<Text>
+				[COLOR_NEGATIVE_TEXT]灼烧状态，剩余2回合。[ENDCOLOR]
+				[NEWLINE]在友方区域外停留会对该单位造成[COLOR_NEGATIVE_TEXT]35点伤害[ENDCOLOR]
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_01">
+			<Text>[COLOR_NEGATIVE_TEXT]希腊火灼烧(1)[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_01_HELP">
+			<Text>
+				[COLOR_NEGATIVE_TEXT]灼烧状态，剩余1回合。[ENDCOLOR]
+				[NEWLINE]在友方区域外停留会对该单位造成[COLOR_NEGATIVE_TEXT]25点伤害[ENDCOLOR]
+			</Text>
 		</Row>
 
 		<!-- **********************宝船旗舰*********************** -->
@@ -1342,6 +1669,8 @@
 		<Row Tag="TXT_KEY_PATH_AUGUSTUS_HELP">
 			<Text>
 				选择[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]将使您能够建造古典时期的统帅和辅助单位。
+				[NEWLINE][NEWLINE]
+				[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]中的单位拥有独特晋升[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]，当位于城邦境时，+50%[ICON_STRENGTH]战斗力，每回合与该城邦增加1点关系，随时代增加。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PATH_BASELIUS_CAP">
@@ -1349,7 +1678,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_PATH_BASELIUS_HELP">
 			<Text>
-				选择[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]将使您能够建造中古时期的统帅和辅助单位，并解锁特殊项目：查士丁尼西征计划。
+				选择[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]将使您能够建造中古时期的统帅和辅助单位，并解锁特殊项目：[COLOR_YIELD_GOLD]查士丁尼西征计划[ENDCOLOR]。
+				[NEWLINE][NEWLINE]
+				[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]中的单位拥有独特晋升[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]，单位诞生时额外获得相当于盟友城邦人口总数的经验值，每个盟友城邦带来15%防御加成（不超过60%）。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PATH_EMPEROR_CAP">
@@ -1359,6 +1690,8 @@
 		<Row Tag="TXT_KEY_PATH_EMPEROR_HELP">
 			<Text>
 				选择[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]将使您能够建造启蒙时期的统帅和辅助单位。
+				[NEWLINE][NEWLINE]
+				[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]中的单位拥有独特晋升[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]，获得力量投射能力，以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格一格内友方单位回复相当于城邦盟友数量的血量和2移动力，精英单位可额外回复全部攻击次数。
 			</Text>
 		</Row>
 
@@ -1366,11 +1699,63 @@
 			<Text>确定</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SPUE_PATRONAGE_SELECT_OK_TOOLTIP">
-			<Text>点击以获得选取[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]辅助单位的建造能力</Text>
+			<Text>点击以获得选取[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]统帅和辅助单位的建造能力</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_CONFIRM_PATH">
 			<Text>你确定要采用此项谋略吗？</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_AUGUSTUS">
+			<Text>奥古斯都之路</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_AUGUSTUS_HELP">
+			<Text>当位于城邦境时，+50%[ICON_STRENGTH]战斗力，每回合与该城邦增加1点关系，随时代增加。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_AUGUSTUS_COMBAT">
+			<Text>奥古斯都之剑</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_AUGUSTUS_COMBAT_HELP">
+			<Text>+50%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS">
+			<Text>巴西琉斯之道</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_HELP">
+			<Text>单位诞生时额外获得相当于盟友城邦人口总数的经验值，每个盟友城邦带来15%防御加成（不超过60%）。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1">
+			<Text>巴西琉斯之盾(1)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE2">
+			<Text>巴西琉斯之盾(2)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE3">
+			<Text>巴西琉斯之盾(3)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE4">
+			<Text>巴西琉斯之盾(4)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1_HELP">
+			<Text>防御时+15%[ICON_STRENGTH]战斗力</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_EMPEROR">
+			<Text>神州天子之权</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_EMPEROR_HELP">
+			<Text>获得力量投射能力，以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格一格内友方单位回复相当于城邦盟友数量的血量和2移动力，精英单位可额外回复全部攻击次数。</Text>
+		</Row>
+
+		<Row Tag='TXT_KEY_TITLE_SPUE_EMPEROR'>
+			<Text>力量投射</Text>
+		</Row>
+		<Row Tag='TXT_KEY_COND_SPUE_EMPEROR'>
+			<Text>
+			以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格（绿色标记）一格内的友方单位回复相当于城邦盟友数量的血量和2移动力，精英单位可额外回复全部攻击次数。
+			</Text>
 		</Row>
 	</Language_en_US>
 </GameData>

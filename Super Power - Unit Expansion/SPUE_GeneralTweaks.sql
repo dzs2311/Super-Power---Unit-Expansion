@@ -34,7 +34,7 @@ UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'EVENTS_BATTLES_CUSTOM_DAMAG
 UPDATE CustomModOptions SET Value = 1 	Where Name = 'EVENTS_PLAYER_TURN';				-- 开启玩家结束回合事件
 UPDATE CustomModOptions SET Value = 1 	Where Name = 'EVENTS_UNIT_DO_TURN';				-- 开启单位过回合事件
 UPDATE CustomModOptions SET Value = 1 	Where Name = 'EVENTS_UNIT_ACTIONS';				-- 开启单位劫掠事件
-
+UPDATE CustomModOptions SET Value = 1 	Where Name = 'GLOBAL_EXCLUDE_FROM_GIFTS';		-- 开启城邦赠送豁免
 
 -- UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_1UPT';			-- No More Civilian Traffic Jams
 -- UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_RESTRICTIONS';	-- No More Civilian Traffic Jams

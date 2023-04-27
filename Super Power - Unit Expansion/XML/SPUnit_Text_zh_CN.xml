@@ -343,7 +343,7 @@
 			<Text>
 				[COLOR_CYAN]王城骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]自主政策[ENDCOLOR]的代表性单位，自带军团晋升，且拥有以下能力。
 				[NEWLINE][ICON_BULLET]拥有超过300点经验后可选晋升[COLOR_POSITIVE_TEXT]王国冠军[ENDCOLOR]：获得15点减伤，杀敌时为首都提供相当于(基础[ICON_STRENGTH]战斗力*单位等级)的[ICON_GREAT_WRITER]大文学家点数和[ICON_GREAT_SCIENTIST]大科学家点数。
-				[NEWLINE][ICON_BULLET]兵士集结：可以召集各个城市的采邑骑士（只能召集一次,且总数不超过20）。
+				[NEWLINE][ICON_BULLET]兵士集结：可以召集各个城市的采邑骑士（只能召集一次,且总数不超过6）。
 				[NEWLINE][ICON_BULLET]移民安置：杀敌时根据敌军战斗力积攒粮食点数，积攒足够点数时获得移民且粮食点数清零，点数要求随时代和战斗力增长。
 				[NEWLINE][ICON_BULLET]诗歌传唱：杀敌获得150%的文化点数，晋升时获得一个大文学家。
 			</Text>
@@ -1234,7 +1234,7 @@
 			<Text>[COLOR_CYAN]南洋海盗船[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_SSPRIVATEER_HELP">
-			<Text>[COLOR_CYAN]南洋海盗船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，诞生时附赠一支[COLOR_CYAN]铁人军[ENDCOLOR]（不能超过其上限数量：4），优秀的海军近战单位，拥有两格射程，发生近战时有50%的几率撤退，赢得战斗时有概率俘获敌军，可以远程攻击敌方地块并为自己回复25血量，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+			<Text>[COLOR_CYAN]南洋海盗船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，诞生时附赠一支[COLOR_CYAN]铁人军[ENDCOLOR]（不能超过其上限数量：4），优秀的海军近战单位，拥有两格射程，发生近战时有50%的几率撤退，赢得战斗时有概率俘获敌军，可以远程攻击敌方地块掠获100[ICON_GOLD]金币并为自己回复25血量，购买后可以立即移动，死亡时不会造成人口损失。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_SSPRIVATEER_TEXT">
 			<Text>
@@ -1424,9 +1424,10 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP">
 			<Text>
 				★[COLOR_CYAN]靖抚甲骑[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的中古陆军重骑兵统帅单位，可以远程和近战攻击的双重重骑兵。
-				[NEWLINE][ICON_BULLET]位于城邦境内时可以征召∏[COLOR_CYAN]拜占庭喷火兵[ENDCOLOR]。
-				[NEWLINE][ICON_BULLET]位于岸边时可以建造[COLOR_CYAN]海洋之火[ENDCOLOR]。
-				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+100%。
+				[NEWLINE][ICON_BULLET]位于城邦境内时可以征召∏[COLOR_CYAN]拜占庭喷火兵[ENDCOLOR]；
+				[NEWLINE][ICON_BULLET]位于岸边时可以建造∏[COLOR_CYAN]海洋之火[ENDCOLOR]；
+				[NEWLINE][ICON_BULLET]每远离首都1格+2%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+50%；
 				[NEWLINE][ICON_BULLET]只有选择了巴西琉斯之道才可以招募此单位。
 				[NEWLINE]
 				[NEWLINE]完成[COLOR_YIELD_GOLD]查士丁尼西征计划[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]贝利撒留甲骑兵[ENDCOLOR]。
@@ -1453,8 +1454,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_BUCELLARII_GUARD_HELP">
 			<Text>
-				[NEWLINE][ICON_BULLET]位于非敌方城邦境内时可以征召∏[COLOR_CYAN]拜占庭喷火兵[ENDCOLOR]。
-				[NEWLINE][ICON_BULLET]位于岸边时可以建造∏[COLOR_CYAN]海洋之火[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]位于非敌方城邦境内时可以征召∏[COLOR_CYAN]拜占庭喷火兵[ENDCOLOR]；
+				[NEWLINE][ICON_BULLET]位于岸边时可以建造∏[COLOR_CYAN]海洋之火[ENDCOLOR]；
+				[NEWLINE][ICON_BULLET]每远离首都1格+2%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]荒漠地形移动力翻倍，夹击加成+50%。
 			</Text>
 		</Row>
@@ -1465,7 +1467,7 @@
 			<Text>
 				[NEWLINE][ICON_BULLET]每击杀一支敌方部队或对一支敌方部队造成40以上的伤害，则为己方所有城市带来2回合的“我们爱国王日”。
 				[NEWLINE][ICON_BULLET]无视ZOC，无视地形移动损耗，回合结束时2格内每个敌方单位提供2移动力。
-				[NEWLINE][ICON_BULLET]每次发动攻击后获得5%的战斗力加成（最高300%），遭受攻击后清零。
+				[NEWLINE][ICON_BULLET]每次发动攻击后获得5%的战斗力加成（最高500%），遭受攻击后清零。
 			</Text>
 		</Row>
 

@@ -85,8 +85,8 @@
 			<Help>TXT_KEY_PROMOTION_SPUE_IRONCLAD_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PortraitIndex>41</PortraitIndex>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
-			<PediaType>promoVP_atlas_00</PediaType>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_IRONCLAD</PediaEntry>
 			<LostWithUpgrade>true</LostWithUpgrade>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -902,6 +902,8 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<FlankAttackModifier>500</FlankAttackModifier>
+			<CapitalDefenseModifier>2</CapitalDefenseModifier>
+			<CapitalDefenseFalloff>1</CapitalDefenseFalloff>
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<PortraitIndex>60</PortraitIndex>
 			<IconAtlas>promoVP_atlas_00</IconAtlas>
@@ -1374,6 +1376,102 @@
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_AUTOCRACY_PANZERG_EFFECT</PediaEntry>
 		</Row>
+		<!--*********************************UU*********************************-->
+		<Row>
+			<!--明光甲骑：六花长驱-->
+			<Type>PROMOTION_SPUE_CHINA_IRON_CAVALRY</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_CHINA_IRON_CAVALRY</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_CHINA_IRON_CAVALRY_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PortraitIndex>14</PortraitIndex>
+			<IgnoreZOC>true</IgnoreZOC>
+			<AttackMod>25</AttackMod>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_CHINA_IRON_CAVALRY</PediaEntry>
+		</Row>
+		<Row>
+			<!--康涅狄格级战列舰：大白舰队-->
+			<Type>PROMOTION_SPUE_AMERICA_CONNECTICUT</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_AMERICA_CONNECTICUT</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_AMERICA_CONNECTICUT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PortraitIndex>53</PortraitIndex>
+			<IgnoreZOC>true</IgnoreZOC>
+			<RivalTerritory>true</RivalTerritory>
+			<IconAtlas>promoVP_atlas_02</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_AMERICA_CONNECTICUT</PediaEntry>
+		</Row>
+
+		<Row>
+			<!--谢苗诺夫斯基近卫步兵：刺刀是好汉，子弹是笨蛋-->
+			<Type>PROMOTION_SPUE_RUSSIA_SEMYONOVSKY_REGIMENT</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_RUSSIA_SEMYONOVSKY_REGIMENT</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_RUSSIA_SEMYONOVSKY_REGIMENT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<ExtraWithdrawal>30</ExtraWithdrawal>
+			<AttackMod>35</AttackMod>
+			<RangedSupportFireMod>-25</RangedSupportFireMod>
+			<PortraitIndex>55</PortraitIndex>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_RUSSIA_SEMYONOVSKY_REGIMENT</PediaEntry>
+		</Row>
+		<Row>
+			<!--北方轻骑兵：砍翻他们！-->
+			<Type>PROMOTION_SPUE_SWEDISH_HAKKAPELIITTA</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_SWEDISH_HAKKAPELIITTA</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_SWEDISH_HAKKAPELIITTA_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<RangedSupportFire>true</RangedSupportFire>
+			<GreatGeneralReceivesMovement>true</GreatGeneralReceivesMovement>
+			<GreatGeneralCombatModifier>30</GreatGeneralCombatModifier>
+			<PortraitIndex>32</PortraitIndex>
+			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_SWEDISH_HAKKAPELIITTA</PediaEntry>
+		</Row>
+		<Row>
+			<!--海猎犬：皇家私掠舰-->
+			<Type>PROMOTION_SPUE_ENGLAND_GRAND_CARRACK</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_ENGLAND_GRAND_CARRACK</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_ENGLAND_GRAND_CARRACK_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<ExperiencePercent>30</ExperiencePercent>
+			<HealOutsideFriendly>1</HealOutsideFriendly>
+			<Invisible>INVISIBLE_SUBMARINE</Invisible>
+			<SeeInvisible>INVISIBLE_SUBMARINE</SeeInvisible>
+			<PortraitIndex>30</PortraitIndex>
+			<IconAtlas>promoVP_atlas_02</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_ENGLAND_GRAND_CARRACK</PediaEntry>
+		</Row>
+		<Row>
+			<!--帝国卫队：法兰西的皇冠-->
+			<Type>PROMOTION_SPUE_FRANCE_IMPERIAL_GUARD</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_FRANCE_IMPERIAL_GUARD</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_FRANCE_IMPERIAL_GUARD_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<IgnoreZOC>true</IgnoreZOC>
+			<MovesChange>1</MovesChange>
+			<MoveUsedAttackMod>10</MoveUsedAttackMod>
+			<NearbyEnemyCombatMod>-25</NearbyEnemyCombatMod>
+			<NearbyEnemyCombatRange>1</NearbyEnemyCombatRange>
+			<GreatGeneralModifier>100</GreatGeneralModifier>
+			<GreatGeneralCombatModifier>30</GreatGeneralCombatModifier>
+			<PortraitIndex>36</PortraitIndex>
+			<IconAtlas>promoVP_atlas_03</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_FRANCE_IMPERIAL_GUARD</PediaEntry>
+		</Row>
+
 	</UnitPromotions>
 
 	<UnitPromotions_UnitCombats>

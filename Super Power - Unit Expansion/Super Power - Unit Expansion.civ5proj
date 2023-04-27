@@ -95,7 +95,17 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>SQL/SPUnit_UnitsUpdate_Unique.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>SQL/SPUnit_Improvements_ArtDefines.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>SQL/TNL - New Promotions Font Icons.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -141,6 +151,16 @@
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
         <FileName>XML/SPIdeo_Text_zh_CN.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>XML/SPUnit_UU_Text_en_US.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>XML/SPUnit_UU_Text_zh_CN.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
@@ -221,16 +241,33 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Art\Flags\German" />
+    <Folder Include="Art\Flags\Anerica" />
+    <Folder Include="Art\Flags\China" />
+    <Folder Include="Art\Flags\Japan" />
+    <Folder Include="Art\Flags\England" />
+    <Folder Include="Art\Flags\France" />
+    <Folder Include="Art\Flags\Russia" />
     <Folder Include="Art\Flags\Persia" />
     <Folder Include="Art\Flags\Ottomans" />
+    <Folder Include="Art\FontIcons\" />
     <Folder Include="Art\IconAtlas" />
     <Folder Include="Art\Flags" />
+    <Folder Include="Art\IconAtlas\America" />
+    <Folder Include="Art\IconAtlas\China" />
+    <Folder Include="Art\IconAtlas\Japan" />
+    <Folder Include="Art\IconAtlas\Russia" />
     <Folder Include="Art\IconAtlas\Ottomans" />
     <Folder Include="Art\Improvements" />
     <Folder Include="Art\Improvements\RomanEmpire_CityCenter_Icon" />
     <Folder Include="Art\Improvements\RomanEmpire_CityCenter" />
     <Folder Include="Art\SV" />
     <Folder Include="Art\SV\German" />
+    <Folder Include="Art\SV\America" />
+    <Folder Include="Art\SV\China" />
+    <Folder Include="Art\SV\Japan" />
+    <Folder Include="Art\SV\England" />
+    <Folder Include="Art\SV\France" />
+    <Folder Include="Art\SV\Russia" />
     <Folder Include="Art\SV\Persia" />
     <Folder Include="Art\SV\Ottomans" />
     <Folder Include="Art\Units" />
@@ -332,8 +369,6 @@
     <Folder Include="Art\Units\Policy\06-Commerce\Fune" />
     <Folder Include="Art\Units\Policy\06-Commerce\ELMETI" />
     <Folder Include="Art\Units\Policy\06-Commerce\Hessian\" />
-    <Folder Include="Art\Units\Policy\06-Commerce\Japan" />
-    <Folder Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\" />
     <Folder Include="Art\Units\Policy\07-Exploration\fire_ship\" />
     <Folder Include="Art\Units\Policy\09-Freedom\HeliCarrier" />
     <Folder Include="Art\Units\Policy\09-Freedom\cgn9" />
@@ -392,14 +427,25 @@
     <Folder Include="Art\Units\Policy\10-Order\055_VLS" />
     <Folder Include="Art\Units\Policy\10-Order\super_055_VLS" />
     <Folder Include="Art\Units\Policy\11-Autocracy" />
+    <Folder Include="Art\Units\Unique\America\Connecticut\" />
+    <Folder Include="Art\Units\Unique\China\IronCavalry\" />
     <Folder Include="Art\Units\Unique\Denmark\Absalon" />
+    <Folder Include="Art\Units\Unique\England\Grand Carrack\" />
     <Folder Include="Art\Units\Unique\France\Mistral\" />
+    <Folder Include="Art\Units\Unique\France\ImperialGuard" />
     <Folder Include="Art\Units\Unique\German" />
     <Folder Include="Art\Units\Unique\France" />
     <Folder Include="Art\Units\Unique\Denmark" />
+    <Folder Include="Art\Units\Unique\America" />
+    <Folder Include="Art\Units\Unique\China" />
+    <Folder Include="Art\Units\Unique\Japan" />
+    <Folder Include="Art\Units\Unique\Japan\tekkousen\" />
+    <Folder Include="Art\Units\Unique\England" />
+    <Folder Include="Art\Units\Unique\Russia" />
     <Folder Include="Art\Units\Unique\Persia" />
     <Folder Include="Art\Units\Unique\Ottomans" />
     <Folder Include="Art\Units\Unique\Persia\Qizilbash\" />
+    <Folder Include="Art\Units\Unique\Russia\Semyonovsky\" />
     <Folder Include="LUA" />
     <Folder Include="Art" />
     <Folder Include="CombatPercentBonus" />
@@ -411,6 +457,18 @@
     <Folder Include="SQL" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Art\Flags\Anerica\JFD_ConnecticutUnitFlag_32.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\China\VP_IronCavalry_032.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\England\UnitFlagGrandCarrackAtlas_32.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Flags\Flag_SPUE_Elmeti.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -439,7 +497,15 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Flags\France\JFD_ImperialGuardUnitFlag_32.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Flags\German\SPUE_Doppelsoldner_32.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\Japan\Flag_tekkousen.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -448,6 +514,10 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Flags\Persia\QizilbashFlag_032.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\Russia\JFD_RussiaAlexanderI_UnitFlagAtlas_32.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -679,6 +749,134 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\FontIcons\FontIcons_CPM.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_CPM.ggxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_ExtraPromo.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_ExtraPromo.ggxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_Fireship.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_Fireship.ggxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_promoVP_00.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_promoVP_00.ggxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_promoVP_01.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_promoVP_01.ggxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_promoVP_02.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_promoVP_02.ggxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_promoVP_03.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_promoVP_03.ggxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_Scarlet.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_Scarlet.ggxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_tempVPPI.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_tempVPPI.ggxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_YfsSea.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\FontIcons\FontIcons_YfsSea.ggxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\America\SPUE_USA_UU_Atlas_032.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\America\SPUE_USA_UU_Atlas_045.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\America\SPUE_USA_UU_Atlas_064.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\America\SPUE_USA_UU_Atlas_080.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\America\SPUE_USA_UU_Atlas_128.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\America\SPUE_USA_UU_Atlas_256.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\China\SPUE_China_Extra_IconAtlas032.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\China\SPUE_China_Extra_IconAtlas045.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\China\SPUE_China_Extra_IconAtlas064.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\China\SPUE_China_Extra_IconAtlas080.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\China\SPUE_China_Extra_IconAtlas128.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\China\SPUE_China_Extra_IconAtlas256.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\IconAtlas\eaw_PI_016.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -720,6 +918,30 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\IconAtlas\IconAtlas045_GAIA.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Japan\SPUE_Japan_IconAtlas032.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Japan\SPUE_Japan_IconAtlas045.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Japan\SPUE_Japan_IconAtlas064.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Japan\SPUE_Japan_IconAtlas080.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Japan\SPUE_Japan_IconAtlas128.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Japan\SPUE_Japan_IconAtlas256.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -824,6 +1046,30 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\IconAtlas\promoVP_03_256.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Russia\SPUE_RussiaUU_IconAtlas_032.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Russia\SPUE_RussiaUU_IconAtlas_045.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Russia\SPUE_RussiaUU_IconAtlas_064.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Russia\SPUE_RussiaUU_IconAtlas_080.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Russia\SPUE_RussiaUU_IconAtlas_128.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\IconAtlas\Russia\SPUE_RussiaUU_IconAtlas_256.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -983,7 +1229,27 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\SV\America\sv_Connecticut.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\China\SV_VP_IronCavalry.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\England\sv_GrandCarrack.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\France\sv_ImperialGuard.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\SV\German\sv_Doppelsoldner.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\Japan\SV_tekkousen.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -992,6 +1258,10 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\SV\Persia\QizilbashFlag_128.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\Russia\sv_LeibGuard.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -3919,30 +4189,6 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\Longswordsman_Japan.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\Longswordsman_Japan.fxsxml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\Longswordsman_Japan.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\Longswordsman_Japan_gloss.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\Longswordsman_Japan_v2.fxsxml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\Longswordsman_Japan\Longswordsman_Japan_v2.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
     <Content Include="Art\Units\Policy\06-Commerce\SouthChinaSeaPrivateer\asian_private.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -4399,6 +4645,94 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Units\Unique\America\Connecticut\Connecticut_BB.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\America\Connecticut\Connecticut_BB.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\America\Connecticut\Connecticut_BB_diff.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\America\Connecticut\Connecticut_BB_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\0.warhorse_beiwei_b.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\0.warhorse_beiwei_b_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\1.charger_iron_cavalry.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\2.szj_armor.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\2.szj_armor_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\3.szj_cloth.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\4.sg_swordb.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\4.sg_swordb_spec.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\5.szj_hand.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\5.szj_hand_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\6.szj_helmet.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\6.szj_helmet_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\7.Halberdier_China.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\7.Halberdier_China_gloss.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\8.szj_pibo.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\8.szj_pibo_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\China_IronCavalry.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\China\IronCavalry\China_IronCavalry.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Units\Unique\Denmark\Absalon\Absalon_VLS_FWD.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -4408,6 +4742,42 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\Unique\Denmark\Absalon\Absalon_VLS_FWD.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\England\Grand Carrack\u_british_carrack.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\England\Grand Carrack\u_british_carrack.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\England\Grand Carrack\u_grand_carrack_damg_diff.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\England\Grand Carrack\u_grand_carrack_diff.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\England\Grand Carrack\u_grand_carrack_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\France\ImperialGuard\civ5_fremm1.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\France\ImperialGuard\civ5_fremm1.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\France\ImperialGuard\fremm1.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\France\ImperialGuard\fremm1_sref.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -4436,6 +4806,22 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\Unique\German\Tiger_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Japan\tekkousen\aoe3de_tekkousen.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Japan\tekkousen\aoe3de_tekkousen.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Japan\tekkousen\tekkousen_mata_basecolor.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Japan\tekkousen\tekkousen_mata_gloss.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -4476,6 +4862,22 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\Unique\Persia\Qizilbash\Qizilbash_Rider_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Russia\Semyonovsky\civ5_rusmm2.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Russia\Semyonovsky\civ5_rusmm2.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Russia\Semyonovsky\rusmm2.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Russia\Semyonovsky\rusmm2_sref.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -4599,6 +5001,14 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
+    <Content Include="SQL\SPUnit_UnitsUpdate_Unique.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="SQL\TNL - New Promotions Font Icons.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
     <Content Include="UI\Art\UI_AUGUSTUS.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -4680,6 +5090,14 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="XML\SPUnit_Text_zh_CN.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="XML\SPUnit_UU_Text_en_US.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="XML\SPUnit_UU_Text_zh_CN.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>

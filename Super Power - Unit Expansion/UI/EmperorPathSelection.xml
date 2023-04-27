@@ -53,12 +53,12 @@
 							<Image ID="PortraitAugustus0" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>
 					</Button>
-					<Button ID="IconButtonAugustus1" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_VASSAL_BOWMAN_HELP">
+					<Button ID="IconButtonAugustus1" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_SOCII_HASTATI_HELP">
 						<Image ID="PortraitFrameAugustus1" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
 							<Image ID="PortraitAugustus1" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>
 					</Button>
-					<Button ID="IconButtonAugustus2" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_SOCII_HASTATI_HELP">
+					<Button ID="IconButtonAugustus2" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_VASSAL_BOWMAN_HELP">
 						<Image ID="PortraitFrameAugustus2" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
 							<Image ID="PortraitAugustus2" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>
@@ -91,17 +91,17 @@
 				<!-- 从左向右排布 -->
 				<Stack Anchor="C,T" Offset="0, 120" StackGrowth="Right" Padding="6">
 					<!-- 单位头像按钮 -->
-					<Button ID="IconButtonBaselius0" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_FIRE_THROWER_HELP">
+					<Button ID="IconButtonBaselius0" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP">
 						<Image ID="PortraitFrameBaselius0" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
 							<Image ID="PortraitBaselius0" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>
 					</Button>
-					<Button ID="IconButtonBaselius1" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_HELP">
+					<Button ID="IconButtonBaselius1" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_OCEAN_FIRE_HELP">
 						<Image ID="PortraitFrameBaselius1" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
 							<Image ID="PortraitBaselius1" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>
 					</Button>
-					<Button ID="IconButtonBaselius2" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_VASSAL_ALAN_CAVALRY_HELP">
+					<Button ID="IconButtonBaselius2" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_FIRE_THROWER_HELP">
 						<Image ID="PortraitFrameBaselius2" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
 							<Image ID="PortraitBaselius2" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>

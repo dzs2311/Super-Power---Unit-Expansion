@@ -8,8 +8,8 @@ include("UtilityFunctions");
 --=======================================================================================================================
 -- MOD CHECKS
 --------------------------------------------------------------------------------------------------------------------------
--- JFD_IsUsingCPDLL
-function JFD_IsUsingCPDLL()
+-- SPUE_IsUsingCPDLL
+function SPUE_IsUsingCPDLL()
 	local cPDLLModID = "d1b6328c-ff44-4b0d-aad7-c657f83610cd"
 	for _, mod in pairs(Modding.GetActivatedMods()) do
 		if (mod.ID == cPDLLModID) then
@@ -17,19 +17,19 @@ function JFD_IsUsingCPDLL()
 		end
 	end
 end
-local isUsingCPDLL = JFD_IsUsingCPDLL()
+local isUsingCPDLL = SPUE_IsUsingCPDLL()
 --=======================================================================================================================
 -- UTILITIES
 --=======================================================================================================================
 -- GENERAL
 --------------------------------------------------------------------------------------------------------------------------
--- JFD_GetRandom
-function JFD_GetRandom(lower, upper)
+-- SPUE_GetRandom
+function SPUE_GetRandom(lower, upper)
     return Game.Rand((upper + 1) - lower, "") + lower
 end
 
--- JFD_GetUniqueUnit
-function JFD_GetUniqueUnit(player, unitClass)
+-- SPUE_GetUniqueUnit
+function SPUE_GetUniqueUnit(player, unitClass)
 	-- if isUsingCPDLL then
 	-- 	return player:GetSpecificUnitType(unitClass)
 	-- end
@@ -45,8 +45,8 @@ function JFD_GetUniqueUnit(player, unitClass)
 	return unitType
 end
 
--- JFD_SendNotification
-function JFD_SendNotification(playerID, notificationType, description, descriptionShort, global, data1, data2, unitID, data3, metOnly, includesSerialMessage)
+-- SPUE_SendNotification
+function SPUE_SendNotification(playerID, notificationType, description, descriptionShort, global, data1, data2, unitID, data3, metOnly, includesSerialMessage)
 	local player = Players[playerID]
 	local data1 = data1 or -1
 	local data2 = data2 or -1
@@ -81,8 +81,8 @@ function JFD_SendNotification(playerID, notificationType, description, descripti
 	end
 end   
 
---JFD_IsInCityStateBorders
-function JFD_IsInCityStateBorders(unit)
+--SPUE_IsInCityStateBorders
+function SPUE_IsInCityStateBorders(unit)
 	local plot = unit:GetPlot();
 	if plot:GetOwner() > -1 then
 		return Players[plot:GetOwner()]:IsMinorCiv();

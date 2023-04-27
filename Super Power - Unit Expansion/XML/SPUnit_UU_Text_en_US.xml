@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2022/7/13 3:49:49 -->
+<GameData>
+	<Language_en_US>
+		<!--******************************特战单位*******************************-->
+		<Replace Tag="TXT_KEY_UNIT_FRENCH_MUSKETEER">
+			<Text>[COLOR_SELECTED_TEXT]狙击兵[ENDCOLOR]</Text>
+			<Plurality>2</Plurality>
+		</Replace>
+		<Row Tag="TXT_KEY_CIV5_SPUE_UNIT_FRENCH_MUSKETEER_TEXT">
+			<Text>
+				Bersaglieri部队一开始成立于19世纪的萨丁尼亚王国，作为一支高机动性的步枪兵部队，其主要任务就是负责在战场上侧袭敌军以破坏敌方阵形，因此士兵都得接受高度的体能及射击训练，也让他们拥有了Bersaglieri(神枪手)的称号。			
+			</Text>
+		</Row>
+	
+		<!--******************************西帕希骑兵*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_OTTOMAN_SIPAHI">
+			<Text>西帕希骑兵</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_OTTOMAN_SIPAHI_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]西帕希骑兵[ENDCOLOR]是奥斯曼的特色单位，替代[COLOR_POSITIVE_TEXT]枪骑兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]可以用[ICON_PEACE]信仰购买，对付敌方骑兵单位及其有效（列阵一级）。
+				[NEWLINE][ICON_BULLET]同时带有恐吓光环，能够削弱临近的敌军（侦察二级）。
+				[NEWLINE][ICON_BULLET]相比枪骑兵速度更快且视野更远（不可继承）。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_OTTOMAN_SIPAHI_TEXT">
+			<Text>
+				西帕希骑兵是奥斯曼帝国特有的一种枪骑兵。兴起于穆拉德一世统治时期（1362-1389），所有的西帕希骑兵都是从土耳其族的拥有土地的上层中挑选的。他们是最为积极和忠诚的战士，也是苏丹的个人护卫。西帕希骑兵同时也是苏丹亲兵（另一种奥斯曼特有兵种）最强的竞争者，苏丹亲兵则是从包含土耳其裔和非土耳其裔的士兵中选拔的。事实上当1826年苏丹亲兵部队发动叛乱失败后，西帕希骑兵在暴力解散苏丹亲兵的行动中提供了狂热的协助。			
+			</Text>
+		</Row>
+		<!--******************************奥斯曼重炮*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_OTTOMAN_GREAT_TURKISH_BOMBARD">
+			<Text>巴西利卡巨炮</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_OTTOMAN_GREAT_TURKISH_BOMBARD_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]巴西利卡巨炮[ENDCOLOR]是奥斯曼的特色单位，替代[COLOR_POSITIVE_TEXT]射石炮[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]对陆、海军单位和城市有着极高的伤害。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_OTTOMAN_GREAT_TURKISH_BOMBARD_TEXT">
+			<Text>
+				重型火炮是中世纪的大炮，由青铜或铁铸成，它配备的火石弹重达数百公斤。最有名的重型火炮就是曾击毁君士坦丁堡城墙的巴西利卡长方火炮 (Basilica)，它的炮管长达 8 米，需花上数小时来装填数百公斤的火药，及一颗重达 544 公斤的炮弹。由于炮身过大，必须分成两个部分来组装，据说这样的设计也是为了方便移动。事实证明，就算动用了 60 头牛和数百人的力量，从亚得里亚堡到君士坦丁堡的 193 公里路，照样得花费四十几天才能到达，平均每天只能移动 3 公里多的距离。			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_OTTOMAN_GREAT_TURKISH_BOMBARD">
+			<Text>Ceddin Deden</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_OTTOMAN_GREAT_TURKISH_BOMBARD_HELP">
+			<Text>对[COLOR_POSITIVE_TEXT]城市[ENDCOLOR]+150%[ICON_STRENGTH]战斗力，对[COLOR_POSITIVE_TEXT]陆军单位[ENDCOLOR]和[COLOR_POSITIVE_TEXT]海军单位[ENDCOLOR]+200%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		<!--******************************甲骑具装*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_CHINA_IRON_CAVALRY">
+			<Text>明光甲骑</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_CHINA_IRON_CAVALRY_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]明光甲骑[ENDCOLOR]是中国的特色单位，替代[COLOR_POSITIVE_TEXT]具装骑兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]可以用[ICON_PEACE]信仰购买，有1点额外[ICON_MOVES]移动力（不可继承），自带猎杀残敌与无视地形损耗晋升。
+				[NEWLINE][ICON_BULLET]无视ZOC，进攻时+25%[ICON_STRENGTH]战斗力，回合结束时2格内每有一个己方单位则回复+5血量，回合开始时2格内每有一个敌方单位则额外+1移动力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_CHINA_IRON_CAVALRY_TEXT">
+			<Text>
+				“甲骑具装”即人甲和马甲的合称,是古代重装骑兵的防护装具。《宋史·仪卫志》：“甲骑，人铠也；具装，马铠也。”中国南北朝时期标准的马铠，由六个部分组成：面帘；鸡颈；当胸；马身甲；搭后；寄生。“面帘”是一块狭长的金属制的护面，上面开有眼孔，主要保护马匹面部；“鸡颈”其实是一副马颈部的护甲，由甲片缀成，前面有搭扣可以扣上；当胸；马身甲；搭后，就是马匹中后的大片护甲；而寄生比较有特点，是一个放在马尾部的向上翘的扫帚一样的东西（应该是保护骑兵后背的）。此外还配备有马鞍和马镫、缰绳之类，十分精细。武士铠甲由两面铠改为明光铠，骑兵的格斗兵器也由戟改为长刃的马矛——槊。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_CHINA_IRON_CAVALRY">
+			<Text>六花长驱</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_CHINA_IRON_CAVALRY_HELP">
+			<Text>
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]无视ZOC，进攻时+25%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]回合结束时2格内每有一个己方单位则回复+5血量；
+				[NEWLINE][ICON_BULLET]回合开始时2格内每有一个敌方单位则额外+1移动力。
+			</Text>
+		</Row>
+		<!--******************************神策军*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_CHINA_SEHNCE">
+			<Text>神策军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_CHINA_SEHNCE_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]神策军[ENDCOLOR]是中国的特色单位，替代[COLOR_POSITIVE_TEXT]长剑士[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]自带首都加成晋升。
+				[NEWLINE][ICON_BULLET]首都城市生产的神策军为在城神策军（防御时+30%[ICON_STRENGTH]战斗力），非首都城市生产的神策军为外镇神策军（进攻时+15%[ICON_STRENGTH]战斗力，每临近一个同类单位则+15%[ICON_STRENGTH]战斗力）。
+				[NEWLINE][ICON_BULLET]回合开始时若外镇神策军数量大于等于2倍的在城神策军，则全部神策军获得晋升：天子护军（+15%[ICON_STRENGTH]战斗力，每在战斗中击杀一名敌军则为首都提供相当于其200%[ICON_STRENGTH]战斗力的产能[ICON_PRODUCTION]）。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_CHINA_SEHNCE_TEXT">
+			<Text>
+				神策军，是唐朝中后期中央北衙禁军的主力。原为西北的戍边军队，后进入京师成为唐王朝的最重要禁军，负责保卫京师和戍卫宫廷以及行征伐事，为唐廷直接控制的主要武装力量，是唐朝维持统治的最重要的军事支柱。从天宝十三载（公元754年）哥舒翰在磨环川设立开始计算，到天复三年（公元903年）被正式废除，一共经历了150年的历史。
+				[NEWLINE]神策军的领导权握在宦官手中，这样就使得神策军与宦官集团发生了极其密切的联系。自唐穆宗以后，天子多受制于宦官。穆宗以后共有九帝，其中，除敬宗、哀帝外，其余均为宦官所立。宦官集团之所以能掌握皇帝的生、死、废立大权，根本原因在于他们掌握神策军兵权，以神策军为工具控制皇权。
+				[NEWLINE]唐穆宗以后，神策军渐渐腐化，战斗力下降。而且在一定条件下成为某些藩镇发动叛乱的借口。唐朝末年，藩镇势力屡次进犯京师，常以剪除宦官为口号，而这时的神策军将吏大都卷入宦官集团中去。由于穆宗以后，神策军很少外出征战，军纪日益败坏。其普通军士也非当年善战的边兵，多以工商富豪子弟充任，不堪一战。
+			</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_CHINA_SEHNCE_INNER">
+			<Text>在城神策军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_CHINA_SEHNCE_INNER_HELP">
+			<Text>防御时+30%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_CHINA_SEHNCE_EX">
+			<Text>外镇神策军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_CHINA_SEHNCE_EX_HELP">
+			<Text>进攻时+15%[ICON_STRENGTH]战斗力，每临近一个同类单位则+15%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_CHINA_SEHNCE">
+			<Text>天子护军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_CHINA_SEHNCE_HELP">
+			<Text>+15%[ICON_STRENGTH]战斗力，每在战斗中击杀一名敌军则为首都提供相当于其200%[ICON_STRENGTH]战斗力的产能[ICON_PRODUCTION]。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_CHINA_SEHNCE_COMBAT_PRODUCTION">
+			<Text>你的{1_UnitName}击杀了敌方的{2_EnUName}，为{3_CityName:textkey}提供了[COLOR_CITY_BROWN]+{4_Num}[ICON_PRODUCTION][ENDCOLOR]点产能。</Text>
+		</Row>
+		<!--******************************萨珊铁骑*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_PERISA_SAVARAN_CATAPHRACT">
+			<Text>萨珊铁骑</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_PERISA_SAVARAN_CATAPHRACT_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]萨珊铁骑[ENDCOLOR]是波斯的特色单位，替代[COLOR_POSITIVE_TEXT]具装骑兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]较于普通的[COLOR_POSITIVE_TEXT]具装骑兵[ENDCOLOR]额外+4[ICON_STRENGTH]战斗力，自带可继承的2级装甲晋升。
+				[NEWLINE][ICON_BULLET]消灭敌军时能够获得相当于敌方200%[ICON_STRENGTH]战斗力的黄金时代点数。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_PERISA_SAVARAN_CATAPHRACT_TEXT">
+			<Text>
+				波斯萨珊骑兵是萨珊王朝称霸中亚时的主力部队。		
+				[NEWLINE]公元224年,波斯贵族阿尔达希尔灭掉安息,建立了萨珊波斯帝国。公元226年,萨珊王朝取代帕提亚人王朝。萨珊人唤起波斯民族的自尊心,恢复琐罗亚斯德教为国教,组织穿戴沉重的铠甲的骑兵部队,统一了全国。
+				[NEWLINE]波斯人骁勇善战,而骑兵的作用同样起了巨大的作用。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_PERISA_SAVARAN_CATAPHRACT">
+			<Text>泰西封之剑</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_PERISA_SAVARAN_CATAPHRACT_HELP">
+			<Text>消灭敌军时能够获得相当于敌方200%[ICON_STRENGTH]战斗力的黄金时代点数。</Text>
+		</Row>
+		<!--******************************康涅狄格级战列舰*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_AMERICA_CONNECTICUT">
+			<Text>康涅狄格级战列舰</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_AMERICA_CONNECTICUT_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]康涅狄格级战列舰[ENDCOLOR]是美国的特色单位，替代[COLOR_POSITIVE_TEXT]无畏舰[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]可以进入未开边国家境内，无视ZOC，位于[COLOR_POSITIVE_TEXT]城邦境内[ENDCOLOR]时，每回合+25[ICON_INFLUENCE]影响力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_AMERICA_CONNECTICUT_TEXT">
+			<Text>
+				康涅狄格级战列舰，是美国历史上最强的前无畏战列舰，在世界前无畏战列舰的综合实力上也是数一数二的，其吨位甚至超过了一开始的美国无畏舰。
+				[NEWLINE]康涅狄格级战列舰曾支援美国在坦皮科事件后入侵韦拉克鲁斯。美国参与第一次世界大战后，康涅狄格号主要用作训练舰，并在战后协助接载美军从欧洲返国。1923年康涅狄格号退役，并在同年按照华盛顿海军条约出售拆解。			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_AMERICA_CONNECTICUT">
+			<Text>大白舰队</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_AMERICA_CONNECTICUT_HELP">
+			<Text>可以进入未开边国家境内，无视ZOC，位于[COLOR_POSITIVE_TEXT]城邦境内[ENDCOLOR]时，每回合+25[ICON_INFLUENCE]影响力。</Text>
+		</Row>
+		<!--******************************莽骑兵*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_AMERICA_ROUGH_RIDER">
+			<Text>莽骑兵</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_AMERICA_ROUGH_RIDER_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]莽骑兵[ENDCOLOR]是美国的特色单位，替代[COLOR_POSITIVE_TEXT]近代骑兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]自带猎杀三级及无视地形消耗晋升，消灭敌方单位时获得相当于其200%[ICON_STRENGTH]战斗力的[ICON_CULTURE]文化点数，位于复杂地形时+66%[ICON_STRENGTH]战斗力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_AMERICA_ROUGH_RIDER_TEXT">
+			<Text>
+				美国第一支自愿骑兵团，对于无知的人来讲，更著名的称呼是“莽骑兵”（这个昵称来源于野牛比尔的“世界莽骑兵聚会”…同时也很好的描述了泰迪那些不守规矩的新兵），是由西奥多·罗斯福在1898年为美西战争而成立的军团。罗斯福坚定支持美国通过任何手段夺取殖民帝国，当古巴和美国之间出现问题时，他利用这次机会突击了奄奄一息的西班牙帝国。罗斯福立即辞去了海军副部长的职务，并成立了一支由1060人组成的志愿军团，里面包括牛仔、农场主、矿工、大学运动员和其他各类粗俗的人，这些人来自亚利桑那州、新墨西哥州、德克萨斯州和俄克拉荷马州。虽然这是一个骑兵部队，但他们大多是徒步前进，在7月1日著名的圣胡安山行动中也如此（实际是凯特尔山，这是在国外的美国人的叫法）。后来，莽骑兵成为了圣地亚哥之战的一部分，直至8月份西班牙投降，因此，这些志愿兵们都回到了家乡，并到处以自己的方式庆祝胜利。			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_AMERICA_ROUGH_RIDER">
+			<Text>义勇骑兵</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_AMERICA_ROUGH_RIDER_HELP">
+			<Text>消灭敌方单位时获得相当于其200%[ICON_STRENGTH]战斗力的[ICON_CULTURE]文化点数，位于复杂地形时+66%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		<!--******************************铁甲战车*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_ASSYRIA_IRON_CHARIOT">
+			<Text>亚述铁甲战车</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_ASSYRIA_IRON_CHARIOT_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]亚述铁甲战车[ENDCOLOR]是亚述的特色单位，替代[COLOR_POSITIVE_TEXT]驷马战车[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]在[COLOR_POSITIVE_TEXT]开阔地形[ENDCOLOR]中有更强的[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]当[COLOR_POSITIVE_TEXT][ICON_RES_HORSE]马或[ICON_RES_IRON]铁多于铁甲战车的数量时[ENDCOLOR]+5[ICON_STRENGTH]战斗力，可叠加。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_ASSYRIA_IRON_CHARIOT_TEXT">
+			<Text>
+				两河流域的古代亚述人，曾经建立起了第一个军事大帝国。亚述军队兵种齐全，包括初兴的骑兵，战车则地位下降。后期的亚述战车明显“重型化”，有3——5匹马牵引，车上4——5人，包括驭手、弓箭手和盾牌手，有点像我国古代先秦时期春秋战国的战车，可能兼有指挥功能。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_ASSYRIA_IRON_CHARIOT">
+			<Text>兵强马壮</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_ASSYRIA_IRON_CHARIOT_HELP">
+			<Text>
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]在[COLOR_POSITIVE_TEXT]开阔地形[ENDCOLOR]中+25%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]当[COLOR_POSITIVE_TEXT][ICON_RES_HORSE]马或[ICON_RES_IRON]铁多于铁甲战车的数量时[ENDCOLOR]+5[ICON_STRENGTH]战斗力，可叠加。
+			</Text>
+		</Row>
+		<!--******************************马穆鲁克*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_EGYPT_MAMLUK">
+			<Text>马穆鲁克</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_EGYPT_MAMLUK_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]马穆鲁克[ENDCOLOR]是埃及的特色单位，替代[COLOR_POSITIVE_TEXT]具装骑兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]可以用[ICON_PEACE]信仰购买，对抗受伤及驻防单位时+30%[ICON_STRENGTH]战斗力，攻击后获得额外的[ICON_MOVES]移动力。
+				[NEWLINE][ICON_BULLET]驻守在城市中的马穆鲁克骑兵使外国传教士和大先知无法对城市传教。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_EGYPT_MAMLUK_TEXT">
+			<Text>
+				马穆鲁克（阿拉伯语：مملوك，英文：Mamluk）的原意是“奴隶”，因为音译的不同，也被译为“马木留克”，最初出现于阿拉伯帝国阿拔斯王朝时期的“突厥古拉姆”制度，逐渐形成了一个独特的军事贵族集团。
+				[NEWLINE]马穆鲁克是中世纪服务于阿拉伯哈里发的奴隶兵，主要效命于埃及的阿尤布王朝。后来，随着哈里发的势微和阿尤布王朝的解体，他们逐渐成为强大的军事统治集团，并建立了自己的王朝，统治埃及达三百年之久（1250年—1517年）。
+				[NEWLINE]马穆鲁克的前身，古拉姆卫队，源自阿拔斯中期的政治斗争。阿拔斯王朝的第八代哈里发穆塔西姆是一个突厥女奴之子，他登基之后深深地忌惮着当时朝廷中如日中天的波斯系贵族，于是就通过自己的母亲从中亚雇佣了一批突厥战士做自己的护卫，这就是最早期的“古拉姆”也为之后的马穆鲁克奠定了基础。
+				[NEWLINE]十一世纪的十字军东征，对阿拉伯地区造成了重大的影响，马穆鲁克在萨拉丁的指挥下作为一个独立的军事集团出现于阿拉伯的政治舞台上。并且因为战功卓著，这些奴隶出身的将领在埃及建立了自己的王朝，延续了三百多年。
+				[NEWLINE]十三世纪他们在艾因·贾鲁战役打败了蒙古帝国的伊儿汗国。[NEWLINE]
+				[NEWLINE]奥斯曼帝国时期，马穆鲁克建立的埃及马穆鲁克王朝长期与奥斯曼土耳其帝国为敌，直到1517年被土耳其苏丹塞利姆一世击败。	
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_EGYPT_MAMLUK">
+			<Text>北非王朝</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_EGYPT_MAMLUK_HELP">
+			<Text>对抗受伤及驻防单位时+30%[ICON_STRENGTH]战斗力，攻击后获得额外的[ICON_MOVES]移动力。</Text>
+		</Row>
+		<!--******************************英格兰兵士*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_ENGLAND_MAN_AT_ARMS">
+			<Text>狮心兵士</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_ENGLAND_MAN_AT_ARMS_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]狮心兵士[ENDCOLOR]是英国的特色单位，替代[COLOR_POSITIVE_TEXT]长剑士[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]同时拥有[COLOR_POSITIVE_TEXT]重装步兵[ENDCOLOR]和[COLOR_POSITIVE_TEXT]方阵步兵[ENDCOLOR]双重属性。
+				[NEWLINE][ICON_BULLET]最多只能拥有相当于所拥有的城市数量两倍的狮心兵士，但是首都和所占领的原始首都能够额外提供一个狮心兵士的名额。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_ENGLAND_MAN_AT_ARMS_TEXT">
+			<Text>
+				在中古时期的欧洲，接受过武器训练并在战斗中穿着某种盔甲的人被称为兵士(Man at Arms)。根据定义，所有骑士都是兵士，但并非所有兵士都是骑士。兵士的类别还包括被称为中士的非贵族专业战斗人员和被称为扈从的受训骑士。封建领主的军队分为两个不同的群体，各阶级的兵士和农兵。训练有素的战士构成了了军队的主要战斗力。步行的兵士用剑作战。这是一种有效的武器，有助于将兵士与社会地位较低的士兵（如矛兵、散兵和弓箭手）区分开来。兵士通常从头到脚都穿着盔甲，并且训练有素。他们在特定条件下与下马骑士并肩作战，例如攻城略地。在百年战争期间，英国人经常下马作战，因为法国骑士的人数通常远远超过他们。
+			</Text>
+		</Row>
+		<!--******************************比武冠军*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_FRANCE_CHAMPION">
+			<Text>冠军骑士</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_FRANCE_CHAMPION_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]冠军骑士[ENDCOLOR]是法国的特色单位，替代[COLOR_POSITIVE_TEXT]具装骑兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]单位自带快速学习晋升。
+				[NEWLINE][ICON_BULLET]单位的战力更高，速度更快，升级时为首都提供相当于(1/3*基础[ICON_STRENGTH]战斗力*单位等级)的[ICON_GREAT_WRITER]大文学家点数和[ICON_GREAT_SCIENTIST]大科学家点数。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_FRANCE_CHAMPION_TEXT">
+			<Text>
+				骑士比武最早出现于十一世纪至十二世纪的法国，后来传到英国，并迅速普及开来。
+				[NEWLINE]骑士比武，没有固定的规模，固定的时间，可以单人对单人，也可以团体对团体，由于缺少明确的规则，所以比武最后往往演变成粗暴、血腥的生死搏斗，和真正的战场没有区别。
+			</Text>
+		</Row>
+
+		<!--Unique Names-->
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_01">
+			<Text>Jean de Beaumanoir</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_02">
+			<Text>Jean de Carrouges</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_03">
+			<Text>Anseau de Cayeux</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_04">
+			<Text>Geoffroi de Charny</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_05">
+			<Text>André de Chauvigny</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_06">
+			<Text>Tristan de Clermont</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_08">
+			<Text>Philippe de Rémi</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_09">
+			<Text>Gobert de Helleville</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_10">
+			<Text>Jean de Grouchy</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_11">
+			<Text>Bertrand du Guesclin</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_12">
+			<Text>Guillaume Boitel</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_13">
+			<Text>Herluin of Bec</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_14">
+			<Text>Isabel of Conches</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_15">
+			<Text>Jacques Le Gris</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_16">
+			<Text>Jean Le Maingre</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_17">
+			<Text>Ambroise de Loré</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_18">
+			<Text>Jacques de Molay</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_19">
+			<Text>Philippe de Nanteuil</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_20">
+			<Text>Raynald of Châtillon</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_21">
+			<Text>Robert de Clari</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_22">
+			<Text>Bonabes IV de Rougé de Derval</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_23">
+			<Text>Thierry de Loos</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_24">
+			<Text>Geoffrey of Villehardouin</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_25">
+			<Text>William des Roches</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NAME_SPUE_FRANCE_CHAMPION_26">
+			<Text>Jean de Werchin</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FRANCE_CHAMPION">
+			<Text>吟游诗人</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FRANCE_CHAMPION_HELP">
+			<Text>+15%[ICON_STRENGTH]战斗力，+1[ICON_MOVES]移动力，升级时为首都提供相当于(1/3*基础[ICON_STRENGTH]战斗力*单位等级)的[ICON_GREAT_WRITER]大文学家点数和[ICON_GREAT_SCIENTIST]大科学家点数。</Text>
+		</Row>
+		<!--******************************皇家火枪手*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_FRENCH_MUSKETEER">
+			<Text>皇家火枪手</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_FRENCH_MUSKETEER_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]皇家火枪手[ENDCOLOR]是法国的特色单位，替代[COLOR_POSITIVE_TEXT]火枪手[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]较于普通的火枪手拥有更高的基础[ICON_STRENGTH]战斗力([ICON_STRENGTH]43)，可以用[ICON_PEACE]信仰购买。
+				[NEWLINE][ICON_BULLET]消灭敌方单位时提供(1/2*皇家火枪手数量*[ICON_STRENGTH]敌方战斗力)的[ICON_CULTURE]文化点数。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FRENCH_MUSKETEER">
+			<Text>人人为我，我为人人</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_FRENCH_MUSKETEER_HELP">
+			<Text>消灭敌方单位时提供(1/2*皇家火枪手数量*[ICON_STRENGTH]敌方战斗力)的[ICON_CULTURE]文化点数。</Text>
+		</Row>
+		<!--******************************都卜勒剑士*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_GERMAN_DOPPELSOLDNER">
+			<Text>[COLOR_CYAN]都卜勒剑士[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_GERMAN_DOPPELSOLDNER_HELP">
+			<Text>
+				[COLOR_CYAN]都卜勒剑士[ENDCOLOR]是德国的特色单位，替代[COLOR_CYAN]中古佣兵团[ENDCOLOR]，无需开启[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]即可建造和购买，购买后可以立即移动，死亡时不会造成人口损失。
+				[NEWLINE][ICON_BULLET]自带列阵二级，近战攻击对1格内单位造成0.5倍的溅射伤害。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_GERMAN_DOPPELSOLDNER_TEXT">
+			<Text>
+				都卜勒剑士（Dopplesoldners）是活跃在15世纪末到16世纪上半叶时期的著名兵种，他们一般拿着标志性的德国重型双手剑(Zweihänder)，因此又称他们为双手剑士。在很多游戏中都有拿德国重型双手剑都卜勒剑士（Dopplesoldners）的出场。
+				[NEWLINE]都卜勒剑士（Dopplesoldners）是神圣罗马雇佣兵（Landsknechts）的重要组成部分，神圣罗马雇佣兵（Landsknechts）的标准编制是按每400人一个连队（Fahnlein）进行编组，，连队一词“Fahnlein”在德语中原意“小旗”，引申为“拥有一面旗帜的单位”，一般每个连队里都会安排100个都卜勒剑士（Dopplesoldners）。由于德国重型双手剑需要专门的技巧，剑手得经过一定的训练才能掌握，使用德国重型双手剑的多是老兵。所以在神圣罗马雇佣兵（Landsknechts）中，都卜勒剑士（Dopplesoldners）的薪酬是其他兵种的双倍。都卜勒原意就是双酬的意思，即拿双倍工资的士兵。由于他们一般拿着德国重型双手剑(Zweihänder)，因此又称他们为双手剑士。			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GERMAN_DOPPELSOLDNER">
+			<Text>帝国之花</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_GERMAN_DOPPELSOLDNER_HELP">
+			<Text>近战攻击对1格内单位造成0.5倍的溅射伤害。</Text>
+		</Row>
+		<!--******************************谢苗诺夫斯基近卫步兵*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_RUSSIA_SEMYONOVSKY_REGIMENT">
+			<Text>谢苗诺夫斯基近卫步兵</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_RUSSIA_SEMYONOVSKY_REGIMENT_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]谢苗诺夫斯基近卫步兵[ENDCOLOR]是俄罗斯的特色单位，替代[COLOR_POSITIVE_TEXT]线列步兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]面对近战攻击时有30%的概率撤退，进攻时+25%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]回合开始时处于驻扎状态则+1[ICON_MOVES]移动力，若与同类单位相邻则+2[ICON_MOVES]移动力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_RUSSIA_SEMYONOVSKY_REGIMENT_TEXT">
+			<Text>
+				谢苗诺夫斯基近卫团的前身是彼得大帝还是王子时期和其他贵族儿童做战争游戏的时候组件的“玩家”团/少年团。这只部队类似于康熙制服鳌拜所练的少年队伍。这只部队就在莫斯科附近的谢苗诺夫斯基村，之后由于人数的扩展，在普列奥布拉任斯基村驻扎一部分人员。在彼得当上沙皇时期被改编为两个以两地名命名的近卫团，谢苗诺夫斯基团和普列奥布拉任斯基团。沙皇和皇太子在近卫团接受军事训练。				
+				[NEWLINE]成立后这两个团参加了彼得大帝的大北方战争并中有优越表现。谢苗诺夫斯基团参与了涅尔瓦战役，并在防御作战中发挥出色，避免了俄军的惨败。
+				[NEWLINE]在拿破仑侵俄前，谢苗诺夫斯基团和其他近卫团一样都是纯掷弹兵团，共辖4个掷弹兵营。在1811年拿破仑入侵俄国之前，谢苗诺夫斯基团下辖了3个步兵营，每个营下辖一个掷弹兵连和三个滑膛枪连。
+				[NEWLINE]他的成名战包括在博罗季诺战役中遇到法军胸甲骑兵的进攻是发起了反冲锋。当时谢苗诺夫斯基团从山坡上冲下来并击溃了法国重骑兵。
+				[NEWLINE]在拿破仑战争后的1820年，谢苗诺夫团第一营叛变，部队被镇压后被收回荣誉称号并降级为亲年近卫军。但是在1823年又恢复了其荣誉。
+				[NEWLINE]在1912年的十月革命时期，支持革命并叛变沙皇。最终谢苗诺夫斯基近卫团在最后一任团长的带领下解散。			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_RUSSIA_SEMYONOVSKY_REGIMENT">
+			<Text>沙皇近卫</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_RUSSIA_SEMYONOVSKY_REGIMENT_HELP">
+			<Text>
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]面对近战攻击时有30%的概率撤退，进攻时+25%[ICON_STRENGTH]战斗力;
+				[NEWLINE][ICON_BULLET]回合开始时处于驻扎状态则+1[ICON_MOVES]移动力，若与谢苗诺夫斯基近卫步兵单位相邻则+2[ICON_MOVES]移动力。
+			</Text>
+		</Row>
+		<!--******************************独角兽加榴炮*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_RUSSIA_LICORNE">
+			<Text>独角兽加榴炮</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_RUSSIA_LICORNE_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]独角兽加榴炮[ENDCOLOR]是俄罗斯的特色单位，替代[COLOR_POSITIVE_TEXT]加农炮[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]对陆军单位/海军单位+100%[ICON_RANGE_STRENGTH]远程攻击力，面对近战攻击有80%的概率撤退。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_RUSSIA_LICORNE_TEXT">
+			<Text>
+				独角兽炮是由俄国人发明的加榴炮，威力巨大就像传说中的独角兽一样恐怖，于是在炮身上铭刻独角兽标记。可进行平射和曲射，结合加农炮和榴弹炮的弹道特点，精度极差。			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_RUSSIA_LICORNE">
+			<Text>沙皇重炮</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_RUSSIA_LICORNE_HELP">
+			<Text>对陆军单位/海军单位+100%[ICON_RANGE_STRENGTH]远程攻击力，面对近战攻击有80%的概率撤退。</Text>
+		</Row>
+		<!--******************************北方轻骑兵*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_SWEDISH_HAKKAPELIITTA_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]北方轻骑兵[ENDCOLOR]是瑞典的特色单位，替代[COLOR_POSITIVE_TEXT]枪骑兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]自带列阵一级和猎杀残敌晋升，可以用[ICON_PEACE]信仰购买。
+				[NEWLINE][ICON_BULLET]近战攻击之前进行一次远程攻击，回合开始时能够将自身[ICON_MOVES]移动力转移给陆军统帅，同时能够从陆军统帅处获得额外的[ICON_STRENGTH]战斗力加成。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SWEDISH_HAKKAPELIITTA">
+			<Text>砍翻他们!</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_SWEDISH_HAKKAPELIITTA_HELP">
+			<Text>
+				[NEWLINE]
+				[NEWLINE][ICON_BULLET]近战攻击之前进行一次远程攻击;
+				[NEWLINE][ICON_BULLET]如果陆军统帅与这个单位回合开始时堆叠在一起，陆军统帅将以该单位的[ICON_MOVES]速度前进;
+				[NEWLINE][ICON_BULLET]和陆军统帅在同一格时，+30%[ICON_STRENGTH]战斗力。
+			</Text>
+		</Row>
+		<!--******************************战国大名*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_JAPAN_DAMIYO">
+			<Text>[COLOR_CYAN]战国大名[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_JAPAN_DAMIYO_HELP">
+			<Text>
+				[COLOR_CYAN]战国大名[ENDCOLOR]是日本的特色单位，替代[COLOR_CYAN]王城骑士[ENDCOLOR]，可以征召[COLOR_CYAN]旗本武士[ENDCOLOR]（只能召集一次），且自带军团晋升，无需开启[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]即可建造和购买。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_JAPAN_DAMIYO_TEXT">
+			<Text>
+				战国大名是日本历史上的大封建主。战国时期（1467——1590），各守护大名之间混战不已，一些在地方上拥有实权的幕府中、下级武士和国人领主，乘机扩充力量，形成了独立于幕府体制之外的大封建主，即战国大名。战国大名采取富国强兵的政策，励精图治，积极发展经济，渐渐发展成为一股统一的力量。1573年尾张国大名织田信长推翻了室町幕府的统治。			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_JAPAN_DAMIYO">
+			<Text>武士集结</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_JAPAN_DAMIYO_HELP">
+			<Text>可以征召[COLOR_CYAN]旗本武士[ENDCOLOR]（只能召集一次）。</Text>
+		</Row>
+		<!--******************************旗本武士*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_JAPAN_HATAMOTO">
+			<Text>[COLOR_CYAN]旗本武士[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_JAPAN_HATAMOTO_HELP">
+			<Text>
+				[COLOR_CYAN]旗本武士[ENDCOLOR]是日本的特色单位，只能由[COLOR_CYAN]战国大名[ENDCOLOR]进行征召，最多征召10个。
+				[NEWLINE][ICON_BULLET]单位战斗力相较于长剑士更高，自带列阵一级、侦查二级和军团晋升。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_JAPAN_HATAMOTO_TEXT">
+			<Text>
+				旗本（はたもと；Hatamoto）按语意指战场上主将旗下的近卫武士。到江户时代，专指将军直属武士中领地不满一万石，但有面见将军资格者。其领地多少不一。3000石以上者设阵屋，由自己管理。3000石以下者多委诸代官管理而收取年贡。可担任幕吏，也可拥有陪臣。少数旗本受特殊优遇，可如同大名实行参觐交代，称交代寄合。1817年(文化十四年)旗本4800余人。19世纪50年代达5280余人。加上旗本陪臣和御家人，号称“旗本八万骑”，是幕府的主要军事力量。			
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_JAPAN_HATAMOTO_NAME">
+			<Text>国旗本</Text>
+		</Row>
+		
+		<!--******************************铁甲船*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_JAPAN_TEKKOUSEN">
+			<Text>铁甲船</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_JAPAN_TEKKOUSEN_HELP">
+			<Text>
+				[COLOR_CYAN]铁甲船[ENDCOLOR]是日本的特色单位，替代[COLOR_POSITIVE_TEXT]桨帆战舰[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]自带装甲二级和海战三级晋升。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_JAPAN_TEKKOUSEN_TEXT">
+			<Text>
+				朝鲜的龟船常被认为是最早的装甲船，是美国十八世纪装甲舰的前身。日本也在之后的16世纪的封建战争中使用装甲船。当时互相敌对的大名常在陆地和海上较量彼此的军力。大名织田信长为自己的海军建造了6艘铁甲船。这些船有7.6厘米厚的铁皮，装配多管加农炮和大口径步枪，公元1592年至1598年间曾用来侵略朝鲜。			
+			</Text>
+		</Row>
+	</Language_en_US>
+</GameData>

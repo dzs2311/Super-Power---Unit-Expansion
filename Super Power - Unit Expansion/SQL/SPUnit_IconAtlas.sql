@@ -124,6 +124,66 @@ INSERT OR REPLACE INTO IconTextureAtlases
 VALUES		('SPUE_RECC_ATLAS', 				256, 		'RECC_256.dds',							2, 				1),
 			('SPUE_RECC_ATLAS', 				064, 		'RECC_064.dds',							2, 				1),
 			('SPUE_RECC_ATLAS', 				045, 		'RECC_045.dds',							2, 				1);
+--===============================================================================================================================================
+-- IconTextureAtlases:China
+--===============================================================================================================================================
+INSERT INTO IconTextureAtlases 
+			(Atlas, 								IconSize, 	Filename, 										IconsPerRow, 	IconsPerColumn)
+VALUES		('UNIT_SPUE_CHINA_ATLAS', 				256, 		'SPUE_China_Extra_IconAtlas256.dds',			1,				1),
+			('UNIT_SPUE_CHINA_ATLAS', 				128, 		'SPUE_China_Extra_IconAtlas128.dds',			1, 				1),
+			('UNIT_SPUE_CHINA_ATLAS', 				80, 		'SPUE_China_Extra_IconAtlas080.dds',			1, 				1),
+			('UNIT_SPUE_CHINA_ATLAS', 				64, 		'SPUE_China_Extra_IconAtlas064.dds',			1, 				1),
+			('UNIT_SPUE_CHINA_ATLAS', 				45, 		'SPUE_China_Extra_IconAtlas045.dds',			1, 				1),
+			('UNIT_SPUE_CHINA_ATLAS', 				32, 		'SPUE_China_Extra_IconAtlas032.dds',			1, 				1),
+			('UNIT_SPUE_CHINA_FLAG_ATLAS',			32, 		'VP_IronCavalry_032.dds',						1, 				1);
+--===============================================================================================================================================
+-- IconTextureAtlases:America
+--===============================================================================================================================================
+INSERT INTO IconTextureAtlases 
+			(Atlas, 								IconSize, 	Filename, 										IconsPerRow, 	IconsPerColumn)
+VALUES		('UNIT_SPUE_AMERICA_ATLAS', 			256, 		'SPUE_USA_UU_Atlas_256.dds',					2,				1),
+			('UNIT_SPUE_AMERICA_ATLAS', 			128, 		'SPUE_USA_UU_Atlas_128.dds',					2, 				1),
+			('UNIT_SPUE_AMERICA_ATLAS', 			80, 		'SPUE_USA_UU_Atlas_080.dds',					2, 				1),
+			('UNIT_SPUE_AMERICA_ATLAS', 			64, 		'SPUE_USA_UU_Atlas_064.dds',					2, 				1),
+			('UNIT_SPUE_AMERICA_ATLAS', 			45, 		'SPUE_USA_UU_Atlas_045.dds',					2, 				1),
+			('UNIT_SPUE_AMERICA_ATLAS', 			32, 		'SPUE_USA_UU_Atlas_032.dds',					2, 				1),
+			('UNIT_SPUE_AMERICAC_FLAG_ATLAS',		32, 		'JFD_ConnecticutUnitFlag_32.dds',				1, 				1);
+--===============================================================================================================================================
+-- IconTextureAtlases:Russia
+--===============================================================================================================================================
+INSERT INTO IconTextureAtlases 
+			(Atlas, 								IconSize, 	Filename, 										IconsPerRow, 	IconsPerColumn)
+VALUES		('UNIT_SPUE_RUSSIA_ATLAS', 				256, 		'SPUE_RussiaUU_IconAtlas_256.dds',				2,				1),
+			('UNIT_SPUE_RUSSIA_ATLAS', 				128, 		'SPUE_RussiaUU_IconAtlas_128.dds',				2, 				1),
+			('UNIT_SPUE_RUSSIA_ATLAS', 				80, 		'SPUE_RussiaUU_IconAtlas_080.dds',				2, 				1),
+			('UNIT_SPUE_RUSSIA_ATLAS', 				64, 		'SPUE_RussiaUU_IconAtlas_064.dds',				2, 				1),
+			('UNIT_SPUE_RUSSIA_ATLAS', 				45, 		'SPUE_RussiaUU_IconAtlas_045.dds',				2, 				1),
+			('UNIT_SPUE_RUSSIA_ATLAS', 				32, 		'SPUE_RussiaUU_IconAtlas_032.dds',				2, 				1),
+			('UNIT_SPUE_RUSSIA_FLAG_ATLAS',			32, 		'JFD_RussiaAlexanderI_UnitFlagAtlas_32.dds',	2, 				1);
+--===============================================================================================================================================
+-- IconTextureAtlases:Japan
+--===============================================================================================================================================
+INSERT INTO IconTextureAtlases 
+			(Atlas, 								IconSize, 	Filename, 										IconsPerRow, 	IconsPerColumn)
+VALUES		('UNIT_SPUE_JAPAN_ATLAS', 				256, 		'SPUE_Japan_IconAtlas256.dds',					3,				1),
+			('UNIT_SPUE_JAPAN_ATLAS', 				128, 		'SPUE_Japan_IconAtlas128.dds',					3, 				1),
+			('UNIT_SPUE_JAPAN_ATLAS', 				80, 		'SPUE_Japan_IconAtlas080.dds',					3, 				1),
+			('UNIT_SPUE_JAPAN_ATLAS', 				64, 		'SPUE_Japan_IconAtlas064.dds',					3, 				1),
+			('UNIT_SPUE_JAPAN_ATLAS', 				45, 		'SPUE_Japan_IconAtlas045.dds',					2, 				1),
+			('UNIT_SPUE_JAPAN_ATLAS', 				32, 		'SPUE_Japan_IconAtlas032.dds',					2, 				1),
+			('UNIT_SPUE_JAPANT_FLAG_ATLAS',			32, 		'Flag_tekkousen.dds',							1, 				1);
+--===============================================================================================================================================
+-- IconTextureAtlases:England
+--===============================================================================================================================================
+INSERT INTO IconTextureAtlases 
+			(Atlas, 								IconSize, 	Filename, 										IconsPerRow, 	IconsPerColumn)
+VALUES		('UNIT_SPUE_ENGLAND_FLAG_ATLAS',		32, 		'UnitFlagGrandCarrackAtlas_32.dds',				1, 				1);
+--===============================================================================================================================================
+-- IconTextureAtlases:France
+--===============================================================================================================================================
+INSERT INTO IconTextureAtlases 
+			(Atlas, 								IconSize, 	Filename, 										IconsPerRow, 	IconsPerColumn)
+VALUES		('UNIT_SPUE_FRANCE_FLAG_ATLAS',			32, 		'JFD_ImperialGuardUnitFlag_32.dds',				1, 				1);
 --==========================================================================================================================
 -- VP:IconTextureAtlasesa
 --==========================================================================================================================

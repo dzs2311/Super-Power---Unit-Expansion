@@ -13,6 +13,16 @@
 			<Text>[COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]是秩序意识形态的精英单位，拥有强大的区域拒止和防空反舰能力。</Text>
 		</Row>
 
+		<Row Tag="TXT_KEY_PROJECT_SPUE_ORDER_TANK">
+			<Text>帝王坦克研发计划</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_ORDER_TANK_HELP">
+			<Text>此项目需要秩序意识形态开启，只有完成此项目的文明可以组建秩序意识形态的精英单位：[COLOR_YIELD_GOLD]帝王炎黄坦克[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_ORDER_TANK_PEDIA">
+			<Text>[COLOR_YIELD_GOLD]帝王炎黄坦克[ENDCOLOR]是秩序意识形态的精英单位，拥有强大的战区投送、伴随冲锋和火力支援能力。</Text>
+		</Row>
+
 		<Row Tag="TXT_KEY_PROJECT_SPUE_FREEDOM">
 			<Text>洞察计划</Text>
 		</Row>
@@ -40,6 +50,54 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOVERING_HELP">
 			<Text>动于九天之上。</Text>
 		</Row>
+		<!-- **********************秩序：帝王炎黄坦克*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_NVOVRLORD">
+			<Text>[COLOR_YIELD_GOLD]帝王炎黄坦克[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_NVOVRLORD_HELP">
+			<Text>
+				[COLOR_YIELD_GOLD]帝王炎黄坦克[ENDCOLOR]是[ICON_IDEOLOGY_ORDER]秩序意识形态的精英单位，需要开启[ICON_IDEOLOGY_ORDER][ICON_CULTURE][COLOR_MAGENTA]秩序意识形态[ENDCOLOR]并完成帝王坦克研发计划才可以建造；
+				[NEWLINE][ICON_BULLET][COLOR_YIELD_GOLD]帝王炎黄坦克[ENDCOLOR]拥有以下能力：
+				[NEWLINE][ICON_BULLET]战区之盾：能够在[COLOR_POSITIVE_TEXT]友方地域[ENDCOLOR]外30格内空投，自带[COLOR_POSITIVE_TEXT]军团[ENDCOLOR]与[COLOR_POSITIVE_TEXT]集团军[ENDCOLOR]晋升，回合结束自身回复全部血量，核免疫。
+				[NEWLINE][ICON_BULLET]帝王之刃：可执行[COLOR_POSITIVE_TEXT]火力全开[ENDCOLOR]，对满血单位+100%[ICON_STRENGTH]战斗力，对城市和堡垒+300%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]炽阳璀璨：每次受到攻击后+1移动力且可以将自身受到的伤害作为能量储存，达到200能量后可以发射一次核导弹。
+				[NEWLINE][ICON_BULLET]冲锋号角：4格内的己方单位+100%战斗力，回合结束回复50%最大血量。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_NVOVRLORD_TEXT">
+			<Text>
+				在对抗恐怖主义GLA的战争中，炎黄坦克因其巨大的车身与在战场上让敌人闻风丧胆恐怖的双联火力，成为了中国人民解放军装甲力量的最强象征，然而在该型坦克还处于设计理论阶段时，包括中国本身在内的许多军事专家并不看好它的前景，其中最大的争议就是从它的设计方向上来说，巨大的车身所带来的笨重不便、低下的速度与可能成为敌人高度注意的目标，在美国人的一次军事电视节目中，接受采访的军事评论者甚至直白的以“巨型铁棺材”来批评炎黄坦克的设计思路，但这一切都不能阻止将前苏联坦克战理论的作为绝对信仰的戴宏奎将军；身为炎黄坦克的理论设计者与实际生产负责人，他对外界的批评与嘲讽不屑一顾，在说服军部的支持中，戴宏奎将军保证该型坦克的成功研制将会改变世界现有的坦克战平衡。
+				[NEWLINE]最终，中国军方在他的游说下同意了支持炎黄坦克的建造工程项目，于是在2017年底，第一辆炎黄坦克成功的建造下线，随即两年内，炎黄坦克被装备在几支中国军队精锐装甲师中，而在2019年爆发的反恐战争中，炎黄坦克就立即显示出了它的战场价值——在象征战争开端的核爆恐怖袭击中，两辆炎黄坦克在距离爆炸中心不远的地方成功的幸存了下来，随即加入了快速反应部队，对GLA展开了无情冷血的屠杀式反击，而GLA的装甲部队却没能摧毁哪怕其中的一辆。
+				[NEWLINE]此后，炎黄坦克作为中国装甲师的重要作战单位参与了几乎每一场针对GLA的重要会战，在炎黄坦克双联火炮的摧残下，GLA的装甲力量显得不堪一击的脆弱，而超重反应装甲使得炎黄坦克具备了强悍的战场生存能力，四联履带的车身甚至在几次战役中直接将可怜的敌方坦克给碾成了一堆废铁。
+				[NEWLINE]在战争后期中国被委托解放欧洲的战役中，炎黄坦克也直接面对了美式装备的挑战，在德国汉堡郊外的战斗中，GLA控制了一座美军基地，从而使用了美军的新式装甲力量对中国军队发动了进攻，然而他们最终也没能在炎黄坦克面前站稳住脚跟，原本以美式装备抵抗住中国军队的期望在巨大的炎黄坦克履带下被碾的粉碎——这在中国击败GLA的同时，也击垮了美国军事专家对于炎黄坦克尚存的侥幸心理。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_NVOVRLORD">
+			<Text>炎黄帝君</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_NVOVRLORD_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]战区之盾：能够在[COLOR_POSITIVE_TEXT]友方地域[ENDCOLOR]外30格内空投。
+				[NEWLINE][ICON_BULLET]帝王之刃：对满血单位+100%[ICON_STRENGTH]战斗力，对城市和堡垒+300%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]炽阳璀璨：每次受到攻击后+1移动力且可以将自身受到的伤害作为能量储存，达到600能量后获得晋升璀璨炽阳，可以装载2枚核弹。
+				[NEWLINE][ICON_BULLET]冲锋号角：4格内的己方单位+100%战斗力，回合结束回复50%最大血量。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_NVOVRLORD_EFFECT">
+			<Text>冲锋号角</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_NVOVRLORD_EFFECT_HELP">
+			<Text>+100%[ICON_STRENGTH]战斗力，回合结束回复50%最大血量。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_NVOVRLORD_NUCLEAR">
+			<Text>璀璨炽阳</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_NVOVRLORD_NUCLEAR_HELP">
+			<Text>可以装载2枚核导弹或ICBM。</Text>
+		</Row>
 		<!-- **********************秩序：S055*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_ORDER_SUPER_055">
 			<Text>[COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]</Text>
@@ -48,10 +106,13 @@
 			<Text>
 				[COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]是[ICON_IDEOLOGY_ORDER]秩序意识形态的精英单位，需要开启[ICON_IDEOLOGY_ORDER][ICON_CULTURE][COLOR_MAGENTA]秩序意识形态[ENDCOLOR]并完成先进战舰及高超声速反舰导弹研究计划才可以建造；
 				[NEWLINE][ICON_BULLET][COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]不受单位克制关系影响，拥有以下能力：
-				[NEWLINE][ICON_BULLET]巡天四面阵：防空范围10，拦截敌方飞机时+150%[ICON_STRENGTH]战斗力，对敌方空军单位+150%[ICON_STRENGTH]战斗力，每回合+10[COLOR_POSITIVE_TEXT]拦截次数[ENDCOLOR]，2格内的舰载机和陆基空优单位[COLOR_POSITIVE_TEXT]执行空中拦截任务[ENDCOLOR]时[ICON_STRENGTH]战斗力+150%；
-				[NEWLINE][ICON_BULLET]北斗引星舰：解锁新的意识形态政策或单位晋升时装载[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]，装载后视野+20，射程+10，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害，攻击完成后消耗[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]巡天阵列：防空范围10，拦截敌方飞机时+150%[ICON_STRENGTH]战斗力，对敌方空军单位+150%[ICON_STRENGTH]战斗力，每回合+10[COLOR_POSITIVE_TEXT]拦截次数[ENDCOLOR]，2格内的舰载机和陆基空优单位[COLOR_POSITIVE_TEXT]执行空中拦截任务[ENDCOLOR]时[ICON_STRENGTH]战斗力+150%。
+				[NEWLINE][ICON_BULLET]北斗破军：解锁新的意识形态政策或单位晋升时装载[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]（最多装载3枚，单位诞生时根据现有意识形态政策数量获得初始装载数），装载后视野+30，射程+20，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害，攻击完成后消耗[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]。
 			</Text>
 		</Row>
+
+		<!-- [NEWLINE][ICON_BULLET]坠星之火：完成增援未来计划项目后会获得“坠星之火”能力，可以引导位于木星基地的自然选择号恒星际飞船对地面进行打击。 -->
+
 		<Row Tag="TXT_KEY_CIV5_SPUE_ORDER_SUPER_055_TEXT">
 			<Text>
 				055型驱逐舰（英文：Type 055 destroyer，北约代号：Renhai-class ，译文：刃海级）是中国研制的新型舰队防空驱逐舰。
@@ -64,27 +125,36 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_HELP">
 			<Text>
-				[NEWLINE][ICON_BULLET]巡天四面阵：拦截敌方飞机时+150%[ICON_STRENGTH]战斗力，对敌方空军单位+150%[ICON_STRENGTH]战斗力，每回合+10[COLOR_POSITIVE_TEXT]拦截次数[ENDCOLOR]，2格内的舰载机和陆基空优单位[COLOR_POSITIVE_TEXT]执行空中拦截任务[ENDCOLOR]时[ICON_STRENGTH]战斗力+150%；
-				[NEWLINE][ICON_BULLET]北斗引星舰：解锁新的意识形态政策或单位晋升时装载[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]，装载后视野+20，射程+15，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害，攻击完成后消耗[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]巡天阵列：拦截敌方飞机时+150%[ICON_STRENGTH]战斗力，对敌方空军单位+150%[ICON_STRENGTH]战斗力，每回合+10[COLOR_POSITIVE_TEXT]拦截次数[ENDCOLOR]，2格内的舰载机和陆基空优单位[COLOR_POSITIVE_TEXT]执行空中拦截任务[ENDCOLOR]时[ICON_STRENGTH]战斗力+150%；
+				[NEWLINE][ICON_BULLET]北斗破军：解锁新的意识形态政策或单位晋升时装载[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]，装载后视野+30，射程+20，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害，攻击完成后消耗[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]。
 			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_EFFECT">
-			<Text>北斗摇光</Text>
+			<Text>巡天之剑</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_EFFECT_HELP">
 			<Text>拦截敌方飞机时+150%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_MISSILE">
-			<Text>鹰击-21高超音速导弹</Text>
+			<Text>鹰击-21高超音速导弹（1）</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_MISSILE2">
+			<Text>鹰击-21高超音速导弹（2）</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_MISSILE3">
+			<Text>鹰击-21高超音速导弹（3）</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_MISSILE_HELP">
-			<Text>视野+20，射程+15，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害。</Text>
+			<Text>视野+20，射程+15，对海军+300%[ICON_STRENGTH]战斗力，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT1S">
 			<Text>[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]装载完毕！</Text>
+		</Row> 
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT1S_FULL">
+			<Text>[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]装载数[COLOR_NEGATIVE_TEXT]已至上限[ENDCOLOR]！</Text>
 		</Row> 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT1L">
 			<Text>[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]发射完毕！</Text>

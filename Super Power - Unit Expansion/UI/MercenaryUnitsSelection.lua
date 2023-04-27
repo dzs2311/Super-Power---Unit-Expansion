@@ -17,7 +17,7 @@ local g_MercenaryUnitListL	= {	GameInfoTypes["UNIT_SPUE_VARANGIAN"],
 								GameInfoTypes["UNIT_SPUE_SWISSGUARD"],
 								GameInfoTypes["UNIT_SPUE_ELMETI"]}
 
-local g_MercenaryUnitListR	= {	GameInfoTypes["UNIT_SPUE_HESSIAN_ELITE"],
+local g_MercenaryUnitListR	= {	GameInfoTypes["UNIT_SPUE_HESSIAN"],
 								GameInfoTypes["UNIT_SPUE_SSPRIVATEER"],
 								GameInfoTypes["UNIT_SPUE_PRIVATEER"],
 								GameInfoTypes["UNIT_SPUE_FUNE"]}
