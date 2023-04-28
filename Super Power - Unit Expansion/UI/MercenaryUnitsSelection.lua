@@ -236,9 +236,13 @@ function OnAIDoTurn( playerID )
     if player == nil or player:IsBarbarian() or player:IsHuman() then return end
 	local unitL = GameInfo.Units[g_MercenaryUnitListL[1]]
 	local policyL = unitL.PolicyType
+	local pEraType = player:GetCurrentEra();
+	local pEraID = GameInfo.Eras[pEraType].ID;	
 
-	if player:HasPolicy(GameInfo.Policies["POLICY_COMMERCE"].ID)
-	and not player:HasPolicy(GameInfo.Policies[policyL].ID)
+	if (player:HasPolicy(GameInfo.Policies["POLICY_COMMERCE"].ID)
+	and not player:HasPolicy(GameInfo.Policies[policyL].ID))
+	or (isSPEx and pEraID >= GameInfo.Eras["ERA_MEDIEVAL"].ID
+	and not player:HasPolicy(GameInfo.Policies[policyL].ID))
 	then
 		for k, v in pairs(g_MercenaryUnitListL) do 
 			local unit = GameInfo.Units[v]

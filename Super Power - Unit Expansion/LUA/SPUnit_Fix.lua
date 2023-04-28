@@ -1067,7 +1067,9 @@ function SPUE_PlayerDoneTurn(playerID)
 		-- 罗马禁卫军：集权帝国：驻守首都
 		if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_PRAETORIAN"]) then
 			local plot = unit:GetPlot();
-			if plot:GetPlotCity() and player:GetCityByID( plot:GetPlotCity() ):IsCapital() then
+			if plot:GetPlotCity() 
+			and plot:GetPlotCity():IsCapital()
+			then
 				local city = plot:GetPlotCity();
 				local iCapitalBonus = 4 * pEraID;
 				-- 首都
@@ -1077,9 +1079,11 @@ function SPUE_PlayerDoneTurn(playerID)
 				unit:ChangeExperience(2);
 				
 				-- iCapitalBonus = 4 * (1 + pEraID);
-				local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
-				Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("[COLOR_CITY_BROWN]+{1_Num}[ENDCOLOR][ICON_PRODUCTION][NEWLINE][COLOR_YIELD_FOOD]+{2_Num}[ENDCOLOR][ICON_FOOD][NEWLINE][COLOR_MAGENTA]+{3_Num}[ENDCOLOR][ICON_CULTURE]", iCapitalBonus, iCapitalBonus, iCapitalBonus));
-				Events.GameplayFX(hex.x, hex.y, -1);
+				if iCapitalBonus > 0 then
+					local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
+					Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("[COLOR_CITY_BROWN]+{1_Num}[ENDCOLOR][ICON_PRODUCTION][NEWLINE][COLOR_YIELD_FOOD]+{2_Num}[ENDCOLOR][ICON_FOOD][NEWLINE][COLOR_MAGENTA]+{3_Num}[ENDCOLOR][ICON_CULTURE]", iCapitalBonus, iCapitalBonus, iCapitalBonus));
+					Events.GameplayFX(hex.x, hex.y, -1);
+				end
 
 			end
 		end
@@ -1487,11 +1491,13 @@ function SPUE_UnitSetXY(playerID, unitID)
 		if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_PRAETORIAN"]) then
 			-- 罗马禁卫军：集权帝国：驻守首都
 			player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_PRAETORIAN"].ID, false)
-			if plot:GetPlotCity() and player:GetCityByID( plot:GetPlotCity() ):IsCapital() then
+			if plot:GetPlotCity() 
+			and plot:GetPlotCity():IsCapital()
+			then
 				-- 首都
 				player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_PRAETORIAN"].ID, true, true)
 			elseif 
-			not ( (plot:GetPlotCity()) or ( plot:GetPlotCity() and player:GetCityByID( plot:GetPlotCity() ):IsCapital() ) )
+			not ( plot:GetPlotCity() and plot:GetPlotCity():IsCapital() )
 			and player:HasPolicy(GameInfo.Policies["POLICY_SPUE_PRAETORIAN"].ID) 
 			then
 				-- 其他地块和城市
@@ -1502,7 +1508,7 @@ function SPUE_UnitSetXY(playerID, unitID)
 		if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_WEIYANG"]) then
 			-- 未央宫卫士：驻守首都全局不满-5%
 			local pCapPlot = pCapital:Plot()
-			if plot:GetPlotCity() and player:GetCityByID( plot:GetPlotCity() ):IsCapital() 
+			if plot:GetPlotCity() and plot:GetPlotCity():IsCapital() 
 			then
 				local num_wy_units = 0
 				for i = 0, pCapPlot:GetNumUnits() - 1, 1 do
@@ -1512,10 +1518,7 @@ function SPUE_UnitSetXY(playerID, unitID)
 					end
 				end
 				pCapital:SetNumRealBuilding( bWeiYang, num_wy_units )
-			elseif 
-			not ( (plot:GetPlotCity()) or ( plot:GetPlotCity() and player:GetCityByID( plot:GetPlotCity() ):IsCapital() ) )
-			then
-
+			else
 				local num_wy_units = 0
 				for i = 0, pCapPlot:GetNumUnits() - 1, 1 do
 					local fUnit = pCapPlot:GetUnit(i)

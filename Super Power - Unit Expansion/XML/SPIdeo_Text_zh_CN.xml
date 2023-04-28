@@ -107,7 +107,7 @@
 				[COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]是[ICON_IDEOLOGY_ORDER]秩序意识形态的精英单位，需要开启[ICON_IDEOLOGY_ORDER][ICON_CULTURE][COLOR_MAGENTA]秩序意识形态[ENDCOLOR]并完成先进战舰及高超声速反舰导弹研究计划才可以建造；
 				[NEWLINE][ICON_BULLET][COLOR_YIELD_GOLD]鹰击055[ENDCOLOR]不受单位克制关系影响，拥有以下能力：
 				[NEWLINE][ICON_BULLET]巡天阵列：防空范围10，拦截敌方飞机时+150%[ICON_STRENGTH]战斗力，对敌方空军单位+150%[ICON_STRENGTH]战斗力，每回合+10[COLOR_POSITIVE_TEXT]拦截次数[ENDCOLOR]，2格内的舰载机和陆基空优单位[COLOR_POSITIVE_TEXT]执行空中拦截任务[ENDCOLOR]时[ICON_STRENGTH]战斗力+150%。
-				[NEWLINE][ICON_BULLET]北斗破军：解锁新的意识形态政策或单位晋升时装载[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]（最多装载3枚，单位诞生时根据现有意识形态政策数量获得初始装载数），装载后视野+30，射程+20，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害，攻击完成后消耗[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]北斗破军：解锁新的意识形态政策或单位晋升时装载[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]（最多装载3枚，单位诞生时根据现有意识形态政策数量获得初始装载数），装载后视野+30，射程+20，对海军+300%[ICON_STRENGTH]战斗力，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害，攻击完成后消耗[COLOR_YIELD_GOLD]鹰击-21高超音速导弹[ENDCOLOR]。
 			</Text>
 		</Row>
 
