@@ -19,12 +19,12 @@
 		</Row>
 		<!--******************************甲骑具装*******************************-->
 		<Row Tag="TXT_KEY_UNIT_SPUE_CHINA_IRON_CAVALRY">
-			<Text>明光甲骑</Text>
+			<Text>折冲甲骑</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_CHINA_IRON_CAVALRY_HELP">
 			<Text>
-				[COLOR_POSITIVE_TEXT]明光甲骑[ENDCOLOR]是中国的特色单位，替代[COLOR_POSITIVE_TEXT]具装骑兵[ENDCOLOR]。
-				[NEWLINE][ICON_BULLET]可以用[ICON_PEACE]信仰购买，有1点额外[ICON_MOVES]移动力（不可继承），自带猎杀残敌与无视地形损耗晋升。
+				[COLOR_POSITIVE_TEXT]折冲甲骑[ENDCOLOR]是中国的特色单位，替代[COLOR_POSITIVE_TEXT]具装骑兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]有1点额外[ICON_MOVES]移动力（不可继承），自带猎杀残敌与无视地形损耗晋升。
 				[NEWLINE][ICON_BULLET]无视ZOC，进攻时+25%[ICON_STRENGTH]战斗力，回合结束时2格内每有一个己方单位则回复+5血量，回合开始时2格内每有一个敌方单位则额外+1移动力。
 			</Text>
 		</Row>
@@ -37,7 +37,6 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_CHINA_IRON_CAVALRY_HELP">
 			<Text>
-				[NEWLINE]
 				[NEWLINE][ICON_BULLET]无视ZOC，进攻时+25%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]回合结束时2格内每有一个己方单位则回复+5血量；
 				[NEWLINE][ICON_BULLET]回合开始时2格内每有一个敌方单位则额外+1移动力。
@@ -93,7 +92,6 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_RUSSIA_SEMYONOVSKY_REGIMENT_HELP">
 			<Text>
-				[NEWLINE]
 				[NEWLINE][ICON_BULLET]面对近战攻击时有30%的概率撤退，进攻时+35%[ICON_STRENGTH]战斗力，但是远程先手打击伤害占比下降;
 				[NEWLINE][ICON_BULLET]回合开始时处于驻扎状态则+1[ICON_MOVES]移动力，若与谢苗诺夫斯基近卫步兵单位相邻则+2[ICON_MOVES]移动力。
 			</Text>
@@ -112,7 +110,6 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_SWEDISH_HAKKAPELIITTA_HELP">
 			<Text>
-				[NEWLINE]
 				[NEWLINE][ICON_BULLET]近战攻击之前进行一次远程攻击;
 				[NEWLINE][ICON_BULLET]如果陆军统帅与这个单位回合开始时堆叠在一起，陆军统帅将以该单位的[ICON_MOVES]速度前进;
 				[NEWLINE][ICON_BULLET]和陆军统帅在同一格时，+30%[ICON_STRENGTH]战斗力。
@@ -153,9 +150,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ENGLAND_GRAND_CARRACK_HELP">
 			<Text>
-				[NEWLINE]
 				[NEWLINE][ICON_BULLET]从战斗中获取的经验增加30%；
 				[NEWLINE][ICON_BULLET]隐形但可被驱逐舰发现，可以发现潜艇；
+				[NEWLINE][ICON_BULLET]可以在未开边的情况下进入别国领土；
 				[NEWLINE][ICON_BULLET]能够在未开战的情况下远程攻击对方（以及己方）单位（无法击杀），并获取相当于造成的伤害50%的[ICON_GOLD]金币和[ICON_CULTURE]文化。
 			</Text>
 		</Row>	
@@ -181,13 +178,11 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_FRANCE_IMPERIAL_GUARD_HELP">
 			<Text>
-				[NEWLINE]
 				[NEWLINE][ICON_BULLET]无视ZOC；
 				[NEWLINE][ICON_BULLET][ICON_MOVES]移动力+1，每一点已花费的[ICON_MOVES]移动力提供+10%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]以自身为中心，相邻区域的敌军[ICON_STRENGTH]战斗力-25%；
 				[NEWLINE][ICON_BULLET]可以增加陆军统帅的获取效率，位于陆军统帅附近时战斗效率增加。
 			</Text>
 		</Row>	
-
 	</Language_zh_CN>
 </GameData>

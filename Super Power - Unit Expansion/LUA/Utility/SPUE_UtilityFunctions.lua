@@ -434,7 +434,7 @@ function EliteConditionAI(unit, unitPromotionID, ounitType, nunitType, unitClass
 
 	local dbProject = GameInfo.Projects[projectType];
 	
-	if goldCost then iCost = goldCost * 7 end;
+	if goldCost then iCost = goldCost * 4 end;
 		
 	return unit:CanMove() and unit:IsHasPromotion(unitPromotionID) 
 	and unit:GetUnitType() == GameInfoTypes[ounitType];

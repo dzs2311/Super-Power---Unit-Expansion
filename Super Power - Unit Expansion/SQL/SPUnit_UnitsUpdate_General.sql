@@ -53,6 +53,7 @@ UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 7 			WHE
 UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 8 			WHERE Type = 'UNIT_TANK';						-- 坦克
 UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 9 			WHERE Type = 'UNIT_ENGLISH_SHIPOFTHELINE';		-- 主力舰
 UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 10 			WHERE Type = 'UNIT_POLISH_PZL23';				-- PZL23
+UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 12 			WHERE Type = 'UNIT_EGYPTAIN_MAMLUK';			-- 马穆鲁克
 --==========================================================================================================================
 -- Unit_Misc
 --==========================================================================================================================
@@ -624,3 +625,18 @@ INSERT INTO Unit_BuildingClassRequireds
 		(UnitType, 					 BuildingClassType)
 SELECT	'UNIT_SPUE_TORPEDOBOAT',	 BuildingClassType
 FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_SUBMARINE';
+--==========================================================================================================================
+-- World Power Mod Compatibility
+--==========================================================================================================================
+UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_ENTERPRISE'; -- 企业号
+UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_HORNET'; 	-- 企业号
+
+CREATE TRIGGER SPUE_EXTENDED_Units
+AFTER INSERT ON Units
+WHEN 'UNIT_MODERN_GREAT_DOCTOR' = NEW.Type
+BEGIN
+	UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 		  PortraitIndex = 2 WHERE Type = 'UNIT_CANNON'; -- 加农炮
+	UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_ENTERPRISE'; -- 企业号
+	UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_HORNET'; 	-- 企业号
+
+END;

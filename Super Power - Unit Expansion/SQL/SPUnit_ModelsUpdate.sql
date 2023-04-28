@@ -293,7 +293,7 @@ UPDATE ArtDefine_UnitMemberCombats SET TurnRateMin = 2*TurnRateMin WHERE MoveRat
 UPDATE ArtDefine_UnitMemberCombats SET TurnRateMax = 2*TurnRateMax WHERE MoveRate > 0 AND UnitMemberType = 'ART_DEF_UNIT_MEMBER_SWEDISH_JAS39_FIGHTER';
 
 ------------------------------------------------------------------------------------------------------------------------
--- SP EXTENDED ModCompatibility
+-- World Power Mod Compatibility
 ------------------------------------------------------------------------------------------------------------------------
 -- 055VLS
 UPDATE ArtDefine_UnitMemberInfos SET Model = '055_VLS_FWD.fxsxml', Scale = 0.15

@@ -353,7 +353,7 @@
 			<Text>兵士集结</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_HELP">
-			<Text>可根据非首都直辖城市数量召集采邑骑士。</Text>
+			<Text>可根据非首都直辖城市数量召集采邑骑士（只能召集一次,且总数不超过6）。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A">
@@ -1200,7 +1200,7 @@
 			<Text>[COLOR_CYAN]私掠舰[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_PRIVATEER_HELP">
-			<Text>[COLOR_CYAN]私掠舰[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，对城市+50%[ICON_STRENGTH]战斗力，获取相当于100%对城市损害的[ICON_GOLD]金币，能够在未开战的情况下远程攻击敌方单位并获得相当于造成伤害的[ICON_GOLD]金币(无法击杀)，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+			<Text>[COLOR_CYAN]私掠舰[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，可以在未开边的情况下进入别国领土，对城市+50%[ICON_STRENGTH]战斗力，获取相当于100%对城市损害的[ICON_GOLD]金币，能够在未开战的情况下远程攻击敌方单位并获得相当于造成伤害的[ICON_GOLD]金币(无法击杀)，购买后可以立即移动，死亡时不会造成人口损失。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_PRIVATEER_TEXT">
 			<Text>私掠舰的船长们通常都获得了私掠许可证，因此他们可以在海上自由航行，抢夺敌国的贸易船只。出现于16-19世纪之间，私掠舰几乎为当时所有的霸权国家采用，尤其是英国和西班牙。私掠舰的船长和船员通常不会得到政府发给的薪水，他们的唯一金钱来源是抢劫后的分赃，所以“合法”的私掠舰和非法的那些海盗之间的界限其实是很模糊的。</Text>
@@ -1210,14 +1210,14 @@
 			<Text>海掠五洋</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_PRIVATEER_HELP">
-			<Text>对城市+50%[ICON_STRENGTH]战斗力，获取相当于100%对城市损害的[ICON_GOLD]金币，能够在未开战的情况下远程攻击敌方单位并获得相当于造成伤害的[ICON_GOLD]金币(无法击杀)。</Text>
+			<Text>可以在未开边的情况下进入别国领土，对城市+50%[ICON_STRENGTH]战斗力，获取相当于100%对城市损害的[ICON_GOLD]金币，能够在未开战的情况下远程攻击敌方单位并获得相当于造成伤害的[ICON_GOLD]金币(无法击杀)。</Text>
 		</Row>
 		<!-- **********************倭寇帆船*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_FUNE">
 			<Text>[COLOR_CYAN]倭寇帆船[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_FUNE_HELP">
-			<Text>[COLOR_CYAN]倭寇帆船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，可以建造渔场，精悍而快速的袭掠者，掠夺地块不消耗移动力，且为自己和1格内的己方单位回复3移动力，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+			<Text>[COLOR_CYAN]倭寇帆船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，可以建造渔场或进行鱼类养殖，精悍而快速的袭掠者，可以在未开边的情况下进入别国领土，掠夺地块不消耗移动力，且为自己和1格内的己方单位回复3移动力，购买后可以立即移动，死亡时不会造成人口损失。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_FUNE_TEXT">
 			<Text>倭寇（わこう），是指13世纪到16世纪左右侵略朝鲜、中国沿海各地和南洋的日本海盗集团的泛称，除沿海劫掠以外主要从事中日走私贸易，因中国古籍称日本为倭国，故称倭寇。</Text>
@@ -1227,14 +1227,14 @@
 			<Text>浪人</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_FUNE_HELP">
-			<Text>掠夺地块不消耗移动力，且为自己和1格内的己方单位回复3移动力。</Text>
+			<Text>可以在未开边的情况下进入别国领土，掠夺地块不消耗移动力，且为自己和1格内的己方单位回复3移动力。</Text>
 		</Row>
 		<!-- **********************南洋海盗船*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_SSPRIVATEER">
 			<Text>[COLOR_CYAN]南洋海盗船[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_SSPRIVATEER_HELP">
-			<Text>[COLOR_CYAN]南洋海盗船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，诞生时附赠一支[COLOR_CYAN]铁人军[ENDCOLOR]（不能超过其上限数量：4），优秀的海军近战单位，拥有两格射程，发生近战时有50%的几率撤退，赢得战斗时有概率俘获敌军，可以远程攻击敌方地块掠获100[ICON_GOLD]金币并为自己回复25血量，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+			<Text>[COLOR_CYAN]南洋海盗船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，诞生时附赠一支[COLOR_CYAN]铁人军[ENDCOLOR]（不能超过其上限数量：4），可以在未开边的情况下进入别国领土，优秀的海军近战单位，拥有两格射程，发生近战时有50%的几率撤退，赢得战斗时有概率俘获敌军，可以远程攻击敌方地块掠获100[ICON_GOLD]金币并为自己回复25血量，购买后可以立即移动，死亡时不会造成人口损失。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_SSPRIVATEER_TEXT">
 			<Text>
@@ -1250,7 +1250,7 @@
 			<Text>碧海黑帆</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_SSPRIVATEER_HELP">
-			<Text>劫掠不消耗移动力，发生近战时有50%的几率撤退，赢得战斗时有概率俘获敌军。</Text>
+			<Text>可以在未开边的情况下进入别国领土，劫掠不消耗移动力，发生近战时有50%的几率撤退，赢得战斗时有概率俘获敌军。</Text>
 		</Row>
 
 		<!-- **********************铁人军*********************** -->
@@ -1726,7 +1726,7 @@
 			<Text>巴西琉斯之道</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_HELP">
-			<Text>单位诞生时额外获得相当于盟友城邦人口总数的经验值，每个盟友城邦带来15%防御加成（不超过60%）。</Text>
+			<Text>单位诞生时额外获得相当于2倍盟友城邦人口总数的经验值，每个盟友城邦带来15%防御加成（不超过60%）。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1">
 			<Text>巴西琉斯之盾(1)</Text>
@@ -1741,7 +1741,16 @@
 			<Text>巴西琉斯之盾(4)</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1_HELP">
-			<Text>防御时+15%[ICON_STRENGTH]战斗力</Text>
+			<Text>防御时+15%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE2_HELP">
+			<Text>防御时+30%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE3_HELP">
+			<Text>防御时+45%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE4_HELP">
+			<Text>防御时+60%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_EMPEROR">

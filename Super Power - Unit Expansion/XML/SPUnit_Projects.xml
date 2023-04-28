@@ -10,7 +10,6 @@
 	    	<Civilopedia>TXT_KEY_PROJECT_BUCELLARII_TRAINING_PEDIA</Civilopedia>
 	    	<MaxGlobalInstances>1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
-			<TechPrereq>TECH_CHIVALRY</TechPrereq>
 	    	<Cost>120</Cost>
 	    	<PortraitIndex>29</PortraitIndex>
 	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
@@ -81,7 +80,7 @@
 	    <Row>
 	    	<ProjectType>PROJECT_BUCELLARII_TRAINING</ProjectType>
 	    	<FlavorType>FLAVOR_MOBILE</FlavorType>
-	    	<Flavor>120</Flavor>
+	    	<Flavor>300</Flavor>
 	    </Row>
 		<!-- 安纳托利亚再征服计划 -->
 	    <Row>
@@ -93,7 +92,7 @@
 	    <Row>
 	    	<ProjectType>PROJECT_SPUE_GENOAXBOW_TRAINING</ProjectType>
 	    	<FlavorType>FLAVOR_DEFENSE</FlavorType>
-	    	<Flavor>60</Flavor>
+	    	<Flavor>300</Flavor>
 	    </Row>
 	    <Row>
 	    	<ProjectType>PROJECT_SPUE_GENOAXBOW_TRAINING</ProjectType>
@@ -110,13 +109,13 @@
 	    <Row>
 	    	<ProjectType>PROJECT_SPUE_ELMETI_TRAINING</ProjectType>
 	    	<FlavorType>FLAVOR_MOBILE</FlavorType>
-	    	<Flavor>60</Flavor>
+	    	<Flavor>300</Flavor>
 	    </Row>
 		<!-- 巨人掷弹兵训练计划 -->
 	    <Row>
 	    	<ProjectType>PROJECT_SPUE_HESSIAN_TRAINING</ProjectType>
 	    	<FlavorType>FLAVOR_DEFENSE</FlavorType>
-	    	<Flavor>60</Flavor>
+	    	<Flavor>300</Flavor>
 	    </Row>
 	</Project_Flavors>
 </GameData>

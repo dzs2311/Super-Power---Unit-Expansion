@@ -59,8 +59,8 @@
 				[COLOR_YIELD_GOLD]帝王炎黄坦克[ENDCOLOR]是[ICON_IDEOLOGY_ORDER]秩序意识形态的精英单位，需要开启[ICON_IDEOLOGY_ORDER][ICON_CULTURE][COLOR_MAGENTA]秩序意识形态[ENDCOLOR]并完成帝王坦克研发计划才可以建造；
 				[NEWLINE][ICON_BULLET][COLOR_YIELD_GOLD]帝王炎黄坦克[ENDCOLOR]拥有以下能力：
 				[NEWLINE][ICON_BULLET]战区之盾：能够在[COLOR_POSITIVE_TEXT]友方地域[ENDCOLOR]外30格内空投，自带[COLOR_POSITIVE_TEXT]军团[ENDCOLOR]与[COLOR_POSITIVE_TEXT]集团军[ENDCOLOR]晋升，回合结束自身回复全部血量，核免疫。
-				[NEWLINE][ICON_BULLET]帝王之刃：可执行[COLOR_POSITIVE_TEXT]火力全开[ENDCOLOR]，对满血单位+100%[ICON_STRENGTH]战斗力，对城市和堡垒+300%[ICON_STRENGTH]战斗力。
-				[NEWLINE][ICON_BULLET]炽阳璀璨：每次受到攻击后+1移动力且可以将自身受到的伤害作为能量储存，达到200能量后可以发射一次核导弹。
+				[NEWLINE][ICON_BULLET]帝王之刃：可执行[COLOR_POSITIVE_TEXT]火力全开[ENDCOLOR]，对满血单位+100%[ICON_STRENGTH]战斗力，对城市和堡垒+300%[ICON_STRENGTH]战斗力，移动时对相邻敌方单位造成5点伤害。
+				[NEWLINE][ICON_BULLET]炽阳璀璨：每次受到攻击后+1移动力且可以将自身受到的伤害作为能量储存，达到600能量后获得晋升璀璨炽阳，可以装载2枚核弹。
 				[NEWLINE][ICON_BULLET]冲锋号角：4格内的己方单位+100%战斗力，回合结束回复50%最大血量。
 			</Text>
 		</Row>

@@ -23,7 +23,7 @@
 			<Help>TXT_KEY_PROMOTION_SPUE_ZHANCHE_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
-			<LostWithUpgrade>true</LostWithUpgrade>
+			<!-- <LostWithUpgrade>true</LostWithUpgrade> -->
 			<!-- <RoughTerrainEndsTurn>true</RoughTerrainEndsTurn> -->
 			<OpenAttack>50</OpenAttack>
 			<OpenDefense>50</OpenDefense>
@@ -444,6 +444,7 @@
 			<CaptureDefeatedEnemy>true</CaptureDefeatedEnemy>
 			<!-- 劫掠不消耗移动力。-->
 			<FreePillageMoves>true</FreePillageMoves>
+			<RivalTerritory>true</RivalTerritory>
 			<IconAtlas>promoVP_atlas_01</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_SSPRIVATEER</PediaEntry>
@@ -515,6 +516,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<CanMoveImpassable>true</CanMoveImpassable>
+			<HoveringUnit>true</HoveringUnit>
 			<IgnoreTerrainCost>true</IgnoreTerrainCost>
 			<IgnoreTerrainDamage>true</IgnoreTerrainDamage>
 			<IgnoreFeatureDamage>true</IgnoreFeatureDamage>
@@ -594,6 +596,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
+			<RivalTerritory>true</RivalTerritory>
 			<CityAttack>50</CityAttack>
 			<CityAttackPlunderModifier>100</CityAttackPlunderModifier>
 			<PortraitIndex>5</PortraitIndex>
@@ -611,6 +614,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<FreePillageMoves>true</FreePillageMoves>
+			<RivalTerritory>true</RivalTerritory>
 			<PortraitIndex>21</PortraitIndex>
 			<IconAtlas>promoVP_atlas_03</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -842,11 +846,11 @@
 			<!--巴西琉斯之盾2-->
 			<Type>PROMOTION_SPUE_BASELIUS_DEFENSE2</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE2</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1_HELP</Help>
+			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE2_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
-			<DefenseMod>15</DefenseMod>
+			<DefenseMod>30</DefenseMod>
 			<PortraitIndex>56</PortraitIndex>
 			<IconAtlas>promoVP_atlas_03</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -856,11 +860,11 @@
 			<!--巴西琉斯之盾3-->
 			<Type>PROMOTION_SPUE_BASELIUS_DEFENSE3</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE3</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1_HELP</Help>
+			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE3_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
-			<DefenseMod>15</DefenseMod>
+			<DefenseMod>45</DefenseMod>
 			<PortraitIndex>56</PortraitIndex>
 			<IconAtlas>promoVP_atlas_03</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -870,11 +874,11 @@
 			<!--巴西琉斯之盾4-->
 			<Type>PROMOTION_SPUE_BASELIUS_DEFENSE4</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE4</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1_HELP</Help>
+			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE4_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
-			<DefenseMod>15</DefenseMod>
+			<DefenseMod>60</DefenseMod>
 			<PortraitIndex>56</PortraitIndex>
 			<IconAtlas>promoVP_atlas_03</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -1151,6 +1155,7 @@
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<PortraitIndex>5</PortraitIndex>
 			<IconAtlas>promoVP_atlas_00</IconAtlas>
+			<AoEDamageOnMove>5</AoEDamageOnMove>
 			<CityAttack>300</CityAttack>
 			<DropRange>30</DropRange>
 			<AttackFullyHealedMod>100</AttackFullyHealedMod>
@@ -1447,6 +1452,7 @@
 			<HealOutsideFriendly>1</HealOutsideFriendly>
 			<Invisible>INVISIBLE_SUBMARINE</Invisible>
 			<SeeInvisible>INVISIBLE_SUBMARINE</SeeInvisible>
+			<RivalTerritory>true</RivalTerritory>
 			<PortraitIndex>30</PortraitIndex>
 			<IconAtlas>promoVP_atlas_02</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>

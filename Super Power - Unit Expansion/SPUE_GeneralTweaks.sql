@@ -19,9 +19,9 @@ SPUE_GlobalUserSettings (
 	0 = Disabled
 */
 --------------------------------------------------------------------------
-INSERT INTO SPUE_GlobalUserSettings
-		(Type,														Value)
-VALUES	('SPUE_CITY_WITH_BUILDINGS',									0); -- 殖民地模板等，默认关闭
+INSERT OR REPLACE INTO CustomModOptions
+		(Name,												Value,		Class)
+VALUES	('EVENTS_UNIT_DO_TURN',								1,			3); -- 开启单位过回合事件
 
 UPDATE Defines 			SET Value = 100 WHERE Name = 'MAX_EVASION_PROBABILITY';
 --==========================================================================================================================	
