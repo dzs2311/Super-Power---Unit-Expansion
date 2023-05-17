@@ -1,0 +1,17 @@
+{
+    "Lua.diagnostics.globals": [
+        "include",
+        "GameInfo",
+        "GameDefines",
+        "Players",
+        "Events",
+        "GameEvents",
+        "GameInfoTypes",
+        "Modding",
+        "DomainTypes",
+        "Teams",
+        "LuaEvents",
+        "Locale",
+        "UNITAI_ATTACK"
+    ]
+}

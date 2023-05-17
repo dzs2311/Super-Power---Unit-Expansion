@@ -16,7 +16,7 @@ VALUES		('UNIT_ELITE_RIDER',			'PROMOTION_ARMOR_PLATING_I'),
 -- Unit_Flags
 --==========================================================================================================================
 UPDATE Units SET UnitFlagAtlas = 'SPUnitFlags_FLAG',				UnitFlagIconOffset = 10 	WHERE Type = 'UNIT_ELITE_RIDER';				-- 玄甲军
-UPDATE Units SET UnitFlagAtlas = 'SPUE_PIST_FLAG_ATLAS',			UnitFlagIconOffset = 0 		WHERE Type = 'UNIT_BOMBARD';					-- 手枪骑兵
+UPDATE Units SET UnitFlagAtlas = 'SPUE_PIST_FLAG_ATLAS',			UnitFlagIconOffset = 0 		WHERE Type = 'UNIT_BOMBARD';					-- 火枪骑兵
 UPDATE Units SET UnitFlagAtlas = 'SPUE_UNIT_FLAG_ATLAS', 			UnitFlagIconOffset = 6 		WHERE Type = 'UNIT_RIFLEMAN';					-- 线列步兵
 UPDATE Units SET UnitFlagAtlas = 'SPUE_UNIT_FLAG_ATLAS', 			UnitFlagIconOffset = 8 		WHERE Type = 'UNIT_CANNON';						-- 加农炮
 UPDATE Units SET UnitFlagAtlas = 'SPUE_CULV_FLAG_ATLAS', 			UnitFlagIconOffset = 0 		WHERE Type = 'UNIT_CULVERIN';					-- 长管炮(重炮)
@@ -32,7 +32,7 @@ UPDATE Units SET UnitFlagAtlas = 'SPUE_GERMAN_FLAG_ATLAS',  		UnitFlagIconOffset
 -- Unit_Icons
 --==========================================================================================================================
 UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 					PortraitIndex = 6 			WHERE Type = 'UNIT_MUSKETMAN';					-- 火枪手
-UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 					PortraitIndex = 38 			WHERE Type = 'UNIT_BOMBARD';					-- 手枪骑兵
+UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 					PortraitIndex = 39 			WHERE Type = 'UNIT_BOMBARD';					-- 火枪骑兵
 UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 					PortraitIndex = 31 			WHERE Type = 'UNIT_RIFLEMAN';					-- 线列步兵
 UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 					PortraitIndex = 2 			WHERE Type = 'UNIT_CANNON';						-- 加农炮
 UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 					PortraitIndex = 22 			WHERE Type = 'UNIT_CULVERIN';					-- 长管炮(重炮)
@@ -61,7 +61,7 @@ UPDATE Units SET IconAtlas = 'SPUE02_UNITS_ATLAS', 					PortraitIndex = 12 			WH
 UPDATE Units SET Combat = 55 WHERE Type = 'UNIT_ELITE_RIDER';
 -- 弓骑兵过期时间调整
 UPDATE Units SET ObsoleteTech = 'TECH_CHIVALRY' WHERE Type = 'UNIT_MEDIEVAL_CHARIOT';
--- 手枪骑兵科技挪到冶金
+-- 火枪骑兵科技挪到冶金
 UPDATE Units SET PrereqTech = 'TECH_METALLURGY' WHERE Type = 'UNIT_BOMBARD';
 -- 怯薛Class变化
 UPDATE Units SET Class = 'UNITCLASS_SPUE_MOUNTEDXBOW', PrereqTech = 'TECH_CHIVALRY', RangedCombat = 20, Combat = 30, ObsoleteTech = 'TECH_METALLURGY' WHERE Type = 'UNIT_MONGOLIAN_KESHIK';
@@ -635,7 +635,7 @@ CREATE TRIGGER SPUE_EXTENDED_Units
 AFTER INSERT ON Units
 WHEN 'UNIT_MODERN_GREAT_DOCTOR' = NEW.Type
 BEGIN
-	UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 		  PortraitIndex = 2 WHERE Type = 'UNIT_CANNON'; -- 加农炮
+	UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 		  PortraitIndex = 2 WHERE Type = 'UNIT_CANNON'; 	-- 加农炮
 	UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_ENTERPRISE'; -- 企业号
 	UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_HORNET'; 	-- 企业号
 

@@ -31,10 +31,14 @@ UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'EVENTS_UNIT_UPGRADES';			--
 UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'EVENTS_UNIT_RANGEATTACK';			-- 开启单位远程攻击事件
 UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'EVENTS_UNIT_CREATED';				-- 开启单位产生事件
 UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'EVENTS_BATTLES_CUSTOM_DAMAGE';	-- 开启单位减伤事件
-UPDATE CustomModOptions SET Value = 1 	Where Name = 'EVENTS_PLAYER_TURN';				-- 开启玩家结束回合事件
-UPDATE CustomModOptions SET Value = 1 	Where Name = 'EVENTS_UNIT_DO_TURN';				-- 开启单位过回合事件
-UPDATE CustomModOptions SET Value = 1 	Where Name = 'EVENTS_UNIT_ACTIONS';				-- 开启单位劫掠事件
-UPDATE CustomModOptions SET Value = 1 	Where Name = 'GLOBAL_EXCLUDE_FROM_GIFTS';		-- 开启城邦赠送豁免
+UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'EVENTS_PLAYER_TURN';				-- 开启玩家结束回合事件
+UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'EVENTS_UNIT_DO_TURN';				-- 开启单位过回合事件
+UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'EVENTS_UNIT_ACTIONS';				-- 开启单位劫掠事件
+UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'GLOBAL_EXCLUDE_FROM_GIFTS';		-- 开启城邦赠送豁免
+UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'PROMOTION_SPLASH_DAMAGE';			-- 开启单位溅射
+UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'PROMOTION_SPLASH_DAMAGE';			-- 开启单位溅射
+UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'ROG_CORE';						-- 开启单位强权效果
+
 
 -- UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_1UPT';			-- No More Civilian Traffic Jams
 -- UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_RESTRICTIONS';	-- No More Civilian Traffic Jams

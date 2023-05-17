@@ -239,6 +239,7 @@
 			<PromotionPrereq>PROMOTION_SPUE_KNIGHT_NEW</PromotionPrereq>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PortraitIndex>52</PortraitIndex>
+			<MaxHitPointsModifier>100</MaxHitPointsModifier>
 			<ChangeDamageValue>-15</ChangeDamageValue>
 			<IconAtlas>promoVP_atlas_02</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -1157,6 +1158,7 @@
 			<IconAtlas>promoVP_atlas_00</IconAtlas>
 			<AoEDamageOnMove>5</AoEDamageOnMove>
 			<CityAttack>300</CityAttack>
+			<MaxHitPointsModifier>200</MaxHitPointsModifier>
 			<DropRange>30</DropRange>
 			<AttackFullyHealedMod>100</AttackFullyHealedMod>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>

@@ -7,8 +7,8 @@
     <Guid>988a1168-d581-4150-948f-199021eabdea</Guid>
     <ModVersion>6</ModVersion>
     <Stability>Stable</Stability>
-    <Teaser>(6.0.0)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
-    <Description>(6.0.0)超级大国单位拓展及大量单位模型替换
+    <Teaser>(6.1.0)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
+    <Description>(6.1.0)超级大国单位拓展及大量单位模型替换
 [NEWLINE][NEWLINE]
 [ICON_BULLET]大量单位替换了更加美观和符合史实的模型（如宝船）
 [NEWLINE]
@@ -310,6 +310,7 @@
     <Folder Include="Art\Units\General\3-Renaissance\Falconet\" />
     <Folder Include="Art\Units\General\3-Renaissance\muskteer" />
     <Folder Include="Art\Units\General\3-Renaissance\pistol_cavalry\" />
+    <Folder Include="Art\Units\General\3-Renaissance\Rifle Lancer\" />
     <Folder Include="Art\Units\General\3-Renaissance\Ship of the Line\" />
     <Folder Include="Art\Units\General\4-Industrial" />
     <Folder Include="Art\Units\General\4-Industrial\Cannon\" />
@@ -606,6 +607,10 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Flags\SPUE_OVERLORD_Flag.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\SPUE_rifle_lancerFlag.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -1366,6 +1371,10 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\SV\SV_SPUE_OVERLORD.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\SV_SPUE_rifle_lancer.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -2410,6 +2419,22 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\General\3-Renaissance\pistol_cavalry\u_french_musketeer_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\General\3-Renaissance\Rifle Lancer\aca_caraya.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\General\3-Renaissance\Rifle Lancer\aca_caraya.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\General\3-Renaissance\Rifle Lancer\aca_caraya_diff.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\General\3-Renaissance\Rifle Lancer\aca_caraya_sref.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>

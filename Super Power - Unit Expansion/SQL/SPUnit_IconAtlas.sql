@@ -32,7 +32,7 @@ VALUES		('SPUE_UNITS_ATLAS', 				256, 		'SPUE_IconAtlas256.dds',				8, 				8),
 			('SPUE_UNIT_FLAG2_ATLAS',			032,		'SPUE_UnitFlag2Alpha032.dds',			4, 				4),
 			('SPUE_HCAV_FLAG_ATLAS',			032,		'SPUE_HeavyCavalry_flag_32.dds',		1, 				1),	-- 重骑兵
 			('SPUE_GOND_FLAG_ATLAS',			032,		'SPUE_GondorGuard_Flag.dds',			1, 				1),	-- 圣树守卫
-			('SPUE_PIST_FLAG_ATLAS',			032,		'SPUE_Pistol_flag.dds',					1, 				1),	-- 手枪骑兵
+			('SPUE_PIST_FLAG_ATLAS',			032,		'SPUE_rifle_lancerFlag.dds',			1, 				1),	-- 火枪骑兵
 			('SPUE_MOXB_FLAG_ATLAS',			032,		'SPUE_mountedxbow_flag.dds',			1, 				1),	-- 具装骑射手
 			('SPUE_VPFG_FLAG_ATLAS',			032,		'SPUE_VP_FIELDGUN_flag.dds',			1, 				1),	-- 野战炮/意大利炮
 			('SPUE_VPAC_FLAG_ATLAS',			032,		'SPUE_armoredcarflag.dds',				1, 				1),	-- 轻型装甲车

@@ -702,23 +702,23 @@ INSERT OR REPLACE INTO ArtDefine_StrategicView (StrategicViewType, Asset, TileTy
 ------------------------------------------------------------------------------------------------------------------------
 --777--
 ------------------------------------------------------------------------------------------------------------------------
-INSERT OR REPLACE INTO ArtDefine_UnitInfos (Type, DamageStates, Formation) VALUES
-('ART_DEF_UNIT_EGYPT_UNIT777', 1, 'UnFormed');
+-- INSERT OR REPLACE INTO ArtDefine_UnitInfos (Type, DamageStates, Formation) VALUES
+-- ('ART_DEF_UNIT_EGYPT_UNIT777', 1, 'UnFormed');
 
-INSERT OR REPLACE INTO ArtDefine_UnitInfoMemberInfos (UnitInfoType, UnitMemberInfoType, NumMembers) VALUES
-('ART_DEF_UNIT_EGYPT_UNIT777', 'ART_DEF_UNIT_MEMBER_EGYPT_UNIT777', 10);
+-- INSERT OR REPLACE INTO ArtDefine_UnitInfoMemberInfos (UnitInfoType, UnitMemberInfoType, NumMembers) VALUES
+-- ('ART_DEF_UNIT_EGYPT_UNIT777', 'ART_DEF_UNIT_MEMBER_EGYPT_UNIT777', 10);
 
-INSERT OR REPLACE INTO ArtDefine_UnitMemberInfos (Type, Model, MaterialTypeSoundOverrideTag, MaterialTypeTag, Scale) VALUES
-('ART_DEF_UNIT_MEMBER_EGYPT_UNIT777', 'Civ5_AfricanSF_v2.fxsxml', 'FLESH', 'CLOTH', 0.12);
+-- INSERT OR REPLACE INTO ArtDefine_UnitMemberInfos (Type, Model, MaterialTypeSoundOverrideTag, MaterialTypeTag, Scale) VALUES
+-- ('ART_DEF_UNIT_MEMBER_EGYPT_UNIT777', 'Civ5_AfricanSF_v2.fxsxml', 'FLESH', 'CLOTH', 0.12);
 
-INSERT OR REPLACE INTO ArtDefine_UnitMemberCombats (EnableActions, HasRefaceAfterCombat, HasShortRangedAttack, UnitMemberType, ReformBeforeCombat, ShortMoveRate, TargetHeight, ShortMoveRadius) VALUES
-('Idle Attack RunCharge AttackCity Bombard Death BombardDefend Run Fortify CombatReady Walk AttackCharge', 1, 1, 'ART_DEF_UNIT_MEMBER_EGYPT_UNIT777', 1, 0.309999994039536, 8.0, 12.0);
+-- INSERT OR REPLACE INTO ArtDefine_UnitMemberCombats (EnableActions, HasRefaceAfterCombat, HasShortRangedAttack, UnitMemberType, ReformBeforeCombat, ShortMoveRate, TargetHeight, ShortMoveRadius) VALUES
+-- ('Idle Attack RunCharge AttackCity Bombard Death BombardDefend Run Fortify CombatReady Walk AttackCharge', 1, 1, 'ART_DEF_UNIT_MEMBER_EGYPT_UNIT777', 1, 0.309999994039536, 8.0, 12.0);
 
-INSERT OR REPLACE INTO ArtDefine_UnitMemberCombatWeapons (WeaponTypeSoundOverrideTag, WeaponTypeTag, UnitMemberType, "Index", SubIndex) VALUES
-('BULLET', 'BULLET', 'ART_DEF_UNIT_MEMBER_EGYPT_UNIT777', 0, 0);
+-- INSERT OR REPLACE INTO ArtDefine_UnitMemberCombatWeapons (WeaponTypeSoundOverrideTag, WeaponTypeTag, UnitMemberType, "Index", SubIndex) VALUES
+-- ('BULLET', 'BULLET', 'ART_DEF_UNIT_MEMBER_EGYPT_UNIT777', 0, 0);
 
-INSERT OR REPLACE INTO ArtDefine_StrategicView (StrategicViewType, Asset, TileType) VALUES
-('ART_DEF_UNIT_EGYPT_UNIT777', 'SV_Unit777.dds', 'Unit');
+-- INSERT OR REPLACE INTO ArtDefine_StrategicView (StrategicViewType, Asset, TileType) VALUES
+-- ('ART_DEF_UNIT_EGYPT_UNIT777', 'SV_Unit777.dds', 'Unit');
 ------------------------------------------------------------------------------------------------------------------------
 --AUSTRIAN_SKODA--
 ------------------------------------------------------------------------------------------------------------------------
@@ -742,23 +742,23 @@ INSERT OR REPLACE INTO ArtDefine_StrategicView (StrategicViewType, Asset, TileTy
 ------------------------------------------------------------------------------------------------------------------------
 --Olifant--
 ------------------------------------------------------------------------------------------------------------------------
-INSERT OR REPLACE INTO ArtDefine_UnitInfos (Type, DamageStates, Formation) VALUES
-('ART_DEF_UNIT_ZULU_OLIFANT', 1, 'Vehicle');
+-- INSERT OR REPLACE INTO ArtDefine_UnitInfos (Type, DamageStates, Formation) VALUES
+-- ('ART_DEF_UNIT_ZULU_OLIFANT', 1, 'Vehicle');
 
-INSERT OR REPLACE INTO ArtDefine_UnitInfoMemberInfos (UnitInfoType, UnitMemberInfoType, NumMembers) VALUES
-('ART_DEF_UNIT_ZULU_OLIFANT', 'ART_DEF_UNIT_MEMBER_ZULU_OLIFANT', 3);
+-- INSERT OR REPLACE INTO ArtDefine_UnitInfoMemberInfos (UnitInfoType, UnitMemberInfoType, NumMembers) VALUES
+-- ('ART_DEF_UNIT_ZULU_OLIFANT', 'ART_DEF_UNIT_MEMBER_ZULU_OLIFANT', 3);
 
-INSERT OR REPLACE INTO ArtDefine_UnitMemberInfos (Type, Model, MaterialTypeSoundOverrideTag, MaterialTypeTag, Scale) VALUES
-('ART_DEF_UNIT_MEMBER_ZULU_OLIFANT', 'T72B3.fxsxml', 'METALSM', 'METAL', 0.100000001490116);
+-- INSERT OR REPLACE INTO ArtDefine_UnitMemberInfos (Type, Model, MaterialTypeSoundOverrideTag, MaterialTypeTag, Scale) VALUES
+-- ('ART_DEF_UNIT_MEMBER_ZULU_OLIFANT', 'T72B3.fxsxml', 'METALSM', 'METAL', 0.100000001490116);
 
-INSERT OR REPLACE INTO ArtDefine_UnitMemberCombats (EnableActions, HasRefaceAfterCombat, HasShortRangedAttack, UnitMemberType, HasStationaryMelee, ReformBeforeCombat, HasIndependentWeaponFacing) VALUES
-('Idle Attack RunCharge AttackCity Bombard Death BombardDefend Run Fortify CombatReady', 0, 1, 'ART_DEF_UNIT_MEMBER_ZULU_OLIFANT', 1, 1, 1);
+-- INSERT OR REPLACE INTO ArtDefine_UnitMemberCombats (EnableActions, HasRefaceAfterCombat, HasShortRangedAttack, UnitMemberType, HasStationaryMelee, ReformBeforeCombat, HasIndependentWeaponFacing) VALUES
+-- ('Idle Attack RunCharge AttackCity Bombard Death BombardDefend Run Fortify CombatReady', 0, 1, 'ART_DEF_UNIT_MEMBER_ZULU_OLIFANT', 1, 1, 1);
 
-INSERT OR REPLACE INTO ArtDefine_UnitMemberCombatWeapons (WeaponTypeSoundOverrideTag, WeaponTypeTag, UnitMemberType, "Index", VisKillStrengthMax, VisKillStrengthMin, HitEffect, SubIndex) VALUES
-('EXPLOSION20POUND', 'EXPLOSIVE', 'ART_DEF_UNIT_MEMBER_ZULU_OLIFANT', 0, 50.0, 25.0, 'ART_DEF_VEFFECT_TANK_IMPACT_$(TERRAIN)', 0);
+-- INSERT OR REPLACE INTO ArtDefine_UnitMemberCombatWeapons (WeaponTypeSoundOverrideTag, WeaponTypeTag, UnitMemberType, "Index", VisKillStrengthMax, VisKillStrengthMin, HitEffect, SubIndex) VALUES
+-- ('EXPLOSION20POUND', 'EXPLOSIVE', 'ART_DEF_UNIT_MEMBER_ZULU_OLIFANT', 0, 50.0, 25.0, 'ART_DEF_VEFFECT_TANK_IMPACT_$(TERRAIN)', 0);
 
-INSERT OR REPLACE INTO ArtDefine_StrategicView (StrategicViewType, Asset, TileType) VALUES
-('ART_DEF_UNIT_ZULU_OLIFANT', 'SV_OliTank.dds', 'Unit');
+-- INSERT OR REPLACE INTO ArtDefine_StrategicView (StrategicViewType, Asset, TileType) VALUES
+-- ('ART_DEF_UNIT_ZULU_OLIFANT', 'SV_OliTank.dds', 'Unit');
 ------------------------------------------------------------------------------------------------------------------------
 --Re Umberto-class ironclad--
 ------------------------------------------------------------------------------------------------------------------------
@@ -1236,7 +1236,7 @@ INSERT INTO ArtDefine_StrategicView
 			(StrategicViewType, 			TileType,	Asset)
 VALUES		('ART_DEF_UNIT_MOUNTEDXBOW', 	'Unit', 	'SV_SPUE_mountedxbow.dds');
 ------------------------------------------------------------------------------------------------------------------------
--- 手枪骑兵
+-- 火枪骑兵
 ------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ArtDefine_UnitInfos 
 		(Type, 					DamageStates,	Formation)
@@ -1245,8 +1245,7 @@ FROM ArtDefine_UnitInfos WHERE	Type = 'ART_DEF_UNIT_CAVALRY';
 
 INSERT INTO ArtDefine_UnitInfoMemberInfos 	
 		(UnitInfoType,			UnitMemberInfoType,					NumMembers)
-VALUES	('ART_DEF_UNIT_PISTOL', 	'ART_DEF_UNIT_MEMBER_PISTOL1', 	3),
-		('ART_DEF_UNIT_PISTOL', 	'ART_DEF_UNIT_MEMBER_PISTOL2', 	2);
+VALUES	('ART_DEF_UNIT_PISTOL', 	'ART_DEF_UNIT_MEMBER_PISTOL1',  5);
 
 INSERT INTO ArtDefine_UnitMemberCombats 
 		(UnitMemberType,				EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
@@ -1260,29 +1259,29 @@ FROM ArtDefine_UnitMemberCombatWeapons WHERE UnitMemberType = 'ART_DEF_UNIT_MEMB
 
 
 INSERT INTO ArtDefine_UnitMemberInfos 	
-		(Type, 							Scale,	ZOffset, Domain, Model,							MaterialTypeTag, MaterialTypeSoundOverrideTag)
-SELECT	'ART_DEF_UNIT_MEMBER_PISTOL1',	0.12,	ZOffset, Domain, 'mesh1_cavalry_pistol.fxsxml',	MaterialTypeTag, MaterialTypeSoundOverrideTag
+		(Type, 							Scale,	ZOffset, Domain, Model,					MaterialTypeTag, MaterialTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_PISTOL1',	0.12,	ZOffset, Domain, 'aca_caraya.fxsxml',	MaterialTypeTag, MaterialTypeSoundOverrideTag
 FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_CAVALRY';
 
-INSERT INTO ArtDefine_UnitMemberCombats 
-		(UnitMemberType,				EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
-SELECT	'ART_DEF_UNIT_MEMBER_PISTOL2',	EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation
-FROM ArtDefine_UnitMemberCombats WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_CAVALRY';
+-- INSERT INTO ArtDefine_UnitMemberCombats 
+-- 		(UnitMemberType,				EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
+-- SELECT	'ART_DEF_UNIT_MEMBER_PISTOL2',	EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation
+-- FROM ArtDefine_UnitMemberCombats WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_CAVALRY';
 
-INSERT INTO ArtDefine_UnitMemberCombatWeapons	
-		(UnitMemberType,						"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag)
-SELECT	'ART_DEF_UNIT_MEMBER_PISTOL2',		"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag
-FROM ArtDefine_UnitMemberCombatWeapons WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_CAVALRY';
+-- INSERT INTO ArtDefine_UnitMemberCombatWeapons	
+-- 		(UnitMemberType,						"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag)
+-- SELECT	'ART_DEF_UNIT_MEMBER_PISTOL2',		"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag
+-- FROM ArtDefine_UnitMemberCombatWeapons WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_CAVALRY';
 
 
-INSERT INTO ArtDefine_UnitMemberInfos 	
-		(Type, 							Scale,	ZOffset, Domain, Model,							MaterialTypeTag, MaterialTypeSoundOverrideTag)
-SELECT	'ART_DEF_UNIT_MEMBER_PISTOL2',	0.12,	ZOffset, Domain, 'mesh2_cavalry_pistol.fxsxml',	MaterialTypeTag, MaterialTypeSoundOverrideTag
-FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_CAVALRY';
+-- INSERT INTO ArtDefine_UnitMemberInfos 	
+-- 		(Type, 							Scale,	ZOffset, Domain, Model,							MaterialTypeTag, MaterialTypeSoundOverrideTag)
+-- SELECT	'ART_DEF_UNIT_MEMBER_PISTOL2',	0.12,	ZOffset, Domain, 'mesh2_cavalry_pistol.fxsxml',	MaterialTypeTag, MaterialTypeSoundOverrideTag
+-- FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_CAVALRY';
 
 INSERT INTO ArtDefine_StrategicView 
 			(StrategicViewType, 		TileType,	Asset)
-VALUES		('ART_DEF_UNIT_PISTOL', 	'Unit', 	'SV_SPUE_Pistol.dds');
+VALUES		('ART_DEF_UNIT_PISTOL', 	'Unit', 	'SV_SPUE_rifle_lancer.dds');
 ------------------------------------------------------------------------------------------------------------------------
 -- 射石炮
 ------------------------------------------------------------------------------------------------------------------------
@@ -1652,8 +1651,7 @@ FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_MUSKETMAN';
 
 INSERT INTO ArtDefine_UnitInfoMemberInfos 	
 		(UnitInfoType,								UnitMemberInfoType,								NumMembers)
-VALUES	('ART_DEF_UNIT_SPUE_MUSKETMAN',				'ART_DEF_UNIT_MEMBER_SPUE_MUSKETMAN1',			7),
-		('ART_DEF_UNIT_SPUE_MUSKETMAN',				'ART_DEF_UNIT_MEMBER_SPUE_MUSKETMAN2',			7);
+VALUES	('ART_DEF_UNIT_SPUE_MUSKETMAN',				'ART_DEF_UNIT_MEMBER_SPUE_MUSKETMAN1',			14);
 
 INSERT INTO ArtDefine_UnitMemberCombats 
 		(UnitMemberType,							EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
@@ -3277,7 +3275,7 @@ FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_SWORDSMAN';
 
 INSERT INTO ArtDefine_StrategicView 
 			(StrategicViewType, 					TileType,	Asset)
-VALUES		('ART_DEF_UNIT_SPUE_SOCII_HASTATI', 	'Unit', 	'SV_SPUE_SOCII.dds.dds');
+VALUES		('ART_DEF_UNIT_SPUE_SOCII_HASTATI', 	'Unit', 	'SV_SPUE_SOCII.dds');
 ------------------------------------------------------------------------------------------------------------------------
 --赞助：拜占庭喷火兵--
 ------------------------------------------------------------------------------------------------------------------------
