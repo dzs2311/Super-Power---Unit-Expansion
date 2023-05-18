@@ -455,7 +455,6 @@ function SPUE_YJ21Setup_UnitPromoted(playerID, unitID)
 	-- 单位晋升
 	local player = Players[playerID];
 	if player == nil then return end
-	;
 
 	local unit = player:GetUnitByID(unitID);
 
@@ -1210,7 +1209,6 @@ function SPUE_OnAIUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 	local iTeamID = player:GetTeam();
 	local pTeam = Teams[iTeamID];
 	if player == nil then return end
-	;
 
 	-- AI使用技能系列
 	if not player:IsHuman() then
@@ -1610,11 +1608,8 @@ GameEvents.UnitCreated.Add(SPUE_UnitSetXY)
 function SPUE_CanHavePromotion(iPlayer, iUnit, iPromotionType)
 	local player = Players[iPlayer]; -----获取player
 	if player == nil then return end
-	;
 	if (not player:IsAlive()) then return end
-	;
 	if player:IsBarbarian() or player:IsMinorCiv() then return end
-	;
 
 	local pUnit = Players[iPlayer]:GetUnitByID(iUnit);
 
@@ -1637,11 +1632,11 @@ function SPUE_UnitPromoted(playerID, unitID, promotionID)
 	local player = Players[playerID];
 	local unit = player:GetUnitByID(unitID);
 	local capital = player:GetCapitalCity();
+	local unitLevel = unit:GetLevel()
 	if (not capital) then return end
-	;
 
 	--王城骑士晋升时获得大文学家
-	if unit:IsHasPromotion(KingsKnightBID) then
+	if unit:IsHasPromotion(KingsKnightBID) and unitLevel == 5 then
 		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_WRITER")
 		local NewUnit = player:InitUnit(GameInfoTypes[sUnitType], capital:GetX(), capital:GetY(), UNITAI_WRITER)
 	end
@@ -2055,8 +2050,7 @@ SPUE_FuChuan_LandInfantry_Button = {
 			local iCost = -1;
 			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 
-			if goldCost then iCost = goldCost * 0.33 end
-			;
+			if goldCost then iCost = goldCost * 0.33 end;
 
 			if iCost > 0 and player:GetGold() >= iCost then
 				flag = TroopsLeftFlag(player, 1);
@@ -2086,8 +2080,7 @@ SPUE_FuChuan_LandInfantry_Button = {
 		end
 
 		local plotFlag, pPlot = FindCoastalPlotForLandUnits(unit);
-		if pPlot == nil then return end
-		;
+		if pPlot == nil then return end;
 
 		local NewUnit = player:InitUnit(GameInfoTypes[sUnitType], pPlot:GetX(), pPlot:GetY(), UNITAI_DEFENSE)
 		-- NewUnit:JumpToNearestValidPlot()
@@ -2099,8 +2092,7 @@ SPUE_FuChuan_LandInfantry_Button = {
 		local iCost = -1;
 		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 
-		if goldCost then iCost = goldCost * 0.33 end
-		;
+		if goldCost then iCost = goldCost * 0.33 end;
 		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");
 
 		if iCost and iCost > 0 then
@@ -2145,8 +2137,7 @@ SPUE_FuChuan_Cannon_Button = {
 			local iCost = -1;
 			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 
-			if goldCost then iCost = goldCost * 0.33 end
-			;
+			if goldCost then iCost = goldCost * 0.33 end;
 
 			if iCost > 0 and player:GetGold() >= iCost then
 				flag = TroopsLeftFlag(player, 1);
@@ -2177,8 +2168,7 @@ SPUE_FuChuan_Cannon_Button = {
 
 
 		local plotFlag, pPlot = FindCoastalPlotForLandUnits(unit);
-		if pPlot == nil then return end
-		;
+		if pPlot == nil then return end;
 
 		local NewUnit = player:InitUnit(GameInfoTypes[sUnitType], pPlot:GetX(), pPlot:GetY(), UNITAI_DEFENSE)
 		-- NewUnit:JumpToNearestValidPlot()
@@ -2190,8 +2180,7 @@ SPUE_FuChuan_Cannon_Button = {
 		local iCost = -1;
 		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 
-		if goldCost then iCost = goldCost * 0.33 end
-		;
+		if goldCost then iCost = goldCost * 0.33 end;
 
 		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");
 
@@ -2389,7 +2378,6 @@ function SPUE_SetInputHandler(uiMsg, wParam, lParam)
 			local pPlayer = Players[Game:GetActivePlayer()];
 			local pSelUnit = UI.GetHeadSelectedUnit();
 			if pSelUnit == nil then return end
-			;
 
 			local selUnitPlot = pSelUnit:GetPlot();
 
@@ -2959,7 +2947,7 @@ function NewAttackEffect()
 					local KingsKnightPopsDelta = 100 * (pEraID + 1) * defCombat / attCambat;
 					local KingsKnightPops = load(attUnit, "KingsKnightPops", KingsKnightPops) or 0;
 					if KingsKnightPops <= (i - 1) * 20 then KingsKnightPops = (i - 1) * 20 end
-					;
+
 					KingsKnightPops = KingsKnightPops + KingsKnightPopsDelta;
 					if KingsKnightPops < 100 then
 						local j = math.ceil(KingsKnightPops / 20);
@@ -3015,7 +3003,7 @@ function NewAttackEffect()
 			if defUnit:IsHasPromotion(g_KingsKnightPops[i]) then
 				local KingsKnightPops = load(defUnit, "KingsKnightPops", KingsKnightPops) or 0;
 				if KingsKnightPops <= (i - 1) * 20 then KingsKnightPops = (i - 1) * 20 end
-				;
+				
 				KingsKnightPops = KingsKnightPops - 20;
 				local j = math.ceil(KingsKnightPops / 20);
 				defUnit:SetHasPromotion(g_KingsKnightPops[i], false);
@@ -3161,14 +3149,12 @@ function SPUEDamageDelta(iBattleUnitType, iBattleType,
 	if iBattleUnitType == GameInfoTypes["BATTLEROLE_ATTACKER"] then
 		if not bAttackIsCity then
 			local attUnit = attPlayer:GetUnitByID(iAttackUnitOrCityID)
-			if attUnit == nil then return 0 end
-			;
+			if attUnit == nil then return 0 end;
 
 			if attUnit:IsHasPromotion(unitPromotionElmetiID) and bDefenseIsCity
 			then
 				local defCity = defPlayer:GetCityByID(iDefenseUnitOrCityID);
-				if defCity == nil then return 0 end
-				;
+				if defCity == nil then return 0 end;
 				additionalDamage = additionalDamage + defCity:GetMaxHitPoints() * 0.15;
 			end
 		end
@@ -3582,8 +3568,7 @@ SPUE_Patronage_Hastati_Button = {
 			local iCost = -1;
 			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 
-			if goldCost then iCost = goldCost * 0.5 end
-			;
+			if goldCost then iCost = goldCost * 0.5 end;
 
 			if iCost > 0 and player:GetGold() >= iCost then
 				SPUE_Patronage_Hastati_Button.ToolTip = Locale.ConvertTextKey(
@@ -3612,8 +3597,7 @@ SPUE_Patronage_Hastati_Button = {
 		local iCost = -1;
 		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 
-		if goldCost then iCost = goldCost * 0.5 end
-		;
+		if goldCost then iCost = goldCost * 0.5 end;
 
 		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
 		if plot:GetNumUnits() > 2 then
@@ -3675,8 +3659,7 @@ SPUE_Patronage_vBowman_Button = {
 
 			local iCost = -1;
 			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
-			if goldCost then iCost = goldCost * 0.5 end
-			;
+			if goldCost then iCost = goldCost * 0.5 end;
 
 			if iCost > 0 and player:GetGold() >= iCost then
 				SPUE_Patronage_vBowman_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_VASSAL_BOWMAN_BUTTON", iCost)
@@ -3703,8 +3686,7 @@ SPUE_Patronage_vBowman_Button = {
 
 		local iCost = -1;
 		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
-		if goldCost then iCost = goldCost * 0.5 end
-		;
+		if goldCost then iCost = goldCost * 0.5 end;
 
 		-- local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_VASSAL_BOWMAN");
 		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
@@ -3766,8 +3748,7 @@ SPUE_Patronage_Serbia_Button = {
 
 			local iCost = -1;
 			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
-			if goldCost then iCost = goldCost * 0.5 end
-			;
+			if goldCost then iCost = goldCost * 0.5 end;
 
 			if iCost > 0 and player:GetGold() >= iCost then
 				SPUE_Patronage_Serbia_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_FIRE_THROWER_BUTTON", iCost)
@@ -3795,8 +3776,7 @@ SPUE_Patronage_Serbia_Button = {
 
 		local iCost = -1;
 		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
-		if goldCost then iCost = goldCost * 0.5 end
-		;
+		if goldCost then iCost = goldCost * 0.5 end;
 
 		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
 		if plot:GetNumUnits() > 2 then
@@ -3843,8 +3823,7 @@ SPUE_Patronage_OceanFire_Button = {
 
 			local iCost = -1;
 			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
-			if goldCost then iCost = goldCost * 0.5 end
-			;
+			if goldCost then iCost = goldCost * 0.5 end;
 
 
 			if iCost > 0 and player:GetGold() >= iCost then
@@ -3873,12 +3852,10 @@ SPUE_Patronage_OceanFire_Button = {
 
 		local iCost = -1;
 		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
-		if goldCost then iCost = goldCost * 0.5 end
-		;
+		if goldCost then iCost = goldCost * 0.5 end;
 
 		local plotFlag, pPlot = FindOceanPlotForSeaUnits(unit);
-		if pPlot == nil then return end
-		;
+		if pPlot == nil then return end;
 		local NewUnit = player:InitUnit(iUnit, pPlot:GetX(), pPlot:GetX(), UNITAI_DEFENSE)
 		-- NewUnit:JumpToNearestValidPlot();
 		NewUnit:SetExperience(unitEXP)
@@ -3938,8 +3915,7 @@ SPUE_TreasureFleet_LandInfantry_Button = {
 			local iCost = -1;
 			local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 
-			if goldCost then iCost = goldCost * 0.5 end
-			;
+			if goldCost then iCost = goldCost * 0.5 end;
 
 			if iCost > 0 and player:GetGold() >= iCost then
 				SPUE_TreasureFleet_LandInfantry_Button.ToolTip = Locale.ConvertTextKey(
@@ -3970,11 +3946,9 @@ SPUE_TreasureFleet_LandInfantry_Button = {
 		local iCost = -1;
 		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 
-		if goldCost then iCost = goldCost * 0.5 end
-		;
+		if goldCost then iCost = goldCost * 0.5 end;
 		local plotFlag, pPlot = FindCoastalPlotForLandUnits(unit);
-		if pPlot == nil then return end
-		;
+		if pPlot == nil then return end;
 		-- local newUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SHENJI_MUSKETEER");
 		local NewUnit = player:InitUnit(iUnit, pPlot:GetX(), pPlot:GetY(), UNITAI_DEFENSE)
 		-- NewUnit:JumpToNearestValidPlot()
@@ -4044,8 +4018,7 @@ SPUE_Patronage_Corvette_Button = {
 
 			print("goldCost=" .. goldCost)
 
-			if goldCost then iCost = goldCost * 0.5 end
-			;
+			if goldCost then iCost = goldCost * 0.5 end;
 
 			if iCost > 0 and player:GetGold() >= iCost then
 				SPUE_Patronage_Corvette_Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_PATRONAGE_CORVETTE_BUTTON",
@@ -4074,8 +4047,7 @@ SPUE_Patronage_Corvette_Button = {
 		local iCost = -1;
 		local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 
-		if goldCost then iCost = goldCost * 0.5 end
-		;
+		if goldCost then iCost = goldCost * 0.5 end;
 
 		local NewUnit = player:InitUnit(iUnit, plotX, plotY, UNITAI_DEFENSE)
 		if plot:GetNumUnits() > 2 then
@@ -4276,8 +4248,7 @@ SPUE_Genoa_Ship_Button = {
 		for iunit in player:Units() do
 			if iunit:IsHasPromotion(unitPromotionGenoaEliteID) then
 				local plotFlag, pPlot = FindCoastalPlotForLandUnits(unit);
-				if pPlot == nil then return end
-				;
+				if pPlot == nil then return end;
 				iunit:SetXY(pPlot:GetX(), pPlot:GetY());
 				iunit:SetMoves(iunit:MovesLeft() + GameDefines["MOVE_DENOMINATOR"]);
 				iunit:ChangeDamage(-10);
@@ -4316,8 +4287,7 @@ SPUE_UnitRiotControlButton = {
 
 	Disabled = function(action, unit)
 		local plot = unit:GetPlot();
-		if not plot:IsCity() then return true end
-		;
+		if not plot:IsCity() then return true end;
 		local city = plot:GetPlotCity()
 		return not city or city:GetOwner() ~= unit:GetOwner() or not city:IsResistance() or city:GetResistanceTurns() < 3;
 	end, -- or nil or a boolean, default is false

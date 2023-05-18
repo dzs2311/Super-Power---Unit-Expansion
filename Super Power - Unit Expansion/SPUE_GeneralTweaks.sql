@@ -36,7 +36,6 @@ UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'EVENTS_UNIT_DO_TURN';				--
 UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'EVENTS_UNIT_ACTIONS';				-- 开启单位劫掠事件
 UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'GLOBAL_EXCLUDE_FROM_GIFTS';		-- 开启城邦赠送豁免
 UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'PROMOTION_SPLASH_DAMAGE';			-- 开启单位溅射
-UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'PROMOTION_SPLASH_DAMAGE';			-- 开启单位溅射
 UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'ROG_CORE';						-- 开启单位强权效果
 
 

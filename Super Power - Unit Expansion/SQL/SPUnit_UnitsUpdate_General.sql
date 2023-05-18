@@ -638,5 +638,4 @@ BEGIN
 	UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 		  PortraitIndex = 2 WHERE Type = 'UNIT_CANNON'; 	-- 加农炮
 	UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_ENTERPRISE'; -- 企业号
 	UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_HORNET'; 	-- 企业号
-
 END;
