@@ -503,6 +503,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<HeavyCharge>true</HeavyCharge>
+			<HeavyChargeCollateralPercent>30</HeavyChargeCollateralPercent>
 			<PortraitIndex>43</PortraitIndex>
 			<IconAtlas>promoVP_atlas_00</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -656,6 +657,7 @@
 			<Help>TXT_KEY_PROMOTION_SPUE_VARANGIAN_GUARD_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<HeavyCharge>true</HeavyCharge>
+			<HeavyChargeCollateralPercent>50</HeavyChargeCollateralPercent>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<PortraitIndex>49</PortraitIndex>
@@ -825,65 +827,11 @@
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<PortraitIndex>56</PortraitIndex>
+			<AllyCityStateCombatModifier>15</AllyCityStateCombatModifier>
+			<AllyCityStateCombatModifierMax>60</AllyCityStateCombatModifierMax>
 			<IconAtlas>promoVP_atlas_03</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BASELIUS</PediaEntry>
-		</Row>
-		<Row>
-			<!--巴西琉斯之盾1-->
-			<Type>PROMOTION_SPUE_BASELIUS_DEFENSE1</Type>
-			<Description>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1_HELP</Help>
-			<Sound>AS2D_IF_LEVELUP</Sound>
-			<CannotBeChosen>true</CannotBeChosen>
-			<LostWithUpgrade>false</LostWithUpgrade>
-			<DefenseMod>15</DefenseMod>
-			<PortraitIndex>56</PortraitIndex>
-			<IconAtlas>promoVP_atlas_03</IconAtlas>
-			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1</PediaEntry>
-		</Row>
-		<Row>
-			<!--巴西琉斯之盾2-->
-			<Type>PROMOTION_SPUE_BASELIUS_DEFENSE2</Type>
-			<Description>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE2</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE2_HELP</Help>
-			<Sound>AS2D_IF_LEVELUP</Sound>
-			<CannotBeChosen>true</CannotBeChosen>
-			<LostWithUpgrade>false</LostWithUpgrade>
-			<DefenseMod>30</DefenseMod>
-			<PortraitIndex>56</PortraitIndex>
-			<IconAtlas>promoVP_atlas_03</IconAtlas>
-			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE2</PediaEntry>
-		</Row>
-		<Row>
-			<!--巴西琉斯之盾3-->
-			<Type>PROMOTION_SPUE_BASELIUS_DEFENSE3</Type>
-			<Description>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE3</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE3_HELP</Help>
-			<Sound>AS2D_IF_LEVELUP</Sound>
-			<CannotBeChosen>true</CannotBeChosen>
-			<LostWithUpgrade>false</LostWithUpgrade>
-			<DefenseMod>45</DefenseMod>
-			<PortraitIndex>56</PortraitIndex>
-			<IconAtlas>promoVP_atlas_03</IconAtlas>
-			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE3</PediaEntry>
-		</Row>
-		<Row>
-			<!--巴西琉斯之盾4-->
-			<Type>PROMOTION_SPUE_BASELIUS_DEFENSE4</Type>
-			<Description>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE4</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE4_HELP</Help>
-			<Sound>AS2D_IF_LEVELUP</Sound>
-			<CannotBeChosen>true</CannotBeChosen>
-			<LostWithUpgrade>false</LostWithUpgrade>
-			<DefenseMod>60</DefenseMod>
-			<PortraitIndex>56</PortraitIndex>
-			<IconAtlas>promoVP_atlas_03</IconAtlas>
-			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE4</PediaEntry>
 		</Row>
 		<Row>
 			<!--拜占庭喷火兵：希腊火喷射器-->
@@ -1110,6 +1058,10 @@
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<RangeChange>20</RangeChange>
 			<VisibilityChange>30</VisibilityChange>
+			<SplashDamageRadius>1</SplashDamageRadius>
+			<SplashDamagePercent>100</SplashDamagePercent>
+			<SplashDamagePlotUnitLimit>10</SplashDamagePlotUnitLimit>
+			<SplashXP>2</SplashXP>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>promoVP_atlas_02</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -1125,6 +1077,10 @@
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<RangeChange>20</RangeChange>
 			<VisibilityChange>30</VisibilityChange>
+			<SplashDamageRadius>1</SplashDamageRadius>
+			<SplashDamagePercent>100</SplashDamagePercent>
+			<SplashDamagePlotUnitLimit>10</SplashDamagePlotUnitLimit>
+			<SplashXP>2</SplashXP>
 			<PortraitIndex>1</PortraitIndex>
 			<IconAtlas>promoVP_atlas_02</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -1140,6 +1096,10 @@
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<RangeChange>20</RangeChange>
 			<VisibilityChange>30</VisibilityChange>
+			<SplashDamageRadius>1</SplashDamageRadius>
+			<SplashDamagePercent>100</SplashDamagePercent>
+			<SplashDamagePlotUnitLimit>10</SplashDamagePlotUnitLimit>
+			<SplashXP>2</SplashXP>
 			<PortraitIndex>2</PortraitIndex>
 			<IconAtlas>promoVP_atlas_02</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>

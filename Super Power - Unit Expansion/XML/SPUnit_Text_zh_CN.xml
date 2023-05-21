@@ -955,7 +955,7 @@
 				[NEWLINE][ICON_BULLET]海滨地块作战加成;
 				[NEWLINE][ICON_BULLET]海洋地块移动加成;
 				[NEWLINE][ICON_BULLET]冲击一级;
-				[NEWLINE][ICON_BULLET]进攻可以使敌人退却并造成30%的践踏伤害;
+				[NEWLINE][ICON_BULLET]进攻可以使敌人退却并造成50%的践踏伤害;
 				[NEWLINE][ICON_BULLET]回合开始时4格范围内每有一个己方重骑兵单位则获得20%[ICON_STRENGTH]战斗力加成并+2[ICON_MOVES]移动力。
 			</Text>
 		</Row>
@@ -1120,6 +1120,7 @@
 				[NEWLINE][ICON_BULLET]单位剩余的每点移动力+5%[ICON_STRENGTH]攻击力，攻击城市时对城市额外造成相当于15%城市最大生命值的伤害；
 				[NEWLINE][ICON_BULLET]防御时+150%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]单位移动时/回合结束时根据2格内的重骑兵单位/装甲的最大加成后的战力获得战斗力加成。
+				[NEWLINE][ICON_BULLET]
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_ELMETI_ELITE_TEXT">
@@ -1134,6 +1135,7 @@
 			<Text>
 				[NEWLINE][ICON_BULLET]防御时+150%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]单位移动/回合开始时根据2格内的重骑兵单位或装甲的最大加成后的战力获得战斗力加成。
+				[NEWLINE][ICON_BULLET]
 			</Text>
 		</Row>
 		<!-- **********************黑森佣兵*********************** -->
@@ -1319,11 +1321,11 @@
 
 		<!-- **********************将领卫队*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD">
-			<Text>★[COLOR_CYAN]将领卫队[ENDCOLOR]</Text>
+			<Text>★[COLOR_CYAN]将军卫队[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD_HELP">
 			<Text>
-				★[COLOR_CYAN]将领卫队[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重骑兵统帅单位。
+				★[COLOR_CYAN]将军卫队[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重骑兵统帅单位。
 				[NEWLINE][ICON_BULLET]位于非敌方城邦境内时可以花费一定的金钱征召∏[COLOR_CYAN]同盟军团[ENDCOLOR]和∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]发起近战攻击前先进行一次弓箭扫荡，2格内敌方单位-33%[ICON_STRENGTH]战斗力。
 				[NEWLINE][ICON_BULLET]每次发动攻击时回复相当于当前生命值的血量，对残血单位+50%[ICON_STRENGTH]战斗力。
@@ -1714,7 +1716,7 @@
 			<Text>奥古斯都之路</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_AUGUSTUS_HELP">
-			<Text>当位于城邦境时，+50%[ICON_STRENGTH]战斗力，每回合与该城邦增加2点关系，随时代增加。</Text>
+			<Text>当位于城邦境时，+50%[ICON_STRENGTH]战斗力，每回合与该城邦增加2点关系（随时代增加）。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_AUGUSTUS_COMBAT">
@@ -1728,31 +1730,7 @@
 			<Text>巴西琉斯之道</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_HELP">
-			<Text>单位诞生时额外获得相当于2倍盟友城邦人口总数的经验值，每个盟友城邦带来15%防御加成（不超过60%）。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1">
-			<Text>巴西琉斯之盾(1)</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE2">
-			<Text>巴西琉斯之盾(2)</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE3">
-			<Text>巴西琉斯之盾(3)</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE4">
-			<Text>巴西琉斯之盾(4)</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1_HELP">
-			<Text>防御时+15%[ICON_STRENGTH]战斗力。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE2_HELP">
-			<Text>防御时+30%[ICON_STRENGTH]战斗力。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE3_HELP">
-			<Text>防御时+45%[ICON_STRENGTH]战斗力。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE4_HELP">
-			<Text>防御时+60%[ICON_STRENGTH]战斗力。</Text>
+			<Text>单位诞生时额外获得相当于2倍盟友城邦人口总数的经验值，每个盟友城邦带来15%[ICON_STRENGTH]战斗力加成（不超过60%）。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_EMPEROR">

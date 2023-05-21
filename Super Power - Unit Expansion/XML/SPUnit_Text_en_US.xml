@@ -1726,31 +1726,7 @@
 			<Text>巴西琉斯之道</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_HELP">
-			<Text>单位诞生时额外获得相当于2倍盟友城邦人口总数的经验值，每个盟友城邦带来15%防御加成（不超过60%）。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1">
-			<Text>巴西琉斯之盾(1)</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE2">
-			<Text>巴西琉斯之盾(2)</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE3">
-			<Text>巴西琉斯之盾(3)</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE4">
-			<Text>巴西琉斯之盾(4)</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE1_HELP">
-			<Text>防御时+15%[ICON_STRENGTH]战斗力。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE2_HELP">
-			<Text>防御时+30%[ICON_STRENGTH]战斗力。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE3_HELP">
-			<Text>防御时+45%[ICON_STRENGTH]战斗力。</Text>
-		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_SPUE_BASELIUS_DEFENSE4_HELP">
-			<Text>防御时+60%[ICON_STRENGTH]战斗力。</Text>
+			<Text>单位诞生时额外获得相当于2倍盟友城邦人口总数的经验值，每个盟友城邦带来15%[ICON_STRENGTH]战斗力加成（不超过60%）。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_EMPEROR">
@@ -1764,9 +1740,7 @@
 			<Text>力量投射</Text>
 		</Row>
 		<Row Tag='TXT_KEY_COND_SPUE_EMPEROR'>
-			<Text>
-			以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格（绿色标记）一格内的友方单位回复相当于城邦盟友数量的血量和2移动力，精英单位可额外回复全部攻击次数。
-			</Text>
+			<Text>以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格（绿色标记）一格内的友方单位回复相当于城邦盟友数量的血量和2移动力，精英单位可额外回复全部攻击次数。</Text>
 		</Row>
 	</Language_en_US>
 </GameData>

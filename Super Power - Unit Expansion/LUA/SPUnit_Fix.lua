@@ -85,10 +85,6 @@ local unitPromotionAugustusCombatID = GameInfo.UnitPromotions["PROMOTION_SPUE_AU
 
 -- 巴西琉斯之道
 local unitPromotionBaseliusID       = GameInfo.UnitPromotions["PROMOTION_SPUE_BASELIUS"].ID
-local g_BaseliusDefense             = { GameInfo.UnitPromotions["PROMOTION_SPUE_BASELIUS_DEFENSE1"].ID,
-	GameInfo.UnitPromotions["PROMOTION_SPUE_BASELIUS_DEFENSE2"].ID,
-	GameInfo.UnitPromotions["PROMOTION_SPUE_BASELIUS_DEFENSE3"].ID,
-	GameInfo.UnitPromotions["PROMOTION_SPUE_BASELIUS_DEFENSE4"].ID, }
 
 -- 神州天子之权
 local unitPromotionEmperorID        = GameInfo.UnitPromotions["PROMOTION_SPUE_EMPEROR"].ID
@@ -568,11 +564,6 @@ function SPUE_OnUnitCreated(iPlayerID, iUnitID)
 	-- 巴西琉斯之道：根据城邦盟友首都人口总数获得经验&盟友城邦提供防御加成
 	if pUnit:IsHasPromotion(unitPromotionBaseliusID) then
 		local g_MinorCivsAndPopWithMajor = SPUE_MajorFavorite_MinorCivsAndCityPops(iPlayerID);
-		for i = 1, #g_BaseliusDefense, 1 do
-			if pUnit:IsHasPromotion(g_BaseliusDefense[i]) then
-				pUnit:SetHasPromotion(g_BaseliusDefense[i], false);
-			end
-		end
 
 		if g_MinorCivsAndPopWithMajor then
 			local pops = 0;
@@ -582,7 +573,6 @@ function SPUE_OnUnitCreated(iPlayerID, iUnitID)
 				pops = pops + g_MinorCivsAndPopWithMajor[i][2];
 			end
 			pUnit:ChangeExperience(pops * 2);
-			pUnit:SetHasPromotion(g_BaseliusDefense[numAllies], true);
 		end
 	end
 
@@ -728,7 +718,9 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 
 			-- 为自身外的空军单位提供经验
 			for sunit in player:Units() do
-				if not sunit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_ORDER_SU47"]) and sunit:IsHasPromotion(IntercepterAircraftUnitID) then
+				if not sunit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_ORDER_SU47"]) 
+				and sunit:IsHasPromotion(IntercepterAircraftUnitID) 
+				then
 					sunit:ChangeExperience(iExpBonus)
 				end
 			end
@@ -842,18 +834,18 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 	end
 
 	-- 巴西琉斯之道：盟友城邦提供防御加成
-	if unit:IsHasPromotion(unitPromotionBaseliusID) then
-		for i = 1, #g_BaseliusDefense, 1 do
-			if unit:IsHasPromotion(g_BaseliusDefense[i]) then
-				unit:SetHasPromotion(g_BaseliusDefense[i], false);
-			end
-		end
-		local g_MinorCivsAndPopWithMajor = SPUE_MajorFavorite_MinorCivsAndCityPops(playerID);
-		if g_MinorCivsAndPopWithMajor then
-			local numAllies = math.min(#g_BaseliusDefense, #g_MinorCivsAndPopWithMajor);
-			unit:SetHasPromotion(g_BaseliusDefense[numAllies], true);
-		end
-	end
+	-- if unit:IsHasPromotion(unitPromotionBaseliusID) then
+	-- 	for i = 1, #g_BaseliusDefense, 1 do
+	-- 		if unit:IsHasPromotion(g_BaseliusDefense[i]) then
+	-- 			unit:SetHasPromotion(g_BaseliusDefense[i], false);
+	-- 		end
+	-- 	end
+	-- 	local g_MinorCivsAndPopWithMajor = SPUE_MajorFavorite_MinorCivsAndCityPops(playerID);
+	-- 	if g_MinorCivsAndPopWithMajor then
+	-- 		local numAllies = math.min(#g_BaseliusDefense, #g_MinorCivsAndPopWithMajor);
+	-- 		unit:SetHasPromotion(g_BaseliusDefense[numAllies], true);
+	-- 	end
+	-- end
 
 	--王家敕令骑士
 	if unit and (unit:IsHasPromotion(unitPromotionElmetiEliteID)) then
@@ -1619,7 +1611,6 @@ function SPUE_CanHavePromotion(iPlayer, iUnit, iPromotionType)
 			return false;
 		end
 	end
-
 
 	return true;
 end
@@ -2644,104 +2635,13 @@ function NewAttackEffect()
 									Events.GameplayAlertMessage(text);
 								end
 								pUnit:ChangeDamage(SplashDamageFinal, attPlayer)
+								attUnit:ChangeExperience(1);
 								print("Splash Damage=" .. SplashDamageFinal)
 							end
 						end
 					end
 				end
 			end
-		end
-	end
-
-	----- Charge Damage 瑞士佣兵&瓦兰吉卫队冲锋伤害
-	if not attUnit:IsDead() and (attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SWISSGUARD"].ID) or attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VARANGIAN_GUARD"].ID))
-		and not defUnit:IsDead() and batPlot ~= defPlot and defUnitDamage > 0 and batType == GameInfoTypes["BATTLETYPE_MELEE"]
-	then
-		-- print("Available for Charge Damage!");
-		local defFinalUnitDamageChange = 0;
-		local ChargeMod = 0.3; -- The percentage of charging damage to the other unit
-		if attUnit:IsHasPromotion(Charge1ID) then
-			if attUnit:IsHasPromotion(Charge2ID) then
-				defFinalUnitDamageChange = 10;
-				ChargeMod = 0.8;
-			end
-			if attUnit:IsHasPromotion(Charge3ID) then
-				defFinalUnitDamageChange = 20;
-				ChargeMod = 1.3;
-			end
-		end
-
-		local unitCount = batPlot:GetNumUnits();
-		if unitCount >= 1 and batPlot ~= attPlot then
-			print("Our damage done=" .. defUnitDamage);
-			for i = 0, unitCount - 1, 1 do
-				local pFoundUnit = batPlot:GetUnit(i)
-				if pFoundUnit ~= nil and pFoundUnit:GetID() ~= defUnit:GetID() then
-					local pPlayer = Players[pFoundUnit:GetOwner()];
-					if PlayersAtWar(attPlayer, pPlayer) then
-						local attUnitStrength = attUnit:GetMaxAttackStrength(attPlot, defPlot, defUnit);
-						print("attUnitStrength:" .. attUnitStrength);
-						local pFoundUnitStrength = pFoundUnit:GetMaxDefenseStrength(batPlot, attUnit);
-						print("pFoundUnitStrength:" .. pFoundUnitStrength);
-						local ChargeDamageOri = attUnit:GetCombatDamage(attUnitStrength, pFoundUnitStrength,
-							attFinalUnitDamage, false, false, false);
-						print("ChargeDamageOri:" .. ChargeDamageOri); --we now consider the buff and debuff when caculating the charge damage.---by WM
-						-- local ChargeDamageOri = attUnit:GetCombatDamage(attUnitStrength, pUnitStrength, attUnit:GetDamage(),false,false, false)
-
-						local text = nil;
-						local attUnitName = attUnit:GetName();
-						local defUnitName = pFoundUnit:GetName();
-
-						print("ChargeMod:" .. ChargeMod)
-						local ChargeDamageFinal = math.floor(ChargeDamageOri * ChargeMod);
-
-						if ChargeDamageFinal > 0 then
-							-- Notification
-							if defPlayerID == Game.GetActivePlayer() then
-								text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE", attUnitName,
-									defUnitName, ChargeDamageFinal);
-							elseif attPlayerID == Game.GetActivePlayer() then
-								text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_ENEMY", attUnitName,
-									defUnitName, ChargeDamageFinal);
-							end
-							pFoundUnit:ChangeDamage(ChargeDamageFinal, attPlayer)
-							print("Charge Damage=" .. ChargeDamageFinal)
-						end
-						if text then
-							Events.GameplayAlertMessage(text);
-						end
-					end
-				end
-			end
-		else
-			print("our unit is in this plot or this plot has no other enemy - don't need to charge!")
-		end
-		local text = nil;
-		local attUnitName = attUnit:GetName();
-		local defUnitName = defUnit:GetName();
-
-		if defFinalUnitDamageChange > 0 then
-			-- Notification
-			if defPlayerID == Game.GetActivePlayer() then
-				text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE", attUnitName, defUnitName,
-					defFinalUnitDamageChange);
-			elseif attPlayerID == Game.GetActivePlayer() then
-				text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_CHARGE_DAMAGE_ENEMY", attUnitName, defUnitName,
-					defFinalUnitDamageChange);
-			end
-		end
-		if text then
-			Events.GameplayAlertMessage(text);
-		end
-		defFinalUnitDamage = defFinalUnitDamage + defFinalUnitDamageChange;
-		defUnit:ChangeDamage(defFinalUnitDamageChange, attPlayer);
-	end
-
-	-- 火帆船防御时直接死球
-	if not bIsCity then
-		if not defUnit:IsDead() and defUnit:GetUnitType() == GameInfoTypes["UNIT_SPUE_FIRESHIP"]
-		then
-			defUnit:Kill();
 		end
 	end
 
@@ -2776,81 +2676,6 @@ function NewAttackEffect()
 		attUnit:SetMoves(movesLeft + movesAdd);
 		local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
 		Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", movesAdd / 60));
-	end
-
-	------鹰击21
-	if attUnit:IsHasPromotion(unitPromotion055Missile3ID)
-		or attUnit:IsHasPromotion(unitPromotion055Missile2ID)
-		or attUnit:IsHasPromotion(unitPromotion055Missile1ID)
-	then
-		-- for i = 0, 5 do
-		-- 	local adjPlot = Map.PlotDirection(plotX, plotY, i)
-		local text3n = nil;
-		local uniqueRange = 3
-		for dx = -uniqueRange, uniqueRange, 1 do
-			for dy = -uniqueRange, uniqueRange, 1 do
-				local adjPlot = Map.PlotXYWithRangeCheck(plotX, plotY, dx, dy, uniqueRange);
-				if (adjPlot ~= nil and not adjPlot:IsCity()) then
-					print("Available for AOE Damage!")
-					local unitCount = adjPlot:GetNumUnits();
-					if unitCount > 0 then
-						for i = 0, unitCount - 1, 1 do
-							local pUnit = adjPlot:GetUnit(i) ------------Find Units affected
-							if pUnit and (pUnit:GetDomainType() == DomainTypes.DOMAIN_LAND or pUnit:GetDomainType() == DomainTypes.DOMAIN_SEA) then
-								local pCombat = pUnit:GetBaseCombatStrength()
-								local pPlayer = Players[pUnit:GetOwner()]
-
-								if PlayersAtWar(attPlayer, pPlayer) then
-									local SplashDamageOri = attUnit:GetRangeCombatDamage(pUnit, nil, false)
-
-									local AOEmod = attUnit:GetMoves() /
-									attUnit:MaxMoves()         -- the percent of damage reducing to nearby units
-
-									local text = nil;
-
-									local attUnitName = attUnit:GetName();
-									local defUnitName = pUnit:GetName();
-
-									local SplashDamageFinal = math.floor(SplashDamageOri * AOEmod); -- Set the Final Damage
-									if SplashDamageFinal > 0 then
-										-- Notification
-										if defPlayerID == Game.GetActivePlayer() then
-											text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE",
-												attUnitName, defUnitName, SplashDamageFinal);
-										elseif attPlayerID == Game.GetActivePlayer() then
-											text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SPLASH_DAMAGE_ENEMY",
-												attUnitName, defUnitName, SplashDamageFinal);
-										end
-									end
-									if text then
-										Events.GameplayAlertMessage(text);
-									end
-
-
-									pUnit:ChangeDamage(SplashDamageFinal, attPlayer)
-									print("Splash Damage=" .. SplashDamageFinal)
-								end
-							end
-						end
-					end
-				end
-			end
-		end
-		if text3n then
-			Events.GameplayAlertMessage(text3n);
-		end
-		-- 攻击结束后失去晋升
-		if attUnit:IsHasPromotion(unitPromotion055Missile3ID) then
-			attUnit:SetHasPromotion(unitPromotion055Missile3ID, false);
-			attUnit:SetHasPromotion(unitPromotion055Missile2ID, true);
-		elseif attUnit:IsHasPromotion(unitPromotion055Missile2ID) then
-			attUnit:SetHasPromotion(unitPromotion055Missile2ID, false);
-			attUnit:SetHasPromotion(unitPromotion055Missile1ID, true);
-		else
-			attUnit:SetHasPromotion(unitPromotion055Missile1ID, false);
-		end
-		local text1l = Locale.ConvertTextKey("TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT1L");
-		Events.GameplayAlertMessage(text1l);
 	end
 
 	-- 超级要塞：浮岛要塞
@@ -2924,6 +2749,7 @@ function NewAttackEffect()
 								end
 
 								pUnit:ChangeDamage(SplashDamageFinal, attPlayer)
+								attUnit:ChangeExperience(2)
 								print("Splash Damage=" .. SplashDamageFinal)
 							end
 						end

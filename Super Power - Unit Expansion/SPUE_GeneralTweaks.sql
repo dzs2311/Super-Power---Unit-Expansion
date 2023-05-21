@@ -37,10 +37,7 @@ UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'EVENTS_UNIT_ACTIONS';				--
 UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'GLOBAL_EXCLUDE_FROM_GIFTS';		-- 开启城邦赠送豁免
 UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'PROMOTION_SPLASH_DAMAGE';			-- 开启单位溅射
 UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'ROG_CORE';						-- 开启单位强权效果
-
-
--- UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_1UPT';			-- No More Civilian Traffic Jams
--- UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_BREAK_CIVILIAN_RESTRICTIONS';	-- No More Civilian Traffic Jams
+UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'PROMOTIONS_ALLYCITYSTATE_BONUS';	-- 开启城邦盟友加强战斗力效果
 --==========================================================================================================================	
 -- 远程攻击劫掠 - VMC
 --==========================================================================================================================	

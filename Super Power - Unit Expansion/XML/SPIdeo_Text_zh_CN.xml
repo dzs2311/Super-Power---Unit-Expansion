@@ -147,7 +147,7 @@
 			<Text>鹰击-21高超音速导弹（3）</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_MISSILE_HELP">
-			<Text>视野+20，射程+15，对海军+300%[ICON_STRENGTH]战斗力，对落点3格内的敌方单位造成（当前移动力/满移动力）倍的AOE伤害。</Text>
+			<Text>视野+20，射程+15，对海军+300%[ICON_STRENGTH]战斗力，对落点3格内的敌方单位造成100%的AOE伤害。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT1S">

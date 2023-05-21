@@ -52,8 +52,8 @@ SELECT	'UNIT_SPUE_NVOVRLORD',  	BuildingClassType
 FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_MAIN_BATTLE_TANK';
 
 INSERT INTO UnitGameplay2DScripts 	
-		(UnitType, 				SelectionSound, FirstSelectionSound)
-SELECT	'UNIT_SPUE_NVOVRLORD',  SelectionSound, FirstSelectionSound
+		(UnitType, 				SelectionSound, 				FirstSelectionSound)
+SELECT	'UNIT_SPUE_NVOVRLORD',  'AS2D_SELECT_SPUE_NVOVRLORD', 	'AS2D_BIRTH_SPUE_NVOVRLORD'
 FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_MAIN_BATTLE_TANK';
 
 INSERT INTO Unit_AITypes 	
@@ -145,8 +145,8 @@ SELECT	'UNIT_SPUE_ORDER_KV2',  	BuildingClassType
 FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_TANK';
 
 INSERT INTO UnitGameplay2DScripts 	
-		(UnitType, 				SelectionSound, FirstSelectionSound)
-SELECT	'UNIT_SPUE_ORDER_KV2',  SelectionSound, FirstSelectionSound
+		(UnitType, 				SelectionSound, 				FirstSelectionSound)
+SELECT	'UNIT_SPUE_ORDER_KV2',  'AS2D_SELECT_SPUE_ORDER_KV2', 	'AS2D_BIRTH_SPUE_ORDER_KV2'
 FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_TANK';
 
 INSERT INTO Unit_AITypes 	
@@ -190,8 +190,8 @@ SELECT	'UNIT_SPUE_ORDER_SU47',  	BuildingClassType
 FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_INTERCEPTER';
 
 INSERT INTO UnitGameplay2DScripts 	
-		(UnitType, 				SelectionSound, FirstSelectionSound)
-SELECT	'UNIT_SPUE_ORDER_SU47',  SelectionSound, FirstSelectionSound
+		(UnitType, 				SelectionSound, 				FirstSelectionSound)
+SELECT	'UNIT_SPUE_ORDER_SU47', 'AS2D_SELECT_SPUE_ORDER_SU47', 	'AS2D_BIRTH_SPUE_ORDER_SU47'
 FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_INTERCEPTER';
 
 INSERT INTO Unit_AITypes 	
