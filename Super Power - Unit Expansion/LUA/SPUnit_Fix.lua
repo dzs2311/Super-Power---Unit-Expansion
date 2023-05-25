@@ -833,38 +833,6 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		end
 	end
 
-	-- 巴西琉斯之道：盟友城邦提供防御加成
-	-- if unit:IsHasPromotion(unitPromotionBaseliusID) then
-	-- 	for i = 1, #g_BaseliusDefense, 1 do
-	-- 		if unit:IsHasPromotion(g_BaseliusDefense[i]) then
-	-- 			unit:SetHasPromotion(g_BaseliusDefense[i], false);
-	-- 		end
-	-- 	end
-	-- 	local g_MinorCivsAndPopWithMajor = SPUE_MajorFavorite_MinorCivsAndCityPops(playerID);
-	-- 	if g_MinorCivsAndPopWithMajor then
-	-- 		local numAllies = math.min(#g_BaseliusDefense, #g_MinorCivsAndPopWithMajor);
-	-- 		unit:SetHasPromotion(g_BaseliusDefense[numAllies], true);
-	-- 	end
-	-- end
-
-	--王家敕令骑士
-	if unit and (unit:IsHasPromotion(unitPromotionElmetiEliteID)) then
-		local unitMaxCombatStrength = 0;
-		local unitBaseCombatStrength = unit:GetBaseCombatStrength();
-		SPUEAddCombatBonus(unit, 0);
-		if unit:IsHasPromotion(KnightID) then
-			unitMaxCombatStrength = plotDistanceGetMaxCombatStrength(unit, KnightID, 2);
-		elseif unit:IsHasPromotion(TankID) then
-			unitMaxCombatStrength = plotDistanceGetMaxCombatStrength(unit, TankID, 2);
-		end
-		if unitMaxCombatStrength > unitBaseCombatStrength then
-			unitMaxCombatStrength = unitMaxCombatStrength - unitBaseCombatStrength;
-			SPUEAddCombatBonus(unit, math.ceil(100 * unitMaxCombatStrength / unitBaseCombatStrength));
-		else
-			SPUEAddCombatBonus(unit, 0);
-		end
-	end
-
 	-- 铁骑：根据两格内敌方单位数量增加移动力
 	if unit:IsHasPromotion(unitPromotionChineseICID) then
 		local iunit = GameInfo.Units[unit:GetUnitType()];
@@ -1571,24 +1539,6 @@ function SPUE_UnitSetXY(playerID, unitID)
 			end
 		end
 
-		-- 王家敕令骑士
-		if unit and (unit:IsHasPromotion(unitPromotionElmetiEliteID)) then
-			local unitMaxCombatStrength = 0;
-			local unitBaseCombatStrength = unit:GetBaseCombatStrength();
-			SPUEAddCombatBonus(unit, 0);
-
-			if unit:IsHasPromotion(KnightID) then
-				unitMaxCombatStrength = plotDistanceGetMaxCombatStrength(unit, KnightID, 2);
-			elseif unit:IsHasPromotion(TankID) then
-				unitMaxCombatStrength = plotDistanceGetMaxCombatStrength(unit, TankID, 2);
-			end
-
-			if unitMaxCombatStrength > unitBaseCombatStrength then
-				SPUEAddCombatBonus(unit, math.ceil(100 * unitMaxCombatStrength / unitBaseCombatStrength));
-			else
-				SPUEAddCombatBonus(unit, 0);
-			end
-		end
 	end
 end
 
@@ -2954,6 +2904,20 @@ function NewAttackEffect()
 			save(defUnit, "OvrlordNuclear", OvrlordNuclear);
 		end
 	end
+
+	-- 王家敕令骑士防御时+2移动力
+	if not bIsCity and defUnit then
+		if not defUnit:IsDead() and defUnit:IsHasPromotion(unitPromotionElmetiEliteID)
+		then
+			defUnit:SetMoves(defUnit:MovesLeft() + 2 * GameDefines["MOVE_DENOMINATOR"]);
+
+			if defUnit:IsHasPromotion(unitPromotionOvrlordNuclearID) then
+				local hex = ToHexFromGrid(Vector2(defPlot:GetX(), defPlot:GetY()));
+				Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+2[ICON_MOVES]"));
+			end
+		end
+	end
+
 end --function END
 
 GameEvents.BattleFinished.Add(NewAttackEffect);

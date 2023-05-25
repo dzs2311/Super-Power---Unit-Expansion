@@ -50,7 +50,7 @@
 			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]意大利装甲骑士[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING_PEDIA">
-			<Text>[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]是精英重骑兵单位，拥有强大的正面作战能力。</Text>
+			<Text>[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]是精英重骑兵单位，拥有强大的防御能力。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING">
@@ -1119,8 +1119,7 @@
 				[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]是[COLOR_CYAN]意大利装甲骑兵[ENDCOLOR]作为常备军后形成的近卫军团，需要完成[COLOR_YIELD_GOLD]组建敕令骑士连[ENDCOLOR]：
 				[NEWLINE][ICON_BULLET]单位剩余的每点移动力+5%[ICON_STRENGTH]攻击力，攻击城市时对城市额外造成相当于15%城市最大生命值的伤害；
 				[NEWLINE][ICON_BULLET]防御时+150%[ICON_STRENGTH]战斗力；
-				[NEWLINE][ICON_BULLET]单位移动时/回合结束时根据2格内的重骑兵单位/装甲的最大加成后的战力获得战斗力加成。
-				[NEWLINE][ICON_BULLET]
+				[NEWLINE][ICON_BULLET]单位每承受一次攻击则额外+2[ICON_MOVES]移动力，单位剩余的每点[ICON_MOVES]移动力+50%[ICON_STRENGTH]防御力。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_ELMETI_ELITE_TEXT">
@@ -1134,8 +1133,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ELMETI_ELITE_HELP">
 			<Text>
 				[NEWLINE][ICON_BULLET]防御时+150%[ICON_STRENGTH]战斗力；
-				[NEWLINE][ICON_BULLET]单位移动/回合开始时根据2格内的重骑兵单位或装甲的最大加成后的战力获得战斗力加成。
-				[NEWLINE][ICON_BULLET]
+				[NEWLINE][ICON_BULLET]单位每承受一次攻击则额外+2[ICON_MOVES]移动力，单位剩余的每点[ICON_MOVES]移动力+50%[ICON_STRENGTH]防御力。
 			</Text>
 		</Row>
 		<!-- **********************黑森佣兵*********************** -->

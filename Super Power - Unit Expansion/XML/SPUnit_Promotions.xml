@@ -554,6 +554,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<DefenseMod>150</DefenseMod>
+			<MoveLeftDefenseMod>50</MoveLeftDefenseMod>
 			<PortraitIndex>56</PortraitIndex>
 			<IconAtlas>promoVP_atlas_03</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
