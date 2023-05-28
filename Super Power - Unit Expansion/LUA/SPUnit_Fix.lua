@@ -1168,6 +1168,15 @@ function SPUE_OnAIUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 	local pTeam = Teams[iTeamID];
 	if player == nil then return end
 
+	local bWar = false;
+	for iPlayer = 0, GameDefines.MAX_CIV_PLAYERS - 1, 1 do
+		local pPlayer = Players[iPlayer]
+		if (PlayersAtWar(player,pPlayer)) then
+			bWar = true
+			break
+		end
+	end
+
 	-- AI使用技能系列
 	if not player:IsHuman() then
 		local plot = unit:GetPlot()
@@ -1213,7 +1222,8 @@ function SPUE_OnAIUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		end
 		--*****************************AI福船制造单位*****************************--
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FUCHUAN"].ID)
-			and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
+		and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
+		and bWar
 		then
 			if fuchuanFlag < 2 then
 				-- 重步兵训练
@@ -1431,7 +1441,6 @@ function SPUE_OnAIUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		end
 	end
 end --function END
-
 GameEvents.UnitDoTurn.Add(SPUE_OnAIUnitDoTurn)
 --------------------------------------------------------------
 -- 单位移动效果

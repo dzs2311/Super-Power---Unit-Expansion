@@ -218,14 +218,9 @@ end
 -- 检查所有单位拥有某特殊晋升
 --------------------------------------------------------------
 function CheckUniquePromotions(pPlayer, unitPromotionID)
-	-- 十字战车检查
 	local GreatCrossCheck = 0;
-	for pUnit in pPlayer:Units() do
-		if pUnit:IsHasPromotion(unitPromotionID) then
-			GreatCrossCheck = 1;
-			break
-		end
-	end
+	local numUnit = pPlayer:GetUnitCountFromHasPromotion(unitPromotionID);
+	if numUnit > 0 then unitPromotionID = 1;
 	return GreatCrossCheck;
 end
 --------------------------------------------------------------
