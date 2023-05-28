@@ -613,7 +613,6 @@ function SPUE_OnPlayerDoTurn(playerID)
 	-- 超级要塞特殊效果初始化
 	GAIAShipHasAttackedThisTurn = 0
 end --function END
-
 GameEvents.PlayerDoTurn.Add(SPUE_OnPlayerDoTurn)
 
 function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
@@ -924,8 +923,8 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		end
 	end
 end
-
 GameEvents.UnitDoTurn.Add(SPUE_OnPlayerUnitDoTurn)
+
 function SPUE_PlayerDoneTurn(playerID)
 	local player = Players[playerID]; -----获取player
 	if player == nil then return end;
@@ -1150,7 +1149,6 @@ function SPUE_PlayerDoneTurn(playerID)
 		end
 	end
 end
-
 GameEvents.PlayerDoneTurn.Add(SPUE_PlayerDoneTurn);
 --------------------------------------------------------------
 -- AI单位过回合效果
@@ -1922,32 +1920,31 @@ LuaEvents.UnitPanelActionAddin(SPUE_HotAirBalloon_Button)
 --------------------------------------------------------------
 -- 临时热气球每回合减少5战斗力，战斗力为0下一回合消失
 --------------------------------------------------------------
-function TempHotAirBalloon(playerID)
-	local player = Players[playerID]
-
-	if player == nil then
-		return
+function TempHotAirBalloon(playerID, unitID)
+	if Players[playerID] == nil or not Players[playerID]:IsAlive()
+		or Players[playerID]:GetUnitByID(unitID) == nil
+		or Players[playerID]:GetUnitByID(unitID):IsDead()
+		or Players[playerID]:GetUnitByID(unitID):IsDelayedDeath()
+	then
+		return;
 	end
 
-	local HotAirBallooCheck = CheckUniquePromotions(player, pHotAirBalloonID);
+	local player = Players[playerID];
+	local unit = Players[playerID]:GetUnitByID(unitID);
 
-	if HotAirBallooCheck == 1 then
-		for unit in player:Units() do
-			if unit:GetUnitType() == GameInfoTypes.UNIT_SPUE_HOT_AIR_BALLOON
-				and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_HOT_AIR_BALLOON"].ID)
-			then
-				local combat = unit:GetBaseCombatStrength()
-				if combat > 0 then
-					unit:SetBaseCombatStrength(combat - 5)
-				elseif combat == 0 then
-					unit:Kill()
-				end
-			end
+	if unit:GetUnitType() == GameInfoTypes.UNIT_SPUE_HOT_AIR_BALLOON
+	and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_HOT_AIR_BALLOON"].ID)
+	then
+		local combat = unit:GetBaseCombatStrength()
+		if combat > 0 then
+			unit:SetBaseCombatStrength(combat - 5)
+		elseif combat == 0 then
+			unit:Kill()
 		end
 	end
-end
 
-GameEvents.PlayerDoTurn.Add(TempHotAirBalloon)
+end
+GameEvents.UnitDoturn.Add(TempHotAirBalloon)
 --------------------------------------------------------------
 -- 福船：军事训练
 --------------------------------------------------------------
@@ -2296,7 +2293,7 @@ local SPUE_Emperor_Button = {
 						local pFoundUnit = adjPlot:GetUnit(0);
 						if pFoundUnit ~= nil then
 							local pPlayer = Players[pFoundUnit:GetOwner()];
-							if pPlayer == player then
+							if pPlayer == player and not pFoundUnit:IsHasPromotion(unitPromotionEmperorID) then
 								table.insert(EmporerRadiusArray, GetPlotKey(adjPlot));
 								Events.SerialEventHexHighlight(ToHexFromGrid(Vector2(adjPlot:GetX(), adjPlot:GetY())),
 									true, Vector4(0, 1, 0, 1));
@@ -2338,7 +2335,7 @@ function SPUE_SetInputHandler(uiMsg, wParam, lParam)
 						local pFoundUnit = pPlot:GetUnit(i);
 						if pFoundUnit ~= nil then
 							local pFlayer = Players[pFoundUnit:GetOwner()];
-							if pPlayer == pFlayer then
+							if pPlayer == pFlayer and not pFoundUnit:IsHasPromotion(unitPromotionEmperorID) then
 								pFoundUnit:ChangeDamage(-numAllies * 5);
 								pFoundUnit:ChangeMoves(120);
 								if not IsNotEliteUnit(pFoundUnit) then
@@ -2358,7 +2355,7 @@ function SPUE_SetInputHandler(uiMsg, wParam, lParam)
 								local pFoundUnit = adjPlot:GetUnit(i);
 								if pFoundUnit ~= nil then
 									local pFlayer = Players[pFoundUnit:GetOwner()];
-									if pPlayer == pFlayer then
+									if pPlayer == pFlayer and not pFoundUnit:IsHasPromotion(unitPromotionEmperorID) then
 										pFoundUnit:ChangeDamage(-numAllies);
 										pFoundUnit:ChangeMoves(120);
 										if not IsNotEliteUnit(pFoundUnit) then
@@ -2404,15 +2401,15 @@ ContextPtr:SetInputHandler(SPUE_SetInputHandler)
 --------------------------------------------------------------
 -- 战斗效果
 --------------------------------------------------------------
-local isSPTP = false
-local isSPTPID = "4a11d485-6e59-4392-928e-dc0c24efc083" -- 传统修复mod
+-- local isSPTP = false
+-- local isSPTPID = "4a11d485-6e59-4392-928e-dc0c24efc083" -- 传统修复mod
 
-for _, mod in pairs(Modding.GetActivatedMods()) do
-	if (mod.ID == isSPTPID) then
-		isSPTP = true
-		break
-	end
-end
+-- for _, mod in pairs(Modding.GetActivatedMods()) do
+-- 	if (mod.ID == isSPTPID) then
+-- 		isSPTP = true
+-- 		break
+-- 	end
+-- end
 
 --******************************************************************************* Unit Combat Rules *******************************************************************************
 local g_DoNewAttackEffect = nil;
@@ -2527,7 +2524,7 @@ function NewAttackEffect()
 
 	-- 玄甲军杀敌回血
 	----------- PROMOTION_GAIN_MOVES_AFFER_KILLING Effects
-	if not isSPTP and defUnit and attUnit:IsHasPromotion(KillingEffectsID) then
+	if defUnit and attUnit:IsHasPromotion(KillingEffectsID) then
 		print("DefUnit Damage:" .. defFinalUnitDamage);
 		-- if defFinalUnitDamage >= 100 then
 		if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
@@ -2941,6 +2938,7 @@ function SPUEDamageDelta(iBattleUnitType, iBattleType,
 			local attUnit = attPlayer:GetUnitByID(iAttackUnitOrCityID)
 			if attUnit == nil then return 0 end;
 
+			-- 意大利装甲骑兵攻城增伤
 			if attUnit:IsHasPromotion(unitPromotionElmetiID) and bDefenseIsCity
 			then
 				local defCity = defPlayer:GetCityByID(iDefenseUnitOrCityID);
@@ -2986,7 +2984,6 @@ function OnUnitCanRangeAttackAt(iPlayer, iUnit, iX, iY, bNeedWar)
 	end
 	return false;
 end
-
 GameEvents.UnitCanRangeAttackAt.Add(OnUnitCanRangeAttackAt)
 
 function OnUnitRangeAttackAt(iPlayer, iUnit, iX, iY)
@@ -3028,7 +3025,6 @@ function OnUnitRangeAttackAt(iPlayer, iUnit, iX, iY)
 
 	return 1;
 end
-
 GameEvents.UnitRangeAttackAt.Add(OnUnitRangeAttackAt)
 --------------------------------------------------------------
 -- 私掠舰未开战攻击
@@ -3062,7 +3058,6 @@ function OnPrivateerCanRangeAttackAt(iPlayer, iUnit, iX, iY, bNeedWar)
 
 	return false;
 end
-
 GameEvents.UnitCanRangeAttackAt.Add(OnPrivateerCanRangeAttackAt)
 
 function OnPrivateerRangeAttackAt(iPlayer, iUnit, iX, iY)
@@ -3125,7 +3120,6 @@ function OnPrivateerRangeAttackAt(iPlayer, iUnit, iX, iY)
 
 	return 1;
 end
-
 GameEvents.UnitRangeAttackAt.Add(OnPrivateerRangeAttackAt)
 --------------------------------------------------------------
 -- 倭寇帆船掠夺地块
@@ -3190,7 +3184,6 @@ function SPUE_OnUnitPillage(iPlayerID, iUnitID)
 		end
 	end
 end
-
 GameEvents.UnitPillageGold.Add(SPUE_OnUnitPillage)
 --------------------------------------------------------------
 -- 铁人军登陆时回复全部移动力
@@ -3208,7 +3201,6 @@ function SPUE_EmbarkUnit(iPlayerID, iUnitID)
 		pUnit:SetMoves(pUnit:MaxMoves());
 	end
 end
-
 Events.UnitEmbark.Add(SPUE_EmbarkUnit);
 --------------------------------------------------------------
 -- 圣殿骑士团攻占城市
@@ -3274,7 +3266,6 @@ function SPUE_Templar_CityCaptureComplete(oldOwnerID, isCapital, plotX, plotY, n
 		Events.GameplayFX(hex.x, hex.y, -1);
 	end
 end
-
 GameEvents.CityCaptureComplete.Add(SPUE_Templar_CityCaptureComplete)
 --------------------------------------------------------------
 -- 赞助单位征集按钮
@@ -3305,7 +3296,6 @@ SPUE_BUCELLARII_Button = {
 		EliteAction(unit, "UNIT_SPUE_BUCELLARII_GUARD_ELITE", "UNITCLASS_SPUE_BUCELLARII_GUARD")
 	end
 };
-
 LuaEvents.UnitPanelActionAddin(SPUE_BUCELLARII_Button)
 
 -- 同盟军团征集
@@ -4051,7 +4041,7 @@ SPUE_Genoa_Ship_Button = {
 };
 LuaEvents.UnitPanelActionAddin(SPUE_Genoa_Ship_Button)
 --------------------------------------------------------------
--- 黑森：镇爆
+-- 黑森：镇暴
 --------------------------------------------------------------
 SPUE_UnitRiotControlButton = {
 	Name = "SPUE Riot Control",
