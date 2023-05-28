@@ -220,7 +220,7 @@ end
 function CheckUniquePromotions(pPlayer, unitPromotionID)
 	local GreatCrossCheck = 0;
 	local numUnit = pPlayer:GetUnitCountFromHasPromotion(unitPromotionID);
-	if numUnit > 0 then unitPromotionID = 1;
+	if numUnit > 0 then GreatCrossCheck = 1 end;
 	return GreatCrossCheck;
 end
 --------------------------------------------------------------
@@ -568,4 +568,3 @@ function plotDistanceGetMaxCombatStrength(unit, unitPromotionID, radius)
 	return math.max(attMaxCombatStrength, defMaxCombatStrength);
 
 end
-
