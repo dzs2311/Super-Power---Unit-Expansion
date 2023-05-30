@@ -262,7 +262,7 @@ function SPUE_MajorFavorite_MinorCivsAndCityPops(playerID)
 	local player = Players[playerID];
 
 	if (not player:IsAlive()) then return end;
-
+	if player:IsMinorCiv() or player:GetMinorAllyCount() < 1 then return false end
 	local index = 1;
 	if not (player:IsMinorCiv() or player:IsBarbarian()) then
 		for iCS = GameDefines.MAX_MAJOR_CIVS, GameDefines.MAX_PLAYERS-2, 1 do
@@ -270,7 +270,7 @@ function SPUE_MajorFavorite_MinorCivsAndCityPops(playerID)
 			and Players[iCS]:GetAlly() ~= -1 and Players[Players[iCS]:GetAlly()]:IsAlive()
 			and Players[iCS]:GetAlly() == playerID
 			then
-				local CityPop = Players[iCS]:GetCapitalCity():GetPopulation();
+				local CityPop = Players[iCS]:GetTotalPopulation();
 				local iFriendShip = Players[iCS]:GetMinorCivFriendshipWithMajor(playerID);
 				g_MinorCivsAndPopWithMajor[index] = {iCS, CityPop, iFriendShip};
 				index = index + 1;

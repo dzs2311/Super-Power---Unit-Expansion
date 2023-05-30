@@ -567,8 +567,6 @@ function SPUE_OnUnitCreated(iPlayerID, iUnitID)
 
 		if g_MinorCivsAndPopWithMajor then
 			local pops = 0;
-			local numAllies = math.min(#g_BaseliusDefense, #g_MinorCivsAndPopWithMajor);
-
 			for i = 1, #g_MinorCivsAndPopWithMajor, 1 do
 				pops = pops + g_MinorCivsAndPopWithMajor[i][2];
 			end
@@ -1168,14 +1166,7 @@ function SPUE_OnAIUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 	local pTeam = Teams[iTeamID];
 	if player == nil then return end
 
-	local bWar = false;
-	for iPlayer = 0, GameDefines.MAX_CIV_PLAYERS - 1, 1 do
-		local pPlayer = Players[iPlayer]
-		if (PlayersAtWar(player,pPlayer)) then
-			bWar = true
-			break
-		end
-	end
+	local bWar = pTeam:GetAtWarCount() > 0
 
 	-- AI使用技能系列
 	if not player:IsHuman() then
@@ -1224,6 +1215,7 @@ function SPUE_OnAIUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FUCHUAN"].ID)
 		and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
 		and bWar
+		and player:GetNumUnits() <= 2* player:GetNumPlots()
 		then
 			if fuchuanFlag < 2 then
 				-- 重步兵训练
@@ -2331,12 +2323,7 @@ function SPUE_SetInputHandler(uiMsg, wParam, lParam)
 			if pSelUnit:IsHasPromotion(unitPromotionEmperorID)
 				and isInArray(EmporerRadiusArray, GetPlotKey(pPlot))
 			then
-				local g_MinorCivsAndPopWithMajor = SPUE_MajorFavorite_MinorCivsAndCityPops(pPlayer:GetID());
-				-- print("g_MinorCivsAndPopWithMajor="..g_MinorCivsAndPopWithMajor)
-				local numAllies = 0;
-				if g_MinorCivsAndPopWithMajor then
-					numAllies = #g_MinorCivsAndPopWithMajor;
-				end
+				local numAllies = pPlayer:GetMinorAllyCount()
 
 				local unitCount = pPlot:GetNumUnits();
 				if unitCount > 0 then
