@@ -318,6 +318,7 @@
 			<Help>TXT_KEY_PROMOTION_SPUE_FIRESHIP_HELP</Help>
 			<CombatPercent>25</CombatPercent>
 			<Sound>AS2D_IF_LEVELUP</Sound>
+			<AOEDamageOnKill>25</AOEDamageOnKill>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<CityAttack>200</CityAttack>

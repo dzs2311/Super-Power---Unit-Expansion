@@ -542,7 +542,7 @@
 			<Text>[COLOR_CYAN]纵火帆船[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_FIRESHIP_HELP">
-			<Text>[COLOR_CYAN]纵火帆船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]海事政策[ENDCOLOR]的雇佣兵单位，对城市和海军部队有战斗加成，战斗结束后阵亡，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+			<Text>[COLOR_CYAN]纵火帆船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]海事政策[ENDCOLOR]的雇佣兵单位，对城市和海军部队有战斗加成，战斗结束后阵亡，战斗力，受攻击死亡时对临近一格内敌军造成25点爆炸伤害，购买后可以立即移动，死亡时不会造成人口损失。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_FIRESHIP_TEXT">
 			<Text>
@@ -556,7 +556,7 @@
 			<Text>火帆船</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRESHIP_HELP">
-			<Text>对海军单位和城市+200%[ICON_STRENGTH]战斗力。</Text>
+			<Text>对海军单位和城市+200%[ICON_STRENGTH]战斗力，受攻击死亡时对临近一格内敌军造成25点爆炸伤害。</Text>
 		</Row>
 		<!-- **********************热气球*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_HOT_AIR_BALLOON">
