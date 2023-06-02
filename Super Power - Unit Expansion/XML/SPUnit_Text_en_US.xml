@@ -17,7 +17,7 @@
 			<Text>安纳托利亚再征服计划</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_VARANGIAN_TRAINING_HELP">
-			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]。</Text>
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_VARANGIAN_TRAINING_PEDIA">
 			<Text>[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]是精英重步兵单位，拥有强大的突击能力。</Text>
@@ -27,7 +27,7 @@
 			<Text>君士坦丁堡城墙守备计划</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_GENOAXBOW_TRAINING_HELP">
-			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]热那亚弩手[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]。</Text>
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]热那亚弩手[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_GENOAXBOW_TRAINING_PEDIA">
 			<Text>[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]是精英陆军投射单位，拥有强大的城市防御能力。</Text>
@@ -37,7 +37,7 @@
 			<Text>圣彼得大教堂之劫</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_SWISSGUARD_TRAINING_HELP">
-			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]瑞士佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]教皇近卫军[ENDCOLOR]。</Text>
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]瑞士佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]教皇近卫军[ENDCOLOR]。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_SWISSGUARD_TRAINING_PEDIA">
 			<Text>[COLOR_YIELD_GOLD]教皇近卫军[ENDCOLOR]是精英陆军方阵单位，拥有强大的复杂地形作战和移动能力。</Text>
@@ -47,17 +47,17 @@
 			<Text>组建敕令骑士连</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING_HELP">
-			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]意大利装甲骑士[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]。</Text>
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]意大利装甲骑士[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING_PEDIA">
-			<Text>[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]是精英重骑兵单位，拥有强大的正面作战能力。</Text>
+			<Text>[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]是精英重骑兵单位，拥有强大的防御能力。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING">
 			<Text>巨人掷弹兵训练计划</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING_HELP">
-			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]黑森佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]。</Text>
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]黑森佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING_PEDIA">
 			<Text>[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]是精英火药步兵单位，拥有较强的的肉搏和恐吓敌军的能力。</Text>
@@ -104,7 +104,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_REITER_TEXT">
 			<Text>
-				德国建立了一支配备有簧轮手枪的重骑兵。他们被称为黑骑士（Retier，来源于日耳曼语，意为骑士）。他们通过远程射击削弱敌人，然后在近战中将敌人消灭。然而，火枪骑兵的技能比不上职业的远程部队和真正的重骑兵部队，他们的威力在于火力压制。起初他们穿锁子甲，后来改为头盔，胸铠和一直套到大腿的笨重皮靴。火枪骑兵团拥有2000名以上的骑兵，其中一个中队装备着骑枪，剩余的则装备手枪。冲锋时，他们排成由一些不大的密集纵队组成的横队。每个纵队由几个横排组成，纵行之间相隔约两匹马的距离。当他们接近敌人时，前排士兵把所带的三支手枪全部射击完毕，然后，突然转弯180度向后跑去。这就称为“半回旋”战术。当他们跑到自己一行的最后一排位置上装弹时，最前面的一排骑兵也开始按部就班地前进、射击，然后转弯向回跑，如波浪一般，一排排的火枪骑兵冲向敌人并用手枪火力压制住对方。通常“半旋转”战术是在骑兵全面向前推进之前采用的。要顺利地运用这种作战方法相当困难，很容易遭到敌人骑兵反冲锋的破坏。
+				德国建立了一支配备有簧轮手枪的重骑兵。他们被称为黑骑士（Retier，来源于日耳曼语，意为骑士）。他们通过远程射击削弱敌人，然后在近战中将敌人消灭。然而，火枪骑兵的技能比不上职业的远程部队和真正的重骑兵部队，他们的威力在于火力压制。起初他们穿锁子甲，后来改为头盔，胸铠和一直套到大腿的笨重皮靴。手枪骑兵团拥有2000名以上的骑兵，其中一个中队装备着骑枪，剩余的则装备手枪。冲锋时，他们排成由一些不大的密集纵队组成的横队。每个纵队由几个横排组成，纵行之间相隔约两匹马的距离。当他们接近敌人时，前排士兵把所带的三支手枪全部射击完毕，然后，突然转弯180度向后跑去。这就称为“半回旋”战术。当他们跑到自己一行的最后一排位置上装弹时，最前面的一排骑兵也开始按部就班地前进、射击，然后转弯向回跑，如波浪一般，一排排的手枪骑兵冲向敌人并用手枪火力压制住对方。通常“半旋转”战术是在骑兵全面向前推进之前采用的。要顺利地运用这种作战方法相当困难，很容易遭到敌人骑兵反冲锋的破坏。
 				德国雇佣军在改进黑火药兵器使之适合骑兵使用方面处于领先地位。由于德国骑兵通常披着黑色盔甲，使用的武器也带黑色，因此他们最初被称做“黑色骑士”，通常用来称谓16世纪的德国雇佣骑兵。
 			</Text>
 		</Row>
@@ -142,7 +142,9 @@
 		</Replace>
 		<Replace Tag="TXT_KEY_UNIT_BOMBARD_PEDIA">
 			<Text>
-				随着技术的改进，黑骑士变为轻型骑兵，名字也逐渐变成火枪骑兵，使用手枪作为主要武器，通常携带多把手枪，甚至会有随从专职携带额外的手枪，因为一旦进入射程通常没时间重新装填子弹。荷兰人在手枪的制造工艺方面很有成就，不仅装填速度快，而且杀伤力大，精确度高。因此当时荷兰的火枪骑兵拥有很强的战斗力。以手枪近距离开火通常能够致命，即使没有即时死亡，以当时的医疗水平，一般也会因为感染发炎而身亡。由于手枪体积较小，方便行进间射击，使得火枪骑兵的威力不可小觑。火枪骑兵身着轻便衣甲，佩戴多把火枪，一旦弹药用尽，会使用另外佩戴的马刀和斧头。
+				最早的火枪骑兵应为16世纪中期，施瓦兹堡（Schwartzburg）的图林根领主冈特（Günter）建立了他的骑兵队，叫做Schwarzern Reitern，即黑衫骑士。
+				[NEWLINE]16世纪50年代（1550年-1560年），曾有不少人被德国的容克贵族雇用，随着宗教战争的扩大，西班牙、意大利、法国也相继出现他们的身影。
+				[NEWLINE]在中国，火枪骑兵戚继光调守北方后由戚家军改编而成，成军在16世纪60年代。
 			</Text>
 		</Replace>
 		<!-- **********************鹰炮*********************** -->
@@ -281,7 +283,7 @@
 			<Text>[COLOR_CYAN]禁卫军[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_PRAETORIAN_HELP">
-			<Text>[COLOR_CYAN]禁卫军[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]的代表性单位，驻守首都可为首都地块供+4[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出，同时可在回合结束时提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验，位于领土外则可以修建能够控制周围1格范围的禁卫军堡垒。</Text>
+			<Text>[COLOR_CYAN]禁卫军[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]的代表性单位，驻守首都可为首都地块供+2[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出，同时可在回合结束时提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验，位于领土外则可以修建能够控制周围1格范围的禁卫军堡垒。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_PRAETORIAN_TEXT">
 			<Text>罗马禁卫军（Praetorian Guards），主要指古罗马帝国（前27年—395年）期间罗马皇帝和宫殿的卫队。“禁卫军（Praetorian）”一词来源于拉丁语中的“Praetorium”，意思是罗马将军的营帐。部队由罗马公民中的精英组成，主要为步兵，并伴随一小部分骑兵。罗马禁卫军在公元前27年由罗马帝国开国皇帝屋大维出于政治考虑创建，在公元4世纪初，由于禁卫军失去了本来作用，又愈加难以控制，君士坦丁大帝宣布解散这支部队并彻底拆毁其营地。</Text>
@@ -294,7 +296,7 @@
 			<Text>集权帝国</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_PRAETORIAN_HELP">
-			<Text>近战攻击之前进行一轮远程掷矛攻击，驻守首都可为首都地块供+4[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出，同时可在回合结束时提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验。</Text>
+			<Text>近战攻击之前进行一轮远程掷矛攻击，驻守首都可为首都地块供+2[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出，同时可在回合结束时提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_IMPROVEMENT_FORT_SPUE">
@@ -345,7 +347,7 @@
 				[NEWLINE][ICON_BULLET]拥有超过300点经验后可选晋升[COLOR_POSITIVE_TEXT]王国冠军[ENDCOLOR]：获得15点减伤，杀敌时为首都提供相当于(基础[ICON_STRENGTH]战斗力*单位等级)的[ICON_GREAT_WRITER]大文学家点数和[ICON_GREAT_SCIENTIST]大科学家点数。
 				[NEWLINE][ICON_BULLET]兵士集结：可以召集各个城市的采邑骑士（只能召集一次,且总数不超过6）。
 				[NEWLINE][ICON_BULLET]移民安置：杀敌时根据敌军战斗力积攒粮食点数，积攒足够点数时获得移民且粮食点数清零，点数要求随时代和战斗力增长。
-				[NEWLINE][ICON_BULLET]诗歌传唱：杀敌获得150%的文化点数，晋升时获得一个大文学家。
+				[NEWLINE][ICON_BULLET]诗歌传唱：杀敌获得150%的文化点数，单位达到5级时晋升后获得一个大文学家。
 			</Text>
 		</Row>
 
@@ -540,7 +542,7 @@
 			<Text>[COLOR_CYAN]纵火帆船[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_FIRESHIP_HELP">
-			<Text>[COLOR_CYAN]纵火帆船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]海事政策[ENDCOLOR]的雇佣兵单位，对城市和海军部队有战斗加成，战斗结束后阵亡，购买后可以立即移动，死亡时不会造成人口损失。</Text>
+			<Text>[COLOR_CYAN]纵火帆船[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]海事政策[ENDCOLOR]的雇佣兵单位，对城市和海军部队有战斗加成，战斗结束后阵亡，战斗力，受攻击死亡时对临近一格内敌军造成25点爆炸伤害，购买后可以立即移动，死亡时不会造成人口损失。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_FIRESHIP_TEXT">
 			<Text>
@@ -554,7 +556,7 @@
 			<Text>火帆船</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRESHIP_HELP">
-			<Text>对海军单位和城市+200%[ICON_STRENGTH]战斗力。</Text>
+			<Text>对海军单位和城市+200%[ICON_STRENGTH]战斗力，受攻击死亡时对临近一格内敌军造成25点爆炸伤害。</Text>
 		</Row>
 		<!-- **********************热气球*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_HOT_AIR_BALLOON">
@@ -953,7 +955,7 @@
 				[NEWLINE][ICON_BULLET]海滨地块作战加成;
 				[NEWLINE][ICON_BULLET]海洋地块移动加成;
 				[NEWLINE][ICON_BULLET]冲击一级;
-				[NEWLINE][ICON_BULLET]进攻可以使敌人退却并造成30%的践踏伤害;
+				[NEWLINE][ICON_BULLET]进攻可以使敌人退却并造成50%的践踏伤害;
 				[NEWLINE][ICON_BULLET]回合开始时4格范围内每有一个己方重骑兵单位则获得20%[ICON_STRENGTH]战斗力加成并+2[ICON_MOVES]移动力。
 			</Text>
 		</Row>
@@ -1117,7 +1119,7 @@
 				[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]是[COLOR_CYAN]意大利装甲骑兵[ENDCOLOR]作为常备军后形成的近卫军团，需要完成[COLOR_YIELD_GOLD]组建敕令骑士连[ENDCOLOR]：
 				[NEWLINE][ICON_BULLET]单位剩余的每点移动力+5%[ICON_STRENGTH]攻击力，攻击城市时对城市额外造成相当于15%城市最大生命值的伤害；
 				[NEWLINE][ICON_BULLET]防御时+150%[ICON_STRENGTH]战斗力；
-				[NEWLINE][ICON_BULLET]单位移动时/回合结束时根据2格内的重骑兵单位/装甲的最大加成后的战力获得战斗力加成。
+				[NEWLINE][ICON_BULLET]单位每承受一次攻击则额外+2[ICON_MOVES]移动力，单位剩余的每点[ICON_MOVES]移动力+50%[ICON_STRENGTH]防御力。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_ELMETI_ELITE_TEXT">
@@ -1131,7 +1133,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ELMETI_ELITE_HELP">
 			<Text>
 				[NEWLINE][ICON_BULLET]防御时+150%[ICON_STRENGTH]战斗力；
-				[NEWLINE][ICON_BULLET]单位移动/回合开始时根据2格内的重骑兵单位或装甲的最大加成后的战力获得战斗力加成。
+				[NEWLINE][ICON_BULLET]单位每承受一次攻击则额外+2[ICON_MOVES]移动力，单位剩余的每点[ICON_MOVES]移动力+50%[ICON_STRENGTH]防御力。
 			</Text>
 		</Row>
 		<!-- **********************黑森佣兵*********************** -->
@@ -1317,11 +1319,11 @@
 
 		<!-- **********************将领卫队*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD">
-			<Text>★[COLOR_CYAN]将领卫队[ENDCOLOR]</Text>
+			<Text>★[COLOR_CYAN]将军卫队[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD_HELP">
 			<Text>
-				★[COLOR_CYAN]将领卫队[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重骑兵统帅单位。
+				★[COLOR_CYAN]将军卫队[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]的古典陆军重骑兵统帅单位。
 				[NEWLINE][ICON_BULLET]位于非敌方城邦境内时可以花费一定的金钱征召∏[COLOR_CYAN]同盟军团[ENDCOLOR]和∏[COLOR_CYAN]辅助克里特弓箭手[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]发起近战攻击前先进行一次弓箭扫荡，2格内敌方单位-33%[ICON_STRENGTH]战斗力。
 				[NEWLINE][ICON_BULLET]每次发动攻击时回复相当于当前生命值的血量，对残血单位+50%[ICON_STRENGTH]战斗力。
@@ -1544,7 +1546,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_02_HELP">
 			<Text>
 				[COLOR_NEGATIVE_TEXT]灼烧状态，剩余2回合。[ENDCOLOR]
-				[NEWLINE]在友方区域外停留会对该单位造成[COLOR_NEGATIVE_TEXT]35点伤害[ENDCOLOR]
+				[NEWLINE]对该单位造成[COLOR_NEGATIVE_TEXT]35点伤害[ENDCOLOR]
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_01">
@@ -1553,7 +1555,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_OCEAN_FIRE_01_HELP">
 			<Text>
 				[COLOR_NEGATIVE_TEXT]灼烧状态，剩余1回合。[ENDCOLOR]
-				[NEWLINE]在友方区域外停留会对该单位造成[COLOR_NEGATIVE_TEXT]25点伤害[ENDCOLOR]
+				[NEWLINE]对该单位造成[COLOR_NEGATIVE_TEXT]25点伤害[ENDCOLOR]
 			</Text>
 		</Row>
 
@@ -1672,7 +1674,7 @@
 			<Text>
 				选择[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]将使您能够建造古典时期的统帅和辅助单位。
 				[NEWLINE][NEWLINE]
-				[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]中的单位拥有独特晋升[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]，当位于城邦境时，+50%[ICON_STRENGTH]战斗力，每回合与该城邦增加1点关系，随时代增加。
+				[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]中的单位拥有独特晋升[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]，当位于城邦境时，+50%[ICON_STRENGTH]战斗力，每回合与该城邦增加2点关系，随时代增加。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PATH_BASELIUS_CAP">
@@ -1693,7 +1695,7 @@
 			<Text>
 				选择[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]将使您能够建造启蒙时期的统帅和辅助单位。
 				[NEWLINE][NEWLINE]
-				[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]中的单位拥有独特晋升[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]，获得力量投射能力，以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格一格内友方单位回复相当于城邦盟友数量的血量和2移动力，精英单位可额外回复全部攻击次数。
+				[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]中的单位拥有独特晋升[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]，获得力量投射能力，以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格一格内友方单位回复相当于城邦盟友数量*5的血量和2移动力，精英单位可额外回复全部攻击次数。
 			</Text>
 		</Row>
 
@@ -1712,7 +1714,7 @@
 			<Text>奥古斯都之路</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_AUGUSTUS_HELP">
-			<Text>当位于城邦境时，+50%[ICON_STRENGTH]战斗力，每回合与该城邦增加1点关系，随时代增加。</Text>
+			<Text>当位于城邦境时，+50%[ICON_STRENGTH]战斗力，每回合与该城邦增加2点关系（随时代增加）。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_AUGUSTUS_COMBAT">
@@ -1733,14 +1735,19 @@
 			<Text>神州天子之权</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_EMPEROR_HELP">
-			<Text>获得力量投射能力，以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格一格内友方单位回复相当于城邦盟友数量的血量和2移动力，精英单位可额外回复全部攻击次数。</Text>
+			<Text>获得力量投射能力，以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格一格内友方单位（不能拥有神州天子之权晋升）回复相当于城邦盟友数量*5的血量和2移动力，精英单位可额外回复全部攻击次数，每回合仅能使用一次。</Text>
 		</Row>
 
 		<Row Tag='TXT_KEY_TITLE_SPUE_EMPEROR'>
 			<Text>力量投射</Text>
 		</Row>
 		<Row Tag='TXT_KEY_COND_SPUE_EMPEROR'>
-			<Text>以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格（绿色标记）一格内的友方单位回复相当于城邦盟友数量的血量和2移动力，精英单位可额外回复全部攻击次数。</Text>
+			<Text>
+			以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格（绿色标记）一格内的友方单位（不能拥有神州天子之权晋升）回复相当于城邦盟友数量*5的血量和2移动力，精英单位可额外回复全部攻击次数，每回合仅能使用一次。
+			</Text>
+		</Row>
+		<Row Tag='TXT_KEY_COND_SPUE_EMPEROR_USED'>
+			<Text>本回合已使用过力量投射。</Text>
 		</Row>
 	</Language_en_US>
 </GameData>

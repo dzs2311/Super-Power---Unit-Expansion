@@ -22,6 +22,11 @@
 			<Type>POLICY_SPUE_EMPEROR</Type>
 			<Description>TXT_KEY_POLICY_BRANCH_PATRONAGE</Description>
 		</Row>
+		<Row>
+			<!-- 神州天子之道 -->
+			<Type>POLICY_SPUE_EMPEROR_DUMMY</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_PATRONAGE</Description>
+		</Row>
 		<!-- 商业政策树佣兵政策 -->
 		<Row>
 			<!-- 瓦兰吉佣兵 -->
@@ -100,17 +105,17 @@
 		<Row>
 			<PolicyType>POLICY_SPUE_PRAETORIAN</PolicyType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>4</Yield>
+			<Yield>2</Yield>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_SPUE_PRAETORIAN</PolicyType>
 			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>4</Yield>
+			<Yield>2</Yield>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_SPUE_PRAETORIAN</PolicyType>
 			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>4</Yield>
+			<Yield>2</Yield>
 		</Row>
 	</Policy_CapitalYieldChanges>
 </GameData>

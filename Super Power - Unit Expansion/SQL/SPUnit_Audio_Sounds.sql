@@ -13,9 +13,6 @@ VALUES	('SND_SELECT_SPUE_ORDER_SUPER_055',             '055_FirstSelect',       
 		('SND_SELECT_SPUE_AUTOCRACY_JUFORTRESSSHIP',    'Giga_FirstSelect',             'DynamicResident'),
 		('SND_BIRTH_SPUE_AUTOCRACY_JUFORTRESSSHIP',     'Giga_Select',                  'DynamicResident');
 
-
-		UNIT_SPUE_NVOVRLORD
-
 INSERT OR REPLACE INTO Audio_2DSounds
 		(ScriptID,                                      SoundID,                                  	SoundType,  MaxVolume,  MinVolume)
 VALUES	('AS2D_SELECT_SPUE_ORDER_SUPER_055',            'SND_SELECT_SPUE_ORDER_SUPER_055',        	'GAME_SFX', 85,         85),

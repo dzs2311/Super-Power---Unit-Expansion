@@ -112,11 +112,6 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>SQL/TNL - New Promotions Font Icons.sql</FileName>
-      </Action>
-      <Action>
-        <Set>OnModActivated</Set>
-        <Type>UpdateDatabase</Type>
         <FileName>XML/SPUnit_Buildings.xml</FileName>
       </Action>
       <Action>
@@ -173,6 +168,11 @@
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
         <FileName>CombatPercentBonus/CombatPercent_Misc.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>SQL/TNL - New Promotions Font Icons.sql</FileName>
       </Action>
     </ModActions>
     <ModContent>

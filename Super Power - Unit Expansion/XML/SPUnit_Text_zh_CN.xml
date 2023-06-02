@@ -17,7 +17,7 @@
 			<Text>安纳托利亚再征服计划</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_VARANGIAN_TRAINING_HELP">
-			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]。</Text>
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_VARANGIAN_TRAINING_PEDIA">
 			<Text>[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]是精英重步兵单位，拥有强大的突击能力。</Text>
@@ -27,7 +27,7 @@
 			<Text>君士坦丁堡城墙守备计划</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_GENOAXBOW_TRAINING_HELP">
-			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]热那亚弩手[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]。</Text>
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]热那亚弩手[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_GENOAXBOW_TRAINING_PEDIA">
 			<Text>[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]是精英陆军投射单位，拥有强大的城市防御能力。</Text>
@@ -37,7 +37,7 @@
 			<Text>圣彼得大教堂之劫</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_SWISSGUARD_TRAINING_HELP">
-			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]瑞士佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]教皇近卫军[ENDCOLOR]。</Text>
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]瑞士佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]教皇近卫军[ENDCOLOR]。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_SWISSGUARD_TRAINING_PEDIA">
 			<Text>[COLOR_YIELD_GOLD]教皇近卫军[ENDCOLOR]是精英陆军方阵单位，拥有强大的复杂地形作战和移动能力。</Text>
@@ -47,7 +47,7 @@
 			<Text>组建敕令骑士连</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING_HELP">
-			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]意大利装甲骑士[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]。</Text>
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]意大利装甲骑士[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING_PEDIA">
 			<Text>[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]是精英重骑兵单位，拥有强大的防御能力。</Text>
@@ -57,7 +57,7 @@
 			<Text>巨人掷弹兵训练计划</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING_HELP">
-			<Text>此项目需要开启商业政策树，只有完成此项目的文明可以将[COLOR_CYAN]黑森佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]。</Text>
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]黑森佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING_PEDIA">
 			<Text>[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]是精英火药步兵单位，拥有较强的的肉搏和恐吓敌军的能力。</Text>
@@ -283,7 +283,7 @@
 			<Text>[COLOR_CYAN]禁卫军[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_PRAETORIAN_HELP">
-			<Text>[COLOR_CYAN]禁卫军[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]的代表性单位，驻守首都可为首都地块供+4[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出，同时可在回合结束时提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验，位于领土外则可以修建能够控制周围1格范围的禁卫军堡垒。</Text>
+			<Text>[COLOR_CYAN]禁卫军[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]的代表性单位，驻守首都可为首都地块供+2[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出，同时可在回合结束时提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验，位于领土外则可以修建能够控制周围1格范围的禁卫军堡垒。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_PRAETORIAN_TEXT">
 			<Text>罗马禁卫军（Praetorian Guards），主要指古罗马帝国（前27年—395年）期间罗马皇帝和宫殿的卫队。“禁卫军（Praetorian）”一词来源于拉丁语中的“Praetorium”，意思是罗马将军的营帐。部队由罗马公民中的精英组成，主要为步兵，并伴随一小部分骑兵。罗马禁卫军在公元前27年由罗马帝国开国皇帝屋大维出于政治考虑创建，在公元4世纪初，由于禁卫军失去了本来作用，又愈加难以控制，君士坦丁大帝宣布解散这支部队并彻底拆毁其营地。</Text>
@@ -296,7 +296,7 @@
 			<Text>集权帝国</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_PRAETORIAN_HELP">
-			<Text>近战攻击之前进行一轮远程掷矛攻击，驻守首都可为首都地块供+4[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出，同时可在回合结束时提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验。</Text>
+			<Text>近战攻击之前进行一轮远程掷矛攻击，驻守首都可为首都地块供+2[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出，同时可在回合结束时提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_IMPROVEMENT_FORT_SPUE">
@@ -1735,7 +1735,7 @@
 			<Text>神州天子之权</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_EMPEROR_HELP">
-			<Text>获得力量投射能力，以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格一格内友方单位（不能拥有神州天子之权晋升）回复相当于城邦盟友数量*5的血量和2移动力，精英单位可额外回复全部攻击次数。</Text>
+			<Text>获得力量投射能力，以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格一格内友方单位（不能拥有神州天子之权晋升）回复相当于城邦盟友数量*5的血量和2移动力，精英单位可额外回复全部攻击次数，每回合仅能使用一次。</Text>
 		</Row>
 
 		<Row Tag='TXT_KEY_TITLE_SPUE_EMPEROR'>
@@ -1743,8 +1743,11 @@
 		</Row>
 		<Row Tag='TXT_KEY_COND_SPUE_EMPEROR'>
 			<Text>
-			以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格（绿色标记）一格内的友方单位（不能拥有神州天子之权晋升）回复相当于城邦盟友数量*5的血量和2移动力，精英单位可额外回复全部攻击次数。
+			以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格（绿色标记）一格内的友方单位（不能拥有神州天子之权晋升）回复相当于城邦盟友数量*5的血量和2移动力，精英单位可额外回复全部攻击次数，每回合仅能使用一次。
 			</Text>
+		</Row>
+		<Row Tag='TXT_KEY_COND_SPUE_EMPEROR_USED'>
+			<Text>本回合已使用过力量投射。</Text>
 		</Row>
 	</Language_zh_CN>
 </GameData>

@@ -610,6 +610,10 @@ function SPUE_OnPlayerDoTurn(playerID)
 
 	-- 超级要塞特殊效果初始化
 	GAIAShipHasAttackedThisTurn = 0
+
+	if player:HasPolicy(GameInfo.Policies["POLICY_SPUE_EMPEROR_DUMMY"].ID) then
+		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_EMPEROR_DUMMY"].ID, false)
+	end
 end --function END
 GameEvents.PlayerDoTurn.Add(SPUE_OnPlayerDoTurn)
 
@@ -1029,7 +1033,7 @@ function SPUE_PlayerDoneTurn(playerID)
 				and plot:GetPlotCity():IsCapital()
 			then
 				local city = plot:GetPlotCity();
-				local iCapitalBonus = 4 * pEraID;
+				local iCapitalBonus = 2 * pEraID;
 				-- 首都
 				city:SetOverflowProduction(city:GetOverflowProduction() + iCapitalBonus);
 				city:ChangeFood(iCapitalBonus);
@@ -1215,7 +1219,7 @@ function SPUE_OnAIUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FUCHUAN"].ID)
 		and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
 		and bWar
-		and player:GetNumUnits() <= 2* player:GetNumPlots()
+		and player:GetNumUnits() <= 2 * player:GetNumPlots()
 		then
 			if fuchuanFlag < 2 then
 				-- 重步兵训练
@@ -2254,6 +2258,7 @@ LuaEvents.UnitPanelActionAddin(SPUE_GAIA_Head2Ship_Button)
 --------------------------------------------------------------
 -- 神州天子之权：力量投射
 --------------------------------------------------------------
+-- POLICY_SPUE_EMPEROR_DUMMY
 local EmporerRadiusArray = {};
 local SPUE_Emperor_Button = {
 	Name = "IRON PAGODA CHARGE",
@@ -2270,7 +2275,12 @@ local SPUE_Emperor_Button = {
 		end
 	end, -- or nil or a boolean, default is true
 	Disabled = function(action, unit)
-		return false
+		local player = Players[unit:GetOwner()]
+		
+		if player:HasPolicy(GameInfo.Policies["POLICY_SPUE_EMPEROR_DUMMY"].ID) then
+			SPUE_Emperor_Button.Title = "TXT_KEY_COND_SPUE_EMPEROR_USED"
+		end
+		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_EMPEROR_DUMMY"].ID)
 	end, -- or nil or a boolean, default is false
 	Action = function(action, unit, eClick)
 		if eClick == Mouse.eRClick then
@@ -2372,6 +2382,7 @@ function SPUE_SetInputHandler(uiMsg, wParam, lParam)
 				local hex = ToHexFromGrid(Vector2(pPlot:GetX(), pPlot:GetY()));
 				Events.GameplayFX(hex.x, hex.y, -1);
 				pSelUnit:SetMoves(0);
+				pPlayer:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_EMPEROR_DUMMY"].ID, true, true)
 			end
 			EmporerRadiusArray = {};
 			Events.ClearHexHighlights();
@@ -2711,7 +2722,7 @@ function NewAttackEffect()
 				local pEraType = attPlayer:GetCurrentEra();
 				local pEraID = GameInfo.Eras[pEraType].ID;
 				if defUnitDamage >= 40 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
-					local attCambat = attUnit:GetBaseCombatStrength();
+					local attCambat = 5 * attUnit:GetBaseCombatStrength();
 					local defCombat = defUnit:GetBaseCombatStrength();
 					local KingsKnightPopsDelta = 100 * (pEraID + 1) * defCombat / attCambat;
 					local KingsKnightPops = load(attUnit, "KingsKnightPops", KingsKnightPops) or 0;
