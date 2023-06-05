@@ -788,6 +788,9 @@
 		<Row Tag="TXT_KEY_CREED_TEUTONIC_HELP">
 			<Text>
 				选择[COLOR_POSITIVE_TEXT]帮助、救治、守卫[ENDCOLOR]信条将使您能够解锁建造[COLOR_POSITIVE_TEXT]条顿骑士团[ENDCOLOR]单位的能力。
+				[NEWLINE][NEWLINE]
+				历史加成：
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]德意志文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]时自动获得[COLOR_POSITIVE_TEXT]帮助、救治、守卫[ENDCOLOR]，并可以在此基础上额外选择一则骑士团信条。
 			</Text>
 		</Row>
 
@@ -1089,14 +1092,14 @@
 				[NEWLINE][ICON_BULLET]移动力+1，单位已消耗的每点移动力+15%[ICON_STRENGTH]攻击力。
 			</Text>
 		</Row>
-		<!-- **********************意大利装甲骑兵*********************** -->
+		<!-- **********************装甲骑兵*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_ELMETI">
-			<Text>[COLOR_CYAN]意大利装甲骑兵[ENDCOLOR]</Text>
+			<Text>[COLOR_CYAN]装甲骑兵[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_ELMETI_HELP">
 			<Text>
-				[COLOR_CYAN]意大利装甲骑兵[ENDCOLOR]
-				[COLOR_CYAN]意大利装甲骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古佣兵单位之一，只能通过[ICON_GOLD]金币购买，单位剩余的每点移动力+5%[ICON_STRENGTH]攻击力，攻击城市时对城市额外造成相当于15%城市最大生命值的伤害，购买后可以立即移动，死亡时不会造成人口损失，单位无法升级。
+				[COLOR_CYAN]装甲骑兵[ENDCOLOR]
+				[COLOR_CYAN]装甲骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古佣兵单位之一，只能通过[ICON_GOLD]金币购买，单位剩余的每点移动力+5%[ICON_STRENGTH]攻击力，攻击城市时对城市额外造成相当于15%城市最大生命值的伤害，购买后可以立即移动，死亡时不会造成人口损失，单位无法升级。
 				[NEWLINE]
 				[NEWLINE]完成[COLOR_YIELD_GOLD]组建敕令骑士连[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]。
 			</Text>
@@ -1116,7 +1119,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_ELMETI_ELITE_HELP">
 			<Text>
-				[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]是[COLOR_CYAN]意大利装甲骑兵[ENDCOLOR]作为常备军后形成的近卫军团，需要完成[COLOR_YIELD_GOLD]组建敕令骑士连[ENDCOLOR]：
+				[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]是[COLOR_CYAN]装甲骑兵[ENDCOLOR]作为常备军后形成的近卫军团，需要完成[COLOR_YIELD_GOLD]组建敕令骑士连[ENDCOLOR]：
 				[NEWLINE][ICON_BULLET]单位剩余的每点移动力+5%[ICON_STRENGTH]攻击力，攻击城市时对城市额外造成相当于15%城市最大生命值的伤害；
 				[NEWLINE][ICON_BULLET]防御时+150%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]单位每承受一次攻击则额外+2[ICON_MOVES]移动力，单位剩余的每点[ICON_MOVES]移动力+50%[ICON_STRENGTH]防御力。
@@ -1142,7 +1145,6 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_HESSIAN_HELP">
 			<Text>
-				[COLOR_CYAN]黑森佣兵[ENDCOLOR]
 				[COLOR_CYAN]黑森佣兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，可以消耗自身完全镇压一座城市的抵抗，亦可以在首都城市中执行移民安置，购买后可以立即移动，死亡时不会造成人口损失，单位无法升级。
 				[NEWLINE]
 				[NEWLINE]完成[COLOR_YIELD_GOLD]巨人掷弹兵训练计划[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]。
@@ -1164,7 +1166,6 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_HESSIAN_ELITE_HELP">
 			<Text>
-				[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]
 				[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]是[COLOR_CYAN]黑森佣兵[ENDCOLOR]作为常备军后形成的近卫军团，需要完成[COLOR_YIELD_GOLD]巨人掷弹兵训练计划[ENDCOLOR]：
 				[NEWLINE][ICON_BULLET]血量+50；
 				[NEWLINE][ICON_BULLET]先手远程打击火力的伤害比例提升；
@@ -1279,18 +1280,33 @@
 		<!-- **********************雇佣兵选择界面UI文本*********************** -->
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_LEADER_TOP">
 			<Text>
-				选择两种您希望在本局游戏中使用的[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]雇佣兵单位，一旦选择不可更改
-				<!-- [NEWLINE][NEWLINE]([COLOR_NEGATIVE_TEXT]注意：[ENDCOLOR]需选择两个不一样的佣兵团，否则无法退出本界面！) -->
+				选择两种您希望在本局游戏中使用的[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]雇佣兵单位，一旦选择不可更改。
+				[NEWLINE][NEWLINE]
+				历史加成：
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]拜占庭文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]时自动获得[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]和[COLOR_CYAN]热那亚弩手[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支中古佣兵团。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]法兰西文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]时自动获得[COLOR_CYAN]装甲骑兵[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支中古佣兵团。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]德意志文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]时自动获得[COLOR_CYAN]黑森佣兵[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]中华文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]时自动获得[COLOR_CYAN]南洋海盗船[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]日本文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]时自动获得[COLOR_CYAN]倭寇帆船[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
 			</Text>
 		</Row>
+		<!-- [NEWLINE][NEWLINE]([COLOR_NEGATIVE_TEXT]注意：[ENDCOLOR]需选择两个不一样的佣兵团，否则无法退出本界面！) -->
 
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_LEADER_TOP_WP">
 			<Text>
 				检测到当前开启了[COLOR_POSITIVE_TEXT]世界强权[ENDCOLOR]模组，考虑到强权对于[ICON_CULTURE][COLOR_MAGENTA]商业政策树[ENDCOLOR]的调整情况，雇佣兵单位选择界面在玩家进入中古时代后即开启。
-				[NEWLINE]选择两种您希望在本局游戏中使用的[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]雇佣兵单位，一旦选择不可更改
-				<!-- [NEWLINE][NEWLINE]([COLOR_NEGATIVE_TEXT]注意：[ENDCOLOR]需选择两个不一样的佣兵团，否则无法退出本界面！) -->
+				[NEWLINE]选择两种您希望在本局游戏中使用的[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]雇佣兵单位，一旦选择不可更改。
+				[NEWLINE][NEWLINE]
+				历史加成：
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]拜占庭文明[ENDCOLOR]进入中古时代时自动获得[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]和[COLOR_CYAN]热那亚弩手[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支中古佣兵团。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]法兰西文明[ENDCOLOR]进入中古时代时自动获得[COLOR_CYAN]装甲骑兵[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支中古佣兵团。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]德意志文明[ENDCOLOR]进入中古时代时自动获得[COLOR_CYAN]黑森佣兵[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]中华文明[ENDCOLOR]进入中古时代时自动获得[COLOR_CYAN]南洋海盗船[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]日本文明[ENDCOLOR]进入中古时代时自动获得[COLOR_CYAN]倭寇帆船[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
 			</Text>
 		</Row>
+		<!-- [NEWLINE][NEWLINE]([COLOR_NEGATIVE_TEXT]注意：[ENDCOLOR]需选择两个不一样的佣兵团，否则无法退出本界面！) -->
+
 
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_SELECT_TITLE">
 			<Text>[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR] - 雇佣兵选择</Text>
@@ -1673,8 +1689,10 @@
 		<Row Tag="TXT_KEY_PATH_AUGUSTUS_HELP">
 			<Text>
 				选择[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]将使您能够建造古典时期的统帅和辅助单位。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]中的单位拥有独特晋升[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]，当位于城邦境时，+50%[ICON_STRENGTH]战斗力，每回合与该城邦增加2点关系，随时代增加。
 				[NEWLINE][NEWLINE]
-				[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]中的单位拥有独特晋升[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]，当位于城邦境时，+50%[ICON_STRENGTH]战斗力，每回合与该城邦增加2点关系，随时代增加。
+				历史加成：
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]罗马文明[ENDCOLOR]/[COLOR_POSITIVE_TEXT]罗马共和国[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]时自动获得[COLOR_POSITIVE_TEXT]奥古斯都之路[ENDCOLOR]，并可以在此基础上额外选择一条君王之略。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PATH_BASELIUS_CAP">
@@ -1683,8 +1701,10 @@
 		<Row Tag="TXT_KEY_PATH_BASELIUS_HELP">
 			<Text>
 				选择[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]将使您能够建造中古时期的统帅和辅助单位，并解锁特殊项目：[COLOR_YIELD_GOLD]查士丁尼西征计划[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]中的单位拥有独特晋升[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]，单位诞生时额外获得相当于盟友城邦人口总数的经验值，每个盟友城邦带来15%防御加成（不超过60%）。
 				[NEWLINE][NEWLINE]
-				[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]中的单位拥有独特晋升[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]，单位诞生时额外获得相当于盟友城邦人口总数的经验值，每个盟友城邦带来15%防御加成（不超过60%）。
+				历史加成：
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]拜占庭文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]时自动获得[COLOR_POSITIVE_TEXT]巴西琉斯之道[ENDCOLOR]，并可以在此基础上额外选择一条君王之略。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PATH_EMPEROR_CAP">
@@ -1694,8 +1714,10 @@
 		<Row Tag="TXT_KEY_PATH_EMPEROR_HELP">
 			<Text>
 				选择[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]将使您能够建造启蒙时期的统帅和辅助单位。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]中的单位拥有独特晋升[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]，获得力量投射能力，以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格一格内友方单位回复相当于城邦盟友数量*5的血量和2移动力，精英单位可额外回复全部攻击次数。
 				[NEWLINE][NEWLINE]
-				[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]中的单位拥有独特晋升[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]，获得力量投射能力，以所在格子为中心，以当前剩余移动力的一半为半径，可以为范围内某单元格一格内友方单位回复相当于城邦盟友数量*5的血量和2移动力，精英单位可额外回复全部攻击次数。
+				历史加成：
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]中华文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]赞助政策[ENDCOLOR]时自动获得[COLOR_POSITIVE_TEXT]神州天子之权[ENDCOLOR]，并可以在此基础上额外选择一条君王之略。
 			</Text>
 		</Row>
 

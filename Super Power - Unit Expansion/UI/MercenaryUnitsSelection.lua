@@ -46,8 +46,57 @@ function initializeDialog()
 
 	local pPlayer = activePlayer;	
 	local leader = GameInfo.Leaders[pPlayer:GetLeaderType()];
-	local unitL = GameInfo.Units[g_MercenaryUnitListL[1]]
-	local unitR = GameInfo.Units[g_MercenaryUnitListR[1]]
+	local activeCivID 		= pPlayer:GetCivilizationType();
+	local activeCiv 		= GameInfo.Civilizations[activeCivID];
+
+	if activeCiv then
+		if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_BYZANTIUM" 
+		then
+			-- 拜占庭自动获得瓦兰吉卫队和热那亚佣兵建造能力
+			local unitL = GameInfo.Units[g_MercenaryUnitListL[1]]
+			local unitR = GameInfo.Units[g_MercenaryUnitListL[2]]
+	
+			local policyL = unitL.PolicyType
+			local policyR = unitR.PolicyType
+	
+			pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)
+			pPlayer:SetHasPolicy(GameInfo.Policies[policyR].ID, true, true)
+			
+			table.remove(g_MercenaryUnitListL, 1)
+			table.remove(g_MercenaryUnitListL, 1)
+		elseif GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_FRANCE" 
+		then
+			-- 法兰西自动获得装甲骑兵建造能力
+			local unitL = GameInfo.Units[g_MercenaryUnitListL[4]]
+			local policyL = unitL.PolicyType
+			pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)
+			table.remove(g_MercenaryUnitListL, 4)
+		elseif GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_GERMANY" 
+		then
+			-- 德意志自动获得黑森佣兵建造能力
+			local unitL = GameInfo.Units[g_MercenaryUnitListR[1]]
+			local policyL = unitL.PolicyType
+			pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)
+			table.remove(g_MercenaryUnitListR, 1)
+		elseif GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_CHINA" 
+		then
+			-- 中华文明自动获得南洋海盗船建造能力
+			local unitL = GameInfo.Units[g_MercenaryUnitListR[2]]
+			local policyL = unitL.PolicyType
+			pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)
+			table.remove(g_MercenaryUnitListR, 2)
+		elseif GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_JAPAN" 
+		then
+			-- 日本文明自动获得倭寇帆船建造能力
+			local unitL = GameInfo.Units[g_MercenaryUnitListR[4]]
+			local policyL = unitL.PolicyType
+			pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)
+			table.remove(g_MercenaryUnitListR, 4)
+		end
+	end
+
+	local unitL = GameInfo.Units[g_MercenaryUnitListL[1]];
+	local unitR = GameInfo.Units[g_MercenaryUnitListR[1]];
 
 	if leader then
 		print("initializeDialog: Leader Found: " .. Locale.ConvertTextKey(leader.Description))
@@ -91,7 +140,7 @@ function OnShowHide(bHide, bInit)
 		UpdateRightUnitList()
 	end	
 end
-ContextPtr:SetShowHideHandler(OnShowHide)
+-- ContextPtr:SetShowHideHandler(OnShowHide)
 
 
 -- Left pulldown list unit select.
@@ -296,6 +345,9 @@ function showDialog()
 
 	-- Initialize
 	initializeDialog()
+	UpdateLeftUnitList()
+	UpdateRightUnitList()
+
 end
 
 -- Hide function

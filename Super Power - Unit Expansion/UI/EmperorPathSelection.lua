@@ -43,6 +43,80 @@ function initializeDialog()
 
 	local pPlayer			= activePlayer;	
 	local leader			= GameInfo.Leaders[pPlayer:GetLeaderType()];
+	local activeCivID 		= pPlayer:GetCivilizationType();
+	local activeCiv 		= GameInfo.Civilizations[activeCivID];
+
+	-- 罗马自动获得奥古斯都之路
+	if activeCiv then
+		if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_ROME" 
+		or GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_CAESAR"
+		then
+			Controls.CreedButton1:SetHide(true);
+			g_PatronageUnitLeft  = g_PatronageUnitList[1];
+			g_PatronageUnitMid   = g_PatronageUnitList[2];
+			g_PatronageUnitRight = g_PatronageUnitList[3];
+		
+			if g_PatronageUnitLeft ~= nil 
+			and g_PatronageUnitRight ~= nil
+			and g_PatronageUnitMid ~= nil
+			then		
+				local unitL = GameInfo.Units[g_PatronageUnitLeft];		
+				local policyL = unitL.PolicyType;
+				pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
+			end
+
+			g_PatronageUnitLeft		= nil;
+			g_PatronageUnitMid		= nil;
+			g_PatronageUnitRight 	= nil;
+		end
+	end
+
+	-- 拜占庭自动获得巴西琉斯之道
+	if activeCiv then
+		if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_BYZANTIUM" then
+			Controls.CreedButton1:SetHide(true);
+			g_PatronageUnitLeft  = g_PatronageUnitList[4];
+			g_PatronageUnitMid   = g_PatronageUnitList[5];
+			g_PatronageUnitRight = g_PatronageUnitList[6];
+		
+			if g_PatronageUnitLeft ~= nil 
+			and g_PatronageUnitRight ~= nil
+			and g_PatronageUnitMid ~= nil
+			then		
+				local unitL = GameInfo.Units[g_PatronageUnitLeft];		
+				local policyL = unitL.PolicyType;
+				pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
+			end
+
+			g_PatronageUnitLeft		= nil;
+			g_PatronageUnitMid		= nil;
+			g_PatronageUnitRight 	= nil;
+		end
+	end
+	
+	-- 中国自动获得神州天子之权
+	if activeCiv then
+		if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_CHINA" 
+		then
+			Controls.CreedButton1:SetHide(true);
+			g_PatronageUnitLeft  = g_PatronageUnitList[7];
+			g_PatronageUnitMid   = g_PatronageUnitList[8];
+			g_PatronageUnitRight = g_PatronageUnitList[9];
+		
+			if g_PatronageUnitLeft ~= nil 
+			and g_PatronageUnitRight ~= nil
+			and g_PatronageUnitMid ~= nil
+			then		
+				local unitL = GameInfo.Units[g_PatronageUnitLeft];		
+				local policyL = unitL.PolicyType;
+				pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
+			end
+
+			g_PatronageUnitLeft		= nil;
+			g_PatronageUnitMid		= nil;
+			g_PatronageUnitRight 	= nil;
+		end
+	end
 
 	if leader then
 		print("initializeDialog: Leader Found: " .. Locale.ConvertTextKey(leader.Description));

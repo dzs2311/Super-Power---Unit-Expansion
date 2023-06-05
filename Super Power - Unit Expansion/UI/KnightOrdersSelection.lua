@@ -33,6 +33,28 @@ function initializeDialog()
 
 	local pPlayer			= activePlayer;	
 	local leader			= GameInfo.Leaders[pPlayer:GetLeaderType()];
+	local activeCivID 		= pPlayer:GetCivilizationType();
+	local activeCiv 		= GameInfo.Civilizations[activeCivID];
+
+	-- 德国自动获得条顿骑士团建造能力
+	if activeCiv then
+		if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_GERMANY" 
+		then
+			Controls.CreedButton2:SetHide(true);
+			g_PietyUnitLeft  = g_PietyUnitList[5];
+			g_PietyUnitRight = g_PietyUnitList[6];
+		
+			if g_PietyUnitLeft ~= nil 
+			and g_PietyUnitRight ~= nil
+			then
+				local unitL = GameInfo.Units[g_PietyUnitLeft];
+				local policyL = unitL.PolicyType;
+				activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
+			end
+			g_PietyUnitLeft		= nil;
+			g_PietyUnitRight 	= nil;
+		end
+	end
 
 	if leader then
 		print("initializeDialog: Leader Found: " .. Locale.ConvertTextKey(leader.Description));

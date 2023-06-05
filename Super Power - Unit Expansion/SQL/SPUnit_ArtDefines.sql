@@ -511,7 +511,7 @@ INSERT OR REPLACE INTO ArtDefine_UnitInfoMemberInfos (UnitInfoType, UnitMemberIn
 ('ART_DEF_UNIT_ASSYRIAN_BMP', 'ART_DEF_UNIT_MEMBER_ASSYRIAN_BMP', 3);
 
 INSERT OR REPLACE INTO ArtDefine_UnitMemberInfos (Type, Model, MaterialTypeSoundOverrideTag, MaterialTypeTag, Scale) VALUES
-('ART_DEF_UNIT_MEMBER_ASSYRIAN_BMP', 'BMP2GreenTeam.fxsxml', 'METALSM', 'CLOTH', 0.120000001490116);
+('ART_DEF_UNIT_MEMBER_ASSYRIAN_BMP', 'BMP2Iraq.fxsxml', 'METALSM', 'CLOTH', 0.120000001490116);
 
 INSERT OR REPLACE INTO ArtDefine_UnitMemberCombats (EnableActions, HasRefaceAfterCombat, HasShortRangedAttack, UnitMemberType, HasStationaryMelee, ReformBeforeCombat) VALUES
 ('Idle Attack RunCharge AttackCity Bombard Death BombardDefend Run Fortify CombatReady', 1, 1, 'ART_DEF_UNIT_MEMBER_ASSYRIAN_BMP', 1, 1);

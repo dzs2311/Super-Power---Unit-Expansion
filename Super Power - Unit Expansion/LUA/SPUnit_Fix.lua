@@ -2260,7 +2260,7 @@ LuaEvents.UnitPanelActionAddin(SPUE_GAIA_Head2Ship_Button)
 --------------------------------------------------------------
 -- POLICY_SPUE_EMPEROR_DUMMY
 local EmporerRadiusArray = {};
-local SPUE_Emperor_Button = {
+SPUE_Emperor_Button = {
 	Name = "IRON PAGODA CHARGE",
 	Title = "TXT_KEY_TITLE_SPUE_EMPEROR",
 	OrderPriority = 200,

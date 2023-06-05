@@ -145,7 +145,7 @@
 							<Image ID="PortraitEmperor1" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>
 					</Button>
-          <Button ID="IconButtonEmperor2" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_SHENJI_MUSKETEER_HELP">
+          			<Button ID="IconButtonEmperor2" Anchor="C,C" Offset="0,-6" Size="80,80" ToolTip="TXT_KEY_UNIT_SPUE_SHENJI_MUSKETEER_HELP">
 						<Image ID="PortraitFrameEmperor2" Anchor="C,T" Offset="0,20" Size="80,80" TextureOffset="0,0" Texture="NotificationFrameBase.dds" >
 							<Image ID="PortraitEmperor2" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="0,0" />
 						</Image>
