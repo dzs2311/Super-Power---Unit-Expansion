@@ -28,6 +28,7 @@ UPDATE Units SET UnitFlagAtlas = 'UNIT_FLAG_ATLAS', 				UnitFlagIconOffset = 76 
 UPDATE Units SET UnitFlagAtlas = 'SPUE_OTTOMAN_FLAG_ATLAS',  		UnitFlagIconOffset = 0 		WHERE Type = 'UNIT_OTTOMAN_PRIVATEER';			-- 奥斯曼私掠舰
 UPDATE Units SET UnitFlagAtlas = 'UNIT_SPUE_PERSIAQ_FLAG_ATLAS', 	UnitFlagIconOffset = 0 		WHERE Type = 'UNIT_OTTOMAN_SIPAHI';				-- 波斯奇兹尔巴什骑兵
 UPDATE Units SET UnitFlagAtlas = 'SPUE_GERMAN_FLAG_ATLAS',  		UnitFlagIconOffset = 0 		WHERE Type = 'UNIT_GERMAN_LONGSWORDSMAN';		-- 双薪剑士
+UPDATE Units SET UnitFlagAtlas = 'SPUE_TANK_FLAG_ATLAS',  			UnitFlagIconOffset = 0 		WHERE Type = 'UNIT_TANK';						-- 坦克
 --==========================================================================================================================
 -- Unit_Icons
 --==========================================================================================================================
@@ -148,7 +149,7 @@ FROM Units WHERE Type = 'UNIT_PROTECTED_CRUISER';
 -- 蒸汽风帆护卫舰			
 INSERT INTO Units 				
 		(Type, 						Class, 							PrereqTech, 				RangedCombat,	Combat,	  	Range, 	ExtraMaintenanceCost,	Special, Cost, 				FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   	CombatClass, 				Domain, DefaultUnitAI, Description,						Civilopedia,							Strategy,											Help,										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 	UnitArtInfo, 						UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas)
-SELECT	'UNIT_SPUE_FRIGATE', 		'UNITCLASS_SPUE_FRIGATE', 		'TECH_STEAM_POWER', 		RangedCombat, 	140, 		Range, 	ExtraMaintenanceCost,	Special, Cost * 80 / 100, 	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   	CombatClass, 				Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_FRIGATE',		'TXT_KEY_CIV5_SPUE_FRIGATE_TEXT', 		Strategy, 											Help, 										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, 'UNITCLASS_SPUE_FRIGATE',	'ART_DEF_UNIT_SPUE_FRIGATE',		10,					'SPUE_UNIT_FLAG_ATLAS',		13,				'SPUE_UNITS_ATLAS'
+SELECT	'UNIT_SPUE_FRIGATE', 		'UNITCLASS_SPUE_FRIGATE', 		'TECH_STEAM_POWER', 		RangedCombat, 	140, 		Range, 	ExtraMaintenanceCost,	Special, Cost * 80 / 100, 	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   	CombatClass, 				Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_FRIGATE',		'TXT_KEY_CIV5_SPUE_FRIGATE_TEXT', 		Strategy, 											Help, 										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, 'UNITCLASS_SPUE_FRIGATE',	'ART_DEF_UNIT_SPUE_FRIGATE',		0,					'SPUE_STEAMF_FLAG_ATLAS',	13,				'SPUE_UNITS_ATLAS'
 FROM Units WHERE Type = 'UNIT_IRONCLAD';			
 -- 轻型装甲车			
 INSERT INTO Units 				
@@ -631,11 +632,16 @@ FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_SUBMARINE';
 UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_ENTERPRISE'; -- 企业号
 UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_HORNET'; 	-- 企业号
 
+UPDATE Units SET UnitFlagAtlas = 'SPUE_IRONP_FLAG_ATLAS', UnitFlagIconOffset = 0 WHERE Type = 'UNIT_IRON_BUDDHA';	-- 铁浮屠
+
 CREATE TRIGGER SPUE_EXTENDED_Units
 AFTER INSERT ON Units
 WHEN 'UNIT_MODERN_GREAT_DOCTOR' = NEW.Type
 BEGIN
-	UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 		  PortraitIndex = 2 WHERE Type = 'UNIT_CANNON'; 	-- 加农炮
-	UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_ENTERPRISE'; -- 企业号
-	UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_HORNET'; 	-- 企业号
+	UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 		  PortraitIndex = 2 WHERE Type = 'UNIT_CANNON'; 			-- 加农炮
+	UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_ENTERPRISE'; 		-- 企业号
+	UPDATE Units SET IconAtlas = 'SMAN_ESCORT_CARRIER_ATLAS', PortraitIndex = 0 WHERE Type = 'UNIT_HORNET'; 			-- 企业号
+
+	UPDATE Units SET UnitFlagAtlas = 'SPUE_TANK_FLAG_ATLAS',  UnitFlagIconOffset = 0 WHERE Type = 'UNIT_TANK';			-- 坦克
+	UPDATE Units SET UnitFlagAtlas = 'SPUE_IRONP_FLAG_ATLAS', UnitFlagIconOffset = 0 WHERE Type = 'UNIT_IRON_BUDDHA';	-- 铁浮屠
 END;

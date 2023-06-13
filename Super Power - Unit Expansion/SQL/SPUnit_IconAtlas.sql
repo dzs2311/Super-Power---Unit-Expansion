@@ -27,9 +27,13 @@ VALUES		('SPUE_UNITS_ATLAS', 				256, 		'SPUE_IconAtlas256.dds',				8, 				8),
 			-- UU旗帜
 			('SPUE_OTTOMAN_FLAG_ATLAS',			032, 		'flag_barbary_xebec.dds',				1, 				1), -- 奥斯曼私掠舰
 			('SPUE_GERMAN_FLAG_ATLAS',			032, 		'SPUE_Doppelsoldner_32.dds',			1, 				1), -- 双薪剑士
+			-- 铁浮屠旗帜
+			('SPUE_IRONP_FLAG_ATLAS',			032,		'Flag_Iron_Pagoda.dds',					1, 				1), -- 铁浮屠
 			-- 单位旗帜
 			('SPUE_UNIT_FLAG_ATLAS',			032,		'SPUE_UnitFlagAlpha032.dds',			4, 				4),
 			('SPUE_UNIT_FLAG2_ATLAS',			032,		'SPUE_UnitFlag2Alpha032.dds',			4, 				4),
+			('SPUE_TANK_FLAG_ATLAS',			032,		'SPUE_Tank_Flag.dds',					1, 				1), -- 禁卫军
+			('SPUE_PRAE_FLAG_ATLAS',			032,		'SPUE_Praetoriani_Flag.dds',			1, 				1),	-- 禁卫军
 			('SPUE_HCAV_FLAG_ATLAS',			032,		'SPUE_HeavyCavalry_flag_32.dds',		1, 				1),	-- 重骑兵
 			('SPUE_GOND_FLAG_ATLAS',			032,		'SPUE_GondorGuard_Flag.dds',			1, 				1),	-- 圣树守卫
 			('SPUE_PIST_FLAG_ATLAS',			032,		'SPUE_rifle_lancerFlag.dds',			1, 				1),	-- 火枪骑兵
@@ -44,11 +48,12 @@ VALUES		('SPUE_UNITS_ATLAS', 				256, 		'SPUE_IconAtlas256.dds',				8, 				8),
 			('SPUE_FALC_FLAG_ATLAS',			032,		'SPUE_Falconet_flag.dds',				1, 				1),	-- 鹰炮
 			('SPUE_CULV_FLAG_ATLAS',			032,		'SPUE_culverin_flag.dds',				1, 				1),	-- 长炮
 			('SPUE_MORTAR_FLAG_ATLAS',			032,		'SPUE_mortar_flag.dds',					1, 				1),	-- 臼炮
+			('SPUE_STEAMF_FLAG_ATLAS',			032,		'SPUE_SteamFrigate_Flag.dds',			1, 				1),	-- 蒸汽护卫舰
 			('SPUE_WWII_FLAG_ATLAS',			032,		'SPUE_wwi_infantry_flag.dds',			1, 				1);	-- 早期现代步兵
 
 INSERT OR REPLACE INTO IconTextureAtlases
 			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)
-VALUES		('UNIT_SPUE_PERSIAQ_FLAG_ATLAS',	032, 		'QizilbashFlag_032.dds',				1, 				1);
+VALUES		('UNIT_SPUE_PERSIAQ_FLAG_ATLAS',	032, 		'QizilbashFlag_032.dds',				1, 				1);	-- 波斯红帽
 
 -- 商业政策树佣兵单位
 INSERT OR REPLACE INTO IconTextureAtlases 

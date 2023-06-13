@@ -295,6 +295,9 @@ UPDATE ArtDefine_UnitMemberCombats SET TurnRateMax = 2*TurnRateMax WHERE MoveRat
 ------------------------------------------------------------------------------------------------------------------------
 -- World Power Mod Compatibility
 ------------------------------------------------------------------------------------------------------------------------
+--铁浮屠
+UPDATE ArtDefine_UnitMemberInfos SET Model = 'Jurchen_IronPagoda_black.fxsxml'
+WHERE Type = 'ART_DEF_UNIT_IRON_BUDDHA';
 -- 055VLS
 UPDATE ArtDefine_UnitMemberInfos SET Model = '055_VLS_FWD.fxsxml', Scale = 0.15
 WHERE Type = 'ART_DEF_UNIT_MEMBER_055DESTROYER';
@@ -329,15 +332,12 @@ WHERE Type = 'UNIT_LONGSWORDSMAN';
 UPDATE Units
 SET UnitArtInfo = 'ART_DEF_UNIT_ATGM_VEHICLE'
 WHERE Type = 'UNIT_ATGM_VEHICLE';
--- 祖鲁号角坦克使用百夫长
-UPDATE Units
-SET UnitArtInfo = 'ART_DEF_UNIT_ZULU_OLIFANT'
-WHERE Type = 'UNIT_ZULU_OLIFANT';
+
 -- 主战坦克使用T72B3
 UPDATE Units
 SET UnitArtInfo = 'ART_DEF_UNIT_MAIN_BATTLE_TANK'
 WHERE Type = 'UNIT_MAIN_BATTLE_TANK';
--- 二战坦克使用M4漂亮版
+-- 二战坦克使用德国款
 UPDATE Units
 SET UnitArtInfo = 'ART_DEF_UNIT_M4A3'
 WHERE Type = 'UNIT_TANK';
@@ -386,6 +386,10 @@ CREATE TRIGGER SPUE_EXTENDED
 AFTER INSERT ON ArtDefine_UnitInfos
 WHEN 'ART_DEF_UNIT_SIEGE05P' = NEW.Type
 BEGIN
+	-- 铁浮屠
+	UPDATE ArtDefine_UnitMemberInfos SET Model = 'Jurchen_IronPagoda_black.fxsxml'
+	WHERE Type = 'ART_DEF_UNIT_IRON_BUDDHA';
+
 	-- 055VLS
 	UPDATE ArtDefine_UnitMemberInfos SET Model = '055_VLS_FWD.fxsxml', Scale = 0.15
 	WHERE Type = 'ART_DEF_UNIT_MEMBER_055DESTROYER';
@@ -425,19 +429,15 @@ BEGIN
 	SET UnitArtInfo = 'ART_DEF_UNIT_LONGSWORDSMAN'
 	WHERE Type = 'UNIT_LONGSWORDSMAN';
 	-- ATGM 使用斯崔克模型
-	UPDATE Units
-	SET UnitArtInfo = 'ART_DEF_UNIT_ATGM_VEHICLE'
-	WHERE Type = 'UNIT_ATGM_VEHICLE';
+	-- UPDATE Units
+	-- SET UnitArtInfo = 'ART_DEF_UNIT_ATGM_VEHICLE'
+	-- WHERE Type = 'UNIT_ATGM_VEHICLE';
 
-	-- 祖鲁号角坦克使用百夫长
-	UPDATE Units
-	SET UnitArtInfo = 'ART_DEF_UNIT_ZULU_OLIFANT'
-	WHERE Type = 'UNIT_ZULU_OLIFANT';
 	-- 主战坦克使用T72B3
 	UPDATE Units
 	SET UnitArtInfo = 'ART_DEF_UNIT_MAIN_BATTLE_TANK'
 	WHERE Type = 'UNIT_MAIN_BATTLE_TANK';
-	-- 二战坦克使用M4漂亮版
+	-- 二战坦克使用德国款
 	UPDATE Units
 	SET UnitArtInfo = 'ART_DEF_UNIT_M4A3'
 	WHERE Type = 'UNIT_TANK';
@@ -483,4 +483,5 @@ BEGIN
 	UPDATE Units 
 	SET UnitArtInfo =  'ART_DEF_UNIT_SP_052D'
 	WHERE Type = 'UNIT_MODERN_DESTROYER' AND UnitArtInfo = 'ART_DEF_UNIT_052';
+
 END;

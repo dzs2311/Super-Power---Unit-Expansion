@@ -2527,23 +2527,23 @@ function NewAttackEffect()
 	--    if attPlayer:IsBarbarian() then
 	--       return;
 	--    end	
-	local KillingEffectsID = GameInfo.UnitPromotions["PROMOTION_GAIN_MOVES_AFFER_KILLING"].ID
+	-- local KillingEffectsID = GameInfo.UnitPromotions["PROMOTION_GAIN_MOVES_AFFER_KILLING"].ID
 
 	-- 玄甲军杀敌回血
 	----------- PROMOTION_GAIN_MOVES_AFFER_KILLING Effects
-	if defUnit and attUnit:IsHasPromotion(KillingEffectsID) then
-		print("DefUnit Damage:" .. defFinalUnitDamage);
-		-- if defFinalUnitDamage >= 100 then
-		if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
-			local maxattUnitHP = attUnit:GetMaxHitPoints()
-			attUnit:SetMoves(attUnit:MovesLeft() + GameDefines["MOVE_DENOMINATOR"]);
-			attUnit:SetMadeAttack(false);
-			attUnit:ChangeDamage(0 - 0.25 * maxattUnitHP)
-			local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
-			Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("TXT_KEY_PROMOTION_GAIN_MOVES_AFFER_KILLING"));
-			print("Ah, fresh meat!");
-		end
-	end
+	-- if defUnit and attUnit:IsHasPromotion(KillingEffectsID) then
+	-- 	print("DefUnit Damage:" .. defFinalUnitDamage);
+	-- 	-- if defFinalUnitDamage >= 100 then
+	-- 	if defUnitDamage >= 30 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
+	-- 		local maxattUnitHP = attUnit:GetMaxHitPoints()
+	-- 		attUnit:SetMoves(attUnit:MovesLeft() + GameDefines["MOVE_DENOMINATOR"]);
+	-- 		attUnit:SetMadeAttack(false);
+	-- 		attUnit:ChangeDamage(0 - 0.25 * maxattUnitHP)
+	-- 		local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
+	-- 		Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("TXT_KEY_PROMOTION_GAIN_MOVES_AFFER_KILLING"));
+	-- 		print("Ah, fresh meat!");
+	-- 	end
+	-- end
 
 	----------- 达芬奇坦克另类AOE
 	if (attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_DVC_TANK"].ID)) then
