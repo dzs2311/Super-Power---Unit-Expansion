@@ -2979,7 +2979,7 @@ FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_LONGSWORDSMAN';
 
 INSERT INTO ArtDefine_StrategicView 
 		(StrategicViewType, 							TileType,	Asset)
-VALUES	('ART_DEF_UNIT_SPUE_FOOT_KNIGHT_TEMPLAR',		'Unit', 	'SPUE_KnightsTemplar_Flag.dds');
+VALUES	('ART_DEF_UNIT_SPUE_FOOT_KNIGHT_TEMPLAR',		'Unit', 	'SPUE_FootTemplar_Flag.dds');
 ------------------------------------------------------------------------------------------------------------------------
 --虔信：条顿骑士团--
 ------------------------------------------------------------------------------------------------------------------------
@@ -3039,7 +3039,7 @@ FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_LONGSWORDSMAN';
 
 INSERT INTO ArtDefine_StrategicView 
 		(StrategicViewType, 							TileType,	Asset)
-VALUES	('ART_DEF_UNIT_SPUE_FOOT_KNIGHT_TEUTONIC',		'Unit', 	'SV_SPUE_KnightsTeutonic.dds');
+VALUES	('ART_DEF_UNIT_SPUE_FOOT_KNIGHT_TEUTONIC',		'Unit', 	'SV_SPUE_FootTeutonic.dds');
 ------------------------------------------------------------------------------------------------------------------------
 --虔信：医院骑士团--
 ------------------------------------------------------------------------------------------------------------------------
@@ -3099,7 +3099,7 @@ FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_LONGSWORDSMAN';
 
 INSERT INTO ArtDefine_StrategicView 
 		(StrategicViewType, 								TileType,	Asset)
-VALUES	('ART_DEF_UNIT_SPUE_FOOT_KNIGHT_HOSPITALLER',		'Unit', 	'SV_SPUE_KnightsHospitaller.dds');
+VALUES	('ART_DEF_UNIT_SPUE_FOOT_KNIGHT_HOSPITALLER',		'Unit', 	'SV_SPUE_FootHospitaller.dds');
 -- ------------------------------------------------------------------------------------------------------------------------
 -- --赞助：宝船旗舰--
 -- ------------------------------------------------------------------------------------------------------------------------
@@ -3221,7 +3221,7 @@ VALUES	('ART_DEF_UNIT_SPUE_GENERAL_BODYGUARD',		'Unit', 		'SV_SPUE_BodyGuard.dds
 ------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ArtDefine_UnitInfos 
 		(Type, 										DamageStates,	Formation)
-SELECT	'ART_DEF_UNIT_SPUE_VASSAL_BOWMAN',				    DamageStates, 	Formation
+SELECT	'ART_DEF_UNIT_SPUE_VASSAL_BOWMAN',			DamageStates, 	Formation
 FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_CROSSBOWMAN';
 
 INSERT INTO ArtDefine_UnitInfoMemberInfos 	
@@ -3245,7 +3245,7 @@ FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_CROSSBOWMAN';
 
 INSERT INTO ArtDefine_StrategicView 
 		(StrategicViewType, 					TileType,	Asset)
-VALUES	('ART_DEF_UNIT_SPUE_VASSAL_BOWMAN',		'Unit', 	'SV_SPUE_ITUU.dds');
+VALUES	('ART_DEF_UNIT_SPUE_VASSAL_BOWMAN',		'Unit', 	'SV_SPUE_Minotaur.dds');
 ------------------------------------------------------------------------------------------------------------------------
 --赞助：同盟军团--
 ------------------------------------------------------------------------------------------------------------------------

@@ -32,9 +32,11 @@ VALUES		('SPUE_UNITS_ATLAS', 				256, 		'SPUE_IconAtlas256.dds',				8, 				8),
 			-- 单位旗帜
 			('SPUE_UNIT_FLAG_ATLAS',			032,		'SPUE_UnitFlagAlpha032.dds',			4, 				4),
 			('SPUE_UNIT_FLAG2_ATLAS',			032,		'SPUE_UnitFlag2Alpha032.dds',			4, 				4),
-			('SPUE_TANK_FLAG_ATLAS',			032,		'SPUE_Tank_Flag.dds',					1, 				1), -- 禁卫军
+			('SPUE_HANG_FLAG_ATLAS',			032,		'SPUE_HanGuard_Flag.dds',				1, 				1), -- 未央宫卫士
+			('SPUE_BALLOON_FLAG_ATLAS',			032,		'SPUE_HotAirBalloon_Flag.dds',			1, 				1), -- 热气球
+			('SPUE_TANK_FLAG_ATLAS',			032,		'SPUE_Tank_Flag.dds',					1, 				1), -- 坦克
 			('SPUE_PRAE_FLAG_ATLAS',			032,		'SPUE_Praetoriani_Flag.dds',			1, 				1),	-- 禁卫军
-			('SPUE_HCAV_FLAG_ATLAS',			032,		'SPUE_HeavyCavalry_flag_32.dds',		1, 				1),	-- 重骑兵
+			('SPUE_HCAV_FLAG_ATLAS',			032,		'SPUE_ITUU_Flag.dds',					1, 				1),	-- 重骑兵
 			('SPUE_GOND_FLAG_ATLAS',			032,		'SPUE_GondorGuard_Flag.dds',			1, 				1),	-- 圣树守卫
 			('SPUE_PIST_FLAG_ATLAS',			032,		'SPUE_rifle_lancerFlag.dds',			1, 				1),	-- 火枪骑兵
 			('SPUE_MOXB_FLAG_ATLAS',			032,		'SPUE_mountedxbow_flag.dds',			1, 				1),	-- 具装骑射手
@@ -80,7 +82,10 @@ VALUES		('SPUE_AMB_FLAG_ATLAS',				032,		'SPUE_Flag_Ambassador.dds',				1, 				1
 -- 虔信政策树骑士团单位
 INSERT OR REPLACE INTO IconTextureAtlases 
 			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)
-VALUES		('SPUE_TEMP_FLAG_ATLAS',			032,		'SPUE_KnightsTemplar_Flag.dds',			1, 				1),	-- 圣殿骑士团
+VALUES		('SPUE_FTEMP_FLAG_ATLAS',			032,		'SPUE_FootTemplar_Flag.dds',			1, 				1),	-- 步行圣殿骑士
+			('SPUE_FHOSP_FLAG_ATLAS',			032,		'SPUE_FootHospitaller_Flag.dds',		1, 				1),	-- 步行医院骑士
+			('SPUE_FTEUT_FLAG_ATLAS',			032,		'SPUE_FootTeutonic_Flag.dds',			1, 				1),	-- 步行条顿骑士
+			('SPUE_TEMP_FLAG_ATLAS',			032,		'SPUE_KnightsTemplar_Flag.dds',			1, 				1),	-- 圣殿骑士团
 			('SPUE_HOSP_FLAG_ATLAS',			032,		'SPUE_KnightsHospitaller_Flag.dds',		1, 				1),	-- 医院骑士团
 			('SPUE_TEUT_FLAG_ATLAS',			032,		'SPUE_KnightsTeutonic_Flag.dds',		1, 				1);	-- 条顿骑士团
 
@@ -89,7 +94,7 @@ INSERT OR REPLACE INTO IconTextureAtlases
 			(Atlas, 							IconSize, 	Filename, 								IconsPerRow, 	IconsPerColumn)
 VALUES		('SPUE_BODYGUARD_FLAG_ATLAS',		032,		'SPUE_BodyGuard_Flag.dds',				1, 				1),	-- 将领卫队
 			('SPUE_SOCII_FLAG_ATLAS',			032,		'SPUE_Socii_Flag.dds',					1, 				1), -- 同盟军团
-			('SPUE_VBOWMAN_FLAG_ATLAS',			032,		'SPUE_ITUU_Flag.dds',					1, 				1), -- 克里特弓箭手
+			('SPUE_VBOWMAN_FLAG_ATLAS',			032,		'SPUE_Minotaur_Flag.dds',				1, 				1), -- 克里特弓箭手
 
 			('SPUE_VFIRE_FLAG_ATLAS',			032,		'SPUE_GreekFirethrower_Flag.dds',		1, 				1),	-- 拜占庭喷火兵
 			('SPUE_VCATAPHCRAT_FLAG_ATLAS',		032,		'SPUE_Byzantium_General_Flag.dds',		1, 				1),	-- 靖抚甲骑兵

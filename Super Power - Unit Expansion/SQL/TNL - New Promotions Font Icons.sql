@@ -859,3 +859,6 @@ UPDATE UnitPromotions SET IconStringSP = '[ICON_PROMOTION_EXTRA_PROMO_56]'	WHERE
 UPDATE UnitPromotions SET IconStringSP = '[ICON_PROMOTION_CPM_TNL]'  		WHERE IconAtlas = 'promo_CPM_atlas' 			AND PortraitIndex = 0;
 UPDATE UnitPromotions SET IconStringSP = '[ICON_PROMOTION_FIRESHIP_TNL]' 	WHERE IconAtlas = 'FIRESHIP_PROMOTION_ATLAS' 	AND PortraitIndex = 0;
 UPDATE UnitPromotions SET IconStringSP = '[ICON_PROMOTION_YFS_SEA]'  		WHERE IconAtlas = 'extraPromo_Atlas' 			AND PortraitIndex = 31;
+
+UPDATE UnitPromotions SET IconStringSP = '[ICON_PROMOTION_NEGATIVE_ATTRIBUTES]' WHERE (IconAtlas = 'ABILITY_ATLAS' OR IconAtlas = 'PROMOTION_ATLAS') AND PortraitIndex = 57;
+UPDATE UnitPromotions SET IconStringSP = '[ICON_PROMOTION_COASTAL_RAIDER_3]'    WHERE IconAtlas = 'EXPANSION_PROMOTION_ATLAS' AND PortraitIndex = 5;
