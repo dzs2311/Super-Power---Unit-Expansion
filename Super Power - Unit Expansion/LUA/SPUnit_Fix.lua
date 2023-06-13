@@ -1579,10 +1579,10 @@ function SPUE_UnitPromoted(playerID, unitID, promotionID)
 	local unitLevel = unit:GetLevel()
 	if (not capital) then return end
 
-	--王城骑士晋升时获得大文学家
+	--王城骑士晋升时获得文学家
 	if unit:IsHasPromotion(KingsKnightBID) and unitLevel == 5 then
 		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_WRITER")
-		local NewUnit = player:InitUnit(GameInfoTypes[sUnitType], capital:GetX(), capital:GetY(), UNITAI_WRITER)
+		local NewUnit = player:InitUnit(GameInfoTypes[sUnitType], capital:GetX(), capital:GetY())
 	end
 end
 
