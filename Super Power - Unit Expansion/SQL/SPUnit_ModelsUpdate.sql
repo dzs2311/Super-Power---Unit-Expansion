@@ -297,7 +297,7 @@ UPDATE ArtDefine_UnitMemberCombats SET TurnRateMax = 2*TurnRateMax WHERE MoveRat
 ------------------------------------------------------------------------------------------------------------------------
 --铁浮屠
 UPDATE ArtDefine_UnitMemberInfos SET Model = 'Jurchen_IronPagoda_black.fxsxml'
-WHERE Type = 'ART_DEF_UNIT_IRON_BUDDHA';
+WHERE Type = 'ART_DEF_UNIT_MEMBER_IRON_BUDDHA';
 -- 055VLS
 UPDATE ArtDefine_UnitMemberInfos SET Model = '055_VLS_FWD.fxsxml', Scale = 0.15
 WHERE Type = 'ART_DEF_UNIT_MEMBER_055DESTROYER';
@@ -388,7 +388,7 @@ WHEN 'ART_DEF_UNIT_SIEGE05P' = NEW.Type
 BEGIN
 	-- 铁浮屠
 	UPDATE ArtDefine_UnitMemberInfos SET Model = 'Jurchen_IronPagoda_black.fxsxml'
-	WHERE Type = 'ART_DEF_UNIT_IRON_BUDDHA';
+	WHERE Type = 'ART_DEF_UNIT_MEMBER_IRON_BUDDHA';
 
 	-- 055VLS
 	UPDATE ArtDefine_UnitMemberInfos SET Model = '055_VLS_FWD.fxsxml', Scale = 0.15
