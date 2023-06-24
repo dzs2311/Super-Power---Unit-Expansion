@@ -1070,24 +1070,24 @@ function SPUE_PlayerDoneTurn(playerID)
 		end
 
 		-- 西班牙大帆船
-		if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_CORVETTE"]) then
-			local plot = unit:GetPlot();
-			local fromGPT = 0;
-			local numPolices = player:GetNumPolicies();
-			if plot and plot:GetImprovementType() == GameInfo.Improvements["IMPROVEMENT_FORT"].ID then
-				local outgoingRoutes = {};
-				local outgoingRoutes = player:GetTradeRoutes();
-				for i, route in ipairs(outgoingRoutes) do
-					fromGPT = route.FromCity;
-				end
-				fromGPT = fromGPT / 100
-				player:ChangeGold(math.ceil(0.05 * fromGPT * numPolices));
-				local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
-				Events.AddPopupTextEvent(HexToWorld(hex),
-					Locale.ConvertTextKey("+{1_Num}[ICON_GOLD]", math.ceil(0.05 * fromGPT * numPolices)));
-				Events.GameplayFX(hex.x, hex.y, -1);
-			end
-		end
+		-- if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_CORVETTE"]) then
+		-- 	local plot = unit:GetPlot();
+		-- 	local fromGPT = 0;
+		-- 	local numPolices = player:GetNumPolicies();
+		-- 	if plot and plot:GetImprovementType() == GameInfo.Improvements["IMPROVEMENT_FORT"].ID then
+		-- 		local outgoingRoutes = {};
+		-- 		local outgoingRoutes = player:GetTradeRoutes();
+		-- 		for i, route in ipairs(outgoingRoutes) do
+		-- 			fromGPT = route.FromCity;
+		-- 		end
+		-- 		fromGPT = fromGPT / 100
+		-- 		player:ChangeGold(math.ceil(0.05 * fromGPT * numPolices));
+		-- 		local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
+		-- 		Events.AddPopupTextEvent(HexToWorld(hex),
+		-- 			Locale.ConvertTextKey("+{1_Num}[ICON_GOLD]", math.ceil(0.05 * fromGPT * numPolices)));
+		-- 		Events.GameplayFX(hex.x, hex.y, -1);
+		-- 	end
+		-- end
 
 		-- 长滩：回合结束回30血
 		if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FREEDOM_LONG_BEACH"]) then

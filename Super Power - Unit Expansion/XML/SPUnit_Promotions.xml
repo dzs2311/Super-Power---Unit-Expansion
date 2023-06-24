@@ -1367,8 +1367,12 @@
 			<Help>TXT_KEY_PROMOTION_SPUE_AMERICA_CONNECTICUT_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
+			<MaxHitPointsModifier>50</MaxHitPointsModifier>
 			<PortraitIndex>53</PortraitIndex>
 			<IgnoreZOC>true</IgnoreZOC>
+			<ExtraResourceType>RESOURCE_CONSUMER</ExtraResourceType>
+			<ExtraResourceCombatModifier>1</ExtraResourceCombatModifier>
+			<ExtraResourceCombatModifierMax>120</ExtraResourceCombatModifierMax>
 			<RivalTerritory>true</RivalTerritory>
 			<IconAtlas>promoVP_atlas_02</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>

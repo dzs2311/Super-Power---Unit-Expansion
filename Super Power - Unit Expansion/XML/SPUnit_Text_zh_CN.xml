@@ -68,9 +68,9 @@
 		</Row>
 
 		<!-- **********************玄甲军*********************** -->
-		<Replace Tag="TXT_KEY_PROMOTION_GAIN_MOVES_AFFER_KILLING_HELP">
+		<!-- <Replace Tag="TXT_KEY_PROMOTION_GAIN_MOVES_AFFER_KILLING_HELP">
 			<Text>每击杀一支敌方部队或对一支敌方部队造成30以上的伤害，则自身恢复25%最大生命并返还1移动力、1攻击次数。</Text>
-		</Replace>
+		</Replace> -->
 		<!-- **********************楼船*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_TOWEREDSHIP">
 			<Text>楼船</Text>
@@ -1671,7 +1671,7 @@
 			<Text>西班牙大帆船</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_CORVETTE_HELP">
-			<Text>2格内的敌方军队-15%战斗力，回合结束时位于军港则获得相当于0.05*政策数量*全局商路收入的[ICON_GOLD]金币。</Text>
+			<Text>2格内的敌方军队-15%战斗力。</Text>
 		</Row>
 		<!-- **********************君王之略UI文本*********************** -->
 		<Row Tag="TXT_KEY_SPUE_PATRONAGE_BUTTON_ICON_LEADER_TOP">

@@ -63,7 +63,10 @@
 			<Text>大白舰队</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_AMERICA_CONNECTICUT_HELP">
-			<Text>可以进入未开边国家境内，无视ZOC，位于[COLOR_POSITIVE_TEXT]城邦境内[ENDCOLOR]时，每回合+25[ICON_INFLUENCE]影响力。</Text>
+			<Text>
+				可以进入未开边国家境内，无视ZOC，位于[COLOR_POSITIVE_TEXT]城邦境内[ENDCOLOR]时，每回合+25[ICON_INFLUENCE]影响力。
+				[NEWLINE][ICON_BULLET]血量+50，每点额外的[ICON_RES_CONSUMER]商品提供1%的[ICON_STRENGTH]战斗力加成。
+			</Text>
 		</Row>
 		<!--******************************谢苗诺夫斯基近卫步兵*******************************-->
 		<Row Tag="TXT_KEY_UNIT_SPUE_RUSSIA_SEMYONOVSKY_REGIMENT">
