@@ -614,6 +614,30 @@ function SPUE_OnPlayerDoTurn(playerID)
 	if player:HasPolicy(GameInfo.Policies["POLICY_SPUE_EMPEROR_DUMMY"].ID) then
 		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_EMPEROR_DUMMY"].ID, false)
 	end
+
+	if not player:IsHuman() then
+		for unit in player:Units() do
+			--*****************************AI转化甲骑兵*****************************--
+			EliteUnitTransferAI(unit, unitPromotionBucellariID, "UNIT_SPUE_BUCELLARII_GUARD",
+			"UNIT_SPUE_BUCELLARII_GUARD_ELITE",
+			"UNITCLASS_SPUE_BUCELLARII_GUARD", "PROJECT_BUCELLARII_TRAINING", unitPromotionBucellariEliteID);
+			--*****************************AI转化瓦兰吉卫队*****************************--		
+			EliteUnitTransferAI(unit, VARANGIANID, "UNIT_SPUE_VARANGIAN", "UNIT_SPUE_VARANGIAN_GUARD",
+				"UNITCLASS_SPUE_VARANGIAN", "PROJECT_SPUE_VARANGIAN_TRAINING", VARANGIANGuardID);
+			--*****************************AI转化教皇近卫军*****************************--
+			EliteUnitTransferAI(unit, unitPromotionSwissID, "UNIT_SPUE_SWISSGUARD", "UNIT_SPUE_SWISSGUARD_ELITE",
+				"UNITCLASS_SPUE_SWISSGUARD", "PROJECT_SPUE_SWISSGUARD_TRAINING", unitPromotionSwissEliteID);
+			--*****************************AI转化朱斯蒂尼亚尼弩手*****************************--
+			EliteUnitTransferAI(unit, unitPromotionGenoaID, "UNIT_SPUE_GENOAXBOW", "UNIT_SPUE_GENOAXBOW_ELITE",
+				"UNITCLASS_SPUE_GENOAXBOW", "PROJECT_SPUE_GENOAXBOW_TRAINING", unitPromotionGenoaEliteID);
+			--*****************************AI转化王家敕令骑士*****************************--
+			EliteUnitTransferAI(unit, unitPromotionElmetiID, "UNIT_SPUE_ELMETI", "UNIT_SPUE_ELMETI_ELITE",
+				"UNITCLASS_SPUE_ELMETI", "PROJECT_SPUE_ELMETI_TRAINING", unitPromotionElmetiEliteID);
+			--*****************************AI转化巨人掷弹兵*****************************--
+			EliteUnitTransferAI(unit, unitPromotionHessianID, "UNIT_SPUE_HESSIAN", "UNIT_SPUE_HESSIAN_ELITE",
+				"UNITCLASS_SPUE_HESSIAN", "PROJECT_SPUE_HESSIAN_TRAINING", unitPromotionHessianEliteID);
+		end
+	end
 end --function END
 GameEvents.PlayerDoTurn.Add(SPUE_OnPlayerDoTurn)
 
@@ -1259,25 +1283,6 @@ function SPUE_OnAIUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 				end
 			end
 		end
-		--*****************************AI转化甲骑兵*****************************--
-		EliteUnitTransferAI(unit, unitPromotionBucellariID, "UNIT_SPUE_BUCELLARII_GUARD",
-			"UNIT_SPUE_BUCELLARII_GUARD_ELITE",
-			"UNITCLASS_SPUE_BUCELLARII_GUARD", "PROJECT_BUCELLARII_TRAINING", unitPromotionBucellariEliteID);
-		--*****************************AI转化瓦兰吉卫队*****************************--		
-		EliteUnitTransferAI(unit, VARANGIANID, "UNIT_SPUE_VARANGIAN", "UNIT_SPUE_VARANGIAN_GUARD",
-			"UNITCLASS_SPUE_VARANGIAN", "PROJECT_SPUE_VARANGIAN_TRAINING", VARANGIANGuardID);
-		--*****************************AI转化教皇近卫军*****************************--
-		EliteUnitTransferAI(unit, unitPromotionSwissID, "UNIT_SPUE_SWISSGUARD", "UNIT_SPUE_SWISSGUARD_ELITE",
-			"UNITCLASS_SPUE_SWISSGUARD", "PROJECT_SPUE_SWISSGUARD_TRAINING", unitPromotionSwissEliteID);
-		--*****************************AI转化朱斯蒂尼亚尼弩手*****************************--
-		EliteUnitTransferAI(unit, unitPromotionGenoaID, "UNIT_SPUE_GENOAXBOW", "UNIT_SPUE_GENOAXBOW_ELITE",
-			"UNITCLASS_SPUE_GENOAXBOW", "PROJECT_SPUE_GENOAXBOW_TRAINING", unitPromotionGenoaEliteID);
-		--*****************************AI转化王家敕令骑士*****************************--
-		EliteUnitTransferAI(unit, unitPromotionElmetiID, "UNIT_SPUE_ELMETI", "UNIT_SPUE_ELMETI_ELITE",
-			"UNITCLASS_SPUE_ELMETI", "PROJECT_SPUE_ELMETI_TRAINING", unitPromotionElmetiEliteID);
-		--*****************************AI转化巨人掷弹兵*****************************--
-		EliteUnitTransferAI(unit, unitPromotionHessianID, "UNIT_SPUE_HESSIAN", "UNIT_SPUE_HESSIAN_ELITE",
-			"UNITCLASS_SPUE_HESSIAN", "PROJECT_SPUE_HESSIAN_TRAINING", unitPromotionHessianEliteID);
 		--*****************************AI宝船旗舰*****************************--
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TREASURE_FLEET"].ID)
 			and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
@@ -2919,6 +2924,19 @@ function NewAttackEffect()
 				local hex = ToHexFromGrid(Vector2(defPlot:GetX(), defPlot:GetY()));
 				Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+2[ICON_MOVES]"));
 			end
+		end
+	end
+
+	-- 火帆船自杀式袭击
+	if not attUnit:IsDead() and attUnit:GetUnitType() == GameInfoTypes["UNIT_SPUE_FIRESHIP"]
+	then
+		attUnit:SetDamage(attUnit:GetCurrHitPoints() + 1);
+	end
+
+	if not bIsCity and defUnit then
+		if not defUnit:IsDead() and attUnit:GetUnitType() == GameInfoTypes["UNIT_SPUE_FIRESHIP"]
+		then
+			defUnit:SetDamage(defUnit:GetCurrHitPoints() + 1);
 		end
 	end
 

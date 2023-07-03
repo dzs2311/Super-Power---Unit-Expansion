@@ -407,7 +407,7 @@ function EliteAction(unit, nunitType, unitClassType)
 	  unitName = unit:GetNameNoDesc();
 	end
 
-	unit:Kill();
+	unit:Kill(true);
 	local newUnit = nil;
 	newUnit = player:InitUnit(GameInfoTypes[nunitType], plot:GetX(), plot:GetY());
 

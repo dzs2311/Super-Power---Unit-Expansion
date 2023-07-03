@@ -564,7 +564,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_HOT_AIR_BALLOON_HELP">
 			<Text>
-				[COLOR_CYAN]热气球[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]理性政策[ENDCOLOR]的代表性单位，自带侦查2级，与热气球同格的陆/海单位射程+1。[NEWLINE]
+				[COLOR_CYAN]热气球[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]理性政策[ENDCOLOR]的代表性单位，自带侦查2级，与热气球同格或相邻的陆/海单位射程+1。[NEWLINE]
 				探险家单位可生成[COLOR_CYAN]临时热气球[ENDCOLOR]，可持续存在5回合，该单位死亡时不会损失人口。	
 			</Text>
 		</Row>
@@ -598,7 +598,7 @@
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_NEW_HELP">
-			<Text>同格的陆/海单位射程+1（最大不超过3），且杀敌获得相当于其100%战斗力的科研点数。</Text>
+			<Text>同格或相邻的陆/海单位射程+1（最大不超过3），且杀敌获得相当于其100%战斗力的科研点数。</Text>
 		</Row>
 
 		
