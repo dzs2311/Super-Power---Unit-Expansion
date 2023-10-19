@@ -179,6 +179,7 @@ end
 -- 当未启用军团模式或兵力剩余足够(大于numTroopsLeft)时返回1
 -------------------------------------------------------------
 function TroopsLeftFlag(player, numTroopsLeft)
+	--[[
 	local flag = 0;
 	if player:CountNumBuildings(GameInfoTypes["BUILDING_TROOPS"]) == 0 or GameInfoTypes["BUILDING_TROOPS"] == nil then
 		flag = 1;
@@ -189,6 +190,15 @@ function TroopsLeftFlag(player, numTroopsLeft)
 		if iTotalTroops - iUsedTroops > numTroopsLeft then
 			flag = 1;
 		end
+	end
+	return flag;
+	]]
+	--军团内置兼容  --by 清音
+	local flag = 0;
+	if PreGame.GetGameOption("GAMEOPTION_SP_CORPS_MODE_DISABLE") == 1 then
+		flag = 1;
+	elseif player:GetDomainTroopsActive() > numTroopsLeft then
+		flag = 1;
 	end
 	return flag;
 end
