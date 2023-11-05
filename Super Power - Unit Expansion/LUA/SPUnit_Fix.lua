@@ -3662,7 +3662,7 @@ SPUE_Patronage_OceanFire_Button = {
 
 		local plotFlag, pPlot = FindOceanPlotForSeaUnits(unit);
 		if pPlot == nil then return end;
-		local NewUnit = player:InitUnit(iUnit, pPlot:GetX(), pPlot:GetX(), UNITAI_DEFENSE)
+		local NewUnit = player:InitUnit(iUnit, pPlot:GetX(), pPlot:GetY(), UNITAI_DEFENSE)
 		-- NewUnit:JumpToNearestValidPlot();
 		NewUnit:SetExperience(unitEXP)
 		NewUnit:SetPromotionReady(true)
