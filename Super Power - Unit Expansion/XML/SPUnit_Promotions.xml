@@ -473,9 +473,9 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
-			<NearbyUnitClassBonus>33</NearbyUnitClassBonus>
-			<NearbyUnitClassBonusRange>1</NearbyUnitClassBonusRange>
-			<CombatBonusFromNearbyUnitClass>UNITCLASS_SPUE_FOOT_KNIGHT_HOSPITALLER</CombatBonusFromNearbyUnitClass>
+			<NearbyUnitPromotionBonus>33</NearbyUnitPromotionBonus>
+			<NearbyUnitPromotionBonusRange>1</NearbyUnitPromotionBonusRange>
+			<CombatBonusFromNearbyUnitPromotion>PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER</CombatBonusFromNearbyUnitPromotion>
 			<PortraitIndex>57</PortraitIndex>
 			<IconAtlas>promoVP_atlas_00</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>

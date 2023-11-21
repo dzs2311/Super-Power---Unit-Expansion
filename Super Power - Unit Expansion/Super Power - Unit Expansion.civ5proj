@@ -31,7 +31,7 @@
         <Type>Mod</Type>
         <Name>(1) CIV5MPDLL</Name>
         <Id>a2969a0a-e4da-41cc-9e0b-19b29aa971d8</Id>
-        <MinVersion>12</MinVersion>
+        <MinVersion>14</MinVersion>
         <MaxVersion>999</MaxVersion>
       </Association>
       <Association>
@@ -47,7 +47,7 @@
         <Type>Mod</Type>
         <Name>(1) CIV5MPDLL</Name>
         <Id>a2969a0a-e4da-41cc-9e0b-19b29aa971d8</Id>
-        <MinVersion>4</MinVersion>
+        <MinVersion>14</MinVersion>
         <MaxVersion>999</MaxVersion>
       </Association>
       <Association>
@@ -4202,10 +4202,6 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\Policy\06-Commerce\Fune\AOE3_Fune.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Units\Policy\06-Commerce\Fune\fune_c.%280,1,8,7%29.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
