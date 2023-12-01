@@ -51,7 +51,7 @@ function initializeDialog()
 		if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_ROME" 
 		or GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_CAESAR"
 		then
-			Controls.CreedButton1:SetHide(true);
+			Controls.CreedButton0:SetHide(true);
 			g_PatronageUnitLeft  = g_PatronageUnitList[1];
 			g_PatronageUnitMid   = g_PatronageUnitList[2];
 			g_PatronageUnitRight = g_PatronageUnitList[3];
@@ -98,7 +98,7 @@ function initializeDialog()
 	if activeCiv then
 		if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_CHINA" 
 		then
-			Controls.CreedButton1:SetHide(true);
+			Controls.CreedButton2:SetHide(true);
 			g_PatronageUnitLeft  = g_PatronageUnitList[7];
 			g_PatronageUnitMid   = g_PatronageUnitList[8];
 			g_PatronageUnitRight = g_PatronageUnitList[9];
