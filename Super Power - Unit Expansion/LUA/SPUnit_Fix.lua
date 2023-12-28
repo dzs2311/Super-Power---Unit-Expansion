@@ -3516,8 +3516,8 @@ SPUE_Patronage_Serbia_Button = {
 	Name = "Patronage Serbia",
 	Title = "TXT_KEY_SPUE_FIRE_THROWER_BUTTON_SHORT", -- or a TXT_KEY
 	OrderPriority = 200,                           -- default is 200
-	IconAtlas = "SPUE_UNITS_ATLAS",                -- 45 and 64 variations required
-	PortraitIndex = 62,
+	IconAtlas = "SPUE02_UNITS_ATLAS",                -- 45 and 64 variations required
+	PortraitIndex = 29,
 	ToolTip = "TXT_KEY_SPUE_FIRE_THROWER_BUTTON",  -- or a TXT_KEY_ or a function
 
 	Condition = function(action, unit)
