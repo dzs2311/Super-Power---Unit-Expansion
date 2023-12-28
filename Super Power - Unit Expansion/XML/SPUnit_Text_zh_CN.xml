@@ -339,17 +339,25 @@
 		
 		<!-- **********************王城骑士*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_NEW">
-			<Text>[COLOR_CYAN]王城骑士[ENDCOLOR]</Text>
+			<Text>[COLOR_CYAN]帝国骑士[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_NEW_HELP">
 			<Text>
-				[COLOR_CYAN]王城骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]自主政策[ENDCOLOR]的代表性单位，自带军团晋升，且拥有以下能力。
+				[COLOR_CYAN]帝国骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]自主政策[ENDCOLOR]的代表性单位，自带军团晋升，且拥有以下能力。
 				[NEWLINE][ICON_BULLET]拥有超过300点经验后可选晋升[COLOR_POSITIVE_TEXT]王国冠军[ENDCOLOR]：获得15点减伤，杀敌时为首都提供相当于(基础[ICON_STRENGTH]战斗力*单位等级)的[ICON_GREAT_WRITER]大文学家点数和[ICON_GREAT_SCIENTIST]大科学家点数。
 				[NEWLINE][ICON_BULLET]兵士集结：可以召集各个城市的采邑骑士（只能召集一次,且总数不超过6）。
 				[NEWLINE][ICON_BULLET]移民安置：杀敌时根据敌军战斗力积攒粮食点数，积攒足够点数时获得移民且粮食点数清零，点数要求随时代和战斗力增长。
 				[NEWLINE][ICON_BULLET]诗歌传唱：杀敌获得150%的文化点数，单位达到5级时晋升后获得一个大文学家。
 			</Text>
 		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_KNIGHT_NEW_TEXT">
+			<Text>
+				自由帝国骑士（德语：Reichsritter ，拉丁语：Eques imperii）是神圣罗马帝国的贵族，他们的直接领主是神圣罗马皇帝。他们与其他骑士不同，是直属于神圣罗马皇帝的附庸。在神罗帝国内，他们与大公、公爵、侯爵、大主教、主教以及帝国自由城市的地位是平等的。然而，与上述个人和实体不同的是，帝国骑士并不统治帝国领地，因此无权在帝国议会派出代表。
+				[NEWLINE]不过只有现今德国西南部和中南部——施瓦本、弗兰肯和莱茵河中游地区存在帝国骑士，因为这些地区在政治上高度分散，难以出现一个强盛的帝国诸侯。在德国北部和东北部，以及巴伐利亚和奥地利大公国，当地贵族面对更庞大的邦国和更强力的领主，无法壮大和保持独立，从而成为领主的附庸。
+				[NEWLINE]威斯特伐利亚和约承认了帝国骑士的直属地位。他们从未进入帝国议会及领主议会，也不被视为高级贵族。			
+			</Text>
+		</Row>
+		
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW">
 			<Text>兵士集结</Text>

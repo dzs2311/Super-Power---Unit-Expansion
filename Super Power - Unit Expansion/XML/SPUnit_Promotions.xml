@@ -586,7 +586,7 @@
 			<RangedSupportFireMod>150</RangedSupportFireMod>
 			<CityAttack>150</CityAttack>
 			<NearbyEnemyCombatMod>-55</NearbyEnemyCombatMod>
-			<NearbyEnemyCombatRange></NearbyEnemyCombatRange>
+			<NearbyEnemyCombatRange>3</NearbyEnemyCombatRange>
 			<PortraitIndex>9</PortraitIndex>
 			<IconAtlas>tempVPPI_Atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
