@@ -4134,7 +4134,7 @@ HessianMissionButton = {
 		local plot = unit:GetPlot();
 		local city = plot:GetPlotCity()
 		return not plot:IsCity() or city == nil or city:GetOwner() ~= unit:GetOwner() or
-		city:IsHasBuilding(GameInfoTypes["BUILDING_NO_UTILITY_WARNING"]) or not city:IsCapital();
+		not city:CanGrowNormally() or not city:IsCapital();
 	end, -- or nil or a boolean, default is false
 
 	Action = function(action, unit, eClick)
@@ -4144,9 +4144,6 @@ HessianMissionButton = {
 		if not city then return end
 
 		local count = 1;
-		if player:HasPolicy(GameInfo.Policies["POLICY_RESETTLEMENT"].ID) and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SETTLER_POP_3"].ID) then
-			count = 3;
-		end
 
 		city:ChangePopulation(count, true);
 		local iPolicyCollectiveRule = GameInfo.Policies["POLICY_COLLECTIVE_RULE"].ID
@@ -4161,8 +4158,7 @@ HessianMissionButton = {
 		unit:Kill();
 
 		local text = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SETTLER_INTO_CITY", unit:GetName(), city:GetName())
-		local heading = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SETTLER_INTO_CITY_SHORT", unit:GetName(),
-			city:GetName())
+		local heading = Locale.ConvertTextKey("TXT_KEY_SP_NOTIFICATION_SETTLER_INTO_CITY_SHORT", unit:GetName(), city:GetName())
 		player:AddNotification(NotificationTypes.NOTIFICATION_CITY_GROWTH, text, heading, unit:GetX(), unit:GetY())
 	end,
 };
