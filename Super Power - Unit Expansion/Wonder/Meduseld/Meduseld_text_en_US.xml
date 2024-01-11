@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Language_en_US>
+		<!-- Description tags -->
+		<Row Tag="TXT_KEY_BUILDING_GOLDEN_MEDUSELD">
+			<Text>[COLOR_SELECTED_TEXT]金殿美杜塞尔德[ENDCOLOR]</Text>
+		</Row>
+		<!-- Help tags -->
+		<Row Tag="TXT_KEY_WONDER_GOLDEN_MEDUSELD_HELP">
+			<Text>本城获得一座免费[ICON_RES_HORSE]马厩。每座[ICON_RES_HORSE]马厩+2[ICON_CULTURE]文化、[ICON_PRODUCTION]产能。大竞技场+4[ICON_CULTURE]文化、[ICON_PRODUCTION]产能。[NEWLINE][NEWLINE]提供一个[ICON_GREAT_WORK]美术杰作展位，并使[ICON_GOLDEN_AGE]黄金时代持续时间延长33%。[NEWLINE][NEWLINE]所有[ICON_PROMOTION_KNIGHT_COMBAT][COLOR_POSITIVE_TEXT]骑兵单位[ENDCOLOR]与[ICON_PROMOTION_TANK_COMBAT][COLOR_POSITIVE_TEXT]装甲单位[ENDCOLOR]获得[COLOR_POSITIVE_TEXT]洛汗战歌[ENDCOLOR]晋升。[COLOR_POSITIVE_TEXT]开阔[ENDCOLOR]地形+15%[ICON_STRENGTH]战斗力、+1[ICON_MOVES]移动力。</Text>
+		</Row>
+		<!-- Quote tags -->
+		<Row Tag="TXT_KEY_WONDER_GOLDEN_MEDUSELD_QUOTE">
+			<Text>[NEWLINE]“骏骁勇骑今何在？吹角长鸣何处闻？高盔铁衣今何在？明亮金发何处飘荡？”[NEWLINE]“诗琴妙手今何在？赤红火焰何处照映？春华秋实今何在？麦穗何处欣欣向荣？”[NEWLINE]“俱往矣，如山岗微雨，草原飘风。落日西坠，幽影深远。”[NEWLINE]“死木燃尽，谁人收取炊烟？谁能见，岁月流逝西海何时归？”[NEWLINE]</Text>
+		</Row>
+		<!-- Pedia tags -->
+		<Row Tag="TXT_KEY_WONDER_GOLDEN_MEDUSELD_PEDIA">
+			<Text>美杜塞尔德是处雄伟的宫殿。它的屋顶虽由茅草建成，却在阳光下闪着金子般的光芒，远远的就可以看见。一条长而宽阔的阶梯铺过阶地，通往美杜塞尔德门前一片开阔的空地。最高的一级阶梯两侧都有守卫坐在石雕椅上。</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_PROMOTION_Rohan_War_Song">
+			<Text>洛汗战歌</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_Rohan_War_Song_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]开阔[ENDCOLOR]地形+15%[ICON_STRENGTH]战斗力、+1[ICON_MOVES]移动力。</Text>
+		</Row>
+	</Language_en_US>
+</GameData>

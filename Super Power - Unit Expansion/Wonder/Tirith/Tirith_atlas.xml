@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<IconTextureAtlases>
+		<Row>
+			<Atlas>TIRITH_ATLAS</Atlas>
+			<IconSize>256</IconSize>
+			<Filename>minas256.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>TIRITH_ATLAS</Atlas>
+			<IconSize>128</IconSize>
+			<Filename>minas128.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>TIRITH_ATLAS</Atlas>
+			<IconSize>64</IconSize>
+			<Filename>minas64.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>TIRITH_ATLAS</Atlas>
+			<IconSize>80</IconSize>
+			<Filename>minas80.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>TIRITH_ATLAS</Atlas>
+			<IconSize>45</IconSize>
+			<Filename>minas45.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+	</IconTextureAtlases>
+</GameData>

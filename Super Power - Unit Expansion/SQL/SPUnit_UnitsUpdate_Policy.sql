@@ -85,9 +85,9 @@ INSERT INTO Unit_BuildingClassRequireds
 SELECT	'UNIT_SPUE_WEIYANG',	 BuildingClassType
 FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_SWORDSMAN';
 
--- INSERT INTO Unit_BuildingClassRequireds 	
--- 		(UnitType, 				 BuildingClassType)
--- VALUES	('UNIT_SPUE_WEIYANG', 	'BUILDINGCLASS_WEIYANG_PALACE');
+INSERT INTO Unit_BuildingClassRequireds 	
+		(UnitType, 				 BuildingClassType)
+VALUES	('UNIT_SPUE_WEIYANG', 	'BUILDINGCLASS_WEIYANG_PALACE');
 
 INSERT INTO UnitGameplay2DScripts 	
 		(UnitType, 				 SelectionSound, FirstSelectionSound)
@@ -109,7 +109,7 @@ INSERT INTO Unit_ResourceQuantityRequirements
 SELECT	'UNIT_SPUE_WEIYANG',	 ResourceType, Cost
 FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_SWORDSMAN';
 --==========================================================================================================================	
--- 王城骑士 -- 自主解锁
+-- 帝国骑士 -- 自主解锁
 --==========================================================================================================================
 INSERT INTO UnitClasses
 		(Type,								Description,						DefaultUnit,				MaxPlayerInstances)
@@ -207,7 +207,7 @@ FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_KNIGHT';
 --==========================================================================================================================
 INSERT INTO UnitClasses
 		(Type,								Description,								DefaultUnit,				MaxPlayerInstances)
-VALUES	('UNITCLASS_SPUE_GONDORGUARD',		'TXT_KEY_UNIT_SPUE_GONDORGUARD',			'UNIT_SPUE_GONDORGUARD',	4);
+VALUES	('UNITCLASS_SPUE_GONDORGUARD',		'TXT_KEY_UNIT_SPUE_GONDORGUARD',			'UNIT_SPUE_GONDORGUARD',	2);
 
 INSERT INTO Units 	
 		(Type, 						Class, 							PrereqTech, PolicyType,			RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,	HurryCostModifier, FaithCost, RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,						Civilopedia,							Strategy,	Help,								Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 						UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
@@ -241,9 +241,9 @@ INSERT INTO Unit_BuildingClassRequireds
 SELECT	'UNIT_SPUE_GONDORGUARD',	 BuildingClassType
 FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_SWORDSMAN';
 
--- INSERT INTO Unit_BuildingClassRequireds 	
--- 		(UnitType, 				 	BuildingClassType)
--- VALUES	('UNIT_SPUE_GONDORGUARD', 	'BUILDINGCLASS_TIRITH');
+INSERT INTO Unit_BuildingClassRequireds 	
+		(UnitType, 				 	BuildingClassType)
+VALUES	('UNIT_SPUE_GONDORGUARD', 	'BUILDINGCLASS_TIRITH');
 
 INSERT INTO UnitGameplay2DScripts 	
 		(UnitType, 				 	 SelectionSound, FirstSelectionSound)
@@ -314,7 +314,7 @@ FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_KNIGHT';
 --==========================================================================================================================
 INSERT INTO UnitClasses
 		(Type,								Description,						DefaultUnit,				MaxPlayerInstances)
-VALUES	('UNITCLASS_SPUE_ROHAN_CAVALRY',	'TXT_KEY_UNIT_SPUE_ROHAN_CAVALRY',	'UNIT_SPUE_ROHAN_CAVALRY',	4);
+VALUES	('UNITCLASS_SPUE_ROHAN_CAVALRY',	'TXT_KEY_UNIT_SPUE_ROHAN_CAVALRY',	'UNIT_SPUE_ROHAN_CAVALRY',	2);
 
 INSERT INTO Units 	
 		(Type, 						Class, 							PrereqTech, 				PolicyType,		RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, 	HurryCostModifier, FaithCost, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, Description,						Civilopedia,							Strategy,	Help,									Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 						UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
@@ -347,9 +347,9 @@ INSERT INTO Unit_BuildingClassRequireds
 SELECT	'UNIT_SPUE_ROHAN_CAVALRY',  BuildingClassType
 FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_KNIGHT';
 
--- INSERT INTO Unit_BuildingClassRequireds 	
--- 		(UnitType, 				 		BuildingClassType)
--- VALUES	('UNIT_SPUE_ROHAN_CAVALRY', 	'BUILDINGCLASS_GOLDEN_MEDUSELD');
+INSERT INTO Unit_BuildingClassRequireds 	
+		(UnitType, 				 		BuildingClassType)
+VALUES	('UNIT_SPUE_ROHAN_CAVALRY', 	'BUILDINGCLASS_GOLDEN_MEDUSELD');
 
 INSERT INTO UnitGameplay2DScripts 	
 		(UnitType, 					SelectionSound, FirstSelectionSound)

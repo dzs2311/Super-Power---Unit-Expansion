@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2019/3/16 10:45:04 -->
+<GameData>
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_WEIYANG_PALACE</Type>
+			<DefaultBuilding>BUILDING_WEIYANG_PALACE</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_WEIYANG_PALACE</Description>
+			<MaxGlobalInstances>1</MaxGlobalInstances>
+		</Row>
+
+		<Row>
+			<Type>BUILDINGCLASS_TUIENLING</Type>
+			<DefaultBuilding>BUILDING_TUIENLING</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_TUIENLING</Description>
+		</Row>
+		<Row>
+			<Type>BUILDINGCLASS_ZHANGSHIFU</Type>
+			<DefaultBuilding>BUILDING_ZHANGSHIFU</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_ZHANGSHIFU</Description>
+		</Row>
+		<Row>
+			<Type>BUILDINGCLASS_DUHUFU</Type>
+			<DefaultBuilding>BUILDING_DUHUFU</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_DUHUFU</Description>
+		</Row>
+	</BuildingClasses>
+</GameData>

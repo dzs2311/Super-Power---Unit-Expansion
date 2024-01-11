@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2019/3/16 22:28:21 -->
+<GameData>
+	<Language_en_US>
+		<!-- Description tags -->
+		<Row Tag="TXT_KEY_BUILDING_WEIYANG_PALACE">
+			<Text>未央宫</Text>
+		</Row>
+		<!-- Help tags -->
+		<Row Tag="TXT_KEY_WONDER_WEIYANG_PALACE_HELP">
+			<Text>[ICON_CITYBANNER_CITY_TOWN][COLOR_SELECTED_TEXT]城市[ENDCOLOR]必须为[ICON_CAPITAL]首都或[ICON_CAPITAL]原首都，建造需开启[COLOR_MAGENTA]传统政策[ENDCOLOR]树。[NEWLINE]
+			[NEWLINE][ICON_BULLET]全国+5[ICON_HAPPINESS_1]快乐，奇观基础产出等同于[ICON_CAPITAL]宫殿。
+			[NEWLINE][ICON_BULLET]每推行一个[COLOR_MAGENTA]传统政策[ENDCOLOR]，未央宫以及[ICON_CITYBANNER_CITY_LV1]一级城市[COLOR_POSITIVE_TEXT]+1[ENDCOLOR][ICON_FOOD][ICON_PRODUCTION][ICON_RESEARCH][ICON_CULTURE]产出，完成[COLOR_MAGENTA]传统政策[ENDCOLOR]额外[COLOR_POSITIVE_TEXT]+2[ENDCOLOR][ICON_FOOD][ICON_PRODUCTION][ICON_RESEARCH][ICON_CULTURE]产出。
+			[NEWLINE][ICON_BULLET][ICON_CITYBANNER_CITY_LV2]二级城市以及[ICON_CITYBANNER_CITY_LV3]三级城市的惩罚降低一级，且所有[ICON_CITYBANNER_CITY_LV3]三级城市可获得额外[ICON_STRENGTH]城市防御与[ICON_HP]城市生命。
+			[NEWLINE][ICON_BULLET][COLOR_WHITE]模组联动[ENDCOLOR]：当加载[COLOR_YIELD_GOLD]单位拓展[ENDCOLOR]模组时，可组建禁军[COLOR_YIELD_GOLD]未央宫卫士[ENDCOLOR]。</Text>
+		</Row>
+		<!-- Quote tags -->
+		<Row Tag="TXT_KEY_WONDER_WEIYANG_PALACE_QUOTE">
+			<Text>[NEWLINE]“汉秉威信，总率万国，日月所照，皆为臣妾。”[NEWLINE]        ——后汉书·南匈奴列传[NEWLINE]</Text>
+		</Row>
+		<!-- Pedia tags -->
+		<Row Tag="TXT_KEY_WONDER_WEIYANG_PALACE_PEDIA">
+			<Text>未央宫是西汉帝国的正宫，建于汉高祖七年（前200年），由刘邦重臣萧何监造，在秦章台的基础上修建而成，位于汉长安城地势最高的西南角龙首原上，因在长安城安门大街之西，又称西宫。[NEWLINE]
+			[NEWLINE]自未央宫建成之后，西汉皇帝都居住在这里，成为汉帝国200余年间的政令中心，所以在后世人的诗词中，未央宫已经成为汉宫的代名词。西汉以后，未央宫仍是多个朝代的理政之地，隋唐时也被划为禁苑的一部分，存世1041年，是中国历史上使用朝代最多、存在时间最长的皇宫。未央宫是中国古代规模最大的宫殿建筑群之一，总面积有北京紫禁城的六倍之大，亭台楼榭，山水沧池，布列其中，其建筑形制深刻影响了后世宫城建筑，奠定了中国两千余年宫城建筑的基本格局。[NEWLINE]
+			[NEWLINE]1961年3月4日，未央宫遗址被国务院公布为第一批全国重点文物保护单位。2014年6月22日，在卡塔尔多哈召开的联合国教科文组织第38届世界遗产委员会会议上，未央宫遗址作为中国、哈萨克斯坦和吉尔吉斯斯坦三国联合申遗的“丝绸之路：长安-天山廊道的路网”中的一处遗址点成功列入《世界遗产名录》。</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_BUILDING_TUIENLING">
+			<Text>[ICON_CITYBANNER_CITY_LV1]元朔推恩令</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_TUIENLING_HELP">
+			<Text>必须有未央宫才能在[ICON_CITYBANNER_CITY_LV1]郡国推行此法令，帝国的刺史以及高级官员将会前往帝国重镇来贯彻这项法令。[NEWLINE]
+			[NEWLINE][ICON_BULLET]每推行一个[COLOR_MAGENTA]传统政策[ENDCOLOR]，本城额外+1[ICON_FOOD]食物、[ICON_PRODUCTION]产能、[ICON_RESEARCH]科研、[ICON_CULTURE]文化。
+			[NEWLINE][ICON_BULLET]完成[COLOR_MAGENTA]传统政策[ENDCOLOR]额外+2[ICON_FOOD]食物、[ICON_PRODUCTION]产能、[ICON_RESEARCH]科研、[ICON_CULTURE]文化。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_TUIENLING_PEDIA">
+			<Text>推恩令是汉武帝为了巩固中央集权而颁布的一项重要政令。这项政令要求诸侯王将自己的封地分给自己的子弟。后来根据这项政令，诸侯国被越分越小，汉武帝再趁机削弱其势力。西汉自汉文帝、汉景帝两代起，如何限制和削弱日益膨胀的诸侯王势力，一直是皇帝面临的严重问题。[NEWLINE]
+			[NEWLINE]汉文帝时，贾谊鉴于淮南王、济北王的谋逆事件，曾在《治安策》中提出“众建诸侯而少其力”的建议。其具体办法是，让诸侯王各分为若干国，使诸侯王的子孙依次分享封土，地尽为止，封土广大而子孙少的人，就虚建国号，待其子孙生后分封。汉朝原来施行的是郡县制，所以制定推恩令是在郡县制的基础上做的改进，由以前的各诸侯所管辖的区域只由其长子继承，改为由诸侯王的长子，次子，三子共同继承。</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_BUILDING_ZHANGSHIFU">
+			<Text>[ICON_CITYBANNER_CITY_LV2]长史府</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_ZHANGSHIFU_HELP">
+			<Text>必须有未央宫才能在[ICON_CITYBANNER_CITY_LV2]二级城市推行长史制，帝国的一些文官会派到远离京城的地方来管理帝国边陲。[NEWLINE]
+			[NEWLINE][ICON_BULLET]减少因低效率城市管理产生的5%[ICON_CULTURE]文化阈值以及全国2%[ICON_HAPPINESS_4]不满。
+			[NEWLINE][ICON_BULLET]减少因低效率城市管理产生的额外[ICON_RES_CONSUMER]商品需求以及[ICON_RES_MANPOWER]人力缺失。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_ZHANGSHIFU_PEDIA">
+			<Text>西域长史府，官署名，东汉开始设置西域长史，是魏晋两朝在西域的前哨阵地，西域长史行政机构的组织形式和职能非常完备，对地区实行着有效的控制和管理。[NEWLINE]
+			[NEWLINE]西域长史府，东汉延光中置，治柳中城（今新疆鄯善县西南鲁克沁）。三国魏移治海头城（今新疆若羌县东北罗布泊西北岸楼兰遗址）。辖境相当今新疆维吾尔自治区天山南北、塔里木河流域以及中亚巴尔喀什湖以南、塔什干以东地区。十六国末废。107年东汉罢西域都护府，123年以班勇为西域长史，此后三通三绝，西域一直以长史行都护之职，并一直延至魏晋时期。[NEWLINE]
+			[NEWLINE]东汉的班超在保持西域政权稳定、交通畅达，维护祖国统一方面作了很大的贡献。他的儿子班勇从小在西域长大，也是东汉时期在西域的著名活动家。公元123年，班勇出任西域长史，先是率领500名兵士屯驻在柳中城（今吐鲁番境内），第二年，班勇又率士卒驻屯楼兰。从楼兰古城发现的大量魏晋时期的汉文木简和汉文文书中，最早的年号是三国时魏少帝曹芳嘉平四年的，即公元252年；属于曹魏时期的木简还魏元帝曹奂的景元四年、五年和咸熙二年、三年、五年等木简（相当于公元263~268年）；西晋时期的木简有泰始二年、四年、五年、六年（相当于公元266~270年）；最晚的是建兴十八年（公元330年）的，此外还有魏太武帝拓跋焘时期的。可以确认魏晋时期在西域地区仍设有西域长史，负责处理这一地区的行政、军事事务，楼兰城则是西域长史府的所在地。</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_BUILDING_DUHUFU">
+			<Text>[ICON_CITYBANNER_CITY_LV3]都护府</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_DUHUFU_HELP">
+			<Text>必须有未央宫才能在[ICON_CITYBANNER_CITY_LV3]三级城市建设都护府，帝国的武官和外交官从未央宫被派到这里来管理这块新近征服的城市。[NEWLINE]
+			[NEWLINE][ICON_BULLET]减少因低效率城市管理产生的10%[ICON_CULTURE]文化阈值以及全国1%[ICON_HAPPINESS_4]不满。
+			[NEWLINE][ICON_BULLET]减少因低效率城市管理产生的额外[ICON_RES_CONSUMER]商品需求以及[ICON_RES_MANPOWER]人力缺失，并获得一座彰显帝国威严的[ICON_STRENGTH]城塞。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_DUHUFU_PEDIA">
+			<Text>“都护府”源自西汉宣帝神爵二年（公元前60年）设在乌垒的西域都护府，统领大宛及其以东城郭诸国，兼督察乌孙、康居等游牧行国。魏、西晋设有西域长史府，唐朝统一西域，设立安西、北庭（金山）、昆陵、蒙池等都护府，疆域不仅包括今新疆在内的西域，更达里海之滨。[NEWLINE]
+			[NEWLINE]都护府置都护、副都护、长史、司马等职，“掌统诸蕃，抚慰征讨，叙功罚过”。又置录事参军事、录事、诸曹参军事、参军事等，如州府之职。有大、上、中之分，大都护府由亲王遥领大都护，别置副大都护主府事。自贞观十四年（640）创设安西都护府起，终唐一代，建置时有改易。[NEWLINE]
+			[NEWLINE]都护的职责是“抚慰诸藩，辑宁外寇”，凡对周边民族之“抚慰、征讨、叙功、罚过事宜”，皆其所统。它的出现，是唐初边疆地区民族关系发展的客观需要。许多部落自武德起就主动内附。自太宗同年间起，唐朝先后平定了突厥、薛延陀等部，更多的边疆部族纷纷降附。唐王朝面临着如何处置众多归附民族的课题。由于数百年民族联系的不断加强，友好往来的不断增长以及唐初统治者民族偏见较少，唐太宗将治理内地的经验推广到周边，于少数民族地区列置州县，使各部首领管理本部。为管理这些州县，唐王朝又仿汉代西域都护府的建制在民族地区设置都护府。从太宗至高宗，建立了安东、东夷、安北、单于、安西、北庭、昆陵、蒙池、安南等九个都护府。到武后实际执政至玄宗开元天宝时，只剩下安东、安北、单于、安西、北庭、安南都护府，这就是著名的六都护府。[NEWLINE]
+			[NEWLINE]唐朝前期设置的都护府是唐王朝加强地方统治。处理民族关系采取的重要举措，也是唐朝前期政治清明、经济发展社会繁荣的原因之一。这项制度对后世产生了非常深远的影响。</Text>
+		</Row>
+		
+	</Language_en_US>
+</GameData>

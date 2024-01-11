@@ -105,17 +105,17 @@
 		<Row>
 			<PolicyType>POLICY_SPUE_PRAETORIAN</PolicyType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>2</Yield>
+			<Yield>3</Yield>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_SPUE_PRAETORIAN</PolicyType>
 			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>2</Yield>
+			<Yield>3</Yield>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_SPUE_PRAETORIAN</PolicyType>
 			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>2</Yield>
+			<Yield>3</Yield>
 		</Row>
 	</Policy_CapitalYieldChanges>
 </GameData>

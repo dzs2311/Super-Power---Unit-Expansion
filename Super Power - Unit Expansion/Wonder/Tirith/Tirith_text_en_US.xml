@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Language_en_US>
+		<!-- Description tags -->
+		<Row Tag="TXT_KEY_BUILDING_TIRITH">
+			<Text>[COLOR_SELECTED_TEXT]白城米那斯提力斯[ENDCOLOR]</Text>
+		</Row>
+		<!-- Help tags -->
+		<Row Tag="TXT_KEY_WONDER_TIRITH_HELP">
+			<Text>所有城市+10%[ICON_FOOD]食物、[ICON_PRODUCTION]产能、[ICON_RESEARCH]科研、[ICON_GOLD]金币、[ICON_CULTURE]文化。[NEWLINE][NEWLINE][ICON_CONNECTED]城市连接+25%[ICON_GOLD]金币，并提供一个[ICON_GREAT_WORK]美术杰作展位。[NEWLINE][NEWLINE]城市必须靠近[ICON_PROMOTION_ALTITUDE_TRAINING]山脉。</Text>
+		</Row>
+		<!-- Quote tags -->
+		<Row Tag="TXT_KEY_WONDER_TIRITH_QUOTE">
+			<Text>[NEWLINE]“米那斯提力斯，诸城之首!”[NEWLINE]        ——白袍法师甘道夫[NEWLINE]</Text>
+		</Row>
+		<!-- Pedia tags -->
+		<Row Tag="TXT_KEY_WONDER_TIRITH_PEDIA">
+			<Text>米那斯提力斯是刚铎的一座城市，原名米那斯阿诺尔。它自第三纪元1640年起便是南方王国的首都，为诸王与宰相的居所。整座城市由白色的石块砌成，因此又常被称作“白城”。[NEWLINE]在魔戒大战期间，刚铎与米那斯提力斯是魔多的主要攻击对象。三军会师后，自由人民终于在决定性的大战，佩兰诺平野之战中，打破了包围圈。[NEWLINE]在第三纪元3019年的五月一日，在魔栏农之战中得胜归来的阿拉贡在米那斯提力斯外的平原上加冕，作为埃莱萨国王入城。六月二十五日，他在明多路因山上一处隐匿的圣地中，发现了宁洛丝的后裔，一颗幼树。它作为刚铎的第四棵白树，被栽种于喷泉广场。</Text>
+		</Row>
+	</Language_en_US>
+	
+</GameData>

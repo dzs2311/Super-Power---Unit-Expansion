@@ -1038,7 +1038,7 @@ function SPUE_PlayerDoneTurn(playerID)
 				and plot:GetPlotCity():IsCapital()
 			then
 				local city = plot:GetPlotCity();
-				local iCapitalBonus = 2 * pEraID;
+				local iCapitalBonus = 3 * pEraID;
 				-- 首都
 				city:SetOverflowProduction(city:GetOverflowProduction() + iCapitalBonus);
 				city:ChangeFood(iCapitalBonus);
@@ -1052,7 +1052,7 @@ function SPUE_PlayerDoneTurn(playerID)
 						Locale.ConvertTextKey(
 						"[COLOR_CITY_BROWN]+{1_Num}[ENDCOLOR][ICON_PRODUCTION][NEWLINE][COLOR_YIELD_FOOD]+{2_Num}[ENDCOLOR][ICON_FOOD][NEWLINE][COLOR_MAGENTA]+{3_Num}[ENDCOLOR][ICON_CULTURE]",
 							iCapitalBonus, iCapitalBonus, iCapitalBonus));
-					Events.GameplayFX(hex.x, hex.y, -1);
+					-- Events.GameplayFX(hex.x, hex.y, -1);
 				end
 			end
 		end

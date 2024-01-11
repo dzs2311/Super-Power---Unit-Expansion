@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/2/2014 1:10:31 PM -->
+<GameData>
+	<IconTextureAtlases>
+		<Row>
+			<Atlas>GOLDEN_MEDUSELD_ATLAS</Atlas>
+			<IconSize>256</IconSize>
+			<Filename>meduseld256.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>GOLDEN_MEDUSELD_ATLAS</Atlas>
+			<IconSize>128</IconSize>
+			<Filename>meduseld128.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>GOLDEN_MEDUSELD_ATLAS</Atlas>
+			<IconSize>64</IconSize>
+			<Filename>meduseld64.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>GOLDEN_MEDUSELD_ATLAS</Atlas>
+			<IconSize>80</IconSize>
+			<Filename>meduseld80.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>GOLDEN_MEDUSELD_ATLAS</Atlas>
+			<IconSize>45</IconSize>
+			<Filename>meduseld45.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+	</IconTextureAtlases>
+</GameData>
