@@ -3453,7 +3453,9 @@ SPUE_Patronage_vBowman_Button = {
 			end
 		end
 
-		local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_VASSAL_BOWMAN"]);
+		-- local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_VASSAL_BOWMAN"]);
+		local numUnit = player:GetUnitCountFromHasPromotion(
+			GameInfo.UnitPromotions["PROMOTION_SPUE_VASSAL_BOWMAN"].ID)
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_GENERAL_BODYGUARD"].ID)
 			and csPlotFlag == 1
 			and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
@@ -3542,7 +3544,9 @@ SPUE_Patronage_Serbia_Button = {
 			end
 		end
 
-		local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_FIRE_THROWER"]);
+		-- local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_FIRE_THROWER"]);
+		local numUnit = player:GetUnitCountFromHasPromotion(
+			GameInfo.UnitPromotions["PROMOTION_SPUE_FIRE_THROWER"].ID);
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID)
 			and csPlotFlag == 1
 			and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
@@ -3617,7 +3621,9 @@ SPUE_Patronage_OceanFire_Button = {
 
 		local flag = 0
 
-		local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_OCEAN_FIRE"]);
+		-- local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_OCEAN_FIRE"]);
+		local numUnit = player:GetUnitCountFromHasPromotion(
+			GameInfo.UnitPromotions["PROMOTION_SPUE_OCEAN_FIRE"].ID);
 		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID)
 			and plot:IsCoastalLand()
 			and Players[unit:GetOwner()]:GetCapitalCity() ~= nil

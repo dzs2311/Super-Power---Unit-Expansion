@@ -71,9 +71,10 @@ function initializeDialog()
 			local policyL = unitL.PolicyType
 			pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)
 			table.remove(g_MercenaryUnitListL, 4)
-		elseif GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_GERMANY" 
+		elseif (GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_GERMANY"
+		or GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_AUSTRIA") 
 		then
-			-- 德意志自动获得黑森佣兵建造能力
+			-- 德意志奥地利自动获得黑森佣兵建造能力
 			local unitL = GameInfo.Units[g_MercenaryUnitListR[1]]
 			local policyL = unitL.PolicyType
 			pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)

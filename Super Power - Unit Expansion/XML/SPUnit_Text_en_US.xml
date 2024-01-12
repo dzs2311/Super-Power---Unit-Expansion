@@ -1292,7 +1292,7 @@
 				历史加成：
 				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]拜占庭文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]时自动获得[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]和[COLOR_CYAN]热那亚弩手[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支中古佣兵团。
 				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]法兰西文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]时自动获得[COLOR_CYAN]装甲骑兵[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支中古佣兵团。
-				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]德意志文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]时自动获得[COLOR_CYAN]黑森佣兵[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]德意志/奥地利文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]时自动获得[COLOR_CYAN]黑森佣兵[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
 				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]中华文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]时自动获得[COLOR_CYAN]南洋海盗船[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
 				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]日本文明[ENDCOLOR]开启[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]时自动获得[COLOR_CYAN]倭寇帆船[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
 			</Text>
@@ -1307,7 +1307,7 @@
 				历史加成：
 				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]拜占庭文明[ENDCOLOR]进入中古时代时自动获得[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]和[COLOR_CYAN]热那亚弩手[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支中古佣兵团。
 				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]法兰西文明[ENDCOLOR]进入中古时代时自动获得[COLOR_CYAN]装甲骑兵[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支中古佣兵团。
-				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]德意志文明[ENDCOLOR]进入中古时代时自动获得[COLOR_CYAN]黑森佣兵[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]德意志/奥地利文明[ENDCOLOR]进入中古时代时自动获得[COLOR_CYAN]黑森佣兵[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
 				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]中华文明[ENDCOLOR]进入中古时代时自动获得[COLOR_CYAN]南洋海盗船[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
 				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]日本文明[ENDCOLOR]进入中古时代时自动获得[COLOR_CYAN]倭寇帆船[ENDCOLOR]的建造能力，并可以在此基础上额外选择一支启蒙佣兵团。
 			</Text>

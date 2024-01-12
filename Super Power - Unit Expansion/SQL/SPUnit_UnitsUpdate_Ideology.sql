@@ -126,9 +126,13 @@ INSERT INTO UnitClasses
 VALUES	('UNITCLASS_SPUE_ORDER_KV2',			'TXT_KEY_UNIT_SPUE_ORDER_KV2',				'UNIT_SPUE_ORDER_KV2',		10);
  
 INSERT INTO Units 	
-		(Type, 							Class,						PrereqTech, PolicyType,				RangedCombat,	Combat,		Range, 	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	   CombatClass, Domain, DefaultUnitAI, Description,							Civilopedia,								Strategy, Help,										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 	XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 	UnitArtInfo,				UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_ORDER_KV2', 			'UNITCLASS_SPUE_ORDER_KV2', PrereqTech, 'POLICY_SPUE_ORDER',	Combat,			Combat,	    1, 		ExtraMaintenanceCost,	Special, Cost, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves - 2,   CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_ORDER_KV2',		'TXT_KEY_CIV5_SPUE_ORDER_KV2_TEXT', 		Strategy, 'TXT_KEY_UNIT_SPUE_ORDER_KV2_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, null, 			XPValueAttack, XPValueDefense, null, 						'ART_DEF_UNIT_SPUE_KV2',	0,					'SPUE_SKV2_FLAG_ATLAS',	1,				'SPUE_IDEO_ATLAS',	1
+		(Type, 							Class,						PrereqTech, PolicyType,				RangedCombat,	Combat,		Range, 	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	   CombatClass, Domain, DefaultUnitAI, Description,							Civilopedia,								Strategy, Help,										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 	UnitArtInfo,				UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
+SELECT	'UNIT_SPUE_ORDER_KV2', 			'UNITCLASS_SPUE_ORDER_KV2', PrereqTech, 'POLICY_SPUE_ORDER',	Combat,			Combat,	    1, 		ExtraMaintenanceCost,	Special, Cost, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves - 2,   CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_ORDER_KV2',		'TXT_KEY_CIV5_SPUE_ORDER_KV2_TEXT', 		Strategy, 'TXT_KEY_UNIT_SPUE_ORDER_KV2_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_BVR_COMBAT', 	XPValueAttack, XPValueDefense, 'UNITCLASS_MODERN_ARMOR', 	'ART_DEF_UNIT_SPUE_KV2',	0,					'SPUE_SKV2_FLAG_ATLAS',	1,				'SPUE_IDEO_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_TANK';
+
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 					UnitClassType)
+VALUES	('UNIT_SPUE_ORDER_KV2',		'UNITCLASS_MODERN_ARMOR');
 
 INSERT INTO Unit_FreePromotions	
 		(UnitType, 				 	PromotionType)
@@ -174,6 +178,10 @@ INSERT INTO Units
 		(Type, 								Class,							PrereqTech, PolicyType,				RangedCombat,	Combat,		Range,	AirInterceptRange, Immobile,	AirUnitCap,	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,						Civilopedia,								Strategy, Help,										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,					UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
 SELECT	'UNIT_SPUE_ORDER_SU47', 			'UNITCLASS_SPUE_ORDER_SU47', 	PrereqTech, 'POLICY_SPUE_ORDER',	RangedCombat,	Combat,	    Range,	AirInterceptRange, Immobile,	AirUnitCap,	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_ORDER_SU47',		'TXT_KEY_CIV5_SPUE_ORDER_SU47_TEXT', 		Strategy, 'TXT_KEY_UNIT_SPUE_ORDER_SU47_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_SU47',	0,					'SPUE_SU47_FLAG_ATLAS',	2,				'SPUE_IDEO_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_INTERCEPTER';
+
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 					UnitClassType)
+VALUES	('UNIT_SPUE_ORDER_SU47',	'UNITCLASS_JET_FIGHTER');
 
 INSERT INTO Unit_FreePromotions	
 		(UnitType, 				 	PromotionType)
@@ -268,6 +276,10 @@ INSERT INTO Units
 		(Type, 							Class,								PrereqTech, PolicyType,				RangedCombat,	Combat,		Range,	AirInterceptRange, Immobile,	AirUnitCap,	RangeAttackOnlyInDomain,	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,									Strategy, Help,												Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,						UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
 SELECT	'UNIT_SPUE_FREEDOM_SPITFIRE', 	'UNITCLASS_SPUE_FREEDOM_SPITFIRE', 	PrereqTech, 'POLICY_SPUE_FREEDOM',	RangedCombat,	Combat,	    Range,	AirInterceptRange, Immobile,	AirUnitCap,	RangeAttackOnlyInDomain,	ExtraMaintenanceCost,	Special, Cost, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_FREEDOM_SPITFIRE',		'TXT_KEY_CIV5_SPUE_FREEDOM_SPITFIRE_TEXT', 		Strategy, 'TXT_KEY_UNIT_SPUE_FREEDOM_SPITFIRE_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_SPITFIRE',	0,					'SPUE_SPIT_FLAG_ATLAS',	5,				'SPUE_IDEO_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_FIGHTER';
+
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 						UnitClassType)
+VALUES	('UNIT_SPUE_FREEDOM_SPITFIRE',	'UNITCLASS_INTERCEPTER');
 
 INSERT INTO Unit_FreePromotions	
 		(UnitType, 				 		PromotionType)
@@ -450,6 +462,10 @@ INSERT INTO Units
 		(Type, 							Class,								PrereqTech, PolicyType,					RangedCombat,	Combat,		Range, 		ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,								Strategy, Help,												Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,					UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
 SELECT	'UNIT_SPUE_AUTOCRACY_PANZERG', 	'UNITCLASS_SPUE_AUTOCRACY_PANZERG', PrereqTech, 'POLICY_SPUE_AUTOCRACY',	RangedCombat,	Combat,	   	Range, 		ExtraMaintenanceCost,	Special, Cost, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_PANZERG',		'TXT_KEY_CIV5_SPUE_AUTOCRACY_PANZERG_TEXT', Strategy, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_PANZERG_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_PANZERG',	0,					'SPUE_PANG_FLAG_ATLAS',	9,				'SPUE_IDEO_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_INFANTRY';
+
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 						UnitClassType)
+VALUES	('UNIT_SPUE_AUTOCRACY_PANZERG',	'UNITCLASS_MOTORISED_INFANTRY');
 
 INSERT INTO Unit_FreePromotions	
 		(UnitType, 				 		PromotionType)
