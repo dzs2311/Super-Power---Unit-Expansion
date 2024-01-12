@@ -11,8 +11,8 @@
 	    	<MaxGlobalInstances>1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
 	    	<Cost>120</Cost>
-	    	<PortraitIndex>29</PortraitIndex>
-	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
+	    	<PortraitIndex>40</PortraitIndex>
+	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
 	    </Row>
 		<!-- 安纳托利亚再征服计划 -->
 	    <Row>
@@ -23,8 +23,8 @@
 	    	<MaxGlobalInstances>1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
 	    	<Cost>120</Cost>
-	    	<PortraitIndex>29</PortraitIndex>
-	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
+	    	<PortraitIndex>41</PortraitIndex>
+	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
 	    </Row>
 		<!-- 君士坦丁城墙守备计划 -->
 	    <Row>
@@ -35,8 +35,8 @@
 	    	<MaxGlobalInstances>1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
 	    	<Cost>120</Cost>
-	    	<PortraitIndex>29</PortraitIndex>
-	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
+	    	<PortraitIndex>41</PortraitIndex>
+	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
 	    </Row>
 		<!-- 圣彼得大教堂之劫 -->
 	    <Row>
@@ -47,8 +47,8 @@
 	    	<MaxGlobalInstances>1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
 	    	<Cost>120</Cost>
-	    	<PortraitIndex>29</PortraitIndex>
-	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
+	    	<PortraitIndex>41</PortraitIndex>
+	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
 	    </Row>
 		<!-- 组建敕令骑士连 -->
 	    <Row>
@@ -59,8 +59,8 @@
 	    	<MaxGlobalInstances>1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
 	    	<Cost>120</Cost>
-	    	<PortraitIndex>29</PortraitIndex>
-	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
+	    	<PortraitIndex>41</PortraitIndex>
+	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
 	    </Row>
 		<!-- 巨人掷弹兵训练计划 -->
 	    <Row>
@@ -71,8 +71,8 @@
 	    	<MaxGlobalInstances>1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
 	    	<Cost>150</Cost>
-	    	<PortraitIndex>29</PortraitIndex>
-	    	<IconAtlas>SPBalance_ATLAS</IconAtlas>
+	    	<PortraitIndex>41</PortraitIndex>
+	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
 	    </Row>
 	</Projects>
 	<Project_Flavors>

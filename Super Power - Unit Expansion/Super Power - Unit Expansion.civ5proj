@@ -1176,23 +1176,23 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\IconAtlas\promoVP_03_016.dds">
+    <Content Include="Art\IconAtlas\epromoVP_03_016.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\IconAtlas\promoVP_03_032.dds">
+    <Content Include="Art\IconAtlas\epromoVP_03_032.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\IconAtlas\promoVP_03_045.dds">
+    <Content Include="Art\IconAtlas\epromoVP_03_045.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\IconAtlas\promoVP_03_064.dds">
+    <Content Include="Art\IconAtlas\epromoVP_03_064.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\IconAtlas\promoVP_03_256.dds">
+    <Content Include="Art\IconAtlas\epromoVP_03_256.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
