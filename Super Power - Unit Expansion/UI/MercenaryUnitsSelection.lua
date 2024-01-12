@@ -126,7 +126,7 @@ function initializeDialog()
 	end
 
 	if isSPEx then
-		Controls.IconButtonLeft:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_LEADER_TOP_WP"))
+		Controls.IconButtonTop:SetToolTipString(Locale.ConvertTextKey("TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_LEADER_TOP_WP"))
 	end
 
 	Controls.SelectListLeft:GetButton():LocalizeAndSetText("TXT_KEY_SPUE_MERCENARY_MENU_UNIT_LEFT")
