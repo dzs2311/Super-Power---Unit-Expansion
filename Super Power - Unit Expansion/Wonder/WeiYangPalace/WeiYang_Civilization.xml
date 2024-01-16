@@ -4,12 +4,12 @@
 	<Civilization_BuildingClassOverrides>
 		<Row>
 			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<BuildingType/>
 		</Row>
 		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<BuildingType/>
 		</Row>
 	</Civilization_BuildingClassOverrides>		

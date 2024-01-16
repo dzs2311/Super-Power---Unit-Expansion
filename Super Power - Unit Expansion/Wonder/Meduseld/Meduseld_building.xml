@@ -2,29 +2,29 @@
 <GameData>
 	<BuildingClasses>
 		<Row>
-			<Type>BUILDINGCLASS_GOLDEN_MEDUSELD</Type>
-			<DefaultBuilding>BUILDING_GOLDEN_MEDUSELD</DefaultBuilding>
-			<Description>TXT_KEY_BUILDING_GOLDEN_MEDUSELD</Description>
+			<Type>BUILDINGCLASS_SPUE_GOLDEN_MEDUSELD</Type>
+			<DefaultBuilding>BUILDING_SPUE_GOLDEN_MEDUSELD</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_SPUE_GOLDEN_MEDUSELD</Description>
 			<MaxGlobalInstances>1</MaxGlobalInstances>
 		</Row>
 	</BuildingClasses>
 	<Buildings>
 		<Row>
-			<Type>BUILDING_GOLDEN_MEDUSELD</Type>
+			<Type>BUILDING_SPUE_GOLDEN_MEDUSELD</Type>
 			<!--金殿美杜塞尔德-->
-			<BuildingClass>BUILDINGCLASS_GOLDEN_MEDUSELD</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_SPUE_GOLDEN_MEDUSELD</BuildingClass>
 			<!--建筑类型-->
 			<Cost>175</Cost>
 			<!--建造花费-->
 			<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
 			<!--所需科技骑术-->
-			<Help>TXT_KEY_WONDER_GOLDEN_MEDUSELD_HELP</Help>
+			<Help>TXT_KEY_WONDER_SPUE_GOLDEN_MEDUSELD_HELP</Help>
 			<!--文本词条-->
-			<Description>TXT_KEY_BUILDING_GOLDEN_MEDUSELD</Description>
+			<Description>TXT_KEY_BUILDING_SPUE_GOLDEN_MEDUSELD</Description>
 			<!--文本词条-->
-			<Civilopedia>TXT_KEY_WONDER_GOLDEN_MEDUSELD_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_WONDER_SPUE_GOLDEN_MEDUSELD_PEDIA</Civilopedia>
 			<!--文本词条-->
-			<Quote>TXT_KEY_WONDER_GOLDEN_MEDUSELD_QUOTE</Quote>
+			<Quote>TXT_KEY_WONDER_SPUE_GOLDEN_MEDUSELD_QUOTE</Quote>
 			<!--文本词条-->
 			<NukeImmune>true</NukeImmune>
 			<!--核弹免疫-->
@@ -50,7 +50,7 @@
 			<!--无偿建筑马厩-->
 			<FreePromotion>PROMOTION_Rohan_War_Song</FreePromotion>
 			<!--匹配单位获取新特质-->
-			<IconAtlas>GOLDEN_MEDUSELD_ATLAS</IconAtlas>
+			<IconAtlas>SPUE_GOLDEN_MEDUSELD_ATLAS</IconAtlas>
 			<!--图标取材-->
 			<PortraitIndex>0</PortraitIndex>
 			<!--图标取材顺序-->
@@ -63,7 +63,7 @@
 	<Building_YieldChanges>
 		<!--建筑基础产量-->
         <Row>
-			<BuildingType>BUILDING_GOLDEN_MEDUSELD</BuildingType>
+			<BuildingType>BUILDING_SPUE_GOLDEN_MEDUSELD</BuildingType>
 			<!--建筑类型-->
 			<YieldType>YIELD_CULTURE</YieldType>
 			<!--文化增产-->
@@ -75,7 +75,7 @@
 	<Building_BuildingClassYieldChanges>
 	<!--建筑对其他建筑影响-->
 		<Row>
-			<BuildingType>BUILDING_GOLDEN_MEDUSELD</BuildingType>
+			<BuildingType>BUILDING_SPUE_GOLDEN_MEDUSELD</BuildingType>
 			<!--建筑-->
 			<BuildingClassType>BUILDINGCLASS_STABLE</BuildingClassType>
 			<!--受影响的建筑类型-->
@@ -85,7 +85,7 @@
 			<!--增加2基础数值-->
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_GOLDEN_MEDUSELD</BuildingType>
+			<BuildingType>BUILDING_SPUE_GOLDEN_MEDUSELD</BuildingType>
 			<!--建筑-->
 			<BuildingClassType>BUILDINGCLASS_STABLE</BuildingClassType>
 			<!--受影响的建筑类型-->
@@ -95,7 +95,7 @@
 			<!--增加2基础数值-->
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_GOLDEN_MEDUSELD</BuildingType>
+			<BuildingType>BUILDING_SPUE_GOLDEN_MEDUSELD</BuildingType>
 			<!--关联建筑金殿美杜塞尔德-->
 			<BuildingClassType>BUILDINGCLASS_NATIONAL_CIRCUS</BuildingClassType>
 			<!--受影响的建筑大竞技场-->
@@ -104,7 +104,7 @@
 			<YieldChange>4</YieldChange>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_GOLDEN_MEDUSELD</BuildingType>
+			<BuildingType>BUILDING_SPUE_GOLDEN_MEDUSELD</BuildingType>
 			<!--关联建筑金殿美杜塞尔德-->
 			<BuildingClassType>BUILDINGCLASS_NATIONAL_CIRCUS</BuildingClassType>
 			<!--受影响的建筑大竞技场-->
@@ -117,17 +117,17 @@
 	<Building_Flavors>
 	<!--ai建造参考数值，对玩家没用-->
 		<Row>
-			<BuildingType>BUILDING_GOLDEN_MEDUSELD</BuildingType>
+			<BuildingType>BUILDING_SPUE_GOLDEN_MEDUSELD</BuildingType>
 			<FlavorType>FLAVOR_WONDER</FlavorType>
 			<Flavor>35</Flavor>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_GOLDEN_MEDUSELD</BuildingType>
+			<BuildingType>BUILDING_SPUE_GOLDEN_MEDUSELD</BuildingType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
 			<Flavor>35</Flavor>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_GOLDEN_MEDUSELD</BuildingType>
+			<BuildingType>BUILDING_SPUE_GOLDEN_MEDUSELD</BuildingType>
 			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
 			<Flavor>25</Flavor>
 		</Row>
@@ -136,7 +136,7 @@
 	<Building_ResourceQuantityRequirements>
 	<!--战略资源消耗-->
 		<Row>
-			<BuildingType>BUILDING_GOLDEN_MEDUSELD</BuildingType>
+			<BuildingType>BUILDING_SPUE_GOLDEN_MEDUSELD</BuildingType>
 			<!--建筑-->
 			<ResourceType>RESOURCE_MANPOWER</ResourceType>
 			<!--资源类型人力-->
@@ -192,12 +192,12 @@
 	<Civilization_BuildingClassOverrides>
 		<Row>
 			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<BuildingClassType>BUILDINGCLASS_GOLDEN_MEDUSELD</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_GOLDEN_MEDUSELD</BuildingClassType>
 			<BuildingType/>
 		</Row>
 		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<BuildingClassType>BUILDINGCLASS_GOLDEN_MEDUSELD</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_GOLDEN_MEDUSELD</BuildingClassType>
 			<BuildingType/>
 		</Row>
 	</Civilization_BuildingClassOverrides>

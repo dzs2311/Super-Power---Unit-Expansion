@@ -194,6 +194,12 @@ VALUES		('UNIT_SPUE_ENGLAND_FLAG_ATLAS',		32, 		'UnitFlagGrandCarrackAtlas_32.dd
 INSERT INTO IconTextureAtlases 
 			(Atlas, 								IconSize, 	Filename, 										IconsPerRow, 	IconsPerColumn)
 VALUES		('UNIT_SPUE_FRANCE_FLAG_ATLAS',			32, 		'JFD_ImperialGuardUnitFlag_32.dds',				1, 				1);
+--===============================================================================================================================================
+-- IconTextureAtlases:Persia
+--===============================================================================================================================================
+INSERT INTO IconTextureAtlases 
+			(Atlas, 								IconSize, 	Filename, 										IconsPerRow, 	IconsPerColumn)
+VALUES		('UNIT_SPUE_PERSIA_FLAG_ATLAS',			32, 		'SPUE_PersianKnight_FLag.dds',					1, 				1);
 --==========================================================================================================================
 -- VP:IconTextureAtlasesa
 --==========================================================================================================================

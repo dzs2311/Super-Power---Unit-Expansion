@@ -3,26 +3,26 @@
 <GameData>
 	<BuildingClasses>
 		<Row>
-			<Type>BUILDINGCLASS_WEIYANG_PALACE</Type>
-			<DefaultBuilding>BUILDING_WEIYANG_PALACE</DefaultBuilding>
-			<Description>TXT_KEY_BUILDING_WEIYANG_PALACE</Description>
+			<Type>BUILDINGCLASS_SPUE_WEIYANG_PALACE</Type>
+			<DefaultBuilding>BUILDING_SPUE_WEIYANG_PALACE</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_SPUE_WEIYANG_PALACE</Description>
 			<MaxGlobalInstances>1</MaxGlobalInstances>
 		</Row>
 
 		<Row>
-			<Type>BUILDINGCLASS_TUIENLING</Type>
-			<DefaultBuilding>BUILDING_TUIENLING</DefaultBuilding>
-			<Description>TXT_KEY_BUILDING_TUIENLING</Description>
+			<Type>BUILDINGCLASS_SPUE_TUIENLING</Type>
+			<DefaultBuilding>BUILDING_SPUE_TUIENLING</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_SPUE_TUIENLING</Description>
 		</Row>
 		<Row>
-			<Type>BUILDINGCLASS_ZHANGSHIFU</Type>
-			<DefaultBuilding>BUILDING_ZHANGSHIFU</DefaultBuilding>
-			<Description>TXT_KEY_BUILDING_ZHANGSHIFU</Description>
+			<Type>BUILDINGCLASS_SPUE_ZHANGSHIFU</Type>
+			<DefaultBuilding>BUILDING_SPUE_ZHANGSHIFU</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_SPUE_ZHANGSHIFU</Description>
 		</Row>
 		<Row>
-			<Type>BUILDINGCLASS_DUHUFU</Type>
-			<DefaultBuilding>BUILDING_DUHUFU</DefaultBuilding>
-			<Description>TXT_KEY_BUILDING_DUHUFU</Description>
+			<Type>BUILDINGCLASS_SPUE_DUHUFU</Type>
+			<DefaultBuilding>BUILDING_SPUE_DUHUFU</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_SPUE_DUHUFU</Description>
 		</Row>
 	</BuildingClasses>
 </GameData>

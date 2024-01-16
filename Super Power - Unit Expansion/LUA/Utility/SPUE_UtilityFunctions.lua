@@ -384,7 +384,7 @@ function EliteDisable(unit, unitPromotion2ID, unitClassType, projectType)
 	-- local dbProject = GameInfo.Projects[projectType];
 	local corpsFlag = TroopsLeftFlag(player, 1);
 
-	if goldCost then iCost = goldCost * 5 end;
+	if goldCost then iCost = goldCost * 2 end;
 	-- return CountUnitsWithUniquePromotions(unit:GetOwner(), unitPromotion2ID) > 0 
 	return player:GetUnitCountFromHasPromotion(unitPromotion2ID) > 0
 	or player:GetGold() < iCost 
@@ -439,7 +439,7 @@ function EliteAction(unit, nunitType, unitClassType)
 	local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
 	local iCost = 1000;
 
-	if goldCost then iCost = goldCost * 5 end;
+	if goldCost then iCost = goldCost * 2 end;
 
 	Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
 

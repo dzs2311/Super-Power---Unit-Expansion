@@ -3,35 +3,35 @@
 <GameData>
 	<IconTextureAtlases>
 		<Row>
-			<Atlas>GOLDEN_MEDUSELD_ATLAS</Atlas>
+			<Atlas>SPUE_GOLDEN_MEDUSELD_ATLAS</Atlas>
 			<IconSize>256</IconSize>
 			<Filename>meduseld256.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>GOLDEN_MEDUSELD_ATLAS</Atlas>
+			<Atlas>SPUE_GOLDEN_MEDUSELD_ATLAS</Atlas>
 			<IconSize>128</IconSize>
 			<Filename>meduseld128.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>GOLDEN_MEDUSELD_ATLAS</Atlas>
+			<Atlas>SPUE_GOLDEN_MEDUSELD_ATLAS</Atlas>
 			<IconSize>64</IconSize>
 			<Filename>meduseld64.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>GOLDEN_MEDUSELD_ATLAS</Atlas>
+			<Atlas>SPUE_GOLDEN_MEDUSELD_ATLAS</Atlas>
 			<IconSize>80</IconSize>
 			<Filename>meduseld80.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>
 		<Row>
-			<Atlas>GOLDEN_MEDUSELD_ATLAS</Atlas>
+			<Atlas>SPUE_GOLDEN_MEDUSELD_ATLAS</Atlas>
 			<IconSize>45</IconSize>
 			<Filename>meduseld45.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>

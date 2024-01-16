@@ -3,9 +3,9 @@
 <GameData>
 	<Buildings>
 		<Row>
-			<Type>BUILDING_WEIYANG_PALACE</Type>
+			<Type>BUILDING_SPUE_WEIYANG_PALACE</Type>
 			<!--未央宫-->
-			<BuildingClass>BUILDINGCLASS_WEIYANG_PALACE</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClass>
 			<!--建筑级别-->
 			<Cost>250</Cost>
 			<!--所需产能-->
@@ -13,13 +13,13 @@
 			<!--所需科技建造学-->
 			<PolicyBranchType>POLICY_BRANCH_TRADITION</PolicyBranchType>
 			<!--建造所需政策传统-->
-			<Help>TXT_KEY_WONDER_WEIYANG_PALACE_HELP</Help>
+			<Help>TXT_KEY_WONDER_SPUE_WEIYANG_PALACE_HELP</Help>
 			<!--信息文本词条-->
-			<Description>TXT_KEY_BUILDING_WEIYANG_PALACE</Description>
+			<Description>TXT_KEY_BUILDING_SPUE_WEIYANG_PALACE</Description>
 			<!--名称文本词条-->
-			<Civilopedia>TXT_KEY_WONDER_WEIYANG_PALACE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_WONDER_SPUE_WEIYANG_PALACE_PEDIA</Civilopedia>
 			<!--历史文本词条-->
-			<Quote>TXT_KEY_WONDER_WEIYANG_PALACE_QUOTE</Quote>
+			<Quote>TXT_KEY_WONDER_SPUE_WEIYANG_PALACE_QUOTE</Quote>
 			<!--奇观文本词条-->
 			<UnmoddedHappiness>5</UnmoddedHappiness>
 			<!--全国快乐-->
@@ -46,17 +46,17 @@
 		</Row>
 		
 		<Row>
-			<Type>BUILDING_TUIENLING</Type>
+			<Type>BUILDING_SPUE_TUIENLING</Type>
 			<!--元朔推恩令-->
-			<BuildingClass>BUILDINGCLASS_TUIENLING</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_SPUE_TUIENLING</BuildingClass>
 			<!--建筑级别-->
 			<Cost>-1</Cost>
 			<!--禁止建造-->
-			<Description>TXT_KEY_BUILDING_TUIENLING</Description>
+			<Description>TXT_KEY_BUILDING_SPUE_TUIENLING</Description>
 			<!--名称文本词条-->
-			<Help>TXT_KEY_BUILDING_TUIENLING_HELP</Help>
+			<Help>TXT_KEY_BUILDING_SPUE_TUIENLING_HELP</Help>
 			<!--信息文本词条-->
-			<Civilopedia>TXT_KEY_BUILDING_TUIENLING_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_BUILDING_SPUE_TUIENLING_PEDIA</Civilopedia>
 			<!--历史文本词条-->
 			<UnmoddedHappiness>2</UnmoddedHappiness>
 			<!--全国快乐-->
@@ -77,17 +77,17 @@
 		</Row>
 		
 		<Row>
-			<Type>BUILDING_ZHANGSHIFU</Type>
+			<Type>BUILDING_SPUE_ZHANGSHIFU</Type>
 			<!--长史府-->
-			<BuildingClass>BUILDINGCLASS_ZHANGSHIFU</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_SPUE_ZHANGSHIFU</BuildingClass>
 			<!--建筑级别-->
 			<Cost>-1</Cost>
 			<!--禁止建造-->
-			<Description>TXT_KEY_BUILDING_ZHANGSHIFU</Description>
+			<Description>TXT_KEY_BUILDING_SPUE_ZHANGSHIFU</Description>
 			<!--名称文本词条-->
-			<Help>TXT_KEY_BUILDING_ZHANGSHIFU_HELP</Help>
+			<Help>TXT_KEY_BUILDING_SPUE_ZHANGSHIFU_HELP</Help>
 			<!--信息文本词条-->
-			<Civilopedia>TXT_KEY_BUILDING_ZHANGSHIFU_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_BUILDING_SPUE_ZHANGSHIFU_PEDIA</Civilopedia>
 			<!--历史文本词条-->
 			<UnmoddedHappiness>2</UnmoddedHappiness>
 			<!--全国快乐-->
@@ -112,17 +112,17 @@
 		</Row>
 		
 		<Row>
-			<Type>BUILDING_DUHUFU</Type>
+			<Type>BUILDING_SPUE_DUHUFU</Type>
 			<!--都护府-->
-			<BuildingClass>BUILDINGCLASS_DUHUFU</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_SPUE_DUHUFU</BuildingClass>
 			<!--建筑级别-->
 			<Cost>-1</Cost>
 			<!--禁止建造-->
-			<Description>TXT_KEY_BUILDING_DUHUFU</Description>
+			<Description>TXT_KEY_BUILDING_SPUE_DUHUFU</Description>
 			<!--名称文本词条-->
-			<Civilopedia>TXT_KEY_BUILDING_DUHUFU_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_BUILDING_SPUE_DUHUFU_PEDIA</Civilopedia>
 			<!--历史文本词条-->
-			<Help>TXT_KEY_BUILDING_DUHUFU_HELP</Help>
+			<Help>TXT_KEY_BUILDING_SPUE_DUHUFU_HELP</Help>
 			<!--信息文本词条-->
 			<UnmoddedHappiness>2</UnmoddedHappiness>
 			<!--全国快乐-->
@@ -154,28 +154,28 @@
 	<Building_YieldChanges>
 	<!--建筑基础产出-->
 		<Row>
-			<BuildingType>BUILDING_WEIYANG_PALACE</BuildingType>
+			<BuildingType>BUILDING_SPUE_WEIYANG_PALACE</BuildingType>
 			<!--关联建筑未央宫-->
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<!--产能-->
 			<Yield>3</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_WEIYANG_PALACE</BuildingType>
+			<BuildingType>BUILDING_SPUE_WEIYANG_PALACE</BuildingType>
 			<!--关联建筑未央宫-->
 			<YieldType>YIELD_GOLD</YieldType>
 			<!--金钱-->
 			<Yield>5</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_WEIYANG_PALACE</BuildingType>
+			<BuildingType>BUILDING_SPUE_WEIYANG_PALACE</BuildingType>
 			<!--关联建筑未央宫-->
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<!--科研-->
 			<Yield>3</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_WEIYANG_PALACE</BuildingType>
+			<BuildingType>BUILDING_SPUE_WEIYANG_PALACE</BuildingType>
 			<!--关联建筑未央宫-->
 			<YieldType>YIELD_CULTURE</YieldType>
 			<!--文化-->
@@ -186,7 +186,7 @@
 	<Building_ResourceQuantityRequirements>
 	<!--战略资源消耗-->
 		<Row>
-			<BuildingType>BUILDING_WEIYANG_PALACE</BuildingType>
+			<BuildingType>BUILDING_SPUE_WEIYANG_PALACE</BuildingType>
 			<!--关联建筑未央宫-->
 			<ResourceType>RESOURCE_MANPOWER</ResourceType>
 			<!--资源类型人力-->
@@ -197,28 +197,28 @@
 	<Building_ResourceQuantity>
 	<!--战略资源获取-->
 		<Row>
-			<BuildingType>BUILDING_ZHANGSHIFU</BuildingType>
+			<BuildingType>BUILDING_SPUE_ZHANGSHIFU</BuildingType>
 			<!--关联建筑长史府-->
 			<ResourceType>RESOURCE_CONSUMER</ResourceType>
 			<!--资源类型商品-->
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_ZHANGSHIFU</BuildingType>
+			<BuildingType>BUILDING_SPUE_ZHANGSHIFU</BuildingType>
 			<!--关联建筑长史府-->
 			<ResourceType>RESOURCE_MANPOWER</ResourceType>
 			<!--资源类型人力-->
 			<Quantity>1</Quantity>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_DUHUFU</BuildingType>
+			<BuildingType>BUILDING_SPUE_DUHUFU</BuildingType>
 			<!--关联建筑都护府-->
 			<ResourceType>RESOURCE_CONSUMER</ResourceType>
 			<!--资源类型商品-->
 			<Quantity>4</Quantity>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_DUHUFU</BuildingType>
+			<BuildingType>BUILDING_SPUE_DUHUFU</BuildingType>
 			<!--关联建筑都护府-->
 			<ResourceType>RESOURCE_MANPOWER</ResourceType>
 			<!--资源类型人力-->
@@ -229,32 +229,32 @@
 	<Building_Flavors>
 	<!--ai建造参考数值，对玩家没用-->
 		<Row>
-			<BuildingType>BUILDING_WEIYANG_PALACE</BuildingType>
+			<BuildingType>BUILDING_SPUE_WEIYANG_PALACE</BuildingType>
 			<FlavorType>FLAVOR_WONDER</FlavorType>
 			<Flavor>35</Flavor>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_WEIYANG_PALACE</BuildingType>
+			<BuildingType>BUILDING_SPUE_WEIYANG_PALACE</BuildingType>
 			<FlavorType>FLAVOR_EXPANSION</FlavorType>
 			<Flavor>25</Flavor>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_WEIYANG_PALACE</BuildingType>
+			<BuildingType>BUILDING_SPUE_WEIYANG_PALACE</BuildingType>
 			<FlavorType>FLAVOR_GROWTH</FlavorType>
 			<Flavor>15</Flavor>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_WEIYANG_PALACE</BuildingType>
+			<BuildingType>BUILDING_SPUE_WEIYANG_PALACE</BuildingType>
 			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 			<Flavor>15</Flavor>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_WEIYANG_PALACE</BuildingType>
+			<BuildingType>BUILDING_SPUE_WEIYANG_PALACE</BuildingType>
 			<FlavorType>FLAVOR_SCIENCE</FlavorType>
 			<Flavor>15</Flavor>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_WEIYANG_PALACE</BuildingType>
+			<BuildingType>BUILDING_SPUE_WEIYANG_PALACE</BuildingType>
 			<FlavorType>FLAVOR_CULTURE</FlavorType>
 			<Flavor>15</Flavor>
 		</Row>

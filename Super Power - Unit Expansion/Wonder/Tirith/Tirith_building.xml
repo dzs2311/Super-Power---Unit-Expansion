@@ -2,31 +2,31 @@
 <GameData>
 	<BuildingClasses>
 		<Row>
-			<Type>BUILDINGCLASS_TIRITH</Type>
-			<DefaultBuilding>BUILDING_TIRITH</DefaultBuilding>
-			<Description>TXT_KEY_BUILDING_TIRITH</Description>
+			<Type>BUILDINGCLASS_SPUE_TIRITH</Type>
+			<DefaultBuilding>BUILDING_SPUE_TIRITH</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_SPUE_TIRITH</Description>
 			<MaxGlobalInstances>1</MaxGlobalInstances>
 		</Row>
 	</BuildingClasses>
 	
 	<Buildings>
 		<Row>
-			<Type>BUILDING_TIRITH</Type>
+			<Type>BUILDING_SPUE_TIRITH</Type>
 			<!--米那斯提力斯-->
-			<BuildingClass>BUILDINGCLASS_TIRITH</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_SPUE_TIRITH</BuildingClass>
 			<!--建筑类型-->
 			<!--<Cost>-1</Cost>-->
 			<Cost>350</Cost>
 			<!--建造花费-->
 			<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
 			<!--所需科技文官制度-->
-			<Help>TXT_KEY_WONDER_TIRITH_HELP</Help>
+			<Help>TXT_KEY_WONDER_SPUE_TIRITH_HELP</Help>
 			<!--文本词条-->
-			<Description>TXT_KEY_BUILDING_TIRITH</Description>
+			<Description>TXT_KEY_BUILDING_SPUE_TIRITH</Description>
 			<!--文本词条-->
-			<Civilopedia>TXT_KEY_WONDER_TIRITH_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_WONDER_SPUE_TIRITH_PEDIA</Civilopedia>
 			<!--文本词条-->
-			<Quote>TXT_KEY_WONDER_TIRITH_QUOTE</Quote>
+			<Quote>TXT_KEY_WONDER_SPUE_TIRITH_QUOTE</Quote>
 			<!--文本词条-->
 			<NukeImmune>true</NukeImmune>
 			<!--不会被核弹摧毁-->
@@ -54,7 +54,7 @@
 			<!--城市血量-->
 			<Mountain>true</Mountain>
 			<!--靠近山脉-->
-			<IconAtlas>TIRITH_ATLAS</IconAtlas>
+			<IconAtlas>SPUE_TIRITH_ATLAS</IconAtlas>
 			<!--图标取材-->
 			<PortraitIndex>0</PortraitIndex>
 			<!--图标取材顺序-->
@@ -67,12 +67,12 @@
     <Building_Flavors>
 	<!--ai建造参考数值，对玩家没用-->
 		<Row>
-			<BuildingType>BUILDING_TIRITH</BuildingType>
+			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<FlavorType>FLAVOR_WONDER</FlavorType>
 			<Flavor>35</Flavor>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_TIRITH</BuildingType>
+			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<FlavorType>FLAVOR_DEFENSE</FlavorType>
 			<Flavor>30</Flavor>
 		</Row>
@@ -81,21 +81,21 @@
 	<Building_YieldChanges>
 	<!--建筑基础产量-->
 		<Row>
-			<BuildingType>BUILDING_TIRITH</BuildingType>
+			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<YieldType>YIELD_FOOD</YieldType>
 			<!--食物加成-->
 			<Yield>3</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_TIRITH</BuildingType>
+			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<!--产能加成-->
 			<Yield>3</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_TIRITH</BuildingType>
+			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<YieldType>YIELD_CULTURE</YieldType>
 			<!--文化加成-->
@@ -106,7 +106,7 @@
 	<Building_ResourceQuantity>
 	<!--特殊资源变化-->
 		<Row>
-			<BuildingType>BUILDING_TIRITH</BuildingType>
+			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<ResourceType>RESOURCE_CONSUMER</ResourceType>
 			<!--资源加成-->
@@ -117,35 +117,35 @@
 	<Building_GlobalYieldModifiers>
 	<!--建筑全国修正-->
 		<Row>
-			<BuildingType>BUILDING_TIRITH</BuildingType>
+			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<YieldType>YIELD_FOOD</YieldType>
 			<!--食物加成-->
 			<Yield>10</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_TIRITH</BuildingType>
+			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<!--产能加成-->
 			<Yield>10</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_TIRITH</BuildingType>
+			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<!--科研加成-->
 			<Yield>10</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_TIRITH</BuildingType>
+			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<YieldType>YIELD_GOLD</YieldType>
 			<!--金币加成-->
 			<Yield>10</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_TIRITH</BuildingType>
+			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<YieldType>YIELD_CULTURE</YieldType>
 			<!--文化加成-->
@@ -156,7 +156,7 @@
 	<Building_ResourceQuantityRequirements>
 	<!--战略资源消耗-->
 		<Row>
-			<BuildingType>BUILDING_TIRITH</BuildingType>
+			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<ResourceType>RESOURCE_MANPOWER</ResourceType>
 			<!--资源类型人力-->
@@ -167,12 +167,12 @@
 	<Civilization_BuildingClassOverrides>
 		<Row>
 			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
-			<BuildingClassType>BUILDINGCLASS_TIRITH</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TIRITH</BuildingClassType>
 			<BuildingType/>
 		</Row>
 		<Row>
 			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
-			<BuildingClassType>BUILDINGCLASS_TIRITH</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TIRITH</BuildingClassType>
 			<BuildingType/>
 		</Row>
 	</Civilization_BuildingClassOverrides>

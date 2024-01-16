@@ -16,24 +16,24 @@ function ChinaWonderBonus(playerID)
 	end
     
 	-- 未央宫：根据市政厅等级赋予加成
-	if player:CountNumBuildings(GameInfoTypes["BUILDING_WEIYANG_PALACE"]) > 0 then
+	if player:CountNumBuildings(GameInfoTypes["BUILDING_SPUE_WEIYANG_PALACE"]) > 0 then
 		for city in player:Cities() do
 			if city:IsHasBuilding(GameInfoTypes["BUILDING_CITY_HALL_LV1"]) then
-				city:SetNumRealBuilding(GameInfoTypes["BUILDING_TUIENLING"],1)
+				city:SetNumRealBuilding(GameInfoTypes["BUILDING_SPUE_TUIENLING"],1)
 			else
-				city:SetNumRealBuilding(GameInfoTypes["BUILDING_TUIENLING"],0)
+				city:SetNumRealBuilding(GameInfoTypes["BUILDING_SPUE_TUIENLING"],0)
 			end
 
 			if city:IsHasBuilding(GameInfoTypes["BUILDING_CITY_HALL_LV2"]) then
-				city:SetNumRealBuilding(GameInfoTypes["BUILDING_ZHANGSHIFU"],1)
+				city:SetNumRealBuilding(GameInfoTypes["BUILDING_SPUE_ZHANGSHIFU"],1)
 			else
-				city:SetNumRealBuilding(GameInfoTypes["BUILDING_ZHANGSHIFU"],0)
+				city:SetNumRealBuilding(GameInfoTypes["BUILDING_SPUE_ZHANGSHIFU"],0)
 			end
 
 			if city:IsHasBuilding(GameInfoTypes["BUILDING_CITY_HALL_LV3"]) then
-				city:SetNumRealBuilding(GameInfoTypes["BUILDING_DUHUFU"],1)
+				city:SetNumRealBuilding(GameInfoTypes["BUILDING_SPUE_DUHUFU"],1)
 			else
-				city:SetNumRealBuilding(GameInfoTypes["BUILDING_DUHUFU"],0)
+				city:SetNumRealBuilding(GameInfoTypes["BUILDING_SPUE_DUHUFU"],0)
 			end
 		end
 	end
@@ -43,7 +43,7 @@ GameEvents.PlayerDoTurn.Add(ChinaWonderBonus)
 -- 天朝奇观：建造前提
 ----------------------------------------------------------------------------------------------------------------------------
 function ChinaWonderCanConstruct(iPlayer, iCity, iBuilding)
-	if (iBuilding == GameInfoTypes.BUILDING_WEIYANG_PALACE) then
+	if (iBuilding == GameInfoTypes.BUILDING_SPUE_WEIYANG_PALACE) then
 		local pPlayer = Players[iPlayer]
 		local pCity = pPlayer:GetCityByID(iCity)
 		if pCity:IsCapital() or pCity:IsOriginalCapital() then	

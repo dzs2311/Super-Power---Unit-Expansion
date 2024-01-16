@@ -67,15 +67,15 @@ VALUES	('UNIT_SPUE_WEIYANG', 		'PROMOTION_INFANTRY_COMBAT'),
 -- 没有未央宫则不可建造
 --UPDATE Units
 --SET Cost = -1, HurryCostModifier = -1
---WHERE Type = 'UNIT_SPUE_WEIYANG' AND NOT EXISTS (SELECT * FROM BuildingClasses WHERE Type='BUILDINGCLASS_WEIYANG_PALACE');
+--WHERE Type = 'UNIT_SPUE_WEIYANG' AND NOT EXISTS (SELECT * FROM BuildingClasses WHERE Type='BUILDINGCLASS_SPUE_WEIYANG_PALACE');
 -- Trigger
 UPDATE Units SET Cost = 60, HurryCostModifier = 33
 WHERE Type = 'UNIT_SPUE_WEIYANG';
---  AND EXISTS (SELECT * FROM BuildingClasses WHERE Type='BUILDINGCLASS_WEIYANG_PALACE');
+--  AND EXISTS (SELECT * FROM BuildingClasses WHERE Type='BUILDINGCLASS_SPUE_WEIYANG_PALACE');
 
 -- CREATE TRIGGER SPUE_WEIYANG
 -- AFTER INSERT ON BuildingClasses
--- WHEN NEW.Type ='BUILDINGCLASS_WEIYANG_PALACE'
+-- WHEN NEW.Type ='BUILDINGCLASS_SPUE_WEIYANG_PALACE'
 -- BEGIN
 -- 	UPDATE Units SET Cost = 60, HurryCostModifier = 33 WHERE Type = 'UNIT_SPUE_WEIYANG';
 -- END;
@@ -87,7 +87,7 @@ FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_SWORDSMAN';
 
 INSERT INTO Unit_BuildingClassRequireds 	
 		(UnitType, 				 BuildingClassType)
-VALUES	('UNIT_SPUE_WEIYANG', 	'BUILDINGCLASS_WEIYANG_PALACE');
+VALUES	('UNIT_SPUE_WEIYANG', 	'BUILDINGCLASS_SPUE_WEIYANG_PALACE');
 
 INSERT INTO UnitGameplay2DScripts 	
 		(UnitType, 				 SelectionSound, FirstSelectionSound)
@@ -227,11 +227,11 @@ VALUES	('UNIT_SPUE_GONDORGUARD', 		'PROMOTION_INFANTRY_COMBAT'),
 -- Trigger
 UPDATE Units SET Cost = 65, HurryCostModifier = 33
 WHERE Type = 'UNIT_SPUE_GONDORGUARD';
---  AND EXISTS (SELECT * FROM BuildingClasses WHERE Type='BUILDINGCLASS_TIRITH');
+--  AND EXISTS (SELECT * FROM BuildingClasses WHERE Type='BUILDINGCLASS_SPUE_TIRITH');
 
 -- CREATE TRIGGER SPUE_GONDORGUARD
 -- AFTER INSERT ON BuildingClasses
--- WHEN NEW.Type ='BUILDINGCLASS_TIRITH'
+-- WHEN NEW.Type ='BUILDINGCLASS_SPUE_TIRITH'
 -- BEGIN
 -- 	UPDATE Units SET Cost = 65, HurryCostModifier = 33 WHERE Type = 'UNIT_SPUE_GONDORGUARD';
 -- END;
@@ -243,7 +243,7 @@ FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_SWORDSMAN';
 
 INSERT INTO Unit_BuildingClassRequireds 	
 		(UnitType, 				 	BuildingClassType)
-VALUES	('UNIT_SPUE_GONDORGUARD', 	'BUILDINGCLASS_TIRITH');
+VALUES	('UNIT_SPUE_GONDORGUARD', 	'BUILDINGCLASS_SPUE_TIRITH');
 
 INSERT INTO UnitGameplay2DScripts 	
 		(UnitType, 				 	 SelectionSound, FirstSelectionSound)
@@ -333,11 +333,11 @@ VALUES	('UNIT_SPUE_ROHAN_CAVALRY', 	'PROMOTION_KNIGHT_COMBAT'),
 -- 没有金殿则不可建造
 UPDATE Units SET Cost = 110, HurryCostModifier = 33
 WHERE Type = 'UNIT_SPUE_ROHAN_CAVALRY';
---  AND EXISTS (SELECT * FROM BuildingClasses WHERE Type='BUILDINGCLASS_GOLDEN_MEDUSELD');
+--  AND EXISTS (SELECT * FROM BuildingClasses WHERE Type='BUILDINGCLASS_SPUE_GOLDEN_MEDUSELD');
 -- -- Trigger
 -- CREATE TRIGGER SPUE_ROHAN_CAVALRY
 -- AFTER INSERT ON BuildingClasses
--- WHEN NEW.Type = 'BUILDINGCLASS_GOLDEN_MEDUSELD'
+-- WHEN NEW.Type = 'BUILDINGCLASS_SPUE_GOLDEN_MEDUSELD'
 -- BEGIN
 -- 	UPDATE Units SET Cost = 110, HurryCostModifier = 33 WHERE Type = 'UNIT_SPUE_ROHAN_CAVALRY';
 -- END;
@@ -349,7 +349,7 @@ FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_KNIGHT';
 
 INSERT INTO Unit_BuildingClassRequireds 	
 		(UnitType, 				 		BuildingClassType)
-VALUES	('UNIT_SPUE_ROHAN_CAVALRY', 	'BUILDINGCLASS_GOLDEN_MEDUSELD');
+VALUES	('UNIT_SPUE_ROHAN_CAVALRY', 	'BUILDINGCLASS_SPUE_GOLDEN_MEDUSELD');
 
 INSERT INTO UnitGameplay2DScripts 	
 		(UnitType, 					SelectionSound, FirstSelectionSound)
@@ -993,12 +993,12 @@ VALUES	('UNITCLASS_SPUE_VARANGIAN',		'TXT_KEY_UNIT_SPUE_VARANGIAN',		'UNIT_SPUE_
 
 INSERT INTO Units 	
 		(Type, 					Class, 						PrereqTech, PolicyType,					RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, 		FaithCost,	HurryCostModifier, PurchaseOnly, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,					Civilopedia,							Strategy,	Help,								Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,	XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 					UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_VARANGIAN', 'UNITCLASS_SPUE_VARANGIAN', 	PrereqTech, 'POLICY_SPUE_VARANGIAN', 	RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost/2, 	FaithCost,	1, 				   1, 			 RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_VARANGIAN',	'TXT_KEY_CIV5_SPUE_VARANGIAN_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_VARANGIAN_HELP', Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_RIFLING', XPValueAttack, XPValueDefense, null, 					 'ART_DEF_UNIT_SPUE_VARANGIAN',	0,					'SPUE_VARANMER_FLAG_ATLAS',	41,				'SPUE_UNITS_ATLAS',	1
+SELECT	'UNIT_SPUE_VARANGIAN', 'UNITCLASS_SPUE_VARANGIAN', 	PrereqTech, 'POLICY_SPUE_VARANGIAN', 	RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost/2, 	FaithCost,	1, 				   1, 			 RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_VARANGIAN',	'TXT_KEY_CIV5_SPUE_VARANGIAN_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_VARANGIAN_HELP', Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_RIFLING', XPValueAttack, XPValueDefense, 'UNITCLASS_RIFLEMAN', 	 'ART_DEF_UNIT_SPUE_VARANGIAN',	0,					'SPUE_VARANMER_FLAG_ATLAS',	41,				'SPUE_UNITS_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_LONGSWORDSMAN';
 
--- INSERT INTO Unit_ClassUpgrades 	
--- 		(UnitType, 				UnitClassType)
--- VALUES	('UNIT_SPUE_VARANGIAN',	'UNITCLASS_MUSKETMAN');
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 				UnitClassType)
+VALUES	('UNIT_SPUE_VARANGIAN',	'UNITCLASS_RIFLEMAN');
 		
 INSERT INTO Unit_FreePromotions
 		(UnitType, 					PromotionType)
@@ -1085,12 +1085,12 @@ VALUES	('UNITCLASS_SPUE_GENOAXBOW',		'TXT_KEY_UNIT_SPUE_GENOAXBOW',		'UNIT_SPUE_
 
 INSERT INTO Units 	
 		(Type, 					Class, 						PrereqTech, PolicyType,					RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, 		FaithCost,  HurryCostModifier, PurchaseOnly, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,					Civilopedia,							Strategy,	Help,								Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 	XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 					UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_GENOAXBOW', 'UNITCLASS_SPUE_GENOAXBOW', 	PrereqTech, 'POLICY_SPUE_GENOAXBOW', 	RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost/2,	FaithCost,  1, 				   1, 			 RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_GENOAXBOW',	'TXT_KEY_CIV5_SPUE_GENOAXBOW_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_GENOAXBOW_HELP', Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_RIFLING', XPValueAttack, XPValueDefense, null, 					 'ART_DEF_UNIT_SPUE_GENOAXBOW',	0,					'SPUE_GENOAX_FLAG_ATLAS',	43,				'SPUE_UNITS_ATLAS',	1
+SELECT	'UNIT_SPUE_GENOAXBOW', 'UNITCLASS_SPUE_GENOAXBOW', 	PrereqTech, 'POLICY_SPUE_GENOAXBOW', 	RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost/2,	FaithCost,  1, 				   1, 			 RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_GENOAXBOW',	'TXT_KEY_CIV5_SPUE_GENOAXBOW_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_GENOAXBOW_HELP', Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_RIFLING', XPValueAttack, XPValueDefense, 'UNITCLASS_GATLINGGUN', 	 'ART_DEF_UNIT_SPUE_GENOAXBOW',	0,					'SPUE_GENOAX_FLAG_ATLAS',	43,				'SPUE_UNITS_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_CROSSBOWMAN';
 
--- INSERT INTO Unit_ClassUpgrades 	
--- 		(UnitType, 					UnitClassType)
--- VALUES	('UNIT_SPUE_GENOAXBOW',		'UNITCLASS_VOLLEY_GUN');
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 					UnitClassType)
+VALUES	('UNIT_SPUE_GENOAXBOW',		'UNITCLASS_GATLINGGUN');
 
 INSERT INTO Unit_FreePromotions
 		(UnitType, 					PromotionType)
@@ -1174,12 +1174,12 @@ VALUES	('UNITCLASS_SPUE_SWISSGUARD',		'TXT_KEY_UNIT_SPUE_SWISSGUARD',		'UNIT_SPU
 
 INSERT INTO Units 	
 		(Type, 					Class, 							PrereqTech, PolicyType,					Combat, ExtraMaintenanceCost,	Special, Cost, 		FaithCost,  HurryCostModifier, PurchaseOnly,	RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,					Civilopedia,							Strategy,	Help,									Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 						UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_SWISSGUARD', 'UNITCLASS_SPUE_SWISSGUARD', 	PrereqTech, 'POLICY_SPUE_SWISSGUARD',	Combat, ExtraMaintenanceCost,	Special, Cost/2, 	FaithCost,  1, 				   1, 				RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_SWISSGUARD',	'TXT_KEY_CIV5_SPUE_SWISSGUARD_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_SWISSGUARD_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_BALLISTICS', 	XPValueAttack, XPValueDefense, null, 					 'ART_DEF_UNIT_SPUE_SWISSGUARD',	0,					'SPUE_SWISSG_FLAG_ATLAS',	42,				'SPUE_UNITS_ATLAS',	1
+SELECT	'UNIT_SPUE_SWISSGUARD', 'UNITCLASS_SPUE_SWISSGUARD', 	PrereqTech, 'POLICY_SPUE_SWISSGUARD',	Combat, ExtraMaintenanceCost,	Special, Cost/2, 	FaithCost,  1, 				   1, 				RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_SWISSGUARD',	'TXT_KEY_CIV5_SPUE_SWISSGUARD_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_SWISSGUARD_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_BALLISTICS', 	XPValueAttack, XPValueDefense, 'UNITCLASS_ANTI_TANK_GUN','ART_DEF_UNIT_SPUE_SWISSGUARD',	0,					'SPUE_SWISSG_FLAG_ATLAS',	42,				'SPUE_UNITS_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_GERMAN_LANDSKNECHT';
 
--- INSERT INTO Unit_ClassUpgrades 	
--- 		(UnitType, 					UnitClassType)
--- VALUES	('UNIT_SPUE_SWISSGUARD',	'UNITCLASS_TERCIO');
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 					UnitClassType)
+VALUES	('UNIT_SPUE_SWISSGUARD',	'UNITCLASS_ANTI_TANK_GUN');
 
 INSERT INTO Unit_FreePromotions
 		(UnitType, 					PromotionType)
@@ -1264,12 +1264,12 @@ VALUES	('UNITCLASS_SPUE_ELMETI',		'TXT_KEY_UNIT_SPUE_ELMETI',	'UNIT_SPUE_ELMETI'
 
 INSERT INTO Units 	
 		(Type, 					Class, 						PrereqTech, PolicyType,				RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,		FaithCost,  HurryCostModifier, PurchaseOnly,	RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,				Civilopedia,						Strategy,	Help,								Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 	XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 	UnitArtInfo, 				UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,				NoMinorGifts)
-SELECT	'UNIT_SPUE_ELMETI', 	'UNITCLASS_SPUE_ELMETI',	PrereqTech, 'POLICY_SPUE_ELMETI', 	RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost/2,	FaithCost, 	1, 				   1, 				RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_ELMETI',	'TXT_KEY_CIV5_SPUE_ELMETI_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_ELMETI_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_RIFLING', XPValueAttack, XPValueDefense, null, 						'ART_DEF_UNIT_SPUE_ELMETI',	0,					'SPUE_ELMETI_FLAG_ATLAS',	32,				'SPUE02_UNITS_ATLAS',	1
+SELECT	'UNIT_SPUE_ELMETI', 	'UNITCLASS_SPUE_ELMETI',	PrereqTech, 'POLICY_SPUE_ELMETI', 	RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost/2,	FaithCost, 	1, 				   1, 				RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_ELMETI',	'TXT_KEY_CIV5_SPUE_ELMETI_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_ELMETI_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_RIFLING', XPValueAttack, XPValueDefense, 'UNITCLASS_SPUE_CUIRASSIER', 'ART_DEF_UNIT_SPUE_ELMETI',	0,					'SPUE_ELMETI_FLAG_ATLAS',	32,				'SPUE02_UNITS_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_KNIGHT';
 
--- INSERT INTO Unit_ClassUpgrades 	
--- 		(UnitType, 				UnitClassType)
--- VALUES	('UNIT_SPUE_ELMETI',	'UNITCLASS_LANCER');
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 				UnitClassType)
+VALUES	('UNIT_SPUE_ELMETI',	'UNITCLASS_SPUE_CUIRASSIER');
 		
 INSERT INTO Unit_FreePromotions
 		(UnitType, 				PromotionType)
@@ -1351,13 +1351,13 @@ INSERT INTO UnitClasses
 VALUES	('UNITCLASS_SPUE_HESSIAN',		'TXT_KEY_UNIT_SPUE_HESSIAN',	'UNIT_SPUE_HESSIAN',	4);
 
 INSERT INTO Units 	
-		(Type, 					Class, 						PrereqTech, PolicyType,				RangedCombat,	Combat,	 Range, ExtraMaintenanceCost,	Special, Cost, 		FaithCost,  HurryCostModifier, PurchaseOnly,	RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,					Civilopedia,						Strategy, Help,								   	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 	UnitArtInfo, 				UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,				NoMinorGifts)
-SELECT	'UNIT_SPUE_HESSIAN', 	'UNITCLASS_SPUE_HESSIAN', 	PrereqTech, 'POLICY_SPUE_HESSIAN', 	RangedCombat,	Combat,	 Range, ExtraMaintenanceCost,	Special, Cost/2,	FaithCost,  1, 				   1, 				RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_HESSIAN',	'TXT_KEY_CIV5_SPUE_HESSIAN_TEXT', 	Strategy, 'TXT_KEY_UNIT_SPUE_HESSIAN_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_BALLISTICS', 	XPValueAttack, XPValueDefense, null, 						'ART_DEF_UNIT_SPUE_HESSIAN',	0,					'SPUE_HESSIAN_FLAG_ATLAS',	18,				'SPUE02_UNITS_ATLAS',	1
+		(Type, 					Class, 						PrereqTech, PolicyType,				RangedCombat,	Combat,	 Range, ExtraMaintenanceCost,	Special, Cost, 		FaithCost,  HurryCostModifier, PurchaseOnly,	RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,					Civilopedia,						Strategy, Help,								   	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 		UnitArtInfo, 					UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,				NoMinorGifts)
+SELECT	'UNIT_SPUE_HESSIAN', 	'UNITCLASS_SPUE_HESSIAN', 	PrereqTech, 'POLICY_SPUE_HESSIAN', 	RangedCombat,	Combat,	 Range, ExtraMaintenanceCost,	Special, Cost/2,	FaithCost,  1, 				   1, 				RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_HESSIAN',	'TXT_KEY_CIV5_SPUE_HESSIAN_TEXT', 	Strategy, 'TXT_KEY_UNIT_SPUE_HESSIAN_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_BALLISTICS', 	XPValueAttack, XPValueDefense, 'UNITCLASS_GREAT_WAR_INFANTRY', 	'ART_DEF_UNIT_SPUE_HESSIAN',	0,					'SPUE_HESSIAN_FLAG_ATLAS',	18,				'SPUE02_UNITS_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_MUSKETMAN';
 
--- INSERT INTO Unit_ClassUpgrades 	
--- 		(UnitType, 				UnitClassType)
--- VALUES	('UNIT_SPUE_HESSIAN',	'UNITCLASS_RIFLEMAN');
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 				UnitClassType)
+VALUES	('UNIT_SPUE_HESSIAN',	'UNITCLASS_GREAT_WAR_INFANTRY');
 		
 INSERT INTO Unit_FreePromotions
 		(UnitType, 				PromotionType)
@@ -1492,6 +1492,7 @@ INSERT INTO Unit_Builds
 		(UnitType,			BuildType)
 VALUES	('UNIT_SPUE_FUNE',	'BUILD_FISHERY_MOD'),
 		('UNIT_SPUE_FUNE',	'BUILD_FISHFARM_MOD');
+		
 INSERT INTO Unit_ClassUpgrades 	
 		(UnitType, 			UnitClassType)
 VALUES	('UNIT_SPUE_FUNE',	'UNITCLASS_LIGHT_IRONCLAD');

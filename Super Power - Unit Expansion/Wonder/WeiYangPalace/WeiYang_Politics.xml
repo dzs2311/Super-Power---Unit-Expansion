@@ -4,437 +4,437 @@
 	<Policy_BuildingClassYieldChanges>
 		<Row>
 			<PolicyType>POLICY_ARISTOCRACY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LEGALISM</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_FAMILY_REGISTER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PREFECTURE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_CENTRALISATION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_ARISTOCRACY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LEGALISM</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_FAMILY_REGISTER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PREFECTURE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_CENTRALISATION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		
 		<Row>
 			<PolicyType>POLICY_ARISTOCRACY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LEGALISM</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_FAMILY_REGISTER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PREFECTURE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_CENTRALISATION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_ARISTOCRACY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LEGALISM</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_FAMILY_REGISTER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PREFECTURE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_CENTRALISATION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		
 		<Row>
 			<PolicyType>POLICY_ARISTOCRACY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LEGALISM</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_FAMILY_REGISTER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PREFECTURE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_CENTRALISATION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_ARISTOCRACY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LEGALISM</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_FAMILY_REGISTER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PREFECTURE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_CENTRALISATION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		
 		<Row>
 			<PolicyType>POLICY_ARISTOCRACY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LEGALISM</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_FAMILY_REGISTER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PREFECTURE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_CENTRALISATION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_ARISTOCRACY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LEGALISM</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_LANDED_ELITE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_OLIGARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_FAMILY_REGISTER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_PREFECTURE</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_MONARCHY</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_CENTRALISATION</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>1</YieldChange>
 		</Row>
 
 		<Row>
 			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>2</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>2</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>2</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_TUIENLING</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_TUIENLING</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>2</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>2</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<YieldChange>2</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>2</YieldChange>
 		</Row>
 		<Row>
 			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
-			<BuildingClassType>BUILDINGCLASS_WEIYANG_PALACE</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClassType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<YieldChange>2</YieldChange>
 		</Row>

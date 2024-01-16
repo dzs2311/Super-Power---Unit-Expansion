@@ -7,8 +7,8 @@
     <Guid>988a1168-d581-4150-948f-199021eabdea</Guid>
     <ModVersion>6</ModVersion>
     <Stability>Stable</Stability>
-    <Teaser>(6.3.3)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
-    <Description>(6.3.3)超级大国单位拓展及大量单位模型替换
+    <Teaser>(6.4.0)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
+    <Description>(6.4.0)超级大国单位拓展及大量单位模型替换
 [NEWLINE][NEWLINE]
 [ICON_BULLET]大量单位替换了更加美观和符合史实的模型（如宝船）
 [NEWLINE]
@@ -348,6 +348,9 @@
     <Folder Include="Art\Flags\Japan" />
     <Folder Include="Art\Flags\England" />
     <Folder Include="Art\Flags\France" />
+    <Folder Include="Art\Flags\Byzantium" />
+    <Folder Include="Art\Flags\Korea" />
+    <Folder Include="Art\Flags\Rome" />
     <Folder Include="Art\Flags\Russia" />
     <Folder Include="Art\Flags\Persia" />
     <Folder Include="Art\Flags\Ottomans" />
@@ -369,6 +372,9 @@
     <Folder Include="Art\SV\Japan" />
     <Folder Include="Art\SV\England" />
     <Folder Include="Art\SV\France" />
+    <Folder Include="Art\SV\Byzantium" />
+    <Folder Include="Art\SV\Korea" />
+    <Folder Include="Art\SV\Rome" />
     <Folder Include="Art\SV\Russia" />
     <Folder Include="Art\SV\Persia" />
     <Folder Include="Art\SV\Ottomans" />
@@ -472,6 +478,8 @@
     <Folder Include="Art\Units\Policy\06-Commerce\Fune" />
     <Folder Include="Art\Units\Policy\06-Commerce\ELMETI" />
     <Folder Include="Art\Units\Policy\06-Commerce\Hessian\" />
+    <Folder Include="Art\Units\Policy\06-Commerce\uhlan" />
+    <Folder Include="Art\Units\Policy\06-Commerce\tabor" />
     <Folder Include="Art\Units\Policy\07-Exploration\fire_ship\" />
     <Folder Include="Art\Units\Policy\09-Freedom\HeliCarrier" />
     <Folder Include="Art\Units\Policy\09-Freedom\cgn9" />
@@ -531,6 +539,8 @@
     <Folder Include="Art\Units\Policy\10-Order\super_055_VLS" />
     <Folder Include="Art\Units\Policy\11-Autocracy" />
     <Folder Include="Art\Units\Unique\America\Connecticut\" />
+    <Folder Include="Art\Units\Unique\Byzantium\limitanei" />
+    <Folder Include="Art\Units\Unique\Byzantium\tagmata" />
     <Folder Include="Art\Units\Unique\China\IronCavalry\" />
     <Folder Include="Art\Units\Unique\Denmark\Absalon" />
     <Folder Include="Art\Units\Unique\England\Grand Carrack\" />
@@ -544,6 +554,12 @@
     <Folder Include="Art\Units\Unique\Japan" />
     <Folder Include="Art\Units\Unique\Japan\tekkousen\" />
     <Folder Include="Art\Units\Unique\England" />
+    <Folder Include="Art\Units\Unique\Korea" />
+    <Folder Include="Art\Units\Unique\Korea\panokseon" />
+    <Folder Include="Art\Units\Unique\Byzantium" />
+    <Folder Include="Art\Units\Unique\Rome" />
+    <Folder Include="Art\Units\Unique\Persia\Gyan-Avspar" />
+    <Folder Include="Art\Units\Unique\Rome\Herculiani" />
     <Folder Include="Art\Units\Unique\Russia" />
     <Folder Include="Art\Units\Unique\Persia" />
     <Folder Include="Art\Units\Unique\Ottomans" />
@@ -565,6 +581,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Art\Flags\Anerica\JFD_ConnecticutUnitFlag_32.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\Byzantium\SPUE_Limitanei_Flag.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\Byzantium\SPUE_TAGMATA_FLAG.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -616,11 +640,23 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Flags\Korea\SPUE_panokseon_Flag.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Flags\Ottomans\flag_barbary_xebec.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Flags\Persia\QizilbashFlag_032.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\Persia\SPUE_PersianKnight_FLag.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\Rome\SPUE_Herculiani_Flag.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -852,6 +888,10 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Flags\SPUE_TABOR_FLAG.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Flags\SPUE_Tank_Flag.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -881,6 +921,10 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Flags\SPUE_VP_FIELDGUN_flag.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\SPUE_WarWagon_Flag.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -1380,6 +1424,14 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\SV\Byzantium\SV_SPUE_Limitanei.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\Byzantium\SV_SPUE_TAGMATA.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\SV\China\SV_VP_IronCavalry.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -1400,11 +1452,23 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\SV\Korea\SV_SPUE_panokseon.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\SV\Ottomans\sv_barbary_xebec.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\SV\Persia\QizilbashFlag_128.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\Persia\SV_SPUE_PersianKnight.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\Rome\SV_SPUE_Herculiani.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -1740,6 +1804,10 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\SV\SV_SPUE_WarWagon.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\SV\SV_SPUE_wwi_infantry.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -1757,6 +1825,10 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\SV\SV_SPUE_SUPER_055.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\SV_SPUE_Tabor.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -4468,6 +4540,38 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\tabor\bohemian_tabor.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\tabor\tabor.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\tabor\tabor_diff.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\tabor\tabor_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\uhlan\gerlr1.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\uhlan\gerlr1.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\uhlan\gerlr1.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\06-Commerce\uhlan\gerlr1_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Units\Policy\06-Commerce\Varangian\Mercenry Varangians\sv_MercVarangian.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -4840,6 +4944,66 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Units\Unique\Byzantium\limitanei\limitaneiV1.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\limitanei\limitaneiV1.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\limitanei\limitaneiV2.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\limitanei\limitaneiV2.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\limitanei\phoenix_shield_diffuse.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\limitanei\phoenix_spear_diffuse.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\limitanei\phoenix_spear_spec.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\limitanei\xangelo_AfricanBYZ_cavalry_02_diffuse.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\limitanei\xangelo_AfricanBYZ_cavalry_02_spec.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\limitanei\xangelo_BYZ_cavalry_02_specular.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\limitanei\xangelo_BYZ_infantry_01_diffuse.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\limitanei\xangelo_BYZ_infantry_01_specular.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\limitanei\xangelo_TRE_infantry_01_diffuse.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\tagmata\byzantine_tagmata.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Byzantium\tagmata\byzantine_tagmata.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Units\Unique\China\IronCavalry\0.warhorse_beiwei_b.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -5004,6 +5168,38 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Units\Unique\Korea\panokseon\asian_galley_02_diffuse.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Korea\panokseon\asian_galley_02_specular.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Korea\panokseon\JAP_galley_03_diffuse.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Korea\panokseon\JAP_galley_03_specular.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Korea\panokseon\korea_light.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Korea\panokseon\korea_light.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Korea\panokseon\KOR_galley_03_diffuse.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Korea\panokseon\KOR_galley_03_specular.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Units\Unique\Ottomans\no_gloss.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -5017,6 +5213,30 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\Unique\Ottomans\xebec_texture256_sabbak.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Persia\Gyan-Avspar\Knight_Persia_Horse.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Persia\Gyan-Avspar\Knight_Persia_Horse_gloss.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Persia\Gyan-Avspar\Knight_Persia_v2.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Persia\Gyan-Avspar\Knight_Persia_v2.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Persia\Gyan-Avspar\Knight_Persia_v2.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Persia\Gyan-Avspar\Knight_Persia_v2_gloss.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -5041,6 +5261,22 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Units\Unique\Persia\Qizilbash\Qizilbash_Rider_sref.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Rome\Herculiani\Pikeman_Rome.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Rome\Herculiani\Pikeman_Rome.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Rome\Herculiani\Pikeman_Rome.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Unique\Rome\Herculiani\Pikeman_Rome_gloss.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
