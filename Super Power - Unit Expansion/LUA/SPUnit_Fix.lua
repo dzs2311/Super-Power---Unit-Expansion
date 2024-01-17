@@ -4110,13 +4110,13 @@ SPUE_UnitRiotControlButton = {
 		local player = Players[unit:GetOwner()]
 		if not city then return end
 
-		if unit:IsHasPromotion(unitPromotionHessianID) then
-			city:ChangeResistanceTurns(-city:GetResistanceTurns());
-			unit:Kill();
-		elseif unit:IsHasPromotion(unitPromotionHessianEliteID) then
+		if unit:IsHasPromotion(unitPromotionHessianEliteID) then
 			unit:ChangeExperience(2 * city:GetResistanceTurns())
 			city:ChangeResistanceTurns(-city:GetResistanceTurns())
 			unit:SetMoves(0)
+		elseif unit:IsHasPromotion(unitPromotionHessianID) then
+			city:ChangeResistanceTurns(-city:GetResistanceTurns());
+			unit:Kill();
 		end
 		print("SPUE Riot Control!")
 	end

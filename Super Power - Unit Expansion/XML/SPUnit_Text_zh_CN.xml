@@ -1200,7 +1200,7 @@
 		</Row>
 
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_RIOT_CONTROL_HESSIAN">
-			<Text>如所在城市抵抗时间大于3回合，可使用此能力，清除所有抵抗时间。[NEWLINE][NEWLINE]该命令会消耗本单位所有剩馀[ICON_MOVES]移动力。</Text>
+			<Text>如所在城市抵抗时间大于3回合，可使用此能力，清除所有抵抗时间。[NEWLINE][NEWLINE]该命令会消耗本单位。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_SP_BTNNOTE_UNIT_RIOT_CONTROL_HESSIAN_ELITE">
 			<Text>如所在城市抵抗时间大于3回合，可使用此能力，清除所有抵抗时间。[NEWLINE][NEWLINE]该命令会消耗所有剩馀[ICON_MOVES]移动力。</Text>
