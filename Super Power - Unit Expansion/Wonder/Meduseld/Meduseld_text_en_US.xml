@@ -18,10 +18,10 @@
 			<Text>美杜塞尔德是处雄伟的宫殿。它的屋顶虽由茅草建成，却在阳光下闪着金子般的光芒，远远的就可以看见。一条长而宽阔的阶梯铺过阶地，通往美杜塞尔德门前一片开阔的空地。最高的一级阶梯两侧都有守卫坐在石雕椅上。</Text>
 		</Row>
 		
-		<Row Tag="TXT_KEY_PROMOTION_Rohan_War_Song">
+		<Row Tag="TXT_KEY_PROMOTION_SPUR_ROHAN_WAR_SONG">
 			<Text>洛汗战歌</Text>
 		</Row>
-		<Row Tag="TXT_KEY_PROMOTION_Rohan_War_Song_HELP">
+		<Row Tag="TXT_KEY_PROMOTION_SPUR_ROHAN_WAR_SONG_HELP">
 			<Text>[COLOR_POSITIVE_TEXT]开阔[ENDCOLOR]地形+15%[ICON_STRENGTH]战斗力、+1[ICON_MOVES]移动力。</Text>
 		</Row>
 	</Language_en_US>

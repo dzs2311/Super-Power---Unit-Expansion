@@ -473,8 +473,8 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
-			<NearbyUnitPromotionBonus>33</NearbyUnitPromotionBonus>
-			<NearbyUnitPromotionBonusRange>1</NearbyUnitPromotionBonusRange>
+			<NearbyUnitPromotionBonus>150</NearbyUnitPromotionBonus>
+			<NearbyUnitPromotionBonusRange>2</NearbyUnitPromotionBonusRange>
 			<CombatBonusFromNearbyUnitPromotion>PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER</CombatBonusFromNearbyUnitPromotion>
 			<PortraitIndex>57</PortraitIndex>
 			<IconAtlas>promoVP_atlas_00</IconAtlas>
@@ -702,6 +702,7 @@
 			<Type>PROMOTION_SPUE_FOOT_KNIGHT_TEUTONIC</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_FOOT_KNIGHT_TEUTONIC</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_FOOT_KNIGHT_TEUTONIC_HELP</Help>
+			<AdjacentMod>40</AdjacentMod>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
@@ -719,7 +720,6 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
 			<LostWithUpgrade>false</LostWithUpgrade>
-			<AdjacentMod>40</AdjacentMod>
 			<PortraitIndex>47</PortraitIndex>
 			<IconAtlas>promoVP_atlas_01</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>

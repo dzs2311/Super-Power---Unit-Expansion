@@ -202,7 +202,7 @@
 			<Text>炮兵集群</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ADJACENT_BONUS_HELP">
-			<Text>与己方同类单位相邻[ICON_STRENGTH]战斗力+25%。</Text>
+			<Text>+25%[ICON_STRENGTH]战斗力(邻近友军时)。</Text>
 		</Row>
 		<!-- **********************线列步兵*********************** -->
 		<Replace Tag="TXT_KEY_UNIT_RIFLEMAN">
@@ -695,7 +695,7 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_TEUTONIC_HELP">
 			<Text>
 				[COLOR_CYAN]步行条顿骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]的代表性单位之一。
-				[NEWLINE][ICON_BULLET]可以建立城市，临近同类单位则+40%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]可以建立城市，+40%[ICON_STRENGTH]战斗力(邻近友军时)。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_FOOT_KNIGHT_TEUTONIC_TEXT">
@@ -708,7 +708,7 @@
 			<Text>帮助、救治、守卫</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_FOOT_KNIGHT_TEUTONIC_HELP">
-			<Text>临近同类单位则+40%[ICON_STRENGTH]战斗力。</Text>
+			<Text>+40%[ICON_STRENGTH]战斗力(邻近友军时)。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_TEUTONIC">
@@ -717,7 +717,7 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_TEUTONIC_HELP">
 			<Text>
 				[COLOR_CYAN]条顿骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]的代表性单位之一。
-				[NEWLINE][ICON_BULLET]可以建立城市，每临近1个同类单位则+40%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]可以建立城市，+40%[ICON_STRENGTH]战斗力(邻近友军时)。
 			</Text>
 		</Row>
 		<!-- **********************医院骑士团*********************** -->
@@ -1013,7 +1013,7 @@
 				[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]是[COLOR_CYAN]热那亚弩手[ENDCOLOR]作为常备军后形成的近卫军团，拥有强大的防守能力，需要完成[COLOR_YIELD_GOLD]君士坦丁堡城墙守备计划[ENDCOLOR]：
 				[NEWLINE][ICON_BULLET]防御时+30%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]对骑兵+30%[ICON_STRENGTH]战斗力；
-				[NEWLINE][ICON_BULLET]1格内每个[COLOR_CYAN]步行医院骑士[ENDCOLOR]为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]+20%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]2格内存在[COLOR_CYAN]医院骑士团[ENDCOLOR]单位则+150%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]位于友方城市3格内时+100%[ICON_STRENGTH]战斗力，所驻守的城市城防增加75（随时代增加）；
 				[NEWLINE][ICON_BULLET]任意靠岸的海军单位均可以将[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]召唤至身边。
 			</Text>
@@ -1034,7 +1034,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENOAXBOW_ELITE_HELP">
 			<Text>
-				[NEWLINE][ICON_BULLET]1格内每个[COLOR_CYAN]医院骑士团[ENDCOLOR]单位为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]+33%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]2格内存在[COLOR_CYAN]医院骑士团[ENDCOLOR]单位则+150%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]位于友方城市3格内时+100%[ICON_STRENGTH]战斗力，所驻守的城市的城防增加75（随时代增加）；
 				[NEWLINE][ICON_BULLET]任意靠岸的海军单位均可以将[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]召唤至身边。
 			</Text>

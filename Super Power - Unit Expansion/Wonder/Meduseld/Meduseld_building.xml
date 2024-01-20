@@ -48,7 +48,7 @@
 			<!--杰作展位-->
 			<FreeBuildingThisCity>BUILDINGCLASS_STABLE</FreeBuildingThisCity>
 			<!--无偿建筑马厩-->
-			<FreePromotion>PROMOTION_Rohan_War_Song</FreePromotion>
+			<FreePromotion>PROMOTION_SPUR_ROHAN_WAR_SONG</FreePromotion>
 			<!--匹配单位获取新特质-->
 			<IconAtlas>SPUE_GOLDEN_MEDUSELD_ATLAS</IconAtlas>
 			<!--图标取材-->
@@ -148,11 +148,11 @@
 	<UnitPromotions>
 	<!--单位特质-->
 		<Row>
-			<Type>PROMOTION_Rohan_War_Song</Type>
+			<Type>PROMOTION_SPUR_ROHAN_WAR_SONG</Type>
 			<!--特质ID-->
-			<Description>TXT_KEY_PROMOTION_Rohan_War_Song</Description>
+			<Description>TXT_KEY_PROMOTION_SPUR_ROHAN_WAR_SONG</Description>
 			<!--特质名文本-->
-			<Help>TXT_KEY_PROMOTION_Rohan_War_Song_HELP</Help>
+			<Help>TXT_KEY_PROMOTION_SPUR_ROHAN_WAR_SONG_HELP</Help>
 			<!--特质对应说明文本-->
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<!--不清楚-->
@@ -168,7 +168,7 @@
 			<!--移动力提升-->
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<!--不清楚-->
-			<PediaEntry>TXT_KEY_PROMOTION_Rohan_War_Song</PediaEntry>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUR_ROHAN_WAR_SONG</PediaEntry>
 			<!--不清楚-->
 		</Row>
 	</UnitPromotions>
@@ -176,13 +176,13 @@
 	<UnitPromotions_UnitCombats>
 	<!--晋升匹配的单位类型-->
 		<Row>
-			<PromotionType>PROMOTION_Rohan_War_Song</PromotionType>
+			<PromotionType>PROMOTION_SPUR_ROHAN_WAR_SONG</PromotionType>
 			<!--特质ID-->
 			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
 			<!--晋升骑兵可继承-->
 		</Row>
 		<Row>
-			<PromotionType>PROMOTION_Rohan_War_Song</PromotionType>
+			<PromotionType>PROMOTION_SPUR_ROHAN_WAR_SONG</PromotionType>
 			<!--特质ID-->
 			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
 			<!--晋升机械可继承-->
