@@ -296,7 +296,7 @@ SELECT	'UNIT_SPUE_YULIN_CAVALRY',  SelectionSound, FirstSelectionSound
 FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_KNIGHT';
 
 INSERT INTO Unit_AITypes 	
-		(UnitType, 					UnitAIType)
+		(UnitType, 				   UnitAIType)
 SELECT	'UNIT_SPUE_YULIN_CAVALRY', UnitAIType
 FROM Unit_AITypes WHERE UnitType = 'UNIT_KNIGHT';
 

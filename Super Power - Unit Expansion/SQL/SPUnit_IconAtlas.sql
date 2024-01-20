@@ -77,7 +77,12 @@ VALUES		('SPUE_AMB_FLAG_ATLAS',				032,		'SPUE_Flag_Ambassador.dds',				1, 				1
 			('SPUE_SSPRIV_FLAG_ATLAS',			032,		'SPUE_SouthSeaPrivateer_flag.dds',		1, 				1),	-- 南洋海盗船
 			('SPUE_IRON_TROOP_FLAG_ATLAS',		032,		'SPUE_iron_troop_flag_032.dds',			1, 				1), -- 铁人军
 
-			('SPUE_FIRE_SHIP_FLAG_ATLAS',		032,		'SPUE_SMAN_Fireship_Flag_032.dds',		1, 				1); -- 火帆船
+			('SPUE_FIRE_SHIP_FLAG_ATLAS',		032,		'SPUE_SMAN_Fireship_Flag_032.dds',		1, 				1), -- 火帆船
+
+			('SPUE_WARWARGON_FLAG_ATLAS',		032,		'SPUE_WarWagon_Flag.dds',				1, 				1), -- 车垒
+			('SPUE_FIRE_SHIP_FLAG_ATLAS',		032,		'SPUE_TABOR_FLAG.dds',					1, 				1), -- 胡斯车垒
+			('SPUE_UHLAN_FLAG_ATLAS',			032,		'SPUE_Uhlan_Flag.dds',					1, 				1); -- 乌兰骑兵
+
 
 -- 虔信政策树骑士团单位
 INSERT OR REPLACE INTO IconTextureAtlases 
@@ -200,6 +205,25 @@ VALUES		('UNIT_SPUE_FRANCE_FLAG_ATLAS',			32, 		'JFD_ImperialGuardUnitFlag_32.dd
 INSERT INTO IconTextureAtlases 
 			(Atlas, 								IconSize, 	Filename, 										IconsPerRow, 	IconsPerColumn)
 VALUES		('UNIT_SPUE_PERSIA_FLAG_ATLAS',			32, 		'SPUE_PersianKnight_FLag.dds',					1, 				1);
+--===============================================================================================================================================
+-- IconTextureAtlases:Byzantium
+--===============================================================================================================================================
+INSERT INTO IconTextureAtlases 
+			(Atlas, 								IconSize, 	Filename, 										IconsPerRow, 	IconsPerColumn)
+VALUES		('UNIT_SPUE_BYZANTIUM_FLAG1_ATLAS',		32, 		'SPUE_Limitanei_Flag.dds',						1, 				1),
+			('UNIT_SPUE_BYZANTIUM_FLAG2_ATLAS',		32, 		'SPUE_TAGMATA_FLAG.dds',						1, 				1);
+--===============================================================================================================================================
+-- IconTextureAtlases:Rome
+--===============================================================================================================================================
+INSERT INTO IconTextureAtlases 
+			(Atlas, 								IconSize, 	Filename, 										IconsPerRow, 	IconsPerColumn)
+VALUES		('UNIT_SPUE_ROME_FLAG_ATLAS',			32, 		'SPUE_Herculiani_Flag.dds',						1, 				1);
+--===============================================================================================================================================
+-- IconTextureAtlases:Korea
+--===============================================================================================================================================
+INSERT INTO IconTextureAtlases 
+			(Atlas, 								IconSize, 	Filename, 										IconsPerRow, 	IconsPerColumn)
+VALUES		('UNIT_SPUE_KOREA_FLAG_ATLAS',			32, 		'SPUE_panokseon_Flag.dds',						1, 				1);
 --==========================================================================================================================
 -- VP:IconTextureAtlasesa
 --==========================================================================================================================

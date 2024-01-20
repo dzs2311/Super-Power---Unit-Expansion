@@ -1,4 +1,134 @@
 --==========================================================================================================================
+-- ARTDEFINES:Rome
+--==========================================================================================================================	
+-- 赫拉克勒斯卫队
+------------------------------------------------------------------------------------------------------------------------
+INSERT INTO ArtDefine_UnitInfos 
+		(Type, 									DamageStates,	Formation)
+SELECT	'ART_DEF_UNIT_SPUE_ROME_HERCULIANI',	DamageStates, 	Formation
+FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_PIKEMAN';
+
+INSERT INTO ArtDefine_UnitInfoMemberInfos 	
+		(UnitInfoType,							UnitMemberInfoType,							NumMembers)
+VALUES	('ART_DEF_UNIT_SPUE_ROME_HERCULIANI', 	'ART_DEF_UNIT_MEMBER_SPUE_ROME_HERCULIANI',	12);
+
+INSERT INTO ArtDefine_UnitMemberCombats 
+		(UnitMemberType,								EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_ROME_HERCULIANI',		EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation
+FROM ArtDefine_UnitMemberCombats WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_PIKEMAN';
+
+INSERT INTO ArtDefine_UnitMemberCombatWeapons	
+		(UnitMemberType,								"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_ROME_HERCULIANI',		"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberCombatWeapons WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_PIKEMAN';
+
+INSERT INTO ArtDefine_UnitMemberInfos 	
+		(Type, 										Scale,	ZOffset, Domain, Model, 					MaterialTypeTag, MaterialTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_ROME_HERCULIANI',	Scale,	ZOffset, Domain, 'Pikeman_Rome.fxsxml',		MaterialTypeTag, MaterialTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_PIKEMAN';
+
+
+INSERT INTO ArtDefine_StrategicView 
+		(StrategicViewType, 					TileType,	Asset)
+VALUES	('ART_DEF_UNIT_SPUE_ROME_HERCULIANI',	'Unit', 	'SV_SPUE_Herculiani.dds');
+
+--==========================================================================================================================
+-- ARTDEFINES:Byzantium
+--==========================================================================================================================	
+-- 边防军
+------------------------------------------------------------------------------------------------------------------------
+INSERT INTO ArtDefine_UnitInfos 
+		(Type, 										DamageStates,	Formation)
+SELECT	'ART_DEF_UNIT_SPUE_BYZANTIUM_LIMITANEI',	DamageStates, 	Formation
+FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_PIKEMAN';
+
+INSERT INTO ArtDefine_UnitInfoMemberInfos 	
+		(UnitInfoType,								UnitMemberInfoType,								NumMembers)
+VALUES	('ART_DEF_UNIT_SPUE_BYZANTIUM_LIMITANEI', 	'ART_DEF_UNIT_MEMBER_SPUE_BYZANTIUM_LIMITANEI',	12);
+
+INSERT INTO ArtDefine_UnitMemberCombats 
+		(UnitMemberType,									EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_BYZANTIUM_LIMITANEI',		EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation
+FROM ArtDefine_UnitMemberCombats WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_PIKEMAN';
+
+INSERT INTO ArtDefine_UnitMemberCombatWeapons	
+		(UnitMemberType,									"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_BYZANTIUM_LIMITANEI',		"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberCombatWeapons WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_PIKEMAN';
+
+INSERT INTO ArtDefine_UnitMemberInfos 	
+		(Type, 											Scale,	ZOffset, Domain, Model, 					MaterialTypeTag, MaterialTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_BYZANTIUM_LIMITANEI',	Scale,	ZOffset, Domain, 'limitaneiV2.fxsxml',		MaterialTypeTag, MaterialTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_PIKEMAN';
+
+
+INSERT INTO ArtDefine_StrategicView 
+		(StrategicViewType, 						TileType,	Asset)
+VALUES	('ART_DEF_UNIT_SPUE_BYZANTIUM_LIMITANEI',	'Unit', 	'SV_SPUE_Limitanei.dds');
+------------------------------------------------------------------------------------------------------------------------
+-- 皇家近卫
+------------------------------------------------------------------------------------------------------------------------
+INSERT INTO ArtDefine_UnitInfos 
+		(Type, 										DamageStates,	Formation)
+SELECT	'ART_DEF_UNIT_SPUE_BYZANTIUM_TAGMATA',		DamageStates, 	Formation
+FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_KNIGHT';
+
+INSERT INTO ArtDefine_UnitInfoMemberInfos 	
+		(UnitInfoType,								UnitMemberInfoType,								NumMembers)
+VALUES	('ART_DEF_UNIT_SPUE_BYZANTIUM_TAGMATA', 	'ART_DEF_UNIT_MEMBER_SPUE_BYZANTIUM_TAGMATA',	5);
+
+INSERT INTO ArtDefine_UnitMemberCombats 
+		(UnitMemberType,								EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_BYZANTIUM_TAGMATA',	EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation
+FROM ArtDefine_UnitMemberCombats WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_KNIGHT';
+
+INSERT INTO ArtDefine_UnitMemberCombatWeapons	
+		(UnitMemberType,									"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_BYZANTIUM_TAGMATA',		"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberCombatWeapons WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_KNIGHT';
+
+INSERT INTO ArtDefine_UnitMemberInfos 	
+		(Type, 											Scale,	ZOffset, Domain, Model, 							MaterialTypeTag, MaterialTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_BYZANTIUM_TAGMATA',	Scale,	ZOffset, Domain, 'byzantine_tagmata.fxsxml',		MaterialTypeTag, MaterialTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_KNIGHT';
+
+INSERT INTO ArtDefine_StrategicView 
+		(StrategicViewType, 					TileType,	Asset)
+VALUES	('ART_DEF_UNIT_SPUE_BYZANTIUM_TAGMATA',	'Unit', 	'SV_SPUE_TAGMATA.dds');
+--==========================================================================================================================
+-- ARTDEFINES:Korea
+--==========================================================================================================================	
+-- 板屋船
+------------------------------------------------------------------------------------------------------------------------
+INSERT INTO ArtDefine_UnitInfos 
+		(Type, 									DamageStates,	Formation)
+SELECT	'ART_DEF_UNIT_SPUE_KOREA_PANOKSEON',	DamageStates, 	Formation
+FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_FRIGATE';
+
+INSERT INTO ArtDefine_UnitInfoMemberInfos 	
+		(UnitInfoType,								UnitMemberInfoType,							NumMembers)
+SELECT	'ART_DEF_UNIT_SPUE_KOREA_PANOKSEON', 		'ART_DEF_UNIT_MEMBER_SPUE_KOREA_PANOKSEON',	NumMembers
+FROM ArtDefine_UnitInfoMemberInfos WHERE UnitInfoType = 'ART_DEF_UNIT_FRIGATE';
+
+INSERT INTO ArtDefine_UnitMemberCombats 
+		(UnitMemberType,							EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_KOREA_PANOKSEON',	EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation
+FROM ArtDefine_UnitMemberCombats WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_FRIGATE';
+
+INSERT INTO ArtDefine_UnitMemberCombatWeapons	
+		(UnitMemberType,							"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_KOREA_PANOKSEON',	"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberCombatWeapons WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_FRIGATE';
+
+INSERT INTO ArtDefine_UnitMemberInfos 	
+		(Type, 										Scale,	ZOffset, Domain, Model, 					MaterialTypeTag, MaterialTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_KOREA_PANOKSEON',	Scale,	ZOffset, Domain, 'korea_light.fxsxml',		MaterialTypeTag, MaterialTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_FRIGATE';
+
+INSERT INTO ArtDefine_StrategicView 
+		(StrategicViewType, 					TileType,	Asset)
+VALUES	('ART_DEF_UNIT_SPUE_KOREA_PANOKSEON',	'Unit', 	'SV_SPUE_panokseon.dds');
+--==========================================================================================================================
 -- ARTDEFINES:Ottomans
 --==========================================================================================================================	
 -- 奥斯曼私掠舰
@@ -85,6 +215,36 @@ INSERT INTO ArtDefine_UnitMemberInfos
 		(Type, 											Scale, ZOffset, Domain, Model, 				MaterialTypeTag, MaterialTypeSoundOverrideTag)
 SELECT	'ART_DEF_UNIT_MEMBER_SPUE_PERSIA_QIZILBASH',	Scale, ZOffset, Domain, 'Qizilbash.fxsxml',	MaterialTypeTag, MaterialTypeSoundOverrideTag
 FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_LANCER';
+------------------------------------------------------------------------------------------------------------------------
+-- 圣陨骑兵
+------------------------------------------------------------------------------------------------------------------------
+INSERT INTO ArtDefine_UnitInfos 
+		(Type, 									DamageStates,	Formation)
+SELECT	'ART_DEF_UNIT_SPUE_PERSIA_GYAN',		DamageStates, 	Formation
+FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_KNIGHT';
+
+INSERT INTO ArtDefine_UnitInfoMemberInfos 	
+		(UnitInfoType,						UnitMemberInfoType,						NumMembers)
+VALUES	('ART_DEF_UNIT_SPUE_PERSIA_GYAN', 	'ART_DEF_UNIT_MEMBER_SPUE_PERSIA_GYAN',	5);
+
+INSERT INTO ArtDefine_UnitMemberCombats 
+		(UnitMemberType,						EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_PERSIA_GYAN',	EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation
+FROM ArtDefine_UnitMemberCombats WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_KNIGHT';
+
+INSERT INTO ArtDefine_UnitMemberCombatWeapons	
+		(UnitMemberType,							"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_PERSIA_GYAN',		"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberCombatWeapons WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_KNIGHT';
+
+INSERT INTO ArtDefine_UnitMemberInfos 	
+		(Type, 									Scale,	ZOffset, Domain, Model, 						MaterialTypeTag, MaterialTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_PERSIA_GYAN',	Scale,	ZOffset, Domain, 'Knight_Persia_v2.fxsxml',		MaterialTypeTag, MaterialTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_KNIGHT';
+
+INSERT INTO ArtDefine_StrategicView 
+		(StrategicViewType, 				TileType,	Asset)
+VALUES	('ART_DEF_UNIT_SPUE_PERSIA_GYAN',	'Unit', 	'SV_SPUE_PersianKnight.dds');
 --==========================================================================================================================
 -- ARTDEFINES:China
 --==========================================================================================================================	
@@ -2871,6 +3031,74 @@ INSERT INTO ArtDefine_UnitMemberInfos
 SELECT	'ART_DEF_UNIT_MEMBER_SPUE_HESSIAN',	Scale,	ZOffset, Domain, 'Hessian.fxsxml',	MaterialTypeTag, MaterialTypeSoundOverrideTag
 FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_RIFLEMAN';
 ------------------------------------------------------------------------------------------------------------------------
+--佣兵：乌兰骑兵--
+------------------------------------------------------------------------------------------------------------------------
+INSERT INTO ArtDefine_UnitInfos (Type,DamageStates,Formation)
+    SELECT    ('ART_DEF_UNIT_SPUE_UHLAN'), DamageStates, Formation
+    FROM ArtDefine_UnitInfos WHERE (Type = 'ART_DEF_UNIT_LANCER');
+
+INSERT INTO ArtDefine_UnitInfoMemberInfos VALUES    ('ART_DEF_UNIT_SPUE_UHLAN', 'ART_DEF_UNIT_MEMBER_SPUE_UHLAN', "5");
+    
+INSERT INTO ArtDefine_UnitMemberCombats (UnitMemberType, EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
+    SELECT    ('ART_DEF_UNIT_MEMBER_SPUE_UHLAN'), EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation
+    FROM ArtDefine_UnitMemberCombats WHERE (UnitMemberType = 'ART_DEF_UNIT_MEMBER_LANCER');
+
+INSERT INTO ArtDefine_UnitMemberCombatWeapons (UnitMemberType, "Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag)
+    SELECT ('ART_DEF_UNIT_MEMBER_SPUE_UHLAN'), "Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag
+    FROM ArtDefine_UnitMemberCombatWeapons WHERE (UnitMemberType = 'ART_DEF_UNIT_LANCER');
+
+INSERT INTO ArtDefine_UnitMemberInfos (Type, Scale, ZOffset, Domain, Model, MaterialTypeTag, MaterialTypeSoundOverrideTag)
+    SELECT    ('ART_DEF_UNIT_MEMBER_SPUE_UHLAN'), Scale, ZOffset, Domain, ('gerlr1.fxsxml'), MaterialTypeTag, MaterialTypeSoundOverrideTag
+    FROM ArtDefine_UnitMemberInfos WHERE (Type = 'ART_DEF_UNIT_MEMBER_LANCER');
+	
+INSERT INTO ArtDefine_StrategicView 
+		(StrategicViewType,					TileType,			Asset) 
+VALUES	('ART_DEF_UNIT_SPUE_UHLAN',			'Unit',				'SV_SPUE_Uhlan.dds');
+------------------------------------------------------------------------------------------------------------------------
+--佣兵：车垒--
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+-- ArtDefine_StrategicView
+------------------------------------------------------------------------------------------------------------------------
+INSERT INTO ArtDefine_StrategicView 
+		(StrategicViewType, 		TileType,	Asset)
+VALUES	('ART_DEF_UNIT_SPUE_TABOR',	'Unit', 	'sv_SPUE_Tabor.dds');
+------------------------------------------------------------------------------------------------------------------------
+-- ArtDefine_UnitInfos
+------------------------------------------------------------------------------------------------------------------------		
+INSERT INTO ArtDefine_UnitInfos 
+		(Type, 						DamageStates,	Formation)
+SELECT	'ART_DEF_UNIT_SPUE_TABOR', 	DamageStates, 	'ThreeInLine'
+FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_CHARIOT_ARCHER'; 
+------------------------------------------------------------------------------------------------------------------------
+-- ArtDefine_UnitInfoMemberInfos
+------------------------------------------------------------------------------------------------------------------------
+INSERT INTO ArtDefine_UnitInfoMemberInfos 	
+		(UnitInfoType,				UnitMemberInfoType,				  NumMembers)
+SELECT	'ART_DEF_UNIT_SPUE_TABOR', 	'ART_DEF_UNIT_MEMBER_SPUE_TABOR',  1
+FROM ArtDefine_UnitInfoMemberInfos WHERE UnitInfoType = 'ART_DEF_UNIT_CHARIOT_ARCHER';
+------------------------------------------------------------------------------------------------------------------------
+-- ArtDefine_UnitMemberCombats
+------------------------------------------------------------------------------------------------------------------------
+INSERT INTO ArtDefine_UnitMemberCombats 
+		(UnitMemberType,					EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_TABOR',	EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation
+FROM ArtDefine_UnitMemberCombats WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_CHARIOTARCHER';
+------------------------------------------------------------------------------------------------------------------------
+-- ArtDefine_UnitMemberCombatWeapons
+------------------------------------------------------------------------------------------------------------------------
+INSERT INTO ArtDefine_UnitMemberCombatWeapons	
+		(UnitMemberType,					"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_TABOR',	"Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberCombatWeapons WHERE UnitMemberType = 'ART_DEF_UNIT_MEMBER_CHARIOTARCHER';
+------------------------------------------------------------------------------------------------------------------------
+-- ArtDefine_UnitMemberInfos
+------------------------------------------------------------------------------------------------------------------------
+INSERT INTO ArtDefine_UnitMemberInfos 	
+		(Type, 								Scale, ZOffset, Domain, Model, 			 MaterialTypeTag, MaterialTypeSoundOverrideTag)
+SELECT	'ART_DEF_UNIT_MEMBER_SPUE_TABOR',	Scale, ZOffset, Domain, 'tabor.fxsxml',  MaterialTypeTag, MaterialTypeSoundOverrideTag
+FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_CHARIOTARCHER';
+------------------------------------------------------------------------------------------------------------------------
 --自主：圣树守卫--
 ------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ArtDefine_StrategicView 
@@ -3371,30 +3599,6 @@ FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_U_BYZANTIUM_DRO
 INSERT INTO ArtDefine_StrategicView 
 		(StrategicViewType, 					TileType,		Asset)
 VALUES	('ART_DEF_UNIT_SPUE_OCEAN_FIRE',		'Unit', 		'SV_SPUE_OceanFire.dds');
-------------------------------------------------------------------------------------------------------------------------
---赞助：乌兰骑兵--
-------------------------------------------------------------------------------------------------------------------------
--- INSERT INTO ArtDefine_UnitInfos (Type,DamageStates,Formation)
---     SELECT    ('ART_DEF_UNIT_SPUE_UHLAN'), DamageStates, Formation
---     FROM ArtDefine_UnitInfos WHERE (Type = 'ART_DEF_UNIT_LANCER');
-
--- INSERT INTO ArtDefine_UnitInfoMemberInfos VALUES    ('ART_DEF_UNIT_SPUE_UHLAN', 'ART_DEF_UNIT_MEMBER_SPUE_UHLAN', "5");
-    
--- INSERT INTO ArtDefine_UnitMemberCombats (UnitMemberType, EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
---     SELECT    ('ART_DEF_UNIT_MEMBER_SPUE_UHLAN'), EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation
---     FROM ArtDefine_UnitMemberCombats WHERE (UnitMemberType = 'ART_DEF_UNIT_MEMBER_LANCER');
-
--- INSERT INTO ArtDefine_UnitMemberCombatWeapons (UnitMemberType, "Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag)
---     SELECT ('ART_DEF_UNIT_MEMBER_SPUE_UHLAN'), "Index", SubIndex, ID, VisKillStrengthMin, VisKillStrengthMax, ProjectileSpeed, ProjectileTurnRateMin, ProjectileTurnRateMax, HitEffect, HitEffectScale, HitRadius, ProjectileChildEffectScale, AreaDamageDelay, ContinuousFire, WaitForEffectCompletion, TargetGround, IsDropped, WeaponTypeTag, WeaponTypeSoundOverrideTag
---     FROM ArtDefine_UnitMemberCombatWeapons WHERE (UnitMemberType = 'ART_DEF_UNIT_LANCER');
-
--- INSERT INTO ArtDefine_UnitMemberInfos (Type, Scale, ZOffset, Domain, Model, MaterialTypeTag, MaterialTypeSoundOverrideTag)
---     SELECT    ('ART_DEF_UNIT_MEMBER_SPUE_UHLAN'), Scale, ZOffset, Domain, ('gerlr1.fxsxml'), MaterialTypeTag, MaterialTypeSoundOverrideTag
---     FROM ArtDefine_UnitMemberInfos WHERE (Type = 'ART_DEF_UNIT_MEMBER_LANCER');
-	
--- INSERT INTO ArtDefine_StrategicView 
--- 		(StrategicViewType,					TileType,			Asset) 
--- VALUES	('ART_DEF_UNIT_SPUE_UHLAN',			'Unit',				'SV_SPUE_Uhlan.dds');
 ------------------------------------------------------------------------------------------------------------------------
 --秩序：帝王炎黄坦克--
 ------------------------------------------------------------------------------------------------------------------------

@@ -322,13 +322,13 @@
 				[NEWLINE][ICON_BULLET]每占领一个原始首都，军事单位攻击伤害固定+1。
 			</Text>
 		</Row>
-		<!--******************************赫拉克勒斯军团*******************************-->
+		<!--******************************赫拉克勒斯卫队*******************************-->
 		<Row Tag="TXT_KEY_UNIT_SPUE_ROME_HERCULIANI">
-			<Text>[COLOR_CYAN]赫拉克勒斯军团[ENDCOLOR]</Text>
+			<Text>[COLOR_CYAN]赫拉克勒斯卫队[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_ROME_HERCULIANI_HELP">
 			<Text>
-				[COLOR_CYAN]赫拉克勒斯军团[ENDCOLOR]是罗马专属的[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]的代表性单位，代替[COLOR_CYAN]禁卫军[ENDCOLOR]。
+				[COLOR_CYAN]赫拉克勒斯卫队[ENDCOLOR]是罗马专属的[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]的代表性单位，代替[COLOR_CYAN]禁卫军[ENDCOLOR]。
 				[NEWLINE]位于场上时可为首都地块供+5[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出，同时可在回合结束时提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+3经验，位于领土外则可以修建能够控制周围1格范围的禁卫军堡垒。
 			</Text>
 		</Row>
