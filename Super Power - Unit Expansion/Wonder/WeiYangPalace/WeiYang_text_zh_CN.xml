@@ -4,7 +4,7 @@
 	<Language_zh_CN>
 		<!-- Description tags -->
 		<Row Tag="TXT_KEY_BUILDING_SPUE_WEIYANG_PALACE">
-			<Text>未央宫</Text>
+			<Text>*未央宫</Text>
 		</Row>
 		<!-- Help tags -->
 		<Row Tag="TXT_KEY_WONDER_SPUE_WEIYANG_PALACE_HELP">

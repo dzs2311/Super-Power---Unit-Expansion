@@ -1344,6 +1344,139 @@ INSERT INTO Unit_ResourceQuantityRequirements
 SELECT	'UNIT_SPUE_ELMETI_ELITE',	 	ResourceType, Cost
 FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_KNIGHT';
 --==========================================================================================================================	
+-- 战争车垒 -- 商业解锁
+--==========================================================================================================================
+INSERT INTO UnitClasses
+		(Type,							Description,					DefaultUnit,			MaxPlayerInstances)
+VALUES	('UNITCLASS_SPUE_TABOR',		'TXT_KEY_UNIT_SPUE_TABOR',		'UNIT_SPUE_TABOR',		5);
+
+INSERT INTO Units 	
+		(Type, 					Class, 						PrereqTech, PolicyType,				Combat, Range, ExtraMaintenanceCost,	Special, Cost, 		FaithCost,  HurryCostModifier, PurchaseOnly,	RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,				Civilopedia,						Strategy,	Help,								Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 				UnitFlagIconOffset, UnitFlagAtlas,					PortraitIndex, 	IconAtlas,				NoMinorGifts)
+SELECT	'UNIT_SPUE_TABOR', 		'UNITCLASS_SPUE_TABOR', 	PrereqTech, 'POLICY_SPUE_TABOR',	Combat, 1, 	   ExtraMaintenanceCost,	Special, Cost/2, 	FaithCost,  1, 				   1, 				RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_TABOR',	'TXT_KEY_CIV5_SPUE_TABOR_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_TABOR_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_BALLISTICS', 	XPValueAttack, XPValueDefense, 'UNITCLASS_ANTI_TANK_GUN','ART_DEF_UNIT_SPUE_TABOR',	0,					'SPUE_WARWARGON_FLAG_ATLAS',	35,				'SPUE02_UNITS_ATLAS',	1
+FROM Units WHERE Type = 'UNIT_GERMAN_LANDSKNECHT';
+
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 			UnitClassType)
+VALUES	('UNIT_SPUE_TABOR',	'UNITCLASS_ANTI_TANK_GUN');
+
+INSERT INTO Unit_FreePromotions
+		(UnitType, 				PromotionType)
+VALUES	('UNIT_SPUE_TABOR', 	'PROMOTION_ANTI_MOUNTED'),
+		('UNIT_SPUE_TABOR', 	'PROMOTION_NO_CASUALTIES'),
+		('UNIT_SPUE_TABOR', 	'PROMOTION_SPUE_TABOR');
+
+INSERT INTO Unit_BuildingClassRequireds 	
+		(UnitType, 				BuildingClassType)
+SELECT	'UNIT_SPUE_TABOR',		BuildingClassType
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+
+INSERT INTO UnitGameplay2DScripts 	
+		(UnitType, 				SelectionSound, FirstSelectionSound)
+SELECT	'UNIT_SPUE_TABOR',		SelectionSound, FirstSelectionSound
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+
+INSERT INTO Unit_AITypes 	
+		(UnitType, 				UnitAIType)
+SELECT	'UNIT_SPUE_TABOR',		UnitAIType
+FROM Unit_AITypes WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+
+INSERT INTO Unit_Flavors 	
+		(UnitType, 				FlavorType, Flavor)
+SELECT	'UNIT_SPUE_TABOR',	   	FlavorType, Flavor
+FROM Unit_Flavors WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';	
+
+-- INSERT INTO Unit_ResourceQuantityRequirements 	
+-- 		(UnitType, 				   ResourceType, Cost)
+-- SELECT	'UNIT_SPUE_TABOR',	   ResourceType, Cost
+-- FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+-- 胡斯车垒
+INSERT INTO Units 	
+		(Type, 						Class, 						PrereqTech, PolicyType,				RangedCombat,		Combat,		Range, ExtraMaintenanceCost,	Special, Cost, 	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,						Civilopedia,							Strategy,	Help,									Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 	UnitArtInfo, 				UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,				NoMinorGifts)
+SELECT	'UNIT_SPUE_TABOR_ELITE', 	'UNITCLASS_SPUE_TABOR', 	PrereqTech, 'POLICY_SPUE_TABOR',	RangedCombat+10,	Combat+10,	1, 	   ExtraMaintenanceCost,	Special, -1,	FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_TABOR_ELITE',	'TXT_KEY_CIV5_SPUE_TABOR_ELITE_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_TABOR_ELITE_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_BALLISTICS', 	XPValueAttack, XPValueDefense, 'UNITCLASS_ANTI_TANK_GUN', 	'ART_DEF_UNIT_SPUE_TABOR',	0,					'SPUE_TABOR_FLAG_ATLAS',	35,				'SPUE02_UNITS_ATLAS',	1
+FROM Units WHERE Type = 'UNIT_GERMAN_LANDSKNECHT';
+
+UPDATE Units SET ProjectPrereq = 'PROJECT_SPUE_TABOR_TRAINING' WHERE Type = 'UNIT_SPUE_TABOR_ELITE';
+
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 					UnitClassType)
+VALUES	('UNIT_SPUE_TABOR_ELITE',	'UNITCLASS_ANTI_TANK_GUN');
+
+INSERT INTO Unit_FreePromotions
+		(UnitType, 					PromotionType)
+VALUES	('UNIT_SPUE_TABOR_ELITE', 	'PROMOTION_ANTI_MOUNTED'),
+		('UNIT_SPUE_TABOR_ELITE', 	'PROMOTION_SPUE_TABOR_ELITE'),
+		('UNIT_SPUE_TABOR_ELITE', 	'PROMOTION_SPUE_TABOR');
+
+INSERT INTO Unit_BuildingClassRequireds 	
+		(UnitType, 						BuildingClassType)
+SELECT	'UNIT_SPUE_TABOR_ELITE',		BuildingClassType
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+
+INSERT INTO UnitGameplay2DScripts 	
+		(UnitType, 						SelectionSound, FirstSelectionSound)
+SELECT	'UNIT_SPUE_TABOR_ELITE',		SelectionSound, FirstSelectionSound
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+
+INSERT INTO Unit_AITypes 	
+		(UnitType, 						UnitAIType)
+SELECT	'UNIT_SPUE_TABOR_ELITE',		UnitAIType
+FROM Unit_AITypes WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+
+INSERT INTO Unit_Flavors 	
+		(UnitType, 				   		FlavorType, Flavor)
+SELECT	'UNIT_SPUE_TABOR_ELITE',	    FlavorType, Flavor
+FROM Unit_Flavors WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';	
+
+INSERT INTO Unit_ResourceQuantityRequirements 	
+		(UnitType, 				   		ResourceType, Cost)
+SELECT	'UNIT_SPUE_TABOR_ELITE',	    ResourceType, Cost
+FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_GERMAN_LANDSKNECHT';
+--==========================================================================================================================	
+-- 乌兰骑兵 -- 商业解锁
+--==========================================================================================================================
+INSERT INTO UnitClasses
+		(Type,							Description,				DefaultUnit,		MaxPlayerInstances)
+VALUES	('UNITCLASS_SPUE_UHLAN',		'TXT_KEY_UNIT_SPUE_UHLAN',	'UNIT_SPUE_UHLAN',	4);
+
+INSERT INTO Units 	
+		(Type, 				Class, 					PrereqTech, PolicyType,				RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,		FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,				Civilopedia,					Strategy,	Help,							Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 				UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,			NoMinorGifts)
+SELECT	'UNIT_SPUE_UHLAN', 'UNITCLASS_SPUE_UHLAN',	PrereqTech, 'POLICY_SPUE_UHLAN', 	RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost/2,	0, 			HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_UHLAN',	'TXT_KEY_CIV5_SPUE_UHLAN_TEXT', Strategy, 	'TXT_KEY_UNIT_SPUE_UHLAN_HELP', Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_UHLAN',	0,					'SPUE_UHLAN_FLAG_ATLAS',	33,				'SPUE_UNITS_ATLAS',	1
+FROM Units WHERE Type = 'UNIT_LANCER';
+
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 			UnitClassType)
+VALUES	('UNIT_SPUE_UHLAN',	'UNITCLASS_WWI_TANK');
+
+INSERT INTO Unit_FreePromotions
+		(UnitType, 				PromotionType)
+VALUES	('UNIT_SPUE_UHLAN', 	'PROMOTION_KNIGHT_COMBAT'),
+		('UNIT_SPUE_UHLAN', 	'PROMOTION_NO_CASUALTIES');
+
+INSERT INTO Unit_BuildingClassRequireds 	
+		(UnitType, 			 BuildingClassType)
+SELECT	'UNIT_SPUE_UHLAN',	 BuildingClassType
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_LANCER';
+
+INSERT INTO UnitGameplay2DScripts 	
+		(UnitType, 			SelectionSound, FirstSelectionSound)
+SELECT	'UNIT_SPUE_UHLAN', 	SelectionSound, FirstSelectionSound
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_LANCER';
+
+INSERT INTO Unit_AITypes 	
+		(UnitType, 			 UnitAIType)
+SELECT	'UNIT_SPUE_UHLAN',   UnitAIType
+FROM Unit_AITypes WHERE UnitType = 'UNIT_LANCER';
+
+INSERT INTO Unit_Flavors 	
+		(UnitType, 			FlavorType, Flavor)
+SELECT	'UNIT_SPUE_UHLAN',  FlavorType, Flavor
+FROM Unit_Flavors WHERE UnitType = 'UNIT_LANCER';	
+
+INSERT INTO Unit_ResourceQuantityRequirements 	
+		(UnitType, 			 ResourceType, Cost)
+SELECT	'UNIT_SPUE_UHLAN',	 ResourceType, Cost
+FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_LANCER';
+--==========================================================================================================================	
 -- 黑森佣兵 -- 商业解锁
 --==========================================================================================================================
 INSERT INTO UnitClasses
@@ -1621,6 +1754,10 @@ INSERT INTO Unit_ResourceQuantityRequirements
 		(UnitType, 				 ResourceType, Cost)
 SELECT	'UNIT_SPUE_IRON_TROOP',	 ResourceType, Cost
 FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_MUSKETMAN';
+--==========================================================================================================================	
+-- 乌兰骑兵 -- 商业解锁
+--==========================================================================================================================
+
 --==========================================================================================================================	
 -- 奥古斯都之路
 --==========================================================================================================================

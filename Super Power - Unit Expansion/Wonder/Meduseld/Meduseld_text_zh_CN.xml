@@ -3,7 +3,7 @@
 	<Language_zh_CN>
 		<!-- Description tags -->
 		<Row Tag="TXT_KEY_BUILDING_SPUE_GOLDEN_MEDUSELD">
-			<Text>[COLOR_SELECTED_TEXT]金殿美杜塞尔德[ENDCOLOR]</Text>
+			<Text>[COLOR_SELECTED_TEXT]*金殿美杜塞尔德[ENDCOLOR]</Text>
 		</Row>
 		<!-- Help tags -->
 		<Row Tag="TXT_KEY_WONDER_SPUE_GOLDEN_MEDUSELD_HELP">

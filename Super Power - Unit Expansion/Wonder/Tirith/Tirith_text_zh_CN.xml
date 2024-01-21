@@ -4,7 +4,7 @@
 	<Language_zh_CN>
 		<!-- Description tags -->
 		<Row Tag="TXT_KEY_BUILDING_SPUE_TIRITH">
-			<Text>[COLOR_SELECTED_TEXT]白城米那斯提力斯[ENDCOLOR]</Text>
+			<Text>[COLOR_SELECTED_TEXT]*白城米那斯提力斯[ENDCOLOR]</Text>
 		</Row>
 		<!-- Help tags -->
 		<Row Tag="TXT_KEY_WONDER_SPUE_TIRITH_HELP">

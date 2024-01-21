@@ -62,6 +62,18 @@
 	    	<PortraitIndex>41</PortraitIndex>
 	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
 	    </Row>
+		<!-- 掷出窗外事件 -->
+	    <Row>
+	    	<Type>PROJECT_SPUE_TABOR_TRAINING</Type>
+	    	<Description>TXT_KEY_PROJECT_SPUE_TABOR_TRAINING</Description>
+	    	<Help>TXT_KEY_PROJECT_SPUE_TABOR_TRAINING_HELP</Help>
+	    	<Civilopedia>TXT_KEY_PROJECT_SPUE_TABOR_TRAINING_PEDIA</Civilopedia>
+	    	<!-- <MaxGlobalInstances>1</MaxGlobalInstances> -->
+	    	<MaxTeamInstances>1</MaxTeamInstances>
+	    	<Cost>120</Cost>
+	    	<PortraitIndex>41</PortraitIndex>
+	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
+	    </Row>
 		<!-- 巨人掷弹兵训练计划 -->
 	    <Row>
 	    	<Type>PROJECT_SPUE_HESSIAN_TRAINING</Type>
@@ -110,6 +122,12 @@
 	    	<ProjectType>PROJECT_SPUE_ELMETI_TRAINING</ProjectType>
 	    	<FlavorType>FLAVOR_MOBILE</FlavorType>
 	    	<Flavor>300</Flavor>
+	    </Row>
+		<!-- 掷出窗外事件 -->
+	    <Row>
+	    	<ProjectType>PROJECT_SPUE_TABOR_TRAINING</ProjectType>
+	    	<FlavorType>FLAVOR_DEFENSE</FlavorType>
+	    	<Flavor>60</Flavor>
 	    </Row>
 		<!-- 巨人掷弹兵训练计划 -->
 	    <Row>

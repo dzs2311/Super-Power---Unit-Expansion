@@ -53,6 +53,16 @@
 			<Text>[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]是精英重骑兵单位，拥有强大的防御能力。</Text>
 		</Row>
 
+		<Row Tag="TXT_KEY_PROJECT_SPUE_TABOR_TRAINING">
+			<Text>掷出窗外事件</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_TABOR_TRAINING_HELP">
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]车垒[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]胡斯车垒[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_TABOR_TRAINING_PEDIA">
+			<Text>[COLOR_YIELD_GOLD]胡斯车垒[ENDCOLOR]是精英陆军反骑兵单位，拥有强大的结阵作战能力。</Text>
+		</Row>
+
 		<Row Tag="TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING">
 			<Text>巨人掷弹兵训练计划</Text>
 		</Row>
@@ -935,7 +945,6 @@
 				[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古雇佣兵单位之一，只能通过[ICON_GOLD]金币购买，强而有力的重装步兵单位，拥有海滨地块作战加成和海洋地块移动加成，自带冲击一级，可以拔擢为[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]，购买后可以立即移动，死亡时不会造成人口损失。
 				[NEWLINE]
 				[NEWLINE]完成[COLOR_YIELD_GOLD]安纳托利亚再征服计划[ENDCOLOR]后可以进行永备化改造：[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]。
-
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_VARANGIAN_TEXT">
@@ -1145,6 +1154,79 @@
 			<Text>
 				[NEWLINE][ICON_BULLET]防御时+150%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]单位每承受一次攻击则额外+2[ICON_MOVES]移动力，单位剩余的每点[ICON_MOVES]移动力+50%[ICON_STRENGTH]防御力。
+			</Text>
+		</Row>
+		<!-- **********************战争车垒*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_TABOR">
+			<Text>[COLOR_CYAN]战争车垒[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_TABOR_HELP">
+			<Text>
+				[COLOR_CYAN]战争车垒[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古佣兵单位之一，兼具了反骑兵与反城市/要塞的能力，但是移动缓慢，购买后可以立即移动，死亡时不会造成人口损失。
+				[NEWLINE]
+				[NEWLINE]完成[COLOR_YIELD_GOLD]掷出窗外事件[ENDCOLOR]后可以进行永备化改造：[COLOR_YIELD_GOLD]胡斯车垒[ENDCOLOR]。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_TABOR_TEXT">
+			<Text>
+				马战车最早是由扬 ‧ 杰士卡(John Zizka)应用于1420的胡斯战争中。由于波希米亚的宗教改革家胡斯被教廷以火刑处决，成为压倒波希米亚境内平民的最后一根稻草，这些波希米亚平民早已不满神圣罗马帝国的霸权许久。齐斯卡遂在平民拥护下发起布拉格起义，正面与帝国作战。
+				[NEWLINE]在随后一系列战争中，杰士卡改装了农民的马车，将其变成行动堡垒。数次瓦解了条顿骑士团以及其他十字军的攻势。车垒战法也成为15世纪中后期的活用战术之一 。
+				[NEWLINE]在胡斯战争之后，波西米亚的雇佣兵依然使用车垒作为战胜骑兵和步兵的特殊战术，但随着火炮的发展，至少从大规模战役开始，胡斯车垒渐渐没落：在兰茨胡特继承者战争（War of the Succession of Landshut ）1504年九月12日的文岑巴赫战役（battle of Wenzenbach）中，三百辆战车组成的堡垒被格奥尔格（Georg von Frundsberg）麾下国土佣仆的长炮（culverin）和火枪手击溃。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_TABOR">
+			<Text>车阵</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_TABOR_HELP">
+			<Text></Text>
+		</Row>
+		<!-- **********************胡斯车垒*********************** -->
+
+		<Row Tag="TXT_KEY_UNIT_SPUE_TABOR_ELITE">
+			<Text>[COLOR_YIELD_GOLD]胡斯车垒[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_TABOR_ELITE_HELP">
+			<Text>
+				[COLOR_YIELD_GOLD]胡斯车垒[ENDCOLOR]是[COLOR_CYAN]战争车垒[ENDCOLOR]作为常备军后形成的精锐单位，需要完成[COLOR_YIELD_GOLD]掷出窗外事件[ENDCOLOR]：
+				<!-- [NEWLINE][ICON_BULLET]能够冲锋击退敌方单位，并对其同格单位造成30%的[COLOR_POSITIVE_TEXT]践踏[ENDCOLOR]伤害, 自带冲锋1级；
+				[NEWLINE][ICON_BULLET]可以翻越山脉，无地形移动惩罚，无地形移动损耗；
+				[NEWLINE][ICON_BULLET]复杂地形+50%[ICON_STRENGTH]战斗力，丘陵和山脉的移动力消耗减半；
+				[NEWLINE][ICON_BULLET]移动力+1，单位已消耗的每点移动力+15%[ICON_STRENGTH]攻击力。 -->
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_TABOR_ELITE_TEXT">
+			<Text>
+				马战车最早是由扬 ‧ 杰士卡(John Zizka)应用于1420的胡斯战争中。由于波希米亚的宗教改革家胡斯被教廷以火刑处决，成为压倒波希米亚境内平民的最后一根稻草，这些波希米亚平民早已不满神圣罗马帝国的霸权许久。齐斯卡遂在平民拥护下发起布拉格起义，正面与帝国作战。
+				[NEWLINE]在随后一系列战争中，杰士卡改装了农民的马车，将其变成行动堡垒。数次瓦解了条顿骑士团以及其他十字军的攻势。车垒战法也成为15世纪中后期的活用战术之一 。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_TABOR_ELITE">
+			<Text>独眼的扬 ‧ 杰士卡</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_TABOR_ELITE_HELP">
+			<Text>
+			</Text>
+		</Row>
+		<!-- **********************乌兰骑兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_UHLAN">
+			<Text>[COLOR_CYAN]乌兰骑兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_UHLAN_HELP">
+			<Text>
+				[COLOR_CYAN]乌兰骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，购买后可以立即移动，死亡时不会造成人口损失。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_UHLAN_TEXT">
+			<Text>
+				乌兰骑兵（Uhlan）是指发源自波兰立陶宛，装备骑枪，马刀、手枪的轻骑兵，这些轻骑兵在19世纪早期传统重骑兵衰落后成为欧洲各国常规用途骑兵的样版，后来这个名头用来指代包括法国、俄国，普鲁士、奥地利等国的枪骑兵团。乌兰骑兵通常穿着称为库尔特卡的双襟夹克（kurtka），带有彩色的饰带和肩饰，头戴名叫恰普卡的方顶波兰军帽（czapka），骑枪的枪头之下通常会有一个小燕尾旗。
+				[NEWLINE]在19世纪拿破仑战争开始之后，华沙公国便建立了乌兰骑兵编队，这些波兰枪骑兵在维斯瓦军团（Legion of the Vistula）和帝国卫队第一波兰轻骑兵团中（1st Polish Light Cavalry Regiment of the Imperial Guard）与法国军队并肩作战于西班牙和德国并将这种波兰式的轻骑兵风格散播开来。在索莫谢拉之战（Battle of Somosierra）后，拿破仑说一个波兰骑手比得上十个法国士兵。而法军中其他的中轻骑兵单位则学着乌兰骑兵的样子进行改制。	
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_UHLAN">
+			<Text>荣光之枪</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_UHLAN_HELP">
+			<Text>
 			</Text>
 		</Row>
 		<!-- **********************黑森佣兵*********************** -->

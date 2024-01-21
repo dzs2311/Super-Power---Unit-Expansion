@@ -1,95 +1,4 @@
 --==========================================================================================================================
--- Unique:Byzantium
---==========================================================================================================================
-INSERT INTO Civilization_UnitClassOverrides 
-		(CivilizationType, 						UnitClassType, 					UnitType)
-VALUES	('CIVILIZATION_BYZANTIUM',	            'UNITCLASS_PIKEMAN',			'UNIT_SPUE_BYZANTIUM_LIMITANEI'),
-		('CIVILIZATION_BYZANTIUM',	            'UNITCLASS_SPUE_YULIN_CAVALRY',	'UNIT_SPUE_BYZANTIUM_TAGMATA');
-
--- 边防军
-INSERT INTO Units 	
-		(Type, 			    			   Class, 	PrereqTech, RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, 	FaithCost,  HurryCostModifier, PurchaseOnly, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,					Strategy,	Help,						    			   Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,       XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass,  UnitArtInfo, 								UnitFlagIconOffset, UnitFlagAtlas,						PortraitIndex, 	IconAtlas)
-SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',   Class, 	PrereqTech, RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,	FaithCost,  HurryCostModifier, PurchaseOnly, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_BYZANTIUM_LIMITANEI',	'TXT_KEY_CIV5_XILIUYING_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_BYZANTIUM_LIMITANEI_HELP',  Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_BALLISTICS',  XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass,  'ART_DEF_UNIT_SPUE_BYZANTIUM_LIMITANEI',	0,					'UNIT_SPUE_BYZANTIUM_FLAG1_ATLAS',	37,				'SPUE02_UNITS_ATLAS'
-FROM Units WHERE Type = 'UNIT_PIKEMAN';
-
-INSERT INTO Unit_ClassUpgrades 	
-		(UnitType, 							UnitClassType)
-VALUES	('UNIT_SPUE_BYZANTIUM_LIMITANEI',	'UNITCLASS_TERCIO');
-
-INSERT INTO Unit_FreePromotions
-		(UnitType, 			PromotionType)
-VALUES	('UNIT_SPUE_BYZANTIUM_LIMITANEI', 	'PROMOTION_ANTI_MOUNTED'),
-        ('UNIT_SPUE_BYZANTIUM_LIMITANEI', 	'PROMOTION_HALF_CASUALTIES'),
-        ('UNIT_SPUE_BYZANTIUM_LIMITANEI', 	'PROMOTION_SPUE_BYZANTIUM_LIMITANEI');
-		
-INSERT INTO Unit_BuildingClassRequireds 	
-		(UnitType, 								BuildingClassType)
-SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',		BuildingClassType
-FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_PIKEMAN';
-
-INSERT INTO UnitGameplay2DScripts 	
-		(UnitType, 								SelectionSound, FirstSelectionSound)
-SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',		SelectionSound, FirstSelectionSound
-FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_PIKEMAN';
-
-INSERT INTO Unit_AITypes 	
-		(UnitType, 								UnitAIType)
-SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',		UnitAIType
-FROM Unit_AITypes WHERE UnitType = 'UNIT_PIKEMAN';
-
-INSERT INTO Unit_Flavors 	
-		(UnitType, 			    				FlavorType, Flavor)
-SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',	    FlavorType, Flavor
-FROM Unit_Flavors WHERE UnitType = 'UNIT_PIKEMAN';	
-
-INSERT INTO Unit_ResourceQuantityRequirements 	
-		(UnitType, 			    				ResourceType, Cost)
-SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',	    ResourceType, Cost
-FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_PIKEMAN';
-
--- 皇家近卫
-INSERT INTO Units 	
-		(Type, 					       Class,  PolicyType, PrereqTech, RangedCombat,   Combat, Range, Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves, CombatClass, Domain, DefaultUnitAI, Description,	                        Civilopedia,	                                Strategy,   Help,	                                		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,  XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,                            UnitFlagIconOffset, UnitFlagAtlas,	                	PortraitIndex, 	IconAtlas)
-SELECT	'UNIT_SPUE_BYZANTIUM_TAGMATA', Class,  PolicyType, PrereqTech, RangedCombat,   Combat, Range, Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves, CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_BYZANTIUM_TAGMATA',	'TXT_KEY_CIV5_SPUE_BYZANTIUM_TAGMATA_TEXT', 	Strategy,   'TXT_KEY_UNIT_SPUE_BYZANTIUM_TAGMATA_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,  XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_BYZANTIUM_TAGMATA',	0,	                'UNIT_SPUE_BYZANTIUM_FLAG2_ATLAS',	38,	            'SPUE02_UNITS_ATLAS'
-FROM Units WHERE Type = 'UNIT_SPUE_YULIN_CAVALRY';
-
-INSERT INTO Unit_ClassUpgrades 	
-		(UnitType, 					    UnitClassType)
-VALUES	('UNIT_SPUE_BYZANTIUM_TAGMATA',	'UNITCLASS_LANCER');
-
-INSERT INTO Unit_FreePromotions
-		(UnitType, 					        PromotionType)
-VALUES	('UNIT_SPUE_BYZANTIUM_TAGMATA', 	'PROMOTION_KNIGHT_COMBAT'),
-		('UNIT_SPUE_BYZANTIUM_TAGMATA', 	'PROMOTION_SPUE_BYZANTIUM_TAGMATA');
-
-INSERT INTO Unit_BuildingClassRequireds 	
-		(UnitType, 				       BuildingClassType)
-SELECT	'UNIT_SPUE_BYZANTIUM_TAGMATA', BuildingClassType
-FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_KNIGHT';
-
-INSERT INTO UnitGameplay2DScripts 	
-		(UnitType, 				       SelectionSound, FirstSelectionSound)
-SELECT	'UNIT_SPUE_BYZANTIUM_TAGMATA', SelectionSound, FirstSelectionSound
-FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_KNIGHT';
-
-INSERT INTO Unit_AITypes 	
-		(UnitType, 				       UnitAIType)
-SELECT	'UNIT_SPUE_BYZANTIUM_TAGMATA', UnitAIType
-FROM Unit_AITypes WHERE UnitType = 'UNIT_KNIGHT';
-
-INSERT INTO Unit_Flavors 	
-		(UnitType, 				       FlavorType, Flavor)
-SELECT	'UNIT_SPUE_BYZANTIUM_TAGMATA', FlavorType, Flavor
-FROM Unit_Flavors WHERE UnitType = 'UNIT_KNIGHT';	
-
-INSERT INTO Unit_ResourceQuantityRequirements 	
-		(UnitType, 				        ResourceType, Cost)
-SELECT	'UNIT_SPUE_BYZANTIUM_TAGMATA', ResourceType, Cost
-FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_KNIGHT';
---==========================================================================================================================
--- Unique：Rome
---==========================================================================================================================
---==========================================================================================================================
 -- Unique:Ottoman
 --==========================================================================================================================
 INSERT INTO Civilization_UnitClassOverrides 
@@ -463,3 +372,230 @@ INSERT INTO Unit_ResourceQuantityRequirements
 		(UnitType, 				  	 		ResourceType, Cost)
 SELECT	'UNIT_SPUE_FRANCE_IMPERIAL_GUARD', 	ResourceType, Cost
 FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_RIFLEMAN';
+--==========================================================================================================================
+-- Unique:Byzantium
+--==========================================================================================================================
+INSERT INTO Civilization_UnitClassOverrides 
+		(CivilizationType, 						UnitClassType, 					UnitType)
+VALUES	('CIVILIZATION_BYZANTIUM',	            'UNITCLASS_PIKEMAN',			'UNIT_SPUE_BYZANTIUM_LIMITANEI'),
+		('CIVILIZATION_BYZANTIUM',	            'UNITCLASS_SPUE_YULIN_CAVALRY',	'UNIT_SPUE_BYZANTIUM_TAGMATA');
+
+-- 边防军
+INSERT INTO Units 	
+		(Type, 			    			   Class, 	PrereqTech, RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, 	FaithCost,  HurryCostModifier, PurchaseOnly, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,					Strategy,	Help,						    			   Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,       XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass,  UnitArtInfo, 								UnitFlagIconOffset, UnitFlagAtlas,						PortraitIndex, 	IconAtlas)
+SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',   Class, 	PrereqTech, RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,	FaithCost,  HurryCostModifier, PurchaseOnly, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_BYZANTIUM_LIMITANEI',	'TXT_KEY_CIV5_XILIUYING_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_BYZANTIUM_LIMITANEI_HELP',  Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_BALLISTICS',  XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass,  'ART_DEF_UNIT_SPUE_BYZANTIUM_LIMITANEI',	0,					'UNIT_SPUE_BYZANTIUM_FLAG1_ATLAS',	37,				'SPUE02_UNITS_ATLAS'
+FROM Units WHERE Type = 'UNIT_PIKEMAN';
+
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 							UnitClassType)
+VALUES	('UNIT_SPUE_BYZANTIUM_LIMITANEI',	'UNITCLASS_TERCIO');
+
+INSERT INTO Unit_FreePromotions
+		(UnitType, 			PromotionType)
+VALUES	('UNIT_SPUE_BYZANTIUM_LIMITANEI', 	'PROMOTION_ANTI_MOUNTED'),
+        ('UNIT_SPUE_BYZANTIUM_LIMITANEI', 	'PROMOTION_HALF_CASUALTIES'),
+        ('UNIT_SPUE_BYZANTIUM_LIMITANEI', 	'PROMOTION_SPUE_BYZANTIUM_LIMITANEI');
+		
+INSERT INTO Unit_BuildingClassRequireds 	
+		(UnitType, 								BuildingClassType)
+SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',		BuildingClassType
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_PIKEMAN';
+
+INSERT INTO UnitGameplay2DScripts 	
+		(UnitType, 								SelectionSound, FirstSelectionSound)
+SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',		SelectionSound, FirstSelectionSound
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_PIKEMAN';
+
+INSERT INTO Unit_AITypes 	
+		(UnitType, 								UnitAIType)
+SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',		UnitAIType
+FROM Unit_AITypes WHERE UnitType = 'UNIT_PIKEMAN';
+
+INSERT INTO Unit_Flavors 	
+		(UnitType, 			    				FlavorType, Flavor)
+SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',	    FlavorType, Flavor
+FROM Unit_Flavors WHERE UnitType = 'UNIT_PIKEMAN';	
+
+INSERT INTO Unit_ResourceQuantityRequirements 	
+		(UnitType, 			    				ResourceType, Cost)
+SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',	    ResourceType, Cost
+FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_PIKEMAN';
+
+-- 皇家近卫
+INSERT INTO Units 	
+		(Type, 					       Class,  PolicyType, PrereqTech, RangedCombat,   Combat, Range, Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves, CombatClass, Domain, DefaultUnitAI, Description,	                        Civilopedia,	                                Strategy,   Help,	                                		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,  XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,                            UnitFlagIconOffset, UnitFlagAtlas,	                	PortraitIndex, 	IconAtlas)
+SELECT	'UNIT_SPUE_BYZANTIUM_TAGMATA', Class,  PolicyType, PrereqTech, RangedCombat,   Combat, Range, Special, Cost, Cost,  	 HurryCostModifier, RequiresFaithPurchaseEnabled, Moves, CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_BYZANTIUM_TAGMATA',	'TXT_KEY_CIV5_SPUE_BYZANTIUM_TAGMATA_TEXT', 	Strategy,   'TXT_KEY_UNIT_SPUE_BYZANTIUM_TAGMATA_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,  XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_BYZANTIUM_TAGMATA',	0,	                'UNIT_SPUE_BYZANTIUM_FLAG2_ATLAS',	38,	            'SPUE02_UNITS_ATLAS'
+FROM Units WHERE Type = 'UNIT_SPUE_YULIN_CAVALRY';
+
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 					    UnitClassType)
+VALUES	('UNIT_SPUE_BYZANTIUM_TAGMATA',	'UNITCLASS_LANCER');
+
+INSERT INTO Unit_FreePromotions
+		(UnitType, 					        PromotionType)
+VALUES	('UNIT_SPUE_BYZANTIUM_TAGMATA', 	'PROMOTION_KNIGHT_COMBAT'),
+		('UNIT_SPUE_BYZANTIUM_TAGMATA', 	'PROMOTION_ARMOR_PLATING_III'),
+		('UNIT_SPUE_BYZANTIUM_TAGMATA', 	'PROMOTION_SPUE_BYZANTIUM_TAGMATA');
+
+INSERT INTO Unit_BuildingClassRequireds 	
+		(UnitType, 				       BuildingClassType)
+SELECT	'UNIT_SPUE_BYZANTIUM_TAGMATA', BuildingClassType
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_KNIGHT';
+
+INSERT INTO UnitGameplay2DScripts 	
+		(UnitType, 				       SelectionSound, FirstSelectionSound)
+SELECT	'UNIT_SPUE_BYZANTIUM_TAGMATA', SelectionSound, FirstSelectionSound
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_KNIGHT';
+
+INSERT INTO Unit_AITypes 	
+		(UnitType, 				       UnitAIType)
+SELECT	'UNIT_SPUE_BYZANTIUM_TAGMATA', UnitAIType
+FROM Unit_AITypes WHERE UnitType = 'UNIT_KNIGHT';
+
+INSERT INTO Unit_Flavors 	
+		(UnitType, 				       FlavorType, Flavor)
+SELECT	'UNIT_SPUE_BYZANTIUM_TAGMATA', FlavorType, Flavor
+FROM Unit_Flavors WHERE UnitType = 'UNIT_KNIGHT';	
+
+INSERT INTO Unit_ResourceQuantityRequirements 	
+		(UnitType, 				       ResourceType, Cost)
+SELECT	'UNIT_SPUE_BYZANTIUM_TAGMATA', ResourceType, Cost
+FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_KNIGHT';
+--==========================================================================================================================
+-- Unique:Korea
+--==========================================================================================================================
+INSERT INTO Civilization_UnitClassOverrides 
+		(CivilizationType, 		UnitClassType, 					UnitType)
+VALUES	('CIVILIZATION_KOREA',	'UNITCLASS_GALLEASS',			'UNIT_SPUE_KOREA_PANOKSEON');
+
+-- 板屋船
+INSERT INTO Units 	
+		(Type, 					  	 Class,  PrereqTech, RangedCombat,   Combat, Range, Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves, CombatClass, Domain, DefaultUnitAI, Description,	                    	Civilopedia,	                        	Strategy,   Help,	                               	  Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,  			  XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,                         UnitFlagIconOffset, UnitFlagAtlas,	                PortraitIndex, 	IconAtlas)
+SELECT	'UNIT_SPUE_KOREA_PANOKSEON', Class,  PrereqTech, RangedCombat,   Combat, Range, Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves, CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_KOREA_PANOKSEON',	'TXT_KEY_CIV5_SPUE_KOREA_PANOKSEON_TEXT', 	Strategy,   'TXT_KEY_UNIT_SPUE_KOREA_PANOKSEON_HELP', Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_MARINE_ENGINEERING',  XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_KOREA_PANOKSEON',	0,	                'UNIT_SPUE_KOREA_FLAG_ATLAS',	22,	            'SPUE02_UNITS_ATLAS'
+FROM Units WHERE Type = 'UNIT_GALLEASS';
+
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 				   	  UnitClassType)
+VALUES	('UNIT_SPUE_KOREA_PANOKSEON', 'UNITCLASS_FRIGATE');
+
+INSERT INTO Unit_FreePromotions
+		(UnitType, 						PromotionType)
+VALUES	('UNIT_SPUE_KOREA_PANOKSEON', 	'PROMOTION_NAVALMELEE_COMBAT'),
+		('UNIT_SPUE_KOREA_PANOKSEON', 	'PROMOTION_OCEAN_IMPASSABLE');
+
+INSERT INTO Unit_BuildingClassRequireds 	
+		(UnitType, 				 	 BuildingClassType)
+SELECT	'UNIT_SPUE_KOREA_PANOKSEON', BuildingClassType
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_GALLEASS';
+
+INSERT INTO UnitGameplay2DScripts 	
+		(UnitType, 				  	 SelectionSound, FirstSelectionSound)
+SELECT	'UNIT_SPUE_KOREA_PANOKSEON', SelectionSound, FirstSelectionSound
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_GALLEASS';
+
+INSERT INTO Unit_AITypes 	
+		(UnitType, 				  	 UnitAIType)
+SELECT	'UNIT_SPUE_KOREA_PANOKSEON', UnitAIType
+FROM Unit_AITypes WHERE UnitType = 'UNIT_GALLEASS';
+
+INSERT INTO Unit_Flavors 	
+		(UnitType, 				  	 FlavorType, Flavor)
+SELECT	'UNIT_SPUE_KOREA_PANOKSEON', FlavorType, Flavor
+FROM Unit_Flavors WHERE UnitType = 'UNIT_GALLEASS';	
+
+INSERT INTO Unit_ResourceQuantityRequirements 	
+		(UnitType, 				  	 ResourceType, Cost)
+SELECT	'UNIT_SPUE_KOREA_PANOKSEON', ResourceType, Cost
+FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_GALLEASS';
+--==========================================================================================================================
+-- Unique:Persia
+--==========================================================================================================================
+INSERT INTO Civilization_UnitClassOverrides 
+		(CivilizationType, 					UnitClassType, 					UnitType)
+VALUES	('CIVILIZATION_PERSIA',	            'UNITCLASS_SPUE_YULIN_CAVALRY',	'UNIT_SPUE_PERSIA_GYAN');
+
+-- 圣陨骑兵
+INSERT INTO Units 	
+		(Type, 					 Class,  PolicyType, PrereqTech, RangedCombat,   Combat, Range, Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves, CombatClass, Domain, DefaultUnitAI, Description,	                    Civilopedia,	                        Strategy,   Help,	                                Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,  XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,                        UnitFlagIconOffset, UnitFlagAtlas,	                PortraitIndex, 	IconAtlas)
+SELECT	'UNIT_SPUE_PERSIA_GYAN', Class,  PolicyType, PrereqTech, RangedCombat,   Combat, Range, Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves, CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_PERSIA_GYAN',	'TXT_KEY_CIV5_SPUE_PERSIA_GYAN_TEXT', 	Strategy,   'TXT_KEY_UNIT_SPUE_PERSIA_GYAN_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,  XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_PERSIA_GYAN',	0,	                'UNIT_SPUE_PERSIA_FLAG_ATLAS',	39,	            'SPUE02_UNITS_ATLAS'
+FROM Units WHERE Type = 'UNIT_SPUE_YULIN_CAVALRY';
+
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 					UnitClassType)
+VALUES	('UNIT_SPUE_PERSIA_GYAN',	'UNITCLASS_LANCER');
+
+INSERT INTO Unit_FreePromotions
+		(UnitType, 					 PromotionType)
+VALUES	('UNIT_SPUE_PERSIA_GYAN', 	'PROMOTION_KNIGHT_COMBAT'),
+		('UNIT_SPUE_PERSIA_GYAN', 	'PROMOTION_SPUE_PERSIA_GYAN');
+
+INSERT INTO Unit_BuildingClassRequireds 	
+		(UnitType, 				 BuildingClassType)
+SELECT	'UNIT_SPUE_PERSIA_GYAN', BuildingClassType
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_KNIGHT';
+
+INSERT INTO UnitGameplay2DScripts 	
+		(UnitType, 				 SelectionSound, FirstSelectionSound)
+SELECT	'UNIT_SPUE_PERSIA_GYAN', SelectionSound, FirstSelectionSound
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_KNIGHT';
+
+INSERT INTO Unit_AITypes 	
+		(UnitType, 				 UnitAIType)
+SELECT	'UNIT_SPUE_PERSIA_GYAN', UnitAIType
+FROM Unit_AITypes WHERE UnitType = 'UNIT_KNIGHT';
+
+INSERT INTO Unit_Flavors 	
+		(UnitType, 				 FlavorType, Flavor)
+SELECT	'UNIT_SPUE_PERSIA_GYAN', FlavorType, Flavor
+FROM Unit_Flavors WHERE UnitType = 'UNIT_KNIGHT';	
+
+INSERT INTO Unit_ResourceQuantityRequirements 	
+		(UnitType, 				 ResourceType, Cost)
+SELECT	'UNIT_SPUE_PERSIA_GYAN', ResourceType, Cost
+FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_KNIGHT';
+--==========================================================================================================================
+-- Unique：Rome
+--==========================================================================================================================
+INSERT INTO Civilization_UnitClassOverrides 
+		(CivilizationType, 					UnitClassType, 					UnitType)
+VALUES	('CIVILIZATION_ROME',	            'UNITCLASS_SPUE_PRAETORIAN',	'UNIT_SPUE_ROME_HERCULIANI');
+
+-- 赫拉克勒斯卫队 
+INSERT INTO Units 	
+		(Type, 							Class, 						 		PrereqTech, PolicyType,			RangedCombat,	Combat,	  	Range, ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, Description,							Civilopedia,								Strategy,	Help,										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 							UnitFlagIconOffset, UnitFlagAtlas,					PortraitIndex, 	IconAtlas,				NoMinorGifts,	WorkRate)
+SELECT	'UNIT_SPUE_ROME_HERCULIANI', 	'UNITCLASS_SPUE_ROME_HERCULIANI', 	PrereqTech, 'POLICY_TRADITION',	RangedCombat,	30,			Range, ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, 3,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_ROME_HERCULIANI',	'TXT_KEY_CIV5_SPUE_ROME_HERCULIANI_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_ROME_HERCULIANI_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_GUNPOWDER', 	XPValueAttack, XPValueDefense, 'UNITCLASS_MUSKETMAN', 	'ART_DEF_UNIT_SPUE_ROME_HERCULIANI',	0,					'UNIT_SPUE_ROME_FLAG_ATLAS',	36,				'SPUE02_UNITS_ATLAS',	1,				200
+FROM Units WHERE Type = 'UNIT_SWORDSMAN';
+
+INSERT INTO Unit_ClassUpgrades 	
+		(UnitType, 						UnitClassType)
+VALUES	('UNIT_SPUE_ROME_HERCULIANI',	'UNITCLASS_MUSKETMAN');
+
+INSERT INTO Unit_FreePromotions
+		(UnitType, 						PromotionType)
+VALUES	('UNIT_SPUE_ROME_HERCULIANI', 	'PROMOTION_INFANTRY_COMBAT'),
+		('UNIT_SPUE_ROME_HERCULIANI', 	'PROMOTION_SPUE_ROME_HERCULIANI');
+
+INSERT INTO Unit_BuildingClassRequireds 	
+		(UnitType, 				 	  BuildingClassType)
+SELECT	'UNIT_SPUE_ROME_HERCULIANI',  BuildingClassType
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_SWORDSMAN';
+
+INSERT INTO UnitGameplay2DScripts 	
+		(UnitType, 				 	  SelectionSound, FirstSelectionSound)
+SELECT	'UNIT_SPUE_ROME_HERCULIANI',  SelectionSound, FirstSelectionSound
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_SWORDSMAN';
+
+INSERT INTO Unit_AITypes 	
+		(UnitType, 				 	  UnitAIType)
+SELECT	'UNIT_SPUE_ROME_HERCULIANI',  UnitAIType
+FROM Unit_AITypes WHERE UnitType = 'UNIT_SWORDSMAN';
+
+INSERT INTO Unit_Flavors 	
+		(UnitType, 					 FlavorType, Flavor)
+SELECT	'UNIT_SPUE_ROME_HERCULIANI', FlavorType, Flavor
+FROM Unit_Flavors WHERE UnitType = 'UNIT_SWORDSMAN';	
+
+INSERT INTO Unit_ResourceQuantityRequirements 	
+		(UnitType, 				 	  ResourceType, Cost)
+SELECT	'UNIT_SPUE_ROME_HERCULIANI',  ResourceType, Cost
+FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_SWORDSMAN';

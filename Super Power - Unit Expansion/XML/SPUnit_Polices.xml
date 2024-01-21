@@ -2,6 +2,7 @@
 <!-- Created by ModBuddy on 2021/12/9 19:51:48 -->
 <GameData>
 	<Policies>
+		<!-- 禁卫军政策-->
 		<Row>
 			<Type>POLICY_SPUE_PRAETORIAN</Type>
 			<Description>TXT_KEY_POLICY_SPUE_PRAETORIAN</Description>
@@ -51,6 +52,16 @@
 		<Row>
 			<!-- 黑森佣兵 -->
 			<Type>POLICY_SPUE_HESSIAN</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 战争车垒 -->
+			<Type>POLICY_SPUE_TABOR</Type>
+			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
+		</Row>
+		<Row>
+			<!-- 乌兰骑兵 -->
+			<Type>POLICY_SPUE_UHLAN</Type>
 			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
 		</Row>
 		<Row>

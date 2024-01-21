@@ -15,12 +15,14 @@ ContextPtr:SetHide(true);
 local g_MercenaryUnitListL	= {	GameInfoTypes["UNIT_SPUE_VARANGIAN"],
 								GameInfoTypes["UNIT_SPUE_GENOAXBOW"],
 								GameInfoTypes["UNIT_SPUE_SWISSGUARD"],
-								GameInfoTypes["UNIT_SPUE_ELMETI"]}
+								GameInfoTypes["UNIT_SPUE_ELMETI"],
+								GameInfoTypes["UNIT_SPUE_TABOR"]}
 
 local g_MercenaryUnitListR	= {	GameInfoTypes["UNIT_SPUE_HESSIAN"],
 								GameInfoTypes["UNIT_SPUE_SSPRIVATEER"],
 								GameInfoTypes["UNIT_SPUE_PRIVATEER"],
-								GameInfoTypes["UNIT_SPUE_FUNE"]}
+								GameInfoTypes["UNIT_SPUE_FUNE"],
+								GameInfoTypes["UNIT_SPUE_UHLAN"]}
 							   
 local g_MercenaryUnitLeft	= nil
 local g_MercenaryUnitRight	= nil
