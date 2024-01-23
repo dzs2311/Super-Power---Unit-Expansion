@@ -15,7 +15,7 @@ local Charge2ID = GameInfo.UnitPromotions["PROMOTION_CHARGE_2"].ID
 local Charge3ID = GameInfo.UnitPromotions["PROMOTION_CHARGE_3"].ID
 
 
--- 王城骑士
+-- 帝国骑士
 local KingsKnightID               = GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW"].ID
 local KingsKnightBID              = GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW_B"].ID
 local KingsKnightCID              = GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW_C"].ID
@@ -593,6 +593,14 @@ function SPUE_OnUnitCreated(iPlayerID, iUnitID)
 			end
 		end
 	end
+
+	-- 赫拉克勒斯卫队: 四帝共治
+	if pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_ROME_HERCULIANI"]) 
+	and not pPlayer:HasPolicy(GameInfo.Policies["POLICY_SPUE_ROME_HERCULIANI"].ID)
+	then
+		pPlayer:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_ROME_HERCULIANI"].ID, false)
+	end
+
 end
 
 GameEvents.UnitCreated.Add(SPUE_OnUnitCreated)
@@ -618,6 +626,16 @@ function SPUE_OnPlayerDoTurn(playerID)
 	if not player:IsHuman() then
 		for unit in player:Units() do
 		end
+	end
+
+	-- 赫拉克勒斯卫队：四帝共治
+	local romeNum = player:GetUnitCountFromHasPromotion(
+		GameInfo.UnitPromotions["PROMOTION_SPUE_ROME_HERCULIANI"].ID);
+
+	if not (romeNum and romeNum > 0)
+	and player:HasPolicy(GameInfo.Policies["POLICY_SPUE_ROME_HERCULIANI"].ID)
+	then
+		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_ROME_HERCULIANI"].ID, false)
 	end
 end --function END
 GameEvents.PlayerDoTurn.Add(SPUE_OnPlayerDoTurn)
@@ -1045,6 +1063,32 @@ function SPUE_PlayerDoneTurn(playerID)
 				player:ChangeJONSCulture(iCapitalBonus);
 				unit:ChangeExperience(2);
 
+				-- iCapitalBonus = 4 * (1 + pEraID);
+				if iCapitalBonus > 0 then
+					local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
+					Events.AddPopupTextEvent(HexToWorld(hex),
+						Locale.ConvertTextKey(
+						"[COLOR_CITY_BROWN]+{1_Num}[ENDCOLOR][ICON_PRODUCTION][NEWLINE][COLOR_YIELD_FOOD]+{2_Num}[ENDCOLOR][ICON_FOOD][NEWLINE][COLOR_MAGENTA]+{3_Num}[ENDCOLOR][ICON_CULTURE]",
+							iCapitalBonus, iCapitalBonus, iCapitalBonus));
+					-- Events.GameplayFX(hex.x, hex.y, -1);
+				end
+			end
+		end
+
+		-- 赫拉克勒斯卫队：四帝共治
+		if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_ROME_HERCULIANI"]) then
+			local plot = unit:GetPlot();
+			if plot:GetPlotCity()
+				and plot:GetPlotCity():IsCapital()
+			then
+				local city = plot:GetPlotCity();
+				local iCapitalBonus = 5 * pEraID;
+				-- 首都
+				city:SetOverflowProduction(city:GetOverflowProduction() + iCapitalBonus);
+				city:ChangeFood(iCapitalBonus);
+				player:ChangeJONSCulture(iCapitalBonus);
+				unit:ChangeExperience(2);
+	
 				-- iCapitalBonus = 4 * (1 + pEraID);
 				if iCapitalBonus > 0 then
 					local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
@@ -1488,26 +1532,18 @@ function SPUE_UnitSetXY(playerID, unitID)
 
 		if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_WEIYANG"]) then
 			-- 未央宫卫士：驻守首都全局不满-5%
-			local pCapPlot = pCapital:Plot()
-			if plot:GetPlotCity() and plot:GetPlotCity():IsCapital()
+			player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_WEIYANG"].ID, false)
+			if plot:GetPlotCity()
+				and plot:GetPlotCity():IsCapital()
 			then
-				local num_wy_units = 0
-				for i = 0, pCapPlot:GetNumUnits() - 1, 1 do
-					local fUnit = pCapPlot:GetUnit(i)
-					if fUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_WEIYANG"]) then
-						num_wy_units = num_wy_units + 1
-					end
-				end
-				pCapital:SetNumRealBuilding(bWeiYang, num_wy_units)
-			else
-				local num_wy_units = 0
-				for i = 0, pCapPlot:GetNumUnits() - 1, 1 do
-					local fUnit = pCapPlot:GetUnit(i)
-					if fUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_WEIYANG"]) then
-						num_wy_units = num_wy_units + 1
-					end
-				end
-				pCapital:SetNumRealBuilding(bWeiYang, num_wy_units)
+				-- 首都
+				player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_WEIYANG"].ID, true, true)
+			elseif
+				not (plot:GetPlotCity() and plot:GetPlotCity():IsCapital())
+				and player:HasPolicy(GameInfo.Policies["POLICY_SPUE_WEIYANG"].ID)
+			then
+				-- 其他地块和城市
+				player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_WEIYANG"].ID, false)
 			end
 		end
 
@@ -1564,7 +1600,7 @@ function SPUE_CanHavePromotion(iPlayer, iUnit, iPromotionType)
 
 	local pUnit = Players[iPlayer]:GetUnitByID(iUnit);
 
-	-- 王城骑士：王国冠军
+	-- 帝国骑士：王国冠军
 	if iPromotionType == GameInfoTypes.PROMOTION_SPUE_KNIGHT_NEW_C then
 		if pUnit:GetExperience() < 300 then
 			return false;
@@ -1585,7 +1621,7 @@ function SPUE_UnitPromoted(playerID, unitID, promotionID)
 	local unitLevel = unit:GetLevel()
 	if (not capital) then return end
 
-	--王城骑士晋升时获得文学家
+	--帝国骑士晋升时获得文学家
 	if unit:IsHasPromotion(KingsKnightBID) and unitLevel == 5 then
 		local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_WRITER")
 		local NewUnit = player:InitUnit(GameInfoTypes[sUnitType], capital:GetX(), capital:GetY())
@@ -1796,6 +1832,7 @@ SPUE_Knight_New_Button = {
 LuaEvents.UnitPanelActionAddin(SPUE_Knight_New_Button)
 --------------------------------------------------------------
 -- 羽林禁军：羽林孤儿
+-- 皇家近卫：紫凤凰
 --------------------------------------------------------------
 function OnSPUESetDamageSP(iPlayerID, iUnitID, iDamage, iPreviousDamage)
 	if Players[iPlayerID] == nil or not Players[iPlayerID]:IsAlive()
@@ -1812,7 +1849,6 @@ function OnSPUESetDamageSP(iPlayerID, iUnitID, iDamage, iPreviousDamage)
 	local YuLin_Num = pPlayer:GetUnitCountFromHasPromotion(
 		GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID);
 
-
 	if YuLin_Num and YuLin_Num > 0
 		and not pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID)
 		and iDamage - iPreviousDamage > 0
@@ -1823,6 +1859,23 @@ function OnSPUESetDamageSP(iPlayerID, iUnitID, iDamage, iPreviousDamage)
 			end
 		end
 	end
+
+	-- 紫凤凰1
+	local phoenix_Num = pPlayer:GetUnitCountFromHasPromotion(
+		GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA"].ID);
+
+	if phoenix_Num and phoenix_Num > 0 
+	and pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA"].ID)
+	and not pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"].ID)
+	and pUnit:GetCurrHitPoints() <= 10
+	then
+		pUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"].ID, true)
+	elseif phoenix_Num and phoenix_Num > 0 
+	and pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"].ID)
+	and pUnit:GetCurrHitPoints() > 10
+	then
+		pUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"].ID, false)
+	end	
 end
 
 Events.SerialEventUnitSetDamage.Add(OnSPUESetDamageSP);
@@ -2476,6 +2529,15 @@ function NewAttackEffectJoined(iPlayer, iUnitOrCity, iRole, bIsCity)
 		g_DoNewAttackEffect.defPlayerID = iPlayer;
 		g_DoNewAttackEffect.defUnitID = iUnitOrCity;
 		g_DoNewAttackEffect.defODamage = Players[iPlayer]:GetUnitByID(iUnitOrCity):GetDamage();
+		-- 紫凤凰2
+		local pUnit = Players[ g_DoNewAttackEffect.defPlayerID ]:GetUnitByID( g_DoNewAttackEffect.defUnitID );
+		if not pUnit:IsDead() 
+		and pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA"].ID)
+		and not pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"].ID)
+		and pUnit:GetCurrHitPoints() <= 10
+		then
+			pUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"].ID, true)
+		end	
 	end
 end
 
@@ -2722,7 +2784,7 @@ function NewAttackEffect()
 	end
 
 	if defUnit and attPlayer:GetCapitalCity() then
-		-- 王城骑士杀敌掠获人口，达到一定程度则可以在首都获得移民
+		-- 帝国骑士杀敌掠获人口，达到一定程度则可以在首都获得移民
 		for i = 1, 5 do
 			if attUnit:IsHasPromotion(g_KingsKnightPops[i]) then
 				local pEraType = attPlayer:GetCurrentEra();
@@ -2760,7 +2822,7 @@ function NewAttackEffect()
 				end
 			end
 		end
-		-- 王城骑士杀敌为首都提供伟人点数
+		-- 帝国骑士杀敌为首都提供伟人点数
 		if attUnit:IsHasPromotion(KingsKnightCID) then
 			if defUnitDamage >= 40 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
 				local unitLevel = attUnit:GetLevel();
@@ -4218,10 +4280,14 @@ function SetPolicyUnitsName(iPlayer, iOldUnit, iNewUnit)
 	local pUnit = Players[iPlayer]:GetUnitByID(iOldUnit);
 	if pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_PRAETORIAN"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_PRAETORIAN"); -- 传统：禁卫军
+	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ROME_HERCULIANI"].ID) then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_ROME_HERCULIANI"); -- 传统：赫拉克勒斯卫队
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_WEIYANG"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_WEIYANG"); -- 传统：未央宫卫士
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW"].ID) then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_KNIGHT_NEW"); -- 自主：王城骑士
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_KNIGHT_NEW"); -- 自主：帝国骑士
+	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_GONDORGUARD"].ID) then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_GONDORGUARD"); -- 自主：涌泉守卫
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_YULIN_CAVALRY"); -- 荣誉：羽林骑军
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ROHAN_CAVALRY"].ID) then

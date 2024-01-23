@@ -394,6 +394,8 @@ INSERT INTO Unit_FreePromotions
 		(UnitType, 			PromotionType)
 VALUES	('UNIT_SPUE_BYZANTIUM_LIMITANEI', 	'PROMOTION_ANTI_MOUNTED'),
         ('UNIT_SPUE_BYZANTIUM_LIMITANEI', 	'PROMOTION_HALF_CASUALTIES'),
+		('UNIT_SPUE_BYZANTIUM_LIMITANEI', 	'PROMOTION_CQB_COMBAT_1'),
+		('UNIT_SPUE_BYZANTIUM_LIMITANEI', 	'PROMOTION_CQB_COMBAT_2'),
         ('UNIT_SPUE_BYZANTIUM_LIMITANEI', 	'PROMOTION_SPUE_BYZANTIUM_LIMITANEI');
 		
 INSERT INTO Unit_BuildingClassRequireds 	
@@ -434,6 +436,8 @@ VALUES	('UNIT_SPUE_BYZANTIUM_TAGMATA',	'UNITCLASS_LANCER');
 INSERT INTO Unit_FreePromotions
 		(UnitType, 					        PromotionType)
 VALUES	('UNIT_SPUE_BYZANTIUM_TAGMATA', 	'PROMOTION_KNIGHT_COMBAT'),
+		('UNIT_SPUE_BYZANTIUM_TAGMATA', 	'PROMOTION_ARMOR_PLATING_I'),
+		('UNIT_SPUE_BYZANTIUM_TAGMATA', 	'PROMOTION_ARMOR_PLATING_II'),
 		('UNIT_SPUE_BYZANTIUM_TAGMATA', 	'PROMOTION_ARMOR_PLATING_III'),
 		('UNIT_SPUE_BYZANTIUM_TAGMATA', 	'PROMOTION_SPUE_BYZANTIUM_TAGMATA');
 
@@ -527,6 +531,8 @@ VALUES	('UNIT_SPUE_PERSIA_GYAN',	'UNITCLASS_LANCER');
 INSERT INTO Unit_FreePromotions
 		(UnitType, 					 PromotionType)
 VALUES	('UNIT_SPUE_PERSIA_GYAN', 	'PROMOTION_KNIGHT_COMBAT'),
+		('UNIT_SPUE_PERSIA_GYAN', 	'PROMOTION_ARMOR_PLATING_I'),
+		('UNIT_SPUE_PERSIA_GYAN', 	'PROMOTION_ARMOR_PLATING_II'),
 		('UNIT_SPUE_PERSIA_GYAN', 	'PROMOTION_SPUE_PERSIA_GYAN');
 
 INSERT INTO Unit_BuildingClassRequireds 	
@@ -562,8 +568,8 @@ VALUES	('CIVILIZATION_ROME',	            'UNITCLASS_SPUE_PRAETORIAN',	'UNIT_SPUE
 
 -- 赫拉克勒斯卫队 
 INSERT INTO Units 	
-		(Type, 							Class, 						 		PrereqTech, PolicyType,			RangedCombat,	Combat,	  	Range, ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, Description,							Civilopedia,								Strategy,	Help,										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 							UnitFlagIconOffset, UnitFlagAtlas,					PortraitIndex, 	IconAtlas,				NoMinorGifts,	WorkRate)
-SELECT	'UNIT_SPUE_ROME_HERCULIANI', 	'UNITCLASS_SPUE_ROME_HERCULIANI', 	PrereqTech, 'POLICY_TRADITION',	RangedCombat,	30,			Range, ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, 3,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_ROME_HERCULIANI',	'TXT_KEY_CIV5_SPUE_ROME_HERCULIANI_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_ROME_HERCULIANI_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_GUNPOWDER', 	XPValueAttack, XPValueDefense, 'UNITCLASS_MUSKETMAN', 	'ART_DEF_UNIT_SPUE_ROME_HERCULIANI',	0,					'UNIT_SPUE_ROME_FLAG_ATLAS',	36,				'SPUE02_UNITS_ATLAS',	1,				200
+		(Type, 							Class, 						 	PrereqTech, PolicyType,			RangedCombat,	Combat,	  	Range, ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, Moves,   CombatClass, Domain, DefaultUnitAI, Description,							Civilopedia,								Strategy,	Help,										Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 							UnitFlagIconOffset, UnitFlagAtlas,					PortraitIndex, 	IconAtlas,				NoMinorGifts,	WorkRate)
+SELECT	'UNIT_SPUE_ROME_HERCULIANI', 	'UNITCLASS_SPUE_PRAETORIAN', 	PrereqTech, 'POLICY_TRADITION',	RangedCombat,	30,			Range, ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, RequiresFaithPurchaseEnabled, 3,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_ROME_HERCULIANI',	'TXT_KEY_CIV5_SPUE_ROME_HERCULIANI_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_ROME_HERCULIANI_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_GUNPOWDER', 	XPValueAttack, XPValueDefense, 'UNITCLASS_MUSKETMAN', 	'ART_DEF_UNIT_SPUE_ROME_HERCULIANI',	0,					'UNIT_SPUE_ROME_FLAG_ATLAS',	36,				'SPUE02_UNITS_ATLAS',	1,				200
 FROM Units WHERE Type = 'UNIT_SWORDSMAN';
 
 INSERT INTO Unit_ClassUpgrades 	

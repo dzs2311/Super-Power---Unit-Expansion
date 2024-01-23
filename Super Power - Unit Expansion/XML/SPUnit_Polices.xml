@@ -7,6 +7,17 @@
 			<Type>POLICY_SPUE_PRAETORIAN</Type>
 			<Description>TXT_KEY_POLICY_SPUE_PRAETORIAN</Description>
 		</Row>
+		<!-- 未央宫卫士政策-->
+		<Row>
+			<Type>POLICY_SPUE_WEIYANG</Type>
+			<Description>TXT_KEY_POLICY_SPUE_WEIYANG</Description>
+			<UnhappinessMod>-5</UnhappinessMod>
+		</Row>
+		<!-- 赫拉克勒斯卫队政策-->
+		<Row>
+			<Type>POLICY_SPUE_ROME_HERCULIANI</Type>
+			<Description>TXT_KEY_POLICY_SPUE_ROME_HERCULIANI</Description>
+		</Row>
 		<!-- 赞助政策树政策 -->
 		<Row>
 			<!-- 奥古斯都之路 -->
@@ -127,6 +138,22 @@
 			<PolicyType>POLICY_SPUE_PRAETORIAN</PolicyType>
 			<YieldType>YIELD_CULTURE</YieldType>
 			<Yield>3</Yield>
+		</Row>
+
+		<Row>
+			<PolicyType>POLICY_SPUE_ROME_HERCULIANI</PolicyType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>5</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_SPUE_ROME_HERCULIANI</PolicyType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>5</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_SPUE_ROME_HERCULIANI</PolicyType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>5</Yield>
 		</Row>
 	</Policy_CapitalYieldChanges>
 </GameData>

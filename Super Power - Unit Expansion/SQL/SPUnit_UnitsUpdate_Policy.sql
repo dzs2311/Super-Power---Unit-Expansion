@@ -48,7 +48,7 @@ FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_SWORDSMAN';
 --==========================================================================================================================
 INSERT INTO UnitClasses
 		(Type,							Description,							DefaultUnit,				MaxPlayerInstances)
-VALUES	('UNITCLASS_SPUE_WEIYANG',		'TXT_KEY_UNIT_SPUE_WEIYANG',			'UNIT_SPUE_WEIYANG',		2);
+VALUES	('UNITCLASS_SPUE_WEIYANG',		'TXT_KEY_UNIT_SPUE_WEIYANG',			'UNIT_SPUE_WEIYANG',		1);
 
 INSERT INTO Units 	
 		(Type, 					Class, 						PrereqTech, 			PolicyType,			RangedCombat,	Combat,	  	Range, ExtraMaintenanceCost,	Special, Cost, HurryCostModifier, FaithCost, RequiresFaithPurchaseEnabled, Moves,  	CombatClass, Domain, DefaultUnitAI, Description,					Civilopedia,						Strategy,	Help,								Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, 		XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 	UnitArtInfo, 					UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,			NoMinorGifts)
@@ -1754,10 +1754,6 @@ INSERT INTO Unit_ResourceQuantityRequirements
 		(UnitType, 				 ResourceType, Cost)
 SELECT	'UNIT_SPUE_IRON_TROOP',	 ResourceType, Cost
 FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_MUSKETMAN';
---==========================================================================================================================	
--- 乌兰骑兵 -- 商业解锁
---==========================================================================================================================
-
 --==========================================================================================================================	
 -- 奥古斯都之路
 --==========================================================================================================================

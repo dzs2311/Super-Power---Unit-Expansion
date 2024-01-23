@@ -46,7 +46,7 @@ VALUES		('SPUE_UNITS_ATLAS', 				256, 		'SPUE_IconAtlas256.dds',				8, 				8),
 			('SPUE_CROS_FLAG_ATLAS',			032,		'SPUE_GreatCross_flag.dds',				1, 				1),	-- 大十字架
 			('SPUE_DVCT_FLAG_ATLAS',			032,		'SPUE_DVC_Tank_flag.dds',				1, 				1),	-- 达芬奇坦克
 			('SPUE_DVCM_FLAG_ATLAS',			032,		'SPUE_DVC_RibaultUnitFlag_32.dds',		1, 				1),	-- 达芬奇机关炮
-			('SPUE_KNKN_FLAG_ATLAS',			032,		'SPUE_Knight_New_flag.dds',				1, 				1),	-- 王城骑士
+			('SPUE_KNKN_FLAG_ATLAS',			032,		'SPUE_Knight_New_flag.dds',				1, 				1),	-- 帝国骑士
 			('SPUE_FALC_FLAG_ATLAS',			032,		'SPUE_Falconet_flag.dds',				1, 				1),	-- 鹰炮
 			('SPUE_CULV_FLAG_ATLAS',			032,		'SPUE_culverin_flag.dds',				1, 				1),	-- 长炮
 			('SPUE_MORTAR_FLAG_ATLAS',			032,		'SPUE_mortar_flag.dds',					1, 				1),	-- 臼炮

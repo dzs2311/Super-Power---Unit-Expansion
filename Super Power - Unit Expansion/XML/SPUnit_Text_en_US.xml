@@ -326,6 +326,10 @@
 			<Text>汉代的南军是西汉初设置在长安城内的禁卫军之一，属卫尉统领。南军分别驻扎在未央、长乐两宫之内的城垣下，负责守卫两宫。未央、长乐两宫位于长安城南部，所以卫尉统率的军队称南军。</Text>
 		</Row>
 
+		<Row Tag="TXT_KEY_POLICY_SPUE_WEIYANG">
+			<Text>未央宫卫士:-5%全局不满</Text>
+		</Row>
+
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_WEIYANG">
 			<Text>长乐未央</Text>
 		</Row>
@@ -337,7 +341,7 @@
 			<Text>未央宫卫士:-5%全局不满。</Text>
 		</Row>
 		
-		<!-- **********************王城骑士*********************** -->
+		<!-- **********************帝国骑士*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_NEW">
 			<Text>[COLOR_CYAN]帝国骑士[ENDCOLOR]</Text>
 		</Row>

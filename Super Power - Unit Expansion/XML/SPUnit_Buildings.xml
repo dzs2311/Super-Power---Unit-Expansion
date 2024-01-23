@@ -2,11 +2,11 @@
 <!-- Created by ModBuddy on 2022/1/29 20:59:10 -->
 <GameData>
 	<BuildingClasses>
-		<Row>
+		<!-- <Row>
 			<Type>BUILDINGCLASS_SPUE_WEIYANG</Type>
 			<DefaultBuilding>BUILDING_SPUE_WEIYANG</DefaultBuilding>
 			<Description>TXT_KEY_BUILDING_SPUE_WEIYANG</Description>
-		</Row>
+		</Row> -->
 		<Row>
 			<Type>BUILDINGCLASS_SPUE_GENOAXBOW</Type>
 			<DefaultBuilding>BUILDING_SPUE_GENOAXBOW</DefaultBuilding>
@@ -14,7 +14,7 @@
 		</Row>
 	</BuildingClasses>
 	<Buildings>
-		<Row>
+		<!-- <Row>
 			<Type>BUILDING_SPUE_WEIYANG</Type>
 			<BuildingClass>BUILDINGCLASS_SPUE_WEIYANG</BuildingClass>
 			<Cost>-1</Cost>
@@ -27,7 +27,7 @@
 			<IconAtlas>SPUE_UNITS_ATLAS</IconAtlas>
 			<PortraitIndex>19</PortraitIndex>
 			<UnhappinessModifier>-5</UnhappinessModifier>
-		</Row>
+		</Row> -->
 		<Row>
 			<Type>BUILDING_SPUE_GENOAXBOW</Type>
 			<BuildingClass>BUILDINGCLASS_SPUE_GENOAXBOW</BuildingClass>

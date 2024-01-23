@@ -57,7 +57,7 @@
 			<Text>掷出窗外事件</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_TABOR_TRAINING_HELP">
-			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]车垒[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]胡斯车垒[ENDCOLOR]。</Text>
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]战争车垒[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]胡斯车垒[ENDCOLOR]。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_TABOR_TRAINING_PEDIA">
 			<Text>[COLOR_YIELD_GOLD]胡斯车垒[ENDCOLOR]是精英陆军反骑兵单位，拥有强大的结阵作战能力。</Text>

@@ -119,7 +119,7 @@
 		</Row>
 		<!--*********************************自主：代表与联动*********************************-->
 		<Row>
-			<!--王城骑士：兵士集结-->
+			<!--帝国骑士：兵士集结-->
 			<Type>PROMOTION_SPUE_KNIGHT_NEW</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_HELP</Help>
@@ -131,7 +131,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<Row>
-			<!--王城骑士：移民安置-->
+			<!--帝国骑士：移民安置-->
 			<Type>PROMOTION_SPUE_KNIGHT_NEW_A</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
@@ -143,7 +143,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<Row>
-			<!--王城骑士：掠获人口0-->
+			<!--帝国骑士：掠获人口0-->
 			<Type>PROMOTION_SPUE_KNIGHT_NEW_A000</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A000</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
@@ -155,7 +155,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<Row>
-			<!--王城骑士：掠获人口20-->
+			<!--帝国骑士：掠获人口20-->
 			<Type>PROMOTION_SPUE_KNIGHT_NEW_A020</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A020</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
@@ -168,7 +168,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<Row>
-			<!--王城骑士：掠获人口40-->
+			<!--帝国骑士：掠获人口40-->
 			<Type>PROMOTION_SPUE_KNIGHT_NEW_A040</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A040</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
@@ -181,7 +181,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<Row>
-			<!--王城骑士：掠获人口60-->
+			<!--帝国骑士：掠获人口60-->
 			<Type>PROMOTION_SPUE_KNIGHT_NEW_A060</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A060</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
@@ -194,7 +194,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<Row>
-			<!--王城骑士：掠获人口80-->
+			<!--帝国骑士：掠获人口80-->
 			<Type>PROMOTION_SPUE_KNIGHT_NEW_A080</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A080</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
@@ -207,7 +207,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<Row>
-			<!--王城骑士：掠获人口100-->
+			<!--帝国骑士：掠获人口100-->
 			<Type>PROMOTION_SPUE_KNIGHT_NEW_A100</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A100</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_A_HELP</Help>
@@ -220,7 +220,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<Row>
-			<!--王城骑士：诗歌传唱-->
+			<!--帝国骑士：诗歌传唱-->
 			<Type>PROMOTION_SPUE_KNIGHT_NEW_B</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_B</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_B_HELP</Help>
@@ -232,7 +232,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<Row>
-			<!--王城骑士：王国冠军-->
+			<!--帝国骑士：王国冠军-->
 			<Type>PROMOTION_SPUE_KNIGHT_NEW_C</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_C</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW_C_HELP</Help>
@@ -1445,11 +1445,108 @@
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_FRANCE_IMPERIAL_GUARD</PediaEntry>
 		</Row>
+		<Row>
+			<!--边防军：陲边铁卫-->
+			<Type>PROMOTION_SPUE_BYZANTIUM_LIMITANEI</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_LIMITANEI</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_LIMITANEI_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PortraitIndex>59</PortraitIndex>
+			<RangedDefenseMod>50</RangedDefenseMod>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<ExtraResourceType>RESOURCE_IRON</ExtraResourceType>
+			<ExtraResourceCombatModifier>2</ExtraResourceCombatModifier>
+			<ExtraResourceCombatModifierMax>50</ExtraResourceCombatModifierMax>
+			<NearbyUnitPromotionBonus>35</NearbyUnitPromotionBonus>
+			<NearbyUnitPromotionBonusRange>2</NearbyUnitPromotionBonusRange>
+			<CombatBonusFromNearbyUnitPromotion>PROMOTION_SPUE_BYZANTIUM_LIMITANEI</CombatBonusFromNearbyUnitPromotion>
+			<AdjacentMod>25</AdjacentMod>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_LIMITANEI</PediaEntry>
+		</Row>
 
+		<Row>
+			<!--皇家近卫：紫凤凰-->
+			<Type>PROMOTION_SPUE_BYZANTIUM_TAGMATA</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>59</PortraitIndex>
+			<OpenAttack>50</OpenAttack>
+			<NearbyUnitPromotionBonus>50</NearbyUnitPromotionBonus>
+			<NearbyUnitPromotionBonusRange>3</NearbyUnitPromotionBonusRange>
+			<CombatBonusFromNearbyUnitPromotion>PROMOTION_SPUE_BYZANTIUM_LIMITANEI</CombatBonusFromNearbyUnitPromotion>
+			<AttackInflictDamageChange>5</AttackInflictDamageChange>
+			<SiegeInflictDamageChange>5</SiegeInflictDamageChange>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--皇家近卫：曼奇科特-->
+			<Type>PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<ChangeDamageValue>-30</ChangeDamageValue>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--板屋船：旋风之海-->
+			<Type>PROMOTION_SPUE_KOREA_PANOKSEONT</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_KOREA_PANOKSEONT</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_KOREA_PANOKSEONT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<NearNumEnemyDefenseMod>15</NearNumEnemyDefenseMod>
+			<NearNumEnemyAttackMod>5</NearNumEnemyAttackMod>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KOREA_PANOKSEONT</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--圣陨骑兵：临灵河-->
+			<Type>PROMOTION_SPUE_PERSIA_GYAN</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_PERSIA_GYAN</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_PERSIA_GYAN_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<FightWellDamaged>1</FightWellDamaged>
+			<CurrentHitPointAttackMod>4</CurrentHitPointAttackMod>
+			<CurrentHitPointDefenseMod>4</CurrentHitPointDefenseMod>
+			<NearbyEnemyCombatMod>-33</NearbyEnemyCombatMod>
+			<NearbyEnemyCombatRange>2</NearbyEnemyCombatRange>
+			<OriginalCapitalDamageFix>1</OriginalCapitalDamageFix>
+			<OpenAttack>50</OpenAttack>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_PERSIA_GYAN</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<!--赫拉克勒斯卫队：四帝分治-->
+			<Type>PROMOTION_SPUE_ROME_HERCULIANI</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_ROME_HERCULIANI</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_ROME_HERCULIANI_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>37</PortraitIndex>
+			<RangedSupportFire>true</RangedSupportFire>
+			<IconAtlas>promoVP_atlas_02</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_ROME_HERCULIANI</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
 	</UnitPromotions>
 
 	<UnitPromotions_UnitCombats>
-		<!--王城骑士：王国冠军-->
+		<!--帝国骑士：王国冠军-->
 		<Row>
 			<PromotionType>PROMOTION_SPUE_KNIGHT_NEW_C</PromotionType>
 			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
@@ -1523,6 +1620,58 @@
 			<TerrainType>TERRAIN_MOUNTAIN</TerrainType>
 			<DoubleMove>true</DoubleMove>
 		</Row>
+		<!--皇家近卫：紫凤凰-->
+		<Row>
+			<PromotionType>PROMOTION_SPUE_BYZANTIUM_TAGMATA</PromotionType>
+			<TerrainType>TERRAIN_PLAINS</TerrainType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SPUE_BYZANTIUM_TAGMATA</PromotionType>
+			<TerrainType>TERRAIN_GRASS</TerrainType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SPUE_BYZANTIUM_TAGMATA</PromotionType>
+			<TerrainType>TERRAIN_SNOW</TerrainType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SPUE_BYZANTIUM_TAGMATA</PromotionType>
+			<TerrainType>TERRAIN_DESERT</TerrainType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SPUE_BYZANTIUM_TAGMATA</PromotionType>
+			<TerrainType>TERRAIN_TUNDRA</TerrainType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+		<!--圣陨骑兵：临灵河-->
+		<Row>
+			<PromotionType>PROMOTION_SPUE_PERSIA_GYAN</PromotionType>
+			<TerrainType>TERRAIN_PLAINS</TerrainType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SPUE_PERSIA_GYAN</PromotionType>
+			<TerrainType>TERRAIN_GRASS</TerrainType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SPUE_PERSIA_GYAN</PromotionType>
+			<TerrainType>TERRAIN_SNOW</TerrainType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SPUE_PERSIA_GYAN</PromotionType>
+			<TerrainType>TERRAIN_DESERT</TerrainType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SPUE_PERSIA_GYAN</PromotionType>
+			<TerrainType>TERRAIN_TUNDRA</TerrainType>
+			<DoubleMove>true</DoubleMove>
+		</Row>
 	</UnitPromotions_Terrains>
 	<UnitPromotions_Features>
 		<!--宣慰使军-->
@@ -1576,7 +1725,7 @@
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>250</Yield>
 		</Row>
-		<!--王城骑士：诗歌传唱-->
+		<!--帝国骑士：诗歌传唱-->
 		<Row>
 			<PromotionType>PROMOTION_SPUE_KNIGHT_NEW_B</PromotionType>
 			<YieldType>YIELD_CULTURE</YieldType>
@@ -1700,6 +1849,22 @@
 			<OtherPromotionType>PROMOTION_GAIN_MOVES_AFFER_KILLING</OtherPromotionType>
 			<Modifier>-50</Modifier>
 		</Row> -->
+		<!--边防军：不被陆军远程克制-->
+		<Row>
+			<PromotionType>PROMOTION_ARCHERY_COMBAT</PromotionType>
+			<OtherPromotionType>PROMOTION_SPUE_BYZANTIUM_LIMITANEI</OtherPromotionType>
+			<Attack>-100</Attack>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ACCURACY_1</PromotionType>
+			<OtherPromotionType>PROMOTION_SPUE_BYZANTIUM_LIMITANEI</OtherPromotionType>
+			<Attack>-45</Attack>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ACCURACY_2</PromotionType>
+			<OtherPromotionType>PROMOTION_SPUE_BYZANTIUM_LIMITANEI</OtherPromotionType>
+			<Attack>-45</Attack>
+		</Row>
 		<!--巨人掷弹兵-->
 		<Row>
 			<PromotionType>PROMOTION_SPUE_HESSIAN_ELITE</PromotionType>
