@@ -10,7 +10,7 @@
 		<!-- 未央宫卫士政策-->
 		<Row>
 			<Type>POLICY_SPUE_WEIYANG</Type>
-			<Description>TXT_KEY_POLICY_SPUE_WEIYANG</Description>
+			<Description>TXT_KEY_BUILDING_SPUE_WEIYANG</Description>
 			<UnhappinessMod>-5</UnhappinessMod>
 		</Row>
 		<!-- 赫拉克勒斯卫队政策-->
@@ -70,11 +70,11 @@
 			<Type>POLICY_SPUE_TABOR</Type>
 			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
 		</Row>
-		<Row>
+		<!-- <Row> -->
 			<!-- 乌兰骑兵 -->
-			<Type>POLICY_SPUE_UHLAN</Type>
+			<!-- <Type>POLICY_SPUE_UHLAN</Type>
 			<Description>TXT_KEY_POLICY_BRANCH_COMMERCE</Description>
-		</Row>
+		</Row> -->
 		<Row>
 			<!-- 南洋海盗船 -->
 			<Type>POLICY_SPUE_SSPRIVATEER</Type>

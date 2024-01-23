@@ -53,11 +53,21 @@
 			<Text>[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]是精英重骑兵单位，拥有强大的防御能力。</Text>
 		</Row>
 
+		<Row Tag="TXT_KEY_PROJECT_SPUE_TABOR_TRAINING">
+			<Text>掷出窗外事件</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_TABOR_TRAINING_HELP">
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]战争车垒[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]胡斯车垒[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_SPUE_TABOR_TRAINING_PEDIA">
+			<Text>[COLOR_YIELD_GOLD]胡斯车垒[ENDCOLOR]是精英陆军反骑兵单位，拥有强大的结阵作战能力。</Text>
+		</Row>
+
 		<Row Tag="TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING">
 			<Text>巨人掷弹兵训练计划</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING_HELP">
-			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]黑森佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]。</Text>
+			<Text>此项目需要开启商业政策树或在使用强权模组时将时代推进至中古时代，只有完成此项目的文明可以将[COLOR_CYAN]黑森佣兵[ENDCOLOR]永备化成为[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]，仅能改造1队。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING_PEDIA">
 			<Text>[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]是精英火药步兵单位，拥有较强的的肉搏和恐吓敌军的能力。</Text>
@@ -202,7 +212,7 @@
 			<Text>炮兵集群</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ADJACENT_BONUS_HELP">
-			<Text>与己方同类单位相邻[ICON_STRENGTH]战斗力+25%。</Text>
+			<Text>+25%[ICON_STRENGTH]战斗力(邻近友军时)。</Text>
 		</Row>
 		<!-- **********************线列步兵*********************** -->
 		<Replace Tag="TXT_KEY_UNIT_RIFLEMAN">
@@ -326,10 +336,6 @@
 			<Text>汉代的南军是西汉初设置在长安城内的禁卫军之一，属卫尉统领。南军分别驻扎在未央、长乐两宫之内的城垣下，负责守卫两宫。未央、长乐两宫位于长安城南部，所以卫尉统率的军队称南军。</Text>
 		</Row>
 
-		<Row Tag="TXT_KEY_POLICY_SPUE_WEIYANG">
-			<Text>未央宫卫士:-5%全局不满</Text>
-		</Row>
-
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_WEIYANG">
 			<Text>长乐未央</Text>
 		</Row>
@@ -341,7 +347,7 @@
 			<Text>未央宫卫士:-5%全局不满。</Text>
 		</Row>
 		
-		<!-- **********************帝国骑士*********************** -->
+		<!-- **********************王城骑士*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_NEW">
 			<Text>[COLOR_CYAN]帝国骑士[ENDCOLOR]</Text>
 		</Row>
@@ -362,6 +368,7 @@
 			</Text>
 		</Row>
 		
+
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_KNIGHT_NEW">
 			<Text>兵士集结</Text>
 		</Row>
@@ -436,7 +443,7 @@
 			<Text>[COLOR_CYAN]涌泉守卫[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_GONDORGUARD_HELP">
-			<Text>[COLOR_CYAN]涌泉守卫[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]自主政策[ENDCOLOR]与白城米那斯提力斯的联动单位，视野+2，回合结束时2格范围内每有一个敌方单位则获得10%[ICON_STRENGTH]战斗力加成。</Text>
+			<Text>[COLOR_CYAN]涌泉守卫[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]自主政策[ENDCOLOR]与白城米那斯提力斯的联动单位，视野+2，周围每存在一个临近的敌人则+25%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_GONDORGUARD_TEXT">
 			<Text>
@@ -449,7 +456,7 @@
 			<Text>帕兰提尔</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_GONDORGUARD_HELP">
-			<Text>视野+2，回合结束时2格范围内每有一个敌方单位获得10%[ICON_STRENGTH]战斗力加成。</Text>
+			<Text>视野+2，周围每存在一个临近的敌人则+25%[ICON_STRENGTH]战斗力。</Text>
 		</Row>
 		<!-- **********************羽林骑*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_YULIN_CAVALRY">
@@ -698,7 +705,7 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_TEUTONIC_HELP">
 			<Text>
 				[COLOR_CYAN]步行条顿骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]的代表性单位之一。
-				[NEWLINE][ICON_BULLET]可以建立城市，临近同类单位则+40%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]可以建立城市，+40%[ICON_STRENGTH]战斗力(邻近友军时)。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_FOOT_KNIGHT_TEUTONIC_TEXT">
@@ -711,7 +718,7 @@
 			<Text>帮助、救治、守卫</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_FOOT_KNIGHT_TEUTONIC_HELP">
-			<Text>临近同类单位则+40%[ICON_STRENGTH]战斗力。</Text>
+			<Text>+40%[ICON_STRENGTH]战斗力(邻近友军时)。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_TEUTONIC">
@@ -720,7 +727,7 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_KNIGHT_TEUTONIC_HELP">
 			<Text>
 				[COLOR_CYAN]条顿骑士[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]虔信政策[ENDCOLOR]的代表性单位之一。
-				[NEWLINE][ICON_BULLET]可以建立城市，每临近1个同类单位则+40%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]可以建立城市，+40%[ICON_STRENGTH]战斗力(邻近友军时)。
 			</Text>
 		</Row>
 		<!-- **********************医院骑士团*********************** -->
@@ -935,10 +942,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_VARANGIAN_HELP">
 			<Text>
-				[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古雇佣兵单位之一，只能通过[ICON_GOLD]金币购买，强而有力的重装步兵单位，拥有海滨地块作战加成和海洋地块移动加成，自带冲击一级，可以拔擢为[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]，购买后可以立即移动，死亡时不会造成人口损失，单位无法升级。
+				[COLOR_CYAN]瓦兰吉佣兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古雇佣兵单位之一，只能通过[ICON_GOLD]金币购买，强而有力的重装步兵单位，拥有海滨地块作战加成和海洋地块移动加成，自带冲击一级，可以拔擢为[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]，购买后可以立即移动，死亡时不会造成人口损失。
 				[NEWLINE]
-				[NEWLINE]完成[COLOR_YIELD_GOLD]安纳托利亚再征服计划[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]。
-
+				[NEWLINE]完成[COLOR_YIELD_GOLD]安纳托利亚再征服计划[ENDCOLOR]后可以进行永备化改造：[COLOR_YIELD_GOLD]瓦兰吉卫队[ENDCOLOR]。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_VARANGIAN_TEXT">
@@ -992,9 +998,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_GENOAXBOW_HELP">
 			<Text>
-				[COLOR_CYAN]热那亚弩手[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古佣兵单位之一，只能通过[ICON_GOLD]金币购买，廉价但实用的弩兵单位，有防御加成和对骑兵战力加成，可以拔擢为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]，购买后可以立即移动，死亡时不会造成人口损失，单位无法升级。
+				[COLOR_CYAN]热那亚弩手[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古佣兵单位之一，只能通过[ICON_GOLD]金币购买，廉价但实用的弩兵单位，有防御加成和对骑兵战力加成，可以拔擢为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]，购买后可以立即移动，死亡时不会造成人口损失。
 				[NEWLINE]
-				[NEWLINE]完成[COLOR_YIELD_GOLD]君士坦丁堡城墙守备计划[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]。
+				[NEWLINE]完成[COLOR_YIELD_GOLD]君士坦丁堡城墙守备计划[ENDCOLOR]后可以进行永备化改造：[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_GENOAXBOW_TEXT">
@@ -1016,7 +1022,7 @@
 				[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]是[COLOR_CYAN]热那亚弩手[ENDCOLOR]作为常备军后形成的近卫军团，拥有强大的防守能力，需要完成[COLOR_YIELD_GOLD]君士坦丁堡城墙守备计划[ENDCOLOR]：
 				[NEWLINE][ICON_BULLET]防御时+30%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]对骑兵+30%[ICON_STRENGTH]战斗力；
-				[NEWLINE][ICON_BULLET]1格内每个[COLOR_CYAN]步行医院骑士[ENDCOLOR]为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]+20%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]2格内存在[COLOR_CYAN]医院骑士团[ENDCOLOR]单位则+150%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]位于友方城市3格内时+100%[ICON_STRENGTH]战斗力，所驻守的城市城防增加75（随时代增加）；
 				[NEWLINE][ICON_BULLET]任意靠岸的海军单位均可以将[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]召唤至身边。
 			</Text>
@@ -1037,7 +1043,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_GENOAXBOW_ELITE_HELP">
 			<Text>
-				[NEWLINE][ICON_BULLET]1格内每个[COLOR_CYAN]医院骑士团[ENDCOLOR]单位为[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]+33%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]2格内存在[COLOR_CYAN]医院骑士团[ENDCOLOR]单位则+150%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]位于友方城市3格内时+100%[ICON_STRENGTH]战斗力，所驻守的城市的城防增加75（随时代增加）；
 				[NEWLINE][ICON_BULLET]任意靠岸的海军单位均可以将[COLOR_YIELD_GOLD]朱斯蒂尼亚尼弩手[ENDCOLOR]召唤至身边。
 			</Text>
@@ -1062,9 +1068,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_SWISSGUARD_HELP">
 			<Text>
-				[COLOR_CYAN]瑞士佣兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古佣兵单位之一，只能通过[ICON_GOLD]金币购买，长于突进的方阵步兵，能够冲锋击退敌方单位，并对其同格单位造成30%的[COLOR_POSITIVE_TEXT]践踏[ENDCOLOR]伤害, 自带冲锋1级，购买后可以立即移动，死亡时不会造成人口损失，单位无法升级。
+				[COLOR_CYAN]瑞士佣兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古佣兵单位之一，只能通过[ICON_GOLD]金币购买，长于突进的方阵步兵，能够冲锋击退敌方单位，并对其同格单位造成30%的[COLOR_POSITIVE_TEXT]践踏[ENDCOLOR]伤害, 自带冲锋1级，购买后可以立即移动，死亡时不会造成人口损失。
 				[NEWLINE]
-				[NEWLINE]完成[COLOR_YIELD_GOLD]圣彼得大教堂之劫[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]教皇近卫军[ENDCOLOR]。
+				[NEWLINE]完成[COLOR_YIELD_GOLD]圣彼得大教堂之劫[ENDCOLOR]后可以进行永备化改造：[COLOR_YIELD_GOLD]教皇近卫军[ENDCOLOR]。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_SWISSGUARD_TEXT">
@@ -1110,9 +1116,9 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_ELMETI_HELP">
 			<Text>
 				[COLOR_CYAN]装甲骑兵[ENDCOLOR]
-				[COLOR_CYAN]装甲骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古佣兵单位之一，只能通过[ICON_GOLD]金币购买，单位剩余的每点移动力+5%[ICON_STRENGTH]攻击力，攻击城市时对城市额外造成相当于15%城市最大生命值的伤害，购买后可以立即移动，死亡时不会造成人口损失，单位无法升级。
+				[COLOR_CYAN]装甲骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古佣兵单位之一，只能通过[ICON_GOLD]金币购买，单位剩余的每点移动力+5%[ICON_STRENGTH]攻击力，攻击城市时对城市额外造成相当于15%城市最大生命值的伤害，购买后可以立即移动，死亡时不会造成人口损失。
 				[NEWLINE]
-				[NEWLINE]完成[COLOR_YIELD_GOLD]组建敕令骑士连[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]。
+				[NEWLINE]完成[COLOR_YIELD_GOLD]组建敕令骑士连[ENDCOLOR]后可以进行永备化改造：[COLOR_YIELD_GOLD]王家敕令骑士[ENDCOLOR]。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_ELMETI_TEXT">
@@ -1150,15 +1156,84 @@
 				[NEWLINE][ICON_BULLET]单位每承受一次攻击则额外+2[ICON_MOVES]移动力，单位剩余的每点[ICON_MOVES]移动力+50%[ICON_STRENGTH]防御力。
 			</Text>
 		</Row>
+		<!-- **********************战争车垒*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_TABOR">
+			<Text>[COLOR_CYAN]战争车垒[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_TABOR_HELP">
+			<Text>
+				[COLOR_CYAN]战争车垒[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的中古佣兵单位之一，兼具了反骑兵与反城市/要塞的能力，但是移动缓慢，购买后可以立即移动，死亡时不会造成人口损失。
+				[NEWLINE]拥有2格射程，自带[COLOR_POSITIVE_TEXT]攻城武器[ENDCOLOR]、[COLOR_POSITIVE_TEXT]攻坚一级[ENDCOLOR]、[COLOR_POSITIVE_TEXT]攻坚二级[ENDCOLOR]晋升，这些属性不可继承；
+				[NEWLINE]完成[COLOR_YIELD_GOLD]掷出窗外事件[ENDCOLOR]后可以进行永备化改造：[COLOR_YIELD_GOLD]胡斯车垒[ENDCOLOR]，改造的价格较为便宜。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_TABOR_TEXT">
+			<Text>
+				马战车最早是由扬 ‧ 杰士卡(John Zizka)应用于1420的胡斯战争中。由于波希米亚的宗教改革家胡斯被教廷以火刑处决，成为压倒波希米亚境内平民的最后一根稻草，这些波希米亚平民早已不满神圣罗马帝国的霸权许久。齐斯卡遂在平民拥护下发起布拉格起义，正面与帝国作战。
+				[NEWLINE]在随后一系列战争中，杰士卡改装了农民的马车，将其变成行动堡垒。数次瓦解了条顿骑士团以及其他十字军的攻势。车垒战法也成为15世纪中后期的活用战术之一 。
+				[NEWLINE]在胡斯战争之后，波西米亚的雇佣兵依然使用车垒作为战胜骑兵和步兵的特殊战术，但随着火炮的发展，至少从大规模战役开始，胡斯车垒渐渐没落：在兰茨胡特继承者战争（War of the Succession of Landshut ）1504年九月12日的文岑巴赫战役（battle of Wenzenbach）中，三百辆战车组成的堡垒被格奥尔格（Georg von Frundsberg）麾下国土佣仆的长炮（culverin）和火枪手击溃。
+			</Text>
+		</Row>
+		<!-- <Row Tag="TXT_KEY_PROMOTION_SPUE_TABOR">
+			<Text>车阵</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_TABOR_HELP">
+			<Text></Text>
+		</Row> -->
+		<!-- **********************胡斯车垒*********************** -->
+
+		<Row Tag="TXT_KEY_UNIT_SPUE_TABOR_ELITE">
+			<Text>[COLOR_YIELD_GOLD]胡斯车垒[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_TABOR_ELITE_HELP">
+			<Text>
+				[COLOR_YIELD_GOLD]胡斯车垒[ENDCOLOR]是[COLOR_CYAN]战争车垒[ENDCOLOR]作为常备军后形成的精锐单位，需要完成[COLOR_YIELD_GOLD]掷出窗外事件[ENDCOLOR]：
+				[NEWLINE][ICON_BULLET]不可继承的属性：拥有2格射程，自带[COLOR_POSITIVE_TEXT]攻城武器[ENDCOLOR]、[COLOR_POSITIVE_TEXT]攻坚一级[ENDCOLOR]、[COLOR_POSITIVE_TEXT]攻坚二级[ENDCOLOR]晋升；
+				[NEWLINE][ICON_BULLET]对抗重骑兵单位时+100%[ICON_STRENGTH]战斗力，临近友军时+60%[ICON_STRENGTH]战斗力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_TABOR_ELITE_TEXT">
+			<Text>
+				马战车最早是由扬 ‧ 杰士卡(John Zizka)应用于1420的胡斯战争中。由于波希米亚的宗教改革家胡斯被教廷以火刑处决，成为压倒波希米亚境内平民的最后一根稻草，这些波希米亚平民早已不满神圣罗马帝国的霸权许久。齐斯卡遂在平民拥护下发起布拉格起义，正面与帝国作战。
+				[NEWLINE]在随后一系列战争中，杰士卡改装了农民的马车，将其变成行动堡垒。数次瓦解了条顿骑士团以及其他十字军的攻势。车垒战法也成为15世纪中后期的活用战术之一 。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_TABOR_ELITE">
+			<Text>独眼的扬 ‧ 杰士卡</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_TABOR_ELITE_HELP">
+			<Text>对抗重骑兵单位时+100%[ICON_STRENGTH]战斗力，临近友军时+60%[ICON_STRENGTH]战斗力。</Text>
+		</Row>
+		<!-- **********************乌兰骑兵*********************** -->
+		<Row Tag="TXT_KEY_UNIT_SPUE_UHLAN">
+			<Text>[COLOR_CYAN]乌兰骑兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_UHLAN_HELP">
+			<Text>
+				[COLOR_CYAN]乌兰骑兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，购买后可以立即移动，死亡时不会造成人口损失。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_UHLAN_TEXT">
+			<Text>
+				乌兰骑兵（Uhlan）是指发源自波兰立陶宛，装备骑枪，马刀、手枪的轻骑兵，这些轻骑兵在19世纪早期传统重骑兵衰落后成为欧洲各国常规用途骑兵的样版，后来这个名头用来指代包括法国、俄国，普鲁士、奥地利等国的枪骑兵团。乌兰骑兵通常穿着称为库尔特卡的双襟夹克（kurtka），带有彩色的饰带和肩饰，头戴名叫恰普卡的方顶波兰军帽（czapka），骑枪的枪头之下通常会有一个小燕尾旗。
+				[NEWLINE]在19世纪拿破仑战争开始之后，华沙公国便建立了乌兰骑兵编队，这些波兰枪骑兵在维斯瓦军团（Legion of the Vistula）和帝国卫队第一波兰轻骑兵团中（1st Polish Light Cavalry Regiment of the Imperial Guard）与法国军队并肩作战于西班牙和德国并将这种波兰式的轻骑兵风格散播开来。在索莫谢拉之战（Battle of Somosierra）后，拿破仑说一个波兰骑手比得上十个法国士兵。而法军中其他的中轻骑兵单位则学着乌兰骑兵的样子进行改制。	
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_UHLAN">
+			<Text>荣光之枪</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_UHLAN_HELP">
+			<Text>骑兵太多不想做了</Text>
+		</Row>
 		<!-- **********************黑森佣兵*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_HESSIAN">
 			<Text>[COLOR_CYAN]黑森佣兵[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_HESSIAN_HELP">
 			<Text>
-				[COLOR_CYAN]黑森佣兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，可以消耗自身完全镇压一座城市的抵抗，亦可以在首都城市中执行移民安置，购买后可以立即移动，死亡时不会造成人口损失，单位无法升级。
+				[COLOR_CYAN]黑森佣兵[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR]的启蒙佣兵单位之一，只能通过[ICON_GOLD]金币购买，可以消耗自身完全镇压一座城市的抵抗，亦可以在首都城市中执行移民安置，购买后可以立即移动，死亡时不会造成人口损失。
 				[NEWLINE]
-				[NEWLINE]完成[COLOR_YIELD_GOLD]巨人掷弹兵训练计划[ENDCOLOR]后可以进行精英化改造：[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]。
+				[NEWLINE]完成[COLOR_YIELD_GOLD]巨人掷弹兵训练计划[ENDCOLOR]后可以进行永备化改造：[COLOR_YIELD_GOLD]巨人掷弹兵[ENDCOLOR]。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_HESSIAN_TEXT">

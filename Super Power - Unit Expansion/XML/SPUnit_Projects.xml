@@ -8,7 +8,7 @@
 	    	<Description>TXT_KEY_PROJECT_BUCELLARII_TRAINING</Description>
 	    	<Help>TXT_KEY_PROJECT_BUCELLARII_TRAINING_HELP</Help>
 	    	<Civilopedia>TXT_KEY_PROJECT_BUCELLARII_TRAINING_PEDIA</Civilopedia>
-	    	<!-- <MaxGlobalInstances>1</MaxGlobalInstances> -->
+	    	<MaxGlobalInstances>1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
 	    	<Cost>120</Cost>
 	    	<PortraitIndex>40</PortraitIndex>
@@ -20,7 +20,7 @@
 	    	<Description>TXT_KEY_PROJECT_SPUE_VARANGIAN_TRAINING</Description>
 	    	<Help>TXT_KEY_PROJECT_SPUE_VARANGIAN_TRAINING_HELP</Help>
 	    	<Civilopedia>TXT_KEY_PROJECT_SPUE_VARANGIAN_TRAINING_PEDIA</Civilopedia>
-	    	<!-- <MaxGlobalInstances>1</MaxGlobalInstances> -->
+	    	<MaxGlobalInstances>-1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
 	    	<Cost>120</Cost>
 	    	<PortraitIndex>41</PortraitIndex>
@@ -32,7 +32,7 @@
 	    	<Description>TXT_KEY_PROJECT_SPUE_GENOAXBOW_TRAINING</Description>
 	    	<Help>TXT_KEY_PROJECT_SPUE_GENOAXBOW_TRAINING_HELP</Help>
 	    	<Civilopedia>TXT_KEY_PROJECT_SPUE_GENOAXBOW_TRAINING_PEDIA</Civilopedia>
-	    	<!-- <MaxGlobalInstances>1</MaxGlobalInstances> -->
+	    	<MaxGlobalInstances>-1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
 	    	<Cost>120</Cost>
 	    	<PortraitIndex>41</PortraitIndex>
@@ -44,7 +44,7 @@
 	    	<Description>TXT_KEY_PROJECT_SPUE_SWISSGUARD_TRAINING</Description>
 	    	<Help>TXT_KEY_PROJECT_SPUE_SWISSGUARD_TRAINING_HELP</Help>
 	    	<Civilopedia>TXT_KEY_PROJECT_SPUE_SWISSGUARD_TRAINING_PEDIA</Civilopedia>
-	    	<!-- <MaxGlobalInstances>1</MaxGlobalInstances> -->
+	    	<MaxGlobalInstances>-1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
 	    	<Cost>120</Cost>
 	    	<PortraitIndex>41</PortraitIndex>
@@ -56,7 +56,7 @@
 	    	<Description>TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING</Description>
 	    	<Help>TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING_HELP</Help>
 	    	<Civilopedia>TXT_KEY_PROJECT_SPUE_ELMETI_TRAINING_PEDIA</Civilopedia>
-	    	<!-- <MaxGlobalInstances>1</MaxGlobalInstances> -->
+	    	<MaxGlobalInstances>-1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
 	    	<Cost>120</Cost>
 	    	<PortraitIndex>41</PortraitIndex>
@@ -68,7 +68,7 @@
 	    	<Description>TXT_KEY_PROJECT_SPUE_TABOR_TRAINING</Description>
 	    	<Help>TXT_KEY_PROJECT_SPUE_TABOR_TRAINING_HELP</Help>
 	    	<Civilopedia>TXT_KEY_PROJECT_SPUE_TABOR_TRAINING_PEDIA</Civilopedia>
-	    	<!-- <MaxGlobalInstances>1</MaxGlobalInstances> -->
+	    	<MaxGlobalInstances>-1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
 	    	<Cost>120</Cost>
 	    	<PortraitIndex>41</PortraitIndex>
@@ -80,7 +80,7 @@
 	    	<Description>TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING</Description>
 	    	<Help>TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING_HELP</Help>
 	    	<Civilopedia>TXT_KEY_PROJECT_SPUE_HESSIAN_TRAINING_PEDIA</Civilopedia>
-	    	<!-- <MaxGlobalInstances>1</MaxGlobalInstances> -->
+	    	<MaxGlobalInstances>-1</MaxGlobalInstances>
 	    	<MaxTeamInstances>1</MaxTeamInstances>
 	    	<Cost>150</Cost>
 	    	<PortraitIndex>41</PortraitIndex>

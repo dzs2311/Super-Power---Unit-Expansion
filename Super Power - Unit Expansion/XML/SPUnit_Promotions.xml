@@ -267,6 +267,8 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PortraitIndex>8</PortraitIndex>
 			<ReconChange>2</ReconChange>
+			<NearNumEnemyDefenseMod>25</NearNumEnemyDefenseMod>
+			<NearNumEnemyAttackMod>25</NearNumEnemyAttackMod>
 			<IconAtlas>promoVP_atlas_01</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_GONDORGUARD</PediaEntry>
@@ -560,6 +562,19 @@
 			<IconAtlas>promoVP_atlas_03</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_ELMETI_ELITE</PediaEntry>
+		</Row>
+		<Row>
+			<!--胡斯车垒：独眼-->
+			<Type>PROMOTION_SPUE_TABOR_ELITE</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_TABOR_ELITE</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_TABOR_ELITE_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<AdjacentMod>60</AdjacentMod>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_TABOR_ELITE</PediaEntry>
 		</Row>
 		<Row>
 			<!--黑森佣兵-->
@@ -1499,16 +1514,16 @@
 		</Row>
 		<Row>
 			<!--板屋船：旋风之海-->
-			<Type>PROMOTION_SPUE_KOREA_PANOKSEONT</Type>
-			<Description>TXT_KEY_PROMOTION_SPUE_KOREA_PANOKSEONT</Description>
-			<Help>TXT_KEY_PROMOTION_SPUE_KOREA_PANOKSEONT_HELP</Help>
+			<Type>PROMOTION_SPUE_KOREA_PANOKSEON</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_KOREA_PANOKSEON</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_KOREA_PANOKSEON_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PortraitIndex>59</PortraitIndex>
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>
 			<NearNumEnemyDefenseMod>15</NearNumEnemyDefenseMod>
 			<NearNumEnemyAttackMod>5</NearNumEnemyAttackMod>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KOREA_PANOKSEONT</PediaEntry>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_KOREA_PANOKSEON</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<Row>
@@ -1917,4 +1932,12 @@
 			<Modifier>400</Modifier>
 		</Row>
 	</UnitPromotions_PromotionModifiers>
+	<UnitPromotions_UnitCombatMods>
+		<!--胡斯车垒：独眼-->
+		<Row>
+			<PromotionType>PROMOTION_SPUE_TABOR_ELITE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+			<Modifier>100</Modifier>
+		</Row>
+	</UnitPromotions_UnitCombatMods>
 </GameData>

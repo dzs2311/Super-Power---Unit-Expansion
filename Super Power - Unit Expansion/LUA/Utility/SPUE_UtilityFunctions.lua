@@ -335,7 +335,9 @@ function EliteCondition(unit, unitPromotionID, ounitType, nunitType, unitClassTy
 	-- 	return false 
 	-- end;
 	
-	if goldCost then iCost = goldCost * 5 end;
+	if goldCost then iCost = goldCost * 2 end;
+	if ounitType == 'UNIT_SPUE_TABOR' then iCost = iCost * 0.2 end;
+
 	if dbProject == nil then
 		Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON_NONE", 
 						 iCost, dboUnit.Description, dbnUnit.Description, dboUnit.Description);
@@ -363,7 +365,8 @@ function EliteConditionAI(unit, unitPromotionID, ounitType, nunitType, unitClass
 
 	local dbProject = GameInfo.Projects[projectType];
 	
-	if goldCost then iCost = goldCost * 4 end;
+	if goldCost then iCost = goldCost * 2 end;
+	if ounitType == 'UNIT_SPUE_TABOR' then iCost = iCost * 0.2 end;
 		
 	return unit:CanMove() and unit:IsHasPromotion(unitPromotionID) 
 	and unit:GetUnitType() == GameInfoTypes[ounitType];
@@ -385,6 +388,8 @@ function EliteDisable(unit, unitPromotion2ID, unitClassType, projectType)
 	local corpsFlag = TroopsLeftFlag(player, 1);
 
 	if goldCost then iCost = goldCost * 2 end;
+	-- 胡斯车垒转换价格便宜
+	if ounitType == 'UNIT_SPUE_TABOR' then iCost = iCost * 0.2 end;
 	-- return CountUnitsWithUniquePromotions(unit:GetOwner(), unitPromotion2ID) > 0 
 	return player:GetUnitCountFromHasPromotion(unitPromotion2ID) > 0
 	or player:GetGold() < iCost 
@@ -440,6 +445,9 @@ function EliteAction(unit, nunitType, unitClassType)
 	local iCost = 1000;
 
 	if goldCost then iCost = goldCost * 2 end;
+	-- 胡斯车垒转换价格便宜
+	if nunitType == 'UNIT_SPUE_TABOR_ELITE' then iCost = iCost * 0.2 end;
+
 
 	Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");	
 

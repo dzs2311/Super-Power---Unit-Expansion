@@ -49,6 +49,11 @@ local unitPromotionSwissEliteID   = GameInfo.UnitPromotions["PROMOTION_SPUE_SWIS
 local unitPromotionElmetiID       = GameInfo.UnitPromotions["PROMOTION_SPUE_ELMETI"].ID
 local unitPromotionElmetiEliteID  = GameInfo.UnitPromotions["PROMOTION_SPUE_ELMETI_ELITE"].ID
 
+-- 战争车垒
+local unitPromotionCitySiegeID       = GameInfo.UnitPromotions["PROMOTION_CITY_SIEGE"].ID
+local unitPromotionTaborEliteID  = GameInfo.UnitPromotions["PROMOTION_SPUE_TABOR_ELITE"].ID
+
+
 -- 黑森
 local unitPromotionHessianID      = GameInfo.UnitPromotions["PROMOTION_SPUE_HESSIAN"].ID
 local unitPromotionHessianEliteID = GameInfo.UnitPromotions["PROMOTION_SPUE_HESSIAN_ELITE"].ID
@@ -400,6 +405,9 @@ function SPUE_IdeoProjectOnly(playerID, cityID, projectTypeID)
 		-- 商业：王家敕令骑士
 	elseif (projectTypeID == GameInfo.Projects["PROJECT_SPUE_ELMETI_TRAINING"].ID) then
 		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_ELMETI"].ID)
+		-- 商业：胡斯车垒
+	elseif (projectTypeID == GameInfo.Projects["PROJECT_SPUE_TABOR_TRAINING"].ID) then
+		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_TABOR"].ID)
 		-- 商业：巨人掷弹兵团
 	elseif (projectTypeID == GameInfo.Projects["PROJECT_SPUE_HESSIAN_TRAINING"].ID) then
 		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_HESSIAN"].ID)
@@ -598,7 +606,7 @@ function SPUE_OnUnitCreated(iPlayerID, iUnitID)
 	if pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_ROME_HERCULIANI"]) 
 	and not pPlayer:HasPolicy(GameInfo.Policies["POLICY_SPUE_ROME_HERCULIANI"].ID)
 	then
-		pPlayer:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_ROME_HERCULIANI"].ID, false)
+		pPlayer:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_ROME_HERCULIANI"].ID, true, true)
 	end
 
 end
@@ -1001,53 +1009,53 @@ function SPUE_PlayerDoneTurn(playerID)
 		end
 
 		-- 涌泉守卫：根据两格内敌方单位数量增加战斗力
-		if unit:IsHasPromotion(unitPromotionGondorID) then
-			local iunit = GameInfo.Units[unit:GetUnitType()];
-			local plot = unit:GetPlot();
-			local icombat_bonus = 0;
+		-- if unit:IsHasPromotion(unitPromotionGondorID) then
+		-- 	local iunit = GameInfo.Units[unit:GetUnitType()];
+		-- 	local plot = unit:GetPlot();
+		-- 	local icombat_bonus = 0;
 
-			local unitCount = plot:GetNumUnits();
-			local uniqueRange = 2
-			if unitCount >= 1 then
-				for i = 0, unitCount - 1, 1 do
-					local pFoundUnit = plot:GetUnit(i)
-					if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
-						local pPlayer = Players[pFoundUnit:GetOwner()];
-						if PlayersAtWar(player, pPlayer) then
-							icombat_bonus = icombat_bonus + 1;
-						end
-					end
-				end
-			end
+		-- 	local unitCount = plot:GetNumUnits();
+		-- 	local uniqueRange = 2
+		-- 	if unitCount >= 1 then
+		-- 		for i = 0, unitCount - 1, 1 do
+		-- 			local pFoundUnit = plot:GetUnit(i)
+		-- 			if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
+		-- 				local pPlayer = Players[pFoundUnit:GetOwner()];
+		-- 				if PlayersAtWar(player, pPlayer) then
+		-- 					icombat_bonus = icombat_bonus + 1;
+		-- 				end
+		-- 			end
+		-- 		end
+		-- 	end
 
-			for dx = -uniqueRange, uniqueRange, 1 do
-				for dy = -uniqueRange, uniqueRange, 1 do
-					local adjPlot = Map.PlotXYWithRangeCheck(plot:GetX(), plot:GetY(), dx, dy, uniqueRange);
-					if (adjPlot ~= nil) then
-						unitCount = adjPlot:GetNumUnits();
-						if unitCount >= 1 then
-							for i = 0, unitCount - 1, 1 do
-								local pFoundUnit = adjPlot:GetUnit(i)
-								if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
-									local pPlayer = Players[pFoundUnit:GetOwner()];
-									if PlayersAtWar(player, pPlayer) then
-										icombat_bonus = icombat_bonus + 1;
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-			local iunit = GameInfo.Units[unit:GetUnitType()];
-			local icombat = math.ceil(0.1 * iunit.Combat);
-			-- unit:SetBaseCombatStrength(iunit.Combat + icombat * icombat_bonus);
-			SPUEAddCombatBonus(unit, math.ceil(100 * icombat_bonus * icombat / iunit.Combat))
-			local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
-			Events.AddPopupTextEvent(HexToWorld(hex),
-				Locale.ConvertTextKey("+{1_Num}[ICON_STRENGTH]", icombat * icombat_bonus));
-			-- Events.GameplayFX(hex.x, hex.y, -1);
-		end
+		-- 	for dx = -uniqueRange, uniqueRange, 1 do
+		-- 		for dy = -uniqueRange, uniqueRange, 1 do
+		-- 			local adjPlot = Map.PlotXYWithRangeCheck(plot:GetX(), plot:GetY(), dx, dy, uniqueRange);
+		-- 			if (adjPlot ~= nil) then
+		-- 				unitCount = adjPlot:GetNumUnits();
+		-- 				if unitCount >= 1 then
+		-- 					for i = 0, unitCount - 1, 1 do
+		-- 						local pFoundUnit = adjPlot:GetUnit(i)
+		-- 						if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
+		-- 							local pPlayer = Players[pFoundUnit:GetOwner()];
+		-- 							if PlayersAtWar(player, pPlayer) then
+		-- 								icombat_bonus = icombat_bonus + 1;
+		-- 							end
+		-- 						end
+		-- 					end
+		-- 				end
+		-- 			end
+		-- 		end
+		-- 	end
+		-- 	local iunit = GameInfo.Units[unit:GetUnitType()];
+		-- 	local icombat = math.ceil(0.1 * iunit.Combat);
+		-- 	-- unit:SetBaseCombatStrength(iunit.Combat + icombat * icombat_bonus);
+		-- 	SPUEAddCombatBonus(unit, math.ceil(100 * icombat_bonus * icombat / iunit.Combat))
+		-- 	local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
+		-- 	Events.AddPopupTextEvent(HexToWorld(hex),
+		-- 		Locale.ConvertTextKey("+{1_Num}[ICON_STRENGTH]", icombat * icombat_bonus));
+		-- 	-- Events.GameplayFX(hex.x, hex.y, -1);
+		-- end
 
 		-- 罗马禁卫军：集权帝国：驻守首都
 		if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_PRAETORIAN"]) then
@@ -1381,6 +1389,9 @@ function SPUE_OnAIUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		--*****************************AI转化王家敕令骑士*****************************--
 		EliteUnitTransferAI(unit, unitPromotionElmetiID, "UNIT_SPUE_ELMETI", "UNIT_SPUE_ELMETI_ELITE",
 			"UNITCLASS_SPUE_ELMETI", "PROJECT_SPUE_ELMETI_TRAINING", unitPromotionElmetiEliteID);
+		--*****************************AI转化王家胡斯车垒*****************************--
+		EliteUnitTransferAI(unit, unitPromotionCitySiegeID, "UNIT_SPUE_TABOR", "UNIT_SPUE_TABOR_ELITE",
+			"UNITCLASS_SPUE_TABOR", "PROJECT_SPUE_TABOR_TRAINING", unitPromotionTaborEliteID);
 		--*****************************AI转化巨人掷弹兵*****************************--
 		EliteUnitTransferAI(unit, unitPromotionHessianID, "UNIT_SPUE_HESSIAN", "UNIT_SPUE_HESSIAN_ELITE",
 			"UNITCLASS_SPUE_HESSIAN", "PROJECT_SPUE_HESSIAN_TRAINING", unitPromotionHessianEliteID);
@@ -3946,6 +3957,32 @@ LuaEvents.UnitPanelActionAddin(SPUE_Patronage_Corvette_Button)
 -- 商业单位永备化按钮
 --------------------------------------------------------------
 --------------------------------------------------------------
+-- 战争车垒永备化成为胡斯战车
+--------------------------------------------------------------
+SPUE_Tabor_Button = {
+	Name = "Tabor Button",
+	Title = "TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON_SHORT", -- or a TXT_KEY
+	OrderPriority = 200,                              -- default is 200
+	IconAtlas = "promoVP_atlas_00",                   -- 45 and 64 variations required
+	PortraitIndex = 49,
+	ToolTip = "TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON",  -- or a TXT_KEY_ or a function
+
+	Condition = function(action, unit)
+		return EliteCondition(unit, unitPromotionCitySiegeID, "UNIT_SPUE_TABOR", "UNIT_SPUE_TABOR_ELITE",
+			"UNITCLASS_SPUE_TABOR", "PROJECT_SPUE_TABOR_TRAINING", SPUE_Tabor_Button);
+	end, -- or nil or a boolean, default is true
+
+	Disabled = function(action, unit)
+		return EliteDisable(unit, unitPromotionTaborEliteID, "UNITCLASS_SPUE_TABOR", "PROJECT_SPUE_TABOR_TRAINING");
+	end, -- or nil or a boolean, default is false
+
+	Action = function(action, unit, eClick)
+		EliteAction(unit, "UNIT_SPUE_TABOR_ELITE", "UNITCLASS_SPUE_TABOR")
+	end
+};
+
+LuaEvents.UnitPanelActionAddin(SPUE_Tabor_Button)
+--------------------------------------------------------------
 -- 瓦兰吉佣兵永备化成为瓦兰吉卫队
 --------------------------------------------------------------
 SPUE_Varangian_Button = {
@@ -4364,6 +4401,8 @@ function SetPolicyUnitsName(iPlayer, iOldUnit, iNewUnit)
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_ELMETI_ELITE"); -- 商业：敕令骑士
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ELMETI"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_ELMETI"); -- 商业：装甲骑兵
+	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TABOR_ELITE"].ID) then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_TABOR_ELITE"); -- 商业：胡斯车垒
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_HESSIAN_ELITE"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_ELMETI_ELITE"); -- 商业：巨人掷弹兵
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_HESSIAN"].ID) then

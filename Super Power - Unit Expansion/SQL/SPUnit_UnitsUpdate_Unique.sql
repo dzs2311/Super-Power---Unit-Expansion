@@ -382,8 +382,8 @@ VALUES	('CIVILIZATION_BYZANTIUM',	            'UNITCLASS_PIKEMAN',			'UNIT_SPUE_
 
 -- 边防军
 INSERT INTO Units 	
-		(Type, 			    			   Class, 	PrereqTech, RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, 	FaithCost,  HurryCostModifier, PurchaseOnly, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,					Strategy,	Help,						    			   Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,       XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass,  UnitArtInfo, 								UnitFlagIconOffset, UnitFlagAtlas,						PortraitIndex, 	IconAtlas)
-SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',   Class, 	PrereqTech, RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,	FaithCost,  HurryCostModifier, PurchaseOnly, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_BYZANTIUM_LIMITANEI',	'TXT_KEY_CIV5_XILIUYING_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_BYZANTIUM_LIMITANEI_HELP',  Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_BALLISTICS',  XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass,  'ART_DEF_UNIT_SPUE_BYZANTIUM_LIMITANEI',	0,					'UNIT_SPUE_BYZANTIUM_FLAG1_ATLAS',	37,				'SPUE02_UNITS_ATLAS'
+		(Type, 			    			   Class, 	PrereqTech, RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost, 	FaithCost,  HurryCostModifier, PurchaseOnly, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,									Strategy,	Help,						    			   Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,       XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass,  UnitArtInfo, 								UnitFlagIconOffset, UnitFlagAtlas,						PortraitIndex, 	IconAtlas)
+SELECT	'UNIT_SPUE_BYZANTIUM_LIMITANEI',   Class, 	PrereqTech, RangedCombat,	Combat,	Range, ExtraMaintenanceCost,	Special, Cost,	FaithCost,  HurryCostModifier, PurchaseOnly, RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_BYZANTIUM_LIMITANEI',	'TXT_KEY_CIV5_SPUE_BYZANTIUM_LIMITANEI_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_BYZANTIUM_LIMITANEI_HELP',  Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_BALLISTICS',  XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass,  'ART_DEF_UNIT_SPUE_BYZANTIUM_LIMITANEI',	0,					'UNIT_SPUE_BYZANTIUM_FLAG1_ATLAS',	37,				'SPUE02_UNITS_ATLAS'
 FROM Units WHERE Type = 'UNIT_PIKEMAN';
 
 INSERT INTO Unit_ClassUpgrades 	
@@ -485,6 +485,8 @@ VALUES	('UNIT_SPUE_KOREA_PANOKSEON', 'UNITCLASS_FRIGATE');
 INSERT INTO Unit_FreePromotions
 		(UnitType, 						PromotionType)
 VALUES	('UNIT_SPUE_KOREA_PANOKSEON', 	'PROMOTION_NAVALMELEE_COMBAT'),
+		('UNIT_SPUE_KOREA_PANOKSEON', 	'PROMOTION_SP_FORCE_3'),
+		('UNIT_SPUE_KOREA_PANOKSEON', 	'PROMOTION_SPUE_KOREA_PANOKSEON'),
 		('UNIT_SPUE_KOREA_PANOKSEON', 	'PROMOTION_OCEAN_IMPASSABLE');
 
 INSERT INTO Unit_BuildingClassRequireds 	

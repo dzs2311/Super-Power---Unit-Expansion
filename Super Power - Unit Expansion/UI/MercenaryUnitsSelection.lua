@@ -21,8 +21,7 @@ local g_MercenaryUnitListL	= {	GameInfoTypes["UNIT_SPUE_VARANGIAN"],
 local g_MercenaryUnitListR	= {	GameInfoTypes["UNIT_SPUE_HESSIAN"],
 								GameInfoTypes["UNIT_SPUE_SSPRIVATEER"],
 								GameInfoTypes["UNIT_SPUE_PRIVATEER"],
-								GameInfoTypes["UNIT_SPUE_FUNE"],
-								GameInfoTypes["UNIT_SPUE_UHLAN"]}
+								GameInfoTypes["UNIT_SPUE_FUNE"]}
 							   
 local g_MercenaryUnitLeft	= nil
 local g_MercenaryUnitRight	= nil

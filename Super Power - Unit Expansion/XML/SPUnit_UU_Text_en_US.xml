@@ -58,7 +58,7 @@
 			<Text>
 				[COLOR_POSITIVE_TEXT]康涅狄格级战列舰[ENDCOLOR]是美国的特色单位，替代[COLOR_POSITIVE_TEXT]无畏舰[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]可以进入未开边国家境内，无视ZOC，位于[COLOR_POSITIVE_TEXT]城邦境内[ENDCOLOR]时，每回合+25[ICON_INFLUENCE]影响力。
-				[NEWLINE][ICON_BULLET]血量+50，每点额外的[ICON_RES_CONSUMER]商品提供1%的[ICON_STRENGTH]战斗力加成。			
+				[NEWLINE][ICON_BULLET]血量+50，每点额外的[ICON_RES_CONSUMER]商品提供1%的[ICON_STRENGTH]战斗力加成。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_AMERICA_CONNECTICUT_TEXT">
@@ -133,7 +133,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_JAPAN_TEKKOUSEN_HELP">
 			<Text>
-				[COLOR_CYAN]铁甲船[ENDCOLOR]是日本的特色单位，替代[COLOR_POSITIVE_TEXT]桨帆战舰[ENDCOLOR]。
+				[COLOR_POSITIVE_TEXT]铁甲船[ENDCOLOR]是日本的特色单位，替代[COLOR_POSITIVE_TEXT]桨帆战舰[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]自带装甲二级和海战三级晋升。
 			</Text>
 		</Row>
@@ -146,7 +146,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_ENGLAND_GRAND_CARRACK_HELP">
 			<Text>
-				[COLOR_CYAN]海猎犬[ENDCOLOR]是英国伊丽莎白女王的特色单位，替代[COLOR_POSITIVE_TEXT]单桅战船[ENDCOLOR]。
+				[COLOR_POSITIVE_TEXT]海猎犬[ENDCOLOR]是英国伊丽莎白女王的特色单位，替代[COLOR_POSITIVE_TEXT]单桅战船[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]从战斗中获取的经验增加30%；
 				[NEWLINE][ICON_BULLET]隐形但可被驱逐舰发现，可以发现潜艇；
 				[NEWLINE][ICON_BULLET]可以在未开边的情况下进入别国领土；
@@ -174,7 +174,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_FRANCE_IMPERIAL_GUARD_HELP">
 			<Text>
-				[COLOR_CYAN]帝国近卫[ENDCOLOR]是法国拿破仑的特色单位，替代[COLOR_POSITIVE_TEXT]线列步兵[ENDCOLOR]。
+				[COLOR_POSITIVE_TEXT]帝国近卫[ENDCOLOR]是法国拿破仑的特色单位，替代[COLOR_POSITIVE_TEXT]线列步兵[ENDCOLOR]。
 				[NEWLINE][ICON_BULLET]无视ZOC；
 				[NEWLINE][ICON_BULLET][ICON_MOVES]移动力+1，每一点已花费的[ICON_MOVES]移动力提供+10%[ICON_STRENGTH]战斗力；
 				[NEWLINE][ICON_BULLET]以自身为中心，相邻区域的敌军[ICON_STRENGTH]战斗力-25%；
@@ -196,5 +196,160 @@
 				[NEWLINE][ICON_BULLET]可以增加陆军统帅的获取效率，位于陆军统帅附近时战斗效率增加。
 			</Text>
 		</Row>	
+		<!--******************************边防军*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_BYZANTIUM_LIMITANEI">
+			<Text>边防军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_BYZANTIUM_LIMITANEI_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]边防军[ENDCOLOR]是拜占庭的特色单位，替代[COLOR_POSITIVE_TEXT]长枪兵[ENDCOLOR];
+				[NEWLINE][ICON_BULLET]自带[COLOR_POSITIVE_TEXT]近战一级[ENDCOLOR]与[COLOR_POSITIVE_TEXT]近战二级[ENDCOLOR]晋升；
+				[NEWLINE][ICON_BULLET]与普通长枪兵不同，重甲持盾的[COLOR_POSITIVE_TEXT]边防军[ENDCOLOR]能够有效防御远程攻击；
+				[NEWLINE][ICON_BULLET]邻近友军时+25%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]文明每点额外的铁资源提供+2%[ICON_STRENGHTH]战斗力，最高50%；
+				[NEWLINE][ICON_BULLET]2格内存在[COLOR_POSITIVE_TEXT]边防军[ENDCOLOR]则+35%[ICON_STRENGTH]战斗力；
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_BYZANTIUM_LIMITANEI_TEXT">
+			<Text>
+			边防军（Limitanei）是西罗马帝国末期和拜占庭帝国早期的边界驻军，其得名于描述军事边界区的英文单词“limes”。随着时间推移，这些军队逐渐演变为隶属于罗马帝国的本地民兵组织，名望和专业性也逐渐逊于帝国的其他部队。
+			[NEWLINE]戴克里先将军队划分为边防军和野战军两种序列。边防军部署在边境，抗击敌方的先头部队，为己方野战军的集结与应战创造时间和条件。士兵定居在边界地区并耕作土地，他们持有土地的条件是履行世袭服兵役的义务。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BYZANTIUM_LIMITANEI">
+			<Text>陲边铁卫</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BYZANTIUM_LIMITANEI_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]不被陆军远程单位克制, 防御远程攻击时+50%[ICON_STRENGHTH]战斗力；
+				[NEWLINE][ICON_BULLET]+25%[ICON_STRENGTH]战斗力(邻近友军时)；
+				[NEWLINE][ICON_BULLET]文明每点额外的铁资源提供+2%[ICON_STRENGHTH]战斗力，最高50%；
+				[NEWLINE][ICON_BULLET]2格内存在[COLOR_POSITIVE_TEXT]边防军[ENDCOLOR]则+35%[ICON_STRENGTH]战斗力。
+			</Text>
+		</Row>
+		<!--******************************皇家近卫*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_BYZANTIUM_TAGMATA">
+			<Text>[COLOR_CYAN]皇家近卫[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_BYZANTIUM_TAGMATA_HELP">
+			<Text>
+				[COLOR_CYAN]皇家近卫[ENDCOLOR]是拜占庭专属的[ICON_CULTURE][COLOR_MAGENTA]荣誉政策[ENDCOLOR]的代表性单位，代替[COLOR_CYAN]羽林禁军[ENDCOLOR]，可以用[ICON_PEACE]信仰购买，拥有[COLOR_CYAN]紫凤凰[ENDCOLOR]能力。
+				[NEWLINE][ICON_BULLET]自带[COLOR_POSITIVE_TEXT]装甲三级[ENDCOLOR]晋升；
+				[NEWLINE][ICON_BULLET]3格内存在[COLOR_POSITIVE_TEXT]边防军[ENDCOLOR]则+50%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]开阔地形[ICON_STRENGTH]战斗力+50%且移动力翻倍，攻击时+5固定伤害；
+				[NEWLINE][ICON_BULLET]剩余血量小于等于10点则固定-30所受伤害。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_BYZANTIUM_TAGMATA_TEXT">
+			<Text>
+				拜占庭皇家近卫军（Tagmata）是公元4世纪君士坦丁堡的常备卫队，隶属拜占庭帝国（东罗马帝国），到8世纪，被用做皇家近卫部队军团的统称。这支皇家近卫军通常包括Scholae(教导团)、Excubiti(守夜团)、Arithmos(哨卫团)和Ikanatoi(冠军团)骑兵军团，但有时把Numeri、Hetaereria和其他的首都警备部队，乃至皇家海军（至少是指为皇帝个人服务的部门）也包括在内。	
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA">
+			<Text>紫凤凰</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]3格内存在[COLOR_POSITIVE_TEXT]边防军[ENDCOLOR]则+50%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]开阔地形[ICON_STRENGTH]战斗力+50%且移动力翻倍，攻击时+5固定伤害；
+				[NEWLINE][ICON_BULLET]剩余血量小于等于10点则固定-30所受伤害。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT">
+			<Text>曼奇科特镇魂曲</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT_HELP">
+			<Text>固定-30受到伤害。</Text>
+		</Row>
+		<!--******************************板屋船*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_KOREA_PANOKSEON">
+			<Text>板屋船</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_KOREA_PANOKSEON_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]板屋船[ENDCOLOR]是朝鲜的特色单位，替代[COLOR_POSITIVE_TEXT]桨帆战舰[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]自带[COLOR_POSITIVE_TEXT]技能三级——心战[ENDCOLOR]晋升；
+				[NEWLINE][ICON_BULLET]每临近一个敌方单位，则在进攻时+5%[ICON_STRENGTH]战斗力，在防御时+15%[ICON_STRENGTH]战斗力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_KOREA_PANOKSEON_TEXT">
+			<Text>
+				板屋船（韩语：판옥선），是约在朝鲜之役开始出现的大型战舰。
+				[NEWLINE]板屋船体积庞大，约可乘载百人以上的军队。虽然其航行速度并不快，但是战斗时仅需数十人的水手便能灵活操作，为其优点。当时的朝鲜水军常以板屋船为主力战舰，搭配剑船、猛船等较小型的快船作为护卫，构成水军舰队。 			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KOREA_PANOKSEON">
+			<Text>旋风之海</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_KOREA_PANOKSEON_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]每临近一个敌方单位，则在进攻时+5%[ICON_STRENGTH]战斗力，在防御时+15%[ICON_STRENGTH]战斗力。
+			</Text>
+		</Row>
+		<!--******************************圣殒骑兵*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_PERSIA_GYAN">
+			<Text>[COLOR_CYAN]圣殒骑兵[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_PERSIA_GYAN_HELP">
+			<Text>
+				[COLOR_CYAN]圣殒骑兵[ENDCOLOR]是波斯专属的[ICON_CULTURE][COLOR_MAGENTA]荣誉政策[ENDCOLOR]的代表性单位，代替[COLOR_CYAN]羽林禁军[ENDCOLOR]，拥有[COLOR_CYAN]临灵河[ENDCOLOR]能力。
+				[NEWLINE][ICON_BULLET]自带装甲二级；
+				[NEWLINE][ICON_BULLET]每损失一点生命值（上限100）则+4%[ICON_STRENGTH]战斗力，受伤时没有战斗力惩罚；
+				[NEWLINE][ICON_BULLET]2格内的敌方单位-33%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]开阔地形[ICON_STRENGTH]战斗力+50%且移动力翻倍；
+				[NEWLINE][ICON_BULLET]每占领一个原始首都，军事单位攻击伤害固定+1。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_PERSIA_GYAN_TEXT">
+			<Text>
+				萨珊最为精锐的骑兵卫队是编成于公元4世纪，由萨珊帝王沙普尔二世组建的1000名萨珊皇家禁卫骑兵（pushtigban）。他们不但装备超群，而且纪律严明。在和平时期，他们会驻扎在首都泰西封，作为守卫帝王的最后一道防线。其中有一部分被称作“圣陨骑兵” （gyan-avspar），更是包含了“强烈的献身精神”，是最出色的萨珊禁卫骑兵，乃重型骑兵精锐中的精锐。他们虽然数量很少，但在面对拜占庭名将所统领精锐部队作战时，曾发挥过决定性作用。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_PERSIA_GYAN">
+			<Text>临灵河</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_PERSIA_GYAN_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]每损失一点生命值（上限100）则+4%[ICON_STRENGTH]战斗力，受伤时没有战斗力惩罚；
+				[NEWLINE][ICON_BULLET]2格内的敌方单位-33%[ICON_STRENGTH]战斗力；
+				[NEWLINE][ICON_BULLET]开阔地形[ICON_STRENGTH]战斗力+50%且移动力翻倍；
+				[NEWLINE][ICON_BULLET]每占领一个原始首都，军事单位攻击伤害固定+1。
+			</Text>
+		</Row>
+		<!--******************************赫拉克勒斯卫队*******************************-->
+		<Row Tag="TXT_KEY_UNIT_SPUE_ROME_HERCULIANI">
+			<Text>[COLOR_CYAN]赫拉克勒斯卫队[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_ROME_HERCULIANI_HELP">
+			<Text>
+				[COLOR_CYAN]赫拉克勒斯卫队[ENDCOLOR]是罗马专属的[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]的代表性单位，代替[COLOR_CYAN]禁卫军[ENDCOLOR]。
+				[NEWLINE]位于场上时可为首都地块供+5[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出；
+				[NEWLINE]回合结束时若驻守在首都地块则可为首都提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_ROME_HERCULIANI_TEXT">
+			<Text>
+				戴克里先不信任以往劣迹斑斑的禁卫军，因此他提拔了他在过去两支忠诚的旧部——第五朱庇特军团（Legio V Iovia）和第六赫拉克勒斯军团（Legio VI Herculia）成为了他的新禁卫军：朱庇特卫队（Jovians）和赫拉克勒斯卫队（Herculians）。这两个军团就如同大力神一般，负责保卫皇帝的寝宫。
+				[NEWLINE]在帝国分为东部和西部之后，这支部队也被一分为二，资深赫拉克勒斯步兵团（Herculiani seniores）和历战赫拉克勒斯步兵团（Herculiani iuniores）两支部队番号分属于西部和东部的中央野战军团。他们都是经验丰富的重步兵，在公元398年，西部的资深赫拉克勒斯步兵团还曾出征北非，镇压了那里的吉尔多叛乱（Gildonic War）。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_SPUE_ROME_HERCULIANI">
+			<Text>赫拉克勒斯卫队加成</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_ROME_HERCULIANI">
+			<Text>四帝共治</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_ROME_HERCULIANI_HELP">
+			<Text>
+				近战攻击之前进行一轮远程掷矛攻击，位于场上时可为首都地块供+5[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出;
+				[NEWLINE]回合结束时若驻守在首都地块则可为首都提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验。
+			</Text>
+		</Row>
 	</Language_en_US>
 </GameData>

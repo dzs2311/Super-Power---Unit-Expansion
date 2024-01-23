@@ -328,7 +328,8 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_ROME_HERCULIANI_HELP">
 			<Text>
 				[COLOR_CYAN]赫拉克勒斯卫队[ENDCOLOR]是罗马专属的[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]的代表性单位，代替[COLOR_CYAN]禁卫军[ENDCOLOR]。
-				[NEWLINE]位于场上时可为首都地块供+5[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出，同时可在回合结束时提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+3经验，位于领土外则可以修建能够控制周围1格范围的禁卫军堡垒。
+				[NEWLINE]位于场上时可为首都地块供+5[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出；
+				[NEWLINE]回合结束时若驻守在首都地块则可为首都提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_ROME_HERCULIANI_TEXT">
@@ -346,7 +347,8 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_ROME_HERCULIANI_HELP">
 			<Text>
-				近战攻击之前进行一轮远程掷矛攻击，位于场上时可为首都地块供+5[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出，同时可在回合结束时提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验。
+				近战攻击之前进行一轮远程掷矛攻击，位于场上时可为首都地块供+5[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出;
+				[NEWLINE]回合结束时若驻守在首都地块则可为首都提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验。
 			</Text>
 		</Row>
 	</Language_zh_CN>
