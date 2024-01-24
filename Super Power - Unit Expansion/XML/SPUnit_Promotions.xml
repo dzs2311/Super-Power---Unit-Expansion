@@ -570,8 +570,8 @@
 			<Help>TXT_KEY_PROMOTION_SPUE_TABOR_ELITE_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
-			<PortraitIndex>59</PortraitIndex>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PortraitIndex>21</PortraitIndex>
+			<IconAtlas>promoVP_atlas_01</IconAtlas>
 			<AdjacentMod>60</AdjacentMod>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_TABOR_ELITE</PediaEntry>
@@ -1467,9 +1467,9 @@
 			<Help>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_LIMITANEI_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<CannotBeChosen>true</CannotBeChosen>
-			<PortraitIndex>59</PortraitIndex>
+			<PortraitIndex>6</PortraitIndex>
 			<RangedDefenseMod>50</RangedDefenseMod>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<IconAtlas>promoVP_atlas_01</IconAtlas>
 			<ExtraResourceType>RESOURCE_IRON</ExtraResourceType>
 			<ExtraResourceCombatModifier>2</ExtraResourceCombatModifier>
 			<ExtraResourceCombatModifierMax>50</ExtraResourceCombatModifierMax>
@@ -1487,14 +1487,14 @@
 			<Description>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PortraitIndex>59</PortraitIndex>
+			<PortraitIndex>22</PortraitIndex>
 			<OpenAttack>50</OpenAttack>
 			<NearbyUnitPromotionBonus>50</NearbyUnitPromotionBonus>
 			<NearbyUnitPromotionBonusRange>3</NearbyUnitPromotionBonusRange>
 			<CombatBonusFromNearbyUnitPromotion>PROMOTION_SPUE_BYZANTIUM_LIMITANEI</CombatBonusFromNearbyUnitPromotion>
 			<AttackInflictDamageChange>5</AttackInflictDamageChange>
 			<SiegeInflictDamageChange>5</SiegeInflictDamageChange>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<IconAtlas>promoVP_atlas_03</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -1506,8 +1506,8 @@
 			<Help>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<ChangeDamageValue>-30</ChangeDamageValue>
-			<PortraitIndex>59</PortraitIndex>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PortraitIndex>17</PortraitIndex>
+			<IconAtlas>promoVP_atlas_03</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -1518,8 +1518,8 @@
 			<Description>TXT_KEY_PROMOTION_SPUE_KOREA_PANOKSEON</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_KOREA_PANOKSEON_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PortraitIndex>59</PortraitIndex>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PortraitIndex>54</PortraitIndex>
+			<IconAtlas>promoVP_atlas_03</IconAtlas>
 			<NearNumEnemyDefenseMod>15</NearNumEnemyDefenseMod>
 			<NearNumEnemyAttackMod>5</NearNumEnemyAttackMod>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -1539,8 +1539,8 @@
 			<NearbyEnemyCombatRange>2</NearbyEnemyCombatRange>
 			<OriginalCapitalDamageFix>1</OriginalCapitalDamageFix>
 			<OpenAttack>50</OpenAttack>
-			<PortraitIndex>59</PortraitIndex>
-			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PortraitIndex>21</PortraitIndex>
+			<IconAtlas>promoVP_atlas_02</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SPUE_PERSIA_GYAN</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
