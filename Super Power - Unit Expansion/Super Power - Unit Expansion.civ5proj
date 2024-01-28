@@ -310,20 +310,6 @@
         <MinVersion>0</MinVersion>
         <MaxVersion>999</MaxVersion>
       </Association>
-      <Association>
-        <Type>Mod</Type>
-        <Name>魔幻奇观合集</Name>
-        <Id>ac110544-5019-4229-884c-adc328571828</Id>
-        <MinVersion>0</MinVersion>
-        <MaxVersion>999</MaxVersion>
-      </Association>
-      <Association>
-        <Type>Mod</Type>
-        <Name>魔幻奇观合集</Name>
-        <Id>544786c9-bdbe-44d2-912d-9e31ef4dfae0</Id>
-        <MinVersion>0</MinVersion>
-        <MaxVersion>999</MaxVersion>
-      </Association>
     </ModBlockers>
     <ReloadAudioSystem>true</ReloadAudioSystem>
     <ReloadUnitSystem>true</ReloadUnitSystem>
