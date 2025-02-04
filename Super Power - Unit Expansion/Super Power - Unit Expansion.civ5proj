@@ -249,6 +249,11 @@
         <Type>UpdateDatabase</Type>
         <FileName>SQL/TNL - New Promotions Font Icons.sql</FileName>
       </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>SQL/WP_Compatibility.sql</FileName>
+      </Action>
     </ModActions>
     <ModContent>
       <Content>
@@ -5431,6 +5436,10 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="SQL\TNL - New Promotions Font Icons.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="SQL\WP_Compatibility.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
