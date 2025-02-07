@@ -3840,7 +3840,7 @@ SPUE_Tabor_Button = {
 	end, -- or nil or a boolean, default is true
 
 	Disabled = function(action, unit)
-		return EliteDisable(unit, unitPromotionTaborEliteID, "UNITCLASS_SPUE_TABOR", "PROJECT_SPUE_TABOR_TRAINING");
+		return EliteDisable(unit, unitPromotionTaborEliteID, "UNITCLASS_SPUE_TABOR", "PROJECT_SPUE_TABOR_TRAINING", "UNIT_SPUE_TABOR");
 	end, -- or nil or a boolean, default is false
 
 	Action = function(action, unit, eClick)
