@@ -297,7 +297,7 @@ function OnImprovementDestroyed(hexX, hexY, continent1, continent2, iPlayer,
 		claimTerritoryAroundHex(centerPlot, iPlayer)
 		]]
 end
-Events.SerialEventImprovementDestroyed.Add(OnImprovementDestroyed)
+--Events.SerialEventImprovementDestroyed.Add(OnImprovementDestroyed)
 
 
 -- ######################################################################

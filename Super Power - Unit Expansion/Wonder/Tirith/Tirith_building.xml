@@ -15,8 +15,7 @@
 			<!--米那斯提力斯-->
 			<BuildingClass>BUILDINGCLASS_SPUE_TIRITH</BuildingClass>
 			<!--建筑类型-->
-			<!--<Cost>-1</Cost>-->
-			<Cost>350</Cost>
+			<Cost>270</Cost>
 			<!--建造花费-->
 			<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
 			<!--所需科技文官制度-->
@@ -46,8 +45,6 @@
 			<!--杰作类型美术-->
 			<GreatWorkCount>1</GreatWorkCount>
 			<!--杰作展位-->
-			<CityConnectionTradeRouteModifier>25</CityConnectionTradeRouteModifier>
-			<!--城市链接额外收入-->
 			<Defense>5000</Defense>
 			<!--城市防御，数值为所写数量/100-->
 			<ExtraCityHitPoints>50</ExtraCityHitPoints>
@@ -121,35 +118,35 @@
 			<!--关联建筑米那斯提力斯-->
 			<YieldType>YIELD_FOOD</YieldType>
 			<!--食物加成-->
-			<Yield>10</Yield>
+			<Yield>5</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<!--产能加成-->
-			<Yield>10</Yield>
+			<Yield>5</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<!--科研加成-->
-			<Yield>10</Yield>
+			<Yield>5</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<YieldType>YIELD_GOLD</YieldType>
 			<!--金币加成-->
-			<Yield>10</Yield>
+			<Yield>5</Yield>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_SPUE_TIRITH</BuildingType>
 			<!--关联建筑米那斯提力斯-->
 			<YieldType>YIELD_CULTURE</YieldType>
 			<!--文化加成-->
-			<Yield>10</Yield>
+			<Yield>5</Yield>
 		</Row>
 	</Building_GlobalYieldModifiers>
 	

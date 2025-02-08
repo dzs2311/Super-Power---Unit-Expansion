@@ -48,8 +48,8 @@ function initializeDialog()
 
 	-- 罗马自动获得奥古斯都之路
 	if activeCiv then
-		if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_ROME" 
-		or GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_CAESAR"
+		if activeCiv.Type == "CIVILIZATION_ROME" 
+		or activeCiv.Type == "CIVILIZATION_CAESAR"
 		then
 			Controls.CreedButton0:SetHide(true);
 			g_PatronageUnitLeft  = g_PatronageUnitList[1];
@@ -73,7 +73,7 @@ function initializeDialog()
 
 	-- 拜占庭自动获得巴西琉斯之道
 	if activeCiv then
-		if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_BYZANTIUM" then
+		if activeCiv.Type == "CIVILIZATION_BYZANTIUM" then
 			Controls.CreedButton1:SetHide(true);
 			g_PatronageUnitLeft  = g_PatronageUnitList[4];
 			g_PatronageUnitMid   = g_PatronageUnitList[5];
@@ -96,7 +96,7 @@ function initializeDialog()
 	
 	-- 中国自动获得神州天子之权
 	if activeCiv then
-		if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_CHINA" 
+		if activeCiv.Type == "CIVILIZATION_CHINA" 
 		then
 			Controls.CreedButton2:SetHide(true);
 			g_PatronageUnitLeft  = g_PatronageUnitList[7];
@@ -171,7 +171,7 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 	-- 	return
 	-- end
 
-	if(GameInfo.PolicyBranchTypes["POLICY_BRANCH_PATRONAGE"].ID == policybranchID) then
+	if(GameInfoTypes["POLICY_BRANCH_PATRONAGE"] == policybranchID) then
 		if not player:IsHuman() then
 			-- AI Random Select
 			-- local iL = math.random(1, 6)
@@ -183,7 +183,7 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 			-- player:SetNumFreePolicies(1)
 			-- player:SetNumFreePolicies(0)
 			-- player:SetHasPolicy(GameInfo.Policies[policyL].ID, true)
-
+			OnAIGetAllUnit( playerID )
 			return
 		else
 			showDialog()
@@ -193,7 +193,7 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 end
 GameEvents.PlayerAdoptPolicyBranch.Add(OnAdoptPolicyBranch)
 
-function OnAIDoTurn( playerID )
+function OnAIGetAllUnit( playerID )
     local player = Players[playerID]	
     if player == nil or player:IsBarbarian() or player:IsHuman() then return end
 	local unitL = GameInfo.Units[g_PatronageUnitList[1]]
@@ -214,7 +214,6 @@ function OnAIDoTurn( playerID )
 		end
 	end
 end
-GameEvents.PlayerDoTurn.Add(OnAIDoTurn)
 
 
 -- Handle the Adopt Button

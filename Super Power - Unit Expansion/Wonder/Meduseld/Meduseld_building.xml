@@ -40,8 +40,6 @@
 			<!--砖家点数增幅-->
 			<UnmoddedHappiness>4</UnmoddedHappiness>
 			<!--全国快乐-->
-			<GoldenAgeModifier>33</GoldenAgeModifier>
-			<!--黄金时代延长百分比-->
 			<GreatWorkSlotType>GREAT_WORK_SLOT_ART_ARTIFACT</GreatWorkSlotType>
 			<!--杰作类型美术-->
 			<GreatWorkCount>1</GreatWorkCount>
@@ -71,49 +69,7 @@
 			<!--增加3基础数值-->
 		</Row>
 	</Building_YieldChanges>
-	
-	<Building_BuildingClassYieldChanges>
-	<!--建筑对其他建筑影响-->
-		<Row>
-			<BuildingType>BUILDING_SPUE_GOLDEN_MEDUSELD</BuildingType>
-			<!--建筑-->
-			<BuildingClassType>BUILDINGCLASS_STABLE</BuildingClassType>
-			<!--受影响的建筑类型-->
-			<YieldType>YIELD_CULTURE</YieldType>
-			<!--文化增产-->
-			<YieldChange>2</YieldChange>
-			<!--增加2基础数值-->
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_SPUE_GOLDEN_MEDUSELD</BuildingType>
-			<!--建筑-->
-			<BuildingClassType>BUILDINGCLASS_STABLE</BuildingClassType>
-			<!--受影响的建筑类型-->
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<!--产能增产-->
-			<YieldChange>2</YieldChange>
-			<!--增加2基础数值-->
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_SPUE_GOLDEN_MEDUSELD</BuildingType>
-			<!--关联建筑金殿美杜塞尔德-->
-			<BuildingClassType>BUILDINGCLASS_NATIONAL_CIRCUS</BuildingClassType>
-			<!--受影响的建筑大竞技场-->
-			<YieldType>YIELD_CULTURE</YieldType>
-			<!--文化加成-->
-			<YieldChange>4</YieldChange>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_SPUE_GOLDEN_MEDUSELD</BuildingType>
-			<!--关联建筑金殿美杜塞尔德-->
-			<BuildingClassType>BUILDINGCLASS_NATIONAL_CIRCUS</BuildingClassType>
-			<!--受影响的建筑大竞技场-->
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<!--产能加成-->
-			<YieldChange>4</YieldChange>
-		</Row>
-	</Building_BuildingClassYieldChanges>	
-	
+
 	<Building_Flavors>
 	<!--ai建造参考数值，对玩家没用-->
 		<Row>

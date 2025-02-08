@@ -136,4 +136,41 @@
 	    	<Flavor>300</Flavor>
 	    </Row>
 	</Project_Flavors>
+	<Project_PolicyNeeded>
+		<!-- 巴西琉斯之道：贝利撒留甲骑兵 -->
+		<Row>
+	    	<ProjectType>PROJECT_BUCELLARII_TRAINING</ProjectType>
+			<PolicyType>POLICY_SPUE_BASELIUS</PolicyType>
+	    </Row>
+		<!-- 商业：瓦兰吉卫队 -->
+		<Row>
+	    	<ProjectType>PROJECT_SPUE_VARANGIAN_TRAINING</ProjectType>
+			<PolicyType>POLICY_SPUE_VARANGIAN</PolicyType>
+	    </Row>
+		<!-- 商业：朱斯蒂尼亚尼弩手 -->
+		<Row>
+	    	<ProjectType>PROJECT_SPUE_GENOAXBOW_TRAINING</ProjectType>
+			<PolicyType>POLICY_SPUE_GENOAXBOW</PolicyType>
+	    </Row>
+		<!-- 商业：教皇近卫军 -->
+		<Row>
+	    	<ProjectType>PROJECT_SPUE_SWISSGUARD_TRAINING</ProjectType>
+			<PolicyType>POLICY_SPUE_SWISSGUARD</PolicyType>
+	    </Row>
+		<!-- 商业：王家敕令骑士 -->
+		<Row>
+	    	<ProjectType>PROJECT_SPUE_ELMETI_TRAINING</ProjectType>
+			<PolicyType>POLICY_SPUE_ELMETI</PolicyType>
+	    </Row>
+		<!-- 商业：胡斯车垒 -->
+		<Row>
+	    	<ProjectType>PROJECT_SPUE_TABOR_TRAINING</ProjectType>
+			<PolicyType>POLICY_SPUE_TABOR</PolicyType>
+	    </Row>
+		<!-- 商业：巨人掷弹兵团 -->
+		<Row>
+	    	<ProjectType>PROJECT_SPUE_HESSIAN_TRAINING</ProjectType>
+			<PolicyType>POLICY_SPUE_HESSIAN</PolicyType>
+	    </Row>
+	</Project_PolicyNeeded>
 </GameData>

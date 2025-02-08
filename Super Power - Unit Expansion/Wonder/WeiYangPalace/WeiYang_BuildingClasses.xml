@@ -9,7 +9,7 @@
 			<MaxGlobalInstances>1</MaxGlobalInstances>
 		</Row>
 
-		<Row>
+		<!--<Row>
 			<Type>BUILDINGCLASS_SPUE_TUIENLING</Type>
 			<DefaultBuilding>BUILDING_SPUE_TUIENLING</DefaultBuilding>
 			<Description>TXT_KEY_BUILDING_SPUE_TUIENLING</Description>
@@ -23,6 +23,6 @@
 			<Type>BUILDINGCLASS_SPUE_DUHUFU</Type>
 			<DefaultBuilding>BUILDING_SPUE_DUHUFU</DefaultBuilding>
 			<Description>TXT_KEY_BUILDING_SPUE_DUHUFU</Description>
-		</Row>
+		</Row>-->
 	</BuildingClasses>
 </GameData>

@@ -7,7 +7,7 @@
 			<!--未央宫-->
 			<BuildingClass>BUILDINGCLASS_SPUE_WEIYANG_PALACE</BuildingClass>
 			<!--建筑级别-->
-			<Cost>250</Cost>
+			<Cost>175</Cost>
 			<!--所需产能-->
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<!--所需科技建造学-->
@@ -44,113 +44,18 @@
 			<WonderSplashImage>WeiYangPalace.dds</WonderSplashImage>
 			<!--奇观建成图片-->
 		</Row>
-		
+		<!--
 		<Row>
 			<Type>BUILDING_SPUE_TUIENLING</Type>
-			<!--元朔推恩令-->
-			<BuildingClass>BUILDINGCLASS_SPUE_TUIENLING</BuildingClass>
-			<!--建筑级别-->
-			<Cost>-1</Cost>
-			<!--禁止建造-->
-			<Description>TXT_KEY_BUILDING_SPUE_TUIENLING</Description>
-			<!--名称文本词条-->
-			<Help>TXT_KEY_BUILDING_SPUE_TUIENLING_HELP</Help>
-			<!--信息文本词条-->
-			<Civilopedia>TXT_KEY_BUILDING_SPUE_TUIENLING_PEDIA</Civilopedia>
-			<!--历史文本词条-->
-			<UnmoddedHappiness>2</UnmoddedHappiness>
-			<!--全国快乐-->
-			<GreatWorkCount>-1</GreatWorkCount>
-			<!--隐藏建筑-->
-			<NukeImmune>true</NukeImmune>
-			<!--不被核弹摧毁-->
-			<MinAreaSize>-1</MinAreaSize>
-			<!--无需邻湖邻海-->
-			<HurryCostModifier>-1</HurryCostModifier>
-			<!--购买金钱系数，-1为不可购买-->
-			<NeverCapture>true</NeverCapture>
-			<!--无法占领-->
-			<IconAtlas>WEIYANG_WONDERS_ATLAS</IconAtlas>
-			<!--图标取材-->
-			<PortraitIndex>1</PortraitIndex>
-			<!--图标取材顺序-->
 		</Row>
-		
 		<Row>
 			<Type>BUILDING_SPUE_ZHANGSHIFU</Type>
-			<!--长史府-->
-			<BuildingClass>BUILDINGCLASS_SPUE_ZHANGSHIFU</BuildingClass>
-			<!--建筑级别-->
-			<Cost>-1</Cost>
-			<!--禁止建造-->
-			<Description>TXT_KEY_BUILDING_SPUE_ZHANGSHIFU</Description>
-			<!--名称文本词条-->
-			<Help>TXT_KEY_BUILDING_SPUE_ZHANGSHIFU_HELP</Help>
-			<!--信息文本词条-->
-			<Civilopedia>TXT_KEY_BUILDING_SPUE_ZHANGSHIFU_PEDIA</Civilopedia>
-			<!--历史文本词条-->
-			<UnmoddedHappiness>2</UnmoddedHappiness>
-			<!--全国快乐-->
-			<PolicyCostModifier>-5</PolicyCostModifier>
-			<!--政策阈值减少-->
-			<UnhappinessModifier>-2</UnhappinessModifier>
-			<!--不满减少-->
-			<GreatWorkCount>-1</GreatWorkCount>
-			<!--隐藏建筑-->
-			<NukeImmune>true</NukeImmune>
-			<!--不被核弹摧毁-->
-			<MinAreaSize>-1</MinAreaSize>
-			<!--无需邻湖邻海-->
-			<HurryCostModifier>-1</HurryCostModifier>
-			<!--购买金钱系数，-1为不可购买-->
-			<NeverCapture>true</NeverCapture>
-			<!--无法占领-->
-			<IconAtlas>WEIYANG_WONDERS_ATLAS</IconAtlas>
-			<!--图标取材-->
-			<PortraitIndex>2</PortraitIndex>
-			<!--图标取材顺序-->
 		</Row>
-		
 		<Row>
 			<Type>BUILDING_SPUE_DUHUFU</Type>
-			<!--都护府-->
-			<BuildingClass>BUILDINGCLASS_SPUE_DUHUFU</BuildingClass>
-			<!--建筑级别-->
-			<Cost>-1</Cost>
-			<!--禁止建造-->
-			<Description>TXT_KEY_BUILDING_SPUE_DUHUFU</Description>
-			<!--名称文本词条-->
-			<Civilopedia>TXT_KEY_BUILDING_SPUE_DUHUFU_PEDIA</Civilopedia>
-			<!--历史文本词条-->
-			<Help>TXT_KEY_BUILDING_SPUE_DUHUFU_HELP</Help>
-			<!--信息文本词条-->
-			<UnmoddedHappiness>2</UnmoddedHappiness>
-			<!--全国快乐-->
-			<PolicyCostModifier>-10</PolicyCostModifier>
-			<!--政策阈值减少-->
-			<UnhappinessModifier>-1</UnhappinessModifier>
-			<!--不满减少-->
-			<Defense>2500</Defense>
-			<!--城市防御，数值为所写数量/100-->
-			<ExtraCityHitPoints>50</ExtraCityHitPoints>
-			<!--城市生命-->
-			<GreatWorkCount>-1</GreatWorkCount>
-			<!--隐藏建筑-->
-			<NukeImmune>true</NukeImmune>
-			<!--不被核弹摧毁-->
-			<MinAreaSize>-1</MinAreaSize>
-			<!--无需邻湖邻海-->
-			<HurryCostModifier>-1</HurryCostModifier>
-			<!--购买金钱系数，-1为不可购买-->
-			<NeverCapture>true</NeverCapture>
-			<!--无法占领-->
-			<IconAtlas>WEIYANG_WONDERS_ATLAS</IconAtlas>
-			<!--图标取材-->
-			<PortraitIndex>3</PortraitIndex>
-			<!--图标取材顺序-->
 		</Row>
+		-->
 	</Buildings>
-	
 	<Building_YieldChanges>
 	<!--建筑基础产出-->
 		<Row>
@@ -194,37 +99,12 @@
 		</Row>
 	</Building_ResourceQuantityRequirements>
 
-	<Building_ResourceQuantity>
-	<!--战略资源获取-->
+	<Building_ClassesNeededInCity>
 		<Row>
-			<BuildingType>BUILDING_SPUE_ZHANGSHIFU</BuildingType>
-			<!--关联建筑长史府-->
-			<ResourceType>RESOURCE_CONSUMER</ResourceType>
-			<!--资源类型商品-->
-			<Quantity>2</Quantity>
+			<BuildingType>BUILDING_SPUE_WEIYANG_PALACE</BuildingType>
+			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
 		</Row>
-		<Row>
-			<BuildingType>BUILDING_SPUE_ZHANGSHIFU</BuildingType>
-			<!--关联建筑长史府-->
-			<ResourceType>RESOURCE_MANPOWER</ResourceType>
-			<!--资源类型人力-->
-			<Quantity>1</Quantity>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_SPUE_DUHUFU</BuildingType>
-			<!--关联建筑都护府-->
-			<ResourceType>RESOURCE_CONSUMER</ResourceType>
-			<!--资源类型商品-->
-			<Quantity>4</Quantity>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_SPUE_DUHUFU</BuildingType>
-			<!--关联建筑都护府-->
-			<ResourceType>RESOURCE_MANPOWER</ResourceType>
-			<!--资源类型人力-->
-			<Quantity>1</Quantity>
-		</Row>
-	</Building_ResourceQuantity>
+	</Building_ClassesNeededInCity>
 
 	<Building_Flavors>
 	<!--ai建造参考数值，对玩家没用-->

@@ -21,7 +21,8 @@ local KingsKnightBID              = GameInfo.UnitPromotions["PROMOTION_SPUE_KNIG
 local KingsKnightCID              = GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW_C"].ID
 
 -- local KingsKnightPops				= 0
-local g_KingsKnightPops           = { GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW_A000"].ID,
+local g_KingsKnightPops           = { 
+	GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW_A000"].ID,
 	GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW_A020"].ID,
 	GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW_A040"].ID,
 	GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW_A060"].ID,
@@ -169,38 +170,37 @@ function EmbarkGraphic(playerID)
 		local pPlayer = Players[pPlayer]
 
 		if pPlayer:IsEverAlive() then
-			local pEraType = pPlayer:GetCurrentEra()
 			local activeCivID = pPlayer:GetCivilizationType()
 			local activeCiv = GameInfo.Civilizations[activeCivID]
 
 			--if (not pPlayer:IsAlive()) then break end
 			-- if not pPlayer:IsBarbarian() then break end
 
-			local activeCivSuffix = GameInfo.Civilizations[activeCivID].ArtStyleSuffix
-			local pEraID = GameInfo.Eras[pEraType].ID;
+			local activeCivSuffix = activeCiv.ArtStyleSuffix
+			local pEraID = pPlayer:GetCurrentEra()
 			-- print("1Suffix="..activeCivSuffix)
-			if pEraID >= GameInfo.Eras["ERA_INDUSTRIAL"].ID then
+			if pEraID >= GameInfoTypes["ERA_INDUSTRIAL"] then
 				pPlayer:SetEmbarkedGraphicOverride("ART_DEF_UNIT_TRANSPORT")
 			end
-			if pEraID >= GameInfo.Eras["ERA_MEDIEVAL"].ID and pEraID < GameInfo.Eras["ERA_INDUSTRIAL"].ID then
+			if pEraID >= GameInfoTypes["ERA_MEDIEVAL"] and pEraID < GameInfoTypes["ERA_INDUSTRIAL"] then
 				pPlayer:SetEmbarkedGraphicOverride("ART_DEF_UNIT_GALLEON")
 				if activeCivSuffix == '_ASIA'
 					or activeCivSuffix == '_CHINA'
 				then
 					pPlayer:SetEmbarkedGraphicOverride("ART_DEF_UNIT_GALLEON_ASIA")
 				end
-				if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_POLYNESIAN" then
+				if activeCiv.Type == "CIVILIZATION_POLYNESIAN" then
 					pPlayer:SetEmbarkedGraphicOverride("ART_DEF_UNIT_U_POLYNESIAN_WAR_CANOE")
 				end
 			end
-			if pEraID <= GameInfo.Eras["ERA_CLASSICAL"].ID then
+			if pEraID <= GameInfoTypes["ERA_CLASSICAL"] then
 				pPlayer:SetEmbarkedGraphicOverride("ART_DEF_UNIT_GALLEY")
 				if activeCivSuffix == '_ASIA'
 					or activeCivSuffix == '_CHINA'
 				then
 					pPlayer:SetEmbarkedGraphicOverride("ART_DEF_UNIT_GALLEY_ASIA")
 				end
-				if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_POLYNESIAN" then
+				if activeCiv.Type == "CIVILIZATION_POLYNESIAN" then
 					pPlayer:SetEmbarkedGraphicOverride("ART_DEF_UNIT_U_POLYNESIAN_WAR_CANOE")
 				end
 			end
@@ -214,17 +214,18 @@ GameEvents.TeamSetEra.Add(EmbarkGraphic)
 -- 直射火力无需架设
 --------------------------------------------------------------
 function NoSetUPforCannons(iPlayerID, iUnitID)
-	if Players[iPlayerID] and Players[iPlayerID]:IsAlive()
-		and Players[iPlayerID]:GetUnitByID(iUnitID)
-		and not Players[iPlayerID]:GetUnitByID(iUnitID):IsDead()
-		and not Players[iPlayerID]:GetUnitByID(iUnitID):IsDelayedDeath()
-		and (Players[iPlayerID]:GetUnitByID(iUnitID):GetUnitClassType() == GameInfoTypes.UNITCLASS_CULVERIN
-			or Players[iPlayerID]:GetUnitByID(iUnitID):GetUnitClassType() == GameInfoTypes.UNITCLASS_CANNON
-			or Players[iPlayerID]:GetUnitByID(iUnitID):GetUnitClassType() == GameInfoTypes.UNITCLASS_SPUE_FIELDGUN)
-		and Players[iPlayerID]:GetUnitByID(iUnitID):IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_MUST_SET_UP"].ID)
+	local pPlayer = Players[iPlayerID];
+	if pPlayer == nil then return end;
+	local pUnit = pPlayer:GetUnitByID(iUnitID)
+	if pUnit == nil or pUnit:IsDead() or pUnit:IsDelayedDeath() then return end
+
+	local iUnitClass = pUnit:GetUnitClassType()
+	if pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_MUST_SET_UP"])
+	and (iUnitClass == GameInfoTypes.UNITCLASS_CULVERIN
+	or iUnitClass == GameInfoTypes.UNITCLASS_CANNON
+	or iUnitClass == GameInfoTypes.UNITCLASS_SPUE_FIELDGUN)
 	then
-		Players[iPlayerID]:GetUnitByID(iUnitID):SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_MUST_SET_UP"].ID,
-			false);
+		pUnit:SetHasPromotion(GameInfoTypes["PROMOTION_MUST_SET_UP"], false);
 	end
 end
 
@@ -329,129 +330,9 @@ AirPlanesUpgradeNotInCityButton = {
 };
 
 LuaEvents.UnitPanelActionAddin(AirPlanesUpgradeNotInCityButton)
---------------------------------------------------------------
--- 文明选取意识形态时赠送标识政策
---------------------------------------------------------------
-function SPUE_OnAdoptPolicyBranch(playerID, policyID)
-	local player = Players[playerID]
-	if player == nil then return end
-	if policyID == nil then return end
-	local policy = GameInfo.Policies[policyID]
-	
-	--Revolution BUG Fix
-	if player:HasPolicy(GameInfo.Policies["POLICY_SPUE_ORDER"].ID)
-		and not player:HasPolicyBranch(GameInfo.PolicyBranchTypes["POLICY_BRANCH_ORDER"].Type)
-	then
-		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_ORDER"].ID, false)
-	elseif player:HasPolicy(GameInfo.Policies["POLICY_SPUE_FREEDOM"].ID)
-		and not player:HasPolicyBranch(GameInfo.PolicyBranchTypes["POLICY_BRANCH_FREEDOM"].Type)
-	then
-		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_FREEDOM"].ID, false)
-	elseif player:HasPolicy(GameInfo.Policies["POLICY_SPUE_AUTOCRACY"].ID)
-		and not player:HasPolicyBranch(GameInfo.PolicyBranchTypes["POLICY_BRANCH_AUTOCRACY"].Type)
-	then
-		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_AUTOCRACY"].ID, false)
-	end
-
-	if policy.PolicyBranchType == GameInfo.PolicyBranchTypes["POLICY_BRANCH_ORDER"].Type
-		and not player:HasPolicy(GameInfo.Policies["POLICY_SPUE_ORDER"].ID)
-	then
-		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_ORDER"].ID, true, true)
-		return
-	elseif policy.PolicyBranchType == GameInfo.PolicyBranchTypes["POLICY_BRANCH_FREEDOM"].Type
-		and not player:HasPolicy(GameInfo.Policies["POLICY_SPUE_FREEDOM"].ID)
-	then
-		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_FREEDOM"].ID, true, true)
-		return
-	elseif policy.PolicyBranchType == GameInfo.PolicyBranchTypes["POLICY_BRANCH_AUTOCRACY"].Type
-		and not player:HasPolicy(GameInfo.Policies["POLICY_SPUE_AUTOCRACY"].ID)
-	then
-		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_AUTOCRACY"].ID, true, true)
-		return
-	end
-end
-
-GameEvents.PlayerAdoptPolicy.Add(SPUE_OnAdoptPolicyBranch)
---------------------------------------------------------------
--- 根据意识形态锁定精英计划&根据政策锁定精英计划
---------------------------------------------------------------
-function SPUE_IdeoProjectOnly(playerID, cityID, projectTypeID)
-	local player = Players[playerID]
-	if player == nil or player:IsBarbarian() then return end
-	--local city = player:GetCityByID(cityID)
-	-- 秩序
-	if (projectTypeID == GameInfo.Projects["PROJECT_SPUE_ORDER"].ID) then
-		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_ORDER"].ID)
-	elseif (projectTypeID == GameInfo.Projects["PROJECT_SPUE_ORDER_TANK"].ID) then
-		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_ORDER"].ID)
-		-- 自由
-	elseif (projectTypeID == GameInfo.Projects["PROJECT_SPUE_FREEDOM"].ID) then
-		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_FREEDOM"].ID)
-		-- 独裁
-	elseif (projectTypeID == GameInfo.Projects["PROJECT_SPUE_AUTOCRACY"].ID) then
-		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_AUTOCRACY"].ID)
-		-- 巴西琉斯之道：贝利撒留甲骑兵
-	elseif (projectTypeID == GameInfo.Projects["PROJECT_BUCELLARII_TRAINING"].ID) then
-		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_BASELIUS"].ID)
-		-- 商业：瓦兰吉卫队
-	elseif (projectTypeID == GameInfo.Projects["PROJECT_SPUE_VARANGIAN_TRAINING"].ID) then
-		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_VARANGIAN"].ID)
-		-- 商业：朱斯蒂尼亚尼弩手
-	elseif (projectTypeID == GameInfo.Projects["PROJECT_SPUE_GENOAXBOW_TRAINING"].ID) then
-		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_GENOAXBOW"].ID)
-		-- 商业：教皇近卫军
-	elseif (projectTypeID == GameInfo.Projects["PROJECT_SPUE_SWISSGUARD_TRAINING"].ID) then
-		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_SWISSGUARD"].ID)
-		-- 商业：王家敕令骑士
-	elseif (projectTypeID == GameInfo.Projects["PROJECT_SPUE_ELMETI_TRAINING"].ID) then
-		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_ELMETI"].ID)
-		-- 商业：胡斯车垒
-	elseif (projectTypeID == GameInfo.Projects["PROJECT_SPUE_TABOR_TRAINING"].ID) then
-		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_TABOR"].ID)
-		-- 商业：巨人掷弹兵团
-	elseif (projectTypeID == GameInfo.Projects["PROJECT_SPUE_HESSIAN_TRAINING"].ID) then
-		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_HESSIAN"].ID)
-	end
-
-	return true
-end
-
-GameEvents.CityCanCreate.Add(SPUE_IdeoProjectOnly)
 ---============================================================
 -- 政策单位特殊效果
 ---============================================================
---------------------------------------------------------------
--- 空天航母晋升传递
---------------------------------------------------------------
-function CarrierPromotionTransfer(player, unit)
-	local plot = unit:GetPlot();
-	if plot and unit:IsHasPromotion(AirCraftCarrierID) and unit:HasCargo() then
-		print("Found the carrier!")
-		local unitCount = plot:GetNumUnits()
-
-		for i = 0, unitCount - 1, 1 do
-			local pCargoUnit = plot:GetUnit(i);
-			if pCargoUnit:IsCargo() and pCargoUnit:GetTransportUnit() == unit then
-				print("Found the aircraft on the carrier!")
-				pCargoUnit:SetHasPromotion(unitPromotionHeliFighterID, unit:IsHasPromotion(unitPromotionHeliCarrierID));
-			end
-		end
-	end
-end
-
-function NewUnitCreationRules() ------------------------Human Player's units rule & AI units assistance--
-	for playerID, player in pairs(Players) do
-		if player and player:IsAlive() and not player:IsMinorCiv() and player:GetNumUnits() > 0 then --  and not player:IsBarbarian() then
-			for unit in player:Units() do
-				if unit:IsHasPromotion(unitPromotionHeliCarrierID) then
-					CarrierPromotionTransfer(player, unit)
-				end
-			end
-		end
-	end
-end ------function end
-
-Events.ActivePlayerTurnStart.Add(NewUnitCreationRules)
 --------------------------------------------------------------
 -- 鹰击21装载
 --------------------------------------------------------------
@@ -497,10 +378,10 @@ function SPUE_YJ21Setup_AdoptPolicy(playerID, policyID)
 	-- 选取秩序意识形态政策
 	local player = Players[playerID]
 	if player == nil then return end
-	if policyID == nil then return end
 	local policy = GameInfo.Policies[policyID]
+	if policy == nil then return end
 
-	if policy.PolicyBranchType == GameInfo.PolicyBranchTypes["POLICY_BRANCH_ORDER"].Type then
+	if policy.PolicyBranchType == "POLICY_BRANCH_ORDER" then
 		for unit in player:Units() do
 			if unit:IsHasPromotion(unitPromotion055ID) then
 				if unit:IsHasPromotion(unitPromotion055Missile3ID) then
@@ -604,9 +485,9 @@ function SPUE_OnUnitCreated(iPlayerID, iUnitID)
 
 	-- 赫拉克勒斯卫队: 四帝共治
 	if pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_ROME_HERCULIANI"]) 
-	and not pPlayer:HasPolicy(GameInfo.Policies["POLICY_SPUE_ROME_HERCULIANI"].ID)
+	and not pPlayer:HasPolicy(GameInfoTypes["POLICY_SPUE_ROME_HERCULIANI"])
 	then
-		pPlayer:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_ROME_HERCULIANI"].ID, true, true)
+		pPlayer:SetHasPolicy(GameInfoTypes["POLICY_SPUE_ROME_HERCULIANI"], true, true)
 	end
 
 end
@@ -627,23 +508,20 @@ function SPUE_OnPlayerDoTurn(playerID)
 	-- 超级要塞特殊效果初始化
 	GAIAShipHasAttackedThisTurn = 0
 
-	if player:HasPolicy(GameInfo.Policies["POLICY_SPUE_EMPEROR_DUMMY"].ID) then
-		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_EMPEROR_DUMMY"].ID, false)
+	if player:HasPolicy(GameInfoTypes["POLICY_SPUE_EMPEROR_DUMMY"]) then
+		player:SetHasPolicy(GameInfoTypes["POLICY_SPUE_EMPEROR_DUMMY"], false)
 	end
 
-	if not player:IsHuman() then
+	--[[if not player:IsHuman() then
 		for unit in player:Units() do
 		end
-	end
+	end]]
 
 	-- 赫拉克勒斯卫队：四帝共治
-	local romeNum = player:GetUnitCountFromHasPromotion(
-		GameInfo.UnitPromotions["PROMOTION_SPUE_ROME_HERCULIANI"].ID);
-
-	if not (romeNum and romeNum > 0)
-	and player:HasPolicy(GameInfo.Policies["POLICY_SPUE_ROME_HERCULIANI"].ID)
+	if player:HasPolicy(GameInfoTypes["POLICY_SPUE_ROME_HERCULIANI"])
+	and not (player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_ROME_HERCULIANI"]) > 0)
 	then
-		player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_ROME_HERCULIANI"].ID, false)
+		player:SetHasPolicy(GameInfoTypes["POLICY_SPUE_ROME_HERCULIANI"], false)
 	end
 end --function END
 GameEvents.PlayerDoTurn.Add(SPUE_OnPlayerDoTurn)
@@ -659,8 +537,7 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 
 	local player = Players[playerID];
 	local unit = Players[playerID]:GetUnitByID(unitID);
-	local pEraType = player:GetCurrentEra();
-	local pEraID = GameInfo.Eras[pEraType].ID;
+	local pEraID = player:GetCurrentEra();
 
 
 
@@ -963,8 +840,7 @@ function SPUE_PlayerDoneTurn(playerID)
 	if player == nil then return end;
 	if (not player:IsAlive()) then return end;
 	if player:IsBarbarian() or player:IsMinorCiv() then return end;
-	local pEraType = player:GetCurrentEra();
-	local pEraID = GameInfo.Eras[pEraType].ID;
+	local pEraID = player:GetCurrentEra();
 
 	for unit in player:Units() do
 		-- 医院骑士团：两格内己方单位数量回复20血量
@@ -973,25 +849,12 @@ function SPUE_PlayerDoneTurn(playerID)
 			local plot = unit:GetPlot();
 			local ihealth_bonus = 0;
 
-			local unitCount = plot:GetNumUnits();
 			local uniqueRange = 2;
-			if unitCount >= 1 then
-				for i = 0, unitCount - 1, 1 do
-					local pFoundUnit = plot:GetUnit(i)
-					if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
-						local pPlayer = Players[pFoundUnit:GetOwner()];
-						if pPlayer == player then
-							pFoundUnit:ChangeDamage(-20);
-						end
-					end
-				end
-			end
-
 			for dx = -uniqueRange, uniqueRange, 1 do
 				for dy = -uniqueRange, uniqueRange, 1 do
 					local adjPlot = Map.PlotXYWithRangeCheck(plot:GetX(), plot:GetY(), dx, dy, uniqueRange);
 					if (adjPlot ~= nil) then
-						unitCount = adjPlot:GetNumUnits();
+						local unitCount = adjPlot:GetNumUnits();
 						if unitCount >= 1 then
 							for i = 0, unitCount - 1, 1 do
 								local pFoundUnit = adjPlot:GetUnit(i);
@@ -1240,7 +1103,7 @@ function SPUE_OnAIUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		-- 宝船旗舰标识
 		local treasureFleetFlag = SPUE_GetRandom(1, 2)
 		--*****************************AI召唤采邑骑士*****************************--
-		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW"].ID)
+		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_KNIGHT_NEW"])
 			and SPUE_Knight_New_Flag == 0
 		then
 			knightFlag = TroopsLeftFlag(player, math.min(5, player:GetNumCities() - 1));
@@ -1273,7 +1136,7 @@ function SPUE_OnAIUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 			end
 		end
 		--*****************************AI福船制造单位*****************************--
-		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FUCHUAN"].ID)
+		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FUCHUAN"])
 		and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
 		and bWar
 		and player:GetNumUnits() <= 2 * player:GetNumPlots()
@@ -1317,7 +1180,7 @@ function SPUE_OnAIUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 			end
 		end
 		--*****************************AI宝船旗舰*****************************--
-		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TREASURE_FLEET"].ID)
+		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_TREASURE_FLEET"])
 			and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
 		then
 			local numInfantry = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_SHENJI_MUSKETEER"]);
@@ -1776,8 +1639,8 @@ function SPUE_Unit_Effect_UnitSetXY(playerID)
 	end
 end
 
-GameEvents.UnitSetXY.Add(SPUE_Unit_Effect_UnitSetXY)
-GameEvents.UnitCreated.Add(SPUE_Unit_Effect_UnitSetXY)
+--GameEvents.UnitSetXY.Add(SPUE_Unit_Effect_UnitSetXY)
+--GameEvents.UnitCreated.Add(SPUE_Unit_Effect_UnitSetXY)
 --------------------------------------------------------------
 -- 王都骑士团：兵士集结
 --------------------------------------------------------------
@@ -1796,7 +1659,7 @@ SPUE_Knight_New_Button = {
 		local player = Players[unit:GetOwner()]
 		local SPUE_Knight_New_Flag = load(player, "Knight Rally", SPUE_Knight_New_Flag) or 0
 		local flag = 0
-		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW"].ID) and SPUE_Knight_New_Flag == 0
+		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_KNIGHT_NEW"]) and SPUE_Knight_New_Flag == 0
 		then
 			flag = TroopsLeftFlag(player, math.min(6, player:GetNumCities() - 1));
 		end
@@ -1857,35 +1720,22 @@ function OnSPUESetDamageSP(iPlayerID, iUnitID, iDamage, iPreviousDamage)
 	local pPlayer = Players[iPlayerID]
 	-- local YuLin_Num = CountUnitsWithUniquePromotions(iPlayerID,
 	-- 	GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID)
-	local YuLin_Num = pPlayer:GetUnitCountFromHasPromotion(
-		GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID);
 
+	local YuLin_Num = pPlayer:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_YULIN_CAVALRY"]);
 	if YuLin_Num and YuLin_Num > 0
-		and not pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID)
+		and not pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_YULIN_CAVALRY"])
 		and iDamage - iPreviousDamage > 0
 	then
 		for unit in pPlayer:Units() do
-			if unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID) then
+			if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_YULIN_CAVALRY"]) then
 				unit:ChangeDamage(-(iDamage - iPreviousDamage) / YuLin_Num)
 			end
 		end
 	end
 
 	-- 紫凤凰1
-	local phoenix_Num = pPlayer:GetUnitCountFromHasPromotion(
-		GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA"].ID);
-
-	if phoenix_Num and phoenix_Num > 0 
-	and pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA"].ID)
-	and not pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"].ID)
-	and pUnit:GetCurrHitPoints() <= 10
-	then
-		pUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"].ID, true)
-	elseif phoenix_Num and phoenix_Num > 0 
-	and pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"].ID)
-	and pUnit:GetCurrHitPoints() > 10
-	then
-		pUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"].ID, false)
+	if pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_BYZANTIUM_TAGMATA"]) then
+		pUnit:SetHasPromotion(GameInfoTypes["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"], pUnit:GetCurrHitPoints() <= 10)
 	end	
 end
 
@@ -1909,8 +1759,8 @@ SPUE_Rohan_Cavalry_Button = {
 
 		if unit:CanMove()
 			-- and CountUnitsWithUniquePromotions(unit:GetOwner(), GameInfo.UnitPromotions["PROMOTION_SPUE_ROHAN_CAVALRY"].ID) > 0
-			and player:GetUnitCountFromHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ROHAN_CAVALRY"].ID) > 0
-			and unit:GetUnitClassType() == GameInfo.UnitClasses.UNITCLASS_GREAT_GENERAL.ID
+			and unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_GREAT_GENERAL
+			and player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_ROHAN_CAVALRY"]) > 0
 		then
 			flag = 1
 		end
@@ -1930,7 +1780,7 @@ SPUE_Rohan_Cavalry_Button = {
 		local unitAIType = unit:GetUnitAIType()
 
 		for iunit in player:Units() do
-			if iunit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ROHAN_CAVALRY"].ID) then
+			if iunit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_ROHAN_CAVALRY"]) then
 				iunit:SetXY(unitX, unitY)
 				iunit:SetMoves(iunit:MovesLeft() + GameDefines["MOVE_DENOMINATOR"])
 				iunit:ChangeDamage(-10)
@@ -1964,7 +1814,7 @@ SPUE_HotAirBalloon_Button = {
 
 		return unit:CanMove()
 			and unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_EXPLORERX
-			and player:HasPolicy(GameInfo.Policies["POLICY_RATIONALISM"].ID);
+			and player:HasPolicy(GameInfoTypes["POLICY_RATIONALISM"]);
 	end, -- or nil or a boolean, default is true
 
 	Disabled = function(action, unit)
@@ -1980,8 +1830,8 @@ SPUE_HotAirBalloon_Button = {
 
 
 		local NewUnit = player:InitUnit(GameInfoTypes["UNIT_SPUE_HOT_AIR_BALLOON"], unitX, unitY)
-		NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_NO_CASUALTIES"].ID, true)
-		NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_HOT_AIR_BALLOON"].ID, true)
+		NewUnit:SetHasPromotion(GameInfoTypes["PROMOTION_NO_CASUALTIES"], true)
+		NewUnit:SetHasPromotion(GameInfoTypes["PROMOTION_SPUE_HOT_AIR_BALLOON"], true)
 		if plot:GetNumUnits() > 2 then
 			NewUnit:JumpToNearestValidPlot()
 		end
@@ -2008,18 +1858,18 @@ function TempHotAirBalloon(playerID, unitID)
 	local unit = Players[playerID]:GetUnitByID(unitID);
 
 	if unit:GetUnitType() == GameInfoTypes.UNIT_SPUE_HOT_AIR_BALLOON
-	and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_HOT_AIR_BALLOON"].ID)
+	and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_HOT_AIR_BALLOON"])
 	then
 		local combat = unit:GetBaseCombatStrength()
-		if combat > 0 then
+		if combat > 5 then
 			unit:SetBaseCombatStrength(combat - 5)
-		elseif combat == 0 then
-			unit:Kill()
+		elseif combat <= 5 then
+			unit:Kill(true)
 		end
 	end
 
 end
-GameEvents.UnitDoturn.Add(TempHotAirBalloon)
+GameEvents.UnitDoTurn.Add(TempHotAirBalloon)
 --------------------------------------------------------------
 -- 福船：军事训练
 --------------------------------------------------------------
@@ -2040,15 +1890,9 @@ SPUE_FuChuan_LandInfantry_Button = {
 		local unitX = unit:GetX()
 		local unitY = unit:GetY()
 
-		if Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_GUNPOWDER"]) then
-			SPUE_FuChuan_LandInfantry_Button.Title = "TXT_KEY_SPUE_FUCHUAN_GUNPOWDER_BUTTON_SHORT";
-			SPUE_FuChuan_LandInfantry_Button.ToolTip = "TXT_KEY_SPUE_FUCHUAN_GUNPOWDER_BUTTON";
-			SPUE_FuChuan_LandInfantry_Button.PortraitIndex = 41;
-		end
-
 		local flag = 0
 		-- local iCost = -1
-		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FUCHUAN"].ID)
+		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FUCHUAN"])
 			and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
 		then
 			-- 单位购买价格
@@ -2070,6 +1914,11 @@ SPUE_FuChuan_LandInfantry_Button = {
 			end
 		end
 
+		if flag == 1 and Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_GUNPOWDER"]) then
+			SPUE_FuChuan_LandInfantry_Button.Title = "TXT_KEY_SPUE_FUCHUAN_GUNPOWDER_BUTTON_SHORT";
+			SPUE_FuChuan_LandInfantry_Button.ToolTip = "TXT_KEY_SPUE_FUCHUAN_GUNPOWDER_BUTTON";
+			SPUE_FuChuan_LandInfantry_Button.PortraitIndex = 41;
+		end
 		return flag == 1;
 	end, -- or nil or a boolean, default is true
 
@@ -2134,7 +1983,7 @@ SPUE_FuChuan_Cannon_Button = {
 
 		local flag = 0
 
-		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FUCHUAN"].ID)
+		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FUCHUAN"])
 			and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
 		then
 			-- 单位购买价格
@@ -2347,10 +2196,10 @@ SPUE_Emperor_Button = {
 	Disabled = function(action, unit)
 		local player = Players[unit:GetOwner()]
 		
-		if player:HasPolicy(GameInfo.Policies["POLICY_SPUE_EMPEROR_DUMMY"].ID) then
+		if player:HasPolicy(GameInfoTypes["POLICY_SPUE_EMPEROR_DUMMY"]) then
 			SPUE_Emperor_Button.Title = "TXT_KEY_COND_SPUE_EMPEROR_USED"
 		end
-		return player:HasPolicy(GameInfo.Policies["POLICY_SPUE_EMPEROR_DUMMY"].ID)
+		return player:HasPolicy(GameInfoTypes["POLICY_SPUE_EMPEROR_DUMMY"])
 	end, -- or nil or a boolean, default is false
 	Action = function(action, unit, eClick)
 		if eClick == Mouse.eRClick then
@@ -2543,11 +2392,11 @@ function NewAttackEffectJoined(iPlayer, iUnitOrCity, iRole, bIsCity)
 		-- 紫凤凰2
 		local pUnit = Players[ g_DoNewAttackEffect.defPlayerID ]:GetUnitByID( g_DoNewAttackEffect.defUnitID );
 		if not pUnit:IsDead() 
-		and pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA"].ID)
-		and not pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"].ID)
+		and pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_BYZANTIUM_TAGMATA"])
+		and not pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"])
 		and pUnit:GetCurrHitPoints() <= 10
 		then
-			pUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"].ID, true)
+			pUnit:SetHasPromotion(GameInfoTypes["PROMOTION_SPUE_BYZANTIUM_TAGMATA_EFFECT"], true)
 		end	
 	end
 end
@@ -2625,7 +2474,7 @@ function NewAttackEffect()
 	-- end
 
 	----------- 达芬奇坦克另类AOE
-	if (attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_DVC_TANK"].ID)) then
+	if (attUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_DVC_TANK"])) then
 		for i = 0, 5 do
 			local adjPlot = Map.PlotDirection(attPlot:GetX(), attPlot:GetY(), i)
 			if (adjPlot ~= nil and not adjPlot:IsCity()) then
@@ -2679,7 +2528,7 @@ function NewAttackEffect()
 	end
 
 	-- 九边卫士
-	if attUnit and attUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID)
+	if attUnit and attUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER2"])
 		and batType == GameInfoTypes["BATTLETYPE_MELEE"]
 	then
 		local movesLeft = attUnit:MovesLeft();
@@ -2689,7 +2538,7 @@ function NewAttackEffect()
 	end
 
 	if not bIsCity then
-		if not defUnit:IsDead() and defUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID)
+		if not defUnit:IsDead() and defUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER2"])
 			and batType == GameInfoTypes["BATTLETYPE_RANGED"]
 			and Map.PlotDistance(defUnit:GetX(), defUnit:GetY(), attUnit:GetX(), attUnit:GetY()) <= 2
 		then
@@ -2798,8 +2647,7 @@ function NewAttackEffect()
 		-- 帝国骑士杀敌掠获人口，达到一定程度则可以在首都获得移民
 		for i = 1, 5 do
 			if attUnit:IsHasPromotion(g_KingsKnightPops[i]) then
-				local pEraType = attPlayer:GetCurrentEra();
-				local pEraID = GameInfo.Eras[pEraType].ID;
+				local pEraID = attPlayer:GetCurrentEra();
 				if defUnitDamage >= 40 or defFinalUnitDamage >= defUnit:GetMaxHitPoints() or defUnit:IsDead() then
 					local attCambat = 5 * attUnit:GetBaseCombatStrength();
 					local defCombat = defUnit:GetBaseCombatStrength();
@@ -3051,6 +2899,33 @@ function SPUEDamageDelta(iBattleUnitType, iBattleType,
 end
 
 GameEvents.BattleCustomDamage.Add(SPUEDamageDelta)
+--------------------------------------------------------------
+-- 溅射伤害结束事件
+--------------------------------------------------------------
+function OnSuperUESplashFinish(iPlayer, iUnit, iDefensePlayer, iNumAOEKill, bRangedAttack)
+	local pPlayer = Players[iPlayer];
+	if pPlayer == nil then return end;
+	local pUnit = pPlayer:GetUnitByID(iUnit)
+	if pUnit == nil or not pUnit:IsHasPromotion(unitPromotion055ID) then return end
+
+	------鹰击21攻击结束后失去晋升
+	if pUnit:IsHasPromotion(unitPromotion055Missile3ID) then
+		pUnit:SetHasPromotion(unitPromotion055Missile3ID, false)
+		pUnit:SetHasPromotion(unitPromotion055Missile2ID, true)
+	elseif pUnit:IsHasPromotion(unitPromotion055Missile2ID) then
+		pUnit:SetHasPromotion(unitPromotion055Missile2ID, false)
+		pUnit:SetHasPromotion(unitPromotion055Missile1ID, true)
+	elseif pUnit:IsHasPromotion(unitPromotion055Missile1ID) then
+		pUnit:SetHasPromotion(unitPromotion055Missile1ID, false)
+	end
+
+	if not pPlayer:IsHuman() then return end
+	Events.GameplayAlertMessage( Locale.ConvertTextKey("TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT1L") );
+	if iNumAOEKill > 0 then
+		Events.GameplayAlertMessage( Locale.ConvertTextKey("TXT_KEY_PROMOTION_SPUE_ORDER_SUPER_055_TEXT3N") );
+	end
+end
+GameEvents.OnTriggerSplashFinish.Add(OnSuperUESplashFinish)
 --------------------------------------------------------------
 -- 南洋海盗船远程劫掠
 --------------------------------------------------------------
@@ -3527,12 +3402,10 @@ SPUE_Patronage_vBowman_Button = {
 		end
 
 		-- local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_VASSAL_BOWMAN"]);
-		local numUnit = player:GetUnitCountFromHasPromotion(
-			GameInfo.UnitPromotions["PROMOTION_SPUE_VASSAL_BOWMAN"].ID)
-		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_GENERAL_BODYGUARD"].ID)
+		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_GENERAL_BODYGUARD"])
 			and csPlotFlag == 1
 			and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
-			and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_VASSAL_BOWMAN"].MaxPlayerInstances
+			and player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_VASSAL_BOWMAN"]) < GameInfo.UnitClasses["UNITCLASS_SPUE_VASSAL_BOWMAN"].MaxPlayerInstances
 		then
 			-- 单位购买价格
 			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_VASSAL_BOWMAN");
@@ -3695,12 +3568,10 @@ SPUE_Patronage_OceanFire_Button = {
 		local flag = 0
 
 		-- local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_OCEAN_FIRE"]);
-		local numUnit = player:GetUnitCountFromHasPromotion(
-			GameInfo.UnitPromotions["PROMOTION_SPUE_OCEAN_FIRE"].ID);
-		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID)
+		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_BUCELLARII_GUARD"])
 			and plot:IsCoastalLand()
 			and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
-			and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_OCEAN_FIRE"].MaxPlayerInstances
+			and player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_OCEAN_FIRE"]) < GameInfo.UnitClasses["UNITCLASS_SPUE_OCEAN_FIRE"].MaxPlayerInstances
 		then
 			-- 单位购买价格
 			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_OCEAN_FIRE");
@@ -3785,13 +3656,11 @@ SPUE_TreasureFleet_LandInfantry_Button = {
 		-- 		GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID)
 		-- 	+ CountUnitsWithUniquePromotions(unit:GetOwner(),
 		-- 		GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER3"].ID)
-		local numUnit = player:GetUnitCountFromHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER1"].ID) 
-			+ player:GetUnitCountFromHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID)
-			+ player:GetUnitCountFromHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER3"].ID)
-
-		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TREASURE_FLEET"].ID)
+		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_TREASURE_FLEET"])
 			and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
-			and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_SHENJI_MUSKETEER"].MaxPlayerInstances
+			and player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER1"]) 
+			+ player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER2"])
+			+ player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER3"]) < GameInfo.UnitClasses["UNITCLASS_SPUE_SHENJI_MUSKETEER"].MaxPlayerInstances
 		then
 			-- 单位购买价格
 			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SHENJI_MUSKETEER");
@@ -3888,11 +3757,9 @@ SPUE_Patronage_Corvette_Button = {
 		local flag = 0
 		-- local numUnit = CountUnitsWithUniquePromotions(unit:GetOwner(),
 		-- 	GameInfo.UnitPromotions["PROMOTION_SPUE_CORVETTE"].ID)
-		local numUnit = player:GetUnitCountFromHasPromotion(
-			GameInfo.UnitPromotions["PROMOTION_SPUE_CORVETTE"].ID)
-		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TREASURE_FLEET"].ID)
+		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_TREASURE_FLEET"])
 			and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
-			and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_CORVETTE"].MaxPlayerInstances
+			and player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_CORVETTE"]) < GameInfo.UnitClasses["UNITCLASS_SPUE_CORVETTE"].MaxPlayerInstances
 		then
 			-- 单位购买价格
 			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_CORVETTE");
@@ -3973,7 +3840,7 @@ SPUE_Tabor_Button = {
 	end, -- or nil or a boolean, default is true
 
 	Disabled = function(action, unit)
-		return EliteDisable(unit, unitPromotionTaborEliteID, "UNITCLASS_SPUE_TABOR", "PROJECT_SPUE_TABOR_TRAINING");
+		return EliteDisable(unit, unitPromotionTaborEliteID, "UNITCLASS_SPUE_TABOR", "PROJECT_SPUE_TABOR_TRAINING", "UNIT_SPUE_TABOR");
 	end, -- or nil or a boolean, default is false
 
 	Action = function(action, unit, eClick)
@@ -4135,9 +4002,9 @@ SPUE_Genoa_Ship_Button = {
 
 		if unit:CanMove()
 			-- and CountUnitsWithUniquePromotions(unit:GetOwner(), unitPromotionGenoaEliteID) > 0
-			and player:GetUnitCountFromHasPromotion(unitPromotionGenoaEliteID) > 0
 			and unit:GetDomainType() == DomainTypes.DOMAIN_SEA
 			and plot:IsAdjacentToLand()
+			and player:GetUnitCountFromHasPromotion(unitPromotionGenoaEliteID) > 0
 		then
 			flag = 1
 		end
@@ -4271,27 +4138,23 @@ LuaEvents.UnitPanelActionAddin(HessianMissionButton);
 --------------------------------------------------------------
 -- 人类玩家无法通过城市建造仆从军/雇佣兵
 --------------------------------------------------------------
-local g_PatronageVassalUnitClassList = { "UNITCLASS_SPUE_CORVETTE",
-	"UNITCLASS_SPUE_SHENJI_MUSKETEER",
+local g_PatronageVassalUnitClassList = {
+	GameInfoTypes["UNITCLASS_SPUE_CORVETTE"],
+	GameInfoTypes["UNITCLASS_SPUE_SHENJI_MUSKETEER"],
 
-	"UNITCLASS_SPUE_VASSAL_BOWMAN",
-	"UNITCLASS_SPUE_SOCII_HASTATI",
+	GameInfoTypes["UNITCLASS_SPUE_VASSAL_BOWMAN"],
+	GameInfoTypes["UNITCLASS_SPUE_SOCII_HASTATI"],
 
-	"UNITCLASS_SPUE_FIRE_THROWER",
-	"UNITCLASS_SPUE_OCEAN_FIRE" }
+	GameInfoTypes["UNITCLASS_SPUE_FIRE_THROWER"],
+	GameInfoTypes["UNITCLASS_SPUE_OCEAN_FIRE"]
+}
 function SPUE_Patronage_PlayerCanTrain(playerID, unitID)
 	local player = Players[playerID];
 	local playerTeam = Teams[player:GetTeam()];
 
 	if player:IsHuman() then
-		-- local unit = player:GetUnitByID(unitID);
-		local vassalUnitsTable = g_PatronageVassalUnitClassList;
-		local numVassalUnitClass = #vassalUnitsTable;
-
-		for index = 1, numVassalUnitClass do
-			local ivUnitType = GetCivSpecificUnit(player, vassalUnitsTable[index]);
-			local ivUnit = GameInfo.Units[GameInfoTypes[ivUnitType]];
-			if ivUnit.ID == unitID then
+		for _, v in pairs(g_PatronageVassalUnitClassList) do
+			if player:GetCivUnit(v) == unitID then
 				return false;
 			end
 		end

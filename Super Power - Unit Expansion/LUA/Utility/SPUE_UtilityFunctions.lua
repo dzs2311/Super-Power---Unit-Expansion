@@ -297,7 +297,7 @@ end
 -- 单位购买价钱
 --------------------------------------------------------------
 function SPUE_UnitPurchaseCost(player, iUnit)
-	local goldCost
+	local goldCost = nil
 	if iUnit and iUnit ~= -1 then
 		local punit = GameInfo.Units[ iUnit ]
 		local productionCost = punit.Cost
@@ -305,11 +305,13 @@ function SPUE_UnitPurchaseCost(player, iUnit)
 		for pCity in player:Cities() do
 			if pCity then
 				goldCost = pCity:GetUnitPurchaseCost( iUnit )	
-			elseif (punit.HurryCostModifier or 0) > 0 then
-				goldCost = (productionCost * GameDefines.GOLD_PURCHASE_GOLD_PER_PRODUCTION ) ^ GameDefines.HURRY_GOLD_PRODUCTION_EXPONENT
-				goldCost = (punit.HurryCostModifier + 100) * goldCost / 100
-				goldCost = goldCost - ( goldCost % GameDefines.GOLD_PURCHASE_VISIBLE_DIVISOR )
+				break;
 			end
+		end
+		if goldCost == nil and (punit.HurryCostModifier or 0) > 0 then
+			goldCost = (productionCost * GameDefines.GOLD_PURCHASE_GOLD_PER_PRODUCTION ) ^ GameDefines.HURRY_GOLD_PRODUCTION_EXPONENT
+			goldCost = (punit.HurryCostModifier + 100) * goldCost / 100
+			goldCost = goldCost - ( goldCost % GameDefines.GOLD_PURCHASE_VISIBLE_DIVISOR )
 		end
 	end
 
@@ -319,6 +321,12 @@ end
 -- 单位精英化按钮：显示函数
 --------------------------------------------------------------
 function EliteCondition(unit, unitPromotionID, ounitType, nunitType, unitClassType, projectType, Button)
+	if not unit:CanMove() 
+	or not unit:IsHasPromotion(unitPromotionID)
+	or unit:GetUnitType() ~= GameInfoTypes[ounitType]
+	then 
+		return false 
+	end
 	local player = Players[unit:GetOwner()]
 
 	-- 单位购买价格
@@ -345,14 +353,11 @@ function EliteCondition(unit, unitPromotionID, ounitType, nunitType, unitClassTy
 		Button.ToolTip = Locale.ConvertTextKey("TXT_KEY_SPUE_VARANGIAN_GUARD_BUTTON", 
 						 iCost, dboUnit.Description, dbnUnit.Description, dboUnit.Description, dbProject.Description);
 	end
-
-		
-	return unit:CanMove() and unit:IsHasPromotion(unitPromotionID) 
-	and unit:GetUnitType() == GameInfoTypes[ounitType];
+	return true
 end
 
 function EliteConditionAI(unit, unitPromotionID, ounitType, nunitType, unitClassType, projectType)
-	local player = Players[unit:GetOwner()]
+	--[[local player = Players[unit:GetOwner()]
 
 	-- 单位购买价格
 	local sUnitType = GetCivSpecificUnit(player, unitClassType)
@@ -366,7 +371,7 @@ function EliteConditionAI(unit, unitPromotionID, ounitType, nunitType, unitClass
 	local dbProject = GameInfo.Projects[projectType];
 	
 	if goldCost then iCost = goldCost * 2 end;
-	if ounitType == 'UNIT_SPUE_TABOR' then iCost = iCost * 0.2 end;
+	if ounitType == 'UNIT_SPUE_TABOR' then iCost = iCost * 0.2 end;]]
 		
 	return unit:CanMove() and unit:IsHasPromotion(unitPromotionID) 
 	and unit:GetUnitType() == GameInfoTypes[ounitType];
@@ -374,28 +379,21 @@ end
 --------------------------------------------------------------
 -- 单位精英化按钮：条件函数
 --------------------------------------------------------------
-function EliteDisable(unit, unitPromotion2ID, unitClassType, projectType)
+function EliteDisable(unit, unitPromotion2ID, unitClassType, projectType, ounitType)
 	local player = Players[unit:GetOwner()]
+	if player:GetUnitCountFromHasPromotion(unitPromotion2ID) > 0 then return true end
+	if player:IsLackingTroops() then return true end
+	if projectType ~= nil and not player:HasProject(GameInfoTypes[projectType]) then return true end
 
 	local sUnitType = GetCivSpecificUnit(player, unitClassType)
 	local iUnit = GameInfoTypes[sUnitType];
 	local iCost = 1000;
 	local goldCost = SPUE_UnitPurchaseCost(player, iUnit);
-	 
-	local projectFlag = false;
-	if projectType == nil then projectFlag = true else projectFlag = player:HasProject(GameInfo.Projects[projectType].ID) end;
-	-- local dbProject = GameInfo.Projects[projectType];
-	local corpsFlag = TroopsLeftFlag(player, 1);
 
 	if goldCost then iCost = goldCost * 2 end;
 	-- 胡斯车垒转换价格便宜
 	if ounitType == 'UNIT_SPUE_TABOR' then iCost = iCost * 0.2 end;
-	-- return CountUnitsWithUniquePromotions(unit:GetOwner(), unitPromotion2ID) > 0 
-	return player:GetUnitCountFromHasPromotion(unitPromotion2ID) > 0
-	or player:GetGold() < iCost 
-	or not projectFlag
-	or corpsFlag == 0;
-
+	return player:GetGold() < iCost 
 end
 --------------------------------------------------------------
 -- 单位精英化按钮：动作函数
@@ -462,7 +460,7 @@ end
 -------------------------------------------------------------
 function EliteUnitTransferAI(unit, unitPromotionID, ounitType, nunitType, unitClassType, projectType, unitPromotion2ID)
 	if EliteConditionAI(unit, unitPromotionID, ounitType, nunitType, unitClassType, projectType) 
-	and not EliteDisable(unit, unitPromotion2ID, unitClassType, projectType)
+	and not EliteDisable(unit, unitPromotion2ID, unitClassType, projectType, ounitType)
 	then
 		EliteAction(unit, nunitType, unitClassType);
 	end

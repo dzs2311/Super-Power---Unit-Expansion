@@ -106,22 +106,6 @@
 			<Type>POLICY_SPUE_FOOT_KNIGHT_HOSPITALLER</Type>
 			<Description>TXT_KEY_POLICY_BRANCH_PIETY</Description>
 		</Row>
-		<!-- 意识形态标识 -->
-		<Row>
-			<!-- 秩序 -->
-			<Type>POLICY_SPUE_ORDER</Type>
-			<Description>TXT_KEY_POLICY_BRANCH_ORDER</Description>
-		</Row>
-		<Row>
-			<!-- 自由 -->
-			<Type>POLICY_SPUE_FREEDOM</Type>
-			<Description>TXT_KEY_POLICY_BRANCH_FREEDOM</Description>
-		</Row>
-		<Row>
-			<!-- 独裁 -->
-			<Type>POLICY_SPUE_AUTOCRACY</Type>
-			<Description>TXT_KEY_POLICY_BRANCH_AUTOCRACY</Description>
-		</Row>
 	</Policies>
 	<Policy_CapitalYieldChanges>
 		<Row>

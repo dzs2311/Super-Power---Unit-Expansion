@@ -12,16 +12,16 @@ ContextPtr:SetHide(true);
 -- Variables
 --==========================================================================================
 
-local g_MercenaryUnitListL	= {	GameInfoTypes["UNIT_SPUE_VARANGIAN"],
-								GameInfoTypes["UNIT_SPUE_GENOAXBOW"],
-								GameInfoTypes["UNIT_SPUE_SWISSGUARD"],
-								GameInfoTypes["UNIT_SPUE_ELMETI"],
-								GameInfoTypes["UNIT_SPUE_TABOR"]}
+local g_MercenaryUnitListL	= {	GameInfo.Units["UNIT_SPUE_VARANGIAN"],
+								GameInfo.Units["UNIT_SPUE_GENOAXBOW"],
+								GameInfo.Units["UNIT_SPUE_SWISSGUARD"],
+								GameInfo.Units["UNIT_SPUE_ELMETI"],
+								GameInfo.Units["UNIT_SPUE_TABOR"]}
 
-local g_MercenaryUnitListR	= {	GameInfoTypes["UNIT_SPUE_HESSIAN"],
-								GameInfoTypes["UNIT_SPUE_SSPRIVATEER"],
-								GameInfoTypes["UNIT_SPUE_PRIVATEER"],
-								GameInfoTypes["UNIT_SPUE_FUNE"]}
+local g_MercenaryUnitListR	= {	GameInfo.Units["UNIT_SPUE_HESSIAN"],
+								GameInfo.Units["UNIT_SPUE_SSPRIVATEER"],
+								GameInfo.Units["UNIT_SPUE_PRIVATEER"],
+								GameInfo.Units["UNIT_SPUE_FUNE"]}
 							   
 local g_MercenaryUnitLeft	= nil
 local g_MercenaryUnitRight	= nil
@@ -42,6 +42,23 @@ end
 --==========================================================================================
 -- Main Functions
 --==========================================================================================
+-- Is ready choose?
+function IsHasChoose(player)
+	for k, unit in pairs(g_MercenaryUnitListL) do 
+		local policy = unit.PolicyType;
+		if player:HasPolicy(GameInfoTypes[policy]) then
+			return true;
+		end
+	end
+
+	for k, unit in pairs(g_MercenaryUnitListR) do 
+		local policy = unit.PolicyType;
+		if player:HasPolicy(GameInfoTypes[policy]) then
+			return true;
+		end
+	end
+	return false;
+end
 -- Initializes All Components.
 function initializeDialog()
 
@@ -51,54 +68,62 @@ function initializeDialog()
 	local activeCiv 		= GameInfo.Civilizations[activeCivID];
 
 	if activeCiv then
-		if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_BYZANTIUM" 
+		if activeCiv.Type == "CIVILIZATION_BYZANTIUM" 
 		then
 			-- 拜占庭自动获得瓦兰吉卫队和热那亚佣兵建造能力
-			local unitL = GameInfo.Units[g_MercenaryUnitListL[1]]
-			local unitR = GameInfo.Units[g_MercenaryUnitListL[2]]
+			local unitL = g_MercenaryUnitListL[1]
+			local unitR = g_MercenaryUnitListL[2]
 	
 			local policyL = unitL.PolicyType
 			local policyR = unitR.PolicyType
 	
-			pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)
-			pPlayer:SetHasPolicy(GameInfo.Policies[policyR].ID, true, true)
-			
-			table.remove(g_MercenaryUnitListL, 1)
-			table.remove(g_MercenaryUnitListL, 1)
-		elseif GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_FRANCE" 
+			pPlayer:SetHasPolicy(GameInfoTypes[policyL], true, true)
+			pPlayer:SetHasPolicy(GameInfoTypes[policyR], true, true)
+		elseif activeCiv.Type == "CIVILIZATION_FRANCE" 
 		then
 			-- 法兰西自动获得装甲骑兵建造能力
-			local unitL = GameInfo.Units[g_MercenaryUnitListL[4]]
+			local unitL = g_MercenaryUnitListL[4]
 			local policyL = unitL.PolicyType
-			pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)
-			table.remove(g_MercenaryUnitListL, 4)
-		elseif (GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_GERMANY"
-		or GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_AUSTRIA") 
+			pPlayer:SetHasPolicy(GameInfoTypes[policyL], true, true)
+		elseif (activeCiv.Type == "CIVILIZATION_GERMANY"
+		or activeCiv.Type == "CIVILIZATION_AUSTRIA") 
 		then
 			-- 德意志奥地利自动获得黑森佣兵建造能力
-			local unitL = GameInfo.Units[g_MercenaryUnitListR[1]]
+			local unitL = g_MercenaryUnitListR[1]
 			local policyL = unitL.PolicyType
-			pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)
-			table.remove(g_MercenaryUnitListR, 1)
-		elseif GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_CHINA" 
+			pPlayer:SetHasPolicy(GameInfoTypes[policyL], true, true)
+		elseif activeCiv.Type == "CIVILIZATION_CHINA" 
 		then
 			-- 中华文明自动获得南洋海盗船建造能力
-			local unitL = GameInfo.Units[g_MercenaryUnitListR[2]]
+			local unitL = g_MercenaryUnitListR[2]
 			local policyL = unitL.PolicyType
-			pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)
-			table.remove(g_MercenaryUnitListR, 2)
-		elseif GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_JAPAN" 
+			pPlayer:SetHasPolicy(GameInfoTypes[policyL], true, true)
+		elseif activeCiv.Type == "CIVILIZATION_JAPAN" 
 		then
 			-- 日本文明自动获得倭寇帆船建造能力
-			local unitL = GameInfo.Units[g_MercenaryUnitListR[4]]
+			local unitL = g_MercenaryUnitListR[4]
 			local policyL = unitL.PolicyType
-			pPlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)
-			table.remove(g_MercenaryUnitListR, 4)
+			pPlayer:SetHasPolicy(GameInfoTypes[policyL], true, true)
 		end
 	end
 
-	local unitL = GameInfo.Units[g_MercenaryUnitListL[1]];
-	local unitR = GameInfo.Units[g_MercenaryUnitListR[1]];
+	-- 找到第一个可选单位
+	local unitL = nil
+	local unitR = nil
+	for k, unit in pairs(g_MercenaryUnitListL) do 
+		local policy = unit.PolicyType;
+		if not pPlayer:HasPolicy(GameInfoTypes[policy]) then
+			unitL = g_MercenaryUnitListL[k];
+			break;
+		end
+	end
+	for k, unit in pairs(g_MercenaryUnitListR) do 
+		local policy = unit.PolicyType;
+		if not pPlayer:HasPolicy(GameInfoTypes[policy]) then
+			unitR = g_MercenaryUnitListR[k];
+			break;
+		end
+	end
 
 	if leader then
 		print("initializeDialog: Leader Found: " .. Locale.ConvertTextKey(leader.Description))
@@ -162,13 +187,14 @@ function UpdateLeftUnitList()
   	local iTeam = Game.GetActiveTeam()
 
   	Controls.SelectListLeft:ClearEntries()
-	for k, v in pairs(g_MercenaryUnitListL) do
-		if g_MercenaryUnitRight ~= v then
-			local unit = GameInfo.Units[v]
+	for k, unit in pairs(g_MercenaryUnitListL) do
+		if g_MercenaryUnitRight ~= unit.ID 
+		and not activePlayer:HasPolicy(GameInfoTypes[unit.PolicyType]) 
+		then
 			local entry = {}
 			Controls.SelectListLeft:BuildEntry("InstanceOne", entry)
 
-			entry.Button:SetVoid1(Locale.ConvertTextKey(v))
+			entry.Button:SetVoid1(Locale.ConvertTextKey(unit.ID))
 			entry.Button:SetText(Locale.ConvertTextKey(unit.Description))
 		end
 	end
@@ -196,13 +222,14 @@ function UpdateRightUnitList()
   	local iTeam = Game.GetActiveTeam()
 
   	Controls.SelectListRight:ClearEntries()
-	for k, v in pairs(g_MercenaryUnitListR) do
-		if g_MercenaryUnitRight ~= v then
-			local unit = GameInfo.Units[v]
+	for k, unit in pairs(g_MercenaryUnitListR) do
+		if g_MercenaryUnitRight ~= unit.ID
+		and not activePlayer:HasPolicy(GameInfoTypes[unit.PolicyType]) 
+		then
 			local entry = {}
 			Controls.SelectListRight:BuildEntry("InstanceOne", entry)
 
-			entry.Button:SetVoid1(Locale.ConvertTextKey(v))
+			entry.Button:SetVoid1(Locale.ConvertTextKey(unit.ID))
 			entry.Button:SetText(Locale.ConvertTextKey(unit.Description))
 		end
 	end
@@ -212,109 +239,61 @@ function UpdateRightUnitList()
 	Controls.SelectListRight:RegisterSelectionCallback(OnRightSelected)
 end
 
+-- AI Can Train All Policy Units
+function OnAIGetAllUnit( player )
+    if player == nil or player:IsBarbarian() or player:IsHuman() then return end
+	local unitL = g_MercenaryUnitListL[1]
+	local policyL = unitL.PolicyType
+	local pEraID = player:GetCurrentEra();
 
+	if (player:HasPolicy(GameInfoTypes["POLICY_COMMERCE"])
+	and not player:HasPolicy(GameInfoTypes[policyL]))
+	or (isSPEx and pEraID >= GameInfoTypes["ERA_MEDIEVAL"]
+	and not player:HasPolicy(GameInfoTypes[policyL]))
+	then
+		for k, unit in pairs(g_MercenaryUnitListL) do 
+			local policy = unit.PolicyType
+			if not player:HasPolicy(GameInfoTypes[policy]) then
+				player:SetHasPolicy(GameInfoTypes[policy], true, true)
+				print("AI Can Train Policy Units - Mercenary!")
+			end
+		end
+		for k, unit in pairs(g_MercenaryUnitListR) do 
+			local policy = unit.PolicyType
+			if not player:HasPolicy(GameInfoTypes[policy]) then
+				player:SetHasPolicy(GameInfoTypes[policy], true, true)
+				print("AI Can Train Policy Units - Mercenary!")
+			end
+		end
+	end
+end
 -- Show the panel when player adopt policy branch commerce.
-function OnAdoptPolicyBranch( playerID, policybranchID )
-    
+function OnAdoptPolicyBranch(playerID)
     local player = Players[playerID]	
-
     if player == nil or player:IsBarbarian() then
         return
     end
 
 	if not player:IsHuman() then
+		OnAIGetAllUnit( player )
 		return
 	end
 
-	if(GameInfo.PolicyBranchTypes["POLICY_BRANCH_COMMERCE"].ID == policybranchID) then
-		showDialog()
-	end
-
-
+	showDialog()
 end
-GameEvents.PlayerAdoptPolicyBranch.Add(OnAdoptPolicyBranch)
--- Show the panel when World Power Mod is active.
+GameEvents.PlayerAdoptPolicyBranch.Add(function(playerID, policybranchID)
+	if GameInfoTypes["POLICY_BRANCH_COMMERCE"] == policybranchID then
+		OnAdoptPolicyBranch(playerID)
+	end
+end)
 if isSPEx then
-	function mercenaryUnitsWorldPowerFix(playerID)
-		-- 加载强权进入中古时启用选择界面
-		local player = Players[playerID]	
-
-    	if player == nil or player:IsBarbarian() then
-    	    return
-    	end
-
-		if not player:IsHuman() then
-			OnAIDoTurn( playerID )
-			return
+	GameEvents.PlayerSetEra.Add(function(playerID, era)
+		-- Show the panel when World Power Mod is active.
+		if era >= GameInfoTypes["ERA_MEDIEVAL"] then
+			OnAdoptPolicyBranch(playerID)
 		end
-
-		if player:IsEverAlive() then
-			local pEraType = player:GetCurrentEra();
-			local pEraID = GameInfo.Eras[pEraType].ID;
-			local flagMercenaryUnit = true
-
-			for k, v in pairs(g_MercenaryUnitListL) do 
-				local unit = GameInfo.Units[v];
-				local policy = unit.PolicyType;
-				if player:HasPolicy(GameInfo.Policies[policy].ID) then
-					flagMercenaryUnit = false;
-					break;
-				end
-			end
-
-			for k, v in pairs(g_MercenaryUnitListR) do 
-				local unit = GameInfo.Units[v];
-				local policy = unit.PolicyType;
-				if player:HasPolicy(GameInfo.Policies[policy].ID) then
-					flagMercenaryUnit = false;
-					break;
-				end
-			end
-
-			if  pEraID >= GameInfo.Eras["ERA_MEDIEVAL"].ID and flagMercenaryUnit then
-				showDialog();
-			end
-		end
-
-
-	end
-	Events.LoadScreenClose.Add(mercenaryUnitsWorldPowerFix)
-	GameEvents.TeamSetEra.Add(mercenaryUnitsWorldPowerFix)
+	end)
 end
-
-function OnAIDoTurn( playerID )
-    local player = Players[playerID]	
-    if player == nil or player:IsBarbarian() or player:IsHuman() then return end
-	local unitL = GameInfo.Units[g_MercenaryUnitListL[1]]
-	local policyL = unitL.PolicyType
-	local pEraType = player:GetCurrentEra();
-	local pEraID = GameInfo.Eras[pEraType].ID;	
-
-	if (player:HasPolicy(GameInfo.Policies["POLICY_COMMERCE"].ID)
-	and not player:HasPolicy(GameInfo.Policies[policyL].ID))
-	or (isSPEx and pEraID >= GameInfo.Eras["ERA_MEDIEVAL"].ID
-	and not player:HasPolicy(GameInfo.Policies[policyL].ID))
-	then
-		for k, v in pairs(g_MercenaryUnitListL) do 
-			local unit = GameInfo.Units[v]
-			local policy = unit.PolicyType
-			if not player:HasPolicy(GameInfo.Policies[policy].ID) then
-				player:SetHasPolicy(GameInfo.Policies[policy].ID, true, true)
-				print("AI Can Train Policy Units - Mercenary!")
-			end
-		end
-		for k, v in pairs(g_MercenaryUnitListR) do 
-			local unit = GameInfo.Units[v]
-			local policy = unit.PolicyType
-			if not player:HasPolicy(GameInfo.Policies[policy].ID) then
-				player:SetHasPolicy(GameInfo.Policies[policy].ID, true, true)
-				print("AI Can Train Policy Units - Mercenary!")
-			end
-		end
-	end
-end
-GameEvents.PlayerDoTurn.Add(OnAIDoTurn)
-
 
 -- Handle the Apply Button
 function onApplyButton()
@@ -329,8 +308,8 @@ function onApplyButton()
 		local policyL = unitL.PolicyType
 		local policyR = unitR.PolicyType
 
-		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true)
-		activePlayer:SetHasPolicy(GameInfo.Policies[policyR].ID, true, true)
+		activePlayer:SetHasPolicy(GameInfoTypes[policyL], true, true)
+		activePlayer:SetHasPolicy(GameInfoTypes[policyR], true, true)
 
 		hideDialog()
 	end
@@ -342,6 +321,7 @@ Controls.OKButton:RegisterCallback(Mouse.eLClick, onApplyButton)
 
 -- Show function
 function showDialog()
+	if IsHasChoose(activePlayer) then return end
 	-- Show panel
 	ContextPtr:SetHide(false)
 

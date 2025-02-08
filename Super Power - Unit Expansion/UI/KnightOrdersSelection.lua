@@ -38,7 +38,7 @@ function initializeDialog()
 
 	-- 德国自动获得条顿骑士团建造能力
 	if activeCiv then
-		if GameInfo.Civilizations[activeCivID].Type == "CIVILIZATION_GERMANY" 
+		if activeCiv.Type == "CIVILIZATION_GERMANY" 
 		then
 			Controls.CreedButton2:SetHide(true);
 			g_PietyUnitLeft  = g_PietyUnitList[5];
@@ -100,7 +100,7 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 	-- 	return
 	-- end
 
-	if(GameInfo.PolicyBranchTypes["POLICY_BRANCH_PIETY"].ID == policybranchID) then
+	if(GameInfoTypes["POLICY_BRANCH_PIETY"] == policybranchID) then
 		if not player:IsHuman() then
 			-- AI Random Select
 			-- local iL = math.random(1, 6)
@@ -112,7 +112,7 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 			-- player:SetNumFreePolicies(1)
 			-- player:SetNumFreePolicies(0)
 			-- player:SetHasPolicy(GameInfo.Policies[policyL].ID, true)
-
+			OnAIGetAllUnit(playerID)
 			return
 		else
 			showDialog()
@@ -122,7 +122,7 @@ function OnAdoptPolicyBranch( playerID, policybranchID )
 end
 GameEvents.PlayerAdoptPolicyBranch.Add(OnAdoptPolicyBranch)
 
-function OnAIDoTurn( playerID )
+function OnAIGetAllUnit( playerID )
     local player = Players[playerID]	
     if player == nil or player:IsBarbarian() or player:IsHuman() then return end
 	local unitL = GameInfo.Units[g_PietyUnitList[1]]
@@ -135,15 +135,14 @@ function OnAIDoTurn( playerID )
 			local unit = GameInfo.Units[v]
 			local policy = unit.PolicyType
 			if not player:HasPolicy(GameInfo.Policies[policy].ID) then
-				player:SetNumFreePolicies(1)
-				player:SetNumFreePolicies(0)
-				player:SetHasPolicy(GameInfo.Policies[policy].ID, true)
+				--player:SetNumFreePolicies(1)
+				--player:SetNumFreePolicies(0)
+				player:SetHasPolicy(GameInfo.Policies[policy].ID, true, true)
 				print("AI Can Train Policy Units - Piety!")
 			end
 		end
 	end
 end
-GameEvents.PlayerDoTurn.Add(OnAIDoTurn)
 
 -- Handle the Adopt Button
 -- 圣殿

@@ -40,6 +40,7 @@ UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'PROMOTION_COLLATERAL_DAMAGE
 UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'ROG_CORE';						-- 开启单位强权效果
 UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'PROMOTIONS_ALLYCITYSTATE_BONUS';	-- 开启城邦盟友加强战斗力效果
 UPDATE CustomModOptions SET Value = 1 	WHERE Name = 'PROMOTIONS_EXTRARES_BONUS';		-- 开启额外资源加强战斗力效果
+UPDATE CustomModOptions SET Value = 1	WHERE Name = 'PROMOTION_AURA_PROMOTION';		-- 开启光环
 --==========================================================================================================================	
 -- 远程攻击劫掠 - VMC
 --==========================================================================================================================	
