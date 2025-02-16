@@ -305,9 +305,10 @@ AirPlanesUpgradeNotInCityButton = {
 			unitName = unit:GetNameNoDesc();
 		end
 
+		local iUpgradeType = unit:GetUpgradeUnitType()
 		unit:Kill();
 		local newUnit = nil;
-		newUnit = pPlayer:InitUnit(unit:GetUpgradeUnitType(), unitX, unitY, unitAIType)
+		newUnit = pPlayer:InitUnit(iUpgradeType, unitX, unitY, unitAIType)
 
 		newUnit:SetLevel(unitLevel);
 		newUnit:SetExperience(unitEXP);
@@ -2198,8 +2199,11 @@ SPUE_Emperor_Button = {
 		
 		if player:HasPolicy(GameInfoTypes["POLICY_SPUE_EMPEROR_DUMMY"]) then
 			SPUE_Emperor_Button.Title = "TXT_KEY_COND_SPUE_EMPEROR_USED"
+			return true
+		else
+			SPUE_Emperor_Button.Title = "TXT_KEY_TITLE_SPUE_EMPEROR"
+			return false
 		end
-		return player:HasPolicy(GameInfoTypes["POLICY_SPUE_EMPEROR_DUMMY"])
 	end, -- or nil or a boolean, default is false
 	Action = function(action, unit, eClick)
 		if eClick == Mouse.eRClick then
@@ -4052,15 +4056,15 @@ SPUE_UnitRiotControlButton = {
 
 
 	Condition = function(action, unit)
-		local HessianFlag = false;
 		if unit:CanMove() and unit:IsHasPromotion(unitPromotionHessianID) then
-			HessianFlag = true;
+			SPUE_UnitRiotControlButton.ToolTip = "TXT_KEY_SP_BTNNOTE_UNIT_RIOT_CONTROL_HESSIAN";
+			return true;
 		elseif unit:CanMove() and unit:IsHasPromotion(unitPromotionHessianEliteID) then
 			SPUE_UnitRiotControlButton.ToolTip = "TXT_KEY_SP_BTNNOTE_UNIT_RIOT_CONTROL_HESSIAN_ELITE";
-			HessianFlag = true;
+			return true;
 		end
 
-		return HessianFlag;
+		return false;
 	end, -- or nil or a boolean, default is true
 
 	Disabled = function(action, unit)
