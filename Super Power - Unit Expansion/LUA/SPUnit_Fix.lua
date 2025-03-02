@@ -613,12 +613,11 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		if plot:GetPlotCity() then
 			local city = plot:GetPlotCity();
 			local specialistScientistID = GameInfoTypes["SPECIALIST_SCIENTIST"];
-			local cityScientistProgress = city:GetSpecialistGreatPersonProgressTimes100();
+			local cityScientistProgress = city:GetSpecialistUpgradeThreshold(specialistScientistID);	
 			local unitLevel = unit:GetLevel();
 			local iExpBonus = OrderPolicyCount * 2;
 			-- 为城市提供大科点数
-			city:ChangeSpecialistGreatPersonProgressTimes100(specialistScientistID,
-				(unitLevel / 100) * cityScientistProgress);
+			city:ChangeSpecialistGreatPersonProgressTimes100(specialistScientistID, unitLevel * cityScientistProgress);
 			if player:IsHuman() then
 				local plotX = unit:GetX();
 				local plotY = unit:GetY();
