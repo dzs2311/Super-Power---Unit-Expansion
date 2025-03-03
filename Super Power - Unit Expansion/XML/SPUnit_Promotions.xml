@@ -812,6 +812,7 @@
 			<CannotBeChosen>true</CannotBeChosen>
 			<RangeChange>1</RangeChange>
 			<ExtraAttacks>1</ExtraAttacks>
+			<CanMoveAfterAttacking>true</CanMoveAfterAttacking>
 			<RangedDefenseMod>50</RangedDefenseMod>
 			<LostWithUpgrade>false</LostWithUpgrade>
 			<PortraitIndex>57</PortraitIndex>
