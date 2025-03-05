@@ -25,6 +25,7 @@
 	    	<Cost>120</Cost>
 	    	<PortraitIndex>41</PortraitIndex>
 	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
+			<NoBroadcast>true</NoBroadcast>
 	    </Row>
 		<!-- 君士坦丁城墙守备计划 -->
 	    <Row>
@@ -37,6 +38,7 @@
 	    	<Cost>120</Cost>
 	    	<PortraitIndex>41</PortraitIndex>
 	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
+			<NoBroadcast>true</NoBroadcast>
 	    </Row>
 		<!-- 圣彼得大教堂之劫 -->
 	    <Row>
@@ -49,6 +51,7 @@
 	    	<Cost>120</Cost>
 	    	<PortraitIndex>41</PortraitIndex>
 	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
+			<NoBroadcast>true</NoBroadcast>
 	    </Row>
 		<!-- 组建敕令骑士连 -->
 	    <Row>
@@ -61,6 +64,7 @@
 	    	<Cost>120</Cost>
 	    	<PortraitIndex>41</PortraitIndex>
 	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
+			<NoBroadcast>true</NoBroadcast>
 	    </Row>
 		<!-- 掷出窗外事件 -->
 	    <Row>
@@ -73,6 +77,7 @@
 	    	<Cost>120</Cost>
 	    	<PortraitIndex>41</PortraitIndex>
 	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
+			<NoBroadcast>true</NoBroadcast>
 	    </Row>
 		<!-- 巨人掷弹兵训练计划 -->
 	    <Row>
@@ -85,6 +90,7 @@
 	    	<Cost>150</Cost>
 	    	<PortraitIndex>41</PortraitIndex>
 	    	<IconAtlas>SPUE02_UNITS_ATLAS</IconAtlas>
+			<NoBroadcast>true</NoBroadcast>
 	    </Row>
 	</Projects>
 	<Project_Flavors>

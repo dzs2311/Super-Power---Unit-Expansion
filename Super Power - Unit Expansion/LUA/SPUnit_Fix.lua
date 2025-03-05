@@ -4204,15 +4204,15 @@ function SetPolicyUnitsName(iPlayer, iOldUnit, iNewUnit)
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIGHT_TEUTONIC"].ID)
 		and pUnit:GetUnitCombatType() == GameInfoTypes.UNITCOMBAT_MELEE
 	then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_TEMPLAR"); -- 虔信：步行条顿骑士
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_TEUTONIC"); -- 虔信：步行条顿骑士
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIGHT_TEUTONIC"].ID) then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_KNIGHT_TEMPLAR"); -- 虔信：条顿骑士
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_KNIGHT_TEUTONIC"); -- 虔信：条顿骑士
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER"].ID)
 		and pUnit:GetUnitCombatType() == GameInfoTypes.UNITCOMBAT_MELEE
 	then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_TEMPLAR"); -- 虔信：步行医院骑士
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_HOSPITALLER"); -- 虔信：步行医院骑士
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER"].ID) then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_KNIGHT_TEMPLAR"); -- 虔信：医院骑士
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_KNIGHT_HOSPITALLER"); -- 虔信：医院骑士
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_GENERAL_BODYGUARD"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD"); -- 赞助：将领卫队
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VASSAL_BOWMAN"].ID) then
@@ -4270,9 +4270,9 @@ function SetPolicyUnitsName(iPlayer, iOldUnit, iNewUnit)
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TABOR_ELITE"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_TABOR_ELITE"); -- 商业：胡斯车垒
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_HESSIAN_ELITE"].ID) then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_ELMETI_ELITE"); -- 商业：巨人掷弹兵
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_HESSIAN_ELITE"); -- 商业：巨人掷弹兵
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_HESSIAN"].ID) then
-		pUnit:SetName("TXT_KEY_UNIT_SPUE_ELMETI"); -- 商业：黑森
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_HESSIAN"); -- 商业：黑森
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ORDER_KV2"].ID) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_ORDER_KV2");   -- 秩序：KV2
 	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FREEDOM_SPITFIRE"].ID) then
@@ -4285,6 +4285,8 @@ function SetPolicyUnitsName(iPlayer, iOldUnit, iNewUnit)
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_DVC_FIGHTER"); -- 美学：达芬奇飞行器
 	elseif pUnit:GetUnitType() == GameInfoTypes.UNIT_SPUE_DVC_MACHINEGUN then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_DVC_MACHINEGUN"); -- 美学：达芬奇机关炮
+	elseif pUnit:GetUnitType() == GameInfoTypes.UNIT_SPUE_TABOR then
+		pUnit:SetName("TXT_KEY_UNIT_SPUE_TABOR"); -- 商业：战争车垒
 	end
 end
 
