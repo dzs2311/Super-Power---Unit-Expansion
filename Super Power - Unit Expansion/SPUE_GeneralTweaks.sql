@@ -45,6 +45,3 @@ UPDATE CustomModOptions SET Value = 1	WHERE Name = 'PROMOTION_AURA_PROMOTION';		
 -- 远程攻击劫掠 - VMC
 --==========================================================================================================================	
 ALTER TABLE Units ADD RangedPillage INTEGER DEFAULT 0;
--- 南洋海盗船
-UPDATE Units SET RangedPillage = 1 WHERE Class IN ('UNITCLASS_SPUE_SSPRIVATEER');
-

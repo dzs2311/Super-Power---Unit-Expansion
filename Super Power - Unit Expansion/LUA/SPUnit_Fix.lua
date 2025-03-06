@@ -2943,17 +2943,17 @@ function OnUnitCanRangeAttackAt(iPlayer, iUnit, iX, iY, bNeedWar)
 		local ePlayer = Players[pPlot:GetOwner()]
 		local iRangedPillage = pUnitInfo.RangedPillage
 
-		if (pPlot:GetImprovementType() ~= -1 and PlayersAtWar(ePlayer, pPlayer)) then
+		if (pPlot:GetImprovementType() ~= -1 and (not ePlayer or PlayersAtWar(ePlayer, pPlayer))) then
 			print(string.format("%s can range pillage the improvement at (%i, %i)", pUnit:GetName(), iX, iY))
 
-			if (iRangedPillage == 1 or not pPlot:IsImprovementPillaged()) then
+			if (not pPlot:IsImprovementPillaged()) then
 				-- TODO - for an AI player, does this unit want to pillage the tile?  This opens a whole can of worms!
 				return pPlayer:IsHuman();
 			end
 		elseif (pPlot:IsRoute()) then
 			print(string.format("%s can range pillage the route at (%i, %i)", pUnit:GetName(), iX, iY))
 
-			if (iRangedPillage == 1 or not pPlot:IsRoutePillaged()) then
+			if (not pPlot:IsRoutePillaged()) then
 				-- TODO - for an AI player, does this unit want to pillage the tile?  This opens a whole can of worms!
 				return pPlayer:IsHuman();
 			end
@@ -2970,7 +2970,7 @@ function OnUnitRangeAttackAt(iPlayer, iUnit, iX, iY)
 	local pUnitInfo = GameInfo.Units[pUnit:GetUnitType()]
 	local iRangedPillage = pUnitInfo.RangedPillage
 
-
+	if (iRangedPillage <= 0) then return end
 
 	print(string.format("%s is range pillaging the tile at (%i, %i)", pUnit:GetName(), iX, iY))
 
@@ -2978,7 +2978,12 @@ function OnUnitRangeAttackAt(iPlayer, iUnit, iX, iY)
 	-- Four options for the tile - improvement, pillaged improvement, route, pillaged route
 	if (pPlot:GetImprovementType() ~= -1 and not pPlot:IsImprovementPillaged()) then
 		-- Non-pillaged improvement, at the very least, pillage it
-		pPlot:SetImprovementPillaged(true)
+		local pImprovementInfo = GameInfo.Improvements[pPlot:GetImprovementType()]
+		if pImprovementInfo.DestroyedWhenPillaged then
+			pPlot:SetImprovementType(-1)
+		else
+			pPlot:SetImprovementPillaged(true)
+		end
 		pUnit:ChangeExperience(pUnitInfo.XPValueAttack)
 		pUnit:SetDamage(-25)
 		pPlayer:ChangeGold(100);
