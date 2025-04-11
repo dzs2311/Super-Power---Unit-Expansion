@@ -293,7 +293,7 @@
 			<Text>[COLOR_CYAN]禁卫军[ENDCOLOR]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_SPUE_PRAETORIAN_HELP">
-			<Text>[COLOR_CYAN]禁卫军[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]的代表性单位，驻守首都可为首都地块供+3[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出，同时可在回合结束时提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验，位于领土外则可以修建能够控制周围1格范围的禁卫军堡垒。</Text>
+			<Text>[COLOR_CYAN]禁卫军[ENDCOLOR]是[ICON_CULTURE][COLOR_MAGENTA]传统政策[ENDCOLOR]的代表性单位，驻守首都可为首都地块供+3[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食产出，同时可在回合结束时提供额外的[ICON_PRODUCTION]产能、[ICON_CULTURE]文化和[ICON_FOOD]粮食(随时代增加)并使得自身+2经验，可以修建禁卫军堡垒。</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_PRAETORIAN_TEXT">
 			<Text>罗马禁卫军（Praetorian Guards），主要指古罗马帝国（前27年—395年）期间罗马皇帝和宫殿的卫队。“禁卫军（Praetorian）”一词来源于拉丁语中的“Praetorium”，意思是罗马将军的营帐。部队由罗马公民中的精英组成，主要为步兵，并伴随一小部分骑兵。罗马禁卫军在公元前27年由罗马帝国开国皇帝屋大维出于政治考虑创建，在公元4世纪初，由于禁卫军失去了本来作用，又愈加难以控制，君士坦丁大帝宣布解散这支部队并彻底拆毁其营地。</Text>
@@ -314,12 +314,10 @@
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_FORT_SPUE_HELP">
 			<Text>
-				建造一个可以修建在国境线之外的[COLOR_POSITIVE_TEXT]禁卫军堡垒[ENDCOLOR]，只能建造4个。
-				[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]禁卫军堡垒[ENDCOLOR]能够控制临近单元格。
-				[NEWLINE][NEWLINE]城市5格外的[COLOR_POSITIVE_TEXT]禁卫军堡垒[ENDCOLOR]5回合内无单位占领则变为无人占领状态。
-				[NEWLINE][NEWLINE]当[COLOR_POSITIVE_TEXT]禁卫军堡垒[ENDCOLOR]无人占领时，可通过放置单位进行占领。
-				[NEWLINE][NEWLINE]可以通过军事攻防手段占领堡垒。
-				[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]禁卫军堡垒[ENDCOLOR]每回合消耗1[ICOON_GOLD]维护费。
+				建造一个可以临近国境线的[COLOR_POSITIVE_TEXT]禁卫军堡垒[ENDCOLOR]，整局游戏你只能建造4个。
+				[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]禁卫军堡垒[ENDCOLOR]能够控制临近单元格，并使得任何靠近的敌军单位在结束其回合时受到20伤害。
+				[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]禁卫军堡垒[ENDCOLOR]每回合消耗3[ICOON_GOLD]维护费。
+				[NEWLINE][NEWLINE]建造禁卫军堡垒会[COLOR_NEGATIVE_TEXT]消耗[ENDCOLOR]掉该单位。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BUILD_FORT_SPUE">

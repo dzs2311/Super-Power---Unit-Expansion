@@ -477,7 +477,7 @@ function SPUE_OnUnitCreated(iPlayerID, iUnitID)
 			NewUnit:JumpToNearestValidPlot()
 			if pPlayer:GetNumCities() > 0 then
 				local city = GetCloseCity(pUnit:GetOwner(), pUnit:GetPlot());
-				local domainLandID = GameInfo.Domains["DOMAIN_LAND"].ID;
+				local domainLandID = GameInfoTypes["DOMAIN_LAND"];
 				local LandTotal = city:GetFreeExperience() + city:GetDomainFreeExperience(domainLandID);
 				NewUnit:ChangeExperience(LandTotal);
 			end
@@ -603,7 +603,7 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		local OrderPolicyCount = 0
 
 		for policy in GameInfo.Policies() do
-			if policy.PolicyBranchType == GameInfo.PolicyBranchTypes["POLICY_BRANCH_ORDER"].Type
+			if GameInfoTypes[policy.PolicyBranchType] == GameInfoTypes["POLICY_BRANCH_ORDER"]
 				and player:HasPolicy(policy.ID)
 			then
 				OrderPolicyCount = OrderPolicyCount + 1
@@ -1204,12 +1204,12 @@ function SPUE_OnAIUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 					then
 						local Ccity = GetCloseCity(unit:GetOwner(), unit:GetPlot());
 						if Ccity:IsCapital() or Ccity:IsOriginalMajorCapital() then
-							NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER1"].ID, true);
+							NewUnit:SetHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER1"], true);
 						else
-							NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID, true);
+							NewUnit:SetHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER2"], true);
 						end
 					else
-						NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER3"].ID, true);
+						NewUnit:SetHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER3"], true);
 					end
 				end
 			elseif numInfantry < GameInfo.UnitClasses["UNITCLASS_SPUE_CORVETTE"].MaxPlayerInstances
@@ -1378,8 +1378,7 @@ function SPUE_UnitSetXY(playerID, unitID)
 	if player:IsBarbarian() or player:IsMinorCiv() then return end
 
 	--if not player:IsHuman() then return end
-	local pEraType   = player:GetCurrentEra();
-	local pEraID     = GameInfo.Eras[pEraType].ID;
+	local pEraID     = player:GetCurrentEra();
 
 	local pCapital   = player:GetCapitalCity();
 
@@ -1389,35 +1388,25 @@ function SPUE_UnitSetXY(playerID, unitID)
 	if plot then
 		if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_PRAETORIAN"]) then
 			-- 罗马禁卫军：集权帝国：驻守首都
-			player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_PRAETORIAN"].ID, false)
-			if plot:GetPlotCity()
-				and plot:GetPlotCity():IsCapital()
+			if plot:GetPlotCity() and plot:GetPlotCity():IsCapital()
 			then
 				-- 首都
-				player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_PRAETORIAN"].ID, true, true)
-			elseif
-				not (plot:GetPlotCity() and plot:GetPlotCity():IsCapital())
-				and player:HasPolicy(GameInfo.Policies["POLICY_SPUE_PRAETORIAN"].ID)
-			then
+				player:SetHasPolicy(GameInfoTypes["POLICY_SPUE_PRAETORIAN"], true, true)
+			else
 				-- 其他地块和城市
-				player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_PRAETORIAN"].ID, false)
+				player:SetHasPolicy(GameInfoTypes["POLICY_SPUE_PRAETORIAN"], false)
 			end
 		end
 
 		if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_WEIYANG"]) then
 			-- 未央宫卫士：驻守首都全局不满-5%
-			player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_WEIYANG"].ID, false)
-			if plot:GetPlotCity()
-				and plot:GetPlotCity():IsCapital()
+			if plot:GetPlotCity() and plot:GetPlotCity():IsCapital()
 			then
 				-- 首都
-				player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_WEIYANG"].ID, true, true)
-			elseif
-				not (plot:GetPlotCity() and plot:GetPlotCity():IsCapital())
-				and player:HasPolicy(GameInfo.Policies["POLICY_SPUE_WEIYANG"].ID)
-			then
+				player:SetHasPolicy(GameInfoTypes["POLICY_SPUE_WEIYANG"], true, true)
+			else
 				-- 其他地块和城市
-				player:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_WEIYANG"].ID, false)
+				player:SetHasPolicy(GameInfoTypes["POLICY_SPUE_WEIYANG"], false)
 			end
 		end
 
@@ -1718,8 +1707,6 @@ function OnSPUESetDamageSP(iPlayerID, iUnitID, iDamage, iPreviousDamage)
 	end
 	local pUnit = Players[iPlayerID]:GetUnitByID(iUnitID);
 	local pPlayer = Players[iPlayerID]
-	-- local YuLin_Num = CountUnitsWithUniquePromotions(iPlayerID,
-	-- 	GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID)
 
 	local YuLin_Num = pPlayer:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_YULIN_CAVALRY"]);
 	if YuLin_Num and YuLin_Num > 0
@@ -1758,7 +1745,6 @@ SPUE_Rohan_Cavalry_Button = {
 		local flag = 0
 
 		if unit:CanMove()
-			-- and CountUnitsWithUniquePromotions(unit:GetOwner(), GameInfo.UnitPromotions["PROMOTION_SPUE_ROHAN_CAVALRY"].ID) > 0
 			and unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_GREAT_GENERAL
 			and player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_ROHAN_CAVALRY"]) > 0
 		then
@@ -2304,7 +2290,7 @@ function SPUE_SetInputHandler(uiMsg, wParam, lParam)
 				local hex = ToHexFromGrid(Vector2(pPlot:GetX(), pPlot:GetY()));
 				Events.GameplayFX(hex.x, hex.y, -1);
 				pSelUnit:SetMoves(0);
-				pPlayer:SetHasPolicy(GameInfo.Policies["POLICY_SPUE_EMPEROR_DUMMY"].ID, true, true)
+				pPlayer:SetHasPolicy(GameInfoTypes["POLICY_SPUE_EMPEROR_DUMMY"], true, true)
 			end
 			EmporerRadiusArray = {};
 			Events.ClearHexHighlights();
@@ -2458,7 +2444,7 @@ function NewAttackEffect()
 	--    if attPlayer:IsBarbarian() then
 	--       return;
 	--    end	
-	-- local KillingEffectsID = GameInfo.UnitPromotions["PROMOTION_GAIN_MOVES_AFFER_KILLING"].ID
+	-- local KillingEffectsID = GameInfoTypes["PROMOTION_GAIN_MOVES_AFFER_KILLING"]
 
 	-- 玄甲军杀敌回血
 	----------- PROMOTION_GAIN_MOVES_AFFER_KILLING Effects
@@ -3210,8 +3196,7 @@ function SPUE_Templar_CityCaptureComplete(oldOwnerID, isCapital, plotX, plotY, n
 	end
 	if mainReligionID == -1 then return end
 
-	local pEraType = player:GetCurrentEra()
-	local pEraID = GameInfo.Eras[pEraType].ID;
+	local pEraID = player:GetCurrentEra();
 
 	--UNIQUE UNIT
 	local unitGarrison = city:GetGarrisonedUnit()
@@ -3312,16 +3297,10 @@ SPUE_Patronage_Hastati_Button = {
 		end
 
 		-- local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_SOCII_HASTATI"]);
-		-- local numUnit = CountUnitsWithUniquePromotions(unit:GetOwner(),
-		-- 	GameInfo.UnitPromotions["PROMOTION_SPUE_SOCII_HASTATI"].ID)
-		local numUnit = player:GetUnitCountFromHasPromotion(
-			GameInfo.UnitPromotions["PROMOTION_SPUE_SOCII_HASTATI"].ID)
-
-			
-		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_GENERAL_BODYGUARD"].ID)
+		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_GENERAL_BODYGUARD"])
 			and csPlotFlag == 1
-			and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
-			and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_SOCII_HASTATI"].MaxPlayerInstances
+			and player:GetCapitalCity() ~= nil
+			and player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_SOCII_HASTATI"]) < GameInfo.UnitClasses["UNITCLASS_SPUE_SOCII_HASTATI"].MaxPlayerInstances
 		then
 			-- 单位购买价格
 			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_SOCII_HASTATI");
@@ -3412,7 +3391,7 @@ SPUE_Patronage_vBowman_Button = {
 		-- local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_VASSAL_BOWMAN"]);
 		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_GENERAL_BODYGUARD"])
 			and csPlotFlag == 1
-			and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
+			and player:GetCapitalCity() ~= nil
 			and player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_VASSAL_BOWMAN"]) < GameInfo.UnitClasses["UNITCLASS_SPUE_VASSAL_BOWMAN"].MaxPlayerInstances
 		then
 			-- 单位购买价格
@@ -3499,12 +3478,10 @@ SPUE_Patronage_Serbia_Button = {
 		end
 
 		-- local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_FIRE_THROWER"]);
-		local numUnit = player:GetUnitCountFromHasPromotion(
-			GameInfo.UnitPromotions["PROMOTION_SPUE_FIRE_THROWER"].ID);
-		if unit:CanMove() and unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID)
+		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_BUCELLARII_GUARD"])
 			and csPlotFlag == 1
-			and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
-			and numUnit < GameInfo.UnitClasses["UNITCLASS_SPUE_FIRE_THROWER"].MaxPlayerInstances
+			and player:GetCapitalCity() ~= nil
+			and player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_FIRE_THROWER"]) < GameInfo.UnitClasses["UNITCLASS_SPUE_FIRE_THROWER"].MaxPlayerInstances
 		then
 			-- 单位购买价格
 			local sUnitType = GetCivSpecificUnit(player, "UNITCLASS_SPUE_FIRE_THROWER");
@@ -3658,12 +3635,6 @@ SPUE_TreasureFleet_LandInfantry_Button = {
 
 		local flag = 0
 		-- local numUnit = player:GetUnitClassCount(GameInfoTypes["UNITCLASS_SPUE_SHENJI_MUSKETEER"]);
-		-- local numUnit = CountUnitsWithUniquePromotions(unit:GetOwner(),
-		-- 		GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER1"].ID)
-		-- 	+ CountUnitsWithUniquePromotions(unit:GetOwner(),
-		-- 		GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID)
-		-- 	+ CountUnitsWithUniquePromotions(unit:GetOwner(),
-		-- 		GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER3"].ID)
 		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_TREASURE_FLEET"])
 			and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
 			and player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER1"]) 
@@ -3723,12 +3694,12 @@ SPUE_TreasureFleet_LandInfantry_Button = {
 		then
 			local Ccity = GetCloseCity(unit:GetOwner(), unit:GetPlot());
 			if Ccity:IsCapital() or Ccity:IsOriginalMajorCapital() then
-				NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER1"].ID, true);
+				NewUnit:SetHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER1"], true);
 			else
-				NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID, true);
+				NewUnit:SetHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER2"], true);
 			end
 		else
-			NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER3"].ID, true);
+			NewUnit:SetHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER3"], true);
 		end
 
 		Events.AudioPlay2DSound("AS2D_INTERFACE_BUY_TILE");
@@ -3763,8 +3734,7 @@ SPUE_Patronage_Corvette_Button = {
 		end
 
 		local flag = 0
-		-- local numUnit = CountUnitsWithUniquePromotions(unit:GetOwner(),
-		-- 	GameInfo.UnitPromotions["PROMOTION_SPUE_CORVETTE"].ID)
+
 		if unit:CanMove() and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_TREASURE_FLEET"])
 			and plot:IsAdjacentToLand() and Players[unit:GetOwner()]:GetCapitalCity() ~= nil
 			and player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_SPUE_CORVETTE"]) < GameInfo.UnitClasses["UNITCLASS_SPUE_CORVETTE"].MaxPlayerInstances
@@ -4126,11 +4096,11 @@ HessianMissionButton = {
 		local count = 1;
 
 		city:ChangePopulation(count, true);
-		local iPolicyCollectiveRule = GameInfo.Policies["POLICY_COLLECTIVE_RULE"].ID
+		local iPolicyCollectiveRule = GameInfoTypes["POLICY_COLLECTIVE_RULE"]
 		if not (
 		player:HasPolicy(iPolicyCollectiveRule) 
 		and not player:IsPolicyBlocked(iPolicyCollectiveRule) 
-		and player:GetCurrentEra() >= GameInfo.Eras["ERA_RENAISSANCE"].ID) 
+		and player:GetCurrentEra() >= GameInfoTypes["ERA_RENAISSANCE"]) 
 		then
 			city:SetFood(0);
 		end
@@ -4186,103 +4156,103 @@ function SetPolicyUnitsName(iPlayer, iOldUnit, iNewUnit)
 		return;
 	end
 	local pUnit = Players[iPlayer]:GetUnitByID(iOldUnit);
-	if pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_PRAETORIAN"].ID) then
+	if pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_PRAETORIAN"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_PRAETORIAN"); -- 传统：禁卫军
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ROME_HERCULIANI"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_ROME_HERCULIANI"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_ROME_HERCULIANI"); -- 传统：赫拉克勒斯卫队
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_WEIYANG"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_WEIYANG"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_WEIYANG"); -- 传统：未央宫卫士
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_KNIGHT_NEW"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_KNIGHT_NEW"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_KNIGHT_NEW"); -- 自主：帝国骑士
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_GONDORGUARD"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_GONDORGUARD"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_GONDORGUARD"); -- 自主：涌泉守卫
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_YULIN_CAVALRY"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_YULIN_CAVALRY"); -- 荣誉：羽林骑军
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ROHAN_CAVALRY"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_ROHAN_CAVALRY"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_ROHAN_CAVALRY"); -- 荣誉：洛汗骠骑
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIGHT_TEMPLAR"].ID)
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FOOT_KNIGHT_TEMPLAR"])
 		and pUnit:GetUnitCombatType() == GameInfoTypes.UNITCOMBAT_MELEE
 	then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_TEMPLAR"); -- 虔信：步行圣殿骑士
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIGHT_TEMPLAR"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FOOT_KNIGHT_TEMPLAR"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_KNIGHT_TEMPLAR"); -- 虔信：圣殿骑士
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIGHT_TEUTONIC"].ID)
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FOOT_KNIGHT_TEUTONIC"])
 		and pUnit:GetUnitCombatType() == GameInfoTypes.UNITCOMBAT_MELEE
 	then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_TEUTONIC"); -- 虔信：步行条顿骑士
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIGHT_TEUTONIC"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FOOT_KNIGHT_TEUTONIC"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_KNIGHT_TEUTONIC"); -- 虔信：条顿骑士
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER"].ID)
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER"])
 		and pUnit:GetUnitCombatType() == GameInfoTypes.UNITCOMBAT_MELEE
 	then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_FOOT_KNIGHT_HOSPITALLER"); -- 虔信：步行医院骑士
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FOOT_KNIGHT_HOSPITALLER"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_KNIGHT_HOSPITALLER"); -- 虔信：医院骑士
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_GENERAL_BODYGUARD"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_GENERAL_BODYGUARD"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_GENERAL_BODYGUARD"); -- 赞助：将领卫队
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VASSAL_BOWMAN"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_VASSAL_BOWMAN"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_VASSAL_BOWMAN"); -- 赞助：克里特岛弓箭手
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SOCII_HASTATI"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_SOCII_HASTATI"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_SOCII_HASTATI"); -- 赞助：同盟军团
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FIRE_THROWER"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FIRE_THROWER"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_FIRE_THROWER"); -- 赞助：拜占庭喷火兵
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD"].ID)
-		and not pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD_ELITE"].ID)
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_BUCELLARII_GUARD"])
+		and not pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_BUCELLARII_GUARD_ELITE"])
 	then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD"); -- 赞助：靖抚甲骑
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_BUCELLARII_GUARD_ELITE"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_BUCELLARII_GUARD_ELITE"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_BUCELLARII_GUARD_ELITE"); -- 赞助：执政甲骑
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_OCEAN_FIRE"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_OCEAN_FIRE"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_OCEAN_FIRE");       -- 赞助：海洋之火
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TREASURE_FLEET"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_TREASURE_FLEET"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_TREASURE_FLEET");   -- 赞助：宝船
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER1"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER1"]) then
 		pUnit:SetName("TXT_KEY_PROMOTION_SPUE_SHENJI_MUSKETEER1"); -- 赞助：神机营1
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER2"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER2"]) then
 		pUnit:SetName("TXT_KEY_PROMOTION_SPUE_SHENJI_MUSKETEER2"); -- 赞助：神机营2
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SHENJI_MUSKETEER3"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_SHENJI_MUSKETEER3"]) then
 		pUnit:SetName("TXT_KEY_PROMOTION_SPUE_SHENJI_MUSKETEER3"); -- 赞助：神机营3
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_CORVETTE"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_CORVETTE"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_CORVETTE");         -- 赞助：护卫舰
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FUCHUAN"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FUCHUAN"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_FUCHUAN"); -- 海事：福船
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_DVC_TANK"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_DVC_TANK"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_DVC_TANK"); -- 美学：达芬奇坦克
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SSPRIVATEER"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_SSPRIVATEER"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_SSPRIVATEER"); -- 商业：南洋海盗船
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_PRIVATEER"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_PRIVATEER"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_PRIVATEER"); -- 商业：私掠船
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FUNE"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FUNE"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_FUNE");  -- 商业：倭寇帆船
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_IRON_TROOP"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_IRON_TROOP"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_IRON_TROOP"); -- 商业：铁人军
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_GENOAXBOW_ELITE"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_GENOAXBOW_ELITE"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_GENOAXBOW_ELITE"); -- 商业：朱斯蒂尼亚尼弩手
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_GENOAXBOW"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_GENOAXBOW"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_GENOAXBOW"); -- 商业：热那亚弩手
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SWISSGUARD_ELITE"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_SWISSGUARD_ELITE"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_SWISSGUARD_ELITE"); -- 商业：瑞士卫队
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_SWISSGUARD"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_SWISSGUARD"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_SWISSGUARD"); -- 商业：瑞士佣兵
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VARANGIAN_GUARD"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_VARANGIAN_GUARD"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_VARANGIAN_GUARD"); -- 商业：瓦兰吉卫队
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_VARANGIAN"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_VARANGIAN"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_VARANGIAN"); -- 商业：瓦兰吉佣兵
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ELMETI_ELITE"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_ELMETI_ELITE"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_ELMETI_ELITE"); -- 商业：敕令骑士
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ELMETI"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_ELMETI"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_ELMETI"); -- 商业：装甲骑兵
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_TABOR_ELITE"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_TABOR_ELITE"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_TABOR_ELITE"); -- 商业：胡斯车垒
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_HESSIAN_ELITE"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_HESSIAN_ELITE"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_HESSIAN_ELITE"); -- 商业：巨人掷弹兵
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_HESSIAN"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_HESSIAN"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_HESSIAN"); -- 商业：黑森
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_ORDER_KV2"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_ORDER_KV2"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_ORDER_KV2");   -- 秩序：KV2
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_FREEDOM_SPITFIRE"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_FREEDOM_SPITFIRE"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_FREEDOM_SPITFIRE"); -- 自由：喷火
-	elseif pUnit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_AUTOCRACY_PANZERG"].ID) then
+	elseif pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_AUTOCRACY_PANZERG"]) then
 		pUnit:SetName("TXT_KEY_UNIT_SPUE_AUTOCRACY_PANZERG"); -- 独裁：装甲掷弹兵
 	end
 
