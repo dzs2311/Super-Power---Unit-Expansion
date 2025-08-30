@@ -1800,6 +1800,7 @@ SPUE_HotAirBalloon_Button = {
 
 		return unit:CanMove()
 			and unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_EXPLORERX
+			and not unit:IsEmbarked()
 			and player:HasPolicy(GameInfoTypes["POLICY_RATIONALISM"]);
 	end, -- or nil or a boolean, default is true
 
@@ -2662,8 +2663,8 @@ function NewAttackEffect()
 						KingsKnightPops = KingsKnightPops - 100;
 						local attCapitalCity = attPlayer:GetCapitalCity();
 						local sUnitType = GetCivSpecificUnit(attPlayer, "UNITCLASS_SETTLER")
-						local NewUnit = attPlayer:InitUnit(GameInfoTypes[sUnitType], attCapitalCity:GetX(),
-							attCapitalCity:GetY(), UNITAI_SETTLE)
+						local NewUnit = attPlayer:InitUnit(GameInfoTypes[sUnitType], attCapitalCity:GetX(), attCapitalCity:GetY(), UNITAI_SETTLE)
+						NewUnit:SetExtraPopConsume(1)
 					end
 					save(attUnit, "KingsKnightPops", KingsKnightPops);
 					break;

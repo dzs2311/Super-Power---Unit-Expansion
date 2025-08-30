@@ -572,7 +572,7 @@
 			<Text>火帆船</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_FIRESHIP_HELP">
-			<Text>对海军单位和城市+200%[ICON_STRENGTH]战斗力，受攻击死亡时对临近一格内敌军造成25点爆炸伤害。</Text>
+			<Text>进攻时对海军单位和城市+200%[ICON_STRENGTH]战斗力，受攻击死亡时对临近一格内敌军造成25点爆炸伤害。</Text>
 		</Row>
 		<!-- **********************热气球*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_HOT_AIR_BALLOON">

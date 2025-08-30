@@ -1782,7 +1782,7 @@
 		<Row>
 			<PromotionType>PROMOTION_SPUE_FIRESHIP</PromotionType>
 			<DomainType>DOMAIN_SEA</DomainType>
-			<Modifier>200</Modifier>
+			<Attack>200</Attack>
 		</Row>	
 		<!--鹰击055：鹰击长空-->
 		<Row>
