@@ -1675,6 +1675,8 @@ INSERT INTO Units
 		(Type, 						Class, 							PrereqTech, PolicyType,					RangedCombat,	Combat,	Range, 	ExtraMaintenanceCost,	Special, Cost, FaithCost,  HurryCostModifier, PurchaseOnly,	RequiresFaithPurchaseEnabled, Moves,   MoveAfterPurchase,	CombatClass, Domain, DefaultUnitAI, Description,						Civilopedia,							Strategy,	Help,									Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo, 					UnitFlagIconOffset, UnitFlagAtlas,				PortraitIndex, 	IconAtlas,			NoMinorGifts)
 SELECT	'UNIT_SPUE_SSPRIVATEER', 	'UNITCLASS_SPUE_SSPRIVATEER', 	PrereqTech, 'POLICY_SPUE_SSPRIVATEER', 	Combat,			Combat,	2, 		ExtraMaintenanceCost,	Special, Cost, FaithCost,  1, 				  1, 			RequiresFaithPurchaseEnabled, Moves,   1,					CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_SSPRIVATEER',	'TXT_KEY_CIV5_SPUE_SSPRIVATEER_TEXT', 	Strategy, 	'TXT_KEY_UNIT_SPUE_SSPRIVATEER_HELP', 	Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_SSPRIVATEER',	0,					'SPUE_SSPRIV_FLAG_ATLAS',	44,				'SPUE_UNITS_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_FRIGATE';
+-- 远程攻击劫掠
+UPDATE Units SET RangedPillage = 1 WHERE Class = 'UNITCLASS_SPUE_SSPRIVATEER';
 
 INSERT INTO Unit_ClassUpgrades 	
 		(UnitType, 					UnitClassType)

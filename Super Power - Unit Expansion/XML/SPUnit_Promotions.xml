@@ -357,6 +357,18 @@
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<Row>
+			<!--热气球-探险家：临时热气球已释放-->
+			<Type>PROMOTION_SPUE_HOT_AIR_BALLOON_RELEASED</Type>
+			<Description>TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_RELEASED</Description>
+			<Help>TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_RELEASED_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>58</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_RELEASED</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
 			<!--热气球：气球上的五星期1-->
 			<Type>PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_EFFECT</Description>
@@ -1782,7 +1794,7 @@
 		<Row>
 			<PromotionType>PROMOTION_SPUE_FIRESHIP</PromotionType>
 			<DomainType>DOMAIN_SEA</DomainType>
-			<Modifier>200</Modifier>
+			<Attack>200</Attack>
 		</Row>	
 		<!--鹰击055：鹰击长空-->
 		<Row>

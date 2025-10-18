@@ -7,8 +7,8 @@
     <Guid>988a1168-d581-4150-948f-199021eabdea</Guid>
     <ModVersion>7</ModVersion>
     <Stability>Stable</Stability>
-    <Teaser>(7.1.1)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
-    <Description>(7.1.1)超级大国单位拓展及大量单位模型替换
+    <Teaser>(7.1.5)[COLOR_YELLOW]超级大国单位拓展及模型替换[/COLOR]</Teaser>
+    <Description>(7.1.5)超级大国单位拓展及大量单位模型替换
 [NEWLINE][NEWLINE]
 [ICON_BULLET]大量单位替换了更加美观和符合史实的模型（如宝船）
 [NEWLINE]
@@ -31,14 +31,14 @@
         <Type>Mod</Type>
         <Name>(1) CIV5MPDLL</Name>
         <Id>a2969a0a-e4da-41cc-9e0b-19b29aa971d8</Id>
-        <MinVersion>14</MinVersion>
+        <MinVersion>43</MinVersion>
         <MaxVersion>999</MaxVersion>
       </Association>
       <Association>
         <Type>Mod</Type>
         <Name>(2) Super Power - Rise of Hegemony</Name>
         <Id>f9b9c8aa-b6d1-4188-9239-c1de2207ab7c</Id>
-        <MinVersion>9</MinVersion>
+        <MinVersion>10</MinVersion>
         <MaxVersion>999</MaxVersion>
       </Association>
     </ModReferences>
@@ -47,14 +47,14 @@
         <Type>Mod</Type>
         <Name>(1) CIV5MPDLL</Name>
         <Id>a2969a0a-e4da-41cc-9e0b-19b29aa971d8</Id>
-        <MinVersion>14</MinVersion>
+        <MinVersion>43</MinVersion>
         <MaxVersion>999</MaxVersion>
       </Association>
       <Association>
         <Type>Mod</Type>
         <Name>(2) Super Power - Rise of Hegemony</Name>
         <Id>f9b9c8aa-b6d1-4188-9239-c1de2207ab7c</Id>
-        <MinVersion>9</MinVersion>
+        <MinVersion>10</MinVersion>
         <MaxVersion>999</MaxVersion>
       </Association>
     </ModDependencies>

@@ -221,7 +221,7 @@
 		<Row Tag="TXT_KEY_UNIT_SPUE_ORDER_SU47_HELP">
 			<Text>
 				[COLOR_CYAN]Su47[ENDCOLOR]是[ICON_IDEOLOGY_ORDER]秩序意识形态的特殊单位之一，需要开启[ICON_IDEOLOGY_ORDER][ICON_CULTURE][COLOR_MAGENTA]秩序意识形态[ENDCOLOR]；
-				[NEWLINE][ICON_BULLET]每架[COLOR_CYAN]Su47[ENDCOLOR]为所有陆基飞机单位每回合提供2*秩序政策数的经验，为自身所在城市提供自身等级%的大科学家点数。
+				[NEWLINE][ICON_BULLET]每架[COLOR_CYAN]Su47[ENDCOLOR]为其他战斗机单位每回合提供2*秩序政策数的经验，为自身所在城市提供自身等级%的大科学家点数。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_SPUE_ORDER_SU47_TEXT">

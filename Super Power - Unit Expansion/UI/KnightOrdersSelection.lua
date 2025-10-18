@@ -49,7 +49,7 @@ function initializeDialog()
 			then
 				local unitL = GameInfo.Units[g_PietyUnitLeft];
 				local policyL = unitL.PolicyType;
-				activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
+				activePlayer:SetHasPolicy(GameInfoTypes[policyL], true, true);
 			end
 			g_PietyUnitLeft		= nil;
 			g_PietyUnitRight 	= nil;
@@ -128,16 +128,14 @@ function OnAIGetAllUnit( playerID )
 	local unitL = GameInfo.Units[g_PietyUnitList[1]]
 	local policyL = unitL.PolicyType
 
-	if player:HasPolicy(GameInfo.Policies["POLICY_PIETY"].ID)
-	and not player:HasPolicy(GameInfo.Policies[policyL].ID)
+	if player:HasPolicy(GameInfoTypes["POLICY_PIETY"])
+	and not player:HasPolicy(GameInfoTypes[policyL])
 	then
 		for k, v in pairs(g_PietyUnitList) do 
 			local unit = GameInfo.Units[v]
 			local policy = unit.PolicyType
-			if not player:HasPolicy(GameInfo.Policies[policy].ID) then
-				--player:SetNumFreePolicies(1)
-				--player:SetNumFreePolicies(0)
-				player:SetHasPolicy(GameInfo.Policies[policy].ID, true, true)
+			if not player:HasPolicy(GameInfoTypes[policy]) then
+				player:SetHasPolicy(GameInfoTypes[policy], true, true)
 				print("AI Can Train Policy Units - Piety!")
 			end
 		end
@@ -163,9 +161,7 @@ function onAdoptButton0()
 
 		local policyL = unitL.PolicyType;
 
-		-- activePlayer:SetNumFreePolicies(1);
-		-- activePlayer:SetNumFreePolicies(0);
-		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
+		activePlayer:SetHasPolicy(GameInfoTypes[policyL], true, true);
 
 		hideDialog();
 	end
@@ -190,9 +186,7 @@ function onAdoptButton1()
 
 		local policyL = unitL.PolicyType;
 
-		-- activePlayer:SetNumFreePolicies(1);
-		-- activePlayer:SetNumFreePolicies(0);
-		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
+		activePlayer:SetHasPolicy(GameInfoTypes[policyL], true, true);
 
 		hideDialog();
 	end
@@ -217,9 +211,7 @@ function onAdoptButton2()
 
 		local policyL = unitL.PolicyType;
 
-		-- activePlayer:SetNumFreePolicies(1);
-		-- activePlayer:SetNumFreePolicies(0);
-		activePlayer:SetHasPolicy(GameInfo.Policies[policyL].ID, true, true);
+		activePlayer:SetHasPolicy(GameInfoTypes[policyL], true, true);
 
 		hideDialog();
 	end

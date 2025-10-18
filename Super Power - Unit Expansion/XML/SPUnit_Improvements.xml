@@ -8,14 +8,16 @@
 			<Description>TXT_KEY_IMPROVEMENT_FORT_SPUE</Description>
 			<Help>TXT_KEY_IMPROVEMENT_FORT_SPUE_HELP</Help>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_SPUE_RECC</ArtDefineTag>
-			<GoldMaintenance>1</GoldMaintenance>
-			<OutsideBorders>1</OutsideBorders>
+			<GoldMaintenance>3</GoldMaintenance>
 			<BuildableOnResources>true</BuildableOnResources>
 			<DestroyedWhenPillaged>true</DestroyedWhenPillaged>
 			<DefenseModifier>100</DefenseModifier>
 			<NoTwoAdjacent>true</NoTwoAdjacent>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>SPUE_RECC_ATLAS</IconAtlas>
+			<NearbyEnemyDamage>20</NearbyEnemyDamage>
+			<InAdjacentFriendly>true</InAdjacentFriendly>
+			<CultureBombRadius>1</CultureBombRadius>
 		</Row>
 	</Improvements>
 	<Improvement_ValidTerrains>
@@ -55,6 +57,7 @@
 			<OrderPriority>98</OrderPriority>
 			<IconIndex>1</IconIndex>
 			<IconAtlas>SPUE_RECC_ATLAS</IconAtlas>
+			<Kill>1</Kill>
 		</Row>
 	</Builds>
 	<Unit_Builds>

@@ -4,7 +4,7 @@
 --------------------------------------------------------------
 print("Loaded Fortress Borders Script")
 
-
+--[[
 UNOCCUPIED_FORT_TURNS = 5		-- Turns a fort can be unoccupied before nature will retake it and the 
 								-- land around it
 MAX_FORT_CITY_DISTANCE = 5		-- Distance a plot needs to be away from a city to allow nature to retake
@@ -270,8 +270,7 @@ Events.LocalMachineUnitPositionChanged.Add( OnLocalMachineUnitPositionChanged );
 function OnImprovementDestroyed(hexX, hexY, continent1, continent2, iPlayer, 
 		improvementType)
 	
---[[	
-		--if(iPlayer == nil) then
+		if(iPlayer == nil) then
 			print("No player destroyed improvement")
 		end
 
@@ -295,7 +294,6 @@ function OnImprovementDestroyed(hexX, hexY, continent1, continent2, iPlayer,
 		centerPlot.yPosition = pPlot:GetY()
 
 		claimTerritoryAroundHex(centerPlot, iPlayer)
-		]]
 end
 --Events.SerialEventImprovementDestroyed.Add(OnImprovementDestroyed)
 
@@ -378,22 +376,32 @@ GameEvents.PlayerDoTurn.Add(
 		print ("Turn end")
 	end
 )
+]]
+
+WARN_NOT_SHARED = false; include("SaveUtils"); MY_MOD_NAME = "SPUE";
 -- ######################################################################
 -- 禁卫军堡垒上限
+local eBuiltFortSPUE = GameInfoTypes["BUILD_FORT_SPUE"]
+local eImprovementFortSPUE = GameInfoTypes.IMPROVEMENT_FORT_SPUE
 function BuildAvailableSPUE(iPlayer, iUnit, iX, iY, iBuild)
-	if Players[iPlayer] == nil then return end;
-	if Map.GetPlot(iX, iY) == nil then
-		return;
-	end
-	local pPlayer = Players[iPlayer];
-	local pPlot = Map.GetPlot(iX, iY);
-	
-	if iBuild == GameInfo.Builds["BUILD_FORT_SPUE"].ID 
-	and pPlayer:GetImprovementCount(GameInfoTypes.IMPROVEMENT_FORT_SPUE) >= 4
-	then
-		return false;
-	else
-		return true;
-	end
+	if iBuild ~= eBuiltFortSPUE then return true end
+
+	local pPlayer = Players[iPlayer]
+	if pPlayer == nil then return false end
+
+	local iFortTotalCount = load(pPlayer, "Fort_SPUE") or 0
+	if iFortTotalCount >= 4 then return false end
+
+	return true
 end
 GameEvents.PlayerCanBuild.Add(BuildAvailableSPUE)
+function ImprovementBuiltSPUE(iPlayer, x, y, eImprovement)
+	if eImprovement ~= eImprovementFortSPUE then return end
+
+	local pPlayer = Players[iPlayer];
+	if pPlayer == nil then return end;
+
+	local iFortTotalCount = load(pPlayer, "Fort_SPUE") or 0
+	save(pPlayer, "Fort_SPUE", iFortTotalCount + 1)
+end
+GameEvents.BuildFinished.Add(ImprovementBuiltSPUE) 
