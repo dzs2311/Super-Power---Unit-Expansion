@@ -1801,7 +1801,8 @@ SPUE_HotAirBalloon_Button = {
 		return unit:CanMove()
 			and unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_EXPLORERX
 			and not unit:IsEmbarked()
-			and player:HasPolicy(GameInfoTypes["POLICY_RATIONALISM"]);
+			and player:HasPolicy(GameInfoTypes["POLICY_RATIONALISM"])
+			and not unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_HOT_AIR_BALLOON_RELEASED"]);
 	end, -- or nil or a boolean, default is true
 
 	Disabled = function(action, unit)
@@ -1825,10 +1826,42 @@ SPUE_HotAirBalloon_Button = {
 
 
 		unit:SetMoves(0)
+		unit:SetHasPromotion(GameInfoTypes["PROMOTION_SPUE_HOT_AIR_BALLOON_RELEASED"], true)
 	end
 };
 
 LuaEvents.UnitPanelActionAddin(SPUE_HotAirBalloon_Button)
+--------------------------------------------------------------
+-- 探险家：补充热气球
+--------------------------------------------------------------
+SPUE_HotAirBalloonSupplement_Button = {
+	Name = "Supplement Hot Air Balloon",
+	Title = "TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_SUPPLEMENT_BUTTON_SHORT", -- or a TXT_KEY
+	OrderPriority = 200,                                         -- default is 200
+	IconAtlas = "SPUE_UNITS_ATLAS",                              -- 45 and 64 variations required
+	PortraitIndex = 29,
+	ToolTip = "TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_SUPPLEMENT_BUTTON",   -- or a TXT_KEY_ or a function
+
+	Condition = function(action, unit)
+		local player = Players[unit:GetOwner()]
+
+		return unit:CanMove()
+			and unit:GetUnitClassType() == GameInfoTypes.UNITCLASS_EXPLORERX
+			and unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_HOT_AIR_BALLOON_RELEASED"])
+			and unit:GetPlot():IsFriendlyTerritory(unit:GetOwner());
+	end, -- or nil or a boolean, default is true
+
+	Disabled = function(action, unit)
+		return false;
+	end, -- or nil or a boolean, default is false
+
+	Action = function(action, unit, eClick)
+		unit:SetHasPromotion(GameInfoTypes["PROMOTION_SPUE_HOT_AIR_BALLOON_RELEASED"], false)
+		unit:SetMoves(0)
+	end
+};
+
+LuaEvents.UnitPanelActionAddin(SPUE_HotAirBalloonSupplement_Button)
 --------------------------------------------------------------
 -- 临时热气球每回合减少5战斗力，战斗力为0下一回合消失
 --------------------------------------------------------------

@@ -64,8 +64,8 @@ UPDATE Units SET Combat = 55 WHERE Type = 'UNIT_ELITE_RIDER';
 UPDATE Units SET ObsoleteTech = 'TECH_CHIVALRY' WHERE Type = 'UNIT_MEDIEVAL_CHARIOT';
 -- 火枪骑兵科技挪到冶金
 UPDATE Units SET PrereqTech = 'TECH_METALLURGY' WHERE Type = 'UNIT_BOMBARD';
--- 怯薛Class变化
-UPDATE Units SET Class = 'UNITCLASS_SPUE_MOUNTEDXBOW', PrereqTech = 'TECH_CHIVALRY', RangedCombat = 20, Combat = 30, ObsoleteTech = 'TECH_METALLURGY' WHERE Type = 'UNIT_MONGOLIAN_KESHIK';
+-- 怯薛Class变化 将过时科技改为军事科学，避免过快过时
+UPDATE Units SET Class = 'UNITCLASS_SPUE_MOUNTEDXBOW', PrereqTech = 'TECH_CHIVALRY', RangedCombat = 20, Combat = 30, ObsoleteTech = 'TECH_MILITARY_SCIENCE' WHERE Type = 'UNIT_MONGOLIAN_KESHIK';
 -- 自由佣兵一格射程
 UPDATE Units SET RangedCombat = 28, Range = 1 WHERE Type = 'UNIT_GERMAN_LANDSKNECHT';
 -- 重骑兵说明更新

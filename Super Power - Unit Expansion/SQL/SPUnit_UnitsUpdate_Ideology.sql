@@ -463,13 +463,13 @@ INSERT INTO UnitClasses
 VALUES	('UNITCLASS_SPUE_AUTOCRACY_PANZERG',	'TXT_KEY_UNIT_SPUE_AUTOCRACY_PANZERG',		'UNIT_SPUE_AUTOCRACY_PANZERG',		10);
  
 INSERT INTO Units 	
-		(Type, 							Class,								PrereqTech, PolicyBranchType,			RangedCombat,	Combat,		Range, 		ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,								Strategy, Help,												Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, UnitArtInfo,					UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
-SELECT	'UNIT_SPUE_AUTOCRACY_PANZERG', 	'UNITCLASS_SPUE_AUTOCRACY_PANZERG', PrereqTech, 'POLICY_BRANCH_AUTOCRACY',	RangedCombat,	Combat,	   	Range, 		ExtraMaintenanceCost,	Special, Cost, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_PANZERG',		'TXT_KEY_CIV5_SPUE_AUTOCRACY_PANZERG_TEXT', Strategy, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_PANZERG_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech, XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass, 'ART_DEF_UNIT_SPUE_PANZERG',	0,					'SPUE_PANG_FLAG_ATLAS',	9,				'SPUE_IDEO_ATLAS',	1
+		(Type, 							Class,								PrereqTech, PolicyBranchType,			RangedCombat,	Combat,		Range, 		ExtraMaintenanceCost,	Special, Cost, 		FaithCost, HurryCostModifier, 	RequiresFaithPurchaseEnabled, Moves,	CombatClass, Domain, DefaultUnitAI, Description,								Civilopedia,								Strategy, Help,												Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, ObsoleteTech,			XPValueAttack, XPValueDefense, GoodyHutUpgradeUnitClass,		UnitArtInfo,					UnitFlagIconOffset, UnitFlagAtlas,			PortraitIndex, 	IconAtlas,			NoMinorGifts)
+SELECT	'UNIT_SPUE_AUTOCRACY_PANZERG', 	'UNITCLASS_SPUE_AUTOCRACY_PANZERG', PrereqTech, 'POLICY_BRANCH_AUTOCRACY',	RangedCombat,	Combat,	   	Range, 		ExtraMaintenanceCost,	Special, Cost, 		FaithCost, -1,					RequiresFaithPurchaseEnabled, Moves,   	CombatClass, Domain, DefaultUnitAI, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_PANZERG',		'TXT_KEY_CIV5_SPUE_AUTOCRACY_PANZERG_TEXT', Strategy, 'TXT_KEY_UNIT_SPUE_AUTOCRACY_PANZERG_HELP', 		Pillage, MilitarySupport, MilitaryProduction, IgnoreBuildingDefense, Mechanized, AdvancedStartCost, RangedCombatLimit, CombatLimit, 'TECH_MOBILE_TACTICS',	XPValueAttack, XPValueDefense, 'UNITCLASS_MECHANIZED_INFANTRY', 'ART_DEF_UNIT_SPUE_PANZERG',	0,					'SPUE_PANG_FLAG_ATLAS',	9,				'SPUE_IDEO_ATLAS',	1
 FROM Units WHERE Type = 'UNIT_INFANTRY';
 
 INSERT INTO Unit_ClassUpgrades 	
 		(UnitType, 						UnitClassType)
-VALUES	('UNIT_SPUE_AUTOCRACY_PANZERG',	'UNITCLASS_MOTORISED_INFANTRY');
+VALUES	('UNIT_SPUE_AUTOCRACY_PANZERG',	'UNITCLASS_MECHANIZED_INFANTRY');
 
 INSERT INTO Unit_FreePromotions	
 		(UnitType, 				 		PromotionType)

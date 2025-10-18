@@ -599,7 +599,10 @@
 			<Text>临时热气球</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_BUTTON">
-			<Text>征召一队可持续5个回合的临时热气球</Text>
+			<Text>
+				征召一队可持续5个回合的临时热气球
+				[NEWLINE]征召后需要在友方区域[COLOR_NEGATIVE_TEXT]补充[ENDCOLOR]才可以[COLOR_POSITIVE_TEXT]再次征召[ENDCOLOR]
+			</Text>
 		</Row>
 		
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON">
@@ -607,6 +610,20 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_HELP">
 			<Text>单位只能存在有限的回合。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_RELEASED">
+			<Text>临时热气球已释放</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_RELEASED_HELP">
+			<Text>在友方区域补充后可以重新征召临时热气球。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_SUPPLEMENT_BUTTON_SHORT">
+			<Text>补充临时热气球</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_SUPPLEMENT_BUTTON">
+			<Text>补充后可以再次征召临时热气球</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_NEW">
