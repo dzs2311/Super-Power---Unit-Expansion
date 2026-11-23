@@ -549,19 +549,7 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		local icombat = math.ceil(0.2 * iunit.Combat);
 
 		local bonus = 0;
-		local unitCount = plot:GetNumUnits();
 		local uniqueRange = 4;
-		if unitCount >= 1 then
-			for i = 0, unitCount - 1, 1 do
-				local pFoundUnit = plot:GetUnit(i)
-				if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
-					local pPlayer = Players[pFoundUnit:GetOwner()];
-					if pPlayer == player and (pFoundUnit:IsHasPromotion(KnightID) or pFoundUnit:IsHasPromotion(TankID)) then
-						bonus = bonus + 1
-					end
-				end
-			end
-		end
 		for dx = -uniqueRange, uniqueRange, 1 do
 			for dy = -uniqueRange, uniqueRange, 1 do
 				local adjPlot = Map.PlotXYWithRangeCheck(plot:GetX(), plot:GetY(), dx, dy, uniqueRange);
@@ -571,8 +559,8 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 						for i = 0, unitCount - 1, 1 do
 							local pFoundUnit = adjPlot:GetUnit(i)
 							if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
-								local pPlayer = Players[pFoundUnit:GetOwner()];
-								if pPlayer == player and (pFoundUnit:IsHasPromotion(KnightID) or pFoundUnit:IsHasPromotion(TankID)) then
+								if pFoundUnit:GetOwner() == playerID 
+								and (pFoundUnit:IsHasPromotion(KnightID) or pFoundUnit:IsHasPromotion(TankID)) then
 									bonus = bonus + 1
 								end
 							end
@@ -584,8 +572,10 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		-- unit:SetBaseCombatStrength(100 * bonus * icombat / iunit.Combat)
 		SPUEAddCombatBonus(unit, math.ceil(100 * bonus * icombat / iunit.Combat))
 		unit:SetMoves(unit:GetMoves() + 2 * bonus * GameDefines["MOVE_DENOMINATOR"]);
-		local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
-		Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", bonus * 2));
+		if player:IsHuman() and bonus > 0 then
+			local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
+			Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", bonus * 2));
+		end
 	end
 
 	-- 宣慰使军
@@ -641,24 +631,13 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		local iunit = GameInfo.Units[unit:GetUnitType()];
 		local plot = unit:GetPlot();
 		local imove_bonus = 0;
-		local unitCount = plot:GetNumUnits();
+
 		local uniqueRange = 2
-		if unitCount >= 1 then
-			for i = 0, unitCount - 1, 1 do
-				local pFoundUnit = plot:GetUnit(i)
-				if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
-					local pPlayer = Players[pFoundUnit:GetOwner()];
-					if PlayersAtWar(player, pPlayer) then
-						imove_bonus = imove_bonus + 1;
-					end
-				end
-			end
-		end
 		for dx = -uniqueRange, uniqueRange, 1 do
 			for dy = -uniqueRange, uniqueRange, 1 do
 				local adjPlot = Map.PlotXYWithRangeCheck(plot:GetX(), plot:GetY(), dx, dy, uniqueRange);
 				if (adjPlot ~= nil) then
-					unitCount = adjPlot:GetNumUnits();
+					local unitCount = adjPlot:GetNumUnits();
 					if unitCount >= 1 then
 						for i = 0, unitCount - 1, 1 do
 							local pFoundUnit = adjPlot:GetUnit(i)
@@ -673,8 +652,9 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 				end
 			end
 		end
+		imove_bonus = imove_bonus * 2;
 		unit:SetMoves(unit:GetMoves() + imove_bonus * GameDefines["MOVE_DENOMINATOR"]);
-		if player:IsHuman() then
+		if player:IsHuman() and imove_bonus > 0 then
 			local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
 			Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", imove_bonus));
 			Events.GameplayFX(hex.x, hex.y, -1);
@@ -747,25 +727,13 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		local iunit = GameInfo.Units[unit:GetUnitType()];
 		local plot = unit:GetPlot();
 		local imove_bonus = 0;
-		local unitCount = plot:GetNumUnits();
+		
 		local uniqueRange = 2
-		if unitCount >= 1 then
-			for i = 0, unitCount - 1, 1 do
-				local pFoundUnit = plot:GetUnit(i)
-				if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
-					local pPlayer = Players[pFoundUnit:GetOwner()];
-					if PlayersAtWar(player, pPlayer) then
-						imove_bonus = imove_bonus + 1;
-					end
-				end
-			end
-		end
-
 		for dx = -uniqueRange, uniqueRange, 1 do
 			for dy = -uniqueRange, uniqueRange, 1 do
 				local adjPlot = Map.PlotXYWithRangeCheck(plot:GetX(), plot:GetY(), dx, dy, uniqueRange);
 				if (adjPlot ~= nil) then
-					unitCount = adjPlot:GetNumUnits();
+					local unitCount = adjPlot:GetNumUnits();
 					if unitCount >= 1 then
 						for i = 0, unitCount - 1, 1 do
 							local pFoundUnit = adjPlot:GetUnit(i)
@@ -781,11 +749,10 @@ function SPUE_OnPlayerUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 			end
 		end
 		unit:SetMoves(unit:GetMoves() + imove_bonus * GameDefines["MOVE_DENOMINATOR"]);
-
-
-		local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
-		Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", imove_bonus));
-		-- Events.GameplayFX(hex.x, hex.y, -1);
+		if player:IsHuman() and imove_bonus > 0 then
+			local hex = ToHexFromGrid(Vector2(plot:GetX(), plot:GetY()));
+			Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", imove_bonus));
+		end
 	end
 
 	-- 美国无畏舰：大白舰队增长城邦影响力
@@ -877,25 +844,12 @@ function SPUE_PlayerDoneTurn(playerID)
 		-- 	local plot = unit:GetPlot();
 		-- 	local icombat_bonus = 0;
 
-		-- 	local unitCount = plot:GetNumUnits();
 		-- 	local uniqueRange = 2
-		-- 	if unitCount >= 1 then
-		-- 		for i = 0, unitCount - 1, 1 do
-		-- 			local pFoundUnit = plot:GetUnit(i)
-		-- 			if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
-		-- 				local pPlayer = Players[pFoundUnit:GetOwner()];
-		-- 				if PlayersAtWar(player, pPlayer) then
-		-- 					icombat_bonus = icombat_bonus + 1;
-		-- 				end
-		-- 			end
-		-- 		end
-		-- 	end
-
 		-- 	for dx = -uniqueRange, uniqueRange, 1 do
 		-- 		for dy = -uniqueRange, uniqueRange, 1 do
 		-- 			local adjPlot = Map.PlotXYWithRangeCheck(plot:GetX(), plot:GetY(), dx, dy, uniqueRange);
 		-- 			if (adjPlot ~= nil) then
-		-- 				unitCount = adjPlot:GetNumUnits();
+		-- 				local unitCount = adjPlot:GetNumUnits();
 		-- 				if unitCount >= 1 then
 		-- 					for i = 0, unitCount - 1, 1 do
 		-- 						local pFoundUnit = adjPlot:GetUnit(i)
@@ -1029,35 +983,20 @@ function SPUE_PlayerDoneTurn(playerID)
 
 		-- 铁骑：根据两格内己方单位数量回复血量
 		if unit:IsHasPromotion(unitPromotionChineseICID) then
-			local iunit = GameInfo.Units[unit:GetUnitType()];
 			local plot = unit:GetPlot();
 			local ihealth_bonus = 0;
 
-			local unitCount = plot:GetNumUnits();
 			local uniqueRange = 2;
-			if unitCount >= 1 then
-				for i = 0, unitCount - 1, 1 do
-					local pFoundUnit = plot:GetUnit(i)
-					if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
-						local pPlayer = Players[pFoundUnit:GetOwner()];
-						if pPlayer == player then
-							ihealth_bonus = ihealth_bonus + 1;
-						end
-					end
-				end
-			end
-
 			for dx = -uniqueRange, uniqueRange, 1 do
 				for dy = -uniqueRange, uniqueRange, 1 do
 					local adjPlot = Map.PlotXYWithRangeCheck(plot:GetX(), plot:GetY(), dx, dy, uniqueRange);
 					if (adjPlot ~= nil) then
-						unitCount = adjPlot:GetNumUnits();
+						local unitCount = adjPlot:GetNumUnits();
 						if unitCount >= 1 then
 							for i = 0, unitCount - 1, 1 do
 								local pFoundUnit = adjPlot:GetUnit(i);
 								if pFoundUnit ~= nil and pFoundUnit:GetID() ~= unit:GetID() then
-									local pPlayer = Players[pFoundUnit:GetOwner()];
-									if pPlayer == player then
+									if pFoundUnit:GetOwner() == playerID then
 										ihealth_bonus = ihealth_bonus + 1;
 									end
 								end
@@ -1066,8 +1005,7 @@ function SPUE_PlayerDoneTurn(playerID)
 					end
 				end
 			end
-
-			unit:SetDamage(-5 * ihealth_bonus);
+			unit:ChangeDamage(-5 * ihealth_bonus);
 		end
 	end
 end
@@ -1785,6 +1723,7 @@ LuaEvents.UnitPanelActionAddin(SPUE_Rohan_Cavalry_Button)
 -- 探险家：临时热气球
 --------------------------------------------------------------
 --include('UtilityFunctions.lua')
+local iBalloonID = GameInfoTypes["UNIT_SPUE_HOT_AIR_BALLOON"]
 SPUE_HotAirBalloon_Button = {
 	Name = "Hot Air Balloon",
 	Title = "TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_BUTTON_SHORT", -- or a TXT_KEY
@@ -1806,6 +1745,11 @@ SPUE_HotAirBalloon_Button = {
 	end, -- or nil or a boolean, default is true
 
 	Disabled = function(action, unit)
+		local player = Players[unit:GetOwner()]
+		local goldCost = SPUE_UnitPurchaseCost(player, iBalloonID);
+		if goldCost then 
+			return player:GetGold() < goldCost * 0.2
+		end
 		return false;
 	end, -- or nil or a boolean, default is false
 
@@ -1817,7 +1761,7 @@ SPUE_HotAirBalloon_Button = {
 		local unitAIType = unit:GetUnitAIType()
 
 
-		local NewUnit = player:InitUnit(GameInfoTypes["UNIT_SPUE_HOT_AIR_BALLOON"], unitX, unitY)
+		local NewUnit = player:InitUnit(iBalloonID, unitX, unitY)
 		NewUnit:SetHasPromotion(GameInfoTypes["PROMOTION_NO_CASUALTIES"], true)
 		NewUnit:SetHasPromotion(GameInfoTypes["PROMOTION_SPUE_HOT_AIR_BALLOON"], true)
 		if plot:GetNumUnits() > 2 then
@@ -1827,6 +1771,8 @@ SPUE_HotAirBalloon_Button = {
 
 		unit:SetMoves(0)
 		unit:SetHasPromotion(GameInfoTypes["PROMOTION_SPUE_HOT_AIR_BALLOON_RELEASED"], true)
+
+		player:ChangeGold(-SPUE_UnitPurchaseCost(player, iBalloonID) * 0.2)
 	end
 };
 
@@ -3005,7 +2951,7 @@ function OnUnitRangeAttackAt(iPlayer, iUnit, iX, iY)
 			pPlot:SetImprovementPillaged(true)
 		end
 		pUnit:ChangeExperience(pUnitInfo.XPValueAttack)
-		pUnit:SetDamage(-25)
+		pUnit:ChangeDamage(-25)
 		pPlayer:ChangeGold(100);
 		local hex = ToHexFromGrid(Vector2(iX, iY));
 		Events.AddPopupTextEvent(HexToWorld(hex),
@@ -3015,7 +2961,7 @@ function OnUnitRangeAttackAt(iPlayer, iUnit, iX, iY)
 		-- Non-pillaged route, at the very least, pillage it
 		pPlot:SetRoutePillaged(true)
 		pUnit:ChangeExperience(pUnitInfo.XPValueAttack)
-		pUnit:SetDamage(-25)
+		pUnit:ChangeDamage(-25)
 		pPlayer:ChangeGold(100);
 		local hex = ToHexFromGrid(Vector2(iX, iY));
 		Events.AddPopupTextEvent(HexToWorld(hex),

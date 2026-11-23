@@ -600,7 +600,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_HOT_AIR_BALLOON_BUTTON">
 			<Text>
-				征召一队可持续5个回合的临时热气球
+				花费购买价格的1/5，征召一队可持续5个回合的临时热气球
 				[NEWLINE]征召后需要在友方区域[COLOR_NEGATIVE_TEXT]补充[ENDCOLOR]才可以[COLOR_POSITIVE_TEXT]再次征召[ENDCOLOR]
 			</Text>
 		</Row>
@@ -1005,7 +1005,7 @@
 			<Text>保加利亚的屠夫</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_SPUE_VARANGIAN_GUARD_HELP">
-			<Text>进攻可以使敌人退却并造成30%的践踏伤害，回合开始时一格范围内每有一个己方重骑兵单位则获得20%[ICON_STRENGTH]战斗力加成并+2[ICON_MOVES]移动力。</Text>
+			<Text>进攻可以使敌人退却并造成30%的践踏伤害，回合开始时四格范围内每有一个己方重骑兵单位则获得20%[ICON_STRENGTH]战斗力加成并+2[ICON_MOVES]移动力。</Text>
 		</Row>
 		<!-- **********************热那亚弩手*********************** -->
 		<Row Tag="TXT_KEY_UNIT_SPUE_GENOAXBOW">
