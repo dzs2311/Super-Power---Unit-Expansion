@@ -32,7 +32,8 @@ UPDATE Units SET UnitFlagAtlas = 'SPUE_TANK_FLAG_ATLAS',  			UnitFlagIconOffset 
 --==========================================================================================================================
 -- Unit_Icons
 --==========================================================================================================================
-UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 					PortraitIndex = 6 			WHERE Type = 'UNIT_MUSKETMAN';					-- 火枪手
+-- [SPUE 停用] 火枪手 · 图标回退 —— 美术定义已注释，回退到 SP / 原版模型
+--UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 					PortraitIndex = 6 			WHERE Type = 'UNIT_MUSKETMAN';					-- 火枪手
 UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 					PortraitIndex = 39 			WHERE Type = 'UNIT_BOMBARD';					-- 火枪骑兵
 UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 					PortraitIndex = 31 			WHERE Type = 'UNIT_RIFLEMAN';					-- 线列步兵
 UPDATE Units SET IconAtlas = 'SPUE_UNITS_ATLAS', 					PortraitIndex = 2 			WHERE Type = 'UNIT_CANNON';						-- 加农炮
