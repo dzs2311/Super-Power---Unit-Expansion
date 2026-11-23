@@ -1,28 +1,154 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
-  MercenaryUnitsSelection.xml  ·  商业政策佣兵选择（C3：每单位专属底图）
+  MercenaryUnitsSelection.xml  ·  商业政策佣兵选择（v7）
   ===============================================================
-  结构：
-    · 面板 650x510，Grid9DetailFive140 + ConsumeMouse="1"
-    · 领袖头像组 / 左右侧饰：沿用本模组其他界面的写法
-    · 左右两列 300x352：每列叠 N 层专属底图（Lua 只显示选中那张）
-    · 列内：标题 / 大圆环头像(110) / 单位名 / 名单行(最多 5)
-    · 底部 确定 BaseButton 170x36
-  控件 ID 约定（Lua 依赖）：
-    BgL1..BgL5 / BgR1..BgR4        专属底图（Hidden=1，Lua 切换）
-    BigFrameL/Right + BigIconL/R   大圆环头像
-    NameL / NameR                  单位名
-    RowL1..RowL5 / RowR1..RowR4    名单行按钮
-    RowL1Frame / RowL1Icon / RowL1Name  行内元素
-    MercenaryUnitLeaderPortrait    领袖头像
-    OKButton                       确定
+  本版：
+    · 面板 645x470（底部黑条从 63px 收到 42px）
+    · 两列各 300x392 @ (20,36) / (325,36)，四周留 20px
+    · 每列：组名 → 大圆环 80(居中, C 锚点 Offset 0) → 当前选中名(18号) → 滚动列表
+    · 列表用 ScrollPanel + Stack，行高 50、字号 18、右侧滚动条（5 行刚好放满，超出才滚）
+    · 确定在面板外下方
+  图标尺寸（IconHookup 必须用图集注册值）：大圆环 80、行图标 45
 -->
 <Context ColorSet="Beige_Black_Alpha" Font="TwCenMT16" FontStyle="Shadow">
 	<Box Style="BGBlock_ClearTopBar"/>
 
-	<Grid ID="MainGrid" Size="650,510" Anchor="C,C" Style="Grid9DetailFive140" ConsumeMouse="1">
+	<Grid ID="MainGrid" Size="645,470" Anchor="C,C" Style="Grid9DetailFive140" ConsumeMouse="1">
 
-		<!-- ===== 领袖头像组（与本模组其它界面一致） ===== -->
+		<!-- ================= 左列 ================= -->
+		<Box Size="300,392" Anchor="L,T" Offset="20,36" Color="0,0,0,0">
+			<Image ID="BgL1" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercVarangian.dds" Hidden="1"/>
+			<Image ID="BgL2" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercGenoese.dds"   Hidden="1"/>
+			<Image ID="BgL3" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercSwiss.dds"      Hidden="1"/>
+			<Image ID="BgL4" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercCavalry.dds"    Hidden="1"/>
+			<Image ID="BgL5" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercWarWagon.dds"   Hidden="1"/>
+
+			<Label Anchor="C,T" Offset="0,4" Font="TwCenMT18" FontStyle="Shadow"
+			       Color0="Beige.255" Color1="Black.255" String="TXT_KEY_SPUE_MERCENARY_ROW_MEDIEVAL"/>
+
+			<Image Anchor="C,T" Offset="0,18" Size="80,80" Texture="NotificationFrameBase.dds">
+				<Image ID="BigIconL" Anchor="C,C" Offset="0,0" Size="80,80"/>
+			</Image>
+
+			<Box Anchor="C,T" Offset="0,100" Size="300,26" Color="6,10,14,170"/>
+			<Label ID="NameL" Anchor="C,T" Offset="0,102" WrapWidth="284" Font="TwCenMT18" FontStyle="Shadow"
+			       Color0="Beige.255" Color1="Black.255" String=""/>
+
+			<!-- 滚动列表 -->
+			<ScrollPanel ID="ListL" Anchor="C,T" Offset="4,130" Size="288,256" Vertical="1">
+				<ScrollBar  Anchor="R,C" AnchorSide="I,I" Offset="-2,0"  Style="VertSlider"   Length="240"/>
+				<UpButton   Anchor="R,T" AnchorSide="I,I" Offset="-2,-2" Style="ScrollBarUp"/>
+				<DownButton Anchor="R,B" AnchorSide="I,I" Offset="-2,-2" Style="ScrollBarDown"/>
+				<Stack ID="StackL" Anchor="L,T" Offset="0,0" StackGrowth="Bottom" Padding="0" Size="280,250">
+					<Button ID="RowL1" Anchor="L,T" Size="280,50">
+						<Box ID="RowL1Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
+						<Box ID="RowL1Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowL1Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
+						<Label ID="RowL1Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
+						       Color0="Beige.255" Color1="Black.128"/>
+					</Button>
+					<Button ID="RowL2" Anchor="L,T" Size="280,50">
+						<Box ID="RowL2Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
+						<Box ID="RowL2Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowL2Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
+						<Label ID="RowL2Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
+						       Color0="Beige.255" Color1="Black.128"/>
+					</Button>
+					<Button ID="RowL3" Anchor="L,T" Size="280,50">
+						<Box ID="RowL3Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
+						<Box ID="RowL3Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowL3Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
+						<Label ID="RowL3Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
+						       Color0="Beige.255" Color1="Black.128"/>
+					</Button>
+					<Button ID="RowL4" Anchor="L,T" Size="280,50">
+						<Box ID="RowL4Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
+						<Box ID="RowL4Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowL4Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
+						<Label ID="RowL4Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
+						       Color0="Beige.255" Color1="Black.128"/>
+					</Button>
+					<Button ID="RowL5" Anchor="L,T" Size="280,50">
+						<Box ID="RowL5Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
+						<Box ID="RowL5Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowL5Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
+						<Label ID="RowL5Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
+						       Color0="Beige.255" Color1="Black.128"/>
+					</Button>
+				</Stack>
+			</ScrollPanel>
+		</Box>
+
+		<!-- 接缝 -->
+		<Image Anchor="L,T" Offset="320,36" Size="5,392" Texture="VerticalTrim.dds"/>
+
+		<!-- ================= 右列 ================= -->
+		<Box Size="300,392" Anchor="L,T" Offset="325,36" Color="0,0,0,0">
+			<Image ID="BgR1" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercHessian.dds"   Hidden="1"/>
+			<Image ID="BgR2" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercJunk.dds"      Hidden="1"/>
+			<Image ID="BgR3" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercPrivateer.dds" Hidden="1"/>
+			<Image ID="BgR4" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercWako.dds"      Hidden="1"/>
+
+			<Label Anchor="C,T" Offset="0,4" Font="TwCenMT18" FontStyle="Shadow"
+			       Color0="Beige.255" Color1="Black.255" String="TXT_KEY_SPUE_MERCENARY_ROW_ENLIGHTENMENT"/>
+
+			<Image Anchor="C,T" Offset="0,18" Size="80,80" Texture="NotificationFrameBase.dds">
+				<Image ID="BigIconR" Anchor="C,C" Offset="0,0" Size="80,80"/>
+			</Image>
+
+			<Box Anchor="C,T" Offset="0,100" Size="300,26" Color="6,10,14,170"/>
+			<Label ID="NameR" Anchor="C,T" Offset="0,102" WrapWidth="284" Font="TwCenMT18" FontStyle="Shadow"
+			       Color0="Beige.255" Color1="Black.255" String=""/>
+
+			<ScrollPanel ID="ListR" Anchor="C,T" Offset="4,130" Size="288,256" Vertical="1">
+				<ScrollBar  Anchor="R,C" AnchorSide="I,I" Offset="-2,0"  Style="VertSlider"   Length="240"/>
+				<UpButton   Anchor="R,T" AnchorSide="I,I" Offset="-2,-2" Style="ScrollBarUp"/>
+				<DownButton Anchor="R,B" AnchorSide="I,I" Offset="-2,-2" Style="ScrollBarDown"/>
+				<Stack ID="StackR" Anchor="L,T" Offset="0,0" StackGrowth="Bottom" Padding="0" Size="280,250">
+					<Button ID="RowR1" Anchor="L,T" Size="280,50">
+						<Box ID="RowR1Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
+						<Box ID="RowR1Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowR1Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
+						<Label ID="RowR1Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
+						       Color0="Beige.255" Color1="Black.128"/>
+					</Button>
+					<Button ID="RowR2" Anchor="L,T" Size="280,50">
+						<Box ID="RowR2Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
+						<Box ID="RowR2Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowR2Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
+						<Label ID="RowR2Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
+						       Color0="Beige.255" Color1="Black.128"/>
+					</Button>
+					<Button ID="RowR3" Anchor="L,T" Size="280,50">
+						<Box ID="RowR3Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
+						<Box ID="RowR3Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowR3Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
+						<Label ID="RowR3Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
+						       Color0="Beige.255" Color1="Black.128"/>
+					</Button>
+					<Button ID="RowR4" Anchor="L,T" Size="280,50">
+						<Box ID="RowR4Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
+						<Box ID="RowR4Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowR4Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
+						<Label ID="RowR4Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
+						       Color0="Beige.255" Color1="Black.128"/>
+					</Button>
+					<Button ID="RowR5" Anchor="L,T" Size="280,50" Hidden="1">
+						<Box ID="RowR5Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
+						<Box ID="RowR5Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowR5Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
+						<Label ID="RowR5Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
+						       Color0="Beige.255" Color1="Black.128"/>
+					</Button>
+				</Stack>
+			</ScrollPanel>
+		</Box>
+
+		<!-- ===== 标题 ===== -->
+		<Label Anchor="C,T" Offset="0,15" Font="TwCenMT24" FontStyle="Shadow"
+		       ColorSet="Beige_Black_Alpha" String="TXT_KEY_SPUE_MERCENARY_SELECT_TITLE"/>
+
+		<!-- ===== 领袖头像组 ===== -->
 		<Button ID="IconButtonTop" Anchor="C,T" Offset="0,0" Size="256,128" ToolTip="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_LEADER_TOP">
 			<Image Anchor="C,T" AnchorSide="I,O" Offset="0,-91" Size="256,128" Texture="DecTop256x64.dds">
 				<Image Anchor="C,T" Offset="0,-60" Size="128,128" Texture="Assets/UI/Art/Icons/LeaderPortraits1024Frame.dds">
@@ -31,124 +157,18 @@
 			</Image>
 		</Button>
 
-		<!-- ===== 左右侧饰 ===== -->
+		<!-- ===== 侧饰 ===== -->
 		<Image Anchor="L,C" AnchorSide="O,I" Offset="-17,0" Size="32,64" Texture="Dec32x64Left.dds" />
 		<Image Anchor="R,C" AnchorSide="O,I" Offset="-17,0" Size="32,64" Texture="Dec32x64Right.dds" />
 
-		<!-- ===== 标题 ===== -->
-		<Label Anchor="C,T" Offset="0,15" Font="TwCenMT24" FontStyle="Shadow"
-		       ColorSet="Beige_Black_Alpha" String="TXT_KEY_SPUE_MERCENARY_SELECT_TITLE"/>
-
-		<Stack Anchor="C,T" Offset="0,52" Padding="0" Size="0,0" StackGrowth="Right">
-
-			<!-- ================= 左列：中古佣兵团 ================= -->
-			<Box Size="300,352" Anchor="C,T" Color="0,0,0,0">
-				<Image ID="BgL1" Anchor="C,T" Offset="0,0" Size="300,352" Texture="UI_MercVarangian.dds" Hidden="1"/>
-				<Image ID="BgL2" Anchor="C,T" Offset="0,0" Size="300,352" Texture="UI_MercGenoese.dds"   Hidden="1"/>
-				<Image ID="BgL3" Anchor="C,T" Offset="0,0" Size="300,352" Texture="UI_MercSwiss.dds"      Hidden="1"/>
-				<Image ID="BgL4" Anchor="C,T" Offset="0,0" Size="300,352" Texture="UI_MercCavalry.dds"    Hidden="1"/>
-				<Image ID="BgL5" Anchor="C,T" Offset="0,0" Size="300,352" Texture="UI_MercWarWagon.dds"   Hidden="1"/>
-
-				<Label Anchor="C,T" Offset="0,8" Font="TwCenMT20" FontStyle="Shadow"
-				       Color0="Beige.255" Color1="Black.255" String="TXT_KEY_SPUE_MERCENARY_ROW_MEDIEVAL"/>
-
-				<Image ID="BigFrameL" Anchor="C,T" Offset="95,26" Size="110,110" Texture="NotificationFrameBase.dds">
-					<Image ID="BigIconL" Anchor="C,C" Offset="0,0" Size="110,110"/>
-				</Image>
-				<Label ID="NameL" Anchor="C,T" Offset="0,142" WrapWidth="280" Font="TwCenMT18" FontStyle="Shadow"
-				       Color0="Beige.255" Color1="Black.255" String=""/>
-
-				<Button ID="RowL1" Anchor="L,T" Offset="8,172" Size="284,32">
-					<Image ID="RowL1Frame" Anchor="L,T" Offset="2,2" Size="28,28" Texture="NotificationFrameBase.dds"/>
-					<Image ID="RowL1Icon"  Anchor="L,T" Offset="2,2" Size="28,28"/>
-					<Label ID="RowL1Name"  Anchor="L,C" Offset="38,0" WrapWidth="230" Font="TwCenMT16" FontStyle="Shadow"
-					       Color0="Beige.255" Color1="Black.128"/>
-				</Button>
-				<Button ID="RowL2" Anchor="L,T" Offset="8,206" Size="284,32">
-					<Image ID="RowL2Frame" Anchor="L,T" Offset="2,2" Size="28,28" Texture="NotificationFrameBase.dds"/>
-					<Image ID="RowL2Icon"  Anchor="L,T" Offset="2,2" Size="28,28"/>
-					<Label ID="RowL2Name"  Anchor="L,C" Offset="38,0" WrapWidth="230" Font="TwCenMT16" FontStyle="Shadow"
-					       Color0="Beige.255" Color1="Black.128"/>
-				</Button>
-				<Button ID="RowL3" Anchor="L,T" Offset="8,240" Size="284,32">
-					<Image ID="RowL3Frame" Anchor="L,T" Offset="2,2" Size="28,28" Texture="NotificationFrameBase.dds"/>
-					<Image ID="RowL3Icon"  Anchor="L,T" Offset="2,2" Size="28,28"/>
-					<Label ID="RowL3Name"  Anchor="L,C" Offset="38,0" WrapWidth="230" Font="TwCenMT16" FontStyle="Shadow"
-					       Color0="Beige.255" Color1="Black.128"/>
-				</Button>
-				<Button ID="RowL4" Anchor="L,T" Offset="8,274" Size="284,32">
-					<Image ID="RowL4Frame" Anchor="L,T" Offset="2,2" Size="28,28" Texture="NotificationFrameBase.dds"/>
-					<Image ID="RowL4Icon"  Anchor="L,T" Offset="2,2" Size="28,28"/>
-					<Label ID="RowL4Name"  Anchor="L,C" Offset="38,0" WrapWidth="230" Font="TwCenMT16" FontStyle="Shadow"
-					       Color0="Beige.255" Color1="Black.128"/>
-				</Button>
-				<Button ID="RowL5" Anchor="L,T" Offset="8,308" Size="284,32">
-					<Image ID="RowL5Frame" Anchor="L,T" Offset="2,2" Size="28,28" Texture="NotificationFrameBase.dds"/>
-					<Image ID="RowL5Icon"  Anchor="L,T" Offset="2,2" Size="28,28"/>
-					<Label ID="RowL5Name"  Anchor="L,C" Offset="38,0" WrapWidth="230" Font="TwCenMT16" FontStyle="Shadow"
-					       Color0="Beige.255" Color1="Black.128"/>
-				</Button>
-			</Box>
-
-			<Image Anchor="R,T" Offset="0,0" Texture="VerticalTrim.dds" Size="5,352"/>
-
-			<!-- ================= 右列：启蒙佣兵团 ================= -->
-			<Box Size="300,352" Anchor="C,T" Color="0,0,0,0">
-				<Image ID="BgR1" Anchor="C,T" Offset="0,0" Size="300,352" Texture="UI_MercHessian.dds"   Hidden="1"/>
-				<Image ID="BgR2" Anchor="C,T" Offset="0,0" Size="300,352" Texture="UI_MercJunk.dds"      Hidden="1"/>
-				<Image ID="BgR3" Anchor="C,T" Offset="0,0" Size="300,352" Texture="UI_MercPrivateer.dds" Hidden="1"/>
-				<Image ID="BgR4" Anchor="C,T" Offset="0,0" Size="300,352" Texture="UI_MercWako.dds"      Hidden="1"/>
-
-				<Label Anchor="C,T" Offset="0,8" Font="TwCenMT20" FontStyle="Shadow"
-				       Color0="Beige.255" Color1="Black.255" String="TXT_KEY_SPUE_MERCENARY_ROW_ENLIGHTENMENT"/>
-
-				<Image ID="BigFrameR" Anchor="C,T" Offset="95,26" Size="110,110" Texture="NotificationFrameBase.dds">
-					<Image ID="BigIconR" Anchor="C,C" Offset="0,0" Size="110,110"/>
-				</Image>
-				<Label ID="NameR" Anchor="C,T" Offset="0,142" WrapWidth="280" Font="TwCenMT18" FontStyle="Shadow"
-				       Color0="Beige.255" Color1="Black.255" String=""/>
-
-				<Button ID="RowR1" Anchor="L,T" Offset="8,172" Size="284,32">
-					<Image ID="RowR1Frame" Anchor="L,T" Offset="2,2" Size="28,28" Texture="NotificationFrameBase.dds"/>
-					<Image ID="RowR1Icon"  Anchor="L,T" Offset="2,2" Size="28,28"/>
-					<Label ID="RowR1Name"  Anchor="L,C" Offset="38,0" WrapWidth="230" Font="TwCenMT16" FontStyle="Shadow"
-					       Color0="Beige.255" Color1="Black.128"/>
-				</Button>
-				<Button ID="RowR2" Anchor="L,T" Offset="8,206" Size="284,32">
-					<Image ID="RowR2Frame" Anchor="L,T" Offset="2,2" Size="28,28" Texture="NotificationFrameBase.dds"/>
-					<Image ID="RowR2Icon"  Anchor="L,T" Offset="2,2" Size="28,28"/>
-					<Label ID="RowR2Name"  Anchor="L,C" Offset="38,0" WrapWidth="230" Font="TwCenMT16" FontStyle="Shadow"
-					       Color0="Beige.255" Color1="Black.128"/>
-				</Button>
-				<Button ID="RowR3" Anchor="L,T" Offset="8,240" Size="284,32">
-					<Image ID="RowR3Frame" Anchor="L,T" Offset="2,2" Size="28,28" Texture="NotificationFrameBase.dds"/>
-					<Image ID="RowR3Icon"  Anchor="L,T" Offset="2,2" Size="28,28"/>
-					<Label ID="RowR3Name"  Anchor="L,C" Offset="38,0" WrapWidth="230" Font="TwCenMT16" FontStyle="Shadow"
-					       Color0="Beige.255" Color1="Black.128"/>
-				</Button>
-				<Button ID="RowR4" Anchor="L,T" Offset="8,274" Size="284,32">
-					<Image ID="RowR4Frame" Anchor="L,T" Offset="2,2" Size="28,28" Texture="NotificationFrameBase.dds"/>
-					<Image ID="RowR4Icon"  Anchor="L,T" Offset="2,2" Size="28,28"/>
-					<Label ID="RowR4Name"  Anchor="L,C" Offset="38,0" WrapWidth="230" Font="TwCenMT16" FontStyle="Shadow"
-					       Color0="Beige.255" Color1="Black.128"/>
-				</Button>
-				<Button ID="RowR5" Anchor="L,T" Offset="8,308" Size="284,32" Hidden="1">
-					<Image ID="RowR5Frame" Anchor="L,T" Offset="2,2" Size="28,28" Texture="NotificationFrameBase.dds"/>
-					<Image ID="RowR5Icon"  Anchor="L,T" Offset="2,2" Size="28,28"/>
-					<Label ID="RowR5Name"  Anchor="L,C" Offset="38,0" WrapWidth="230" Font="TwCenMT16" FontStyle="Shadow"
-					       Color0="Beige.255" Color1="Black.128"/>
-				</Button>
-			</Box>
-		</Stack>
-
-		<!-- ===== 确定 ===== -->
-		<GridButton ID="OKButton" Anchor="C,B" Offset="0,46" Size="170,36" Style="BaseButton"
+		<!-- ===== 确定（面板外，与底边留 8px） ===== -->
+		<GridButton ID="OKButton" Anchor="C,B" Offset="0,-44" Size="170,36" Style="BaseButton"
 		            ToolTip="TXT_KEY_SPUE_MERCENARY_SELECT_OK_TOOLTIP">
 			<Label Anchor="C,C" Offset="0,-2" String="TXT_KEY_SPUE_MERCENARY_SELECT_OK"
 			       Font="TwCenMT20" FontStyle="Shadow" ColorSet="Beige_Black_Alpha"/>
 		</GridButton>
 
-		<Label Anchor="C,B" Offset="0,22" Font="TwCenMT14" FontStyle="Shadow"
+		<Label Anchor="C,B" Offset="0,26" Font="TwCenMT14" FontStyle="Shadow"
 		       Color0="Beige.255" Color1="Black.128" String="TXT_KEY_SPUE_MERCENARY_HINT_CARDS"/>
 	</Grid>
 </Context>

@@ -73,7 +73,7 @@ local function ShowBig(side, entry)
 	if not entry then return end
 	local big = Ctl(side == "L" and "BigIconL" or "BigIconR")
 	local nm  = Ctl(side == "L" and "NameL" or "NameR")
-	if big then IconHookup(entry.unit.PortraitIndex, 110, entry.unit.IconAtlas, big) end
+	if big then IconHookup(entry.unit.PortraitIndex, 80, entry.unit.IconAtlas, big) end
 	if nm then nm:LocalizeAndSetText(entry.unit.Description) end
 	if side == "L" then
 		unitL = entry.unit
@@ -82,6 +82,21 @@ local function ShowBig(side, entry)
 	end
 end
 
+local function HideAllHi(side)
+	for i = 1, MAX_ROWS do
+		local hi  = Ctl("Row" .. side .. i .. "Hi")
+		local bar = Ctl("Row" .. side .. i .. "Bar")
+		if hi  then hi:SetHide(true)  end
+		if bar then bar:SetHide(true) end
+	end
+end
+
+local function ShowHi(side, row)
+	local hi  = Ctl("Row" .. side .. row .. "Hi")
+	local bar = Ctl("Row" .. side .. row .. "Bar")
+	if hi  then hi:SetHide(false)  end
+	if bar then bar:SetHide(false) end
+end
 local function ApplySelection(side, row)
 	local rows = (side == "L") and rowsL or rowsR
 	local entry = rows[row]
@@ -92,6 +107,9 @@ local function ApplySelection(side, row)
 	if bg then bg:SetHide(false) end
 
 	ShowBig(side, entry)
+
+	HideAllHi(side)
+	ShowHi(side, row)
 
 	if side == "L" then selL = row else selR = row end
 end
@@ -113,9 +131,10 @@ local function BuildSide(side, data)
 			if row then
 				btn:SetHide(false)
 				local ic = Ctl("Row" .. side .. i .. "Icon")
-				if ic then IconHookup(row.unit.PortraitIndex, 28, row.unit.IconAtlas, ic) end
+				if ic then IconHookup(row.unit.PortraitIndex, 45, row.unit.IconAtlas, ic) end
 				local nm = Ctl("Row" .. side .. i .. "Name")
 				if nm then nm:LocalizeAndSetText(row.unit.Description) end
+
 				if row.unit.Help then btn:SetToolTipString(Locale.ConvertTextKey(row.unit.Help)) end
 			else
 				btn:SetHide(true)
@@ -125,6 +144,8 @@ local function BuildSide(side, data)
 
 	if side == "L" then rowsL = rows; selL = nil; unitL = nil
 	else rowsR = rows; selR = nil; unitR = nil end
+
+	HideAllHi(side)
 
 	-- 默认选中第一行
 	if rows[1] then
