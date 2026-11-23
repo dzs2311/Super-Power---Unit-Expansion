@@ -2296,9 +2296,7 @@ FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_KNIGHT';
 INSERT INTO ArtDefine_UnitInfoMemberInfos 	
 		(UnitInfoType,									UnitMemberInfoType,										NumMembers)
 VALUES	('ART_DEF_UNIT_SPUE_HEAVY_CAVALRY_ANCIENT',		'ART_DEF_UNIT_MEMBER_SPUE_HEAVY_CAVALRY_ANCIENT',		1),
-		('ART_DEF_UNIT_SPUE_HEAVY_CAVALRY_ANCIENT',		'ART_DEF_UNIT_MEMBER_SPUE_HEAVY_CAVALRY_ANCIENT2',		2),
-		('ART_DEF_UNIT_SPUE_HEAVY_CAVALRY_ANCIENT',		'ART_DEF_UNIT_MEMBER_SPUE_HEAVY_CAVALRY_ANCIENT',		1),
-		('ART_DEF_UNIT_SPUE_HEAVY_CAVALRY_ANCIENT',		'ART_DEF_UNIT_MEMBER_SPUE_HEAVY_CAVALRY_ANCIENT2',		1);
+		('ART_DEF_UNIT_SPUE_HEAVY_CAVALRY_ANCIENT',		'ART_DEF_UNIT_MEMBER_SPUE_HEAVY_CAVALRY_ANCIENT2',		2);
 
 INSERT INTO ArtDefine_UnitMemberCombats 
 		(UnitMemberType,										EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
@@ -2737,10 +2735,7 @@ INSERT INTO ArtDefine_UnitInfoMemberInfos
 		(UnitInfoType,								UnitMemberInfoType,								NumMembers)
 VALUES	('ART_DEF_UNIT_SPUE_VARANGIAN_GUARD',		'ART_DEF_UNIT_MEMBER_SPUE_VARANGIAN_GUARD1',	1),
 		('ART_DEF_UNIT_SPUE_VARANGIAN_GUARD',		'ART_DEF_UNIT_MEMBER_SPUE_VARANGIAN_GUARD2',	2),
-		('ART_DEF_UNIT_SPUE_VARANGIAN_GUARD',		'ART_DEF_UNIT_MEMBER_SPUE_VARANGIAN_GUARD3',	3),
-		('ART_DEF_UNIT_SPUE_VARANGIAN_GUARD',		'ART_DEF_UNIT_MEMBER_SPUE_VARANGIAN_GUARD1',	3),
-		('ART_DEF_UNIT_SPUE_VARANGIAN_GUARD',		'ART_DEF_UNIT_MEMBER_SPUE_VARANGIAN_GUARD2',	2),
-		('ART_DEF_UNIT_SPUE_VARANGIAN_GUARD',		'ART_DEF_UNIT_MEMBER_SPUE_VARANGIAN_GUARD3',	1);
+		('ART_DEF_UNIT_SPUE_VARANGIAN_GUARD',		'ART_DEF_UNIT_MEMBER_SPUE_VARANGIAN_GUARD3',	3);
 
 INSERT INTO ArtDefine_UnitMemberCombats 
 		(UnitMemberType,								EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
@@ -3120,11 +3115,7 @@ FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_LONGSWORDSMAN';
 INSERT INTO ArtDefine_UnitInfoMemberInfos 	
 		(UnitInfoType,						UnitMemberInfoType,							NumMembers)
 VALUES	('ART_DEF_UNIT_SPUE_GONDORGUARD',	'ART_DEF_UNIT_MEMBER_SPUE_GONDORGUARD_1',	1),
-		('ART_DEF_UNIT_SPUE_GONDORGUARD',	'ART_DEF_UNIT_MEMBER_SPUE_GONDORGUARD_2',	2),
-		('ART_DEF_UNIT_SPUE_GONDORGUARD',	'ART_DEF_UNIT_MEMBER_SPUE_GONDORGUARD_1',	3),
-		('ART_DEF_UNIT_SPUE_GONDORGUARD',	'ART_DEF_UNIT_MEMBER_SPUE_GONDORGUARD_2',	3),
-		('ART_DEF_UNIT_SPUE_GONDORGUARD',	'ART_DEF_UNIT_MEMBER_SPUE_GONDORGUARD_1',	2),
-		('ART_DEF_UNIT_SPUE_GONDORGUARD',	'ART_DEF_UNIT_MEMBER_SPUE_GONDORGUARD_2',	1);
+		('ART_DEF_UNIT_SPUE_GONDORGUARD',	'ART_DEF_UNIT_MEMBER_SPUE_GONDORGUARD_2',	2);
 
 INSERT INTO ArtDefine_UnitMemberCombats 
 		(UnitMemberType,								EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)
@@ -3523,10 +3514,7 @@ INSERT INTO ArtDefine_UnitInfoMemberInfos
 		(UnitInfoType,								UnitMemberInfoType,								 NumMembers)
 VALUES	('ART_DEF_UNIT_SPUE_FIRE_THROWER', 			'ART_DEF_UNIT_MEMBER_SPUE_FIRE_THROWER1',		 1),
 		('ART_DEF_UNIT_SPUE_FIRE_THROWER', 			'ART_DEF_UNIT_MEMBER_SPUE_FIRE_THROWER2',		 2),
-		('ART_DEF_UNIT_SPUE_FIRE_THROWER', 			'ART_DEF_UNIT_MEMBER_SPUE_FIRE_THROWER3',		 3),
-		('ART_DEF_UNIT_SPUE_FIRE_THROWER', 			'ART_DEF_UNIT_MEMBER_SPUE_FIRE_THROWER1',		 3),
-		('ART_DEF_UNIT_SPUE_FIRE_THROWER', 			'ART_DEF_UNIT_MEMBER_SPUE_FIRE_THROWER2',		 2),
-		('ART_DEF_UNIT_SPUE_FIRE_THROWER', 			'ART_DEF_UNIT_MEMBER_SPUE_FIRE_THROWER3',		 1);
+		('ART_DEF_UNIT_SPUE_FIRE_THROWER', 			'ART_DEF_UNIT_MEMBER_SPUE_FIRE_THROWER3',		 3);
 
 INSERT INTO ArtDefine_UnitMemberCombats 
 		(UnitMemberType,									EnableActions, DisableActions, MoveRadius, ShortMoveRadius, ChargeRadius, AttackRadius, RangedAttackRadius, MoveRate, ShortMoveRate, TurnRateMin, TurnRateMax, TurnFacingRateMin, TurnFacingRateMax, RollRateMin, RollRateMax, PitchRateMin, PitchRateMax, LOSRadiusScale, TargetRadius, TargetHeight, HasShortRangedAttack, HasLongRangedAttack, HasLeftRightAttack, HasStationaryMelee, HasStationaryRangedAttack, HasRefaceAfterCombat, ReformBeforeCombat, HasIndependentWeaponFacing, HasOpponentTracking, HasCollisionAttack, AttackAltitude, AltitudeDecelerationDistance, OnlyTurnInMovementActions, RushAttackFormation)

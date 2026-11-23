@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Created by ModBuddy on 2021/10/30 22:00:26 -->
 <GameData>
 	<Language_zh_CN>
@@ -1411,6 +1411,16 @@
 
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_SELECT_TITLE">
 			<Text>[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR] - 雇佣兵选择</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_MERCENARY_ROW_MEDIEVAL">
+			<Text>中古佣兵团（选 1）</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPUE_MERCENARY_ROW_ENLIGHTENMENT">
+			<Text>启蒙佣兵团（选 1）</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPUE_MERCENARY_HINT_CARDS">
+			<Text>点击卡片选中，需两组各选一个，然后点击「确定」</Text>
 		</Row>
 		
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_UNIT_LEFT">

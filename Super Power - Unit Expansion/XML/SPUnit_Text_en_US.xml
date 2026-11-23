@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Created by ModBuddy on 2021/10/30 22:00:26 -->
 <GameData>
 	<Language_en_US>
@@ -1411,6 +1411,16 @@
 
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_SELECT_TITLE">
 			<Text>[ICON_CULTURE][COLOR_MAGENTA]商业政策[ENDCOLOR] - 雇佣兵选择</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_MERCENARY_ROW_MEDIEVAL">
+			<Text>Medieval Mercenaries (choose 1)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPUE_MERCENARY_ROW_ENLIGHTENMENT">
+			<Text>Enlightenment Mercenaries (choose 1)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPUE_MERCENARY_HINT_CARDS">
+			<Text>Click a card to select, choose one from each group, then press OK</Text>
 		</Row>
 		
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_UNIT_LEFT">

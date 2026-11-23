@@ -1787,27 +1787,27 @@ VALUES	('UNIT_SPUE_GENERAL_BODYGUARD', 	'PROMOTION_KNIGHT_COMBAT'),
 INSERT INTO Unit_BuildingClassRequireds 	
 		(UnitType, 				 	 	BuildingClassType)
 SELECT	'UNIT_SPUE_GENERAL_BODYGUARD',	BuildingClassType
-FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_SPUE_HORSEMAN';
+FROM Unit_BuildingClassRequireds WHERE UnitType = 'UNIT_HORSEMAN';
 
 INSERT INTO UnitGameplay2DScripts 	
 		(UnitType, 				    	SelectionSound, FirstSelectionSound)
 SELECT	'UNIT_SPUE_GENERAL_BODYGUARD', 	SelectionSound, FirstSelectionSound
-FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_SPUE_HORSEMAN';
+FROM UnitGameplay2DScripts WHERE UnitType = 'UNIT_HORSEMAN';
 
 INSERT INTO Unit_AITypes 	
 		(UnitType, 				 	  	UnitAIType)
 SELECT	'UNIT_SPUE_GENERAL_BODYGUARD',  UnitAIType
-FROM Unit_AITypes WHERE UnitType = 'UNIT_SPUE_HORSEMAN';
+FROM Unit_AITypes WHERE UnitType = 'UNIT_HORSEMAN';
 
 INSERT INTO Unit_Flavors 	
 		(UnitType, 						FlavorType, Flavor)
 SELECT	'UNIT_SPUE_GENERAL_BODYGUARD',  FlavorType, Flavor
-FROM Unit_Flavors WHERE UnitType = 'UNIT_SPUE_HORSEMAN';	
+FROM Unit_Flavors WHERE UnitType = 'UNIT_HORSEMAN';	
 
 INSERT INTO Unit_ResourceQuantityRequirements 	
 		(UnitType, 				 	 	ResourceType, Cost)
 SELECT	'UNIT_SPUE_GENERAL_BODYGUARD',	ResourceType, Cost
-FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_SPUE_HORSEMAN';
+FROM Unit_ResourceQuantityRequirements WHERE UnitType = 'UNIT_HORSEMAN';
 --==========================================================================================================================	
 -- 辅助克里特弓箭手 -- 赞助古典辅助单位
 --==========================================================================================================================
