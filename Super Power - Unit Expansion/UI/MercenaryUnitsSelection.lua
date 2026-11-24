@@ -87,8 +87,8 @@ local function ShowBig(side, entry)
 	local nm  = Ctl(side == "L" and "NameL" or "NameR")
 	if big then
 		big:SetHide(false)
-		-- 环盘 80，图标 64：尺寸必须用图集已注册值
-		IconHookup(entry.unit.PortraitIndex, 64, entry.unit.IconAtlas, big)
+		-- NotificationFrameBase 是实心盘（可见 66px），图标必须 80 盖满，否则露出盘底
+		IconHookup(entry.unit.PortraitIndex, 80, entry.unit.IconAtlas, big)
 	end
 	if nm then nm:SetText(PlainText(entry.unit.Description)) end
 	if side == "L" then
