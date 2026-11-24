@@ -16,6 +16,13 @@ VALUES		('SPUE_UNITS_ATLAS', 				256, 		'SPUE_IconAtlas256.dds',				8, 				8),
 			('SPUE02_UNITS_ATLAS', 				064, 		'SPUE02_IconAtlas064.dds',				8, 				8),
 			('SPUE02_UNITS_ATLAS', 				045, 		'SPUE02_IconAtlas045.dds',				8, 				8),
 			('SPUE02_UNITS_ATLAS', 				032, 		'SPUE02_IconAtlas032.dds',				8, 				8),
+			-- 扩充单位图标图集（8x8 大底板，共 64 格；第 0 格 = 野战炮，其余留空待扩展）
+			('SPUE_UNITS3_ATLAS', 				256, 		'SPUE03_IconAtlas256.dds',				8, 				8),
+			('SPUE_UNITS3_ATLAS', 				128, 		'SPUE03_IconAtlas128.dds',				8, 				8),
+			('SPUE_UNITS3_ATLAS', 				080, 		'SPUE03_IconAtlas080.dds',				8, 				8),
+			('SPUE_UNITS3_ATLAS', 				064, 		'SPUE03_IconAtlas064.dds',				8, 				8),
+			('SPUE_UNITS3_ATLAS', 				045, 		'SPUE03_IconAtlas045.dds',				8, 				8),
+			('SPUE_UNITS3_ATLAS', 				032, 		'SPUE03_IconAtlas032.dds',				8, 				8),
 			-- 意识形态单位图标
 			('SPUE_IDEO_ATLAS', 				256, 		'SPUE_Ideology_IconAtlas256.dds',		4, 				4),
 			('SPUE_IDEO_ATLAS', 				128, 		'SPUE_Ideology_IconAtlas128.dds',		4, 				4),
