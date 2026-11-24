@@ -43,6 +43,18 @@ end
 local function U(name) return GameInfo.Units[name] end
 local function Ctl(id) return Controls[id] end
 
+-- 行内数值行：必须定义在使用它的 ShowBig 之前（Lua 局部函数无前向引用）
+local function StatLine(unit)
+	local melee  = unit.Combat or 0
+	local ranged = unit.RangedCombat or 0
+	local moves  = unit.Moves or 0
+	local cost   = unit.Cost or 0
+	if ranged > 0 then
+		return Locale.ConvertTextKey("TXT_KEY_SPUE_MERC_STATS_RANGED", melee, ranged, moves, cost)
+	end
+	return Locale.ConvertTextKey("TXT_KEY_SPUE_MERC_STATS_MELEE", melee, moves, cost)
+end
+
 -- 文本键里自带 [COLOR_xxx]…[ENDCOLOR]（如单位名带青色），会盖掉 Label 的 Color0，
 -- 这里去掉颜色标记，保留 ICON_ 之类的其它标记，让控件自身颜色生效。
 local function PlainText(key)
@@ -118,18 +130,6 @@ local function ShowHi(side, row)
 	if hi   then hi:SetHide(false)   end
 	if sel  then sel:SetHide(false)  end
 	if mark then mark:SetHide(false) end
-end
-
--- 行内数值行：近战/远程/移动/造价（文本键带参数，避免语言硬编码）
-local function StatLine(unit)
-	local melee  = unit.Combat or 0
-	local ranged = unit.RangedCombat or 0
-	local moves  = unit.Moves or 0
-	local cost   = unit.Cost or 0
-	if ranged > 0 then
-		return Locale.ConvertTextKey("TXT_KEY_SPUE_MERC_STATS_RANGED", melee, ranged, moves, cost)
-	end
-	return Locale.ConvertTextKey("TXT_KEY_SPUE_MERC_STATS_MELEE", melee, moves, cost)
 end
 
 local function UpdateProgress()
