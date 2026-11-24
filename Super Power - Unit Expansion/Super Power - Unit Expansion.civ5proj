@@ -5465,30 +5465,39 @@
     </Content>
     <Content Include="UI\Art\UI_MercVarangian.dds">
       <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI\Art\UI_MercGenoese.dds">
       <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI\Art\UI_MercSwiss.dds">
       <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI\Art\UI_MercCavalry.dds">
       <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI\Art\UI_MercWarWagon.dds">
       <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI\Art\UI_MercHessian.dds">
       <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI\Art\UI_MercJunk.dds">
       <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI\Art\UI_MercPrivateer.dds">
       <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI\Art\UI_MercWako.dds">
       <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="UI\Art\UI_KnightsTeutonic.dds">
       <SubType>Lua</SubType>

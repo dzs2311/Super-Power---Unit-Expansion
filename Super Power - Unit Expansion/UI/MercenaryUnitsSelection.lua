@@ -43,6 +43,18 @@ end
 local function U(name) return GameInfo.Units[name] end
 local function Ctl(id) return Controls[id] end
 
+-- 文本键里自带 [COLOR_xxx]…[ENDCOLOR]（如单位名带青色），会盖掉 Label 的 Color0，
+-- 这里去掉颜色标记，保留 ICON_ 之类的其它标记，让控件自身颜色生效。
+local function PlainText(key)
+	if not key then return "" end
+	local s = Locale.ConvertTextKey(key)
+	if not s then return "" end
+	-- 注意 %w 不含下划线，[COLOR_POSITIVE_TEXT] 这类必须用 [%w_]
+	s = s:gsub("%[COLOR_[%w_]+%]", "")
+	s = s:gsub("%[ENDCOLOR%]", "")
+	return s
+end
+
 --==========================================================================================
 -- 是否已选过
 --==========================================================================================
@@ -73,8 +85,12 @@ local function ShowBig(side, entry)
 	if not entry then return end
 	local big = Ctl(side == "L" and "BigIconL" or "BigIconR")
 	local nm  = Ctl(side == "L" and "NameL" or "NameR")
-	if big then IconHookup(entry.unit.PortraitIndex, 80, entry.unit.IconAtlas, big) end
-	if nm then nm:LocalizeAndSetText(entry.unit.Description) end
+	if big then
+		big:SetHide(false)
+		-- 环盘 80，图标 64：尺寸必须用图集已注册值
+		IconHookup(entry.unit.PortraitIndex, 64, entry.unit.IconAtlas, big)
+	end
+	if nm then nm:SetText(PlainText(entry.unit.Description)) end
 	if side == "L" then
 		unitL = entry.unit
 	else
@@ -133,7 +149,7 @@ local function BuildSide(side, data)
 				local ic = Ctl("Row" .. side .. i .. "Icon")
 				if ic then IconHookup(row.unit.PortraitIndex, 45, row.unit.IconAtlas, ic) end
 				local nm = Ctl("Row" .. side .. i .. "Name")
-				if nm then nm:LocalizeAndSetText(row.unit.Description) end
+				if nm then nm:SetText(PlainText(row.unit.Description)) end
 
 				if row.unit.Help then btn:SetToolTipString(Locale.ConvertTextKey(row.unit.Help)) end
 			else
@@ -154,6 +170,8 @@ local function BuildSide(side, data)
 		HideAllBg(side)
 		local nm = Ctl(side == "L" and "NameL" or "NameR")
 		if nm then nm:SetText("") end
+		local big = Ctl(side == "L" and "BigIconL" or "BigIconR")
+		if big then big:SetHide(true) end
 	end
 end
 
@@ -252,14 +270,18 @@ end
 -- 按钮回调
 --==========================================================================================
 function onApplyButton()
-	if unitL and unitR and unitL.ID ~= unitR.ID then
-		activePlayer:SetHasPolicy(GameInfoTypes[unitL.PolicyType], true, true)
-		activePlayer:SetHasPolicy(GameInfoTypes[unitR.PolicyType], true, true)
-		hideDialog()
-	end
+	-- 允许只剩一列可选时直接确定（避免某列已被自动授予清空后无法关闭）
+	if not unitL and not unitR then return end
+	if unitL and unitR and unitL.ID == unitR.ID then return end
+	if unitL then activePlayer:SetHasPolicy(GameInfoTypes[unitL.PolicyType], true, true) end
+	if unitR then activePlayer:SetHasPolicy(GameInfoTypes[unitR.PolicyType], true, true) end
+	hideDialog()
 end
 
 function showDialog()
+	-- 热座/多人下当前玩家可能已切换，开窗前刷新
+	activePlayerID = Game.GetActivePlayer()
+	activePlayer   = Players[activePlayerID]
 	if IsHasChoose(activePlayer) then return end
 	ContextPtr:SetHide(false)
 	initializeDialog()

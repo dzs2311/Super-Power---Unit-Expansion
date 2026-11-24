@@ -27,8 +27,11 @@
 			       Color0="Beige.255" Color1="Black.255" String="TXT_KEY_SPUE_MERCENARY_ROW_MEDIEVAL"/>
 
 			<Image Anchor="C,T" Offset="0,18" Size="80,80" Texture="NotificationFrameBase.dds">
-				<Image ID="BigIconL" Anchor="C,C" Offset="0,0" Size="80,80"/>
+				<Image ID="BigIconL" Anchor="C,C" Offset="0,0" Size="64,64"/>
 			</Image>
+
+			<!-- 名单区半透明底带：承托文字，避免亮美术处发花 -->
+			<Box Anchor="C,T" Offset="0,128" Size="300,264" Color="6,10,14,105"/>
 
 			<Box Anchor="C,T" Offset="0,100" Size="300,26" Color="6,10,14,170"/>
 			<Label ID="NameL" Anchor="C,T" Offset="0,102" WrapWidth="284" Font="TwCenMT18" FontStyle="Shadow"
@@ -93,8 +96,11 @@
 			       Color0="Beige.255" Color1="Black.255" String="TXT_KEY_SPUE_MERCENARY_ROW_ENLIGHTENMENT"/>
 
 			<Image Anchor="C,T" Offset="0,18" Size="80,80" Texture="NotificationFrameBase.dds">
-				<Image ID="BigIconR" Anchor="C,C" Offset="0,0" Size="80,80"/>
+				<Image ID="BigIconR" Anchor="C,C" Offset="0,0" Size="64,64"/>
 			</Image>
+
+			<!-- 名单区半透明底带：承托文字，避免亮美术处发花 -->
+			<Box Anchor="C,T" Offset="0,128" Size="300,264" Color="6,10,14,105"/>
 
 			<Box Anchor="C,T" Offset="0,100" Size="300,26" Color="6,10,14,170"/>
 			<Label ID="NameR" Anchor="C,T" Offset="0,102" WrapWidth="284" Font="TwCenMT18" FontStyle="Shadow"
