@@ -85,12 +85,14 @@ local function ShowBig(side, entry)
 	if not entry then return end
 	local big = Ctl(side == "L" and "BigIconL" or "BigIconR")
 	local nm  = Ctl(side == "L" and "NameL" or "NameR")
+	local st  = Ctl(side == "L" and "StatL" or "StatR")
 	if big then
 		big:SetHide(false)
-		-- NotificationFrameBase 是实心盘（可见 66px），图标必须 80 盖满，否则露出盘底
-		IconHookup(entry.unit.PortraitIndex, 80, entry.unit.IconAtlas, big)
+		-- 环盘 64，图标 64（图集已注册尺寸）
+		IconHookup(entry.unit.PortraitIndex, 64, entry.unit.IconAtlas, big)
 	end
 	if nm then nm:SetText(PlainText(entry.unit.Description)) end
+	if st then st:SetText(StatLine(entry.unit)) end
 	if side == "L" then
 		unitL = entry.unit
 	else
@@ -100,18 +102,42 @@ end
 
 local function HideAllHi(side)
 	for i = 1, MAX_ROWS do
-		local hi  = Ctl("Row" .. side .. i .. "Hi")
-		local bar = Ctl("Row" .. side .. i .. "Bar")
-		if hi  then hi:SetHide(true)  end
-		if bar then bar:SetHide(true) end
+		local hi   = Ctl("Row" .. side .. i .. "Hi")
+		local sel  = Ctl("Row" .. side .. i .. "Sel")
+		local mark = Ctl("Row" .. side .. i .. "Mark")
+		if hi   then hi:SetHide(true)   end
+		if sel  then sel:SetHide(true)  end
+		if mark then mark:SetHide(true) end
 	end
 end
 
 local function ShowHi(side, row)
-	local hi  = Ctl("Row" .. side .. row .. "Hi")
-	local bar = Ctl("Row" .. side .. row .. "Bar")
-	if hi  then hi:SetHide(false)  end
-	if bar then bar:SetHide(false) end
+	local hi   = Ctl("Row" .. side .. row .. "Hi")
+	local sel  = Ctl("Row" .. side .. row .. "Sel")
+	local mark = Ctl("Row" .. side .. row .. "Mark")
+	if hi   then hi:SetHide(false)   end
+	if sel  then sel:SetHide(false)  end
+	if mark then mark:SetHide(false) end
+end
+
+-- 行内数值行：近战/远程/移动/造价（文本键带参数，避免语言硬编码）
+local function StatLine(unit)
+	local melee  = unit.Combat or 0
+	local ranged = unit.RangedCombat or 0
+	local moves  = unit.Moves or 0
+	local cost   = unit.Cost or 0
+	if ranged > 0 then
+		return Locale.ConvertTextKey("TXT_KEY_SPUE_MERC_STATS_RANGED", melee, ranged, moves, cost)
+	end
+	return Locale.ConvertTextKey("TXT_KEY_SPUE_MERC_STATS_MELEE", melee, moves, cost)
+end
+
+local function UpdateProgress()
+	local n = 0
+	if unitL then n = n + 1 end
+	if unitR then n = n + 1 end
+	local lbl = Ctl("ProgressLabel")
+	if lbl then lbl:SetText(Locale.ConvertTextKey("TXT_KEY_SPUE_MERC_PROGRESS", n)) end
 end
 local function ApplySelection(side, row)
 	local rows = (side == "L") and rowsL or rowsR
@@ -128,6 +154,7 @@ local function ApplySelection(side, row)
 	ShowHi(side, row)
 
 	if side == "L" then selL = row else selR = row end
+	UpdateProgress()
 end
 
 -- 把可用单位填进名单行，多余的隐藏
@@ -150,6 +177,8 @@ local function BuildSide(side, data)
 				if ic then IconHookup(row.unit.PortraitIndex, 45, row.unit.IconAtlas, ic) end
 				local nm = Ctl("Row" .. side .. i .. "Name")
 				if nm then nm:SetText(PlainText(row.unit.Description)) end
+				local st = Ctl("Row" .. side .. i .. "Stat")
+				if st then st:SetText(StatLine(row.unit)) end
 
 				if row.unit.Help then btn:SetToolTipString(Locale.ConvertTextKey(row.unit.Help)) end
 			else
@@ -161,6 +190,10 @@ local function BuildSide(side, data)
 	if side == "L" then rowsL = rows; selL = nil; unitL = nil
 	else rowsR = rows; selR = nil; unitR = nil end
 
+	-- 组头右侧「N 选 1」
+	local cnt = Ctl("Count" .. side)
+	if cnt then cnt:SetText(Locale.ConvertTextKey("TXT_KEY_SPUE_MERC_PICK_ONE", #rows)) end
+
 	HideAllHi(side)
 
 	-- 默认选中第一行
@@ -170,9 +203,12 @@ local function BuildSide(side, data)
 		HideAllBg(side)
 		local nm = Ctl(side == "L" and "NameL" or "NameR")
 		if nm then nm:SetText("") end
+		local st = Ctl(side == "L" and "StatL" or "StatR")
+		if st then st:SetText("") end
 		local big = Ctl(side == "L" and "BigIconL" or "BigIconR")
 		if big then big:SetHide(true) end
 	end
+	UpdateProgress()
 end
 
 --==========================================================================================

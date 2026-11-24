@@ -1,160 +1,210 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
-  MercenaryUnitsSelection.xml  ·  商业政策佣兵选择（v7）
+  MercenaryUnitsSelection.xml  ·  商业政策佣兵选择（v8 · 方案 A 精修列表）
   ===============================================================
-  本版：
-    · 面板 645x486（两列整体下移 10px，避开顶边 y≈41 的金线；底部留 48px 放提示）
-    · 两列各 300x392 @ (20,46) / (325,46)，四周留 20px
-    · 每列：组名 → 大圆环 80(居中, C 锚点 Offset 0) → 当前选中名(18号) → 滚动列表
-    · 列表用 ScrollPanel + Stack，行高 50、字号 18、右侧滚动条（5 行刚好放满，超出才滚）
-    · 确定在面板外下方
-  图标尺寸（IconHookup 必须用图集注册值）：大圆环 80、行图标 45
+  · 面板 660x520 @ C,C（Grid9DetailFive140，ConsumeMouse）
+  · 顶部 header 0..48：标题左对齐 20 号 + 右侧「已选 x / 2」+ 金线
+  · 两列 300x392 @ (26,56) / (334,56)；中缝 VerticalTrim 8x392 @ (326,56)
+  · 列内：组头 0..26（金线 26）→ 大圆环 64 @ 26 → 名称 16 号 @ 92 → 数值 12 号 @ 113
+          → 列表 ScrollPanel 284x260 @ (8,132)
+  · 行 284x52：底带 + 选中金底/左 3px 金条/右侧圆标 + 图标 40 + 名称 16 + 数值 12
+  · 底部 56..：金线 452 + 提示 12 号 @ 464 + 确定 132x30 @ R 26,458
+  · 图标尺寸必须用图集已注册值：大圆环 64、行图标 40（32/45/64/80 均已注册，40 由 45 缩显）
 -->
 <Context ColorSet="Beige_Black_Alpha" Font="TwCenMT16" FontStyle="Shadow">
 	<Box Style="BGBlock_ClearTopBar"/>
 
-	<Grid ID="MainGrid" Size="645,486" Anchor="C,C" Style="Grid9DetailFive140" ConsumeMouse="1">
+	<Grid ID="MainGrid" Size="660,520" Anchor="C,C" Style="Grid9DetailFive140" ConsumeMouse="1">
 
 		<!-- ================= 左列 ================= -->
-		<Box Size="300,392" Anchor="L,T" Offset="20,46" Color="0,0,0,0">
-			<Image ID="BgL1" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercVarangian.dds" Hidden="1"/>
-			<Image ID="BgL2" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercGenoese.dds"   Hidden="1"/>
-			<Image ID="BgL3" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercSwiss.dds"      Hidden="1"/>
-			<Image ID="BgL4" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercCavalry.dds"    Hidden="1"/>
-			<Image ID="BgL5" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercWarWagon.dds"   Hidden="1"/>
+		<Box Size="300,392" Anchor="L,T" Offset="26,56" Color="0,0,0,0">
+			<Image ID="BgL1" Anchor="L,T" Offset="0,0" Size="300,392" Texture="UI_MercVarangian.dds" Hidden="1"/>
+			<Image ID="BgL2" Anchor="L,T" Offset="0,0" Size="300,392" Texture="UI_MercGenoese.dds"   Hidden="1"/>
+			<Image ID="BgL3" Anchor="L,T" Offset="0,0" Size="300,392" Texture="UI_MercSwiss.dds"      Hidden="1"/>
+			<Image ID="BgL4" Anchor="L,T" Offset="0,0" Size="300,392" Texture="UI_MercCavalry.dds"    Hidden="1"/>
+			<Image ID="BgL5" Anchor="L,T" Offset="0,0" Size="300,392" Texture="UI_MercWarWagon.dds"   Hidden="1"/>
 
-			<Label Anchor="C,T" Offset="0,4" Font="TwCenMT18" FontStyle="Shadow"
-			       Color0="Beige.255" Color1="Black.255" String="TXT_KEY_SPUE_MERCENARY_ROW_MEDIEVAL"/>
+			<!-- 组头 -->
+			<Box   Anchor="L,T" Offset="0,0"  Size="300,26" Color="6,10,14,165"/>
+			<Label Anchor="L,T" Offset="12,2" Font="TwCenMT14" FontStyle="Shadow"
+			       Color0="255,215,120,255" Color1="0,0,0,180" String="TXT_KEY_SPUE_MERCENARY_ROW_MEDIEVAL"/>
+			<Label ID="CountL" Anchor="R,T" Offset="-12,4" Font="TwCenMT12" FontStyle="Shadow"
+			       Color0="168,160,142,255" Color1="0,0,0,150" String=""/>
+			<Box   Anchor="L,T" Offset="12,26" Size="276,1" Color="214,178,90,90"/>
 
-			<Image Anchor="C,T" Offset="0,18" Size="80,80" Texture="NotificationFrameBase.dds">
-				<Image ID="BigIconL" Anchor="C,C" Offset="0,0" Size="80,80"/>
+			<!-- 大圆环 + 名称 + 数值 -->
+			<Image Anchor="C,T" Offset="0,26" Size="64,64" Texture="NotificationFrameBase.dds">
+				<Image ID="BigIconL" Anchor="C,C" Offset="0,0" Size="64,64"/>
 			</Image>
+			<Box   Anchor="L,T" Offset="0,88"  Size="300,44" Color="6,10,14,150"/>
+			<Label ID="NameL" Anchor="C,T" Offset="0,92"  WrapWidth="284" Font="TwCenMT16" FontStyle="Shadow"
+			       Color0="240,230,207,255" Color1="0,0,0,180" String=""/>
+			<Label ID="StatL" Anchor="C,T" Offset="0,113" WrapWidth="284" Font="TwCenMT12" FontStyle="Shadow"
+			       Color0="168,160,142,255" Color1="0,0,0,150" String=""/>
 
-			<!-- 名单区半透明底带：承托文字，避免亮美术处发花 -->
-			<Box Anchor="C,T" Offset="0,128" Size="300,264" Color="6,10,14,105"/>
-
-			<Box Anchor="C,T" Offset="0,100" Size="300,26" Color="6,10,14,170"/>
-			<Label ID="NameL" Anchor="C,T" Offset="0,102" WrapWidth="284" Font="TwCenMT18" FontStyle="Shadow"
-			       Color0="Beige.255" Color1="Black.255" String=""/>
-
-			<!-- 滚动列表 -->
-			<ScrollPanel ID="ListL" Anchor="C,T" Offset="4,130" Size="288,256" Vertical="1">
-				<ScrollBar  Anchor="R,C" AnchorSide="I,I" Offset="-2,0"  Style="VertSlider"   Length="240"/>
+			<!-- 列表 -->
+			<ScrollPanel ID="ListL" Anchor="L,T" Offset="8,132" Size="284,260" Vertical="1">
+				<ScrollBar  Anchor="R,C" AnchorSide="I,I" Offset="-2,0"  Style="VertSlider"   Length="244"/>
 				<UpButton   Anchor="R,T" AnchorSide="I,I" Offset="-2,-2" Style="ScrollBarUp"/>
 				<DownButton Anchor="R,B" AnchorSide="I,I" Offset="-2,-2" Style="ScrollBarDown"/>
-				<Stack ID="StackL" Anchor="L,T" Offset="0,0" StackGrowth="Bottom" Padding="0" Size="280,250">
-					<Button ID="RowL1" Anchor="L,T" Size="280,50">
-						<Box ID="RowL1Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
-						<Box ID="RowL1Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
-						<Image ID="RowL1Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
-						<Label ID="RowL1Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
-						       Color0="Beige.255" Color1="Black.128"/>
+				<Stack ID="StackL" Anchor="L,T" Offset="0,0" StackGrowth="Bottom" Padding="0" Size="284,260">
+					<Button ID="RowL1" Anchor="L,T" Size="284,52">
+						<Box ID="RowL1Bg"   Anchor="L,T" Offset="0,0" Size="284,52" Color="6,10,14,120"/>
+						<Box ID="RowL1Hi"   Anchor="L,T" Offset="0,0" Size="284,52" Color="214,178,90,68"  Hidden="1"/>
+						<Box ID="RowL1Sel"  Anchor="L,T" Offset="0,0" Size="3,52"   Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowL1Icon" Anchor="L,C" Offset="10,0" Size="45,45"/>
+						<Label ID="RowL1Name" Anchor="L,T" Offset="62,3" WrapWidth="176" Font="TwCenMT16" FontStyle="Shadow"
+						       Color0="240,230,207,255" Color1="0,0,0,150"/>
+						<Label ID="RowL1Stat" Anchor="L,T" Offset="62,26" WrapWidth="176" Font="TwCenMT12" FontStyle="Shadow"
+						       Color0="168,160,142,255" Color1="0,0,0,150"/>
+						<Image ID="RowL1Mark" Anchor="R,C" Offset="-12,0" Size="16,16" Texture="NotificationFrameBase.dds" Hidden="1"/>
 					</Button>
-					<Button ID="RowL2" Anchor="L,T" Size="280,50">
-						<Box ID="RowL2Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
-						<Box ID="RowL2Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
-						<Image ID="RowL2Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
-						<Label ID="RowL2Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
-						       Color0="Beige.255" Color1="Black.128"/>
+					<Button ID="RowL2" Anchor="L,T" Size="284,52">
+						<Box ID="RowL2Bg"   Anchor="L,T" Offset="0,0" Size="284,52" Color="6,10,14,120"/>
+						<Box ID="RowL2Hi"   Anchor="L,T" Offset="0,0" Size="284,52" Color="214,178,90,68"  Hidden="1"/>
+						<Box ID="RowL2Sel"  Anchor="L,T" Offset="0,0" Size="3,52"   Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowL2Icon" Anchor="L,C" Offset="10,0" Size="45,45"/>
+						<Label ID="RowL2Name" Anchor="L,T" Offset="62,3" WrapWidth="176" Font="TwCenMT16" FontStyle="Shadow"
+						       Color0="240,230,207,255" Color1="0,0,0,150"/>
+						<Label ID="RowL2Stat" Anchor="L,T" Offset="62,26" WrapWidth="176" Font="TwCenMT12" FontStyle="Shadow"
+						       Color0="168,160,142,255" Color1="0,0,0,150"/>
+						<Image ID="RowL2Mark" Anchor="R,C" Offset="-12,0" Size="16,16" Texture="NotificationFrameBase.dds" Hidden="1"/>
 					</Button>
-					<Button ID="RowL3" Anchor="L,T" Size="280,50">
-						<Box ID="RowL3Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
-						<Box ID="RowL3Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
-						<Image ID="RowL3Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
-						<Label ID="RowL3Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
-						       Color0="Beige.255" Color1="Black.128"/>
+					<Button ID="RowL3" Anchor="L,T" Size="284,52">
+						<Box ID="RowL3Bg"   Anchor="L,T" Offset="0,0" Size="284,52" Color="6,10,14,120"/>
+						<Box ID="RowL3Hi"   Anchor="L,T" Offset="0,0" Size="284,52" Color="214,178,90,68"  Hidden="1"/>
+						<Box ID="RowL3Sel"  Anchor="L,T" Offset="0,0" Size="3,52"   Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowL3Icon" Anchor="L,C" Offset="10,0" Size="45,45"/>
+						<Label ID="RowL3Name" Anchor="L,T" Offset="62,3" WrapWidth="176" Font="TwCenMT16" FontStyle="Shadow"
+						       Color0="240,230,207,255" Color1="0,0,0,150"/>
+						<Label ID="RowL3Stat" Anchor="L,T" Offset="62,26" WrapWidth="176" Font="TwCenMT12" FontStyle="Shadow"
+						       Color0="168,160,142,255" Color1="0,0,0,150"/>
+						<Image ID="RowL3Mark" Anchor="R,C" Offset="-12,0" Size="16,16" Texture="NotificationFrameBase.dds" Hidden="1"/>
 					</Button>
-					<Button ID="RowL4" Anchor="L,T" Size="280,50">
-						<Box ID="RowL4Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
-						<Box ID="RowL4Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
-						<Image ID="RowL4Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
-						<Label ID="RowL4Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
-						       Color0="Beige.255" Color1="Black.128"/>
+					<Button ID="RowL4" Anchor="L,T" Size="284,52">
+						<Box ID="RowL4Bg"   Anchor="L,T" Offset="0,0" Size="284,52" Color="6,10,14,120"/>
+						<Box ID="RowL4Hi"   Anchor="L,T" Offset="0,0" Size="284,52" Color="214,178,90,68"  Hidden="1"/>
+						<Box ID="RowL4Sel"  Anchor="L,T" Offset="0,0" Size="3,52"   Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowL4Icon" Anchor="L,C" Offset="10,0" Size="45,45"/>
+						<Label ID="RowL4Name" Anchor="L,T" Offset="62,3" WrapWidth="176" Font="TwCenMT16" FontStyle="Shadow"
+						       Color0="240,230,207,255" Color1="0,0,0,150"/>
+						<Label ID="RowL4Stat" Anchor="L,T" Offset="62,26" WrapWidth="176" Font="TwCenMT12" FontStyle="Shadow"
+						       Color0="168,160,142,255" Color1="0,0,0,150"/>
+						<Image ID="RowL4Mark" Anchor="R,C" Offset="-12,0" Size="16,16" Texture="NotificationFrameBase.dds" Hidden="1"/>
 					</Button>
-					<Button ID="RowL5" Anchor="L,T" Size="280,50">
-						<Box ID="RowL5Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
-						<Box ID="RowL5Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
-						<Image ID="RowL5Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
-						<Label ID="RowL5Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
-						       Color0="Beige.255" Color1="Black.128"/>
+					<Button ID="RowL5" Anchor="L,T" Size="284,52">
+						<Box ID="RowL5Bg"   Anchor="L,T" Offset="0,0" Size="284,52" Color="6,10,14,120"/>
+						<Box ID="RowL5Hi"   Anchor="L,T" Offset="0,0" Size="284,52" Color="214,178,90,68"  Hidden="1"/>
+						<Box ID="RowL5Sel"  Anchor="L,T" Offset="0,0" Size="3,52"   Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowL5Icon" Anchor="L,C" Offset="10,0" Size="45,45"/>
+						<Label ID="RowL5Name" Anchor="L,T" Offset="62,3" WrapWidth="176" Font="TwCenMT16" FontStyle="Shadow"
+						       Color0="240,230,207,255" Color1="0,0,0,150"/>
+						<Label ID="RowL5Stat" Anchor="L,T" Offset="62,26" WrapWidth="176" Font="TwCenMT12" FontStyle="Shadow"
+						       Color0="168,160,142,255" Color1="0,0,0,150"/>
+						<Image ID="RowL5Mark" Anchor="R,C" Offset="-12,0" Size="16,16" Texture="NotificationFrameBase.dds" Hidden="1"/>
 					</Button>
 				</Stack>
 			</ScrollPanel>
 		</Box>
 
 		<!-- 接缝 -->
-		<Image Anchor="L,T" Offset="320,46" Size="5,392" Texture="VerticalTrim.dds"/>
+		<Image Anchor="L,T" Offset="326,56" Size="8,392" Texture="VerticalTrim.dds"/>
 
 		<!-- ================= 右列 ================= -->
-		<Box Size="300,392" Anchor="L,T" Offset="325,46" Color="0,0,0,0">
-			<Image ID="BgR1" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercHessian.dds"   Hidden="1"/>
-			<Image ID="BgR2" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercJunk.dds"      Hidden="1"/>
-			<Image ID="BgR3" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercPrivateer.dds" Hidden="1"/>
-			<Image ID="BgR4" Anchor="C,T" Offset="0,0" Size="300,392" Texture="UI_MercWako.dds"      Hidden="1"/>
+		<Box Size="300,392" Anchor="L,T" Offset="334,56" Color="0,0,0,0">
+			<Image ID="BgR1" Anchor="L,T" Offset="0,0" Size="300,392" Texture="UI_MercHessian.dds"   Hidden="1"/>
+			<Image ID="BgR2" Anchor="L,T" Offset="0,0" Size="300,392" Texture="UI_MercJunk.dds"      Hidden="1"/>
+			<Image ID="BgR3" Anchor="L,T" Offset="0,0" Size="300,392" Texture="UI_MercPrivateer.dds" Hidden="1"/>
+			<Image ID="BgR4" Anchor="L,T" Offset="0,0" Size="300,392" Texture="UI_MercWako.dds"      Hidden="1"/>
 
-			<Label Anchor="C,T" Offset="0,4" Font="TwCenMT18" FontStyle="Shadow"
-			       Color0="Beige.255" Color1="Black.255" String="TXT_KEY_SPUE_MERCENARY_ROW_ENLIGHTENMENT"/>
+			<Box   Anchor="L,T" Offset="0,0"  Size="300,26" Color="6,10,14,165"/>
+			<Label Anchor="L,T" Offset="12,2" Font="TwCenMT14" FontStyle="Shadow"
+			       Color0="255,215,120,255" Color1="0,0,0,180" String="TXT_KEY_SPUE_MERCENARY_ROW_ENLIGHTENMENT"/>
+			<Label ID="CountR" Anchor="R,T" Offset="-12,4" Font="TwCenMT12" FontStyle="Shadow"
+			       Color0="168,160,142,255" Color1="0,0,0,150" String=""/>
+			<Box   Anchor="L,T" Offset="12,26" Size="276,1" Color="214,178,90,90"/>
 
-			<Image Anchor="C,T" Offset="0,18" Size="80,80" Texture="NotificationFrameBase.dds">
-				<Image ID="BigIconR" Anchor="C,C" Offset="0,0" Size="80,80"/>
+			<Image Anchor="C,T" Offset="0,26" Size="64,64" Texture="NotificationFrameBase.dds">
+				<Image ID="BigIconR" Anchor="C,C" Offset="0,0" Size="64,64"/>
 			</Image>
+			<Box   Anchor="L,T" Offset="0,88"  Size="300,44" Color="6,10,14,150"/>
+			<Label ID="NameR" Anchor="C,T" Offset="0,92"  WrapWidth="284" Font="TwCenMT16" FontStyle="Shadow"
+			       Color0="240,230,207,255" Color1="0,0,0,180" String=""/>
+			<Label ID="StatR" Anchor="C,T" Offset="0,113" WrapWidth="284" Font="TwCenMT12" FontStyle="Shadow"
+			       Color0="168,160,142,255" Color1="0,0,0,150" String=""/>
 
-			<!-- 名单区半透明底带：承托文字，避免亮美术处发花 -->
-			<Box Anchor="C,T" Offset="0,128" Size="300,264" Color="6,10,14,105"/>
-
-			<Box Anchor="C,T" Offset="0,100" Size="300,26" Color="6,10,14,170"/>
-			<Label ID="NameR" Anchor="C,T" Offset="0,102" WrapWidth="284" Font="TwCenMT18" FontStyle="Shadow"
-			       Color0="Beige.255" Color1="Black.255" String=""/>
-
-			<ScrollPanel ID="ListR" Anchor="C,T" Offset="4,130" Size="288,256" Vertical="1">
-				<ScrollBar  Anchor="R,C" AnchorSide="I,I" Offset="-2,0"  Style="VertSlider"   Length="240"/>
+			<ScrollPanel ID="ListR" Anchor="L,T" Offset="8,132" Size="284,260" Vertical="1">
+				<ScrollBar  Anchor="R,C" AnchorSide="I,I" Offset="-2,0"  Style="VertSlider"   Length="244"/>
 				<UpButton   Anchor="R,T" AnchorSide="I,I" Offset="-2,-2" Style="ScrollBarUp"/>
 				<DownButton Anchor="R,B" AnchorSide="I,I" Offset="-2,-2" Style="ScrollBarDown"/>
-				<Stack ID="StackR" Anchor="L,T" Offset="0,0" StackGrowth="Bottom" Padding="0" Size="280,250">
-					<Button ID="RowR1" Anchor="L,T" Size="280,50">
-						<Box ID="RowR1Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
-						<Box ID="RowR1Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
-						<Image ID="RowR1Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
-						<Label ID="RowR1Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
-						       Color0="Beige.255" Color1="Black.128"/>
+				<Stack ID="StackR" Anchor="L,T" Offset="0,0" StackGrowth="Bottom" Padding="0" Size="284,260">
+					<Button ID="RowR1" Anchor="L,T" Size="284,52">
+						<Box ID="RowR1Bg"   Anchor="L,T" Offset="0,0" Size="284,52" Color="6,10,14,120"/>
+						<Box ID="RowR1Hi"   Anchor="L,T" Offset="0,0" Size="284,52" Color="214,178,90,68"  Hidden="1"/>
+						<Box ID="RowR1Sel"  Anchor="L,T" Offset="0,0" Size="3,52"   Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowR1Icon" Anchor="L,C" Offset="10,0" Size="45,45"/>
+						<Label ID="RowR1Name" Anchor="L,T" Offset="62,3" WrapWidth="176" Font="TwCenMT16" FontStyle="Shadow"
+						       Color0="240,230,207,255" Color1="0,0,0,150"/>
+						<Label ID="RowR1Stat" Anchor="L,T" Offset="62,26" WrapWidth="176" Font="TwCenMT12" FontStyle="Shadow"
+						       Color0="168,160,142,255" Color1="0,0,0,150"/>
+						<Image ID="RowR1Mark" Anchor="R,C" Offset="-12,0" Size="16,16" Texture="NotificationFrameBase.dds" Hidden="1"/>
 					</Button>
-					<Button ID="RowR2" Anchor="L,T" Size="280,50">
-						<Box ID="RowR2Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
-						<Box ID="RowR2Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
-						<Image ID="RowR2Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
-						<Label ID="RowR2Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
-						       Color0="Beige.255" Color1="Black.128"/>
+					<Button ID="RowR2" Anchor="L,T" Size="284,52">
+						<Box ID="RowR2Bg"   Anchor="L,T" Offset="0,0" Size="284,52" Color="6,10,14,120"/>
+						<Box ID="RowR2Hi"   Anchor="L,T" Offset="0,0" Size="284,52" Color="214,178,90,68"  Hidden="1"/>
+						<Box ID="RowR2Sel"  Anchor="L,T" Offset="0,0" Size="3,52"   Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowR2Icon" Anchor="L,C" Offset="10,0" Size="45,45"/>
+						<Label ID="RowR2Name" Anchor="L,T" Offset="62,3" WrapWidth="176" Font="TwCenMT16" FontStyle="Shadow"
+						       Color0="240,230,207,255" Color1="0,0,0,150"/>
+						<Label ID="RowR2Stat" Anchor="L,T" Offset="62,26" WrapWidth="176" Font="TwCenMT12" FontStyle="Shadow"
+						       Color0="168,160,142,255" Color1="0,0,0,150"/>
+						<Image ID="RowR2Mark" Anchor="R,C" Offset="-12,0" Size="16,16" Texture="NotificationFrameBase.dds" Hidden="1"/>
 					</Button>
-					<Button ID="RowR3" Anchor="L,T" Size="280,50">
-						<Box ID="RowR3Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
-						<Box ID="RowR3Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
-						<Image ID="RowR3Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
-						<Label ID="RowR3Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
-						       Color0="Beige.255" Color1="Black.128"/>
+					<Button ID="RowR3" Anchor="L,T" Size="284,52">
+						<Box ID="RowR3Bg"   Anchor="L,T" Offset="0,0" Size="284,52" Color="6,10,14,120"/>
+						<Box ID="RowR3Hi"   Anchor="L,T" Offset="0,0" Size="284,52" Color="214,178,90,68"  Hidden="1"/>
+						<Box ID="RowR3Sel"  Anchor="L,T" Offset="0,0" Size="3,52"   Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowR3Icon" Anchor="L,C" Offset="10,0" Size="45,45"/>
+						<Label ID="RowR3Name" Anchor="L,T" Offset="62,3" WrapWidth="176" Font="TwCenMT16" FontStyle="Shadow"
+						       Color0="240,230,207,255" Color1="0,0,0,150"/>
+						<Label ID="RowR3Stat" Anchor="L,T" Offset="62,26" WrapWidth="176" Font="TwCenMT12" FontStyle="Shadow"
+						       Color0="168,160,142,255" Color1="0,0,0,150"/>
+						<Image ID="RowR3Mark" Anchor="R,C" Offset="-12,0" Size="16,16" Texture="NotificationFrameBase.dds" Hidden="1"/>
 					</Button>
-					<Button ID="RowR4" Anchor="L,T" Size="280,50">
-						<Box ID="RowR4Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
-						<Box ID="RowR4Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
-						<Image ID="RowR4Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
-						<Label ID="RowR4Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
-						       Color0="Beige.255" Color1="Black.128"/>
+					<Button ID="RowR4" Anchor="L,T" Size="284,52">
+						<Box ID="RowR4Bg"   Anchor="L,T" Offset="0,0" Size="284,52" Color="6,10,14,120"/>
+						<Box ID="RowR4Hi"   Anchor="L,T" Offset="0,0" Size="284,52" Color="214,178,90,68"  Hidden="1"/>
+						<Box ID="RowR4Sel"  Anchor="L,T" Offset="0,0" Size="3,52"   Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowR4Icon" Anchor="L,C" Offset="10,0" Size="45,45"/>
+						<Label ID="RowR4Name" Anchor="L,T" Offset="62,3" WrapWidth="176" Font="TwCenMT16" FontStyle="Shadow"
+						       Color0="240,230,207,255" Color1="0,0,0,150"/>
+						<Label ID="RowR4Stat" Anchor="L,T" Offset="62,26" WrapWidth="176" Font="TwCenMT12" FontStyle="Shadow"
+						       Color0="168,160,142,255" Color1="0,0,0,150"/>
+						<Image ID="RowR4Mark" Anchor="R,C" Offset="-12,0" Size="16,16" Texture="NotificationFrameBase.dds" Hidden="1"/>
 					</Button>
-					<Button ID="RowR5" Anchor="L,T" Size="280,50" Hidden="1">
-						<Box ID="RowR5Hi"  Anchor="C,C" Offset="0,0" Size="280,50" Color="214,178,90,110" Hidden="1"/>
-						<Box ID="RowR5Bar" Anchor="L,C" Offset="0,0" Size="3,50" Color="255,215,120,255" Hidden="1"/>
-						<Image ID="RowR5Icon"  Anchor="L,C" Offset="5,2" Size="45,45"/>
-						<Label ID="RowR5Name"  Anchor="L,C" Offset="60,0" WrapWidth="214" Font="TwCenMT18" FontStyle="Shadow"
-						       Color0="Beige.255" Color1="Black.128"/>
+					<Button ID="RowR5" Anchor="L,T" Size="284,52" Hidden="1">
+						<Box ID="RowR5Bg"   Anchor="L,T" Offset="0,0" Size="284,52" Color="6,10,14,120"/>
+						<Box ID="RowR5Hi"   Anchor="L,T" Offset="0,0" Size="284,52" Color="214,178,90,68"  Hidden="1"/>
+						<Box ID="RowR5Sel"  Anchor="L,T" Offset="0,0" Size="3,52"   Color="255,215,120,255" Hidden="1"/>
+						<Image ID="RowR5Icon" Anchor="L,C" Offset="10,0" Size="45,45"/>
+						<Label ID="RowR5Name" Anchor="L,T" Offset="62,3" WrapWidth="176" Font="TwCenMT16" FontStyle="Shadow"
+						       Color0="240,230,207,255" Color1="0,0,0,150"/>
+						<Label ID="RowR5Stat" Anchor="L,T" Offset="62,26" WrapWidth="176" Font="TwCenMT12" FontStyle="Shadow"
+						       Color0="168,160,142,255" Color1="0,0,0,150"/>
+						<Image ID="RowR5Mark" Anchor="R,C" Offset="-12,0" Size="16,16" Texture="NotificationFrameBase.dds" Hidden="1"/>
 					</Button>
 				</Stack>
 			</ScrollPanel>
 		</Box>
 
-		<!-- ===== 标题 ===== -->
-		<Label Anchor="C,T" Offset="0,8" Font="TwCenMT22" FontStyle="Shadow"
+		<!-- ===== 标题（左） + 进度（右） ===== -->
+		<Label Anchor="L,T" Offset="42,8" Font="TwCenMT20" FontStyle="Shadow"
 		       ColorSet="Beige_Black_Alpha" String="TXT_KEY_SPUE_MERCENARY_SELECT_TITLE"/>
+		<Label ID="ProgressLabel" Anchor="R,T" Offset="-42,13" Font="TwCenMT12" FontStyle="Shadow"
+		       Color0="168,160,142,255" Color1="0,0,0,150" String=""/>
+		<Box Anchor="L,T" Offset="22,44" Size="616,1" Color="214,178,90,105"/>
 
-		<!-- ===== 领袖头像组 ===== -->
+		<!-- ===== 领袖头像 ===== -->
 		<Button ID="IconButtonTop" Anchor="C,T" Offset="0,0" Size="256,128" ToolTip="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_LEADER_TOP">
 			<Image Anchor="C,T" AnchorSide="I,O" Offset="0,-91" Size="256,128" Texture="DecTop256x64.dds">
 				<Image Anchor="C,T" Offset="0,-60" Size="128,128" Texture="Assets/UI/Art/Icons/LeaderPortraits1024Frame.dds">
@@ -167,14 +217,14 @@
 		<Image Anchor="L,C" AnchorSide="O,I" Offset="-17,0" Size="32,64" Texture="Dec32x64Left.dds" />
 		<Image Anchor="R,C" AnchorSide="O,I" Offset="-17,0" Size="32,64" Texture="Dec32x64Right.dds" />
 
-		<!-- ===== 确定（面板外，与底金线约留 12px） ===== -->
-		<GridButton ID="OKButton" Anchor="C,B" Offset="0,-22" Size="170,36" Style="BaseButton"
+		<!-- ===== 底部操作条 ===== -->
+		<Box Anchor="L,T" Offset="22,452" Size="616,1" Color="214,178,90,105"/>
+		<Label Anchor="L,T" Offset="42,464" Font="TwCenMT12" FontStyle="Shadow"
+		       Color0="168,160,142,255" Color1="0,0,0,128" String="TXT_KEY_SPUE_MERCENARY_HINT_CARDS"/>
+		<GridButton ID="OKButton" Anchor="R,T" Offset="-36,458" Size="132,30" Style="BaseButton"
 		            ToolTip="TXT_KEY_SPUE_MERCENARY_SELECT_OK_TOOLTIP">
-			<Label Anchor="C,C" Offset="0,-2" String="TXT_KEY_SPUE_MERCENARY_SELECT_OK"
-			       Font="TwCenMT20" FontStyle="Shadow" ColorSet="Beige_Black_Alpha"/>
+			<Label Anchor="C,C" Offset="0,-1" String="TXT_KEY_SPUE_MERCENARY_SELECT_OK"
+			       Font="TwCenMT16" FontStyle="Shadow" ColorSet="Beige_Black_Alpha"/>
 		</GridButton>
-
-		<Label Anchor="C,B" Offset="0,30" Font="TwCenMT14" FontStyle="Shadow"
-		       Color0="Beige.255" Color1="Black.128" String="TXT_KEY_SPUE_MERCENARY_HINT_CARDS"/>
 	</Grid>
 </Context>

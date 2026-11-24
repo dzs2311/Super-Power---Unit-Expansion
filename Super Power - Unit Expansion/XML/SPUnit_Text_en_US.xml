@@ -1422,6 +1422,22 @@
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_HINT_CARDS">
 			<Text>Click a card to select, choose one from each group, then press OK</Text>
 		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_MERC_STATS_MELEE">
+			<Text>Melee {1_Num}　Moves {2_Num}　[ICON_GOLD]{3_Num}</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_MERC_STATS_RANGED">
+			<Text>Melee {1_Num}　Ranged {2_Num}　Moves {3_Num}　[ICON_GOLD]{4_Num}</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_MERC_PROGRESS">
+			<Text>Selected {1_Num} / 2</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_SPUE_MERC_PICK_ONE">
+			<Text>1 of {1_Num}</Text>
+		</Row>
 		
 		<Row Tag="TXT_KEY_SPUE_MERCENARY_BUTTON_ICON_UNIT_LEFT">
 			<Text>中古佣兵团单位信息</Text>
