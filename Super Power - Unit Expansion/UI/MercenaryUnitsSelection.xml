@@ -41,6 +41,7 @@
 			       Color0="240,230,207,255" Color1="0,0,0,180" String=""/>
 			<Label ID="StatL" Anchor="C,T" Offset="0,113" WrapWidth="284" Font="TwCenMT12" FontStyle="Shadow"
 			       Color0="168,160,142,255" Color1="0,0,0,150" String=""/>
+			<Box   Anchor="L,T" Offset="12,131" Size="276,1" Color="214,178,90,70"/>
 
 			<!-- 列表 -->
 			<ScrollPanel ID="ListL" Anchor="L,T" Offset="8,132" Size="284,260" Vertical="1">
@@ -132,6 +133,7 @@
 			       Color0="240,230,207,255" Color1="0,0,0,180" String=""/>
 			<Label ID="StatR" Anchor="C,T" Offset="0,113" WrapWidth="284" Font="TwCenMT12" FontStyle="Shadow"
 			       Color0="168,160,142,255" Color1="0,0,0,150" String=""/>
+			<Box   Anchor="L,T" Offset="12,131" Size="276,1" Color="214,178,90,70"/>
 
 			<ScrollPanel ID="ListR" Anchor="L,T" Offset="8,132" Size="284,260" Vertical="1">
 				<ScrollBar  Anchor="R,C" AnchorSide="I,I" Offset="-2,0"  Style="VertSlider"   Length="244"/>

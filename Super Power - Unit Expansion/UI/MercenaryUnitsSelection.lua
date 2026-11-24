@@ -43,7 +43,18 @@ end
 local function U(name) return GameInfo.Units[name] end
 local function Ctl(id) return Controls[id] end
 
--- 行内数值行：必须定义在使用它的 ShowBig 之前（Lua 局部函数无前向引用）
+-- 行内数值（不带造价，避免行内换行）：战斗/远程/移动
+local function StatShort(unit)
+	local s = (unit.Combat or 0) .. "[ICON_STRENGTH]"
+	local ranged = unit.RangedCombat or 0
+	if ranged > 0 then
+		s = s .. "  " .. ranged .. "[ICON_RANGE_STRENGTH]"
+	end
+	s = s .. "  " .. (unit.Moves or 0) .. "[ICON_MOVES]"
+	return s
+end
+
+-- 上方选中信息行（带造价）
 local function StatLine(unit)
 	local melee  = unit.Combat or 0
 	local ranged = unit.RangedCombat or 0
@@ -178,7 +189,7 @@ local function BuildSide(side, data)
 				local nm = Ctl("Row" .. side .. i .. "Name")
 				if nm then nm:SetText(PlainText(row.unit.Description)) end
 				local st = Ctl("Row" .. side .. i .. "Stat")
-				if st then st:SetText(StatLine(row.unit)) end
+				if st then st:SetText(StatShort(row.unit)) end
 
 				if row.unit.Help then btn:SetToolTipString(Locale.ConvertTextKey(row.unit.Help)) end
 			else
