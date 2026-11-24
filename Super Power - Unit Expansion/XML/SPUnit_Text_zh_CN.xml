@@ -1424,11 +1424,11 @@
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_MERC_STATS_MELEE">
-			<Text>近战{1_Num}　移动{2_Num}　[ICON_GOLD]{3_Num}</Text>
+			<Text>{1_Num}[ICON_STRENGTH]　{2_Num}[ICON_MOVES]　{3_Num}[ICON_GOLD]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_MERC_STATS_RANGED">
-			<Text>近战{1_Num}　远程{2_Num}　移动{3_Num}　[ICON_GOLD]{4_Num}</Text>
+			<Text>{1_Num}[ICON_STRENGTH]　{2_Num}[ICON_RANGE_STRENGTH]　{3_Num}[ICON_MOVES]　{4_Num}[ICON_GOLD]</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_SPUE_MERC_PROGRESS">
