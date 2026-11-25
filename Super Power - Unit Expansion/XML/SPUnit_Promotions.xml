@@ -318,7 +318,7 @@
 			<Type>PROMOTION_SPUE_FIRESHIP</Type>
 			<Description>TXT_KEY_PROMOTION_SPUE_FIRESHIP</Description>
 			<Help>TXT_KEY_PROMOTION_SPUE_FIRESHIP_HELP</Help>
-			<CombatPercent>25</CombatPercent>
+			<DefenseMod>-33</DefenseMod>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<AOEDamageOnKill>25</AOEDamageOnKill>
 			<CannotBeChosen>true</CannotBeChosen>
