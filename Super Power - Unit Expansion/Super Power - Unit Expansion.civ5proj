@@ -254,13 +254,28 @@
         <Type>UpdateDatabase</Type>
         <FileName>SQL/WP_Compatibility.sql</FileName>
       </Action>
-    </ModActions>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>SQL/SPUnit_TransitionUnit.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>XML/SPUnit_TransitionUnit_Text.xml</FileName>
+      </Action>    </ModActions>
     <ModContent>
       <Content>
         <Type>InGameUIAddin</Type>
         <Name>SPUnit_Fix</Name>
         <Description>SPUnit_Fix</Description>
         <FileName>LUA/SPUnit_Fix.lua</FileName>
+      </Content>
+      <Content>
+        <Type>InGameUIAddin</Type>
+        <Name>SPUnit_TransitionUnit</Name>
+        <Description>SPUnit_TransitionUnit</Description>
+        <FileName>LUA/SPUnit_TransitionUnit.lua</FileName>
       </Content>
       <Content>
         <Type>InGameUIAddin</Type>
@@ -4879,6 +4894,38 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Units\Policy\11-Autocracy\TransformUnit\TU_MODEL_fbxskel.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\11-Autocracy\TransformUnit\TU_FOLD.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\11-Autocracy\TransformUnit\TU_UNFOLD.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\11-Autocracy\TransformUnit\TU_IDLE_SHIP.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\11-Autocracy\TransformUnit\TU_IDLE_HEAD.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\11-Autocracy\TransformUnit\TU_SeaToAir.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\11-Autocracy\TransformUnit\TU_AirToSea.fxsxml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Units\Policy\11-Autocracy\TransformUnit\JUFortressShip.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Units\Policy\11-Autocracy\GigaFortress\JUFortressHEAD.gr2">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -5427,7 +5474,19 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="SQL\SPUnit_ArtDefines.sql">
+    <Content Include="SQL\SPUnit_TransitionUnit.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+<Content Include="XML\SPUnit_TransitionUnit_Text.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+<Content Include="LUA\SPUnit_TransitionUnit.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+<Content Include="SQL\SPUnit_ArtDefines.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
