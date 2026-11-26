@@ -126,8 +126,8 @@ SPUE_TU_Sea2Air_Button = {
 	Name = "TU Sea2Air",
 	Title = "TXT_KEY_SPUE_AUTOCRACY_JUFORTRESSHEAD_TEXT_SHORT",
 	OrderPriority = 205,
-	IconAtlas = "SPUE_GAIA_ATLAS",
-	PortraitIndex = 0,
+	IconAtlas = "SPUE_IDEO_ATLAS",          -- 45/64 两种尺寸都有；SPUE_GAIA_ATLAS 只有 45，按钮会白块
+	PortraitIndex = 8,                      -- = 天空堡垒的单位图标
 	ToolTip = "TXT_KEY_UNIT_SPUE_AUTOCRACY_JUFORTRESSHEAD_HELP",
 	Condition = function(action, unit)
 		return unit:GetOwner() == Game.GetActivePlayer()
@@ -145,8 +145,8 @@ SPUE_TU_Air2Sea_Button = {
 	Name = "TU Air2Sea",
 	Title = "TXT_KEY_SPUE_AUTOCRACY_JUFORTRESSSHIP_TEXT_SHORT",
 	OrderPriority = 205,
-	IconAtlas = "SPUE_GAIA_ATLAS",
-	PortraitIndex = 1,
+	IconAtlas = "SPUE_IDEO_ATLAS",
+	PortraitIndex = 12,                     -- = 海上堡垒的单位图标
 	ToolTip = "TXT_KEY_UNIT_SPUE_AUTOCRACY_JUFORTRESSSHIP_HELP",
 	Condition = function(action, unit)
 		return unit:GetOwner() == Game.GetActivePlayer()
