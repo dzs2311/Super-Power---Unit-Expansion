@@ -263,7 +263,12 @@
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
         <FileName>XML/SPUnit_TransitionUnit_Text.xml</FileName>
-      </Action>    </ModActions>
+      </Action>      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>SQL/SPUnit_ArtDefines_JUF_Fix.sql</FileName>
+      </Action>
+    </ModActions>
     <ModContent>
       <Content>
         <Type>InGameUIAddin</Type>
@@ -5479,6 +5484,10 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
 <Content Include="LUA\SPUnit_TransitionUnit.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="SQL/SPUnit_ArtDefines_JUF_Fix.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
