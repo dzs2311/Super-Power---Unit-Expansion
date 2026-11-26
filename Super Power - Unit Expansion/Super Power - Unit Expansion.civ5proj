@@ -262,11 +262,12 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>XML/SPUnit_TransitionUnit_Text.xml</FileName>
-      </Action>      <Action>
+        <FileName>XML/SPUnit_TransitionUnit_Text_en_US.xml</FileName>
+      </Action>
+      <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>SQL/SPUnit_ArtDefines_JUF_Fix.sql</FileName>
+        <FileName>XML/SPUnit_TransitionUnit_Text_zh_CN.xml</FileName>
       </Action>
     </ModActions>
     <ModContent>
@@ -4899,10 +4900,6 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-        <Content Include="Art\Units\Policy\11-Autocracy\TransformUnit\TU_MODEL_br2skel.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
 <Content Include="Art\Units\Policy\11-Autocracy\TransformUnit\TU_MODEL_fbxskel.gr2">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -5479,19 +5476,19 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
+    <Content Include="XML/SPUnit_TransitionUnit_Text_en_US.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="XML/SPUnit_TransitionUnit_Text_zh_CN.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
     <Content Include="SQL\SPUnit_TransitionUnit.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-<Content Include="XML\SPUnit_TransitionUnit_Text.xml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
 <Content Include="LUA\SPUnit_TransitionUnit.lua">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="SQL/SPUnit_ArtDefines_JUF_Fix.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>

@@ -60,8 +60,9 @@ end
 local function FinishTransform(dummy, targetType, snap, ownerID)
 	local plot = dummy and dummy:GetPlot()
 	if not plot then return end
+	pcall(function() UI.SelectUnit(nil) end)
 	local x, y = plot:GetX(), plot:GetY()
-	local facing = dummy:GetFacingDirection()
+	local facing = dummy and dummy:GetFacingDirection() or 0
 	dummy:Kill()
 	local newUnit = Players[ownerID]:InitUnit(targetType, x, y, -1, facing)
 	if not newUnit then
@@ -69,7 +70,6 @@ local function FinishTransform(dummy, targetType, snap, ownerID)
 		return
 	end
 	Restore(newUnit, snap)
-	pcall(function() UI.SelectUnit(newUnit) end)   -- 面板跟着切到新单位
 end
 
 --==========================================================================================

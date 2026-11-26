@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 超级要塞 变形过场单位 文本（en_US） -->
+<GameData>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_UNIT_SPUE_TU_SEA2AIR">
+			<Text>Giga Fortress (Sea to Air)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_TU_SEA2AIR_HELP">
+			<Text>Transitional unit used while the Giga Fortress transforms. Lives for 3.5 seconds and cannot be selected or ordered.[NEWLINE][NEWLINE]If you can read this, the transformation was interrupted (save/load or error) and it will auto-convert.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_TU_SEA2AIR_TEXT">
+			<Text>The Giga Fortress needs several seconds of mechanical reconfiguration to switch between its naval and airborne forms.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_TU_AIR2SEA">
+			<Text>Giga Fortress (Air to Sea)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_SPUE_TU_AIR2SEA_HELP">
+			<Text>Transitional unit used while the Giga Fortress transforms. Lives for 3.5 seconds and cannot be selected or ordered.[NEWLINE][NEWLINE]If you can read this, the transformation was interrupted (save/load or error) and it will auto-convert.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SPUE_TU_AIR2SEA_TEXT">
+			<Text>The Giga Fortress needs several seconds of mechanical reconfiguration to switch between its naval and airborne forms.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_TU_TRANSFORMING">
+			<Text>Transforming</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SPUE_TU_TRANSFORMING_HELP">
+			<Text>Marker for the transitional unit; never granted to real units.</Text>
+		</Row>
+	</Language_en_US>
+</GameData>
