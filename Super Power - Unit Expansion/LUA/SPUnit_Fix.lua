@@ -1,4 +1,4 @@
--- SaveUtils
+﻿-- SaveUtils
 WARN_NOT_SHARED = false; include("SaveUtils"); MY_MOD_NAME = "SPUE";
 -- SPCode
 include("UtilityFunctions")
@@ -2079,7 +2079,7 @@ SPUE_GAIA_Ship2Head_Button = {
 	end
 };
 
-LuaEvents.UnitPanelActionAddin(SPUE_GAIA_Ship2Head_Button)
+-- [TU] 已由 SPUnit_TransitionUnit.lua 的动画版取代
 
 SPUE_GAIA_Head2Ship_Button = {
 	Name = "GAIA Head2Ship",
@@ -2139,7 +2139,7 @@ SPUE_GAIA_Head2Ship_Button = {
 	end
 };
 
-LuaEvents.UnitPanelActionAddin(SPUE_GAIA_Head2Ship_Button)
+-- [TU] 已由 SPUnit_TransitionUnit.lua 的动画版取代
 --------------------------------------------------------------
 -- 神州天子之权：力量投射
 --------------------------------------------------------------
