@@ -35,6 +35,7 @@ INSERT OR REPLACE INTO ArtDefine_UnitInfoMemberInfos (UnitInfoType, UnitMemberIn
 
 -- Scale 0.4 = 真单位 0.16 × 2.5（过场模型几何保持 1x）
 INSERT OR REPLACE INTO ArtDefine_UnitMemberInfos (Type, Model, MaterialTypeSoundOverrideTag, MaterialTypeTag, Scale, Domain) VALUES
+-- [DIAG] sea->air temporarily uses the shipped fortress model to test whether the dummy renders at all
 ('ART_DEF_UNIT_MEMBER_SPUE_TU_SEA2AIR', 'TU_SeaToAir.fxsxml', 'METALLRG', 'METAL', 0.4, 'Sea');
 
 INSERT OR REPLACE INTO ArtDefine_UnitMemberCombats (EnableActions, HasRefaceAfterCombat, HasShortRangedAttack, UnitMemberType, HasLeftRightAttack, HasIndependentWeaponFacing) VALUES
