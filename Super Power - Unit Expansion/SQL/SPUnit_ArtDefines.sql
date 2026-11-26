@@ -836,7 +836,8 @@ INSERT OR REPLACE INTO ArtDefine_UnitMemberCombatWeapons (WeaponTypeSoundOverrid
 INSERT OR REPLACE INTO ArtDefine_UnitMemberCombatWeapons (WeaponTypeSoundOverrideTag, WeaponTypeTag, UnitMemberType, "Index", VisKillStrengthMax, VisKillStrengthMin, HitEffect, SubIndex) VALUES
 ('BULLETHC', 'BULLETHC', 'ART_DEF_UNIT_MEMBER_SPANISH_CANARIAS', 1, 50.0, 25.0, 'ART_DEF_VEFFECT_ARTILLERY_IMPACT_$(TERRAIN)', 0);
 
-INSERT OR REPLACE INTO ArtDefine_StrategicView (StrategicViewType, Asset, TileType) VALUES
+-- [FIX 2026-11-26] 值已注释，语句同步注释掉（否则 SQLite 语法错误会中止整个文件）
+-- INSERT OR REPLACE INTO ArtDefine_StrategicView (StrategicViewType, Asset, TileType) VALUES
 -- [SPUE 停用] CANADIAN FIGHTER —— 美术定义已注释，回退到 SP / 原版模型
 --('ART_DEF_UNIT_SPANISH_CANARIAS', 'SV_SpanishCrusier.dds', 'Unit');
 ------------------------------------------------------------------------------------------------------------------------
@@ -860,7 +861,7 @@ INSERT OR REPLACE INTO ArtDefine_StrategicView (StrategicViewType, Asset, TileTy
 --INSERT OR REPLACE INTO ArtDefine_UnitMemberCombatWeapons (WeaponTypeSoundOverrideTag, TargetGround, HitRadius, UnitMemberType, "Index", VisKillStrengthMax, ProjectileSpeed, WeaponTypeTag, ID, VisKillStrengthMin, HitEffect, IsDropped, SubIndex) VALUES
 --('EXPLOSION200POUND', 1, 15.0, 'ART_DEF_UNIT_MEMBER_IROQUOIAN_CANADIAN_FIGHTER', 0, 50.0, 3.0, 'EXPLOSIVE', 'PROJECTILE', 25.0, 'ART_DEF_VEFFECT_IROQUOIAN_CANADIAN_FIGHTER_MACHINE_GUN_HIT_$(TERRAIN)', 1, 1);
 
-INSERT OR REPLACE INTO ArtDefine_StrategicView (StrategicViewType, Asset, TileType) VALUES
+-- INSERT OR REPLACE INTO ArtDefine_StrategicView (StrategicViewType, Asset, TileType) VALUES
 --('ART_DEF_UNIT_IROQUOIAN_CANADIAN_FIGHTER', 'SV_CanadaFighter.dds', 'Unit');
 ------------------------------------------------------------------------------------------------------------------------
 --777--
@@ -1853,7 +1854,8 @@ FROM ArtDefine_StrategicView WHERE StrategicViewType = 'ART_DEF_UNIT_KNIGHT';
 --INSERT INTO ArtDefine_StrategicView 
 --		(StrategicViewType, 				TileType,	Asset)
 --SELECT	'ART_DEF_UNIT_SPUE_MUSKETMAN',		'Unit', 	Asset
-FROM ArtDefine_StrategicView WHERE StrategicViewType = 'ART_DEF_UNIT_MUSKETMAN';
+-- [FIX 2026-11-26] 上一条语句已整体注释，本行同步注释
+-- FROM ArtDefine_StrategicView WHERE StrategicViewType = 'ART_DEF_UNIT_MUSKETMAN';
 ------------------------------------------------------------------------------------------------------------------------
 -- 蒸汽风帆铁甲舰
 ------------------------------------------------------------------------------------------------------------------------
@@ -2837,7 +2839,8 @@ VALUES	('ART_DEF_UNIT_SPUE_IRON_TROOP',			'Unit', 	'SV_SPUE_Iron_Troop.dds');
 -- Unit Infos - Original info based on unit: Caravel from the original game
 INSERT INTO ArtDefine_UnitInfos (Type, DamageStates, Formation) VALUES ('ART_DEF_UNIT_SPUE_FIRESHIP',	3, "");
 INSERT INTO ArtDefine_UnitInfoMemberInfos VALUES ('ART_DEF_UNIT_SPUE_FIRESHIP', 'ART_DEF_UNIT_MEMBER_SPUE_FIRESHIP', "1");
-INSERT INTO ArtDefine_StrategicView (StrategicViewType, TileType, Asset) VALUES	('ART_DEF_UNIT_SPUE_FIRESHIP', "Unit", 'SV_SPUE_Sman_Fireship.dds');
+-- [FIX 2026-11-26] 值已注释，语句同步注释掉（否则 SQLite 语法错误会中止整个文件）
+-- INSERT INTO ArtDefine_StrategicView (StrategicViewType, TileType, Asset) VALUES	('ART_DEF_UNIT_SPUE_FIRESHIP', "Unit", 'SV_SPUE_Sman_Fireship.dds');
 
 --  Member Infos
 INSERT INTO ArtDefine_UnitMemberInfos (Type,		Scale,		ZOffset,		Domain,		Model,						MaterialTypeTag,	 MaterialTypeSoundOverrideTag)	

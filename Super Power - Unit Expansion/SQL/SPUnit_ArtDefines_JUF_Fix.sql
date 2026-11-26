@@ -14,6 +14,15 @@
 ------------------------------------------------------------------------------------------------------------------------
 --独裁：超级要塞 --
 ------------------------------------------------------------------------------------------------------------------------
+
+-- 先删后插，保证可重复执行（主文件修好后重复跑也不会产生重复行）
+DELETE FROM ArtDefine_UnitMemberCombatWeapons WHERE UnitMemberType IN ('ART_DEF_UNIT_MEMBER_SPUE_JUFORTRESSSHIP','ART_DEF_UNIT_MEMBER_SPUE_JUFORTRESSHEAD');
+DELETE FROM ArtDefine_UnitMemberCombats       WHERE UnitMemberType IN ('ART_DEF_UNIT_MEMBER_SPUE_JUFORTRESSSHIP','ART_DEF_UNIT_MEMBER_SPUE_JUFORTRESSHEAD');
+DELETE FROM ArtDefine_UnitInfoMemberInfos     WHERE UnitInfoType     IN ('ART_DEF_UNIT_SPUE_JUFORTRESSSHIP','ART_DEF_UNIT_SPUE_JUFORTRESSHEAD');
+DELETE FROM ArtDefine_UnitMemberInfos         WHERE Type             IN ('ART_DEF_UNIT_MEMBER_SPUE_JUFORTRESSSHIP','ART_DEF_UNIT_MEMBER_SPUE_JUFORTRESSHEAD');
+DELETE FROM ArtDefine_UnitInfos               WHERE Type             IN ('ART_DEF_UNIT_SPUE_JUFORTRESSSHIP','ART_DEF_UNIT_SPUE_JUFORTRESSHEAD');
+DELETE FROM ArtDefine_StrategicView           WHERE StrategicViewType IN ('ART_DEF_UNIT_SPUE_JUFORTRESSSHIP','ART_DEF_UNIT_SPUE_JUFORTRESSHEAD');
+
 INSERT OR REPLACE INTO ArtDefine_UnitInfos (Type, DamageStates) VALUES
 ('ART_DEF_UNIT_SPUE_JUFORTRESSSHIP', 3);
 
