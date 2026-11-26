@@ -1,4 +1,4 @@
-﻿-- SaveUtils
+-- SaveUtils
 WARN_NOT_SHARED = false; include("SaveUtils"); MY_MOD_NAME = "SPUE";
 -- SPCode
 include("UtilityFunctions")
