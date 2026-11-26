@@ -57,14 +57,39 @@ end
 --==========================================================================================
 -- 结束一次变形：过场单位 → 目标真单位
 --==========================================================================================
-local function FinishTransform(dummy, targetType, snap, ownerID)
-	local plot = dummy and dummy:GetPlot()
+local function FinishTransform(dummy, targetType, snap, ownerID, px, py, facing)
+	local plot = (px and Map.GetPlot(px, py)) or (dummy and dummy:GetPlot())
 	if not plot then return end
 	pcall(function() UI.SelectUnit(nil) end)
 	local x, y = plot:GetX(), plot:GetY()
-	local facing = dummy and dummy:GetFacingDirection() or 0
-	dummy:Kill()
-	local newUnit = Players[ownerID]:InitUnit(targetType, x, y, -1, facing)
+	if facing == nil then
+		facing = dummy and dummy:GetFacingDirection() or 0
+	end
+	print("[TU] finish: 目标朝向=" .. tostring(facing) .. " 过场单位朝向=" .. tostring(dummy and dummy:GetFacingDirection()))
+
+	local far = FindFarWaterPlot(x, y)
+
+	-- 过场单位先挪走再销毁（销毁反馈在画面外）
+	if dummy and not dummy:IsDead() then
+		if far then pcall(function() dummy:SetXY(far:GetX(), far:GetY()) end) end
+		dummy:Kill()
+	end
+
+	-- 目标单位在画面外生成，再瞬移到位（生成反馈也在画面外）
+	local newUnit = nil
+	if far then
+		newUnit = Players[ownerID]:InitUnit(targetType, far:GetX(), far:GetY(), -1, facing)
+		if newUnit then
+			local ok = pcall(function() newUnit:SetXY(x, y) end)
+			if not ok or newUnit:GetPlot() ~= plot then
+				newUnit:Kill()
+				newUnit = nil
+			end
+		end
+	end
+	if not newUnit then
+		newUnit = Players[ownerID]:InitUnit(targetType, x, y, -1, facing)
+	end
 	if not newUnit then
 		print("[TU] ERROR: InitUnit failed for target " .. tostring(targetType))
 		return
@@ -75,6 +100,24 @@ end
 --==========================================================================================
 -- 开始变形（玩家路径）
 --==========================================================================================
+-- [实验] 找一个远离镜头的水面空格：只用于"过场单位"的生成，验证闪光是不是位置性的
+local function FindFarWaterPlot(x, y)
+	for r = 18, 6, -3 do
+		for dx = -r, r do
+			for dy = -r, r do
+				local px, py = x + dx, y + dy
+				if px >= 0 and py >= 0 then
+					local p = Map.GetPlot(px, py)
+					if p and p:IsWater() and p:GetNumUnits() == 0 then
+						return p
+					end
+				end
+			end
+		end
+	end
+	return nil
+end
+
 local function StartTransform(unit, dummyType, targetType)
 	if pending then return end                    -- 同一时间只允许一次
 	if not unit or unit:IsDead() or not unit:CanMove() then return end
@@ -88,7 +131,26 @@ local function StartTransform(unit, dummyType, targetType)
 
 	unit:Kill()
 
-	local dummy = Players[ownerID]:InitUnit(dummyType, x, y, -1, facing)
+	-- [实验] 过场单位改为"画面外生成 + 瞬移到位"，只改这一处
+	local dummy = nil
+	local far = FindFarWaterPlot(x, y)
+	if far then
+		dummy = Players[ownerID]:InitUnit(dummyType, far:GetX(), far:GetY(), -1, facing)
+		if dummy then
+			local ok = pcall(function() dummy:SetXY(x, y) end)
+			if ok and dummy:GetPlot() == plot then
+				print("[TU][实验] 过场单位在远处生成后瞬移到位")
+			else
+				print("[TU][实验] 瞬移失败，回退原地生成")
+				dummy:Kill()
+				dummy = nil
+			end
+		end
+	end
+	if not dummy then
+		print("[TU][实验] 没有找到远处空格，原地生成")
+		dummy = Players[ownerID]:InitUnit(dummyType, x, y, -1, facing)
+	end
 	if not dummy then
 		-- 过场单位生成失败：直接换目标单位，至少保证功能可用
 		local fallback = Players[ownerID]:InitUnit(targetType, x, y, -1, facing)
@@ -100,7 +162,8 @@ local function StartTransform(unit, dummyType, targetType)
 	dummy:SetHasPromotion(MARK, true)
 	dummy:SetGraphicalFortify(true)              -- 播 ec=1500：TU_FOLD / TU_UNFOLD
 
-	pending = { dummy = dummy, target = targetType, snap = snap, t0 = os.clock(), owner = ownerID }
+	pending = { dummy = dummy, target = targetType, snap = snap, t0 = os.clock(), owner = ownerID,
+	            x = x, y = y, facing = facing }
 	print("[TU] transform started: dummy=" .. tostring(dummyType) .. " -> " .. tostring(targetType))
 end
 
@@ -115,7 +178,7 @@ ContextPtr:SetUpdate(function()
 	pending = nil
 	local dummy = P.dummy
 	if not dummy or dummy:IsDead() then return end
-	FinishTransform(dummy, P.target, P.snap, P.owner)
+	FinishTransform(dummy, P.target, P.snap, P.owner, P.x, P.y, P.facing)
 	print("[TU] transform finished")
 end)
 
