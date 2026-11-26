@@ -4899,7 +4899,11 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Units\Policy\11-Autocracy\TransformUnit\TU_MODEL_fbxskel.gr2">
+        <Content Include="Art\Units\Policy\11-Autocracy\TransformUnit\TU_MODEL_br2skel.gr2">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+<Content Include="Art\Units\Policy\11-Autocracy\TransformUnit\TU_MODEL_fbxskel.gr2">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>

@@ -1,36 +1,44 @@
 <Asset>
 	<Mesh file="TU_MODEL_fbxskel.gr2"/>
-	<Animation file="TU_IDLE_SHIP.gr2" ec="1000, 1001, 1020, 1040, 1400, 1440, 2000, 2020, 2040"/>
-	<Animation file="TU_FOLD.gr2" ec="1500"/>
-	<Animation file="TU_IDLE_HEAD.gr2" ec="1520, 1540, 1560, 1580, 1600, 1620, 1640"/>
-	<Animation file="TU_IDLE_HEAD.gr2" ec="1100, 1120, 1130, 1140, 1160, 1180, 1280, 1285, 1290, 1700, 1705, 1710, 1800, 2100"/>
-	<Animation file="TU_IDLE_HEAD.gr2" ec="1200, 1220, 2200, 2220"/>
+	<Animation file="TU_IDLE_SHIP.gr2" ec="1000,1020,1040"/>
+	<Animation file="TU_IDLE_SHIP.gr2" ec="2000,2020,2040"/>
+	<Animation file="TU_FOLD.gr2" ec="1500,1600,1280"/>
+	<Animation file="TU_IDLE_HEAD.gr2" ec="1520,1540,1560,1580,1620,1640,1285,1290"/>
+	<Animation file="TU_IDLE_SHIP.gr2" ec="1400,1440,1450,2440"/>
+	<Animation file="TU_IDLE_SHIP.gr2" ec="1120"/>
+	<Animation file="TU_IDLE_SHIP.gr2" ec="1140"/>
+	<Animation file="TU_IDLE_HEAD.gr2" ec="1100"/>
+	<Animation file="TU_IDLE_HEAD.gr2" ec="2100"/>
+	<Animation file="TU_IDLE_HEAD.gr2" ec="1160, 1180"/>
+	<Animation file="TU_IDLE_HEAD.gr2" ec="1800"/>
+	<Animation file="TU_IDLE_HEAD.gr2" ec="1200,1220,2200,2220"/>
 	<Texture file="Unit_Environment_Dull.dds"/>
 	<Texture file="Unit_Environment_Sharp.dds"/>
 	<Texture file="Unit_Irradiance.dds"/>
 	<Texture file="JUFortressShip.dds"/>
-	<Texture file="blacksref_sref.dds"/>
-	<AnimGraph file="AIM_IDLE_OFFSET_CONTINUE_TRUE_GRAPH.dge"/>
-	<AnimGraph file="AIM_FIDGETS_GRAPH.dge"/>
-	<AnimGraph file="AIM_START_RUNNING.dge"/>
-	<AnimGraph file="AIM_STOP_RUNNING.dge"/>
-	<AnimGraph file="AIM_TRANSITIONS_FOR_IDLES.dge"/>
-	<AnimGraph file="AIM_COMBAT_READY_GRAPH.dge"/>
-	<AnimGraph file="AIM_FORTIFY_LEAVE_GRAPH.dge"/>
-	<AnimGraph file="AIM_ENTER_COMBAT_READY_GRAPH.dge"/>
-	<AnimGraph file="AIM_LEAVE_COMBAT_READY.dge"/>
-	<AnimGraph file="AIM_DEATH_GRAPH.dge"/>
-	<AnimGraph file="AIM_ENTER_BOMBARD_DEFEND_GRAPH.dge"/>
-	<AnimGraph file="AIM_RUNNING_LOOP.dge"/>
-	<AnimGraph file="AIM_BOMBARD_DEFEND_LOOP_GRAPH.dge"/>
-	<AnimGraph file="AIM_DEATH_FINAL_GRAPH.dge"/>
-	<AnimGraph file="AIM_LEAVE_BOMBARD_DEFEND_TRANS_IDLE_A_GRAPH.dge"/>
-	<AnimGraph file="AIM_ATTACK_TO_RUN_GRAPH.dge"/>
-	<AnimGraph file="AIM_ATTACK_CITY_TO_RUN.dge"/>
-	<AnimGraph file="AIM_ENTER_FORTIFY.dge"/>
-	<AnimGraph file="AIM_FORTIFY_FIDGET_GRAPH.dge"/>
-	<AnimGraph file="AIM_MELEE_ATTACKS.dge"/>
-	<AnimGraph file="AIM_IDLE_GRAPH.dge"/>
-	<AnimGraph file="AIM_FORTIFY_GRAPH.dge"/>
-	<StateMachine file="MECHANIZED_AIM_STATE_01.fsmxml"/>
+	<AnimGraph file="RUN_CHARGE_SHUFFLE_TO_SHUFFLE_RUN_CHARGE.dge"/>
+	<AnimGraph file="IDLE_OFFSET_CONTINUE_TRUE_GRAPH.dge"/>
+	<AnimGraph file="FORTIFY_FIDGET_GRAPH.dge"/>
+	<AnimGraph file="ENTER_FORTIFY.dge"/>
+	<AnimGraph file="LEAVE_BOMBARD_DEFEND_TRANS_IDLE_A_GRAPH.dge"/>
+	<AnimGraph file="DEATH_FINAL_GRAPH.dge"/>
+	<AnimGraph file="BOMBARD_DEFEND_LOOP_GRAPH.dge"/>
+	<AnimGraph file="ENTER_BOMBARD_DEFEND_GRAPH.dge"/>
+	<AnimGraph file="DEATH_GRAPH.dge"/>
+	<AnimGraph file="LEAVE_COMBAT_READY.dge"/>
+	<AnimGraph file="ENTER_COMBAT_READY_GRAPH.dge"/>
+	<AnimGraph file="FORTIFY_LEAVE_GRAPH.dge"/>
+	<AnimGraph file="COMBAT_READY_GRAPH.dge"/>
+	<AnimGraph file="FORTIFY_GRAPH.dge"/>
+	<AnimGraph file="TRANSITIONS_FOR_IDLES.dge"/>
+	<AnimGraph file="STOP_RUNNING.dge"/>
+	<AnimGraph file="IDLE_GRAPH.dge"/>
+	<AnimGraph file="FIDGETS_GRAPH.dge"/>
+	<AnimGraph file="MELEE_ATTACKS.dge"/>
+	<StateMachine file="1_OMNI_STATE_01.fsmxml"/>
+	<AnimGraph file="RUN_CHARGE_SHUFFLE_LOOP.dge"/>
+	<AnimGraph file="ATTACK_TO_RUN_CHARGE_SHUFFLE.dge"/>
+	<AnimGraph file="ATTACK_CITY_TO_RUN_CHARGE_SHUFFLE.dge"/>
+	<AnimGraph file="START_RUN_CHARGE_SHUFFLE.dge"/>
+	<AnimGraph file="SHUFFLE_STOP_GRAPH.dge"/>
 </Asset>
